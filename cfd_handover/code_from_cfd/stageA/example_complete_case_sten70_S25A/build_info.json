@@ -1,0 +1,71 @@
+{
+ "level": "S25A",
+ "mesh": "mesh_S25A",
+ "endTime": 4000,
+ "R_SI": 6974826000.0,
+ "relax": 0.2,
+ "nproc": 16,
+ "mesh_gates": {
+  "level": "S25A",
+  "zone": "A",
+  "cartesianMesh_finished": true,
+  "checkMesh_standard_OK": true,
+  "cells": 3194196,
+  "strict_failed_checks": 0,
+  "max_nonortho": 42.035148,
+  "max_skew": 1.2725794,
+  "patch_faces": {
+   "wall": 232108,
+   "inlet": 492,
+   "outlet": 192
+  },
+  "cells_across_throat_diameter": {
+   "per_azimuth": [
+    43,
+    52,
+    33,
+    52,
+    42,
+    53,
+    35,
+    53
+   ],
+   "median": 47.5,
+   "min": 33,
+   "method": "runs of equal cell ids along 8 diameters at x = 31.5 mm, 0.5 um sampling"
+  },
+  "cell_size_um_x31.5_pm2mm": {
+   "n": 387256,
+   "median": 25.000138217158145,
+   "p95": 25.507307489537368,
+   "min": 7.8658465085244424
+  },
+  "throat_area": {
+   "mesh_mm2": 0.6231667711100324,
+   "stl_polygon_mm2": 0.6234013965512271,
+   "err_pct": -0.03763633551233658
+  },
+  "boundary_layer_um": {
+   "first_cell_median": 3.875000000000001,
+   "first4_stack_median": 21.625000000000007,
+   "per_layer_median": [
+    3.875000000000001,
+    4.875000000000001,
+    5.875000000000002,
+    7.000000000000003
+   ]
+  },
+  "cells_total_check": 3194196,
+  "mesh_volume_mm3": 675.4421826849145,
+  "flagged_sets": {
+   "concaveFaces": {
+    "n_points": 644,
+    "x_min_mm": 11.053674697875977,
+    "x_max_mm": 51.951847076416016,
+    "n_in_throat_zone_pm2mm": 192,
+    "n_in_lesion_zone": 192
+   }
+  },
+  "GATES_PASS": true
+ }
+}

@@ -1,0 +1,87 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  Stage A case skeleton - added 2026-09-18 after the 3-way setup audit.
+  UNTESTED on real hardware. See ../README.md.
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+
+application     simpleFoam;   // Foundation 11+: may need `foamRun -solver incompressibleFluid` instead - see ../README.md
+
+startFrom       startTime;
+startTime       0;
+stopAt          endTime;
+
+// No residualControl in fvSolution (see there for why) - use a fixed, generous iteration count
+// instead and inspect the monitors. sten80's post-stenotic jet (throat Re ~ 395-430) may settle
+// into a slow limit cycle rather than a clean steady state; if residuals plateau above 1e-5,
+// report the monitor mean +/- range over the last 500 iterations rather than silently accepting
+// or silently switching to a turbulence model (spec's own rule for the laminar assumption).
+endTime         3000;
+deltaT          1;
+writeControl    timeStep;
+writeInterval   100;
+purgeWrite      3;
+
+writeFormat     ascii;
+writePrecision  8;
+writeCompression off;
+timeFormat      general;
+timePrecision   8;
+runTimeModifiable true;
+
+functions
+{
+    // Worked example 1: inlet volumetric flux (should be negative of outlet's, to mass-imbalance
+    // tolerance). Pattern: one of these per boundary patch you need summed.
+    inletFlux
+    {
+        type            surfaceFieldValue;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             true;
+        regionType      patch;
+        name            inlet;
+        operation       sum;
+        fields          (phi);
+    }
+
+    // Worked example 2: this IS p_outletPatch_Pa (kinematic) - the quantity A3/A4 are defined on,
+    // at the actual BC patch (x = 100 mm), not the x95 internal probe. Copy this pattern with
+    // regionType sampledSurface / a `plane` sample definition, at x = -10, 20, 31.5, 56.5, 95 mm,
+    // to get the other probe planes (inlet/proximal/throat/measurement/x95) - not written out here,
+    // see ../README.md for why.
+    outletPatchPressure
+    {
+        type            surfaceFieldValue;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             true;
+        regionType      patch;
+        name            outlet;
+        operation       areaAverage;
+        fields          (p);
+    }
+
+    outletFlux
+    {
+        type            surfaceFieldValue;
+        libs            ("libfieldFunctionObjects.so");
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             true;
+        regionType      patch;
+        name            outlet;
+        operation       sum;
+        fields          (phi);
+    }
+}

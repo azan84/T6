@@ -1,0 +1,10 @@
+build-essential=12.9ubuntu3
+g++-11=11.4.0-1ubuntu1~22.04.3
+gcc-11=11.4.0-1ubuntu1~22.04.3
+libopenmpi-dev=4.1.2-2ubuntu1
+libopenmpi3=4.1.2-2ubuntu1
+openfoam2406-common=2406.260127-2
+openfoam2406-default=2406.260127-2
+openfoam2406-dev=2406.260127-2
+openfoam2406=2406.260127-2
+openmpi-bin=4.1.2-2ubuntu1

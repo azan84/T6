@@ -1,0 +1,50 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  Stage A case skeleton - added 2026-09-18 after the 3-way setup audit.
+  UNTESTED on real hardware. See ../README.md.
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSchemes;
+}
+
+ddtSchemes
+{
+    default         steadyState;
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+}
+
+divSchemes
+{
+    default         none;
+    // Second-order, bounded. The unspecified tutorial default (bounded Gauss upwind) is
+    // first-order and was flagged by all three audits as a likely source of a silent,
+    // mesh-dependent bias in the throat pressure drop - exactly what Stage A exists to catch.
+    div(phi,U)      bounded Gauss linearUpwind grad(U);
+    // Required by simpleFoam's momentum equation (the deviatoric stress term) even in laminar
+    // flow - omitting this is a hard "entry not found" error, not a silent default. Caught
+    // 2026-09-18 by actually running this scheme set on a real toy case (see the multi-outlet
+    // BC toy test in SETUP-AUDIT-SYNTHESIS-2026-09-18.md) - this file was untested before that.
+    div((nuEff*dev2(T(grad(U)))))  Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear corrected;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         corrected;
+}

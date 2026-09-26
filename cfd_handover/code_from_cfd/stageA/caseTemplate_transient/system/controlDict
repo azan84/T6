@@ -1,0 +1,121 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2406                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+FoamFile
+{
+    version         2;
+    format          ascii;
+    class           dictionary;
+    object          controlDict;
+}
+
+application     pimpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          writeNow;
+
+endTime         1.6;
+
+deltaT          2e-05;
+
+adjustTimeStep  on;
+
+maxCo           5;
+
+maxDeltaT       0.001;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.02;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  8;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   8;
+
+runTimeModifiable true;
+
+functions
+{
+    inletFlux
+    {
+        type            surfaceFieldValue;
+        libs            ( "libfieldFunctionObjects.so" );
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             true;
+        regionType      patch;
+        name            inlet;
+        operation       sum;
+        fields          ( phi );
+    }
+    outletFlux
+    {
+        type            surfaceFieldValue;
+        libs            ( "libfieldFunctionObjects.so" );
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             true;
+        regionType      patch;
+        name            outlet;
+        operation       sum;
+        fields          ( phi );
+    }
+    outletPatchP
+    {
+        type            surfaceFieldValue;
+        libs            ( "libfieldFunctionObjects.so" );
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             true;
+        regionType      patch;
+        name            outlet;
+        operation       areaAverage;
+        fields          ( p );
+    }
+    measurementP
+    {
+        type            surfaceFieldValue;
+        libs            ( "libfieldFunctionObjects.so" );
+        writeControl    timeStep;
+        writeInterval   1;
+        writeFields     false;
+        log             true;
+        regionType      sampledSurface;
+        name            measurementPlane;
+        sampledSurfaceDict
+        {
+            type            plane;
+            planeType       pointAndNormal;
+            pointAndNormalDict
+            {
+                point           ( 0.0565 0 0 );
+                normal          ( 1 0 0 );
+            }
+            interpolate     false;
+        }
+        operation       areaAverage;
+        fields          ( p );
+    }
+}
+
+
+// ************************************************************************* //

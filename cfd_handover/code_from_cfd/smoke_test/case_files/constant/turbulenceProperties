@@ -1,0 +1,15 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  Stage A case skeleton - added 2026-09-18 after the 3-way setup audit.
+  UNTESTED on real hardware. See ../../README.md.
+  Foundation 11+ may expect this file renamed to constant/momentumTransport - unverified here,
+  see ../../README.md's fork-specific-risk note.
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      turbulenceProperties;
+}
+
+simulationType  laminar;

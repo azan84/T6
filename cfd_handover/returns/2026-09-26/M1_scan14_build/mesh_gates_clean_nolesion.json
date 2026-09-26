@@ -1,0 +1,164 @@
+{
+ "case": "clean_nolesion",
+ "variant": 2,
+ "cartesianMesh_finished": true,
+ "checkMesh_standard_OK": true,
+ "wall_clock_mesh_s": 252.4,
+ "cartesianMesh_peak_rss_gb": 2.82,
+ "cartesianMesh_elapsed": "1:49.11",
+ "exit_note": null,
+ "cells": 3889165,
+ "strict_failed_checks": 3,
+ "max_nonortho": 55.623075,
+ "max_skew": 1.8503359,
+ "max_aspect": 10.978647,
+ "strict_failure_lines": [
+  "***Error in face tets: 1025 faces with low quality or negative volume decomposition tets.",
+  "***Concave cells (using face planes) found, number of cells: 50",
+  "***Faces with small volume ratio (< 0.01) found, number of faces: 30"
+ ],
+ "patch_faces": {
+  "inlet": 6375,
+  "out_160": 1802,
+  "out_425": 1056,
+  "out_600": 798,
+  "out_639": 807,
+  "out_742": 1617,
+  "out_868": 3203,
+  "wall": 398037
+ },
+ "patches_expected_present_nonzero": true,
+ "patches_missing_or_empty": [],
+ "throat_plane_mesh_area_mm2": 5.512742402382529,
+ "throat_plane_centroid_offset_from_probe_mm": 0.2715705742476867,
+ "cells_across_throat_diameter": {
+  "per_diameter": [
+   78,
+   85,
+   82,
+   84,
+   80,
+   86,
+   99,
+   94
+  ],
+  "median": 84.5,
+  "min": 78,
+  "chord_lengths_mm": [
+   2.701,
+   2.6885,
+   2.608,
+   2.552,
+   2.553,
+   2.621,
+   2.7265,
+   2.725
+  ],
+  "method": "8 in-plane diameters through the section centroid, 0.5 um sampling, runs of equal cell ids inside the lumen"
+ },
+ "throat_min_over_max_chord": 0.9359985329176601,
+ "boundary_layer_um": {
+  "first4_stack_median": 37.0,
+  "first_cell_median": 7.0,
+  "note": "run lengths from the wall of the first 4 cells on both ends of 8 diameters"
+ },
+ "cell_size_um_throat_pm2mm_arc": {
+  "n": 160474,
+  "median": 50.002087933526056,
+  "p95": 51.00081864375329,
+  "min": 17.94358233432049
+ },
+ "cell_size_um_tube50_zone": {
+  "n": 1292762,
+  "median": 50.00084601588773,
+  "p95": 51.228252537300826
+ },
+ "throat_plane_stl_area_mm2": 5.514493401711247,
+ "throat_plane_area_err_pct": -0.03175267791915015,
+ "stl_loop_points_used": 61,
+ "mesh_volume_mm3": 1257.693035217954,
+ "cells_total_check": 3889165,
+ "flagged_sets_localised": {
+  "concaveCells": {
+   "n_points": 657,
+   "per_segment": {
+    "LAD": 98,
+    "LM": 75,
+    "LCX": 131,
+    "IM": 120,
+    "OM1": 34,
+    "OM2": 42,
+    "D1": 157
+   },
+   "min_dist_to_throat_mm": 2.993528288283524,
+   "n_within_2mm_of_whisker_sites": 0,
+   "n_within_4mm_of_caps": 24,
+   "n_on_lad_path": 141,
+   "n_in_throat25_zone": 0,
+   "n_at_25um_interfaces_pm1mm": 0,
+   "n_in_tube50_zone": 66,
+   "n_at_50um_interfaces_pm1mm": 56
+  },
+  "concaveFaces": {
+   "n_points": 628,
+   "per_segment": {
+    "LAD": 97,
+    "LM": 205,
+    "IM": 56,
+    "LCX": 172,
+    "OM1": 7,
+    "OM2": 38,
+    "D1": 53
+   },
+   "min_dist_to_throat_mm": 2.9489044974740177,
+   "n_within_2mm_of_whisker_sites": 0,
+   "n_within_4mm_of_caps": 3,
+   "n_on_lad_path": 154,
+   "n_in_throat25_zone": 0,
+   "n_at_25um_interfaces_pm1mm": 0,
+   "n_in_tube50_zone": 37,
+   "n_at_50um_interfaces_pm1mm": 19
+  },
+  "lowQualityTetFaces": {
+   "n_points": 4089,
+   "per_segment": {
+    "LAD": 725,
+    "LM": 238,
+    "LCX": 821,
+    "IM": 1045,
+    "OM1": 176,
+    "OM2": 716,
+    "D1": 368
+   },
+   "min_dist_to_throat_mm": 2.993528288283524,
+   "n_within_2mm_of_whisker_sites": 81,
+   "n_within_4mm_of_caps": 383,
+   "n_on_lad_path": 613,
+   "n_in_throat25_zone": 0,
+   "n_at_25um_interfaces_pm1mm": 0,
+   "n_in_tube50_zone": 208,
+   "n_at_50um_interfaces_pm1mm": 111
+  },
+  "lowVolRatioFaces": {
+   "n_points": 50,
+   "per_segment": {
+    "LM": 4,
+    "LCX": 17,
+    "IM": 9,
+    "D1": 20
+   },
+   "min_dist_to_throat_mm": 18.18006724237437,
+   "n_within_2mm_of_whisker_sites": 0,
+   "n_within_4mm_of_caps": 0,
+   "n_on_lad_path": 4,
+   "n_in_throat25_zone": 0,
+   "n_at_25um_interfaces_pm1mm": 0,
+   "n_in_tube50_zone": 0,
+   "n_at_50um_interfaces_pm1mm": 0
+  }
+ },
+ "GATES_PASS": true,
+ "gate_definition": "finished + standard checkMesh OK + inlet and every out_<id> patch > 0 faces + (lesion cases) >= 12 cells across the throat (min over 8 diameters) + |throat plane area error| < 2 % (strict checkMesh failures are localised and disclosed, not a gate, as for the 837 meshes)",
+ "total_wall_incl_gates_s": 269.6,
+ "variant_note": "recipe v2 = coarse request 1.4e-4 (v1's 1.0e-4 rounded down to 50 um everywhere: 7.97 M cells)"
+}

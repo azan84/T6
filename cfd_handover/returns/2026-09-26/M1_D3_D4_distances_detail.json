@@ -1,0 +1,248 @@
+{
+ "baseline": {
+  "case": "baseline",
+  "throat_probe": "p004",
+  "throat_node": 73,
+  "throat_xyz_mm": [
+   43.53410720825195,
+   -149.9331817626953,
+   122.95011138916016
+  ],
+  "measurement_probe": "p011",
+  "measurement_node": 175,
+  "measurement_xyz_mm": [
+   54.13552474975586,
+   -168.7080078125,
+   102.44835662841797
+  ],
+  "throat_section_radius_mm": 0.27563786839865256,
+  "measurement_section_radius_mm": 1.038691584308923,
+  "checks": {
+   "concaveCells": {
+    "n_entities_in_log": 52,
+    "n_vertex_points": 676,
+    "min_dist_to_throat_centre_mm": 2.7142629117869803,
+    "min_dist_to_throat_disc_mm": 2.6553507272876993,
+    "min_dist_to_measurement_centre_mm": 6.831410196360456,
+    "min_dist_to_measurement_disc_mm": 6.773447002999604,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "concaveFaces": {
+    "n_entities_in_log": null,
+    "n_vertex_points": 640,
+    "min_dist_to_throat_centre_mm": 2.6471776885620892,
+    "min_dist_to_throat_disc_mm": 2.606121102354323,
+    "min_dist_to_measurement_centre_mm": 6.830633177473047,
+    "min_dist_to_measurement_disc_mm": 6.7506507367654525,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "lowQualityTetFaces": {
+    "n_entities_in_log": 1058,
+    "n_vertex_points": 4240,
+    "min_dist_to_throat_centre_mm": 1.429636087748804,
+    "min_dist_to_throat_disc_mm": 1.3768972335882201,
+    "min_dist_to_measurement_centre_mm": 2.5467399875043646,
+    "min_dist_to_measurement_disc_mm": 2.0735827974906953,
+    "n_points_within_2mm_of_throat": 12,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "lowVolRatioFaces": {
+    "n_entities_in_log": 30,
+    "n_vertex_points": 50,
+    "min_dist_to_throat_centre_mm": 18.18006724237437,
+    "min_dist_to_throat_disc_mm": 18.03090917410644,
+    "min_dist_to_measurement_centre_mm": 8.688607273936666,
+    "min_dist_to_measurement_disc_mm": 7.689696812004033,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   }
+  },
+  "self_intersection_clusters": [
+   {
+    "n_points": 8,
+    "nearest_node": 285,
+    "segment": "LAD",
+    "d_throat_mm": 83.37595951065681,
+    "d_measurement_mm": 56.24668816558461
+   },
+   {
+    "n_points": 8,
+    "nearest_node": 133,
+    "segment": "D1",
+    "d_throat_mm": 28.874513568169316,
+    "d_measurement_mm": 6.36782492428267
+   }
+  ],
+  "raw_mc_surface_self_intersecting": true,
+  "checks_within_2mm": [
+   "lowQualityTetFaces"
+  ],
+  "D4_verdict": "FAIL",
+  "D3_verdict": "FAIL",
+  "min_over_checks_throat_centre_mm": 1.429636087748804,
+  "min_over_checks_measurement_centre_mm": 2.5467399875043646
+ },
+ "T1_missed_branch": {
+  "case": "T1_missed_branch",
+  "throat_probe": "p004",
+  "throat_node": 73,
+  "throat_xyz_mm": [
+   43.53410720825195,
+   -149.9331817626953,
+   122.95011138916016
+  ],
+  "measurement_probe": "p010",
+  "measurement_node": 133,
+  "measurement_xyz_mm": [
+   54.13552474975586,
+   -168.7080078125,
+   102.44835662841797
+  ],
+  "throat_section_radius_mm": 0.27563786839865256,
+  "measurement_section_radius_mm": 1.0386866750467258,
+  "checks": {
+   "concaveCells": {
+    "n_entities_in_log": 41,
+    "n_vertex_points": 517,
+    "min_dist_to_throat_centre_mm": 2.7142629117869803,
+    "min_dist_to_throat_disc_mm": 2.6553507272876993,
+    "min_dist_to_measurement_centre_mm": 6.831081402225053,
+    "min_dist_to_measurement_disc_mm": 6.773196348482238,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "concaveFaces": {
+    "n_entities_in_log": null,
+    "n_vertex_points": 564,
+    "min_dist_to_throat_centre_mm": 2.6471776885620892,
+    "min_dist_to_throat_disc_mm": 2.606121102354323,
+    "min_dist_to_measurement_centre_mm": 6.8937987301384,
+    "min_dist_to_measurement_disc_mm": 6.816081612458233,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "lowQualityTetFaces": {
+    "n_entities_in_log": 977,
+    "n_vertex_points": 3902,
+    "min_dist_to_throat_centre_mm": 1.429636087748804,
+    "min_dist_to_throat_disc_mm": 1.3768972335882201,
+    "min_dist_to_measurement_centre_mm": 2.5467399875043646,
+    "min_dist_to_measurement_disc_mm": 2.073584059403137,
+    "n_points_within_2mm_of_throat": 12,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "lowVolRatioFaces": {
+    "n_entities_in_log": 19,
+    "n_vertex_points": 30,
+    "min_dist_to_throat_centre_mm": 18.18006724237437,
+    "min_dist_to_throat_disc_mm": 18.03090917410644,
+    "min_dist_to_measurement_centre_mm": 46.558172579506305,
+    "min_dist_to_measurement_disc_mm": 46.17619741569713,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   }
+  },
+  "self_intersection_clusters": [
+   {
+    "n_points": 8,
+    "nearest_node": 243,
+    "segment": "LAD",
+    "d_throat_mm": 83.37595951065681,
+    "d_measurement_mm": 56.24668816558461
+   }
+  ],
+  "raw_mc_surface_self_intersecting": true,
+  "checks_within_2mm": [
+   "lowQualityTetFaces"
+  ],
+  "D4_verdict": "FAIL",
+  "D3_verdict": "FAIL",
+  "min_over_checks_throat_centre_mm": 1.429636087748804,
+  "min_over_checks_measurement_centre_mm": 2.5467399875043646
+ },
+ "clean_nolesion": {
+  "case": "clean_nolesion",
+  "throat_probe": "p004",
+  "throat_node": 73,
+  "throat_xyz_mm": [
+   43.53410720825195,
+   -149.9331817626953,
+   122.95011138916016
+  ],
+  "measurement_probe": "p011",
+  "measurement_node": 175,
+  "measurement_xyz_mm": [
+   54.13552474975586,
+   -168.7080078125,
+   102.44835662841797
+  ],
+  "throat_section_radius_mm": 1.32436795230658,
+  "measurement_section_radius_mm": 1.038691584308923,
+  "checks": {
+   "concaveCells": {
+    "n_entities_in_log": 50,
+    "n_vertex_points": 657,
+    "min_dist_to_throat_centre_mm": 2.993528288283524,
+    "min_dist_to_throat_disc_mm": 2.6742545446100037,
+    "min_dist_to_measurement_centre_mm": 6.831410196360456,
+    "min_dist_to_measurement_disc_mm": 6.773447002999604,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "concaveFaces": {
+    "n_entities_in_log": null,
+    "n_vertex_points": 628,
+    "min_dist_to_throat_centre_mm": 2.9489044974740177,
+    "min_dist_to_throat_disc_mm": 2.643623007429671,
+    "min_dist_to_measurement_centre_mm": 6.830633177473047,
+    "min_dist_to_measurement_disc_mm": 6.7506507367654525,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "lowQualityTetFaces": {
+    "n_entities_in_log": 1025,
+    "n_vertex_points": 4089,
+    "min_dist_to_throat_centre_mm": 2.993528288283524,
+    "min_dist_to_throat_disc_mm": 2.545971273885358,
+    "min_dist_to_measurement_centre_mm": 2.5467399875043646,
+    "min_dist_to_measurement_disc_mm": 2.0735827974906953,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   },
+   "lowVolRatioFaces": {
+    "n_entities_in_log": 30,
+    "n_vertex_points": 50,
+    "min_dist_to_throat_centre_mm": 18.18006724237437,
+    "min_dist_to_throat_disc_mm": 17.491500507536497,
+    "min_dist_to_measurement_centre_mm": 8.688607273936666,
+    "min_dist_to_measurement_disc_mm": 7.689696812004033,
+    "n_points_within_2mm_of_throat": 0,
+    "n_points_within_2mm_of_measurement": 0
+   }
+  },
+  "self_intersection_clusters": [
+   {
+    "n_points": 6,
+    "nearest_node": 285,
+    "segment": "LAD",
+    "d_throat_mm": 83.37814847327564,
+    "d_measurement_mm": 56.2484798011045
+   },
+   {
+    "n_points": 8,
+    "nearest_node": 133,
+    "segment": "D1",
+    "d_throat_mm": 28.874513568169316,
+    "d_measurement_mm": 6.36782492428267
+   }
+  ],
+  "raw_mc_surface_self_intersecting": true,
+  "checks_within_2mm": [],
+  "D4_verdict": "PASS",
+  "D3_verdict": "PASS",
+  "min_over_checks_throat_centre_mm": 2.9489044974740177,
+  "min_over_checks_measurement_centre_mm": 2.5467399875043646
+ }
+}

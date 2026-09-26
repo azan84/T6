@@ -1,0 +1,126 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  Stage A case skeleton - added 2026-09-18 after the 3-way setup audit.
+  UNTESTED on real hardware. See ../README.md.
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+
+application     simpleFoam;   // Foundation 11+: may need `foamRun -solver incompressibleFluid` instead - see ../README.md
+
+startFrom       startTime;
+startTime       0;
+stopAt          endTime;
+
+// No residualControl in fvSolution: fixed iteration count, judged from the monitors. Throat Re of the lesion80 case is estimated 110-210 (computed from the solved section flux
+// after the run); a slow limit cycle is possible - if so report the last-500-iteration band and label the case UNCONVERGED, never a converged value.
+endTime         3000;
+deltaT          1;
+writeControl    timeStep;
+writeInterval   250;
+purgeWrite      3;
+
+writeFormat     ascii;
+writePrecision  8;
+writeCompression off;
+timeFormat      general;
+timePrecision   8;
+runTimeModifiable true;
+
+functions
+{
+    inletFlux
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name inlet; operation sum; fields (phi);
+    }
+    inletPressure
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name inlet; operation areaAverage; fields (p);
+    }
+    outlet_LCXFlux
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_LCX; operation sum; fields (phi);
+    }
+    outlet_LCXPressure
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_LCX; operation areaAverage; fields (p);
+    }
+    outlet_IMFlux
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_IM; operation sum; fields (phi);
+    }
+    outlet_IMPressure
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_IM; operation areaAverage; fields (p);
+    }
+    outlet_D1Flux
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_D1; operation sum; fields (phi);
+    }
+    outlet_D1Pressure
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_D1; operation areaAverage; fields (p);
+    }
+    outlet_D2Flux
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_D2; operation sum; fields (phi);
+    }
+    outlet_D2Pressure
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_D2; operation areaAverage; fields (p);
+    }
+    outlet_LADFlux
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_LAD; operation sum; fields (phi);
+    }
+    outlet_LADPressure
+    {
+        type surfaceFieldValue;
+        libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name outlet_LAD; operation areaAverage; fields (p);
+    }
+    wallShearStress
+    {
+        type wallShearStress;
+        libs ("libfieldFunctionObjects.so");
+        writeControl writeTime; patches (wall);
+    }
+}

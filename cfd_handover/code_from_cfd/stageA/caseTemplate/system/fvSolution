@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  Stage A case skeleton - added 2026-09-18 after the 3-way setup audit.
+  UNTESTED on real hardware. See ../README.md.
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSolution;
+}
+
+solvers
+{
+    p
+    {
+        solver          GAMG;
+        smoother        GaussSeidel;
+        tolerance       1e-08;
+        relTol          0.01;
+    }
+    U
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-09;
+        relTol          0.1;
+    }
+}
+
+SIMPLE
+{
+    nNonOrthogonalCorrectors 1;
+    // Deliberately no residualControl block. The spec's convergence criterion is compound
+    // (residuals < 1e-5 AND inlet/outlet flows AND measurement-plane pressure stable to < 0.1%
+    // over 200 iterations) - a single residualControl threshold would let simpleFoam stop before
+    // the flow/pressure monitors have actually settled. Run a fixed, generous endTime (see
+    // controlDict) and inspect the monitor history instead of relying on auto-stop.
+    // NOTE (2026-09-18 audit): nNonOrthogonalCorrectors=1 means the resistance-outlet coded BC's
+    // updateCoeffs() runs twice per outer iteration. bc/resistanceOutlet.md's relaxation fix
+    // (relax against p.prevIter(), not the raw field) assumes this - do not raise this value
+    // without re-checking that fix still holds, and record whatever value you actually used in
+    // the returns notes (nNonOrthCorr column).
+}
+
+relaxationFactors
+{
+    fields
+    {
+        p               0.3;
+    }
+    equations
+    {
+        U               0.7;
+    }
+}

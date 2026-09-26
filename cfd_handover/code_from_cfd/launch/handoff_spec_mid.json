@@ -1,0 +1,17 @@
+{
+ "_doc": "run_handoff.py spec. Stages: build,launch,watch,post,compare,cleanup (default all). 'build' and 'compare' are TRUSTED shell input executed verbatim by bash ({lesion} {ref} {out} are substituted shell-quoted). result_json: the comparison's result file under the root; valid_key: its boolean key that states the pair is VALID - cleanup (deletion of processor<digits>) runs only after compare exited 0 AND result_json[valid_key] is true. NPROC=16 and the removal of PAIR_* apply to every command.",
+ "name": "mid",
+ "profile": "lesion_mid",
+ "lesion_case": "solve_lesion_mid",
+ "ref_case": "solve_baseline_ref_mid",
+ "build": [
+  "python3 build_baseline_ref_generic.py baseline_ref_mid lesion_mid/mesh_base_ref",
+  "NPROC=16 LESION_CASE_NAME=lesion_mid LESION_MESH_DIR=lesion_mid/mesh_M50 python3 build_lesion80_case.py"
+ ],
+ "compare": "python3 mid_compare.py {lesion} {ref} {out}.json",
+ "out": "mid_results",
+ "result_json": "mid_results.json",
+ "valid_key": "valid_pair",
+ "watch_timeout_h": 9,
+ "launch_timeout_min": 30
+}

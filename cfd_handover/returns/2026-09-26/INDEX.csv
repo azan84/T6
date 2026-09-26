@@ -1,0 +1,68 @@
+file,task,report_section_or_table,rows,cohort_label
+M1_D3_D4_distances_detail.json,3,distances behind Table 17 (D3/D4),,scan 14
+M1_geometry_gates.csv,3,Table 17 + D2/D3/D4 (sec 11.8),3,scan 14
+M1_outlets_T1_missed_branch_prescribed.csv,3,"Tables 19 and 20 (sec 11.8): per outlet R used or derived, Q, p-bar",5,scan 14
+M1_outlets_T1_missed_branch_resistance.csv,3,"Tables 19 and 20 (sec 11.8): per outlet R used or derived, Q, p-bar",5,scan 14
+M1_outlets_baseline_prescribed.csv,3,"Tables 19 and 20 (sec 11.8): per outlet R used or derived, Q, p-bar",6,scan 14
+M1_outlets_baseline_resistance.csv,3,"Tables 19 and 20 (sec 11.8): per outlet R used or derived, Q, p-bar",6,scan 14
+M1_outlets_clean_nolesion_prescribed.csv,3,"Tables 19 and 20 (sec 11.8): per outlet R used or derived, Q, p-bar",6,scan 14
+M1_outlets_clean_nolesion_resistance.csv,3,"Tables 19 and 20 (sec 11.8): per outlet R used or derived, Q, p-bar",6,scan 14
+M1_probes_T1_missed_branch_prescribed.csv,3,area-averaged p and through-plane flux at every probe of probes.csv (sec 11.8),29,scan 14
+M1_probes_T1_missed_branch_resistance.csv,3,area-averaged p and through-plane flux at every probe of probes.csv (sec 11.8),29,scan 14
+M1_probes_baseline_prescribed.csv,3,area-averaged p and through-plane flux at every probe of probes.csv (sec 11.8),31,scan 14
+M1_probes_baseline_resistance.csv,3,area-averaged p and through-plane flux at every probe of probes.csv (sec 11.8),31,scan 14
+M1_probes_clean_nolesion_prescribed.csv,3,area-averaged p and through-plane flux at every probe of probes.csv (sec 11.8),31,scan 14
+M1_probes_clean_nolesion_resistance.csv,3,area-averaged p and through-plane flux at every probe of probes.csv (sec 11.8),31,scan 14
+M1_results.csv,3,Table 18 (sec 11.8),6,scan 14 = frozen cohort
+M1_roundtrip_T1_missed_branch.csv,A,Table 20 (sec 11.8): prescribed-flow round trip,5,scan 14
+M1_roundtrip_baseline.csv,A,Table 20 (sec 11.8): prescribed-flow round trip,6,scan 14
+M1_roundtrip_clean_nolesion.csv,A,Table 20 (sec 11.8): prescribed-flow round trip,6,scan 14
+M1_scan14_build/README_geometry.md,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/README_mesh.md,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/extensions_T1_missed_branch.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/extensions_baseline.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/extensions_clean_nolesion.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/geometry_gates_T1_missed_branch.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/geometry_gates_baseline.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/geometry_gates_clean_nolesion.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/mesh_gates_T1_missed_branch.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/mesh_gates_baseline.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+M1_scan14_build/mesh_gates_clean_nolesion.json,3,geometry/mesh gate json and READMEs of the scan-14 build,,scan 14
+NOTE.md,0b,"one-page caveats, M1 status line first",,
+NOTE_long.md,0b,"detailed living note (2026-09-24 folder, updated 2026-09-26)",,
+U3D_sten70.csv,1,Table 16 + wedge levels (sec 11.7),10,
+U3D_sten70_summary.csv,1,"differences, Celik GCI per family, rule, U3D (sec 11.7)",26,
+as_meshed_radius_T1_missed_branch.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - area-equivalent variant (r_asmeshed_mm = r_area_equiv_mm),706,scan 14
+as_meshed_radius_T1_missed_branch_detail.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - richer detail table,706,scan 14
+as_meshed_radius_T1_missed_branch_inscribed.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - INSCRIBED variant (r_asmeshed_mm = maximum inscribed radius),706,scan 14
+as_meshed_radius_baseline.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - area-equivalent variant (r_asmeshed_mm = r_area_equiv_mm),748,scan 14
+as_meshed_radius_baseline_detail.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - richer detail table,748,scan 14
+as_meshed_radius_baseline_inscribed.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - INSCRIBED variant (r_asmeshed_mm = maximum inscribed radius),748,scan 14
+as_meshed_radius_clean_nolesion.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - area-equivalent variant (r_asmeshed_mm = r_area_equiv_mm),748,scan 14
+as_meshed_radius_clean_nolesion_detail.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - richer detail table,748,scan 14
+as_meshed_radius_clean_nolesion_inscribed.csv,D2,as-meshed radius per package centreline node (contract of code/ingest_cfd_radius.py) - INSCRIBED variant (r_asmeshed_mm = maximum inscribed radius),748,scan 14
+failures.csv,0b,failures and own mistakes (sec 10),43,PILOT_OUT_OF_COHORT on the scan-837 rows (cohort_label column)
+failures_NOTES.md,0b,notes to failures.csv,,
+item1_prescribed_flow_roundtrip_ds00.csv,3,Table 5 (sec 11.2),3,
+item1_prescribed_flow_roundtrip_ds60.csv,3,Table 5 (sec 11.2),3,
+item1_tree.csv,0b,Item 1 branched tree (sec 11.2),12,
+item3_837_lesion80_wss.csv,0b,lesion80 WSS (sec 11.5),484,PILOT_OUT_OF_COHORT
+item3_837_outlets.csv,0b,Item 3 converged results (sec 11.5),44,PILOT_OUT_OF_COHORT
+item3_837_pullback_baseline.csv,0b,Item 3 pullback tables (sec 11.5),304,PILOT_OUT_OF_COHORT
+item3_837_pullback_baseline_ref.csv,0b,Item 3 pullback tables (sec 11.5),304,PILOT_OUT_OF_COHORT
+item3_837_pullback_baseline_ref_hyp.csv,0b,Item 3 pullback tables (sec 11.5),304,PILOT_OUT_OF_COHORT
+item3_837_pullback_extcomp.csv,0b,Item 3 pullback tables (sec 11.5),304,PILOT_OUT_OF_COHORT
+item3_837_pullback_lesion80.csv,0b,Item 3 pullback tables (sec 11.5),304,PILOT_OUT_OF_COHORT
+item3_837_pullback_lesion80_hyp.csv,0b,Item 3 pullback tables (sec 11.5),304,PILOT_OUT_OF_COHORT
+item3_837_pullback_missedbranch.csv,0b,Item 3 pullback tables (sec 11.5),253,PILOT_OUT_OF_COHORT
+item3_837_timing.csv,0b,"timing of the scan-837 solves (sec 11.5, 11.10)",12,PILOT_OUT_OF_COHORT
+item5_rcr.csv,0b,Item 5 RCR (sec 11.9),1,
+item6_cost.csv,0b,Item 6 cost (sec 11.4),4,
+lesion80_E60.csv,extra,Table 15 (sec 11.6),10,PILOT_OUT_OF_COHORT
+lesion80_hyperaemic.csv,extra,Table 14 (sec 11.6),6,PILOT_OUT_OF_COHORT
+lesion80_sensitivity.csv,2,Table 13 (sec 11.5),10,PILOT_OUT_OF_COHORT
+settle_iterations.csv,B1,"settle iteration of every real-lumen steady solve (sec 11.8, new)",23,scan 14 and PILOT_OUT_OF_COHORT (837)
+stageA_A2_sweep.csv,0b,"A2 sweep / Item 2 severity sweep (sec 6, 11.3)",6,
+stageA_A5_ladders.csv,0b,"A5 ladders (Table 3, sec 9, 11.3)",7,
+stageA_NOTES_partial.md,0b,caveats of the Stage A / Item tables,,
+stageA_summary.csv,0b,Stage A running summary (sec 2-9),12,

@@ -1,0 +1,680 @@
+{
+ "case": "14_left_LAD_prox_20mm_80ds__clean_nolesion__real",
+ "kind": "clean_nolesion",
+ "scan": 14,
+ "side": "left",
+ "script": "build_m1_geometry.py",
+ "script_sha256": "4f07d58860dcb68a378fd62d68d4f59c43e50623e8f88299a7b452990464212f",
+ "lib_sha256": "ea574509e38367d2cfb14406eb92b65138740a56ee775c67d7af7ca92a1d51b9",
+ "package_sha256": "056ecc8a3029f9b302de9979ea2fcfda1634e6b3fa5f6c4b85eb560914db4856",
+ "started": "2026-09-24 23:40:05",
+ "blinding": "no 0D code imported: zerod_ffr / Tree / outlets_837 are not imported by this pipeline",
+ "status": "DONE: gates FAILED: surfaceCheck_not_self_intersecting",
+ "deviations": [
+  "E0 membership assertion could not be executed (subset csv absent on this machine): logged waiver, see e0",
+  "throat gate: the deciding test is RELATIVE (as-built/undeformed vs radial_scale, <= 1 %); the literal absolute test vs r_target_mm cannot be met by this surface (undeformed radius differs from the package r_source by -10..+14 % at the throat depending on definition): reported, not decisive",
+  "flow-extension diameter D = 2 r_mm of the package (as instructed); the area-equivalent diameter of the clipped loops is 1.0-1.9x larger (recorded per patch; --d-basis areaeq switches)",
+  "patch names are the package outlet_ids (out_<node>) verbatim, not 'outlet_<id>' (spec 6.2 literal), so that bc_A/bc_C_flows/territories join without a mapping",
+  "the erosion count of the packages (25/40) has no shipped definition: several measured definitions are reported (mask_edit.erosion_removed_voxels_within_f_r)",
+  "lesion deformation uses the smoothing-spline path frames of the 837 pipeline (radial scaling in the normal plane about the axis point, radial_scale interpolated along the path) instead of literal 3-D scaling about the nearest raw centreline point: the literal rule steps by up to 0.4 mm across Voronoi cells at 0.5 mm node spacing"
+ ],
+ "e0": {
+  "guard": "E0 membership (work order 2026-09-24 section 7)",
+  "scan": "14",
+  "side": "left",
+  "subset_csv": "/mnt/e/Paper6-T6/Paper6-T6/protocol/CFD-SUBSET-FROZEN-2026-09-18.csv",
+  "csv_present": false,
+  "status": "WAIVED_CSV_ABSENT",
+  "waiver": "protocol/CFD-SUBSET-FROZEN-2026-09-18.csv is not on this machine; evidence: packages/M1 README+MANIFEST instance_key scan 14 left ('highest %DS in the frozen 3D subset') and work order 2026-09-24 section 4 ('Scan 14 left passes it')"
+ },
+ "mask_sha256_check": {
+  "actual": "e810bfec20e7e6cd5ec69d31908426bb093781fb56e8993fe62f1e03c8cc0c28",
+  "expected": "e810bfec20e7e6cd5ec69d31908426bb093781fb56e8993fe62f1e03c8cc0c28"
+ },
+ "wall_clock_total_s": 166.3,
+ "frame_check": {
+  "convention": "LPS mm; NIfTI affine is RAS: negate x,y before inv(affine)",
+  "sub_cut_points_inside_lumen_with_flip": [
+   121,
+   121
+  ],
+  "sub_cut_points_inside_lumen_without_flip": [
+   0,
+   121
+  ],
+  "branch_deletion_points_inside_lumen_with_flip": null,
+  "branch_deletion_points_inside_lumen_without_flip": null,
+  "all_deletion_points_inside_with_flip": [
+   121,
+   121
+  ],
+  "retained_points_inside_with_flip": [
+   748,
+   748
+  ],
+  "PASS": true
+ },
+ "wall_clock_s": {
+  "mask_deletion_reference_impl": 20.54,
+  "parent_radius_edt": 2.85,
+  "marching_cubes": 0.11,
+  "taubin_smoothing_vmtk": 0.66,
+  "clip_at_inlet_and_outlets": 0.11,
+  "write_stl": 3.06,
+  "surfaceCheck": 6.74,
+  "surface_radius_csv": 24.58,
+  "positive_control": 3.91
+ },
+ "mask_edit": {
+  "sha256_mask": "e810bfec20e7e6cd5ec69d31908426bb093781fb56e8993fe62f1e03c8cc0c28",
+  "sha256_expected": "e810bfec20e7e6cd5ec69d31908426bb093781fb56e8993fe62f1e03c8cc0c28",
+  "reference_impl": "mask_edit.json reference_implementation, executed verbatim (only a MASK_NII line is prepended)",
+  "protect_radius_factor": 1.1,
+  "connectivity": 6,
+  "n_deletion_points": 121,
+  "n_retained_points": 748,
+  "voxels_removed": 1310,
+  "voxels_added": 0,
+  "shipped_voxels_removed": 1310,
+  "removed_labels": {
+   "2": 257,
+   "5": 688,
+   "6": 53,
+   "8": 312
+  },
+  "components_before": {
+   "6": 2,
+   "26": 2
+  },
+  "components_after": {
+   "6": 2,
+   "26": 2
+  },
+  "shipped_components": 2,
+  "erosion_shipped": 25,
+  "erosion_definition_note": "the packages give a shipped erosion count (25 truncation-only, 40 with the branch) but not its definition. Measured here: removed voxels whose nearest retained centreline point is at distance <= f x r_mm (protect ball is 1.10 r, so f<=1.10 is 0 by construction).",
+  "erosion_removed_voxels_within_f_r": {
+   "1.1": 0,
+   "1.15": 7,
+   "1.2": 15,
+   "1.25": 26,
+   "1.3": 33,
+   "1.5": 57,
+   "2.0": 106
+  },
+  "voxels_removed_matches_shipped": true,
+  "components_match_shipped": true,
+  "sha256_matches_package": true,
+  "removed_voxels_within_r_of_a_LAD_node_mm": {
+   "1.0": 27,
+   "2.0": 81,
+   "3.0": 128
+  }
+ },
+ "parent_radius_change": {
+  "changed_nodes": [
+   {
+    "node": 425,
+    "tree_node": 425,
+    "segment": "IM",
+    "edt_before_mm": 0.6728338452402505,
+    "edt_after_mm": 0.5927501089416944,
+    "x_mm": [
+     73.42113494873047,
+     -144.94937133789062,
+     88.45011138916016
+    ]
+   },
+   {
+    "node": 503,
+    "tree_node": 599,
+    "segment": "LAD",
+    "edt_before_mm": 0.8095744354916121,
+    "edt_after_mm": 0.5,
+    "x_mm": [
+     58.28984069824219,
+     -178.8955078125,
+     42.12605667114258
+    ]
+   }
+  ],
+  "method": "Euclidean distance transform (voxel spacing 0.318x0.318x0.5 mm) of the left-tree component, sampled at the centreline nodes, edited minus unedited mask",
+  "LAD_nodes": {
+   "n": 230,
+   "n_changed": 1,
+   "max_abs_change_mm": 0.3095744354916121,
+   "max_decrease_mm": 0.3095744354916121,
+   "median_change_mm": 0.0,
+   "max_relative_decrease_pct": 38.23915651482051
+  },
+  "all_retained_nodes": {
+   "n": 748,
+   "n_changed": 2,
+   "max_abs_change_mm": 0.3095744354916121,
+   "max_decrease_mm": 0.3095744354916121,
+   "median_change_mm": 0.0,
+   "max_relative_decrease_pct": 38.23915651482051
+  },
+  "by_segment": {
+   "D1": {
+    "n": 42,
+    "n_changed": 0,
+    "max_abs_change_mm": 0.0,
+    "max_decrease_mm": -0.0,
+    "median_change_mm": 0.0,
+    "max_relative_decrease_pct": -0.0
+   },
+   "IM": {
+    "n": 138,
+    "n_changed": 1,
+    "max_abs_change_mm": 0.08008373629855603,
+    "max_decrease_mm": 0.08008373629855603,
+    "median_change_mm": 0.0,
+    "max_relative_decrease_pct": 11.902453609473277
+   },
+   "LAD": {
+    "n": 230,
+    "n_changed": 1,
+    "max_abs_change_mm": 0.3095744354916121,
+    "max_decrease_mm": 0.3095744354916121,
+    "median_change_mm": 0.0,
+    "max_relative_decrease_pct": 38.23915651482051
+   },
+   "LCX": {
+    "n": 193,
+    "n_changed": 0,
+    "max_abs_change_mm": 0.0,
+    "max_decrease_mm": -0.0,
+    "median_change_mm": 0.0,
+    "max_relative_decrease_pct": -0.0
+   },
+   "LM": {
+    "n": 33,
+    "n_changed": 0,
+    "max_abs_change_mm": 0.0,
+    "max_decrease_mm": -0.0,
+    "median_change_mm": 0.0,
+    "max_relative_decrease_pct": -0.0
+   },
+   "OM1": {
+    "n": 11,
+    "n_changed": 0,
+    "max_abs_change_mm": 0.0,
+    "max_decrease_mm": -0.0,
+    "median_change_mm": 0.0,
+    "max_relative_decrease_pct": -0.0
+   },
+   "OM2": {
+    "n": 101,
+    "n_changed": 0,
+    "max_abs_change_mm": 0.0,
+    "max_decrease_mm": -0.0,
+    "median_change_mm": 0.0,
+    "max_relative_decrease_pct": -0.0
+   }
+  }
+ },
+ "left_tree": {
+  "voxels_before_edit": 23958,
+  "voxels_after_edit": 22648,
+  "inlet_voxel": [
+   248,
+   188,
+   249
+  ],
+  "all_centreline_nodes_inside_component_after_edit": true,
+  "n_centreline_nodes_outside_component_after_edit": 0
+ },
+ "surface": {
+  "marching_cubes": "skimage.measure.marching_cubes level 0.5 on the isolated left-tree component (voxel-index vertices -> affine -> LPS mm)",
+  "n_points_raw": 25118,
+  "n_cells_raw": 50248,
+  "taubin": "vmtksurfacesmoothing -iterations 30 -passband 0.1 (identical to the 837 recipe; reproduces 837's smoothed.vtp exactly)",
+  "n_points_smoothed": 25118,
+  "n_cells_smoothed": 50248,
+  "bounds_mm": [
+   18.520583683234705,
+   73.98613648233079,
+   -185.82061444124832,
+   -108.49180136403027,
+   41.2924088024916,
+   136.8454153923638
+  ],
+  "connected_components": 1
+ },
+ "clip": {
+  "local_radius_factor": 5.0,
+  "inlet_normal_dot_first_path_direction": 0.9902690611375968,
+  "inlet_normal_is_distal": true,
+  "outlets_normal_outward": [
+   {
+    "id": "out_160",
+    "dot": 0.9901151911986441
+   },
+   {
+    "id": "out_425",
+    "dot": 0.9982771927683378
+   },
+   {
+    "id": "out_600",
+    "dot": 0.9969333643615589
+   },
+   {
+    "id": "out_639",
+    "dot": 0.987663691602884
+   },
+   {
+    "id": "out_742",
+    "dot": 0.9936255056705086
+   },
+   {
+    "id": "out_868",
+    "dot": 0.8760450386768746
+   }
+  ],
+  "n_loops": 7,
+  "expected_loops": 7,
+  "loops_simple": true,
+  "loops": [
+   {
+    "n": 82,
+    "width_max_over_min": 1.3301121031883953,
+    "width_min_mm": 3.0910693994625413,
+    "width_max_mm": 4.111468820020411,
+    "centroid": [
+     20.655199568347296,
+     -141.0914952270507,
+     134.3442573916797
+    ],
+    "plane_rms_mm": 1.509663258868682e-09,
+    "r_eq_mm": 1.7307118648631241,
+    "svd_normal": [
+     0.9454466333419406,
+     0.27638288120117455,
+     0.1724620725879381
+    ]
+   },
+   {
+    "n": 24,
+    "width_max_over_min": 1.1376067310715856,
+    "width_min_mm": 0.9952358431901716,
+    "width_max_mm": 1.1321869942168443,
+    "centroid": [
+     45.737624734771295,
+     -122.52646980792993,
+     116.29384765462855
+    ],
+    "plane_rms_mm": 1.1066655478035564e-09,
+    "r_eq_mm": 0.5230808350123035,
+    "svd_normal": [
+     -0.8268062147441527,
+     -0.17398898390640483,
+     0.534901221478941
+    ]
+   },
+   {
+    "n": 59,
+    "width_max_over_min": 1.8819355123036245,
+    "width_min_mm": 1.8194702565944616,
+    "width_max_mm": 3.4241256894653054,
+    "centroid": [
+     57.87796215560997,
+     -119.34050461960543,
+     68.04991689473938
+    ],
+    "plane_rms_mm": 1.8804591854385115e-09,
+    "r_eq_mm": 1.274993414412388,
+    "svd_normal": [
+     0.9947482232090697,
+     0.09816442972553176,
+     -0.028977873611773255
+    ]
+   },
+   {
+    "n": 22,
+    "width_max_over_min": 1.1347076224692145,
+    "width_min_mm": 0.9709010810091294,
+    "width_max_mm": 1.1016888572846595,
+    "centroid": [
+     58.131370677310564,
+     -178.6156951515557,
+     41.89297631876085
+    ],
+    "plane_rms_mm": 1.1284767539732936e-09,
+    "r_eq_mm": 0.5088726045175046,
+    "svd_normal": [
+     0.4995777955623701,
+     -0.7870965117662312,
+     0.3618025806243971
+    ]
+   },
+   {
+    "n": 38,
+    "width_max_over_min": 1.1505848736023336,
+    "width_min_mm": 1.464926719457245,
+    "width_max_mm": 1.6855225243433956,
+    "centroid": [
+     66.54505850667766,
+     -124.6094139171388,
+     78.45933963418258
+    ],
+    "plane_rms_mm": 1.5068062850195113e-09,
+    "r_eq_mm": 0.7809400680480901,
+    "svd_normal": [
+     -0.4637518218954342,
+     0.20130212266230918,
+     0.8627929665338687
+    ]
+   },
+   {
+    "n": 33,
+    "width_max_over_min": 1.2715116271540898,
+    "width_min_mm": 1.4428602622558908,
+    "width_max_mm": 1.8346135998169644,
+    "centroid": [
+     66.29779947050017,
+     -166.28533092442524,
+     92.65293666755909
+    ],
+    "plane_rms_mm": 2.382329094024512e-09,
+    "r_eq_mm": 0.8103469036378304,
+    "svd_normal": [
+     0.7728769728926423,
+     0.3224190306467063,
+     -0.5465410812090379
+    ]
+   },
+   {
+    "n": 35,
+    "width_max_over_min": 1.363669279262199,
+    "width_min_mm": 1.082879386527826,
+    "width_max_mm": 1.4766893525542926,
+    "centroid": [
+     73.37664187333523,
+     -144.88355696479934,
+     88.42027052801019
+    ],
+    "plane_rms_mm": 1.6383981848135778e-09,
+    "r_eq_mm": 0.613510665928205,
+    "svd_normal": [
+     -0.521451669152867,
+     0.03405575682201878,
+     0.8526009395754666
+    ]
+   }
+  ],
+  "n_points": 24694,
+  "n_triangles": 49121,
+  "components_after_clip": 1,
+  "PASS": true
+ },
+ "closed_outlets": [],
+ "extensions": {
+  "rule": "CFD-ARM-SPEC 6.2: 5 D at the inlet, 3 D at each outlet; D = 2 r_mm of the package (inlet.json / outlets.csv); straight planar extrusion of the clipped loop along the package plane normal, planar fan cap (837 rebuild_surface method; no vmtksurfaceremeshing)",
+  "per_patch": [
+   {
+    "patch": "inlet",
+    "D_basis": "rmm",
+    "D_2r_mm_mm": 2.6022703965989686,
+    "D_used_mm": 2.6022703965989686,
+    "D_multiple": 5.0,
+    "extension_length_mm": 13.011351982994842,
+    "n_rings": 96,
+    "ring_spacing_mm": 0.13553491648952962,
+    "loop_vertices": 82,
+    "loop_centroid_to_csv_point_mm": 0.13979226738848688,
+    "loop_area_equivalent_diameter_mm": 3.4614237297262482,
+    "extension_length_over_area_equivalent_D": 3.758959607070084,
+    "plane_normal_angle_csv_vs_svd_deg": 1.2074182697257333e-06,
+    "outward_normal_confirmed": true
+   },
+   {
+    "patch": "out_160",
+    "D_basis": "rmm",
+    "D_2r_mm_mm": 1.2093818046770024,
+    "D_used_mm": 1.2093818046770024,
+    "D_multiple": 3.0,
+    "extension_length_mm": 3.628145414031007,
+    "n_rings": 23,
+    "ring_spacing_mm": 0.15774545278395682,
+    "loop_vertices": 33,
+    "loop_centroid_to_csv_point_mm": 0.3587683027707153,
+    "loop_area_equivalent_diameter_mm": 1.6206938072756607,
+    "extension_length_over_area_equivalent_D": 2.238637179795124,
+    "plane_normal_angle_csv_vs_svd_deg": 0.0,
+    "outward_normal_confirmed": true
+   },
+   {
+    "patch": "out_425",
+    "D_basis": "rmm",
+    "D_2r_mm_mm": 1.1692752152243218,
+    "D_used_mm": 1.1692752152243218,
+    "D_multiple": 3.0,
+    "extension_length_mm": 3.5078256456729653,
+    "n_rings": 31,
+    "ring_spacing_mm": 0.1131556659894505,
+    "loop_vertices": 35,
+    "loop_centroid_to_csv_point_mm": 0.08486249146529137,
+    "loop_area_equivalent_diameter_mm": 1.22702133185641,
+    "extension_length_over_area_equivalent_D": 2.8588139053506385,
+    "plane_normal_angle_csv_vs_svd_deg": 0.0,
+    "outward_normal_confirmed": true
+   },
+   {
+    "patch": "out_600",
+    "D_basis": "rmm",
+    "D_2r_mm_mm": 1.114609931847109,
+    "D_used_mm": 1.114609931847109,
+    "D_multiple": 3.0,
+    "extension_length_mm": 3.343829795541327,
+    "n_rings": 23,
+    "ring_spacing_mm": 0.14538390415397073,
+    "loop_vertices": 22,
+    "loop_centroid_to_csv_point_mm": 0.12670049125984903,
+    "loop_area_equivalent_diameter_mm": 1.0177452090350092,
+    "extension_length_over_area_equivalent_D": 3.2855274246015176,
+    "plane_normal_angle_csv_vs_svd_deg": 1.2074182697257333e-06,
+    "outward_normal_confirmed": true
+   },
+   {
+    "patch": "out_639",
+    "D_basis": "rmm",
+    "D_2r_mm_mm": 1.0968634351927462,
+    "D_used_mm": 1.0968634351927462,
+    "D_multiple": 3.0,
+    "extension_length_mm": 3.2905903055782386,
+    "n_rings": 24,
+    "ring_spacing_mm": 0.13710792939909328,
+    "loop_vertices": 24,
+    "loop_centroid_to_csv_point_mm": 0.13267955685341104,
+    "loop_area_equivalent_diameter_mm": 1.046161670024607,
+    "extension_length_over_area_equivalent_D": 3.145393680405859,
+    "plane_normal_angle_csv_vs_svd_deg": 0.0,
+    "outward_normal_confirmed": true
+   },
+   {
+    "patch": "out_742",
+    "D_basis": "rmm",
+    "D_2r_mm_mm": 1.4978017242069022,
+    "D_used_mm": 1.4978017242069022,
+    "D_multiple": 3.0,
+    "extension_length_mm": 4.493405172620706,
+    "n_rings": 35,
+    "ring_spacing_mm": 0.12838300493202018,
+    "loop_vertices": 38,
+    "loop_centroid_to_csv_point_mm": 0.1877072549956705,
+    "loop_area_equivalent_diameter_mm": 1.5618801360961803,
+    "extension_length_over_area_equivalent_D": 2.876920621995799,
+    "plane_normal_angle_csv_vs_svd_deg": 1.2074182697257333e-06,
+    "outward_normal_confirmed": true
+   },
+   {
+    "patch": "out_868",
+    "D_basis": "rmm",
+    "D_2r_mm_mm": 1.5776143090841621,
+    "D_used_mm": 1.5776143090841621,
+    "D_multiple": 3.0,
+    "extension_length_mm": 4.732842927252486,
+    "n_rings": 32,
+    "ring_spacing_mm": 0.1479013414766402,
+    "loop_vertices": 59,
+    "loop_centroid_to_csv_point_mm": 0.49831877832502197,
+    "loop_area_equivalent_diameter_mm": 2.549986828824776,
+    "extension_length_over_area_equivalent_D": 1.856026420902626,
+    "plane_normal_angle_csv_vs_svd_deg": 0.0,
+    "outward_normal_confirmed": true
+   }
+  ],
+  "orientation_flipped_to_outward": false,
+  "all_outward_normals_confirmed": true,
+  "max_normal_angle_csv_vs_svd_deg": 1.2074182697257333e-06
+ },
+ "final_surface": {
+  "topology": {
+   "n_vertices": 38717,
+   "n_triangles": 77446,
+   "open_edges": 0,
+   "non_manifold_or_duplicate_directed_edges": 0,
+   "volume_mm3": 1265.0199630123755,
+   "connected_components": 1,
+   "min_area_mm2": 5.5198205771081016e-08,
+   "zero_area_triangles": 0,
+   "min_quality": 0.0012048761842991924,
+   "p1_quality": 0.0664009459183366,
+   "min_edge_mm": 0.00027583520193126223,
+   "max_edge_mm": 2.0872916404719164
+  },
+  "patch_faces": {
+   "inlet": 82,
+   "out_160": 33,
+   "out_425": 35,
+   "out_600": 22,
+   "out_639": 24,
+   "out_742": 38,
+   "out_868": 59,
+   "wall": 77153
+  },
+  "stl": {
+   "path": "/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/m1/out/clean_nolesion/case.stl",
+   "sha256": "5237bed86883b6b1da34c2c68a4b52f56cc5cb9066ebb67a468f373c51d52647",
+   "size_mb": 19.9,
+   "units": "metres",
+   "patches": [
+    "inlet",
+    "out_160",
+    "out_425",
+    "out_600",
+    "out_639",
+    "out_742",
+    "out_868",
+    "wall"
+   ]
+  },
+  "surfaceCheck": {
+   "log": "/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/m1/out/clean_nolesion/sc/log.surfaceCheck.case",
+   "closed": true,
+   "n_parts": 1,
+   "n_zones": 1,
+   "illegal_triangles": true,
+   "self_intersecting": true,
+   "not_self_intersecting": false,
+   "ended": true
+  },
+  "self_intersection_clusters": [
+   {
+    "n_points": 6,
+    "centroid_mm": [
+     59.55,
+     -184.21,
+     48.65
+    ],
+    "nearest_node": 285,
+    "segment": "LAD",
+    "distance_to_node_mm": 1.22,
+    "node_r_source_mm": 0.93,
+    "distance_over_r_source": 1.32,
+    "nearest_outlet": "out_600",
+    "distance_to_outlet_mm": 8.83,
+    "in_lesion_window": false
+   },
+   {
+    "n_points": 8,
+    "centroid_mm": [
+     58.07,
+     -163.71,
+     102.15
+    ],
+    "nearest_node": 133,
+    "segment": "D1",
+    "distance_to_node_mm": 0.86,
+    "node_r_source_mm": 0.53,
+    "distance_over_r_source": 1.62,
+    "nearest_outlet": "out_160",
+    "distance_to_outlet_mm": 12.68,
+    "in_lesion_window": false
+   }
+  ],
+  "surfaceCheck_raw_mc_left_tree_surface": {
+   "log": "/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/m1/out/clean_nolesion/sc_raw_mc/log.surfaceCheck.raw_mc",
+   "closed": true,
+   "n_parts": 1,
+   "n_zones": 1,
+   "illegal_triangles": true,
+   "self_intersecting": true,
+   "not_self_intersecting": false,
+   "ended": true
+  },
+  "surfaceCheck_smoothed_left_tree_surface": {
+   "log": "/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/m1/out/clean_nolesion/sc_smoothed/log.surfaceCheck.smoothed",
+   "closed": true,
+   "n_parts": 1,
+   "n_zones": 1,
+   "illegal_triangles": true,
+   "self_intersecting": true,
+   "not_self_intersecting": false,
+   "ended": true
+  },
+  "positive_control_surfaceCheck": {
+   "log": "/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/m1/out/clean_nolesion/sc_poscontrol/log.surfaceCheck.bad",
+   "closed": true,
+   "n_parts": 1,
+   "n_zones": 1,
+   "illegal_triangles": true,
+   "self_intersecting": true,
+   "not_self_intersecting": false,
+   "ended": true
+  },
+  "positive_control_n_vertices_moved": 22,
+  "positive_control_node": 192,
+  "PASS": false
+ },
+ "probe_s_offset": {
+  "offset_mm": 11.372256272224746,
+  "n_probes": 24,
+  "max_abs_dev_mm": 2.842170943040401e-14,
+  "note": "package s_mm = arc from the inlet node - offset_mm on the root->LAD path"
+ },
+ "surface_radius_csv": {
+  "path": "/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/m1/out/clean_nolesion/surface_radius_clean_nolesion.csv",
+  "n_nodes": 748,
+  "n_sections_ok": 719,
+  "columns_note": "s_mm = arc from the inlet node along the centreline tree; s_pkg_mm = the package's probe s (arc - offset) on the root->LAD path only; x/y/z = the section origin (path frame point for the LAD path, node otherwise)",
+  "definition": "surface-based (not the mesh): planar section of the final wall surface normal to the path tangent at each centreline node; r_eq3D = area-equivalent radius, r_max_inscribed = 2-D maximum inscribed circle of the section; section_ok = centroid within 0.5 r_eq of the node, closed loop, area within 0.6..1.6 of the parent node's; the mesh-based version comes after meshing",
+  "median_r_eq_over_pkg_r_source": 1.1870682691822887,
+  "median_r_insc_over_pkg_r_source": 1.0894697143181653
+ },
+ "GATES": {
+  "frame_check": true,
+  "mask_edit_matches_shipped_voxels_and_components": true,
+  "clip_loops_and_outward_normals": true,
+  "extensions_outward": true,
+  "final_surface_closed_one_part_positive_volume": true,
+  "surfaceCheck_closed_one_part": true,
+  "surfaceCheck_not_self_intersecting": false,
+  "self_intersection_positive_control_flagged": true
+ },
+ "ALL_GATES_PASS": false,
+ "FAILED_GATES": [
+  "surfaceCheck_not_self_intersecting"
+ ]
+}

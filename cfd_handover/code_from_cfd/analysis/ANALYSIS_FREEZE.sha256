@@ -1,0 +1,4 @@
+d3827853806fd0c87293d42e0ec7afb826ae922bf18e9a739f05f696f1b08dc7  mesh_sensitivity.py
+7fc1bc9e89b6e64f9a8e47c7ca31adc6c11ac9687d5e60c7e34acf418a02b541  test_mesh_sensitivity.py
+53abe55f8359f98b130c100a1ff7adb2ba37b831dc3c2344cd35d89a4f6f6064  mesh_sensitivity_design.md
+# line 3 of the original (537055...) hashed the design BEFORE the freeze note was appended; removed; original kept as ANALYSIS_FREEZE.sha256.orig

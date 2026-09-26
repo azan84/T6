@@ -1,0 +1,11 @@
+{
+ "extension_lengths_mm": {
+  "out_383": 3.5078256456729653,
+  "out_558": 3.343829795541327,
+  "out_597": 3.2905903055782386,
+  "out_700": 4.493405172620706,
+  "out_826": 4.732842927252486
+ },
+ "inlet_extension_mm": 13.011351982994842,
+ "source": "m1/out/T1_missed_branch/gates.json extensions.per_patch (D=2 r_mm basis, spec 6.2 5 D inlet / 3 D outlets)"
+}

@@ -1,0 +1,30 @@
+FoamFile { version 2.0; format ascii; class volScalarField; object p; }
+dimensions      [0 2 -2 0 0 0 0];
+internalField   uniform 8.0694;
+
+boundaryField
+{
+    inlet   { type totalPressure; p0 uniform 11.3198; value uniform 11.3198; }
+    wall    { type zeroGradient; }
+
+    outlet
+    {
+        type            codedFixedValue;
+        value           uniform 8.0694;
+        name            resOut;
+        code
+        #{
+            const scalar R     = 6.97482600e+09;
+            const scalar Pv    = 666.61;
+            const scalar rho   = 1060.0;
+            const scalar relax = 0.20000000;
+            const fvsPatchField<scalar>& phip =
+                patch().lookupPatchField<surfaceScalarField, scalar>("phi");
+            const scalar Q = gSum(phip);
+            const scalar pTarget = (Pv + R*Q)/rho;
+            const volScalarField& pFld = db().lookupObject<volScalarField>("p");
+            const scalarField pOld(pFld.prevIter().boundaryField()[patch().index()]);
+            operator==((1.0 - relax)*pOld + relax*pTarget);
+        #};
+    }
+}

@@ -1,0 +1,38 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      fvSolution;
+}
+
+solvers
+{
+    "(p|pFinal)"
+    {
+        solver          GAMG;
+        smoother        GaussSeidel;
+        tolerance       1e-08;
+        relTol          0.01;
+    }
+    "(U|UFinal)"
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-09;
+        relTol          0.1;
+    }
+}
+
+PIMPLE
+{
+    nOuterCorrectors        3;
+    nCorrectors             2;
+    nNonOrthogonalCorrectors 1;
+    momentumPredictor       no;
+    consistent              no;
+}
+
+// No relaxationFactors block: the resistance BC applies operator==(pTarget) directly (no
+// prevIter()-based relaxation), matching the fix already applied to the sten80 pimpleFoam
+// diagnostic (empty relaxationFactors broke p.prevIter()'s storePrevIter() gating there).

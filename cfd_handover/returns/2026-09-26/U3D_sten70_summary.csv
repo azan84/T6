@@ -1,0 +1,27 @@
+item,value,note
+U3D,0.0005477163911568936,"U3D = 0.00055: the larger, over the zone families ['A', 'B'], of the 3D FFR discretisation uncertainty at x = 56.5 mm, taken as the Celik GCI21 of the throat-zone refinement 50/25/12.5 um (dominant family B); all finest pairs < 0.005: PASS, these settings become the study recipe."
+rule,RULE1,classification rules (design v2.1-v2.2) and SETTLED criterion (v2.4) fixed before the first 3D result; iteration budgets v2.5-v2.7 set with earlier results in view (settling behaviour only)
+zoneA_levels,S50 S25A S12A,
+zoneA_e21_f25_minus_f12,0.0007944071626706517,
+zoneA_e32_f50_minus_f25,0.0022594799996465964,
+zoneA_finest_pair_abs,0.0007944071626706517,< 0.005 required for PASS
+zoneA_observed_order,1.5080402507757504,
+zoneA_GCI21_absolute,0.0005384397316083721,"1.25 |e21| / (2^p - 1), FFR units"
+zoneA_GCI21_relative,0.0006813034223762986,
+zoneA_shrinks_noise_limited,True False,
+zoneB_levels,S50 S25B S12B,
+zoneB_e21_f25_minus_f12,0.0007792733175499,
+zoneB_e32_f50_minus_f25,0.00216517967631924,
+zoneB_finest_pair_abs,0.0007792733175499,< 0.005 required for PASS
+zoneB_observed_order,1.4742854270463417,
+zoneB_GCI21_absolute,0.0005477163911568936,"1.25 |e21| / (2^p - 1), FFR units"
+zoneB_GCI21_relative,0.0006929454966660761,
+zoneB_shrinks_noise_limited,True False,
+interface_effect_S25B_minus_S25A,9.43003233273565e-05,"shifted-zone (B) vs zone A interfaces, 25 um"
+interface_effect_S12B_minus_S12A,0.00010943416844810816,12.5 um
+wedge_levels,W0 W1 W2 W3,
+wedge_successive_differences,"[0.0008002708086713994, 0.0005162623986290082, 0.00023998358628218863]",
+wedge_finest_pair_abs,0.00023998358628218863,
+wedge_differences_shrink,True,
+wedge_celik,"{""applicable"": true, ""e21"": -0.00023998358628218863, ""e32"": -0.0005162623986290082, ""observed_order"": 1.1051687890736617, ""GCI21"": 0.0003296830572237078, ""GCI21_absolute"": 0.0002605706586566067}",
+wedge_clean,True,only used by rules 2 and 3

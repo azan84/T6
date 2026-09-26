@@ -1,0 +1,17 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  Stage A case skeleton - added 2026-09-18 after the 3-way setup audit.
+  UNTESTED on real hardware. See ../../README.md.
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      transportProperties;
+}
+
+transportModel  Newtonian;
+
+// nu = mu/rho = 0.004/1060, unrounded. The commonly-quoted 3.774e-6 is a +0.011% rounding
+// (audit finding, cosmetic in effect but use the exact quotient in executable input).
+nu              nu [0 2 -1 0 0 0 0] 3.773585e-06;

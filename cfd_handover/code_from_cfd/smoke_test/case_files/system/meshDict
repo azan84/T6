@@ -1,0 +1,4 @@
+FoamFile { version 2.0; format ascii; class dictionary; object meshDict; }
+surfaceFile     "constant/triSurface/sten70.stl";
+maxCellSize             0.000195;
+boundaryLayers { nLayers 4; thicknessRatio 1.2; }
