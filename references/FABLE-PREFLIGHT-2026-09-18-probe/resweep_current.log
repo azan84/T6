@@ -1,0 +1,8 @@
+  20/152 960 inst 0 fails 79s
+  40/152 1768 inst 0 fails 166s
+  60/152 2584 inst 0 fails 277s
+  80/152 3440 inst 0 fails 381s
+  100/152 4376 inst 0 fails 514s
+  120/152 5328 inst 0 fails 665s
+  140/152 6408 inst 0 fails 814s
+wrote /Users/mzpi/Library/CloudStorage/GoogleDrive-Mohd.Zulhilmi@monash.edu/My Drive/Research/01 CollabProject-MonashIIUM/Imaging-Medical/Paper6-T6/references/FABLE-PREFLIGHT-2026-09-18-probe/sweep_current.csv: 6944 instances, 0 failures, 877s

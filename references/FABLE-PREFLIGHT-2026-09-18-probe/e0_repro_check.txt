@@ -1,0 +1,17 @@
+  341_left: on-disk minFFR=0.96301 nles=6 ffr20=0.9672 | current 0.96301 nles=5 ffr20=0.9672 | treewide 0.96443 nles=4.0  DIFF
+  687_left: on-disk minFFR=0.93981 nles=3 ffr20=0.9663 | current 0.93981 nles=3 ffr20=0.9663 | treewide 0.94062 nles=2.0  SAME
+  813_left: on-disk minFFR=0.96569 nles=4 ffr20=0.9787 | current 0.96569 nles=3 ffr20=0.9787 | treewide 0.96884 nles=2.0  DIFF
+  3_left: on-disk minFFR=0.92260 nles=10 ffr20=0.9622 | current 0.92260 nles=10 ffr20=0.9622 | treewide 0.92283 nles=7.0  SAME
+  878_left: on-disk minFFR=0.90746 nles=4 ffr20=0.9026 | current 0.90746 nles=4 ffr20=0.9026 | treewide 0.90746 nles=4.0  SAME
+  878_right: on-disk minFFR=0.95035 nles=0 ffr20=nan | current 0.95035 nles=0 ffr20=nan | treewide 0.95035 nles=0.0  SAME
+  686_right: on-disk minFFR=0.86093 nles=5 ffr20=0.8601 | current 0.86833 nles=3 ffr20=0.8675 | treewide 0.86833 nles=3.0  DIFF
+  775_right: on-disk minFFR=0.76019 nles=9 ffr20=0.8676 | current 0.76830 nles=7 ffr20=0.8772 | treewide 0.76830 nles=7.0  DIFF
+  396_right: on-disk minFFR=0.75798 nles=7 ffr20=0.8056 | current 0.76072 nles=5 ffr20=0.8086 | treewide 0.76072 nles=5.0  DIFF
+  100_right: on-disk minFFR=0.83330 nles=5 ffr20=0.9279 | current 0.83620 nles=4 ffr20=0.9276 | treewide 0.83620 nles=4.0  DIFF
+  125_left: on-disk minFFR=0.89414 nles=4 ffr20=0.9401 | current 0.90136 nles=3 ffr20=0.9478 | treewide 0.90136 nles=3.0  DIFF
+  909_left: on-disk minFFR=0.93651 nles=5 ffr20=0.9259 | current 0.94266 nles=4 ffr20=0.9320 | treewide 0.94266 nles=4.0  DIFF
+  14_left: on-disk minFFR=0.98089 nles=9 ffr20=0.9809 | current 0.98089 nles=8 ffr20=0.9809 | treewide 0.98116 nles=5.0  DIFF
+  30_left: on-disk minFFR=0.98862 nles=3 ffr20=nan | current 0.98862 nles=2 ffr20=nan | treewide 0.98862 nles=2.0  DIFF
+  41_right: on-disk minFFR=0.94177 nles=5 ffr20=0.9528 | current 0.94177 nles=5 ffr20=0.9528 | treewide 0.94172 nles=3.0  SAME
+  42_left: on-disk minFFR=0.98054 nles=1 ffr20=nan | current 0.98054 nles=1 ffr20=nan | treewide 0.98054 nles=1.0  SAME
+identical to on-disk: 6 of 16

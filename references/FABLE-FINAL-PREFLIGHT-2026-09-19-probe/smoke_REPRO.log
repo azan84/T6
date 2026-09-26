@@ -1,0 +1,51 @@
+cohort 6 instances x 2 beds x 4 error types x 3 protocols = up to 144 rows
+
+
+wrote references/FABLE-FINAL-PREFLIGHT-2026-09-19-probe/smoke_REPRO.csv  (124 rows, 0 instance failures, 32s)
+
+==============================================================================================
+ABLATION — 114/124 rows solved  (skips: skipped: no deletable downstream branch: 10)
+==============================================================================================
+non-converged 0  |  max mass error 3.6e-11  |  territories per row: median 2
+
+--- bed = discrete ---
+error type          protocol           n  mean dFFR  mean |dFFR|   flips  flip %  flow resid
+T1_missed_branch    A_fixed            1    +0.0839       0.0839       0    0.0%      0.1012
+T1_missed_branch    B_rederived        1    +0.0462       0.0462       0    0.0%      0.1294
+T1_missed_branch    C_flowmatched      1    +0.0699       0.0699       0    0.0%      0.0840
+T2_truncation       A_fixed            6    +0.3744       0.3744       4   66.7%      0.1370
+T2_truncation       B_rederived        6    -0.0896       0.0945       0    0.0%      0.1134
+T2_truncation       C_flowmatched      6    -0.1201       0.1286       0    0.0%      0.0224
+T3_stenosis_length  A_fixed            6    -0.0132       0.0132       0    0.0%      0.0067
+T3_stenosis_length  B_rederived        6    -0.0132       0.0132       0    0.0%      0.0067
+T3_stenosis_length  C_flowmatched      6    -0.0143       0.0143       0    0.0%      0.0051
+T4_taper            A_fixed            6    -0.0329       0.0329       0    0.0%      0.0257
+T4_taper            B_rederived        6    -0.0013       0.0230       0    0.0%      0.0602
+T4_taper            C_flowmatched      6    +0.0079       0.0238       0    0.0%      0.0455
+
+--- bed = leaky ---
+error type          protocol           n  mean dFFR  mean |dFFR|   flips  flip %  flow resid
+T1_missed_branch    A_fixed            1    +0.0936       0.0936       0    0.0%      0.1172
+T1_missed_branch    B_rederived        1    +0.0525       0.0525       0    0.0%      0.1438
+T1_missed_branch    C_flowmatched      1    +0.0777       0.0777       0    0.0%      0.0973
+T2_truncation       A_fixed            6    +0.1834       0.1834       4   66.7%      0.0553
+T2_truncation       B_rederived        6    -0.0008       0.0203       0    0.0%      0.0232
+T2_truncation       C_flowmatched      6    -0.0031       0.0244       0    0.0%      0.0156
+T3_stenosis_length  A_fixed            6    -0.0162       0.0162       0    0.0%      0.0033
+T3_stenosis_length  B_rederived        6    -0.0162       0.0162       0    0.0%      0.0033
+T3_stenosis_length  C_flowmatched      6    -0.0169       0.0169       0    0.0%      0.0025
+T4_taper            A_fixed            6    -0.0474       0.0474       0    0.0%      0.0104
+T4_taper            B_rederived        6    -0.0046       0.0060       0    0.0%      0.0148
+T4_taper            C_flowmatched      6    -0.0011       0.0045       0    0.0%      0.0075
+
+--- THE THESIS: a model that passes its perfusion check (residual < 10%) while the FFR it reports is wrong by > 0.05 ---
+bed       protocol           n  median resid  passes check  …and wrong  …and flips
+discrete  A_fixed           19        0.0313      12 ( 63%)       3           0
+discrete  B_rederived       19        0.0460      14 ( 74%)       1           0
+discrete  C_flowmatched     19        0.0199      17 ( 89%)       4           0
+leaky     A_fixed           19        0.0143      18 ( 95%)       9           4
+leaky     B_rederived       19        0.0098      18 ( 95%)       1           0
+leaky     C_flowmatched     19        0.0047      19 (100%)       2           0
+  (A keeps the CLEAN bed, so it passes the check by construction — it is the reference, not a naive case.
+   B is the deployment case: the bed is re-derived from wrong anatomy. C is the tuned, 'validated' model.)
+exit=0

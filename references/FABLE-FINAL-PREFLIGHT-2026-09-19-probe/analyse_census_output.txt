@@ -1,0 +1,40 @@
+rows (1194, 28) | status: {'ok': 1119, 'skipped: no deletable downstream branch': 71, 'skipped: truncation point falls at the start of its segment': 2, 'slot not eligible': 2}
+
+=== B1: Protocol C territory count under the CURRENT code (clean partition) vs the exporter's corrupted partition
+  T1_missed_branch     leaky     n_ok=118 skipped= 32 | clean-partition n_terr: {1.0: 47, 2.0: 66, 3.0: 5} -> Protocol C lost (<2): 47 (40% of ok rows; by side {'right': 45, 'left': 2}) | corrupted-partition n_terr: {0.0: 31, 2.0: 82, 3.0: 5}
+  T1_missed_branch     discrete  n_ok=109 skipped= 39 | clean-partition n_terr: {1.0: 42, 2.0: 62, 3.0: 5} -> Protocol C lost (<2): 42 (39% of ok rows; by side {'right': 40, 'left': 2}) | corrupted-partition n_terr: {0.0: 30, 2.0: 74, 3.0: 5}
+  T2_truncation        leaky     n_ok=149 skipped=  1 | clean-partition n_terr: {0.0: 49, 2.0: 92, 3.0: 8} -> Protocol C lost (<2): 49 (33% of ok rows; by side {'right': 49}) | corrupted-partition n_terr: {0.0: 49, 2.0: 92, 3.0: 8}
+  T2_truncation        discrete  n_ok=147 skipped=  1 | clean-partition n_terr: {0.0: 50, 2.0: 89, 3.0: 8} -> Protocol C lost (<2): 50 (34% of ok rows; by side {'right': 50}) | corrupted-partition n_terr: {0.0: 50, 2.0: 89, 3.0: 8}
+  T3_stenosis_length   leaky     n_ok=150 skipped=  0 | clean-partition n_terr: {2.0: 142, 3.0: 8} -> Protocol C lost (<2): 0 (0% of ok rows; by side {}) | corrupted-partition n_terr: {2.0: 142, 3.0: 8}
+  T3_stenosis_length   discrete  n_ok=148 skipped=  0 | clean-partition n_terr: {0.0: 5, 2.0: 135, 3.0: 8} -> Protocol C lost (<2): 5 (3% of ok rows; by side {'right': 5}) | corrupted-partition n_terr: {0.0: 5, 2.0: 135, 3.0: 8}
+  T4_taper             leaky     n_ok=150 skipped=  0 | clean-partition n_terr: {2.0: 142, 3.0: 8} -> Protocol C lost (<2): 0 (0% of ok rows; by side {}) | corrupted-partition n_terr: {2.0: 142, 3.0: 8}
+  T4_taper             discrete  n_ok=148 skipped=  0 | clean-partition n_terr: {0.0: 5, 2.0: 135, 3.0: 8} -> Protocol C lost (<2): 5 (3% of ok rows; by side {'right': 5}) | corrupted-partition n_terr: {0.0: 5, 2.0: 135, 3.0: 8}
+
+=== B1 exporter mismatch: exporter (corrupted partition) target sum vs ablation (clean partition) target sum, T1/T2 only
+  T1_missed_branch     leaky     n= 71 | rows where exporter partition != ablation partition or target differs: 0 | min target ratio 1.000 | n_terr differs 0 | unmapped roots 0
+  T1_missed_branch     discrete  n= 67 | rows where exporter partition != ablation partition or target differs: 0 | min target ratio 1.000 | n_terr differs 0 | unmapped roots 0
+      of which in the frozen 3D subset: 0  scans []
+  T2_truncation        leaky     n=100 | rows where exporter partition != ablation partition or target differs: 0 | min target ratio 1.000 | n_terr differs 0 | unmapped roots 0
+  T2_truncation        discrete  n= 97 | rows where exporter partition != ablation partition or target differs: 0 | min target ratio 1.000 | n_terr differs 0 | unmapped roots 0
+      of which in the frozen 3D subset: 0  scans []
+
+=== B3: node-set identity, calibre-only errors (should be 0 / 0)
+  T3_stenosis_length   leaky     n=150 | current code: rows with only_t2>0: 0, only_t>0: 0, max only_t 0 | leaves differ: 0
+  T3_stenosis_length   discrete  n=148 | current code: rows with only_t2>0: 0, only_t>0: 0, max only_t 0 | leaves differ: 0
+  T4_taper             leaky     n=150 | current code: rows with only_t2>0: 0, only_t>0: 1, max only_t 5 | leaves differ: 0
+      trunc_ref ALONE (base radius): rows dropping nodes 104, max dropped 165, added 0, build errors 0
+      trunc_for ALONE (old B3):      rows dropping nodes 1, added nodes 47, max added 38, max dropped 5
+  T4_taper             discrete  n=148 | current code: rows with only_t2>0: 0, only_t>0: 5, max only_t 7 | leaves differ: 0
+      trunc_ref ALONE (base radius): rows dropping nodes 133, max dropped 157, added 0, build errors 0
+      trunc_for ALONE (old B3):      rows dropping nodes 5, added nodes 82, max added 169, max dropped 7
+
+=== B2: T2 measurement node survives; leaves after T2
+  leaky     n=149 meas_survives 149/149 | n_leaves_corr==1: 49 (by side {'right': 49})
+  discrete  n=147 meas_survives 147/147 | n_leaves_corr==1: 50 (by side {'right': 50})
+
+=== T1 applicability
+  leaky     {'ok': 118, 'skipped: no deletable downstream branch': 32}
+  discrete  {'ok': 109, 'skipped: no deletable downstream branch': 39}
+
+=== per-instance failures / ineligible
+Series([], )

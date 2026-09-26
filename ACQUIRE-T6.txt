@@ -1,0 +1,50 @@
+ACQUIRE / GATE LIST: Paper 6 T6 (created 2026-09-17). Mark each item ✅ with date and evidence when done.
+
+1. [GATE N1, SEARCH, run FIRST] Beyond 10.1002/cnm.3822-type synthetic-perturbation FFR-CT sensitivity studies, has
+   anyone ranked real segmenter-disagreement error types by FFR 0.80 decision-flip effect, or shown that
+   boundary-condition re-tuning in a reduced-order coronary flow model absorbs/masks topological segmentation error?
+     Strings:
+       - "FFR" AND (CT OR CTA) AND segmentation AND sensitivity AND uncertainty
+       - "fractional flow reserve" AND "boundary condition" AND (tuning OR calibration) AND error
+       - "reduced-order" AND coronary AND hemodynamics AND segmentation AND error
+       - svZeroDSolver OR "zero-dimensional" AND coronary AND validation
+       - "topological error" AND vessel AND (hemodynamics OR CFD OR flow)
+       - "digital twin" AND cardiovascular AND "validation framework" AND imaging
+     Venues: JBHI, IEEE TMI, Medical Image Analysis, Annals of Biomedical Engineering, Journal of Biomechanics,
+     Computer Methods in Biomechanics and Biomedical Engineering, npj Digital Medicine, bioRxiv, arXiv, MICCAI.
+     Log it as references/N1-SEARCH-LOG.md (the P16 A2-SEARCH-LOG discipline).
+
+2. [READ] Closest prior work (from the 2026-09-13 ideation run, Crossref-resolved):
+     - 10.1002/cnm.3822 (closest prior work per ideation_report.md T6 entry)
+     - Fast_Computation_of_Hemodynamic_Sensitivity_to_Lumen_Segmentation_Uncertainty.md (already in
+       Proposal/ideation_run/2026-09-13/extraction_mapped/)
+     - Medical Physics 2021, Liu, "Physiologically personalized coronary blood flow model to improve the estimation
+       of..." (already in extraction_mapped/)
+     - Deep_Learning_Based_Centerline-Aggregated_Aortic_Hemodynamics... (already in extraction_mapped/)
+     - giannopoulos-et-al-2023-high-speed-on-site-deep-learning-based-ffr-ct-algorithm-evaluation (already in
+       extraction_mapped/)
+     - yu-et-al-2021-accuracy-of-intravascular-ultrasound-based-fractional-flow-reserve (already in extraction_mapped/)
+
+3. [GATE D1, DATA] ImageCAS-X: zenodo.org/records/21887809, CC BY 4.0, confirmed open access 2026-09-17 — NOT YET
+   DOWNLOADED as of this date (absent from ../Datasets/DATA-STATUS.tsv). Action: download the ~100-case coronary
+   subset; verify voxel-wise lumen labels, centerlines and mesh surfaces are present; record size and MD5 into a new
+   row of data-shared/DATA-STATUS.tsv following the house format (see Datasets/DATA-STATUS.tsv for the row style).
+   NOTE THE CAVEAT from licence_checks.md row 18: "no FFR or clinical labels" — this dataset cannot supply
+   ground-truth FFR for validation; plan the paper's claims around error-induced change relative to a clean-
+   segmentation baseline, not absolute accuracy against a clinical reference.
+
+4. [GATE T1, TOOLS]
+     - svZeroDSolver: confirm install, BSD-3 licence (per landscape.md). Record version.
+     - OpenFOAM: confirm install/version across the operator's multiple PCs intended for the CFD secondary arm.
+       Record versions and which machines are allocated to this study vs. other CFD work (WindTurbine-dimplewinglet,
+       DataCentre-review) to avoid resource conflicts.
+
+5. [GATE M1, PILOT — new gate specific to the 2026-09-17 CFD-strengthening addendum, run immediately after D1/T1]
+     - Select 2-3 pilot cases from the downloaded ImageCAS-X subset.
+     - Generate at least one DELIBERATELY error-injected / topologically broken geometry (e.g. a missed side-branch
+       variant) — this is the hard case the automated mesher (snappyHexMesh or equivalent) must survive, since it is
+       exactly what the study's error-injection design requires at scale.
+     - Run the full pipeline: segmentation -> surface mesh -> volume mesh -> pulsatile solve with Windkessel-coupled
+       outlets -> WSS/OSI extraction.
+     - PASS/FAIL verdict and evidence go directly into STUDY-PLAN.md Gate table and drive the go/no-go on whether the
+       secondary CFD arm ships in the Oct 15 submission or moves to a fast follow-up paper.

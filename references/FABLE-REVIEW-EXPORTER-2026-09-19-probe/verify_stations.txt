@@ -1,0 +1,12 @@
+scan 14 baseline: meas node 175 s=49.89 resolved=True r_fit=0.997; s_end(last resolved)=111.37; path end=119.46; lesion_dist s=29.71; stations 31; kinds {'grid': 18, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'lesion_dist': 1, 'bif_prox': 1, 'bif_dist': 1, 'measurement': 1}
+    stations within 1.5 mm of the measurement node: [['p011', 'measurement', 49.89174407176872, 49.89174407176872, 175]]
+scan 14 T2_truncation: meas node 163 s=44.72 resolved=True r_fit=0.908; s_end(last resolved)=44.72; path end=44.72; lesion_dist s=29.71; stations 18; kinds {'grid': 6, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'lesion_dist': 1, 'bif_prox': 1, 'bif_dist': 1}
+    stations within 1.5 mm of the measurement node: [['p010', 'bif_dist', 44.588340380321455, 44.721672863633, 163], ['out_392', 'outlet', nan, 43.46523444353385, 392]]
+scan 14 T3_stenosis_length: meas node 175 s=49.89 resolved=True r_fit=0.997; s_end(last resolved)=111.37; path end=119.46; lesion_dist s=30.94; stations 32; kinds {'grid': 20, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'bif_prox': 1, 'bif_dist': 1, 'measurement': 1}
+    stations within 1.5 mm of the measurement node: [['p012', 'measurement', 49.89174407176872, 49.89174407176872, 175]]
+scan 102 T3_stenosis_length: meas node 490 s=75.16 resolved=True r_fit=1.044; s_end(last resolved)=143.50; path end=151.38; lesion_dist s=56.34; stations 40; kinds {'grid': 28, 'outlet': 6, 'bif_prox': 2, 'inlet': 1, 'bif_dist': 1, 'lesion_prox': 1, 'lesion_dist': 1}
+    stations within 1.5 mm of the measurement node: [['p019', 'grid', 75.0, 75.15857149286241, 490]]
+scan 102 T4_taper: meas node 490 s=75.16 resolved=True r_fit=0.988; s_end(last resolved)=126.87; path end=151.38; lesion_dist s=55.11; stations 35; kinds {'grid': 25, 'outlet': 6, 'bif_prox': 2, 'inlet': 1, 'bif_dist': 1}
+    stations within 1.5 mm of the measurement node: [['p017', 'grid', 75.0, 75.15857149286241, 490]]
+scan 102 T2_truncation: meas node 483 s=70.31 resolved=True r_fit=0.984; s_end(last resolved)=70.31; path end=70.31; lesion_dist s=55.11; stations 24; kinds {'grid': 14, 'outlet': 6, 'bif_prox': 2, 'inlet': 1, 'bif_dist': 1}
+    stations within 1.5 mm of the measurement node: [['p016', 'grid', 70.0, 70.30771343813939, 483]]

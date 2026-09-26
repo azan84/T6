@@ -1,0 +1,127 @@
+
+====================================================================================================
+1. BC arithmetic: R_i = C / w_i inverts g = w/C; units; order of magnitude vs Stage A
+====================================================================================================
+r_ref[0] = 1.082 mm  Murray demand = 0.7123 mL/s  inflow = 0.7052  C = 287.0741
+w units: r_ref[m]^2.66 -> leaf w ~ 3.107e-09 m^2.66; g = w/C [m^3/s/Pa] -> C has units Pa.s/m^3 * m^2.66
+max |R_A - C/w| / R = 1.55e-16
+max |R_kin - R_SI/rho| = 1.49e-08
+hand: C / (0.6469e-3)^2.66 = 8.7321e+10  file = 8.7321e+10
+Stage A: R_out_SI = 6.9754e+09 Pa.s/m^3 for one outlet at Q = 1.5 mL/s -> p_out - P_v = 10463 Pa
+M1: 6 outlets, R_A = 7.854e+10..1.064e+11; Q = 0.0782..0.1351 mL/s (sum 0.6490); R*Q = 8319..11076 Pa
+ratio R_M1/R_stageA ~ 13.4x ; ratio Q_stageA/Q_M1 ~ 13.9x  (should be comparable)
+P_aorta = 11998.98 Pa -> 11.3198 m2/s2 (START-HERE says 11998.98 -> 11.3198); P_v 666.61 -> 0.62888
+nu = mu/rho = 3.7736e-06 (START-HERE 3.774e-6)
+
+====================================================================================================
+2. Blinding: does bc_A x bc_C_flows reveal the clean 0D outlet FFR?  p_i = P_v + R_i Q_i
+====================================================================================================
+  out_160  terr 0  (P_v + R_A*Q_C)/P_aorta = 0.7488   0D clean FFR at that outlet = 0.7488
+  out_425  terr 1  (P_v + R_A*Q_C)/P_aorta = 0.9616   0D clean FFR at that outlet = 0.9616
+  out_600  terr 0  (P_v + R_A*Q_C)/P_aorta = 0.7490   0D clean FFR at that outlet = 0.7490
+  out_639  terr 1  (P_v + R_A*Q_C)/P_aorta = 0.9786   0D clean FFR at that outlet = 0.9786
+  out_742  terr 1  (P_v + R_A*Q_C)/P_aorta = 0.9437   0D clean FFR at that outlet = 0.9437
+  out_868  terr 1  (P_v + R_A*Q_C)/P_aorta = 0.9398   0D clean FFR at that outlet = 0.9398
+  0D clean FFR at the measurement node = 0.7612  (withheld value)  -> LAD-territory outlet FFR brackets it
+  MANIFEST.json (inside the package tree) contains: ['ffr_discrete', 'base_discrete', 'healthy_main'] = [0.7612248637889698, 0.990148568176417]
+
+====================================================================================================
+3. centreline.vtp: arrays, point ids vs `node` columns, inlet identity
+====================================================================================================
+  clean_nolesion: n_points=748 n_lines=747 arrays=['MaximumInscribedSphereRadius', 'r_ref_mm', 'r_fit_mm', 'segment_name', 'branch_id', 'resolved']
+  baseline: n_points=748 n_lines=747 arrays=['MaximumInscribedSphereRadius', 'r_ref_mm', 'r_fit_mm', 'segment_name', 'branch_id', 'resolved']
+  T1_missed_branch: n_points=706 n_lines=705 arrays=['MaximumInscribedSphereRadius', 'r_ref_mm', 'r_fit_mm', 'segment_name', 'branch_id', 'resolved']
+  tree nodes 869, active 748, vtp points 748; active indices contiguous? False
+  probes.csv `node` used as a vtp point id lands on the wrong point in 0/24 rows
+  vtp point 0 == tree root (LM ostium)? True; root xyz = [  20.61 -141.01  134.45]; root r = 1.30 mm; label LM
+  inlet.json has position/normal? NO
+  baseline vtp MISR at throat node (clean r) = 1.108 mm; 0D lesioned target r2 = 0.231 mm  -> MISR is the PRE-lesion radius
+
+====================================================================================================
+4. outlets.csv: normals unit and outward; r_ref at cut
+====================================================================================================
+  clean_nolesion: |n|-1 max 1.1e-16; r_ref 0.601..0.673 mm; r_actual 0.548..0.789
+  baseline: |n|-1 max 1.1e-16; r_ref 0.601..0.673 mm; r_actual 0.548..0.789
+  T1_missed_branch: |n|-1 max 1.1e-16; r_ref 0.601..0.673 mm; r_actual 0.548..0.789
+    out_160: cos(n, 3-edge tangent) = 0.990   depth of last edge 0.43 mm
+    out_425: cos(n, 3-edge tangent) = 0.998   depth of last edge 0.58 mm
+    out_600: cos(n, 3-edge tangent) = 0.997   depth of last edge 0.38 mm
+    out_639: cos(n, 3-edge tangent) = 0.988   depth of last edge 0.43 mm
+    out_742: cos(n, 3-edge tangent) = 0.994   depth of last edge 0.71 mm
+    out_868: cos(n, 3-edge tangent) = 0.876   depth of last edge 0.43 mm
+
+====================================================================================================
+5. probes.csv: monotone s, on the centreline, inside the mask; grid s vs node s
+====================================================================================================
+  clean_nolesion: n=24 monotone=True kinds={'grid': np.int64(19), 'lesion_prox': np.int64(1), 'throat': np.int64(1), 'lesion_dist': np.int64(1), 'bifurcation': np.int64(1), 'measurement': np.int64(1)}; max dist to a centreline point 2.8e-14 mm; in mask 24/24; |s_written - s_node| max 0.239 mm (grid rows: 0.239)
+  baseline: n=24 monotone=True kinds={'grid': np.int64(19), 'lesion_prox': np.int64(1), 'throat': np.int64(1), 'lesion_dist': np.int64(1), 'bifurcation': np.int64(1), 'measurement': np.int64(1)}; max dist to a centreline point 2.8e-14 mm; in mask 24/24; |s_written - s_node| max 0.239 mm (grid rows: 0.239)
+  T1_missed_branch: n=23 monotone=True kinds={'grid': np.int64(19), 'lesion_prox': np.int64(1), 'throat': np.int64(1), 'lesion_dist': np.int64(1), 'measurement': np.int64(1)}; max dist to a centreline point 2.8e-14 mm; in mask 23/23; |s_written - s_node| max 0.239 mm (grid rows: 0.239)
+  station kinds required by DETECTOR-SPEC 7.2: grid, lesion_prox, throat, lesion_dist, measurement, bifurcation, outlet;  CFD-ARM-SPEC 11: inlet ... every outlet
+
+====================================================================================================
+6. mask_edit.json (T1): are the deletion points inside the NIfTI mask? (LPS->RAS flip needed?)
+====================================================================================================
+  n_points 42; with LPS->RAS flip: 42/42 in lumen; WITHOUT flip (raw into NIfTI affine): 0/42
+  frame stated in mask_edit.json? False;  in meta.json? False
+  voxel spacing [0.318 0.318 0.5  ] mm; deleted branch r 0.50..0.77 mm -> 3.1..4.8 voxels across
+  rule simulated on the mask crop: 539 voxels flagged, 27 restored by the parent rule -> 512 removed; branch voxels in the crop not reached by the rule (within 1.5 r of a deleted point but > 1.1 r): 234
+
+====================================================================================================
+7. Truncation: centreline present in the mask but absent from the package (no rule ships for it)
+====================================================================================================
+  scan 14 left: 121/869 centreline nodes inactive (r_ref < 0.60 mm), 47 mm of 410 mm; 4 sub-cut branch roots hang off the active tree (side branches 1, outlet continuations 3)
+  sub-cut branch roots leaving the host path INSIDE the lesion window: 0; radius of those: []
+  rule for these in baseline/clean mask_edit.json: NONE
+
+====================================================================================================
+8. T2 / T3 / T4 packages for the same instance (cohort row 50): NaN in BCs? taper instruction present?
+====================================================================================================
+  T2_truncation: outlets 6; NaN R_A 1, NaN R_B 0, NaN Q_C 0; mask_edit keys ['tier', 'error_type', 'mask_edit']; 'scale' or 'taper' instruction in mask_edit: True
+     -> bc_A.csv rows written as EMPTY cells: ['out_163']  (raw line: ['out_163,,'])
+     T2 mask_edit rule: delete lumen voxels within (1.10 * r) mm of any deleted centreline point, then R...; n_points 143; info {'cut_arc_mm': 44.721672863633, 'length_lost_mm': 74.74056301024588, 'segments_deleted': 2.0}
+  T3_stenosis_length: outlets 6; NaN R_A 0, NaN R_B 0, NaN Q_C 0; mask_edit keys ['tier', 'error_type', 'vertex_deformation']; 'scale' or 'taper' instruction in mask_edit: False
+  T4_taper: outlets 6; NaN R_A 1, NaN R_B 0, NaN Q_C 0; mask_edit keys ['tier', 'error_type', 'vertex_deformation']; 'scale' or 'taper' instruction in mask_edit: True
+     -> bc_A.csv rows written as EMPTY cells: ['out_589']  (raw line: ['out_589,,'])
+     T4 vertex_deformation table rows: 34 (lesion window only); centre 19.71 mm
+     T4 vtp MISR max 1.869 vs baseline 1.869 -> vtp carries the scaled radius, mask_edit does not say to scale the surface
+  T1_missed_branch: outlets 5; NaN R_A 0, NaN R_B 0, NaN Q_C 0; mask_edit keys ['tier', 'error_type', 'mask_edit']; 'scale' or 'taper' instruction in mask_edit: False
+
+====================================================================================================
+9. Protocol C targets in the T1 package vs the 0D primary's TERRITORY totals
+====================================================================================================
+  territory 0: 0D-primary target (clean total over surviving nodes' clean counterparts) = 0.0782 mL/s; clean territory total incl. deleted outlet = 0.1735; package per-outlet targets sum = 0.0782
+  territory 1: 0D-primary target (clean total over surviving nodes' clean counterparts) = 0.4755 mL/s; clean territory total incl. deleted outlet = 0.4755; package per-outlet targets sum = 0.4755
+  ablation.py C target for the LAD territory = 0.0782 mL/s  (it sums CLEAN flow over the surviving nodes only -> identical to per-outlet sum in the discrete bed)
+  => in the DISCRETE bed the territory total over surviving nodes == sum of surviving outlets' clean flows. The difference 0D-vs-3D is ONE scalar (over-determined) vs N exact.
+  0D T1 FFR at measurement: clean 0.7612 | B re-derived 0.8642 | C one-scalar (territory) 0.8991 (resid 0.087, C/C_clean 1.105) | C per-outlet exact 0.9079 (max |Q-Qt|/Qt 6.5e-12, 37 it)
+  per-outlet derived R_i / R_A: [1.    1.212 1.    1.    1.   ]  (what the 3D side would find, in 0D)
+  inflow: clean 0.6490 | C one-scalar 0.5173 | C per-outlet 0.5537 mL/s
+
+====================================================================================================
+9b. T1 rule leaves islands?  T2: where is the measurement node?  T4: any taper instruction?
+====================================================================================================
+  crop around the deleted branch: components before 1, after the rule 68; component sizes after: [912, 67, 31, 15, 9, 9, 6, 5]
+  T2: meta.measurement_s_mm = 49.71; probes 'measurement' station s_mm = [44.721672863633]; last station s = 44.72; cut at 44.72; clean measurement s = 49.71  (T2_KEEP_BEYOND 15 mm < RUNOFF 20 mm)
+  T2 outlet with NaN R_A is node 163 = measurement node 163? True
+  T4 mask_edit.json mentions radius_scale / segments_scaled / from_arc: False, False, False; keys ['tier', 'error_type', 'vertex_deformation']
+  T4 NaN-R_A outlet: [{'outlet_id': 'out_589', 'r_ref_mm': 0.6028903047147414, 'r_mm': 0.5588082117705819}] (a new leaf: taper shrank r_ref below the cut one node earlier)
+  outlets.csv node ids [160, 425, 600, 639, 742, 868] vs vtp n_points 748: usable as vtp point ids? False
+
+====================================================================================================
+10. M1 instance: scan 14 vs scan 306 (both 80%DS LAD prox 20 mm, 6 outlets, 1 deletable branch)
+====================================================================================================
+  scan 14: host r_fit 1.153 mm -> throat r 0.231 mm (1.4 voxels across at 0.318 mm); bif_in_window False; d_dn_bif 13.3 mm; deletable branch r 0.647 mm ratio 0.56; outlets 6, min outlet r_ref 0.601 mm; inactive nodes 121/869
+  scan 306: host r_fit 1.348 mm -> throat r 0.270 mm (1.5 voxels across at 0.357 mm); bif_in_window True; d_dn_bif 1.3 mm; deletable branch r 1.065 mm ratio 0.79; outlets 6, min outlet r_ref 0.601 mm; inactive nodes 84/891
+  subset: max n_outlets 8 (scan 43 LCX 65%DS, 4 branches); max n_branch_ge_cut 4
+
+====================================================================================================
+11. Whole frozen 3D subset x 5 geometries: NaN BCs, non-applicable types, new-leaf outlets (dry, files to scratch)
+====================================================================================================
+etype               status
+T1_missed_branch    ok        30
+T2_truncation       ok        30
+T3_stenosis_length  ok        30
+T4_taper            ok        30
+
+  packages with >=1 outlet whose Protocol-A resistance is NaN (new leaf with no clean counterpart): 60/120  by type: {'T2_truncation': 30, 'T4_taper': 30}
+  outlets lost vs clean by type (mean): {'T1_missed_branch': 1.03, 'T2_truncation': 1.9, 'T3_stenosis_length': 0.0, 'T4_taper': 2.2}

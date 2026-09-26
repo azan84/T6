@@ -1,0 +1,93 @@
+# SHA-256 freeze — cohorts frozen 2026-09-18; manifest re-issued 2026-09-19 (end of day).
+#
+# VERIFY — run from the PROJECT ROOT (the directory containing code/, protocol/, results/):
+#     shasum -a 256 -c protocol/COHORT-FROZEN-2026-09-18.sha256
+#
+# This file is the project's commit mechanism: there is no version control here (see the note at the foot), so a
+# re-issued manifest plus a dated entry below is what records that code changed and why.
+#
+# ---------------------------------------------------------------------------------------------------------------
+# COHORTS — these define the study and are LOCKED. **Neither has changed since it was frozen on 2026-09-18**, through
+# every correction since. That is the fact that matters: what moved on 2026-09-19 was documentation and solver
+# machinery, never the instance list. COHORT-FROZEN is the cohort (150 instances); CFD-SUBSET is the 3D arm (30).
+b8fe79098d6f60dfe3f5e098667ca90fccc5f2ae7dee92f95bf3dca374a5e46c  protocol/COHORT-FROZEN-2026-09-18.csv
+8e0079a0095ae4270974a04f7675fc42bd28c13b2983ec59525bf121c43d1118  protocol/CFD-SUBSET-FROZEN-2026-09-18.csv
+#
+# RESULTS that produced the cohorts — locked, re-verified 2026-09-19 as unchanged.
+5f4bcce468e5b2db213c63e5aace32a0b90ea7dc5fe3c8f92b08078036576c08  results/sweep_test.csv
+5aef8115a812fead270004335c804e41a95d05db9764a2382b2519a88d47aed4  results/E0_prevalence_test.csv
+#
+# ---------------------------------------------------------------------------------------------------------------
+# CODE. Four existing files changed on 2026-09-19 and two are new. Change log, most recent first:
+#
+#   code/zerod_ffr.py       -> 9f3ffb20...   TWO changes, both verified against the full suite.
+#       (i) DECISION B3: new `trunc_ref` parameter pins the modelled node set, by coordinate, to a reference tree,
+#       and the reference is AUTHORITATIVE (assignment, not intersection). A calibre-only error must not change
+#       WHICH vessels are modelled; a fixed truncation radius was deleting 489 of 655 discrete outlets cohort-wide
+#       under T4, with 56 of 148 trees losing their bed entirely.
+#       (ii) Viscosity `mu` became an instance attribute defaulting to the module constant — needed because the
+#       negative class must vary haematocrit and a module constant cannot be varied per draw. Default behaviour is
+#       identical. Verified after both: self-test unchanged, V1-V10 PASS on BOTH beds (scans 14, 306), and the
+#       ablation smoke is BIT-IDENTICAL (max numeric difference 0 across all 45 columns).
+#
+#   code/ablation.py        -> e0ca8325...   DETECTOR RECORDING COLUMNS (additive), on top of the minimiser fix and
+#       decisions B1/B3 earlier the same day. run_id on every row; C_abs (the detector may use only the ABSOLUTE
+#       tuned parameter, never C_ratio, which needs a clean model it would not have); the S_C covariates from the
+#       CORRUPTED model; a CLEAN row per (instance, bed); and two long-format side files keyed by run_id.
+#       protocol_c_targets() returns TRIPLES so a territory's clean subtree travels with its own target.
+#       THE EXPERIMENT DID NOT MOVE: every corrupted row bit-identical to the pre-change run.
+#       Earlier the same day: Protocol C's minimiser was a local method on a BIMODAL loss and returned the wrong
+#       basin on a real instance (dFFR -0.52 against a true ~0) — a false absorption count and a false H5 positive;
+#       and B1 changed Protocol C's target to the clean tree's FULL territory outflow, partitioned by the CLEAN
+#       tree's territories.
+#
+#   code/error_types.py     -> 8401c915...   DECISION B2 plus a header correction. T2_KEEP_BEYOND 15e-3 -> 25e-3:
+#       it was SHORTER than RUNOFF (20 mm), so T2's truncation deleted the measurement node its own docstring said
+#       it preserved (meas_same_point False in 36/36 T2 smoke rows). The guard now lives beside the constant and is
+#       a RAISE, not an assert — `python -O` strips asserts. T3_LENGTH_DELTA and T4_RADIUS_SCALE are UNCHANGED.
+#
+#   code/export_cfd_case.py -> d49a2c32...   CFD case packages, per CFD-ARM-SPEC §11, after two rounds of
+#       independent review (MUST 1-8, then two DO-NOT-SEND items). Among them: a §13 blinding violation, a mask
+#       deletion rule that eroded the retained vessel by ~1300 voxels, and inlet normals 37 degrees off.
+#
+#   code/negatives.py       -> f57042d1...   NEW. The detector's negative class (DETECTOR-SPEC §5): correct anatomy
+#       tuned against a noisy measurement. Verified non-degenerate (residual median 0.072, not ~1e-9). Physiological
+#       SDs cited 2026-09-19 and all three moved, by factors of 2 to 8 — the placeholders had been population and
+#       inter-instrument figures where within-subject was required. SD_TERRITORY_SHARE remains UNCITED and is the
+#       most load-bearing constant in the file.
+#
+#   code/ingest_cfd_radius.py -> 5e2b1358...   NEW. Rebuilds the 0D twin from the as-meshed radius the CFD side
+#       returns, inheriting the healthy reference and bed from the package's tree so only the epicardial radius
+#       differs. Not yet exercised on real returned data — only on a synthetic return.
+#
+#   2026-09-19 (late): COMMENT-ONLY on both files, no constant moved. zerod_ffr.py -- MURRAY_EXP = 2.66 flagged as
+#       uncited and outside the pooled empirical exponent 2.39 (CI 2.24-2.54, Taylor 2024); NOT changed, because it
+#       feeds the discrete eligibility gate and hence the frozen 3D subset. negatives.py -- SD_TERRITORY_SHARE
+#       citation-searched (no single value supportable; sensitivity band added) and WSCV_TARGET flagged as ~half
+#       Kaufmann 1999's regional figure. Both noise terms err toward an EASY negative class, so the detector's
+#       specificity is declared an upper bound.
+#       CORRECTION, same day: the MURRAY_EXP flag was WITHDRAWN. 2.66 is 8/3, the MASS-diameter exponent of
+#       Choy & Kassab 2008 (M ~ A^(4/3), A ~ D^2), and it allocates myocardial bed to an outlet. Taylor 2024's 2.39
+#       pools the FLOW-diameter exponent -- a different quantity, so it was never evidence against this one. The
+#       constant is cited, not chosen. Measured effect of using 2.39 instead: median 0.33 pp of flow share.
+#
+# Re-verify all of these at registration; if any differs, re-run --verify before trusting a result.
+566eaf3cf10a24c9590ac98ffd5bcac3c547b45a96818048153cb774fbd29d0b  code/zerod_ffr.py
+fce97e19a539217949ad50c818d84ae13bb195208f22a1945ffbf02f44197160  code/imagecasx_loader.py
+24e90a3d5fbcd997fbfd00275c05fbd38e9374bd6e8aded636e5817fbcf43bb8  code/severity_sweep.py
+4ce0f61ab49b4e66c6a75f733a504e5309cc31fbeac520e8370ed024f5c8c256  code/run_prevalence.py
+8401c915e8d1adf05254c502410e1dcd0f0451d7a91c8311d414af03a095669d  code/error_types.py
+e0ca8325c6bc9aaf0589ad69ef7a43f9dd2cf6224c469553c76bd7491756fe9c  code/ablation.py
+8a8e8d5beea4c51c3483c3b2ed72d58fb265e516af616e9c6d86203b6dee8e4a  code/discrete_arm.py
+258418bc3e18f51118c6b8b3c326103eef6c02391c9695242ff7bd9aec4ee047  code/stageA_benchmark_0d.py
+d49a2c32c42189b86bcb2184a6d92525a1457db16b076fcbe30a161de80a3d03  code/export_cfd_case.py
+80970adb75f49ad030416815b3862a13a393a2a48f97033257ab017b909c6205  code/negatives.py
+5e2b1358112dcefb3400f0dade6fda3989d2801df541364ba20b7ad554144e60  code/ingest_cfd_radius.py
+#
+# ---------------------------------------------------------------------------------------------------------------
+# NOTE — THERE IS NO VERSION CONTROL ON THIS PROJECT, and that is a real gap for a study that promises a code deposit
+# and reproducible figures. This manifest records WHAT changed and WHY, but it cannot show a diff, cannot restore a
+# previous state, and every entry above was written by hand. Two workable fixes, neither urgent enough to do
+# mid-registration: keep a git repository OUTSIDE the Google Drive tree and sync into it (Drive and .git interact
+# badly — Drive can corrupt object files mid-write), or treat the Zenodo deposit as the versioning mechanism and
+# deposit on every material change. Decide before the paper claims reproducibility.

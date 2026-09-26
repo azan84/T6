@@ -1,0 +1,200 @@
+packages:
+  14_left_LAD_prox_20mm_80ds__T1_missed_branch__real
+  14_left_LAD_prox_20mm_80ds__baseline__real
+  14_left_LAD_prox_20mm_80ds__clean_nolesion__real
+  14_left_LAD_prox_20mm_80ds__T2_truncation__real
+  14_left_LAD_prox_20mm_80ds__T3_stenosis_length__real
+  14_left_LAD_prox_20mm_80ds__T4_taper__real
+  102_left_LAD_mid_20mm_80ds__T2_truncation__real
+  102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real
+  102_left_LAD_mid_20mm_80ds__T4_taper__real
+
+====================================================================================================
+MUST 1 — no prediction in any package file (substring grep, ALL files incl. vtp)
+====================================================================================================
+  HIT ('14_left_LAD_prox_20mm_80ds__T1_missed_branch__real', 'centreline.vtp', 'J8eVTGS7tl1uV2LCI6x/hWIRE/8WUJdlf2RB8nxfffRaDj4qqSm8P0n2Z/O+G1abedBP1mJc8+ChLbP+6O4')
+  HIT ('14_left_LAD_prox_20mm_80ds__T1_missed_branch__real', 'centreline.vtp', '8X0jgj5OeayTtBO6ahQ5Z+ZJAfZyfXUc1gb9azI/FFRNoN/fOt8wmUFE8WFCYROCwSaGgMpZAl2rq0JpTBH')
+  HIT ('14_left_LAD_prox_20mm_80ds__T1_missed_branch__real', 'centreline.vtp', 'pIc4D6Wv8L42+jSMeShlfN5K+T2OPg29VlV+Lj1hffRpKPXe4edYAeujT0O6asfPPZ3jBO7TeOnAz8kcjkP')
+  HIT ('14_left_LAD_prox_20mm_80ds__T1_missed_branch__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('14_left_LAD_prox_20mm_80ds__baseline__real', 'centreline.vtp', 'iI+OED02jcZHQ+jXqRItfMy/0TFiVcFHvPOJwrmZfFRuvPpl7i0+DsYxFboi+Hg96U+u52k+Kly8OlYc4GO')
+  HIT ('14_left_LAD_prox_20mm_80ds__baseline__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('14_left_LAD_prox_20mm_80ds__clean_nolesion__real', 'centreline.vtp', 'iI+OED02jcZHQ+jXqRItfMy/0TFiVcFHvPOJwrmZfFRuvPpl7i0+DsYxFboi+Hg96U+u52k+Kly8OlYc4GO')
+  HIT ('14_left_LAD_prox_20mm_80ds__clean_nolesion__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('14_left_LAD_prox_20mm_80ds__T2_truncation__real', 'centreline.vtp', 'DWT4eJZdkENJNkrxjmEeBl3OHsvkvgUrCSvu9D+vffrjMLLiPg8zJoVk4VgYFnF/15dQSUJeckrWkk4Lpli')
+  HIT ('14_left_LAD_prox_20mm_80ds__T2_truncation__real', 'centreline.vtp', 'wibi2iY8/4XqV/A/LxGvzmjIz1v4LqV1DHTsnpvvffRvZyWCJ97j9zj7rqTvicve8CfKvhXEta9TiEufwld')
+  HIT ('14_left_LAD_prox_20mm_80ds__T2_truncation__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('14_left_LAD_prox_20mm_80ds__T3_stenosis_length__real', 'centreline.vtp', 'iI+OED02jcZHQ+jXqRItfMy/0TFiVcFHvPOJwrmZfFRuvPpl7i0+DsYxFboi+Hg96U+u52k+Kly8OlYc4GO')
+  HIT ('14_left_LAD_prox_20mm_80ds__T3_stenosis_length__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('14_left_LAD_prox_20mm_80ds__T4_taper__real', 'centreline.vtp', 'lzzNLnCxnap7p90ibIsL1paXzYhAK57KcFwfsoqCFFr/PaT8Gpqo9x9ocpWE4vNWhLpODqudo0uzEKGp0Sj')
+  HIT ('14_left_LAD_prox_20mm_80ds__T4_taper__real', 'centreline.vtp', 'ID+BJBp73dfbDgHSZGfC4HxOVDTv/pvXjp9oSzzHffrw++jyrz64fo7MGps4z56HokW6M5lkuvBDqNTmDg6')
+  HIT ('14_left_LAD_prox_20mm_80ds__T4_taper__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('102_left_LAD_mid_20mm_80ds__T2_truncation__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real', 'centreline.vtp', 'kuO/Id5KyiXmekrip9R+2iblWc2onoVYWXtV5dgLfFrv4+S4bh1an0JwjO4Zni8JDxLqjkP79yyny/AjyHg')
+  HIT ('102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real', 'centreline.vtp', 'kuO/Id5KyiXmekrip9R+2iblWc2onoVYWXtV5dgLfFrv4+S4bh1an0JwjO4Zni8JDxLqjkP79yyny/AjyHg')
+  HIT ('102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real', 'centreline.vtp', '4Vl3c8Vu8bx8koMiorlULKrOx2H0rSkPgaWSVKoqFFRihpDyRKoUFJZTRUSCpJJRFSVs/2eOZ5Rjb9zu+v+')
+  HIT ('102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real', 'centreline.vtp', 'xLvqunJO7Npk1mmljn37PNUHU+FvdtZ1aTmveH0GffrIvoA+r1jAeqx1Lkz2EbivoayVrK/eHyV67muoiv+')
+  HIT ('102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+  HIT ('102_left_LAD_mid_20mm_80ds__T4_taper__real', 'centreline.vtp', 'XOmIRV258yMaZtXXisjwGXwBfC7dsYeCQfYGrbQUfFrW0ZqzzpyMtOK2JTaCh4qkt9cJ0GRtfKC14hNGwOK')
+  HIT ('102_left_LAD_mid_20mm_80ds__T4_taper__real', 'centreline.vtp', 'XOmIRV258yMaZtXXisjwGXwBfC7dsYeCQfYGrbQUfFrW0ZqzzpyMtOK2JTaCh4qkt9cJ0GRtfKC14hNGwOK')
+  HIT ('102_left_LAD_mid_20mm_80ds__T4_taper__real', 'centreline.vtp', 'mSvyrjMILl835w0gsdAXmeQilw3yeFaM+s+1DHQefFR1LxiBvzMe5ombzPQQJhaTItnwDFkZ5J7CAPtleNh')
+  HIT ('102_left_LAD_mid_20mm_80ds__T4_taper__real', 'centreline.vtp', 'xLvqunJO7Npk1mmljn37PNUHU+FvdtZ1aTmveH0GffrIvoA+r1jAeqx1Lkz2EbivoayVrK/eHyV67muoiv+')
+  HIT ('102_left_LAD_mid_20mm_80ds__T4_taper__real', 'meta.json', ' the CORRUPTED-geometry prediction and dFFR." }')
+substring hits: 27
+MANIFEST keys: ['gate', 'spec', 'exported', 'instance_key', 'packages']
+vtp point arrays: ['MaximumInscribedSphereRadius', 'r_target_mm', 'r_source_mm', 'radial_scale', 'r_ref_mm', 'r_fit_mm', 'segment_name', 'branch_id', 'tree_node', 'resolved']
+  regex catches 'ffr_discrete: 0.76'            : False
+  regex catches '"ffr_measurement": 0.86'       : False
+  regex catches 'FFR_meas,0.76'                 : False
+  regex catches 'ffr,0.76'                      : True
+  regex catches 'ffr2 0.76'                     : False
+  regex catches 'Ffr: 0.76'                     : False
+  regex catches 'dFFR 0.1'                      : False
+  check_no_predictions on a package containing expected_0D.json: PASSED (i.e. NOT caught)
+  check_no_predictions on a CSV with column ffr_discrete: PASSED (i.e. NOT caught)
+  check_no_predictions on a vtp with a point array named 'ffr': PASSED (i.e. NOT caught)
+withheld files: ['14_left_LAD_prox_20mm_80ds__clean_nolesion__real/expected_0D.json', '14_left_LAD_prox_20mm_80ds__T1_missed_branch__real/expected_0D.json', '14_left_LAD_prox_20mm_80ds__baseline__real/expected_0D.json']
+withheld T1 content keys: dict_keys(['note', 'measurement_tree_node', 'protocol_B', 'clean'])
+
+====================================================================================================
+MUST 2 — frame stated
+====================================================================================================
+  meta.json: frame = mm, LPS. The ImageCAS-X NIfTI affine is ...
+  inlet.json: frame = mm, LPS. The ImageCAS-X NIfTI affine is ...
+  mask_edit.json: frame = mm, LPS. The ImageCAS-X NIfTI affine is ...
+  README mentions LPS: True
+  outlets.csv header: outlet_id,tree_node,x,y,z,normal_x,normal_y,normal_z,r_ref_mm,r_mm,territory_id  (frame in file: False)
+  probes.csv header: probe_id,kind,s_mm,s_node_mm,s_from_lesion_mm,tree_node,x,y,z,normal_x,normal_y,  (frame in file: False)
+
+====================================================================================================
+MUST 6 — NaN and closed
+====================================================================================================
+  14_left_LAD_prox_20mm_80ds__T1_missed_branch__real      NaN: {'probes.csv': {'s_mm': 5, 's_from_lesion_mm': 5}}  | bc_A modes {'resistance': 5}  bc_C modes {'prescribed': 5}  closed R_SI=[]  -> same outlets in bc_C: mode [] Q_target_mls []
+  14_left_LAD_prox_20mm_80ds__baseline__real              NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 6}  bc_C modes {'prescribed': 6}  closed R_SI=[]  -> same outlets in bc_C: mode [] Q_target_mls []
+  14_left_LAD_prox_20mm_80ds__clean_nolesion__real        NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 6}  bc_C modes {'prescribed': 6}  closed R_SI=[]  -> same outlets in bc_C: mode [] Q_target_mls []
+  14_left_LAD_prox_20mm_80ds__T2_truncation__real         NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 5, 'closed': 1}  bc_C modes {'prescribed': 6}  closed R_SI=[0.0]  -> same outlets in bc_C: mode ['prescribed'] Q_target_mls [0.0]
+  14_left_LAD_prox_20mm_80ds__T3_stenosis_length__real    NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 6}  bc_C modes {'prescribed': 6}  closed R_SI=[]  -> same outlets in bc_C: mode [] Q_target_mls []
+  14_left_LAD_prox_20mm_80ds__T4_taper__real              NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 5, 'closed': 1}  bc_C modes {'prescribed': 6}  closed R_SI=[0.0]  -> same outlets in bc_C: mode ['prescribed'] Q_target_mls [0.0]
+  102_left_LAD_mid_20mm_80ds__T2_truncation__real         NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 5, 'closed': 1}  bc_C modes {'prescribed': 6}  closed R_SI=[0.0]  -> same outlets in bc_C: mode ['prescribed'] Q_target_mls [0.0]
+  102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real    NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 6}  bc_C modes {'prescribed': 6}  closed R_SI=[]  -> same outlets in bc_C: mode [] Q_target_mls []
+  102_left_LAD_mid_20mm_80ds__T4_taper__real              NaN: {'probes.csv': {'s_mm': 6, 's_from_lesion_mm': 6}}  | bc_A modes {'resistance': 6}  bc_C modes {'prescribed': 6}  closed R_SI=[]  -> same outlets in bc_C: mode [] Q_target_mls []
+
+====================================================================================================
+MUST 7 — radial_scale / r_target reproduce the 0D lesioned radius
+====================================================================================================
+  clean_nolesion: radial_scale all == 1: True; r_target == r_source: True
+  14_left_LAD_prox_20mm_80ds__T1_missed_branch__real      MISR==r_target True; unmatched pts 0; max|scale*r_clean - r_target| = 2.22e-16 mm; max|r_source - r_clean| = 0.000 mm
+      throat: min r_target 0.2306 mm at s=19.71 (c=19.71, L=20.00); r_fit(1-ds)=0.2306; min radial_scale in vtp 0.2081
+  14_left_LAD_prox_20mm_80ds__baseline__real              MISR==r_target True; unmatched pts 0; max|scale*r_clean - r_target| = 2.22e-16 mm; max|r_source - r_clean| = 0.000 mm
+      throat: min r_target 0.2306 mm at s=19.71 (c=19.71, L=20.00); r_fit(1-ds)=0.2306; min radial_scale in vtp 0.2081
+  14_left_LAD_prox_20mm_80ds__clean_nolesion__real        MISR==r_target True; unmatched pts 0; max|scale*r_clean - r_target| = 0.00e+00 mm; max|r_source - r_clean| = 0.000 mm
+      
+  14_left_LAD_prox_20mm_80ds__T2_truncation__real         MISR==r_target True; unmatched pts 0; max|scale*r_clean - r_target| = 2.22e-16 mm; max|r_source - r_clean| = 0.000 mm
+      throat: min r_target 0.2306 mm at s=19.71 (c=19.71, L=20.00); r_fit(1-ds)=0.2306; min radial_scale in vtp 0.2081
+  14_left_LAD_prox_20mm_80ds__T3_stenosis_length__real    MISR==r_target True; unmatched pts 0; max|scale*r_clean - r_target| = 2.22e-16 mm; max|r_source - r_clean| = 0.000 mm
+      throat: min r_target 0.2306 mm at s=19.71 (c=19.71, L=22.46); r_fit(1-ds)=0.2306; min radial_scale in vtp 0.2081
+  14_left_LAD_prox_20mm_80ds__T4_taper__real              MISR==r_target True; unmatched pts 0; max|scale*r_clean - r_target| = 2.22e-16 mm; max|r_source - r_clean| = 0.082 mm
+      throat: min r_target 0.2231 mm at s=19.71 (c=19.71, L=20.00); r_fit(1-ds)=0.2231; min radial_scale in vtp 0.2014
+      T4 taper block: {'note': 'the 0.93 radius scale from the proximal shoulder through every descendant is already carried in radial_scale; no separate operation is needed', 'radius_scale': 0.93, 'from_arc_mm': 10.092676624617571}; radial_scale quantiles [0.2014 0.93   1.     1.     1.    ]
+      r_source_mm equals CLEAN radius: False  (docstring says r_source keeps the unedited value)
+  102_left_LAD_mid_20mm_80ds__T2_truncation__real         MISR==r_target True; (no clean twin exported for this scan — scale check skipped)
+  102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real    MISR==r_target True; (no clean twin exported for this scan — scale check skipped)
+  102_left_LAD_mid_20mm_80ds__T4_taper__real              MISR==r_target True; (no clean twin exported for this scan — scale check skipped)
+
+====================================================================================================
+MUST 8 / territories.csv arithmetic
+====================================================================================================
+  14_left_LAD_prox_20mm_80ds__T1_missed_branch__real      n_terr 2 sum n_outlets 5 vs n_outlets 5 | Q_surv [0.0782, 0.4755] Q_full [0.1735, 0.4755] | Q_surv == sum(bc_C per territory): True | sum Q_full 0.6490 | protocol_C in meta: True
+  14_left_LAD_prox_20mm_80ds__baseline__real              n_terr 2 sum n_outlets 6 vs n_outlets 6 | Q_surv [0.1735, 0.4755] Q_full [0.1735, 0.4755] | Q_surv == sum(bc_C per territory): True | sum Q_full 0.6490 | protocol_C in meta: True
+  14_left_LAD_prox_20mm_80ds__clean_nolesion__real        n_terr 2 sum n_outlets 6 vs n_outlets 6 | Q_surv [0.1735, 0.4755] Q_full [0.1735, 0.4755] | Q_surv == sum(bc_C per territory): True | sum Q_full 0.6490 | protocol_C in meta: True
+  14_left_LAD_prox_20mm_80ds__T2_truncation__real         n_terr 2 sum n_outlets 6 vs n_outlets 6 | Q_surv [0.0953, 0.4755] Q_full [0.1735, 0.4755] | Q_surv == sum(bc_C per territory): True | sum Q_full 0.6490 | protocol_C in meta: True
+  14_left_LAD_prox_20mm_80ds__T3_stenosis_length__real    n_terr 2 sum n_outlets 6 vs n_outlets 6 | Q_surv [0.1735, 0.4755] Q_full [0.1735, 0.4755] | Q_surv == sum(bc_C per territory): True | sum Q_full 0.6490 | protocol_C in meta: True
+  14_left_LAD_prox_20mm_80ds__T4_taper__real              n_terr 2 sum n_outlets 6 vs n_outlets 6 | Q_surv [0.0953, 0.4755] Q_full [0.1735, 0.4755] | Q_surv == sum(bc_C per territory): True | sum Q_full 0.6490 | protocol_C in meta: True
+  102_left_LAD_mid_20mm_80ds__T2_truncation__real         n_terr 3 sum n_outlets 6 vs n_outlets 6 | Q_surv [1.3845, 0.5523, 1.0554] Q_full [1.3845, 0.5523, 1.3828] | Q_surv == sum(bc_C per territory): True | sum Q_full 3.3196 | protocol_C in meta: True
+  102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real    n_terr 3 sum n_outlets 6 vs n_outlets 6 | Q_surv [1.3845, 0.5523, 1.3828] Q_full [1.3845, 0.5523, 1.3828] | Q_surv == sum(bc_C per territory): True | sum Q_full 3.3196 | protocol_C in meta: True
+  102_left_LAD_mid_20mm_80ds__T4_taper__real              n_terr 3 sum n_outlets 6 vs n_outlets 6 | Q_surv [1.3845, 0.5523, 1.3828] Q_full [1.3845, 0.5523, 1.3828] | Q_surv == sum(bc_C per territory): True | sum Q_full 3.3196 | protocol_C in meta: True
+
+====================================================================================================
+probes.csv — inlet/outlet rows, bifurcation stations, tangents, measurement
+====================================================================================================
+  14_left_LAD_prox_20mm_80ds__T1_missed_branch__real
+    kinds {'grid': 19, 'outlet': 5, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'lesion_dist': 1, 'measurement': 1}  total 29
+    inlet row: node 0 normal (0.940,-0.133,-0.314)  inlet.json normal [0.94, -0.133, -0.314]  r_ref 1.082
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: [[49.89174407176872, 49.89174407176872, 133.0]]  meta.measurement (133, 49.89)
+    s_node_mm monotone: True; min spacing 4.474 mm; |s_mm - s_node_mm| max 0.239 mm
+  14_left_LAD_prox_20mm_80ds__baseline__real
+    kinds {'grid': 18, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'lesion_dist': 1, 'bif_prox': 1, 'bif_dist': 1, 'measurement': 1}  total 31
+    inlet row: node 0 normal (0.940,-0.133,-0.314)  inlet.json normal [0.94, -0.133, -0.314]  r_ref 1.082
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: [[49.89174407176872, 49.89174407176872, 175.0]]  meta.measurement (175, 49.89)
+    s_node_mm monotone: True; min spacing 1.520 mm; |s_mm - s_node_mm| max 0.239 mm
+  14_left_LAD_prox_20mm_80ds__clean_nolesion__real
+    kinds {'grid': 18, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'lesion_dist': 1, 'bif_prox': 1, 'bif_dist': 1, 'measurement': 1}  total 31
+    inlet row: node 0 normal (0.940,-0.133,-0.314)  inlet.json normal [0.94, -0.133, -0.314]  r_ref 1.082
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: [[49.89174407176872, 49.89174407176872, 175.0]]  meta.measurement (175, 49.89)
+    s_node_mm monotone: True; min spacing 1.520 mm; |s_mm - s_node_mm| max 0.239 mm
+  14_left_LAD_prox_20mm_80ds__T2_truncation__real
+    kinds {'grid': 6, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'lesion_dist': 1, 'bif_prox': 1, 'bif_dist': 1}  total 18
+    inlet row: node 0 normal (0.940,-0.133,-0.314)  inlet.json normal [0.94, -0.133, -0.314]  r_ref 1.082
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: []  meta.measurement (163, 44.72)
+    s_node_mm monotone: True; min spacing 1.520 mm; |s_mm - s_node_mm| max 0.239 mm
+  14_left_LAD_prox_20mm_80ds__T3_stenosis_length__real
+    kinds {'grid': 20, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'bif_prox': 1, 'bif_dist': 1, 'measurement': 1}  total 32
+    inlet row: node 0 normal (0.940,-0.133,-0.314)  inlet.json normal [0.94, -0.133, -0.314]  r_ref 1.082
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: [[49.89174407176872, 49.89174407176872, 175.0]]  meta.measurement (175, 49.89)
+    s_node_mm monotone: True; min spacing 1.520 mm; |s_mm - s_node_mm| max 0.239 mm
+  14_left_LAD_prox_20mm_80ds__T4_taper__real
+    kinds {'grid': 18, 'outlet': 6, 'inlet': 1, 'lesion_prox': 1, 'throat': 1, 'lesion_dist': 1, 'bif_prox': 1, 'bif_dist': 1, 'measurement': 1}  total 31
+    inlet row: node 0 normal (0.940,-0.133,-0.314)  inlet.json normal [0.94, -0.133, -0.314]  r_ref 1.082
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: [[49.89174407176872, 49.89174407176872, 175.0]]  meta.measurement (175, 49.89)
+    s_node_mm monotone: True; min spacing 1.520 mm; |s_mm - s_node_mm| max 0.239 mm
+  102_left_LAD_mid_20mm_80ds__T2_truncation__real
+    kinds {'grid': 14, 'outlet': 6, 'bif_prox': 2, 'inlet': 1, 'bif_dist': 1}  total 24
+    inlet row: node 0 normal (0.949,0.047,0.311)  inlet.json normal [0.949, 0.047, 0.311]  r_ref 1.920
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: []  meta.measurement (483, 70.31)
+    s_node_mm monotone: True; min spacing 1.624 mm; |s_mm - s_node_mm| max 0.308 mm
+  102_left_LAD_mid_20mm_80ds__T3_stenosis_length__real
+    kinds {'grid': 28, 'outlet': 6, 'bif_prox': 2, 'inlet': 1, 'bif_dist': 1, 'lesion_prox': 1, 'lesion_dist': 1}  total 40
+    inlet row: node 0 normal (0.949,0.047,0.311)  inlet.json normal [0.949, 0.047, 0.311]  r_ref 1.920
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: []  meta.measurement (490, 75.16)
+    s_node_mm monotone: True; min spacing 1.144 mm; |s_mm - s_node_mm| max 0.308 mm
+  102_left_LAD_mid_20mm_80ds__T4_taper__real
+    kinds {'grid': 25, 'outlet': 6, 'bif_prox': 2, 'inlet': 1, 'bif_dist': 1}  total 35
+    inlet row: node 0 normal (0.949,0.047,0.311)  inlet.json normal [0.949, 0.047, 0.311]  r_ref 1.920
+    outlet rows == outlets.csv (pos+normal): True
+    measurement station: []  meta.measurement (490, 75.16)
+    s_node_mm monotone: True; min spacing 1.624 mm; |s_mm - s_node_mm| max 0.308 mm
+  14_left_LAD_prox_20mm_80ds__T1_missed_branch__real: bif stations 0 at s_node [] kinds [] r_ref []
+  14_left_LAD_prox_20mm_80ds__baseline__real: bif stations 2 at s_node [41.45, 44.72] kinds ['bif_prox', 'bif_dist'] r_ref [0.831, 0.93]
+  14_left_LAD_prox_20mm_80ds__T4_taper__real: bif stations 2 at s_node [41.45, 44.32] kinds ['bif_prox', 'bif_dist'] r_ref [0.746, 0.828]
+  102_left_LAD_mid_20mm_80ds__T4_taper__real: bif stations 3 at s_node [9.28, 22.17, 28.25] kinds ['bif_prox', 'bif_prox', 'bif_dist'] r_ref [1.643, 1.556, 1.203]
+
+====================================================================================================
+tangents (outlets): cos(shipped normal, last edge)
+====================================================================================================
+    out_160: |n|=1.000000 cos(last edge)=0.990  last edge 0.43 mm
+    out_425: |n|=1.000000 cos(last edge)=0.998  last edge 0.58 mm
+    out_600: |n|=1.000000 cos(last edge)=0.997  last edge 0.38 mm
+    out_639: |n|=1.000000 cos(last edge)=0.988  last edge 0.43 mm
+    out_742: |n|=1.000000 cos(last edge)=0.994  last edge 0.71 mm
+    out_868: |n|=1.000000 cos(last edge)=0.876  last edge 0.43 mm
+    X.tangent(t, 0) = [0. 0. 1.]   (parent[0] = -1);  path2[0] for LAD = 33
+    LAD path[0] node 33 at [  31.17 -140.1   132.95] vs root node 0 at [  20.61 -141.01  134.45]; arc(path0) = 11.37 mm
+    true root downstream direction (node0 -> child) = [0.957 0.29  0.034]; shipped inlet normal = [ 0.94  -0.133 -0.314]; cos = 0.850
+    path bif at node 116 s=42.97 mm: children [(119, True, 0.647), (161, True, 0.93)]
+
+====================================================================================================
+T2 packages: measurement vs stump
+====================================================================================================
+  14_left_LAD_prox_20mm_80ds__T2_truncation__real: measurement {'tree_node': 163, 's_mm': 44.721672863633, 'note': 'the node the 0D model reports at; NOT necessarily c + L/2 + 20 mm if the error type removed that point — see the T2 open item in CFD-ARM-SPEC §17'}
+    closed outlets ['out_163']; lesion c=19.71 L=20.00 -> c+L/2+20 = 49.71; info {'cut_arc_mm': 44.721672863633, 'length_lost_mm': 74.74056301024588, 'segments_deleted': 2.0}; last host station s_node 44.72
+  102_left_LAD_mid_20mm_80ds__T2_truncation__real: measurement {'tree_node': 483, 's_mm': 70.30771343813939, 'note': 'the node the 0D model reports at; NOT necessarily c + L/2 + 20 mm if the error type removed that point — see the T2 open item in CFD-ARM-SPEC §17'}
+    closed outlets ['out_483']; lesion c=45.11 L=20.00 -> c+L/2+20 = 75.11; info {'cut_arc_mm': 70.30771343813939, 'length_lost_mm': 81.07699021827673, 'segments_deleted': 0.0}; last host station s_node 70.31
+
+done

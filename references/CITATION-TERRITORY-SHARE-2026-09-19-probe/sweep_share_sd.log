@@ -1,0 +1,20 @@
+sd=0.00  n= 100  resid med 0.0413  pass 92%  |dFFR| med 0.0194  (158s)
+sd=0.05  n= 100  resid med 0.0479  pass 85%  |dFFR| med 0.0195  (147s)
+sd=0.10  n= 100  resid med 0.0705  pass 68%  |dFFR| med 0.0190  (149s)
+sd=0.15  n= 100  resid med 0.0977  pass 53%  |dFFR| med 0.0206  (147s)
+sd=0.20  n=  97  resid med 0.1208  pass 43%  |dFFR| med 0.0225  (149s)
+sd=0.25  n=  97  resid med 0.1334  pass 40%  |dFFR| med 0.0243  (149s)
+
+   sd   n  resid_median  resid_p10  resid_p90  pass_rate  dffr_abs_median  dffr_abs_p90  flips  C_ratio_iqr
+0.00 100      0.041275   0.009949   0.094602   0.920000         0.019418      0.043626      0     0.147508
+0.05 100      0.047930   0.008055   0.103715   0.850000         0.019459      0.042634      0     0.149061
+0.10 100      0.070491   0.013822   0.142227   0.680000         0.019045      0.043810      0     0.139094
+0.15 100      0.097732   0.018991   0.188018   0.530000         0.020600      0.047145      0     0.148704
+0.20  97      0.120765   0.027003   0.247172   0.432990         0.022534      0.059177      2     0.164837
+0.25  97      0.133449   0.026572   0.305466   0.402062         0.024250      0.075816      5     0.160321
+
+# Run: 50 cohort instances x 2 draws, bed=leaky, seed 20260919, six arms.
+# Interpreter: a scratch venv (numpy/pandas/scipy/networkx/pyvista) -- the project tree has no venv.
+# Nothing in code/, protocol/ or results/ was modified; negatives.SD_TERRITORY_SHARE was monkeypatched in-process.
+# Cross-check: results/negatives_smoke-2026-09-19.csv gives median residual 0.0718 / pass 63.9% at the shipped
+# 0.10; this probe's sd=0.10 arm gives 0.0705 / 68% on a larger instance subset.

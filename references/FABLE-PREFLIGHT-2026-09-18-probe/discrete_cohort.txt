@@ -1,0 +1,22 @@
+selected 150 under discrete bed (0.60 mm, leaf r^2.66):
+  load/solve errors: 0
+  leaky recompute vs file: max |d| = 0.005763583055378718 (expected ~<0.01: lesion-cap fix)
+  trees failing healthy gate (hmain<0.90): 32 of 107
+  instances on gate-failing trees: 48
+  instances single-outlet: 4 ; zero downstream bifurcation on path (discrete): 43 ; leaky: 37
+  measurement node unresolved under discrete: 0
+  eligible (solves, hmain>=0.90, >=2 outlets): 99 ; +downstream bifurcation: 77
+  discrete - leaky FFR_meas: mean -0.0675 SD 0.0754 min -0.2878 max +0.0769
+  decision (<=0.80) disagreement leaky vs discrete: 27 of 150
+  band under discrete (rows = leaky band as selected):
+ band_discrete  [0.65, 0.7)  [0.7, 0.75)  [0.75, 0.8)  [0.8, 0.85)  [0.85, 0.9)  [0.9, 0.95)
+band_leaky                                                                                 
+[0.65, 0.7)              8            1            1            0            0            0
+[0.7, 0.75)              6            7            0            0            0            0
+[0.75, 0.8)              5            5            8            2            0            0
+[0.8, 0.85)              3            6            4            7            1            0
+[0.85, 0.9)              0            2            3           10            5            4
+[0.9, 0.95)              0            1            1            4            5           13
+  instances with discrete baseline (pre-insertion) FFR at meas node < 0.90: 3
+  both-structure 0.70-0.90 window (CFD §3 rule) count: 60 ; of which eligible+downstream bif: 36
+  per vessel: {'RCA': 19, 'LCX': 10, 'LAD': 7}

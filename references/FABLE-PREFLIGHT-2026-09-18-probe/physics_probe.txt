@@ -1,0 +1,48 @@
+=== A. calibration guard on the review's infeasible vessel (discrete bed) ===
+  discrete: raised ValueError: infeasible: healthy epicardial network passes at most 6.732 mL/s, below the demand 8.781 mL/s — tree ineligible for this bed/truncation
+  leaky: NO EXCEPTION  C=1.944e+01 Qin=8.781 demand=8.781 minFFR=0.877 conv=True
+=== A2. q_max solve at C=1e-30 is numerically sane? (discrete, healthy vessel) ===
+  inflow=27.8079 mL/s, mass_err=3.23e+13, P_leaf-P_v=1.137e-13 Pa, finite=True
+  analytic (P_in-P_v)/R_epi = 27.8079 mL/s
+=== B. zero-outlet guard ===
+  raised: tiny: no outlet survives truncation at r_ref >= 0.60 mm
+=== C. spurious shoulder K terms: analytic half-width of the DS>=0.30 region for cosine lesions ===
+  L=10 DS=40%: DS>=0.30 for |s-c| < 1.67 mm 
+  L=10 DS=50%: DS>=0.30 for |s-c| < 2.18 mm 
+  L=10 DS=55%: DS>=0.30 for |s-c| < 2.36 mm 
+  L=10 DS=60%: DS>=0.30 for |s-c| < 2.50 mm 
+  L=10 DS=65%: DS>=0.30 for |s-c| < 2.62 mm 
+  L=10 DS=70%: DS>=0.30 for |s-c| < 2.73 mm 
+  L=10 DS=75%: DS>=0.30 for |s-c| < 2.82 mm 
+  L=10 DS=80%: DS>=0.30 for |s-c| < 2.90 mm 
+  L=20 DS=40%: DS>=0.30 for |s-c| < 3.33 mm 
+  L=20 DS=50%: DS>=0.30 for |s-c| < 4.36 mm 
+  L=20 DS=55%: DS>=0.30 for |s-c| < 4.71 mm 
+  L=20 DS=60%: DS>=0.30 for |s-c| < 5.00 mm 
+  L=20 DS=65%: DS>=0.30 for |s-c| < 5.25 mm -> EXCEEDS 5 mm suppression
+  L=20 DS=70%: DS>=0.30 for |s-c| < 5.46 mm -> EXCEEDS 5 mm suppression
+  L=20 DS=75%: DS>=0.30 for |s-c| < 5.64 mm -> EXCEEDS 5 mm suppression
+  L=20 DS=80%: DS>=0.30 for |s-c| < 5.80 mm -> EXCEEDS 5 mm suppression
+  shoulder K relative to throat K at DS_sh=0.30/0.35/0.40:
+   DS=60: throat (A0/As-1)^2=27.6; shoulder 0.30->3.9%  0.35->6.8%  0.40->11.5%
+   DS=65: throat (A0/As-1)^2=51.3; shoulder 0.30->2.1%  0.35->3.6%  0.40->6.2%
+   DS=70: throat (A0/As-1)^2=102.2; shoulder 0.30->1.1%  0.35->1.8%  0.40->3.1%
+   DS=75: throat (A0/As-1)^2=225.0; shoulder 0.30->0.5%  0.35->0.8%  0.40->1.4%
+   DS=80: throat (A0/As-1)^2=576.0; shoulder 0.30->0.2%  0.35->0.3%  0.40->0.5%
+=== D. self-test vessel: does a shoulder term appear? (single segment, uniform 0.5 mm spacing) ===
+  L=10.0 DS=60: n_lesions(K>0)=1 at arc mm [31.5] minFFR=0.8494
+  L=10.0 DS=70: n_lesions(K>0)=1 at arc mm [31.5] minFFR=0.6931
+  L=10.0 DS=80: n_lesions(K>0)=1 at arc mm [31.5] minFFR=0.4270
+  L=20.0 DS=60: n_lesions(K>0)=1 at arc mm [31.5] minFFR=0.8323
+  L=20.0 DS=70: n_lesions(K>0)=2 at arc mm [26.5, 31.5] minFFR=0.6636
+  L=20.0 DS=80: n_lesions(K>0)=3 at arc mm [26.5, 31.5, 37.0] minFFR=0.3942
+=== E. r > r_ref explanation for inflow > demand (E0 rows, murray x1.0) ===
+  837_left: excess +0.33%  n_les=3  frac active nodes r>r_ref=0.39  median r/r_ref=0.949  inflow(K=0, actual r)/demand=1.0034  healthy/demand=1.0000
+  937_left: excess +0.32%  n_les=2  frac active nodes r>r_ref=0.49  median r/r_ref=0.995  inflow(K=0, actual r)/demand=1.0033  healthy/demand=1.0000
+  80_left: excess +0.25%  n_les=0  frac active nodes r>r_ref=0.46  median r/r_ref=0.988  inflow(K=0, actual r)/demand=1.0025  healthy/demand=1.0000
+  911_left: excess +0.22%  n_les=1  frac active nodes r>r_ref=0.57  median r/r_ref=1.021  inflow(K=0, actual r)/demand=1.0024  healthy/demand=1.0000
+  124_right: excess -2.66%  n_les=0  frac active nodes r>r_ref=0.40  median r/r_ref=0.969  inflow(K=0, actual r)/demand=0.9734  healthy/demand=1.0000
+  274_right: excess -2.56%  n_les=0  frac active nodes r>r_ref=0.37  median r/r_ref=0.957  inflow(K=0, actual r)/demand=0.9744  healthy/demand=1.0000
+=== F. Picard: check convergence criterion semantics on a hard case (80%DS, L=20) ===
+  iters=28 conv=True mass_err=1.5e-11
+  max |dP|/P_in between tol 1e-8 and 1e-13: 4.49e-12

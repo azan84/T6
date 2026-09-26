@@ -1,0 +1,96 @@
+  1/30 scan 306 LAD 12 rows 4s
+  2/30 scan 14 LAD 12 rows 8s
+  3/30 scan 937 LAD 12 rows 11s
+  4/30 scan 138 LAD 12 rows 15s
+  5/30 scan 211 LAD 12 rows 18s
+  6/30 scan 757 LAD 12 rows 23s
+  7/30 scan 958 LAD 12 rows 26s
+  8/30 scan 947 LAD 12 rows 30s
+  9/30 scan 328 LAD 12 rows 34s
+  10/30 scan 461 LAD 12 rows 37s
+  11/30 scan 196 LCX 12 rows 40s
+  12/30 scan 907 LCX 12 rows 43s
+  13/30 scan 43 LCX 12 rows 47s
+  14/30 scan 95 LCX 12 rows 50s
+  15/30 scan 69 LCX 12 rows 53s
+  16/30 scan 473 LCX 12 rows 56s
+  17/30 scan 659 LCX 12 rows 59s
+  18/30 scan 844 LCX 12 rows 62s
+  19/30 scan 580 LCX 12 rows 65s
+  20/30 scan 690 LCX 12 rows 68s
+  21/30 scan 341 RCA 12 rows 72s
+  22/30 scan 928 RCA 12 rows 74s
+  23/30 scan 211 RCA 12 rows 76s
+  24/30 scan 830 RCA 12 rows 78s
+  25/30 scan 139 RCA 12 rows 80s
+  26/30 scan 423 RCA 12 rows 83s
+  27/30 scan 272 RCA 12 rows 85s
+  28/30 scan 335 RCA 12 rows 88s
+  29/30 scan 869 RCA 12 rows 90s
+  30/30 scan 683 RCA 12 rows 91s
+
+=== CELL CENSUS: 0D discrete, 30 frozen 3D instances — rows with status ok, by error type x protocol ===
+protocol            A_fixed  B_rederived  C_flowmatched
+error_type                                             
+T1_missed_branch         30           30             23
+T2_truncation            20           30             16
+T3_stenosis_length       30           30             30
+T4_taper                 21           30              9
+
+non-ok statuses:
+error_type        protocol       status                                           
+T1_missed_branch  C_flowmatched  skipped: fewer than 2 shared territories to match     7
+T2_truncation     A_fixed        skipped: no bed left                                 10
+                  C_flowmatched  skipped: fewer than 2 shared territories to match    14
+T4_taper          A_fixed        skipped: no bed left                                  9
+                  C_flowmatched  skipped: fewer than 2 shared territories to match    21
+
+by vessel, Protocol C ok:
+vessel              LAD  LCX  RCA
+error_type                       
+T1_missed_branch     10   10    3
+T2_truncation        10    6    0
+T3_stenosis_length   10   10   10
+T4_taper              6    3    0
+
+TOTAL ok 0D cells over 30 instances: 299 of 360 (A/B need 1 solve, C needs 2 in 3D)
+3D solves that have a 0D counterpart per tier: baseline 30 + A/B 221 + C 156 = 407  (spec §4 assumes 17 x 30 = 510)
+
+=== T4 closed-outlet artefact: leaves whose clean counterpart is an interior node (w_clean = 0) ===
+ scan vessel  ds  n_out_clean  ffr_clean  T4_n_out  T4_closed_A  T4_ffrA_coded  T4_dFFR_A_coded  T4_ffrA_carry  T4_dFFR_A_carry  T4_meas_survives  T2_n_out  T2_closed_A  T1_n_out  T1_closed_A
+  306    LAD  80            6      0.688         6            2          0.823            0.135          0.823            0.135              True         6            1         5            0
+   14    LAD  80            6      0.761         6            1          0.848            0.086          0.848            0.086              True         6            1         5            0
+  937    LAD  70            6      0.762         6            3          0.999            0.238          0.999            0.238              True         5            1         5            0
+  138    LAD  70            5      0.802         5            1          0.843            0.041          0.843            0.041              True         5            1         4            0
+  211    LAD  65            5      0.835         5            1          0.897            0.062          0.897            0.062              True         4            1         4            0
+  757    LAD  60            6      0.813         6            2          0.890            0.077          0.890            0.077              True         5            1         4            0
+  958    LAD  75            5      0.809         5            3          0.999            0.190          0.999            0.190              True         5            1         4            0
+  947    LAD  60            5      0.881         5            3          0.998            0.117          0.998            0.117              True         4            1         4            0
+  328    LAD  70            5      0.937         5            1          0.952            0.015          0.952            0.015              True         5            1         4            0
+  461    LAD  55            6      0.917         6            3          0.999            0.082          0.999            0.082              True         5            1         5            0
+  196    LCX  75            3      0.696         3            3            NaN              NaN          1.000            0.304              True         2            1         2            0
+  907    LCX  75            7      0.679         7            3          0.998            0.319          0.998            0.319              True         7            1         6            0
+   43    LCX  65            8      0.705         8            4          0.951            0.246          0.951            0.246              True         5            1         7            0
+   95    LCX  70            6      0.715         6            3          0.999            0.283          0.999            0.283              True         6            1         5            0
+   69    LCX  65            4      0.810         4            2          1.000            0.190          1.000            0.190              True         4            1         3            0
+  473    LCX  60            6      0.850         6            3          0.999            0.150          0.999            0.150              True         5            1         5            0
+  659    LCX  55            6      0.862         6            2          0.957            0.095          0.957            0.095              True         5            1         5            0
+  844    LCX  65            5      0.886         5            2          0.998            0.112          0.998            0.112              True         4            1         4            0
+  580    LCX  40            5      0.942         5            2          0.998            0.056          0.998            0.056              True         4            1         4            0
+  690    LCX  40            5      0.929         5            1          0.950            0.021          0.950            0.021              True         4            1         4            0
+  341    RCA  70            3      0.674         3            3            NaN              NaN          1.000            0.326              True         1            1         2            0
+  928    RCA  70            3      0.658         3            3            NaN              NaN          1.000            0.342              True         1            1         2            0
+  211    RCA  70            2      0.716         2            1          0.828            0.113          0.828            0.113              True         1            1         1            0
+  830    RCA  70            2      0.720         2            2            NaN              NaN          1.000            0.280              True         1            1         1            0
+  139    RCA  70            2      0.773         2            2            NaN              NaN          1.000            0.227              True         1            1         1            0
+  423    RCA  65            2      0.766         2            1          0.875            0.109          0.875            0.109              True         1            1         1            0
+  272    RCA  65            3      0.811         3            3            NaN              NaN          1.000            0.189              True         1            1         2            0
+  335    RCA  55            2      0.894         2            2            NaN              NaN          1.000            0.106              True         1            1         1            0
+  869    RCA  60            2      0.855         2            2            NaN              NaN          1.000            0.145              True         1            1         1            0
+  683    RCA  40            2      0.912         2            2            NaN              NaN          1.000            0.088              True         1            1         1            0
+
+T4: instances with >=1 outlet CLOSED under Protocol A: 30/30 ; closed outlets total 66 of 133
+T4 x A dFFR as coded: mean +0.1303, min +0.0150; flips vs 0.80: 13
+T4 x A dFFR with territory weight carried to the moved leaf: mean +0.1582, min +0.0150; flips: 13
+T2: instances where ALL outlets are closed under A (no bed left; 3D unsolvable): 10/30
+T1: closed outlets under A: 0 (expected 0)

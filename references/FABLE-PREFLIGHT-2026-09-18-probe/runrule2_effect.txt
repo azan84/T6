@@ -1,0 +1,46 @@
+SELECTED 150, leaky bed: FFR_meas(tree-wide run rule) - FFR_meas(current):
+  changed: 89  mean +0.0023  max +0.0728  min -0.0001  |d|>0.005: 14  |d|>0.01: 9  C unchanged in all: True
+  band changes: 10  decision changes: 2
+  K terms inside the window (current rule) value counts: {1: 89, 2: 19, 3: 39, 4: 3}  tree rule: {1: 147, 2: 3}
+  bif_in_window subset (n=26): K-in-window current {1: 6, 2: 6, 3: 12, 4: 2}; dFFR mean +0.0078 max +0.0728
+     scan  side vessel                                                       loc  L_mm  ds_pct  ffr_cur  ffr_tree  nKwin_cur  nKwin_tree
+52    341  left    LAD  <pandas.core.indexing._LocIndexer object at 0x112fb9af0>  10.0      65   0.7780    0.8508          2           1
+11    667  left    LCX  <pandas.core.indexing._LocIndexer object at 0x112936e50>  10.0      75   0.6716    0.7132          2           1
+81    825  left    LAD  <pandas.core.indexing._LocIndexer object at 0x112e0a690>  20.0      75   0.8110    0.8278          3           1
+38    806  left    LCX  <pandas.core.indexing._LocIndexer object at 0x112d4abd0>  20.0      70   0.7321    0.7461          3           1
+3     448  left    LAD  <pandas.core.indexing._LocIndexer object at 0x112921400>  20.0      75   0.6943    0.7067          2           1
+105   844  left    LAD  <pandas.core.indexing._LocIndexer object at 0x11a1114f0>  20.0      75   0.8731    0.8837          3           1
+  by L_mm x ds_pct, mean dFFR:
+ ds_pct      40   50      55      60      65     70     75      80
+L_mm                                                             
+10.0   -0.0000  0.0  0.0000 -0.0000  0.0042 -0.000  0.003 -0.0000
+20.0    0.0006 -0.0 -0.0001  0.0031  0.0040  0.004  0.004  0.0013
+
+NATURAL trees (107): min_ffr_main tree-rule - current: changed 0, max |d| 0.0000; n_lesions total 316 -> 316
+
+=== V8a 993_left LCX prox L=20 (discrete), tree-wide rule ===
+  x1: FFR_meas=0.79619 nK_path=1 at [19.9]
+  x2: FFR_meas=0.79741 nK_path=1 at [19.96]
+  x4: FFR_meas=0.79743 nK_path=1 at [19.9]
+  V8a |d| x1->x2 = 0.00122; x2->x4 = 0.00002
+
+=== T3 length sweep, 65 %DS, 993_left LCX prox (leaky), tree-wide rule ===
+  L=   8 FFR=0.8742 step= nK_path=1
+  L=   9 FFR=0.8715 step=-0.0027 nK_path=1
+  L=  10 FFR=0.8688 step=-0.0027 nK_path=1
+  L=  11 FFR=0.8661 step=-0.0027 nK_path=1
+  L=  12 FFR=0.8635 step=-0.0027 nK_path=1
+  L=  13 FFR=0.8608 step=-0.0027 nK_path=1
+  L=  14 FFR=0.8582 step=-0.0026 nK_path=1
+  L=  15 FFR=0.8556 step=-0.0026 nK_path=1
+  L=  16 FFR=0.8532 step=-0.0024 nK_path=1
+  L=  17 FFR=0.8506 step=-0.0026 nK_path=1
+  L=  18 FFR=0.8480 step=-0.0026 nK_path=1
+  L=  19 FFR=0.8455 step=-0.0025 nK_path=1
+  L=  20 FFR=0.8430 step=-0.0025 nK_path=1
+  L=  21 FFR=0.8405 step=-0.0025 nK_path=1
+  L=  22 FFR=0.8380 step=-0.0025 nK_path=1
+  L=  23 FFR=0.8355 step=-0.0025 nK_path=1
+  L=  24 FFR=0.8330 step=-0.0025 nK_path=1
+  L=  25 FFR=0.8308 step=-0.0023 nK_path=1
+  L=  26 FFR=0.8283 step=-0.0025 nK_path=1

@@ -1,0 +1,8 @@
+E0 murray x1.0 CURRENT code vs on-disk 17:12 file: identical trees 260/320; changed 58; max |d| 0.0081; up 25 down 33; lesion terms 827 -> 760 (increased 0, decreased 57); 701s
+verdict counts (current code): in[0.70,0.90) 20  in[0.75,0.85) 4  <=0.80 2
+Traceback (most recent call last):
+  File "<stdin>", line 13, in <module>
+  File "/Users/mzpi/.venvs/paper6-t6/lib/python3.14/site-packages/pandas/core/generic.py", line 6194, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'min_cur'. Did you mean: 'Qin_cur'?

@@ -1,0 +1,6 @@
+ground truth: 772 voxels belong to the deleted branch (nearest-relative-centreline); 760 within 2 r of it
+retained-vessel voxels farther than 1.0 r from every retained point (the unprotected shell): 27420  (> 1.15 r: 23731, > 1.3 r: 21573)
+shipped-rule erosion: 1298 voxels; of which on the ORIGINAL mask surface: 1186; 26-conn components of the erosion set: 1
+erosion touches 97 of 706 retained centreline points; bbox extent of eroded voxels (mm): [18.1 30.9 37.5]
+left-tree component voxels: 23958; shipped T1 edit removes 2061 = 8.6 % of it; truncation step (shipped) removes 1787 = 7.5 %
+1.10 r / 6-conn: erosion 20 voxels, on surface 20, touching 8 retained points

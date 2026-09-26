@@ -1,0 +1,14 @@
+check,case,mesh_level,n_cells,throat_cells_across,checkMesh_ok,bc_mode,relax_used,iterations,final_residual_p,final_residual_U,mass_imbalance_pct,Q_inlet_mls,Q_outlet_mls,p_inlet_Pa,p_proximal_Pa,p_throat_Pa,p_measurement_Pa,p_outlet_Pa,FFR_measurement,R_imposed_SI,R_derived_SI,Re_throat,wallclock_min,cores,openfoam_version,notes
+A1,pipe,1,,,,prescribed-flow,,,,,,1.5,,,,,,,,,,,,,,"report dP between x=60 and x=90 mm in notes; expected 90.54 Pa"
+A2,sten00,1,,,,resistance,,,,,,,,,,,,,,6.977581e9,,,,,,
+A2,sten50,1,,,,resistance,,,,,,,,,,,,,,6.974906e9,,,,,,
+A2,sten70,1,,,,resistance,,,,,,,,,,,,,,6.974826e9,,,,,,
+A2,sten80,1,,,,resistance,,,,,,,,,,,,,,6.974430e9,,,,,,
+A4,sten70,1,,,,prescribed-flow,,,,,,,,,,,,,,,,,,,,"first solve of the round trip; derive R and enter it in R_derived_SI"
+A4,sten70,1,,,,resistance,,,,,,,,,,,,,,,,,,,,"second solve with the derived R; Q must match the prescribed flow to 0.5 %"
+A5,sten70,1,,,,resistance,,,,,,,,,,,,,,6.974826e9,,,,,,coarse
+A5,sten70,2,,,,resistance,,,,,,,,,,,,,,6.974826e9,,,,,,medium
+A5,sten70,3,,,,resistance,,,,,,,,,,,,,,6.974826e9,,,,,,fine
+A5,sten80,1,,,,resistance,,,,,,,,,,,,,,6.974430e9,,,,,,coarse
+A5,sten80,2,,,,resistance,,,,,,,,,,,,,,6.974430e9,,,,,,medium
+A5,sten80,3,,,,resistance,,,,,,,,,,,,,,6.974430e9,,,,,,fine

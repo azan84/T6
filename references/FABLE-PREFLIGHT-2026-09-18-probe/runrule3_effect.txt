@@ -1,0 +1,17 @@
+=== E0 trees where the tree-wide rule lost the main-vessel lesion (NaN lesion_ffr20) ===
+  341_left current           : minFFR=0.9644 nles=4 tightest= nan% ffr20=nan  K labels: [np.str_('D1'), np.str_('D2')]
+  341_left treewide          : minFFR=0.9644 nles=4 tightest= nan% ffr20=nan  K labels: [np.str_('D1'), np.str_('D2')]
+  341_left segrun+treemerge  : minFFR=0.9644 nles=4 tightest= nan% ffr20=nan  K labels: [np.str_('D1'), np.str_('D2')]
+  687_left current           : minFFR=0.9406 nles=2 tightest= nan% ffr20=nan  K labels: [np.str_('D2'), np.str_('OM1')]
+  687_left treewide          : minFFR=0.9406 nles=2 tightest= nan% ffr20=nan  K labels: [np.str_('D2'), np.str_('OM1')]
+  687_left segrun+treemerge  : minFFR=0.9406 nles=2 tightest= nan% ffr20=nan  K labels: [np.str_('D2'), np.str_('OM1')]
+  813_left current           : minFFR=0.9688 nles=2 tightest= nan% ffr20=nan  K labels: [np.str_('IM'), np.str_('OM1')]
+  813_left treewide          : minFFR=0.9688 nles=2 tightest= nan% ffr20=nan  K labels: [np.str_('IM'), np.str_('OM1')]
+  813_left segrun+treemerge  : minFFR=0.9688 nles=2 tightest= nan% ffr20=nan  K labels: [np.str_('IM'), np.str_('OM1')]
+
+=== selected 150 (leaky): R3 vs R2 vs current ===
+  R3-current: changed 2, max +0.0000, |d|>0.005 0; R3-R2: max|d| 0.00052, differing 2
+  K in window: current {1: 147, 2: 3}  R2 {1: 147, 2: 3}  R3 {1: 145, 2: 5}
+
+=== V8a slot 993_left LCX prox L=20 (discrete) under R3 ===
+  x1 0.79619 x2 0.79741 x4 0.79743: |d| 0.00122, 0.00002

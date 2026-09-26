@@ -1,0 +1,20 @@
+ground truth: 772 voxels belong to the deleted branch (nearest-relative-centreline); 760 within 2 r of it
+retained-vessel voxels farther than 1.0 r from every retained point (the unprotected shell): 27420  (> 1.15 r: 23731, > 1.3 r: 21573)
+
+--- T1 branch deletion variants (deleted = 42 branch points, retained = 706) ---
+SHIPPED: protect 1.00 r, 26-conn                           removed  2061  erosion(FP)  1298  remnant(FN)    9  components after 2
+protect 1.00 r, 6-conn (review probe's connectivity)       removed   855  erosion(FP)    92  remnant(FN)    9  components after 2
+protect 1.15 r, 26-conn                                    removed   810  erosion(FP)    54  remnant(FN)   16  components after 2
+protect 1.30 r, 26-conn                                    removed   751  erosion(FP)     1  remnant(FN)   22  components after 2
+protect 1.00 r, 26-conn, corridor 1.5 r of deleted pts     removed   713  erosion(FP)     9  remnant(FN)   56  components after 23
+protect 1.00 r, 26-conn, corridor 2.0 r of deleted pts     removed   779  erosion(FP)    28  remnant(FN)    9  components after 5
+protect 1.15 r, 26-conn, corridor 2.0 r of deleted pts     removed   757  erosion(FP)    13  remnant(FN)   16  components after 5
+nearest-centreline assignment (ground truth itself)        removed   760  erosion(FP)     0  remnant(FN)    0  components after 5
+
+--- truncation step variants (deleted = 121 sub-cut points, retained = 748 active points) ---
+ground truth sub-cut vessel voxels: 1298; retained-tree shell beyond 1.0 r: 26468
+SHIPPED rule: protect 1.00 r, 26-conn                      removed  1787  erosion(FP)   510  remnant(FN)   21  components after 2
+protect 1.00 r, 6-conn                                     removed  1329  erosion(FP)    52  remnant(FN)   21  components after 2
+protect 1.15 r, 26-conn                                    removed  1318  erosion(FP)    51  remnant(FN)   31  components after 2
+protect 1.00 r, 26-conn, corridor 2.0 r of sub-cut pts     removed  1320  erosion(FP)    43  remnant(FN)   21  components after 10
+protect 1.15 r, 26-conn, corridor 2.0 r of sub-cut pts     removed  1285  erosion(FP)    18  remnant(FN)   31  components after 10

@@ -1,0 +1,67 @@
+native DS along LCX path near the window (s mm: DS, r_fit mm, resolved):
+    4.33: DS=0.008  r=1.295 r_fit=1.306 seg=2 res=True
+    4.93: DS=0.255  r=1.099 r_fit=1.475 seg=3 res=True
+    5.41: DS=0.288  r=1.049 r_fit=1.474 seg=3 res=True
+    5.92: DS=0.314  r=1.011 r_fit=1.474 seg=3 res=True
+    6.40: DS=0.330  r=0.988 r_fit=1.473 seg=3 res=True
+    6.87: DS=0.332  r=0.983 r_fit=1.473 seg=3 res=True
+    7.35: DS=0.320  r=1.001 r_fit=1.472 seg=3 res=True
+    7.87: DS=0.290  r=1.045 r_fit=1.472 seg=3 res=True
+    8.43: DS=0.243  r=1.114 r_fit=1.471 seg=3 res=True
+    9.01: DS=0.182  r=1.202 r_fit=1.470 seg=3 res=True
+    9.62: DS=0.115  r=1.300 r_fit=1.470 seg=3 res=True
+   10.26: DS=0.051  r=1.394 r_fit=1.469 seg=3 res=True
+   10.90: DS=0.000  r=1.471 r_fit=1.469 seg=3 res=True
+   11.54: DS=0.000  r=1.524 r_fit=1.468 seg=3 res=True
+   12.18: DS=0.000  r=1.553 r_fit=1.467 seg=3 res=True
+   12.81: DS=0.000  r=1.563 r_fit=1.467 seg=3 res=True
+   13.39: DS=0.000  r=1.560 r_fit=1.466 seg=3 res=True
+   13.93: DS=0.000  r=1.548 r_fit=1.465 seg=3 res=True
+   14.51: DS=0.000  r=1.531 r_fit=1.465 seg=3 res=True
+   15.10: DS=0.000  r=1.514 r_fit=1.464 seg=3 res=True
+   15.64: DS=0.000  r=1.499 r_fit=1.464 seg=3 res=True
+   16.09: DS=0.000  r=1.484 r_fit=1.463 seg=3 res=True
+   16.50: DS=0.000  r=1.463 r_fit=1.463 seg=3 res=True
+   16.90: DS=0.018  r=1.436 r_fit=1.462 seg=3 res=True
+   17.36: DS=0.037  r=1.407 r_fit=1.462 seg=3 res=True
+   17.86: DS=0.050  r=1.389 r_fit=1.461 seg=3 res=True
+   18.34: DS=0.049  r=1.389 r_fit=1.461 seg=3 res=True
+   18.75: DS=0.036  r=1.407 r_fit=1.460 seg=3 res=True
+   19.14: DS=0.018  r=1.434 r_fit=1.460 seg=3 res=True
+   19.52: DS=0.001  r=1.458 r_fit=1.459 seg=3 res=True
+   19.90: DS=0.000  r=1.476 r_fit=1.459 seg=3 res=True
+   20.31: DS=0.000  r=1.493 r_fit=1.459 seg=3 res=True
+   20.78: DS=0.000  r=1.508 r_fit=1.458 seg=3 res=True
+   21.26: DS=0.000  r=1.521 r_fit=1.458 seg=3 res=True
+   21.71: DS=0.000  r=1.522 r_fit=1.457 seg=3 res=True
+   22.12: DS=0.000  r=1.506 r_fit=1.457 seg=3 res=True
+   22.53: DS=0.000  r=1.471 r_fit=1.456 seg=3 res=True
+   22.94: DS=0.021  r=1.426 r_fit=1.456 seg=3 res=True
+   23.34: DS=0.053  r=1.378 r_fit=1.455 seg=3 res=True
+   23.74: DS=0.083  r=1.334 r_fit=1.455 seg=3 res=True
+   24.12: DS=0.112  r=1.292 r_fit=1.455 seg=3 res=True
+   24.46: DS=0.140  r=1.251 r_fit=1.454 seg=3 res=True
+   24.87: DS=0.166  r=1.212 r_fit=1.454 seg=3 res=True
+   25.53: DS=0.007  r=1.321 r_fit=1.330 seg=6 res=True
+   25.99: DS=0.000  r=1.373 r_fit=1.340 seg=6 res=True
+   26.50: DS=0.000  r=1.404 r_fit=1.351 seg=6 res=True
+   27.02: DS=0.000  r=1.409 r_fit=1.362 seg=6 res=True
+   27.52: DS=0.000  r=1.399 r_fit=1.373 seg=6 res=True
+   27.98: DS=0.000  r=1.385 r_fit=1.383 seg=6 res=True
+   28.46: DS=0.014  r=1.374 r_fit=1.393 seg=6 res=True
+   28.97: DS=0.026  r=1.368 r_fit=1.404 seg=6 res=True
+   29.50: DS=0.033  r=1.369 r_fit=1.415 seg=6 res=True
+   30.00: DS=0.034  r=1.377 r_fit=1.426 seg=6 res=True
+   30.44: DS=0.027  r=1.397 r_fit=1.436 seg=6 res=True
+   30.86: DS=0.011  r=1.429 r_fit=1.445 seg=6 res=True
+   31.29: DS=0.000  r=1.468 r_fit=1.454 seg=6 res=True
+   31.75: DS=0.000  r=1.502 r_fit=1.464 seg=6 res=True
+   32.21: DS=0.000  r=1.522 r_fit=1.474 seg=6 res=True
+   32.66: DS=0.000  r=1.526 r_fit=1.483 seg=6 res=True
+   33.09: DS=0.000  r=1.518 r_fit=1.492 seg=6 res=True
+   33.52: DS=0.000  r=1.506 r_fit=1.502 seg=6 res=True
+   33.97: DS=0.012  r=1.493 r_fit=1.511 seg=6 res=True
+L=21.0 cur: K on path at s=[6.87, 19.9] DS=[0.332, 0.65]  K=[26831.302, 924179.583] (x1e9); DS>=0.30 nodes on path: [5.9, 6.4, 6.9, 7.4, 15.1, 15.6, 16.1, 16.5, 16.9, 17.4, 17.9, 18.3, 18.8, 19.1, 19.5, 19.9, 20.3, 20.8, 21.3, 21.7, 22.1, 22.5, 22.9, 23.3, 23.7, 24.1, 24.5, 24.9]
+L=21.0 run: K on path at s=[6.87, 19.9] DS=[0.332, 0.65]  K=[26831.302, 924179.583] (x1e9); DS>=0.30 nodes on path: [5.9, 6.4, 6.9, 7.4, 15.1, 15.6, 16.1, 16.5, 16.9, 17.4, 17.9, 18.3, 18.8, 19.1, 19.5, 19.9, 20.3, 20.8, 21.3, 21.7, 22.1, 22.5, 22.9, 23.3, 23.7, 24.1, 24.5, 24.9]
+L=22.0 cur: K on path at s=[6.87, 14.51, 19.9, 25.53] DS=[0.332, 0.313, 0.65, 0.317]  K=[26831.302, 22186.148, 924179.874, 34066.26] (x1e9); DS>=0.30 nodes on path: [5.9, 6.4, 6.9, 7.4, 14.5, 15.1, 15.6, 16.1, 16.5, 16.9, 17.4, 17.9, 18.3, 18.8, 19.1, 19.5, 19.9, 20.3, 20.8, 21.3, 21.7, 22.1, 22.5, 22.9, 23.3, 23.7, 24.1, 24.5, 24.9, 25.5]
+L=22.0 run: K on path at s=[6.87, 19.9, 25.53] DS=[0.332, 0.65, 0.317]  K=[26831.302, 924179.874, 34066.26] (x1e9); DS>=0.30 nodes on path: [5.9, 6.4, 6.9, 7.4, 14.5, 15.1, 15.6, 16.1, 16.5, 16.9, 17.4, 17.9, 18.3, 18.8, 19.1, 19.5, 19.9, 20.3, 20.8, 21.3, 21.7, 22.1, 22.5, 22.9, 23.3, 23.7, 24.1, 24.5, 24.9, 25.5]

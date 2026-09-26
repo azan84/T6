@@ -1,0 +1,13 @@
+=== B2: run-off available beyond the truncation point (mm), frozen cohort ===
+  KEEP=15 mm: median   78.8  >0 in 298/298  >5mm in 298  >10mm in 298
+  KEEP=20 mm: median   73.8  >0 in 298/298  >5mm in 298  >10mm in 296
+  KEEP=22 mm: median   71.8  >0 in 298/298  >5mm in 298  >10mm in 295
+  KEEP=25 mm: median   68.8  >0 in 298/298  >5mm in 296  >10mm in 293
+  KEEP=30 mm: median   63.8  >0 in 296/298  >5mm in 293  >10mm in 288
+
+=== B3: discrete leaves pushed below the 0.60 mm cut by T4's 0.93 scaling ===
+  instances: 148   total leaves 655   lost under T4 489 (75%)
+  instances losing EVERY leaf: 56
+  instances losing >=1 leaf  : 144
+
+

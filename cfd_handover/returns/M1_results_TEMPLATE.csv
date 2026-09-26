@@ -1,0 +1,7 @@
+case,geometry_step_ok,manual_repair_needed,n_surface_components,throat_radius_asbuilt_mm,throat_radius_target_mm,throat_pct_error,subdivision_edge_mm,n_cells,throat_cells_across,checkMesh_ok,max_nonortho_deg,max_skewness,neg_volumes,bc_mode,relax_used,converged,iterations,final_residual_p,final_residual_U,mass_imbalance_pct,Q_inlet_mls,Re_throat,wallclock_min,cores,openfoam_version,vmtk_version,mesher,notes
+clean_nolesion,,,,,,,,,,,,,,resistance,,,,,,,,,,,,,,"truncation clip only; no lesion, no mask edit. Tests the plain mask->mesh path."
+clean_nolesion,,,,,,,,,,,,,,prescribed-flow,,,,,,,,,,,,,,"same mesh, prescribed-flow mode; both BC modes must be stable for M1 to pass"
+baseline,,,,,0.2306,,,,,,,,,resistance,,,,,,,,,,,,,,"80 %DS lesion by radial_scale. throat_radius_target_mm = min r_target_mm in centreline.vtp"
+baseline,,,,,0.2306,,,,,,,,,prescribed-flow,,,,,,,,,,,,,,
+T1_missed_branch,,,,,0.2306,,,,,,,,,resistance,,,,,,,,,,,,,,"mask edit + lesion. 5 outlets (one fewer than baseline)"
+T1_missed_branch,,,,,0.2306,,,,,,,,,prescribed-flow,,,,,,,,,,,,,,"label this run PILOT — its Protocol C targets are provisional pending decision B1"

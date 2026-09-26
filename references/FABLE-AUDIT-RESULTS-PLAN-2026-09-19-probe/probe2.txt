@@ -1,0 +1,29 @@
+band holds (index): 36 | eligible&deletable&same: 33 {'RCA': 22, 'LCX': 6, 'LAD': 5}
+shift min/max: -0.3166 0.0567
+distinct trees that built under discrete (n_outlets notna): 108 | trees eligible: 69
+subset L_mm: {10.0: 20, 20.0: 10} ds: [np.int64(40), np.int64(55), np.int64(60), np.int64(65), np.int64(70), np.int64(75), np.int64(80)]
+band    [0.65, 0.7)  [0.7, 0.75)  [0.75, 0.8)  [0.8, 0.85)  [0.85, 0.9)  [0.9, 0.95)
+ds_pct                                                                              
+40                0            0            0            0            0            7
+50                0            0            0            0            0            4
+55                0            0            0            1            9            6
+60                0            0            1            5            7            4
+65                0            3            7            9            4            3
+70               10           14            9            5            3            1
+75                8            4            5            5            2            0
+80                7            4            3            0            0            0
+E0_prevalence_test_PRE-LESIONRULE.csv murray in[0.70,0.90)= 22 in[0.75,0.85)= 4 <=0.80= 2
+E0_prevalence_test_PRE-LESIONRULE.csv territory in[0.70,0.90)= 141 in[0.75,0.85)= 75 <=0.80= 52
+E0_prevalence_test_PRE-V9FIX.csv murray in[0.70,0.90)= 22 in[0.75,0.85)= 4 <=0.80= 2
+E0_prevalence_test_PRE-V9FIX.csv territory in[0.70,0.90)= 141 in[0.75,0.85)= 74 <=0.80= 52
+T2 meas_same_point: {False: 36}
+T1 meas_same_point: {nan: 10, True: 6}
+has fit_n_basins col: False
+skipped reasons: {'skipped: no deletable downstream branch': 10, 'skipped: fewer than 2 shared territories to match': 1}
+smoke instances:      scan  side vessel   loc  ds_pct
+0     102  left    LAD   mid      80
+20    280  left    LAD  prox      80
+40    306  left    LAD  prox      80
+64    335  left    LAD  prox      70
+84    368  left    LAD   mid      80
+104   621  left    LAD   mid      80

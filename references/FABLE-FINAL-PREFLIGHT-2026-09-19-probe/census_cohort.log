@@ -1,0 +1,14 @@
+  leaky 25/150  35s
+  leaky 50/150  62s
+  leaky 75/150  100s
+  leaky 100/150  134s
+  leaky 125/150  166s
+  leaky 150/150  196s
+  discrete 25/150  230s
+  discrete 50/150  257s
+  discrete 75/150  293s
+  discrete 100/150  325s
+  discrete 125/150  357s
+  discrete 150/150  388s
+wrote references/FABLE-FINAL-PREFLIGHT-2026-09-19-probe/census_cohort.csv (1194, 28) in 388s
+exit=0

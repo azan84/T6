@@ -1,0 +1,37 @@
+SELECTED 150, leaky bed: FFR_meas(run rule) - FFR_meas(current 5 mm rule):
+  changed: 76  mean +0.0011  max +0.0151  min -0.0001  |d|>0.005: 7  |d|>0.01: 2
+  band changes: 6  decision changes: 1
+  by L_mm x ds_pct, mean dFFR:
+ ds_pct   40   50      55      60      65      70      75      80
+L_mm                                                            
+10.0   -0.0  0.0  0.0000 -0.0000  0.0001 -0.0000 -0.0000 -0.0000
+20.0    0.0  0.0 -0.0001  0.0031  0.0034  0.0033  0.0011  0.0007
+  K-term count reduced in 75 instances; increased in 0
+
+=== V8a on 993_left LCX prox L=20 (discrete) under the run rule ===
+  x1: FFR_meas=0.79188 nK_path=2 at [6.87, 19.9]
+  x2: FFR_meas=0.79311 nK_path=2 at [7.12, 19.96]
+  x4: FFR_meas=0.79313 nK_path=2 at [7.25, 19.9]
+  V8a |d| x1->x2 = 0.00123; x2->x4 = 0.00002
+
+=== T3-type length error: FFR_meas vs lesion length at fixed 65 %DS, 993_left LCX prox (leaky), both rules ===
+  L_mm  FFR_cur  nK_cur | FFR_run nK_run
+     8  0.8721  2     | 0.8721  2
+     9  0.8694  2     | 0.8694  2
+    10  0.8667  2     | 0.8667  2
+    11  0.8641  2     | 0.8641  2
+    12  0.8614  2     | 0.8614  2
+    13  0.8588  2     | 0.8588  2
+    14  0.8562  2     | 0.8562  2
+    15  0.8536  2     | 0.8536  2
+    16  0.8512  2     | 0.8512  2
+    17  0.8486  2     | 0.8486  2
+    18  0.8461  2     | 0.8461  2
+    19  0.8436  2     | 0.8436  2
+    20  0.8411  2     | 0.8411  2
+    21  0.8386  2     | 0.8386  2
+    22  0.8331  4     | 0.8345  3
+    23  0.8298  4     | 0.8317  3
+    24  0.8264  4     | 0.8287  3
+    25  0.8231  4     | 0.8259  3
+    26  0.8196  4     | 0.8229  3

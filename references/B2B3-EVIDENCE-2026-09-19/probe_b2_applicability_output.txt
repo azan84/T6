@@ -1,0 +1,7 @@
+T2 applicability at KEEP = 25 mm (was 15 mm), frozen cohort
+
+  leaky    : 150 instances  |  T2 applicable 150 (100 %)  |  run-off deleted: median 71.1 mm, p10 38.8, max 199.9
+  discrete : 148 instances  |  T2 applicable 148 (100 %)  |  run-off deleted: median 66.7 mm, p10 33.8, max 185.5
+             errors/ineligible: 2
+
+

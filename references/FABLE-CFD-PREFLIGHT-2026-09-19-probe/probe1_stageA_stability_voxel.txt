@@ -1,0 +1,37 @@
+=== 1. Kinematic / analytic checks ===
+nu = 3.7736e-06  P_a/rho = 11.31979  P_v/rho = 0.62888
+Poiseuille dP 60->90 mm = 90.541 Pa ; Re_pipe = 168.7; entrance ~0.06*Re*D = 30.4 mm
+  throat r sten00 = 1.4850 mm
+  throat r sten50 = 0.7425 mm
+  throat r sten70 = 0.4455 mm
+  throat r sten80 = 0.2970 mm
+inlet mean U (sten, Q=1.5) = 0.1474 m/s; dynamic head 0.5U^2*rho = 11.5 Pa (x2 for parabolic) -> 0.0019 FFR units
+
+=== 2. Stage A 0D: discretisation floor and bed='discrete' constructor agreement ===
+ ds  FFR_dx025  FFR_dx010  FFR_dx005  dFFR_025_005  Q_dx025  Q_dx005  FFR_bedDiscrete_dx025  diff_bench_vs_discrete
+  0    0.98293    0.98293    0.98293       0.00000  1.50000  1.50000                0.98293                     0.0
+ 50    0.94611    0.94607    0.94607       0.00004  1.44097  1.44092                0.94611                     0.0
+ 70    0.75440    0.75410    0.75406       0.00033  1.13078  1.13024                0.75440                     0.0
+ 80    0.48491    0.48428    0.48418       0.00073  0.69476  0.69356                0.48491                     0.0
+
+=== 3. Resistance-BC explicit relaxation: loop gain g = R_out/R_epi; stable iff relax < 2/(1+g) ===
+  sten00: R_epi=4.997e+08  R_out=6.978e+09  g= 13.96  relax_max=2/(1+g)=0.134  (template relax=0.2 -> linear gain -1.99)
+  sten50: R_epi=8.119e+08  R_out=6.975e+09  g=  8.59  relax_max=2/(1+g)=0.209  (template relax=0.2 -> linear gain -0.92)
+  sten70: R_epi=2.969e+09  R_out=6.975e+09  g=  2.35  relax_max=2/(1+g)=0.597  (template relax=0.2 -> linear gain +0.33)
+  sten80: R_epi=9.259e+09  R_out=6.974e+09  g=  0.75  relax_max=2/(1+g)=1.141  (template relax=0.2 -> linear gain +0.65)
+  M1 scan14 clean: parallel R_out=1.540e+10; epicardial share of (P_a-P_v) at healthy_main 0.951 ~ 0.052 -> g ~ 18; relax_max ~ 0.104
+  (Per-outlet gains on a multi-outlet tree are larger still: each outlet sees only its own branch's epicardial resistance.)
+
+=== 4. Scan 14 mask: voxel spacing vs lesion throat / outlet radii ===
+  spacing (mm) = [0.31835938 0.31835938 0.5       ], shape = (512, 512, 275)
+  affine diag = [-0.31835938  0.31835938  0.5       ]
+  80%DS throat r_target = 0.2306 mm -> diameter 0.461 mm = 1.45 voxels (min spacing)
+  outlet r_mm at 0.60 cut: 0.55-0.79 mm -> diameter 1.1-1.6 mm = 2.2-3.2 voxels
+  marching-cubes triangle edge ~ voxel = 0.379 mm; spec wants edge <= r_throat/8 = 0.0288 mm in the lesion window -> subdivision factor ~13x per edge
+
+=== 5. Shipped inlet normal vs true root direction (scan 14 left) ===
+  shipped inlet normal      = [ 0.9399 -0.1334 -0.3143]
+  tangent(t,0) [root, fwd]  = [0.9454 0.2764 0.1725]   cos vs shipped = 0.798  angle = 37.1 deg
+  tangent(t,33) [path[0]]   = [ 0.9399 -0.1334 -0.3143]   cos vs shipped = 1.000
+  first edge node0->child   = [0.9565 0.2897 0.034 ]   cos vs shipped = 0.850
+  node 33 arc from root = 11.37 mm ; node 0 r = 1.301 mm

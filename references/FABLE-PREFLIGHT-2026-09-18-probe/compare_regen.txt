@@ -1,0 +1,24 @@
+PRE-LESIONRULE == my sweep_current (cap removed, old 5mm rule)? False ; PRE-LESIONRULE == 15:55 sweep? True
+REGENERATED sweep (18:50, new rule) vs PRE-LESIONRULE: changed 3376; mean +0.0015; max +0.1439; min -0.0074; |d|>0.005 426; |d|>0.01 171; |d|>0.02 62; band changed 162; decision changed 22
+  base_ffr max|d| 0.0075301109360446095  non-converged 0  max mass err 7.004160404096817e-11  rows 6944  hosts 280
+  supply per band (new): {'[0.65, 0.7)': 366, '[0.7, 0.75)': 348, '[0.75, 0.8)': 514, '[0.8, 0.85)': 641, '[0.85, 0.9)': 998, '[0.9, 0.95)': 1611}
+  new rule vs my tree-wide probe rule: differing 2194, max |d| 0.0330, |d|>0.005 71
+
+OLD SELECTION (15:55 file, still on disk) under the regenerated sweep: band changes 0; max |d| 0.0462; |d|>0.005 13; decision changes 2
+  per-band counts of the old selection under new FFRs: {'[0.65, 0.7)': 25, '[0.7, 0.75)': 25, '[0.75, 0.8)': 25, '[0.8, 0.85)': 25, '[0.85, 0.9)': 25, '[0.9, 0.95)': 25}
+selected 150 instances from 108 trees (seed 20260918) -> sweep_regen_copy_selected.csv
+vessel       LAD  LCX  RCA  All
+band                           
+[0.65, 0.7)    9    8    8   25
+[0.7, 0.75)    8    8    9   25
+[0.75, 0.8)    9    8    8   25
+[0.8, 0.85)    8    9    8   25
+[0.85, 0.9)    8    8    9   25
+[0.9, 0.95)    8    9    8   25
+All           50   50   50  150
+
+shortfall vs target of 25 per band: none
+re-selection from the regenerated sweep: overlap with the on-disk (old) selection 150/150; trees 108/107; new: trees 108, scans 93, loc {'prox': 104, 'mid': 46}, L {10.0: 80, 20.0: 70}, bif_in_window 26, no-downstream-bif 32, no-upstream-bif 113
+  doubled slots: 16  scans with both trees: 15  quality: {4: 88, 3: 40, 2: 22}
+
+regenerated E0 (18:39) == my current-code recompute? max|d| 0.00e+00; verdict: in[0.70,0.90) 20, [0.75,0.85) 4, <=0.80 2; lesion terms 760; Q_in>demand rows 10

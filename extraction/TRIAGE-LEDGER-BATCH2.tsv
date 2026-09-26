@@ -1,0 +1,36 @@
+id	slug	source_pdf	bucket	verdict	triaged_on
+B001	bransby-2024-ivus-segmentation	Resources/1-s2.0-S0010482524012472-main.pdf	BACKGROUND	LIGHT	2026-09-17
+B002	wang-2025-cybernetic-medicine	Resources/1-s2.0-S0306987725002622-main.pdf	SUPPORT	LIGHT	2026-09-17
+B003	huang-2026-maritime-surveillance	Resources/1-s2.0-S1068520026002233-main.pdf	IRRELEVANT	LIGHT	2026-09-17
+B004	zhao-2026-retinal-vessel-segmentation	Resources/2410.21160v2.pdf	BACKGROUND	LIGHT	2026-09-17
+B005	wu-2026-autonomous-vehicle-testing	Resources/2603.05279v1.pdf	IRRELEVANT	LIGHT	2026-09-17
+B006	mukherjee-2026-cardiac-shape-reconstruction	Resources/2603.27003v1.pdf	METHOD	LIGHT	2026-09-17
+B007	palaniappan-2026-vessel-graph-reconstruction	Resources/2605.00538v1.pdf	METHOD	LIGHT	2026-09-17
+B008	prasad-2024-topology-constrained-tooth	Resources/2605.04201v2.pdf	IRRELEVANT	LIGHT	2026-09-17
+B009	lyu-2026-cardiac-digital-twins	Resources/2606.01808v1.pdf	SUPPORT	FULL	2026-09-17
+B010	pham-2026-flow-matching-ood	Resources/3092_Decomposing_Out_of_Distri.pdf	IRRELEVANT	LIGHT	2026-09-17
+B011	okegbile-2026-human-digital-twin	Resources/978-3-031-57534-1.pdf	IRRELEVANT	LIGHT	2026-09-17
+B012	bakas-2025-brats-segmentation	Resources/978-3-032-16365-3.pdf	BACKGROUND	LIGHT	2026-09-17
+B013	jandl-2026-ergo4all-ergonomics	Resources/978-3-032-29842-3.pdf	IRRELEVANT	LIGHT	2026-09-17
+B014	jin-2026-trajectory-error	Resources/A_Modified_Trajectory_Error_Modeling_Method_Integrating_Moving_Object_Velocity_and_Trajectory_Geometry.pdf	IRRELEVANT	LIGHT	2026-09-17
+B015	zhang-2025-cerebrovascular-ai	Resources/Artificial Intelligence in Cerebrovascular Disease Management  A Comprehensive Review of Risk Prediction  Diagnosis  Therapeutic Optimization  and Cli.pdf	BACKGROUND	LIGHT	2026-09-17
+B016	han-2025-bim-neural	Resources/Computer aided Civil Eng - 2025 - Han - Pretrained graph neural network for embedding semantic  spatial  and topological.pdf	IRRELEVANT	LIGHT	2026-09-17
+B017	picone-2024-fluid-twins	Resources/Dynamic_Function_Validation_and_Simulation_in_Fluid_Digital_Twins.pdf	BACKGROUND	LIGHT	2026-09-17
+B018	phillips-2024-validation-framework	Resources/INCOSE International Symp - 2024 - Phillips - Validation Framework of a Digital Twin  A System Identification Approach.pdf	METHOD	FULL	2026-09-17
+B019	sultana-2026-trustworthy-twins	Resources/Toward_Trustworthy_Health_Digital_Twins_A_Proof-of-Concept_Design_and_Validation_Framework_for_Clinical_Decision_Support.pdf	SUPPORT	FULL	2026-09-17
+B020	shin-2021-retinal-vessels	Resources/applsci-11-00320.pdf	METHOD	LIGHT	2026-09-17
+B021	mikolajewska-2026-cps-healthcare	Resources/applsci-16-00318-v2.pdf	SUPPORT	FULL	2026-09-17
+B022	chen-2026-ai-cardiovascular	Resources/fcvm-13-1838415.pdf	SUPPORT	LIGHT	2026-09-17
+B023	vallee-2026-digital-twins	Resources/fdgth-8-1908794.pdf	METHOD	FULL	2026-09-17
+B024	sun-2026-digital-twins-diabetes	Resources/fendo-17-1919404.pdf	SUPPORT	LIGHT	2026-09-17
+B025	chaparro-cardenas-2025-digital-twins	Resources/healthcare-13-01763-v2.pdf	SUPPORT	LIGHT	2026-09-17
+B026	vela-2025-ai-oncology-cardiology	Resources/jcm-14-07555.pdf	BACKGROUND	LIGHT	2026-09-17
+B027	ahmadkhani-2025-topological-deep-learning	Resources/out.pdf	IRRELEVANT	LIGHT	2026-09-17
+B028	mohr-2026-p4-medicine	Resources/s12967-026-08346-0_reference.pdf	METHOD	LIGHT	2026-09-17
+B029	saffaran-2026-respiratory-digital-twins	Resources/s13054-026-06079-6.pdf	IRRELEVANT	LIGHT	2026-09-17
+B030	ma-2025-virtual-cell-models	Resources/s41746-025-02198-6.pdf	IRRELEVANT	LIGHT	2026-09-17
+B031	raynaud-2026-ai-clinical-trials	Resources/s44222-026-00487-7.pdf	BACKGROUND	LIGHT	2026-09-17
+B032	song-2026-contact-lens-uric-acid	Resources/sciadv.aee8506.pdf	IRRELEVANT	LIGHT	2026-09-17
+B033	nestor-2025-social-quantum-computers	Resources/ssrn-5585832.pdf	IRRELEVANT	LIGHT	2026-09-17
+B034	pietrobon-2026-digital-twins-ablation	Resources/ssrn-5865902.pdf	SUPPORT	FULL	2026-09-17
+B035	anonymous-2026-topology-vessel-segmentation	Resources/ssrn-7194679.pdf	METHOD	FULL	2026-09-17

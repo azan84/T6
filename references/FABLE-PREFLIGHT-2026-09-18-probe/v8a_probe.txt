@@ -1,0 +1,28 @@
+
+=== bed=discrete: native node spacing on active nodes: median 0.488 mm, p90 0.614, max 0.822
+slot c=19.90 mm L=20 r_fit_c=1.46 base_ffr_meas=0.9621
+  x1  FFR_meas=0.79188  (with coarse C: 0.79188)  s_meas=50.26 mm  nK=6 nK_on_path=2 at [6.87, 19.9]  win_nodes=41  C=51.9952 nout=8 Qin=3.7843
+  x2  FFR_meas=0.78650  (with coarse C: 0.78731)  s_meas=49.96 mm  nK=7 nK_on_path=3 at [7.12, 19.96, 25.12]  win_nodes=82  C=51.7951 nout=8 Qin=3.7699
+  x4  FFR_meas=0.78637  (with coarse C: 0.78762)  s_meas=49.94 mm  nK=7 nK_on_path=3 at [7.25, 19.9, 24.94]  win_nodes=165  C=51.6893 nout=8 Qin=3.7702
+  x8  FFR_meas=0.78674  (with coarse C: 0.78833)  s_meas=49.93 mm  nK=7 nK_on_path=3 at [7.31, 19.91, 24.95]  win_nodes=330  C=51.6060 nout=8 Qin=3.7696
+  successive differences: +0.00538, +0.00013, -0.00038; ratios 42.40, -0.34  (2nd order => 4)
+  Richardson estimate of converged FFR_meas: 0.78662; coarse error +0.00526; x2 error -0.00012
+  coarse FFR linearly interpolated at fine s_meas (49.96 mm) = 0.79207 vs coarse at own node 0.79188 -> snap contributes -0.00019
+  coarse-minus-fine FFR along path: at window start -0.00027, at window end +0.00568, at meas node +0.00557
+  x1: Poiseuille R over window (r_mid averaging) = 4.9371e+08 Pa s/m3; x Q_meas => 4.574 mmHg
+  x2: Poiseuille R over window (r_mid averaging) = 4.9381e+08 Pa s/m3; x Q_meas => 4.555 mmHg
+  x4: Poiseuille R over window (r_mid averaging) = 4.9404e+08 Pa s/m3; x Q_meas => 4.556 mmHg
+
+=== bed=leaky: native node spacing on active nodes: median 0.479 mm, p90 0.610, max 0.822
+slot c=19.90 mm L=20 r_fit_c=1.46 base_ffr_meas=0.9791
+  x1  FFR_meas=0.89099  (with coarse C: 0.89099)  s_meas=50.26 mm  nK=6 nK_on_path=2 at [6.87, 19.9]  win_nodes=41  C=44.4963 nout=8 Qin=4.6537
+  x2  FFR_meas=0.88704  (with coarse C: 0.88471)  s_meas=49.96 mm  nK=7 nK_on_path=3 at [7.12, 19.96, 25.12]  win_nodes=82  C=45.2320 nout=8 Qin=4.6487
+  x4  FFR_meas=0.88666  (with coarse C: 0.88314)  s_meas=49.94 mm  nK=7 nK_on_path=3 at [7.25, 19.9, 24.94]  win_nodes=165  C=45.6053 nout=8 Qin=4.6484
+  x8  FFR_meas=0.88662  (with coarse C: 0.88251)  s_meas=49.93 mm  nK=7 nK_on_path=3 at [7.31, 19.91, 24.95]  win_nodes=330  C=45.7932 nout=8 Qin=4.6484
+  successive differences: +0.00395, +0.00038, +0.00004; ratios 10.41, 10.84  (2nd order => 4)
+  Richardson estimate of converged FFR_meas: 0.88663; coarse error +0.00435; x2 error +0.00040
+  coarse FFR linearly interpolated at fine s_meas (49.96 mm) = 0.89108 vs coarse at own node 0.89099 -> snap contributes -0.00009
+  coarse-minus-fine FFR along path: at window start +0.00000, at window end +0.00408, at meas node +0.00404
+  x1: Poiseuille R over window (r_mid averaging) = 4.9371e+08 Pa s/m3; x Q_meas => 3.316 mmHg
+  x2: Poiseuille R over window (r_mid averaging) = 4.9381e+08 Pa s/m3; x Q_meas => 3.309 mmHg
+  x4: Poiseuille R over window (r_mid averaging) = 4.9404e+08 Pa s/m3; x Q_meas => 3.313 mmHg

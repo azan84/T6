@@ -1,0 +1,2 @@
+done 673s
+verdict counts (R4): in[0.70,0.90) 20  in[0.75,0.85) 4  <=0.80 2  lesion terms 721  main-lesion NaN 145

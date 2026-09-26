@@ -1,0 +1,49 @@
+=== natural trees: stock vs R4 ===
+  341_left stock: minFFR=0.96301 nles=5 tightest=LCX 34% ffr20=0.9672 K labels=['D1', 'D2', 'LCX']
+  341_left R4   : minFFR=0.96301 nles=5 tightest=LCX 34% ffr20=0.9672 K labels=['D1', 'D2', 'LCX']
+  687_left stock: minFFR=0.93981 nles=3 tightest=LAD 31% ffr20=0.9663 K labels=['D2', 'LAD', 'OM1']
+  687_left R4   : minFFR=0.93981 nles=3 tightest=LAD 31% ffr20=0.9663 K labels=['D2', 'LAD', 'OM1']
+  813_left stock: minFFR=0.96569 nles=3 tightest=LCX 32% ffr20=0.9787 K labels=['IM', 'LCX', 'OM1']
+  813_left R4   : minFFR=0.96569 nles=3 tightest=LCX 32% ffr20=0.9787 K labels=['IM', 'LCX', 'OM1']
+  686_right stock: minFFR=0.86833 nles=3 tightest=RCA 45% ffr20=0.8675 K labels=['RCA']
+  686_right R4   : minFFR=0.86833 nles=3 tightest=RCA 45% ffr20=0.8675 K labels=['RCA']
+  775_right stock: minFFR=0.76830 nles=7 tightest=RCA 59% ffr20=0.8772 K labels=['R-PDA', 'R-PLA', 'RCA']
+  775_right R4   : minFFR=0.76830 nles=7 tightest=RCA 59% ffr20=0.8772 K labels=['R-PDA', 'R-PLA', 'RCA']
+  3_left stock: minFFR=0.92260 nles=10 tightest=LAD 43% ffr20=0.9622 K labels=['D2', 'LAD', 'LCX']
+  3_left R4   : minFFR=0.92260 nles=9 tightest=LAD 43% ffr20=0.9622 K labels=['D2', 'LAD', 'LCX']
+  14_left stock: minFFR=0.98089 nles=8 tightest=LCX 36% ffr20=0.9809 K labels=['IM', 'LCX', 'OM1']
+  14_left R4   : minFFR=0.98089 nles=6 tightest=LCX 36% ffr20=0.9809 K labels=['IM', 'LCX', 'OM1']
+
+=== self-test vessel, R4 ===
+  L=10.0 DS=60: K terms 1 at [31.5] minFFR=0.8494
+  L=10.0 DS=70: K terms 1 at [31.5] minFFR=0.6931
+  L=10.0 DS=80: K terms 1 at [31.5] minFFR=0.4270
+  L=20.0 DS=60: K terms 1 at [31.5] minFFR=0.8323
+  L=20.0 DS=70: K terms 1 at [31.5] minFFR=0.6659
+  L=20.0 DS=80: K terms 1 at [31.5] minFFR=0.3952
+
+=== selected 150 (leaky): R4 vs stock ===
+  changed 19; mean +0.0000; max +0.0019; min -0.0001; |d|>0.005: 0; |d|>0.01: 0
+  band changes: 10  decision changes: 0
+  K terms inside window: stock {1: 146, 2: 4}  R4 {1: 146, 2: 4}
+  bif_in_window (n=26): stock K-in-window {1: 24, 2: 2} -> R4 {1: 24, 2: 2}; dFFR mean -0.0000 max +0.0000
+     scan   side vessel                                                       loc  L_mm  ds_pct      f0      f4  w0  w4
+102   272   left    LAD  <pandas.core.indexing._LocIndexer object at 0x11a08f6b0>  10.0      65  0.8807  0.8827   1   1
+0     138   left    LAD  <pandas.core.indexing._LocIndexer object at 0x112809bd0>  10.0      80  0.6843  0.6843   1   1
+95    363  right    RCA  <pandas.core.indexing._LocIndexer object at 0x119f96ab0>  10.0      65  0.8352  0.8352   1   1
+96    466  right    RCA  <pandas.core.indexing._LocIndexer object at 0x119f968d0>  20.0      60  0.8405  0.8405   1   1
+97    683  right    RCA  <pandas.core.indexing._LocIndexer object at 0x119f97ef0>  20.0      60  0.8217  0.8217   1   1
+  by L x DS mean dFFR:
+ ds_pct   40   50   55   60      65   70   75   80
+L_mm                                             
+10.0    0.0  0.0  0.0 -0.0  0.0001 -0.0 -0.0 -0.0
+20.0    0.0  0.0  0.0 -0.0 -0.0000 -0.0 -0.0 -0.0
+
+=== V8a slot 993_left LCX prox L=20 (discrete), R4 ===
+  x1: 0.79188 K on path at [6.87, 19.9]
+  x2: 0.79311 K on path at [7.12, 19.96]
+  x4: 0.79313 K on path at [7.25, 19.9]
+  |d| 0.00123, 0.00002
+
+=== T3 length sweep 65 %DS 993_left LCX prox (leaky), R4: steps ===
+  steps per mm: [-0.0027, -0.0027, -0.0027, -0.0027, -0.0026, -0.0026, -0.0026, -0.0024, -0.0026, -0.0025, -0.0025, -0.0025, -0.0025, -0.0025, -0.0025, -0.0025, -0.0023, -0.0024]

@@ -1,0 +1,26 @@
+PRE-LESIONRULE selection (150) re-evaluated under the new rule: band changes 10; max |d| 0.0728; |d|>0.005 13; |d|>0.01 9; decision changes 2
+  per-band counts of the old selection under new FFRs: {'[0.65, 0.7)': 20, '[0.7, 0.75)': 28, '[0.75, 0.8)': 25, '[0.8, 0.85)': 26, '[0.85, 0.9)': 25, '[0.9, 0.95)': 26}
+NEW selection (18:50) vs PRE-LESIONRULE selection: shared instances 40/150; shared trees 89 (old 107, new 108)
+  new selection: scans 93  loc {'prox': 104, 'mid': 46}  L {10.0: 80, 20.0: 70}  bif_in_window 26  no downstream bif 32  no upstream bif 113  quality {4: 88, 3: 40, 2: 22}
+  doubled slots: 16 ( 32 instances); scans with both trees: 15
+  L by band:
+ L_mm         10.0  20.0
+band                   
+[0.65, 0.7)    11    14
+[0.7, 0.75)    13    12
+[0.75, 0.8)    13    12
+[0.8, 0.85)    14    11
+[0.85, 0.9)    10    15
+[0.9, 0.95)    19     6
+  ds by band:
+ ds_pct       40  50  55  60  65  70  75  80
+band                                       
+[0.65, 0.7)   0   0   0   0   0  10   8   7
+[0.7, 0.75)   0   0   0   0   3  14   4   4
+[0.75, 0.8)   0   0   0   1   7   9   5   3
+[0.8, 0.85)   0   0   1   5   9   5   5   0
+[0.85, 0.9)   0   0   9   7   4   3   2   0
+[0.9, 0.95)   7   4   6   4   3   1   0   0
+  bands x r_fit_c median: {'[0.65, 0.7)': 1.17, '[0.7, 0.75)': 1.16, '[0.75, 0.8)': 1.15, '[0.8, 0.85)': 1.27, '[0.85, 0.9)': 1.34, '[0.9, 0.95)': 1.24}
+
+V8a under NEW rule, 993_left LCX prox L=20 60% discrete: x1 0.79188 (s_meas 50.26, K at [6.87, 19.9]) -> x2 0.79311 (s_meas 49.96, K at [7.12, 19.96]); total +0.00123; of which C recalibration -0.00079 (C 51.9952->51.7951), measurement-node snap +0.00019, remainder (Poiseuille discretisation) +0.00184

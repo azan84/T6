@@ -1,0 +1,6 @@
+stock: zerod_ffr Tree._set_radius
+after imports: zerod_ffr Tree._set_radius same object: True
+  341_left stock       : (0.963011422984427, 5, ['D1', 'D2', 'LCX'])
+  341_left R2          : (0.96443449469249, 4, ['D1', 'D2'])
+  341_left R3          : (0.96443449469249, 4, ['D1', 'D2'])
+  341_left stock again : (0.963011422984427, 5, ['D1', 'D2', 'LCX'])

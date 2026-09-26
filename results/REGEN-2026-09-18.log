@@ -1,0 +1,93 @@
+=== chain start 18:25:57 ===
+--- [1/3] E0 prevalence ---
+  20/160 scans  240 rows  0 failures  100s
+  40/160 scans  480 rows  0 failures  203s
+  60/160 scans  720 rows  0 failures  309s
+  80/160 scans  960 rows  0 failures  433s
+  100/160 scans  1200 rows  0 failures  537s
+  120/160 scans  1440 rows  0 failures  625s
+  140/160 scans  1680 rows  0 failures  710s
+  160/160 scans  1920 rows  0 failures  801s
+
+wrote /Users/mzpi/Library/CloudStorage/GoogleDrive-Mohd.Zulhilmi@monash.edu/My Drive/Research/01 CollabProject-MonashIIUM/Imaging-Medical/Paper6-T6/results/E0_prevalence_test.csv  (1920 rows, 0 tree failures, 801s)
+
+=== E0 PREVALENCE — 320 trees from 160 scans (73 disease-labelled) ===
+inlet radius mm: median 1.39 (IQR 1.16-1.64);  demand mL/s median 1.52;  trees with >=1 resolved lesion: 247
+
+--- MIN FFR over resolved main vessels (LM/LAD/LCx/RCA) ---
+model      scale     n  median | [0.00,0.70) [0.70,0.75) [0.75,0.80) [0.80,0.85) [0.85,0.90) [0.90,1.01) | in[0.70,0.90)
+murray       0.7   318   0.964 |           0           0           0           2           2         314 |     4
+murray       1.0   318   0.948 |           0           0           2           2          16         298 |    20
+murray       1.3   318   0.933 |           1           1           2          11          38         265 |    52
+territory    0.7   318   0.933 |           3           4           9          27          62         213 |   102
+territory    1.0   318   0.905 |          13          11          28          48          53         165 |   140
+territory    1.3   318   0.876 |          31          22          42          43          60         120 |   167
+
+--- FFR 20 mm distal to the tightest resolved main-vessel lesion ---
+model      scale     n  median | [0.00,0.70) [0.70,0.75) [0.75,0.80) [0.80,0.85) [0.85,0.90) [0.90,1.01) | in[0.70,0.90)
+murray       0.7   175   0.972 |           0           0           0           0           1         174 |     1
+murray       1.0   175   0.959 |           0           0           0           1          12         162 |    13
+murray       1.3   175   0.945 |           0           1           0           7          19         148 |    27
+territory    0.7   175   0.937 |           3           2           8          14          21         127 |    45
+territory    1.0   175   0.909 |          12           4          14          16          29         100 |    63
+territory    1.3   175   0.879 |          19          15           9          23          36          73 |    83
+
+PRIMARY (murray x1.0): trees in [0.70,0.90) = 20;  in the flip-prone band [0.75,0.85) = 4;  <= 0.80 = 2
+VERDICT: BELOW 40 -> add the virtual-stenosis severity sweep (decision rule)
+--- [2/3] severity sweep ---
+  20/152 scans  960 instances  0 failures  87s
+  40/152 scans  1768 instances  0 failures  173s
+  60/152 scans  2584 instances  0 failures  271s
+  80/152 scans  3440 instances  0 failures  358s
+  100/152 scans  4376 instances  0 failures  447s
+  120/152 scans  5328 instances  0 failures  538s
+  140/152 scans  6408 instances  0 failures  635s
+
+wrote results/sweep_test.csv: 6944 instances, 280 hosts, 140 scans, 0 failures, 688s
+
+non-converged: 0;  max mass error 7.0e-11;  baseline FFR_meas median 0.977
+
+FFR_meas by inserted severity (median [p10, p90]):
+    40%DS  0.956  [0.935, 0.979]   <=0.80:   0.0%
+    50%DS  0.931  [0.904, 0.972]   <=0.80:   0.0%
+    55%DS  0.909  [0.874, 0.964]   <=0.80:   0.0%
+    60%DS  0.873  [0.827, 0.953]   <=0.80:   0.9%
+    65%DS  0.818  [0.759, 0.934]   <=0.80:  40.8%
+    70%DS  0.736  [0.660, 0.899]   <=0.80:  68.7%
+    75%DS  0.617  [0.534, 0.833]   <=0.80:  84.3%
+    80%DS  0.468  [0.390, 0.711]   <=0.80:  97.0%
+
+instances per FFR_meas band (supply for selection):
+   [0.40,0.45)     239  ########
+   [0.45,0.50)     166  ######
+   [0.50,0.55)     215  ########
+   [0.55,0.60)     284  ##########
+   [0.60,0.65)     260  #########
+   [0.65,0.70)     366  #############
+   [0.70,0.75)     348  ############
+   [0.75,0.80)     514  ###################
+   [0.80,0.85)     641  #######################
+   [0.85,0.90)     998  #####################################
+   [0.90,0.95)    1611  ############################################################
+   [0.95,1.00)    1162  ###########################################
+
+hosts by vessel:
+vessel
+LAD     95
+LCX     67
+RCA    118
+--- [3/3] cohort selection ---
+selected 150 instances from 108 trees (seed 20260918) -> sweep_test_selected.csv
+vessel       LAD  LCX  RCA  All
+band                           
+[0.65, 0.7)    9    8    8   25
+[0.7, 0.75)    8    8    9   25
+[0.75, 0.8)    9    8    8   25
+[0.8, 0.85)    8    9    8   25
+[0.85, 0.9)    8    8    9   25
+[0.9, 0.95)    8    9    8   25
+All           50   50   50  150
+
+shortfall vs target of 25 per band: none
+=== chain done 18:50:51 ===
+exit=0

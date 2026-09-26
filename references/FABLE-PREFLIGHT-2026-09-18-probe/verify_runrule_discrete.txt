@@ -1,0 +1,57 @@
+verification suite with the CONTIGUOUS-RUN lesion rule (probe monkeypatch), discrete bed
+bed structure: discrete
+
+verified on scans [878, 844, 686, 396, 775, 993]: 32 eligible slots, 256 instances
+
+  PASS  V1  insertion exact at throat                    max |r/r_fit-(1-DS)| = 5.6e-17
+  PASS  V1b untouched outside window                     max change 0.0e+00; widened nodes 0
+  PASS  V2  physiology frozen (r_ref, r_fit, bed, C)     bit-identical
+  PASS  V3  detected %DS = inserted; K>0 at throat       max |DS err| = 1.1e-16
+  PASS  V4  FFR strictly decreasing in %DS               0 violations / 224 steps
+  PASS  V5  longer lesion never raises FFR               0 violations / 128 pairs
+  PASS  V6  mass balance                                 max rel. error 6.2e-11
+  PASS  V6b no NaN in any solve (mass err / inflow / FFR) 0 NaN results
+  PASS  V7  all solves converged                         max iterations 28
+  PASS  V8a solver discretisation (reference inherited)  max |dFFR| = 0.0013 over 32 slots
+  PASS  V8b + healthy reference re-fitted (reported, not a gate) max |dFFR| = 0.0031; outlet-count change up to 0
+  PASS  V9  inflow never rises after insertion           0 violations
+  PASS  V10 regression vs E0 natural cohort              n/a — no discrete-bed E0 reference exists
+
+rejection reasons in these trees:
+why
+host r_fit # mm < #                 14
+native #%DS >= #                    10
+window outside same-label vessel     8
+baseline FFR # < #                   6
+measurement node unresolved          2
+
+OVERALL: ALL CHECKS PASS — safe to --run
+
+
+===== same, leaky bed =====
+bed structure: leaky
+
+verified on scans [878, 844, 686, 396, 775, 993]: 34 eligible slots, 272 instances
+
+  PASS  V1  insertion exact at throat                    max |r/r_fit-(1-DS)| = 5.6e-17
+  PASS  V1b untouched outside window                     max change 0.0e+00; widened nodes 0
+  PASS  V2  physiology frozen (r_ref, r_fit, bed, C)     bit-identical
+  PASS  V3  detected %DS = inserted; K>0 at throat       max |DS err| = 1.1e-16
+  PASS  V4  FFR strictly decreasing in %DS               0 violations / 238 steps
+  PASS  V5  longer lesion never raises FFR               0 violations / 136 pairs
+  PASS  V6  mass balance                                 max rel. error 4.6e-11
+  PASS  V6b no NaN in any solve (mass err / inflow / FFR) 0 NaN results
+  PASS  V7  all solves converged                         max iterations 28
+  PASS  V8a solver discretisation (reference inherited)  max |dFFR| = 0.0024 over 34 slots
+  PASS  V8b + healthy reference re-fitted (reported, not a gate) max |dFFR| = 0.0032; outlet-count change up to 0
+  PASS  V9  inflow never rises after insertion           0 violations
+  FAIL  V10 regression vs E0 natural cohort              max |d min-FFR| = 0.0081
+
+rejection reasons in these trees:
+why
+host r_fit # mm < #            20
+native #%DS >= #               10
+measurement node unresolved     4
+baseline FFR # < #              4
+
+OVERALL: DO NOT RUN — fix failures first

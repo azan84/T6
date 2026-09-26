@@ -1,0 +1,5 @@
+shipped rule, factor 1.10: removed 512 voxels; whole-mask components after = 69 (before 2); island sizes [18749, 67, 31, 15, 9, 9, 6, 5]
+shipped rule, factor 1.30: removed 649 voxels; whole-mask components after = 37 (before 2); island sizes [18749, 49, 7, 6, 5, 4, 3, 3]
+shipped rule, factor 1.50: removed 713 voxels; whole-mask components after = 23 (before 2); island sizes [18749, 25, 6, 4, 3, 2, 2, 1]
+flood-fill rule: components seeded [614]; removed 855 voxels; whole-mask components after = 2; sizes [23103, 18749]
+deleted points that fell in the PROTECTED zone (carina, restored): 1/42

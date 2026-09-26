@@ -1,0 +1,67 @@
+====================================================================================================
+1. scan 341 / right / RCA / prox 10 mm 70 %DS / leaky / T1_missed_branch
+====================================================================================================
+fixed ablation.py row: {'status': 'ok', 'C_ratio': np.float64(0.9943542215750394), 'dFFR': np.float64(-0.0031407502421026967), 'ffr': np.float64(0.672612098848026), 'outlet_flow_residual': np.float64(3.338034399304074e-05), 'fit_n_basins': np.float64(2.0), 'fit_loss_at_Cstart': np.float64(1.541020903334504e-05), 'fit_loss': np.float64(1.1142473650937308e-09), 'fit_at_bound': False, 'n_territories': np.int64(2)}
+brute force (+/-3 decades, 1201 pts): {'C_ratio': 0.9943541937865127, 'loss': 1.1142473533109314e-09, 'ffr': 0.6726120905882599, 'dFFR': -0.00314075850186879, 'n_minima': 2, 'minima_C_ratio': [np.float64(0.077), np.float64(0.9917)], 'minima_loss': [0.00224, 0.0], 'at_edge': False}
+old minimiser (pre-fix): {'C_ratio': 0.07656760308565974, 'loss': 0.0022314280944806426, 'dFFR': -0.5212663518745934}
+fixed == global: C_ratio diff 2.78e-08, dFFR diff 8.26e-09
+all 12 rows of the 341 leaky instance have fit_* columns populated for C:             error_type                                             status   C_ratio  fit_n_basins fit_at_bound
+2     T1_missed_branch                                                 ok  0.994354           2.0        False
+5        T2_truncation  skipped: fewer than 2 shared territories to match       NaN           NaN          NaN
+8   T3_stenosis_length                                                 ok  0.977580           1.0        False
+11            T4_taper                                                 ok  0.813948           1.0        False
+
+====================================================================================================
+2. pre-fix smoke (results/ablation_smoke.csv) vs fixed re-run, Protocol C rows
+====================================================================================================
+rows old 124 new 124 merged 124
+A/B rows: max |dFFR_new - dFFR_old| = 0.00e+00, max |C_ratio diff| = 0.00e+00, status equal: True
+     scan       bed          error_type                                         status_old                                         status_new  C_ratio_old  C_ratio_new  dFFR_old  dFFR_new  outlet_flow_residual_old  outlet_flow_residual_new  fit_n_basins fit_at_bound
+3     102     leaky       T2_truncation                                                 ok                                                 ok       1.0415       1.0415    0.0083    0.0083                    0.0527                    0.0527           1.0        False
+6     102     leaky  T3_stenosis_length                                                 ok                                                 ok       0.9991       0.9991   -0.0157   -0.0157                    0.0013                    0.0013           1.0        False
+9     102     leaky            T4_taper                                                 ok                                                 ok       0.9967       0.9967   -0.0046   -0.0046                    0.0047                    0.0047           1.0        False
+13    102  discrete       T2_truncation                                                 ok                                                 ok       1.1739       1.1739   -0.2082   -0.2082                    0.1830                    0.1830           1.0        False
+16    102  discrete  T3_stenosis_length                                                 ok                                                 ok       0.9974       0.9974   -0.0138   -0.0138                    0.0038                    0.0038           1.0        False
+19    102  discrete            T4_taper                                                 ok                                                 ok       0.9857       0.9857    0.0447    0.0447                    0.0212                    0.0212           1.0        False
+23    280     leaky       T2_truncation                                                 ok                                                 ok       1.0872       1.0872   -0.0370   -0.0370                    0.0783                    0.0783           1.0        False
+26    280     leaky  T3_stenosis_length                                                 ok                                                 ok       0.9974       0.9974   -0.0165   -0.0165                    0.0028                    0.0028           1.0        False
+29    280     leaky            T4_taper                                                 ok                                                 ok       1.0290       1.0290    0.0061    0.0061                    0.0281                    0.0281           1.0        False
+33    280  discrete       T2_truncation                                                 ok                                                 ok       1.1339       1.1339    0.0221    0.0221                    0.1110                    0.1110           1.0        False
+36    280  discrete  T3_stenosis_length                                                 ok                                                 ok       0.9961       0.9961   -0.0159   -0.0159                    0.0042                    0.0042           1.0        False
+39    280  discrete            T4_taper                                                 ok                                                 ok       2.9501       2.9501    0.1921    0.1921                    0.4831                    0.4831           1.0        False
+42    306     leaky    T1_missed_branch                                                 ok                                                 ok       1.0488       1.0488    0.1033    0.1033                    0.0482                    0.0482           1.0        False
+45    306     leaky       T2_truncation                                                 ok                                                 ok       1.1927       1.1927    0.0127    0.0127                    0.1608                    0.1608           1.0        False
+48    306     leaky  T3_stenosis_length                                                 ok                                                 ok       0.9935       0.9935   -0.0152   -0.0152                    0.0080                    0.0080           1.0        False
+51    306     leaky            T4_taper                                                 ok                                                 ok       1.0372       1.0372    0.0091    0.0091                    0.0385                    0.0385           1.0        False
+54    306  discrete    T1_missed_branch                                                 ok                                                 ok       1.0435       1.0435    0.0926    0.0926                    0.0434                    0.0434           1.0        False
+57    306  discrete       T2_truncation                                                 ok                                                 ok       1.2355       1.2355    0.0730    0.0730                    0.1762                    0.1762           1.0        False
+60    306  discrete  T3_stenosis_length                                                 ok                                                 ok       0.9934       0.9934   -0.0153   -0.0153                    0.0080                    0.0080           1.0        False
+63    306  discrete            T4_taper                                                 ok                                                 ok       1.3913       1.3913    0.0384    0.0384                    0.2482                    0.2482           1.0        False
+67    335     leaky       T2_truncation                                                 ok                                                 ok       1.0437       1.0437    0.0822    0.0822                    0.0405                    0.0405           1.0        False
+70    335     leaky  T3_stenosis_length                                                 ok                                                 ok       0.9977       0.9977   -0.0132   -0.0132                    0.0024                    0.0024           1.0        False
+73    335     leaky            T4_taper                                                 ok                                                 ok       1.0290       1.0290    0.0116    0.0116                    0.0278                    0.0278           1.0        False
+77    335  discrete       T2_truncation                                                 ok                                                 ok      10.1058      10.1058    0.3147    0.3147                    0.6211                    0.6211           1.0        False
+80    335  discrete  T3_stenosis_length                                                 ok                                                 ok       0.9922       0.9922   -0.0102   -0.0102                    0.0143                    0.0143           1.0        False
+83    335  discrete            T4_taper  skipped: fewer than 2 shared territories to match  skipped: fewer than 2 shared territories to match          NaN          NaN       NaN       NaN                       NaN                       NaN           NaN          NaN
+87    368     leaky       T2_truncation                                                 ok                                                 ok       1.0418       1.0418    0.0157    0.0157                    0.0386                    0.0386           1.0        False
+90    368     leaky  T3_stenosis_length                                                 ok                                                 ok       0.9975       0.9975   -0.0235   -0.0235                    0.0026                    0.0026           1.0        False
+93    368     leaky            T4_taper                                                 ok                                                 ok       0.9898       0.9898    0.0016    0.0016                    0.0104                    0.0104           1.0        False
+97    368  discrete       T2_truncation                                                 ok                                                 ok       1.2649       1.2649   -0.1271   -0.1271                    0.1792                    0.1792           1.0        False
+100   368  discrete  T3_stenosis_length                                                 ok                                                 ok       0.9937       0.9937   -0.0170   -0.0170                    0.0061                    0.0061           1.0        False
+103   368  discrete            T4_taper                                                 ok                                                 ok       0.9794       0.9794    0.0217    0.0217                    0.0200                    0.0200           1.0        False
+107   621     leaky       T2_truncation                                                 ok                                                 ok       1.0365       1.0365    0.0041    0.0041                    0.0338                    0.0338           1.0        False
+110   621     leaky  T3_stenosis_length                                                 ok                                                 ok       0.9990       0.9990   -0.0172   -0.0172                    0.0010                    0.0010           1.0        False
+113   621     leaky            T4_taper                                                 ok                                                 ok       0.9961       0.9961   -0.0082   -0.0082                    0.0039                    0.0039           1.0        False
+117   621  discrete       T2_truncation                                                 ok                                                 ok       1.1460       1.1460   -0.0929   -0.0929                    0.1117                    0.1117           1.0        False
+120   621  discrete  T3_stenosis_length                                                 ok                                                 ok       0.9964       0.9964   -0.0134   -0.0134                    0.0035                    0.0035           1.0        False
+123   621  discrete            T4_taper                                                 ok                                                 ok       0.9797       0.9797    0.0258    0.0258                    0.0199                    0.0199           1.0        False
+
+C rows changed by more than 1e-3 (or status): 0 of 38; unchanged rows max |dC_ratio| = 1.17e-06, max |d dFFR| = 1.42e-07
+
+brute-force spot checks on unchanged rows:
+  102 leaky T4_taper: new C_ratio 0.9967 vs brute 0.9967 (diff 5.8e-08); n_minima brute 1 vs fit_n_basins 1.0
+  368 discrete T2_truncation: new C_ratio 1.2649 vs brute 1.2649 (diff 9.8e-08); n_minima brute 1 vs fit_n_basins 1.0
+  102 discrete T2_truncation: new C_ratio 1.1739 vs brute 1.1739 (diff 7.1e-08); n_minima brute 1 vs fit_n_basins 1.0
+  335 leaky T4_taper: new C_ratio 1.0290 vs brute 1.0290 (diff 9.2e-08); n_minima brute 1 vs fit_n_basins 1.0
+  335 discrete T4_taper: new C_ratio nan vs brute 1.0000 (diff nan); n_minima brute 1 vs fit_n_basins nan
+  368 leaky T3_stenosis_length: new C_ratio 0.9975 vs brute 0.9975 (diff 1.9e-09); n_minima brute 1 vs fit_n_basins 1.0

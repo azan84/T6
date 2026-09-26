@@ -1,0 +1,169 @@
+id	slug	source_pdf	bucket_primary	bucket_raw	verdict	ledger_status	triaged_on
+001	wang-2024-guidewire-ffrct	Resources/011905_1_5.0180162.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+002	amlani-2025-hemodynamics-fourier	Resources/071921_1_5.0273041.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+003	li-2024-dpnn-lpm	Resources/1-s2.0-S0010482524005602-main.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+004	lotfi-2025-pod-coronary	Resources/1-s2.0-S0010482525001908-main.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+005	franz-2025-mitral-rom	Resources/1-s2.0-S0010482525011898-main.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+006	han-2020-aneurysm-rom	Resources/1-s2.0-S0021929020300609-main.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+007	gosling-2020-sidebranch-ffr	Resources/1-s2.0-S0021929020301147-main.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+008	chatpattanasiri-2023-rpod-aorta	Resources/1-s2.0-S0021929023003299-main.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+009	feng-2022-reduced-order-ffr	Resources/1-s2.0-S004578252200500X-main.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+010	yang-2026-cmd-angiography	Resources/1-s2.0-S0045782526000174-main.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+011	conte-2020-ffrct-perfusion-review	Resources/1-s2.0-S0167527319300129-main.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+012	lee-2022-ffr-gray-zone-ai	Resources/1-s2.0-S0169260722002097-main.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+013	choi-2025-reduced-order-pulsatile	Resources/1-s2.0-S0169260725004110-main.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+014	mirota-2026-ffr-cnbp-boundary	Resources/1-s2.0-S0169260726002038-main.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+015	moshage-2026-ct-ffr-slice-thickness	Resources/1-s2.0-S0720048X26002329-main.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+016	naniwa-2026-ct-mu-fr-stents	Resources/1-s2.0-S0720048X2600553X-main.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+017	aich-2025-cerebral-hemodynamic-pod	Resources/1-s2.0-S073519332501259X-main.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+018	tian-2025-vestreeformer-vffr	Resources/1-s2.0-S0895611125000734-main.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+019	alabdullah-2026-ffr-ct-meta	Resources/1-s2.0-S0899707125002591-main.pdf	BACKGROUND	BACKGROUND | SUPPORT	LIGHT	TRIAGED	2026-09-17
+020	tiotsop-2026-ai-ccta-meta	Resources/1-s2.0-S0899707126001981-main.pdf	BACKGROUND	BACKGROUND | METHOD	LIGHT	TRIAGED	2026-09-17
+021	shergill-2026-concord-protocol	Resources/1-s2.0-S1097664725001012-main.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+022	mahmoudi-2020-forecast-protocol	Resources/1-s2.0-S155383891930805X-main.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+023	yi-2020-stress-perfusion-mbf	Resources/1-s2.0-S193459251930173X-main.pdf	METHOD	METHOD | BACKGROUND	LIGHT	TRIAGED	2026-09-17
+024	yi-2020-stress-perfusion-absolute	Resources/1-s2.0-S1934592519305829-main.pdf	METHOD	METHOD | BACKGROUND	LIGHT	TRIAGED	2026-09-17
+025	anastasius-2020-ffrct-age	Resources/1-s2.0-S1934592520304147-main.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+026	rodriguez-lozano-2025-ct-ffr-critical	Resources/1-s2.0-S1934592525003454-main.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+027	ezponda-2025-ct-perfusion-ffr	Resources/1-s2.0-S2173510725000217-main.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+028	chi-2022-multiscale-coupling	Resources/1-s2.0-S2590093522000042-main.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+029	chan-2024-ct-ffr-applications	Resources/1-s2.0-S2949761224001202-main.pdf	THREAT	THREAT	FULL	TRIAGED	2026-09-17
+030	kumar-2023-0d-3d-modeling	Resources/101907_1_5.0169867.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+031	sommer-2020-boundary-conditions	Resources/113171J.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+032	he-2024-surrogate-carotid	Resources/121909_1_5.0239565.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+033	criseo-2025-digital-twin	Resources/2025.02.04.25321638v1.full.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+034	marcinnò-2026-fame-database	Resources/2026.07.30.741868v1.full.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+035	hampe-2023-deep-learning-ffr	Resources/2308.04923v1.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+036	mao-2025-coronaryhemodynamics	Resources/2501.08340v1.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+037	roy-2024-reduced-order	Resources/2505.12485v2.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+038	ghosh-2024-arterial-irregularity	Resources/2505.13536v1.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+039	shen-2025-anatomy-of-risk	Resources/2507.17109v1.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+040	bafghi-2026-rbf-decoder	Resources/2605.27578v2.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+041	de-cecco-2021-ai-cardiothoracic	Resources/978-3-030-92087-6.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+042	mineo-2024-transformer-ffr	Resources/A_Convolutional-Transformer_Model_for_FFR_and_iFR_Assessment_From_Coronary_Angiography.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+043	franz-2021-mitral-rom	Resources/An orifice shape-based reduced order model of patient-specific mitral valve regurgitation.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+044	westra-2021-ct-qfr	Resources/EIJ-D-20-00905_Westra.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+045	lo-2021-ffr-thesis	Resources/ELoThesis21.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+046	seitun-2025-ccs-review	Resources/Echocardiography - 2025 - Seitun - Role of CT and CMR in the Management of Chronic Coronary Syndrome.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+047	yao-2023-motion-correction	Resources/J Applied Clin Med Phys - 2023 - Yao - Deep learning‐based motion correction algorithm for coronary CT angiography .pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+048	lo-2020-outflow-bc	Resources/Lo_2020_Med._Eng._Phys._76_79.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+049	liang-2025-ct-ffr-deep	Resources/Medical Physics - 2025 - Liang - A novel algorithm for automated analysis of coronary CTA‐derived FFR in identifying.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+050	xue-2024-vascular-deformation-flow	Resources/Non-Invasive_Assessment_of_Coronary_Microvascular_Dysfunction_Using_Vascular_Deformation-Based_Flow_Estimation.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+051	eck-2015-guide-uncertainty	Resources/Numer Methods Biomed Eng - 2015 - Eck - A guide to uncertainty quantification and sensitivity analysis for cardiovascular.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+052	seo-2020-effects-parametric	Resources/Numer Methods Biomed Eng - 2020 - Seo - The effects of clinically‐derived parametric data uncertainty in patient‐specific.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+053	tajeddini-2020-high-precision	Resources/Numer Methods Biomed Eng - 2020 - Tajeddini - High precision invasive FFR  low‐cost invasive iFR  or non‐invasive CFR  .pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+054	zainib-2020-reduced-order	Resources/Numer Methods Biomed Eng - 2020 - Zainib - Reduced order methods for parametric optimal flow control in coronary bypass.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+055	fevola-2021-optimal-control	Resources/Numer Methods Biomed Eng - 2021 - Fevola - An optimal control approach to determine resistance‐type boundary conditions.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+056	jonasova-2021-relevance	Resources/Numer Methods Biomed Eng - 2021 - Jonášová - On the relevance of boundary conditions and viscosity models in blood flow.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+057	zhou-2021-parameter-estimation-hemodynamics	Resources/Numer Methods Biomed Eng - 2021 - Zhou - A method of parameter estimation for cardiovascular hemodynamics based on deep.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+058	fernandez-martinez-2024-segmentation-uncertainty-ffr	Resources/Numer Methods Biomed Eng - 2024 - Fernández‐Martínez - Impact of minimal lumen segmentation uncertainty on patient‐specific.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+059	macraild-2024-reduced-order-aneurysm	Resources/Numer Methods Biomed Eng - 2024 - MacRaild - Reduced order modelling of intracranial aneurysm flow using proper orthogonal.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+060	chernyavsky-2025-pressure-drop-elasticity	Resources/Numer Methods Biomed Eng - 2025 - Chernyavsky - Investigation of the Pressure Drop in Arterial Models With Stenoses Using.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+061	dalmaso-2025-uncertainty-ifr	Resources/Numer Methods Biomed Eng - 2025 - Dalmaso - Uncertainty Quantification and Sensitivity Analysis for Non‐invasive.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+062	yildirim-2025-blood-flow-stenosis	Resources/Numer Methods Biomed Eng - 2025 - Yildirim - Single‐Phase Blood Flow in a Stenosed Coronary Artery  A Clinical Model‐Based.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+063	liu-2023-inlet-pressure-ffr	Resources/On inlet pressure boundary conditions for CT-based computation of fractional flow reserve  clinical measurement of aortic pressure.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+064	zhang-2020-personalized-hemodynamic	Resources/Personalized_Hemodynamic_Modeling_of_the_Human_Cardiovascular_System_A_Reduced-Order_Computing_Model.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+065	zhang-2026-physics-guided	Resources/Physics-Guided_Variational_Method_for_Fractional_Flow_Reserve_Based_on_Coronary_Angiography.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+066	sarabian-2022-physics-informed	Resources/Physics-Informed_Neural_Networks_for_Brain_Hemodynamic_Predictions_Using_Medical_Imaging.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+067	pu-2024-pulsatile-blood	Resources/Pu_2024_Med._Eng._Phys._130_104193.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+068	puelz-2025-fluid-structure	Resources/Puelz_2025_Med._Eng._Phys._136_104293.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+069	sommer-2020-patient-specific	Resources/Sommer_2020_Biomed._Phys._Eng._Express_6_045007.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+070	plappert-2025-computational	Resources/The Journal of Physiology - 2025 - Plappert - Computational model of haemodynamics during atrial fibrillation.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+071	ahmed-2021-prognostic-value	Resources/ahmed-et-al-2021-prognostic-value-of-computed-tomography-derived-fractional-flow-reserve-comparison-with-myocardial.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+072	gamage-2022-fractional-flow	Resources/applsci-12-05573-v2.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+073	aquino-2021-coronary-ffr-tavr	Resources/aquino-et-al-2021-coronary-ct-fractional-flow-reserve-before-transcatheter-aortic-valve-replacement-clinical-outcomes.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+074	li-2021-ct-derived-pda	Resources/atm-09-17-1390.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+075	thondapu-2020-contrast-tuning	Resources/bio_142_02_021001.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+076	bozika-2025-ct-ffr-review	Resources/biomedicines-13-01969.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+077	chinnaiyan-2019-cta-ffr-ed	Resources/chinnaiyan-et-al-2019-clinical-use-of-ct-derived-fractional-flow-reserve-in-the-emergency-department.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+078	morris-2021-blood-flow-mvr	Resources/cvaa220.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+079	stanojevic-pirkovic-2023-ffr-ml	Resources/diagnostics-13-03349.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+080	tu-2020-ffr-clinical-practice	Resources/eurheartj_41_34_3271.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+081	schollenberger-2021-cerebral-hemodynamics	Resources/fbioe-09-722445.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+082	eskandari-2025-ffr-prediction	Resources/fbioe-13-1438253.pdf	METHOD	METHOD | SUPPORT	FULL	TRIAGED	2026-09-17
+083	franke-2021-aortic-stenosis	Resources/fcvm-08-706628.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+084	gao-2022-ct-ffr-china	Resources/fcvm-09-819460.pdf	SUPPORT	SUPPORT | METHOD	FULL	TRIAGED	2026-09-17
+085	hampe-2022-deep-learning-ffr	Resources/fcvm-09-964355.pdf	METHOD	METHOD | BACKGROUND	LIGHT	TRIAGED	2026-09-17
+086	ho-2023-uncertainty-quantification	Resources/fcvm-10-1164345.pdf	METHOD	METHOD | BACKGROUND	LIGHT	TRIAGED	2026-09-17
+087	lashgari-2024-in-silico-models	Resources/fcvm-11-1398290.pdf	BACKGROUND	BACKGROUND | METHOD	LIGHT	TRIAGED	2026-09-17
+088	kong-2024-stress-ct-perfusion	Resources/fcvm-11-1398635.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+089	wang-2026-pericoronary-adipose-tissue	Resources/fcvm-13-1833189.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+090	mora-2026-emerging-quantitative-ccta	Resources/fcvm-13-1850945.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+091	alzhanov-2024-physics-informed-neural	Resources/fluids-09-00153.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+092	tanade-2022-minimal-governing	Resources/fmedt-04-1034801.pdf	THREAT	THREAT	FULL	TRIAGED	2026-09-17
+093	fossan-2025-autoregulation-diagnosis	Resources/fossan-et-al-2025-relevance-of-autoregulation-in-the-diagnosis-of-coronary-artery-disease-with-ct-ffr.pdf	THREAT	THREAT	FULL	TRIAGED	2026-09-17
+094	liu-2022-ffr-multiscale	Resources/fphys-13-881826.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+095	bisighini-2023-stent-deployment	Resources/fphys-14-1148540.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+096	sarkhosh-2025-wall-shear-stress	Resources/fphys-16-1518732.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+097	torii-2021-ct-ffrcomputation	Resources/gcsp-2021-3-e202120.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+098	curzen-2020-angiography-derived	Resources/icr-15-e06.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+099	kasaeian-2025-ffrct	Resources/jcdd-12-00279.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+100	zhao-2025-virtual-stenting	Resources/jcdd-12-00373-v2.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+101	ayx-2026-ctffr-stenosis	Resources/jcdd-13-00308.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+102	gao-2023-ctperfusion-ffrct	Resources/jcm-12-02154-v2.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+103	tsigkas-2025-ffrart-science	Resources/jcm-14-02086.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+104	zhou-2026-ctffr-taad	Resources/jeag052.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+105	kumamaru-2020-deeplearning-ffr	Resources/jez160.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+106	lisasi-2026-diffusion-bloodpressure	Resources/jimaging-12-00196-v2.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+107	arthurs-2021-crimson-software	Resources/journal.pcbi.1008881.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+108	lyras-2021-reducedorder-stenosis	Resources/journal.pone.0258047.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+109	hafez-2026-ai-ffr-review	Resources/medicina-62-01157.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+110	mittal-2023-ffrct-realworld	Resources/mittal-et-al-2023-the-use-and-efficacy-of-ffr-ct.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+111	mortada-2026-ffrct-state	Resources/mortada-et-al-2026-current-state-of-computed-tomography-derived-fractional-flow-reserve-(ffr-ct)-and-its-diagnostic.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+112	zhu-imaging-ffr-review	Resources/nihpp-2602.16000v2.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+113	wang-2025-4d-cta-dynamic	Resources/preprints202508.0266.v1.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+114	qin-2025-ct-ffr-ctp	Resources/qims-15-09-7909.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+115	wang-2026-smoking-cfd	Resources/qims-16-07-560.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+116	arzani-2021-data-driven	Resources/rsif.2020.0802.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+117	barzegar-2025-surrogate-carotid	Resources/rsif.2024.0774.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+118	xu-2022-dlr-reconstruction	Resources/s00330-022-08796-2.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+119	liang-2023-angio-ffr	Resources/s00330-023-09682-1.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+120	becker-2025-tavi-meta	Resources/s00330-024-11211-7.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+121	wang-2025-ffr-prognostic	Resources/s00330-025-11747-2.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+122	peters-2026-ffr-ai-diagnostic	Resources/s00330-025-12048-4.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+123	tang-2026-ct-ffr-consensus	Resources/s00330-025-12313-6.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+124	zhang-2026-guide-wire-cfd	Resources/s00366-026-02359-5.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+125	mansilla-alvarez-2022-midfidelity-ffr	Resources/s10237-021-01536-3.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+126	balzotti-2024-rom-atrium	Resources/s10237-024-01847-1.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+127	montino-pelagi-2024-microcirculation	Resources/s10237-024-01873-z.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+128	qi-2026-renal-outflow-bc	Resources/s10237-026-02065-7.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+129	singh-2026-aneurysm-hemodynamics	Resources/s10278-026-02231-4.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+130	papamanolis-2021-coronary-perfusion	Resources/s10439-020-02681-z.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+131	antonuccio-2021-aortic-coarctation	Resources/s10439-021-02841-9.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+132	pelagi-2024-pressure-coronary	Resources/s10439-024-03453-9.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+133	yu-2025-cerebral-ffr	Resources/s10439-025-03810-2.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+134	lo-2026-demography-ffr	Resources/s10439-026-04002-2.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+135	li-2026-ffrct-review	Resources/s10439-026-04158-x.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+136	thakar-2026-surrogate	Resources/s10439-026-04269-5.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+137	choi-2026-pulsatile-ffr	Resources/s10439-026-04292-6.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+138	eslami-2020-physiology-coronary	Resources/s10554-020-01954-x.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+139	bakhjanar-2026-70kev-spectral	Resources/s10554-026-03613-z.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+140	zhao-2026-bifurcation-cffr	Resources/s10554-026-03807-5.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+141	zou-2025-multimodal-mace	Resources/s11547-025-01991-3.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+142	shen-2026-anatomy-risk	Resources/s11831-026-10530-w.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+143	biancolini-2020-rom-morphing	Resources/s12008-020-00694-5.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+144	guan-2023-angio-vs-ct-ffr	Resources/s12265-023-10361-1.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+145	farhad-2023-artificial-intelligence-ffr	Resources/s12872-023-03447-w.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+146	li-2024-ct-coronary-fractional-flow	Resources/s12880-024-01465-4.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+147	jiang-2025-nafld-coronary-outcomes	Resources/s12880-025-01919-3.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+148	nita-2022-aortic-coarctation-hemodynamic	Resources/s13239-021-00552-9.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+149	grande-2021-hybrid-coronary-hemodynamics	Resources/s13239-021-00580-5.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+150	malota-2023-comparative-ccta-ffr	Resources/s13239-023-00658-2.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+151	wu-2023-4d-flow-left-ventricle	Resources/s13239-023-00684-0.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+152	tanade-2026-harvi-peripheral-revascularization	Resources/s13239-026-00825-1.pdf	SUPPORT	SUPPORT	FULL	TRIAGED	2026-09-17
+153	tanade-2026-ffr-ml	Resources/s13239-026-00836-y.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+154	arthurs-2020-bc-estimation	Resources/s40323-020-00186-x.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+155	manganotti-2021-energy	Resources/s40323-021-00206-4.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+156	kizhisseri-2023-stroke	Resources/s41598-023-49591-3.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+157	ma-2024-ct-ffr	Resources/s41598-024-79243-z.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+158	tanade-2024-lhmf	Resources/s41746-024-01216-3.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+159	geddes-2025-hf-twins	Resources/s41746-025-01920-8.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+160	li-2021-dl-cfd	Resources/s42003-020-01638-1.pdf	METHOD	METHOD	LIGHT	TRIAGED	2026-09-17
+161	zheng-2026-long-read-sequencing	Resources/s43586-026-00519-x.pdf	IRRELEVANT	IRRELEVANT	LIGHT	TRIAGED	2026-09-17
+162	velikorodny-2025-deep-operator-learning	Resources/s44387-025-00035-5.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+163	zhu-2026-evolution-gold-standards	Resources/ssrn-6780918.pdf	SUPPORT	SUPPORT	LIGHT	TRIAGED	2026-09-17
+164	sun-2022-deep-learning-stenosis-resistance	Resources/sun-et-al-2022-deep-learning-based-prediction-of-coronary-artery-stenosis-resistance.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+165	yang-2022-coronary-hemodynamics-fsi	Resources/v1_covered.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+166	vardhan-2024-ffrharvey-performance	Resources/vardhan-et-al-2024-diagnostic-performance-of-coronary-angiography-derived-computational-fractional-flow-reserve.pdf	METHOD	METHOD	FULL	TRIAGED	2026-09-17
+167	wang-2026-pulmonary-artery-flow-reserve	Resources/wang-et-al-2026-evaluation-of-pulmonary-artery-flow-reserve-in-patients-with-chronic-thromboembolic-pulmonary.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17
+168	skalidis-2026-digital-twins-review	Resources/ztaf129.pdf	BACKGROUND	BACKGROUND	LIGHT	TRIAGED	2026-09-17

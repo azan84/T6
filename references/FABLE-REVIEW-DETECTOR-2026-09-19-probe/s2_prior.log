@@ -1,0 +1,36 @@
+
+=== bed discrete: n_trees 108  ln C sd 0.738  (C range 6.6-318.7)
+  OLS beta [1, ln r_root, ln sum w, ln n_out, ln L_res] = [ 0.753 -3.252  0.992  0.195 -0.05 ]
+  R^2 = 0.9912   sigma_resid = 0.0708   (ln C_closed - ln C: mean +0.1440, sd 0.1111)
+  covariate corr matrix (r_root, sum w, n_out, L_res):
+ [[1.    0.372 0.356 0.54 ]
+ [0.372 1.    0.972 0.788]
+ [0.356 0.972 1.    0.758]
+ [0.54  0.788 0.758 1.   ]]
+    VIF ln r_root: 1.4
+    VIF ln sum w: 20.4
+    VIF ln n_out: 18.2
+    VIF ln L_res: 3.3
+  2-covariate (r_root, sum w) R^2 = 0.9899  beta = [ 3.67  -3.283  1.144]  (theory: -3, +1)
+  implied S2_z for ln C_ratio of 0.04 / 0.10 / 0.20 / ln(1.2) CO perturbation: 0.6 / 1.4 / 2.8 / 2.6
+  territories per tree: {0: 5, 2: 99, 3: 4}   min territory weight share: median 0.413, p10 0.286
+  healthy main-vessel min FFR: median 0.923 min 0.782
+
+=== bed leaky: n_trees 108  ln C sd 0.435  (C range 19.1-121.7)
+  OLS beta [1, ln r_root, ln sum w, ln n_out, ln L_res] = [ 3.33  -3.024  1.028  0.005 -0.014]
+  R^2 = 0.9997   sigma_resid = 0.0076   (ln C_closed - ln C: mean +0.0268, sd 0.0156)
+  covariate corr matrix (r_root, sum w, n_out, L_res):
+ [[1.    0.774 0.31  0.541]
+ [0.774 1.    0.713 0.783]
+ [0.31  0.713 1.    0.708]
+ [0.541 0.783 0.708 1.   ]]
+    VIF ln r_root: 3.5
+    VIF ln sum w: 7.3
+    VIF ln n_out: 3.2
+    VIF ln L_res: 2.9
+  2-covariate (r_root, sum w) R^2 = 0.9997  beta = [ 3.286 -3.027  1.026]  (theory: -3, +1)
+  implied S2_z for ln C_ratio of 0.04 / 0.10 / 0.20 / ln(1.2) CO perturbation: 5.2 / 13.1 / 26.2 / 23.9
+  territories per tree: {2: 104, 3: 4}   min territory weight share: median 0.278, p10 0.108
+  healthy main-vessel min FFR: median 0.962 min 0.919
+
+not ok: {}

@@ -1,0 +1,29 @@
+  whole sweep: band changed in 16 of 6944 instances (in-range either side: 4479 )
+  supply per band, on-disk vs current: {'[0.65, 0.7)': (369, 369), '[0.7, 0.75)': (355, 357), '[0.75, 0.8)': (508, 509), '[0.8, 0.85)': (651, 651), '[0.85, 0.9)': (991, 992), '[0.9, 0.95)': (1604, 1600)}
+
+  SELECTED 150: band changes under current code = 0; max |dFFR_meas| = 0.0058; n with |d|>0.001: 6; decision (<=0.80) changes: 0
+  per-band count after the shift (target 25): {'[0.65, 0.7)': 25, '[0.7, 0.75)': 25, '[0.75, 0.8)': 25, '[0.8, 0.85)': 25, '[0.85, 0.9)': 25, '[0.9, 0.95)': 25}
+
+  K-term census (current code): n_K - n_K_base value counts: {-1: 8, 0: 174, 1: 4481, 2: 1154, 3: 1124, 4: 3}
+  instances with >=2 extra K terms (spurious shoulder terms), by L_mm x ds_pct:
+ds_pct  40   50   55   60   65   70   75   80
+L_mm                                         
+10.0     5   13   15   15   16   18   21   21
+20.0    46  110  175  265  349  392  408  412
+  share of L=20, DS>=65 instances with >=2 extra K: 0.914
+  SELECTED 150 with spurious shoulder K terms (dK>=2): 58 ; dK<=0 (native term suppressed by insertion): 3
+
+=== re-selection under the current code (same seed) ===
+selected 150 instances from 107 trees (seed 20260918) -> sweep_current_selected.csv
+vessel       LAD  LCX  RCA  All
+band                           
+[0.65, 0.7)    8    8    9   25
+[0.7, 0.75)    9    8    8   25
+[0.75, 0.8)    8    9    8   25
+[0.8, 0.85)    8    9    8   25
+[0.85, 0.9)    8    8    9   25
+[0.9, 0.95)    9    8    8   25
+All           50   50   50  150
+
+shortfall vs target of 25 per band: none
+overlap with the on-disk selection: 62 of 150 instances; same trees: 91

@@ -1,0 +1,119 @@
+  tr["cap_ratio"] = np.nan
+trees 100  leaves(0.75,share) 271  slot rows 2670  err rows 554
+inlet r_ref mm: median 1.35 IQR 1.14-1.58
+
+=== A. Leaf r_ref spread at 0.75 mm truncation (all trees) ===
+r_leaf mm quantiles: {0.0: 0.75, 0.1: 0.75, 0.25: 0.751, 0.5: 0.752, 0.75: 0.755, 0.9: 0.766, 0.95: 0.823, 1.0: 1.0}
+fraction of leaves with r_leaf < 0.80 mm: 0.930;  < 0.85: 0.956;  >= 1.0: 0.000
+per-tree CV of leaf r^3 (trees with >=2 outlets, n=67): median 0.010, IQR 0.003-0.058
+per-tree max/min leaf r^3 ratio: median 1.02, p90 1.44
+per-tree max/min SHARE weight ratio: median 2.27, p90 3.84
+main-vessel leaves: mean share weight 0.411 vs leaf3-normalised 0.246; side-branch leaves 0.343 vs 0.160
+
+=== B. Tree level, 0.75 mm, per scheme (min FFR over resolved main vessels; offset vs leaky) ===
+leaky: minFFR median 0.950; healthy-network outlet FFR min: median 0.933, <0.90 in 6; outlets median 4; leaf weight fraction median 0.179
+share    minFFR median 0.920; offset mean -0.053 sd 0.082 min -0.433; decision disagreement 12/100; healthy outlet FFR min median 0.923 (<0.90: 34); healthy main FFR min <0.90: 19; non-conv 0; nan 0
+leaf3    minFFR median 0.922; offset mean -0.040 sd 0.052 min -0.244; decision disagreement 9/100; healthy outlet FFR min median 0.926 (<0.90: 29); healthy main FFR min <0.90: 18; non-conv 0; nan 0
+leaf266  minFFR median 0.922; offset mean -0.040 sd 0.052 min -0.244; decision disagreement 7/100; healthy outlet FFR min median 0.926 (<0.90: 29); healthy main FFR min <0.90: 18; non-conv 0; nan 0
+apport   minFFR median 0.919; offset mean -0.049 sd 0.069 min -0.374; decision disagreement 11/100; healthy outlet FFR min median 0.924 (<0.90: 32); healthy main FFR min <0.90: 19; non-conv 0; nan 0
+origin   minFFR median 0.923; offset mean -0.045 sd 0.064 min -0.333; decision disagreement 10/100; healthy outlet FFR min median 0.927 (<0.90: 34); healthy main FFR min <0.90: 21; non-conv 0; nan 0
+length   minFFR median 0.917; offset mean -0.055 sd 0.084 min -0.462; decision disagreement 11/100; healthy outlet FFR min median 0.922 (<0.90: 35); healthy main FFR min <0.90: 22; non-conv 0; nan 0
+outlets at 0.75: median 2; single-outlet trees 33/100; by side: {'left': 1, 'right': 32}
+single-outlet trees: leaky minFFR median 0.942 vs discrete 0.914; offset mean -0.036; healthy main FFR min median 0.934
+multi-outlet trees: offset mean share -0.062, leaf3 -0.042, apport -0.056
+represented capacity sum(r_leaf^3)/r_in^3 at 0.75: median 0.401 IQR 0.241-0.714
+corr(healthy main FFR min, cap_ratio) share: 0.406  corr(offset, hmain): 0.93
+  T=0.50: C<1e-2 in 0, Qin nan in 0, C median 17.43 (leaky C median n/a)
+  T=0.60: C<1e-2 in 0, Qin nan in 0, C median 17.68 (leaky C median n/a)
+  T=0.75: C<1e-2 in 0, Qin nan in 0, C median 18.77 (leaky C median n/a)
+  T=0.90: C<1e-2 in 0, Qin nan in 0, C median 19.23 (leaky C median n/a)
+  T=1.00: C<1e-2 in 0, Qin nan in 0, C median 19.55 (leaky C median n/a)
+
+=== C. Slot level (one 65 %DS lesion per host vessel), 0.75 mm, per scheme ===
+share    n=88: healthy Q at meas node / leaky: median x1.45 IQR x1.28-x2.20, |log| mean 0.556; at lesion node x1.19 (|log| mean 0.304); baseline FFR_meas offset -0.011 (sd 0.032); 65%DS FFR_meas offset -0.052 (sd 0.082); decision disagreement at 65%DS 24/88; healthy FFR_meas median 0.979, <0.90 1
+leaf3    n=88: healthy Q at meas node / leaky: median x1.51 IQR x1.28-x1.95, |log| mean 0.512; at lesion node x1.17 (|log| mean 0.277); baseline FFR_meas offset -0.009 (sd 0.021); 65%DS FFR_meas offset -0.047 (sd 0.075); decision disagreement at 65%DS 25/88; healthy FFR_meas median 0.979, <0.90 0
+leaf266  n=88: healthy Q at meas node / leaky: median x1.50 IQR x1.27-x1.96, |log| mean 0.511; at lesion node x1.17 (|log| mean 0.277); baseline FFR_meas offset -0.009 (sd 0.021); 65%DS FFR_meas offset -0.047 (sd 0.075); decision disagreement at 65%DS 25/88; healthy FFR_meas median 0.979, <0.90 0
+apport   n=88: healthy Q at meas node / leaky: median x1.50 IQR x1.27-x2.24, |log| mean 0.542; at lesion node x1.20 (|log| mean 0.287); baseline FFR_meas offset -0.011 (sd 0.028); 65%DS FFR_meas offset -0.052 (sd 0.079); decision disagreement at 65%DS 24/88; healthy FFR_meas median 0.979, <0.90 1
+origin   n=88: healthy Q at meas node / leaky: median x1.48 IQR x1.27-x2.02, |log| mean 0.508; at lesion node x1.15 (|log| mean 0.273); baseline FFR_meas offset -0.009 (sd 0.025); 65%DS FFR_meas offset -0.042 (sd 0.073); decision disagreement at 65%DS 19/88; healthy FFR_meas median 0.980, <0.90 1
+length   n=88: healthy Q at meas node / leaky: median x1.53 IQR x1.27-x2.50, |log| mean 0.615; at lesion node x1.19 (|log| mean 0.312); baseline FFR_meas offset -0.012 (sd 0.034); 65%DS FFR_meas offset -0.052 (sd 0.084); decision disagreement at 65%DS 23/88; healthy FFR_meas median 0.979, <0.90 1
+leaky 65%DS FFR_meas: median 0.828, <=0.80 in 0.26;  share: median 0.801, <=0.80 in 0.49
+   share single-outlet n=23: Q ratio median x1.44; 65%DS offset -0.024; healthy FFR_meas<0.90: 0
+   share multi-outlet n=65: Q ratio median x1.52; 65%DS offset -0.062; healthy FFR_meas<0.90: 1
+   leaf3 single-outlet n=23: Q ratio median x1.44; 65%DS offset -0.024; healthy FFR_meas<0.90: 0
+   leaf3 multi-outlet n=65: Q ratio median x1.60; 65%DS offset -0.055; healthy FFR_meas<0.90: 0
+   apport single-outlet n=23: Q ratio median x1.44; 65%DS offset -0.024; healthy FFR_meas<0.90: 0
+   apport multi-outlet n=65: Q ratio median x1.63; 65%DS offset -0.061; healthy FFR_meas<0.90: 1
+
+=== D. Truncation sweep (share and leaf3) ===
+T=0.50: outlets median 4, single 3, zero 0 | slots: meas node retained 1.00; >=1 downstream branch retained 0.90 (of slots with any: 1.00); run-off retained median 117 mm | healthy FFR_meas median 0.979, <0.90 0.01 | minFFR offset vs leaky: share -0.043, leaf3 -0.048 | 65%DS offset share -0.042
+        leaf3: 65%DS offset -0.043, disagreement 21/89; healthy Q ratio at meas median x1.44
+T=0.60: outlets median 3, single 15, zero 0 | slots: meas node retained 1.00; >=1 downstream branch retained 0.79 (of slots with any: 0.88); run-off retained median 107 mm | healthy FFR_meas median 0.979, <0.90 0.01 | minFFR offset vs leaky: share -0.045, leaf3 -0.042 | 65%DS offset share -0.043
+        leaf3: 65%DS offset -0.040, disagreement 21/89; healthy Q ratio at meas median x1.46
+T=0.75: outlets median 2, single 33, zero 0 | slots: meas node retained 0.99; >=1 downstream branch retained 0.57 (of slots with any: 0.63); run-off retained median 87 mm | healthy FFR_meas median 0.979, <0.90 0.01 | minFFR offset vs leaky: share -0.053, leaf3 -0.040 | 65%DS offset share -0.052
+        leaf3: 65%DS offset -0.047, disagreement 25/88; healthy Q ratio at meas median x1.51
+T=0.90: outlets median 2, single 43, zero 4 | slots: meas node retained 0.81; >=1 downstream branch retained 0.32 (of slots with any: 0.34); run-off retained median 68 mm | healthy FFR_meas median 0.979, <0.90 0.00 | minFFR offset vs leaky: share -0.011, leaf3 -0.007 | 65%DS offset share -0.054
+        leaf3: 65%DS offset -0.048, disagreement 19/72; healthy Q ratio at meas median x1.40
+T=1.00: outlets median 1, single 50, zero 8 | slots: meas node retained 0.69; >=1 downstream branch retained 0.18 (of slots with any: 0.19); run-off retained median 60 mm | healthy FFR_meas median 0.980, <0.90 0.00 | minFFR offset vs leaky: share +0.003, leaf3 +0.006 | 65%DS offset share -0.058
+        leaf3: 65%DS offset -0.049, disagreement 18/61; healthy Q ratio at meas median x1.38
+
+=== E. Error-induced dFFR at the measurement node (65 %DS lesion), leaky vs discrete schemes ===
+
+-- T1: n instances 51
+  protocol A: mean|d| leaky 0.047 (flips 15) | share 0.091 (flips 22) | leaf3 0.100 (flips 22) | apport 0.095 (flips 22) | 
+      leaky vs share: r=0.79 spearman=0.64 sign-agree 1.00; flips both 13 / either 24 / a-only 2 / b-only 9
+      leaky vs leaf3: r=0.70 spearman=0.63 sign-agree 1.00; flips both 10 / either 27 / a-only 5 / b-only 12
+      leaky vs apport: r=0.74 spearman=0.63 sign-agree 1.00; flips both 11 / either 26 / a-only 4 / b-only 11
+      share vs leaf3: r=0.90 spearman=0.87 sign-agree 1.00; flips both 17 / either 27 / a-only 5 / b-only 5
+  protocol B: mean|d| leaky 0.013 (flips 3) | share 0.013 (flips 7) | leaf3 0.042 (flips 8) | apport 0.022 (flips 7) | 
+      leaky vs share: r=0.36 spearman=0.18 sign-agree 0.62; flips both 0 / either 10 / a-only 3 / b-only 7
+      leaky vs leaf3: r=0.75 spearman=0.49 sign-agree 0.74; flips both 0 / either 11 / a-only 3 / b-only 8
+      leaky vs apport: r=0.71 spearman=0.61 sign-agree 0.78; flips both 0 / either 10 / a-only 3 / b-only 7
+      share vs leaf3: r=0.58 spearman=0.58 sign-agree 0.84; flips both 5 / either 10 / a-only 2 / b-only 3
+  protocol C: mean|d| leaky 0.056 (flips 12) | share 0.087 (flips 20) | leaf3 0.115 (flips 24) | apport 0.097 (flips 23) | 
+      leaky vs share: r=-0.09 spearman=0.35 sign-agree 0.76; flips both 11 / either 21 / a-only 1 / b-only 9
+      leaky vs leaf3: r=-0.02 spearman=0.40 sign-agree 0.76; flips both 10 / either 26 / a-only 2 / b-only 14
+      leaky vs apport: r=-0.07 spearman=0.44 sign-agree 0.76; flips both 10 / either 25 / a-only 2 / b-only 13
+      share vs leaf3: r=0.86 spearman=0.85 sign-agree 1.00; flips both 18 / either 26 / a-only 2 / b-only 6
+  cohort claim in leaky: mean|dA| 0.047  mean|dB| 0.013  mean|dC| 0.056  ->  B<A in 1.00 of instances, C<A in 0.59
+  cohort claim in share: mean|dA| 0.091  mean|dB| 0.013  mean|dC| 0.087  ->  B<A in 0.98 of instances, C<A in 0.55
+  cohort claim in leaf3: mean|dA| 0.100  mean|dB| 0.042  mean|dC| 0.115  ->  B<A in 0.98 of instances, C<A in 0.02
+  cohort claim in apport: mean|dA| 0.095  mean|dB| 0.022  mean|dC| 0.097  ->  B<A in 0.98 of instances, C<A in 0.51
+  near-threshold (0.70-0.90 clean) under leaky: 37 instances; flips A/B/C: [15, 3, 12]
+  near-threshold (0.70-0.90 clean) under share: 37 instances; flips A/B/C: [19, 7, 18]
+  near-threshold (0.70-0.90 clean) under leaf3: 32 instances; flips A/B/C: [20, 8, 20]
+
+-- T4: n instances 89
+  protocol A: mean|d| leaky 0.004 (flips 1) | share 0.022 (flips 17) | leaf3 0.020 (flips 14) | apport 0.021 (flips 15) | 
+      leaky vs share: r=0.32 spearman=0.43 sign-agree 0.63; flips both 1 / either 17 / a-only 0 / b-only 16
+      leaky vs leaf3: r=0.39 spearman=0.51 sign-agree 0.68; flips both 1 / either 14 / a-only 0 / b-only 13
+      leaky vs apport: r=0.34 spearman=0.47 sign-agree 0.61; flips both 1 / either 15 / a-only 0 / b-only 14
+      share vs leaf3: r=0.95 spearman=0.95 sign-agree 0.92; flips both 14 / either 17 / a-only 3 / b-only 0
+  protocol B: mean|d| leaky 0.025 (flips 17) | share 0.024 (flips 18) | leaf3 0.031 (flips 19) | apport 0.026 (flips 17) | 
+      leaky vs share: r=0.61 spearman=0.55 sign-agree 0.49; flips both 7 / either 28 / a-only 10 / b-only 11
+      leaky vs leaf3: r=0.53 spearman=0.55 sign-agree 0.59; flips both 7 / either 29 / a-only 10 / b-only 12
+      leaky vs apport: r=0.64 spearman=0.61 sign-agree 0.59; flips both 7 / either 27 / a-only 10 / b-only 10
+      share vs leaf3: r=0.80 spearman=0.79 sign-agree 0.83; flips both 16 / either 21 / a-only 2 / b-only 3
+  protocol C: mean|d| leaky 0.148 (flips 25) | share 0.114 (flips 27) | leaf3 0.126 (flips 29) | apport 0.118 (flips 27) | 
+      leaky vs share: r=0.15 spearman=0.47 sign-agree 0.57; flips both 15 / either 37 / a-only 10 / b-only 12
+      leaky vs leaf3: r=0.22 spearman=0.57 sign-agree 0.68; flips both 16 / either 38 / a-only 9 / b-only 13
+      leaky vs apport: r=0.20 spearman=0.56 sign-agree 0.72; flips both 16 / either 36 / a-only 9 / b-only 11
+      share vs leaf3: r=0.93 spearman=0.93 sign-agree 0.87; flips both 25 / either 31 / a-only 2 / b-only 4
+  cohort claim in leaky: mean|dA| 0.004  mean|dB| 0.025  mean|dC| 0.148  ->  B<A in 0.15 of instances, C<A in 0.01
+  cohort claim in share: mean|dA| 0.022  mean|dB| 0.024  mean|dC| 0.114  ->  B<A in 0.39 of instances, C<A in 0.18
+  cohort claim in leaf3: mean|dA| 0.020  mean|dB| 0.031  mean|dC| 0.126  ->  B<A in 0.29 of instances, C<A in 0.11
+  cohort claim in apport: mean|dA| 0.021  mean|dB| 0.026  mean|dC| 0.118  ->  B<A in 0.35 of instances, C<A in 0.17
+  near-threshold (0.70-0.90 clean) under leaky: 65 instances; flips A/B/C: [1, 17, 25]
+  near-threshold (0.70-0.90 clean) under share: 59 instances; flips A/B/C: [17, 18, 26]
+  near-threshold (0.70-0.90 clean) under leaf3: 53 instances; flips A/B/C: [14, 19, 26]
+
+=== F. Exclusion-rule test on the share / leaf3 schemes (0.75 mm) ===
+  none                     share  keeps 100/100: offset mean -0.053 sd 0.082 min -0.433; disagreement 12; r=0.66
+  none                     leaf3  keeps 100/100: offset mean -0.040 sd 0.052 min -0.244; disagreement 9; r=0.77
+  nout>=2                  share  keeps 67/100: offset mean -0.062 sd 0.095 min -0.433; disagreement 10; r=0.69
+  nout>=2                  leaf3  keeps 67/100: offset mean -0.042 sd 0.057 min -0.244; disagreement 7; r=0.76
+  healthy main FFR>=0.90   share  keeps 81/100: offset mean -0.024 sd 0.028 min -0.102; disagreement 0; r=0.62
+  healthy main FFR>=0.90   leaf3  keeps 81/100: offset mean -0.021 sd 0.024 min -0.081; disagreement 0; r=0.73
+  healthy main FFR>=0.92   share  keeps 68/100: offset mean -0.018 sd 0.025 min -0.102; disagreement 0; r=0.70
+  healthy main FFR>=0.92   leaf3  keeps 68/100: offset mean -0.017 sd 0.022 min -0.081; disagreement 0; r=0.76
+  cap_ratio>=0.25          share  keeps 74/100: offset mean -0.040 sd 0.060 min -0.304; disagreement 6; r=0.74
+  cap_ratio>=0.25          leaf3  keeps 74/100: offset mean -0.030 sd 0.038 min -0.180; disagreement 4; r=0.84

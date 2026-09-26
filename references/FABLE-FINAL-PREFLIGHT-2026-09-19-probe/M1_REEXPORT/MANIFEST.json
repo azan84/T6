@@ -1,0 +1,41 @@
+{
+  "gate": "M1",
+  "spec": "CFD-ARM-SPEC.md v0.2 \u00a77",
+  "exported": "2026-09-19",
+  "instance_key": {
+    "scan": 14,
+    "side": "left",
+    "vessel": "LAD",
+    "loc": "prox",
+    "L_mm": 20.0,
+    "ds_pct": 80,
+    "n_outlets": 6,
+    "n_branch_ge_cut": 1.0
+  },
+  "packages": [
+    {
+      "package": "14_left_LAD_prox_20mm_80ds__clean_nolesion__real",
+      "n_outlets": 6,
+      "n_territories": 2,
+      "n_stations": 31,
+      "n_closed_outlets": 0,
+      "sha256": "d6a88faa611bc72f30ad2d1b5821b1391db8301f5f731bb1b2b88105fb97103e"
+    },
+    {
+      "package": "14_left_LAD_prox_20mm_80ds__baseline__real",
+      "n_outlets": 6,
+      "n_territories": 2,
+      "n_stations": 31,
+      "n_closed_outlets": 0,
+      "sha256": "2d2cb8b509530f205cd82830a09c923642fa9113d86d1b509c4d3f0852c17965"
+    },
+    {
+      "package": "14_left_LAD_prox_20mm_80ds__T1_missed_branch__real",
+      "n_outlets": 5,
+      "n_territories": 2,
+      "n_stations": 29,
+      "n_closed_outlets": 0,
+      "sha256": "58c320873f6aef4ae0029ccdfc55abf947207da212f61f175297085862c4e1ff"
+    }
+  ]
+}

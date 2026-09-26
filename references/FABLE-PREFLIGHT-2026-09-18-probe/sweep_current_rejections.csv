@@ -1,0 +1,945 @@
+scan,side,vessel,loc,L_mm,why
+3,left,LAD,mid,10,native 43%DS >= 40
+3,left,LAD,mid,20,native 43%DS >= 40
+3,left,LCX,mid,10,host r_fit 0.91 mm < 1.0
+3,left,LCX,mid,20,host r_fit 0.91 mm < 1.0
+9,left,LAD,prox,10,host r_fit 0.71 mm < 1.0
+9,left,LAD,prox,20,host r_fit 0.71 mm < 1.0
+9,left,LAD,mid,10,host r_fit 0.70 mm < 1.0
+9,left,LAD,mid,20,host r_fit 0.70 mm < 1.0
+9,left,LCX,prox,10,host r_fit 0.79 mm < 1.0
+9,left,LCX,prox,20,host r_fit 0.79 mm < 1.0
+9,left,LCX,mid,10,host r_fit 0.78 mm < 1.0
+9,left,LCX,mid,20,host r_fit 0.78 mm < 1.0
+14,left,LCX,prox,10,host r_fit 0.95 mm < 1.0
+14,left,LCX,prox,20,host r_fit 0.95 mm < 1.0
+14,left,LCX,mid,10,host r_fit 0.70 mm < 1.0
+14,left,LCX,mid,20,host r_fit 0.70 mm < 1.0
+30,left,LAD,prox,10,measurement node unresolved
+30,left,LAD,prox,20,measurement node unresolved
+30,left,LAD,mid,10,host r_fit 0.73 mm < 1.0
+30,left,LAD,mid,20,host r_fit 0.73 mm < 1.0
+30,left,LCX,prox,10,measurement node unresolved
+30,left,LCX,prox,20,measurement node unresolved
+30,left,LCX,mid,10,host r_fit 0.63 mm < 1.0
+30,left,LCX,mid,20,host r_fit 0.63 mm < 1.0
+41,left,LAD,prox,10,measurement node unresolved
+41,left,LAD,prox,20,measurement node unresolved
+41,left,LAD,mid,10,host r_fit 0.64 mm < 1.0
+41,left,LAD,mid,20,host r_fit 0.64 mm < 1.0
+41,left,LCX,prox,10,host r_fit 0.93 mm < 1.0
+41,left,LCX,prox,20,host r_fit 0.93 mm < 1.0
+41,left,LCX,mid,10,host r_fit 0.62 mm < 1.0
+41,left,LCX,mid,20,host r_fit 0.62 mm < 1.0
+42,left,LAD,prox,10,host r_fit 0.92 mm < 1.0
+42,left,LAD,prox,20,host r_fit 0.92 mm < 1.0
+42,left,LAD,mid,10,host r_fit 0.70 mm < 1.0
+42,left,LAD,mid,20,host r_fit 0.70 mm < 1.0
+42,left,LCX,prox,10,host r_fit 0.91 mm < 1.0
+42,left,LCX,prox,20,host r_fit 0.91 mm < 1.0
+42,left,LCX,mid,10,host r_fit 0.80 mm < 1.0
+42,left,LCX,mid,20,host r_fit 0.80 mm < 1.0
+45,left,LAD,mid,10,host r_fit 0.91 mm < 1.0
+45,left,LAD,mid,20,host r_fit 0.91 mm < 1.0
+45,right,RCA,prox,10,host r_fit 0.76 mm < 1.0
+45,right,RCA,prox,20,host r_fit 0.76 mm < 1.0
+45,right,RCA,mid,10,host r_fit 0.67 mm < 1.0
+45,right,RCA,mid,20,host r_fit 0.67 mm < 1.0
+63,left,LAD,prox,10,host r_fit 0.89 mm < 1.0
+63,left,LAD,prox,20,host r_fit 0.89 mm < 1.0
+63,left,LAD,mid,10,host r_fit 0.84 mm < 1.0
+63,left,LAD,mid,20,host r_fit 0.84 mm < 1.0
+63,left,LCX,prox,10,measurement node unresolved
+63,left,LCX,prox,20,measurement node unresolved
+63,left,LCX,mid,10,host r_fit 0.72 mm < 1.0
+63,left,LCX,mid,20,host r_fit 0.72 mm < 1.0
+63,right,RCA,prox,10,host r_fit 0.98 mm < 1.0
+63,right,RCA,prox,20,host r_fit 0.98 mm < 1.0
+63,right,RCA,mid,10,host r_fit 0.97 mm < 1.0
+63,right,RCA,mid,20,host r_fit 0.97 mm < 1.0
+69,left,LCX,mid,10,host r_fit 0.91 mm < 1.0
+69,left,LCX,mid,20,host r_fit 0.91 mm < 1.0
+80,left,LAD,mid,10,host r_fit 0.78 mm < 1.0
+80,left,LAD,mid,20,host r_fit 0.78 mm < 1.0
+80,left,LCX,prox,10,host r_fit 0.85 mm < 1.0
+80,left,LCX,prox,20,host r_fit 0.85 mm < 1.0
+80,left,LCX,mid,10,host r_fit 0.76 mm < 1.0
+80,left,LCX,mid,20,host r_fit 0.76 mm < 1.0
+85,left,LAD,prox,10,host r_fit 0.73 mm < 1.0
+85,left,LAD,prox,20,host r_fit 0.73 mm < 1.0
+85,left,LAD,mid,10,host r_fit 0.71 mm < 1.0
+85,left,LAD,mid,20,host r_fit 0.71 mm < 1.0
+85,left,LCX,prox,10,host r_fit 0.76 mm < 1.0
+85,left,LCX,prox,20,host r_fit 0.76 mm < 1.0
+85,left,LCX,mid,10,window outside same-label vessel
+85,left,LCX,mid,20,window outside same-label vessel
+87,left,LAD,prox,10,host r_fit 0.96 mm < 1.0
+87,left,LAD,prox,20,host r_fit 0.96 mm < 1.0
+87,left,LAD,mid,10,host r_fit 0.72 mm < 1.0
+87,left,LAD,mid,20,host r_fit 0.72 mm < 1.0
+87,left,LCX,prox,10,host r_fit 0.99 mm < 1.0
+87,left,LCX,prox,20,host r_fit 0.99 mm < 1.0
+87,left,LCX,mid,10,host r_fit 0.82 mm < 1.0
+87,left,LCX,mid,20,host r_fit 0.82 mm < 1.0
+88,left,LAD,mid,10,host r_fit 0.89 mm < 1.0
+88,left,LAD,mid,20,host r_fit 0.89 mm < 1.0
+88,left,LCX,prox,10,host r_fit 0.93 mm < 1.0
+88,left,LCX,prox,20,host r_fit 0.93 mm < 1.0
+88,left,LCX,mid,10,host r_fit 0.83 mm < 1.0
+88,left,LCX,mid,20,host r_fit 0.83 mm < 1.0
+95,left,LAD,mid,10,host r_fit 1.00 mm < 1.0
+95,left,LAD,mid,20,host r_fit 1.00 mm < 1.0
+95,left,LCX,mid,10,host r_fit 0.82 mm < 1.0
+95,left,LCX,mid,20,host r_fit 0.82 mm < 1.0
+100,left,LAD,prox,10,host r_fit 0.99 mm < 1.0
+100,left,LAD,prox,20,host r_fit 0.99 mm < 1.0
+100,left,LAD,mid,10,host r_fit 0.74 mm < 1.0
+100,left,LAD,mid,20,host r_fit 0.74 mm < 1.0
+100,left,LCX,mid,10,host r_fit 0.85 mm < 1.0
+100,left,LCX,mid,20,host r_fit 0.85 mm < 1.0
+100,right,RCA,mid,10,native 43%DS >= 40
+100,right,RCA,mid,20,native 43%DS >= 40
+102,left,LCX,mid,10,host r_fit 0.88 mm < 1.0
+102,left,LCX,mid,20,host r_fit 0.88 mm < 1.0
+103,left,LAD,prox,10,host r_fit 0.82 mm < 1.0
+103,left,LAD,prox,20,host r_fit 0.82 mm < 1.0
+103,left,LAD,mid,10,host r_fit 0.72 mm < 1.0
+103,left,LAD,mid,20,host r_fit 0.72 mm < 1.0
+103,left,LCX,prox,10,host r_fit 0.96 mm < 1.0
+103,left,LCX,prox,20,host r_fit 0.96 mm < 1.0
+103,left,LCX,mid,10,host r_fit 0.65 mm < 1.0
+103,left,LCX,mid,20,host r_fit 0.65 mm < 1.0
+109,left,LAD,prox,10,host r_fit 0.95 mm < 1.0
+109,left,LAD,prox,20,host r_fit 0.95 mm < 1.0
+109,left,LAD,mid,10,host r_fit 0.91 mm < 1.0
+109,left,LAD,mid,20,host r_fit 0.91 mm < 1.0
+109,left,LCX,prox,10,host r_fit 0.65 mm < 1.0
+109,left,LCX,prox,20,host r_fit 0.65 mm < 1.0
+109,left,LCX,mid,10,window outside same-label vessel
+109,left,LCX,mid,20,window outside same-label vessel
+109,right,RCA,mid,10,host r_fit 0.95 mm < 1.0
+109,right,RCA,mid,20,host r_fit 0.95 mm < 1.0
+112,left,LAD,mid,10,host r_fit 0.82 mm < 1.0
+112,left,LAD,mid,20,host r_fit 0.82 mm < 1.0
+112,left,LCX,mid,10,measurement node unresolved
+112,left,LCX,mid,20,run-off < 20 mm
+114,left,LAD,prox,10,host r_fit 0.92 mm < 1.0
+114,left,LAD,prox,20,host r_fit 0.92 mm < 1.0
+114,left,LAD,mid,10,native 53%DS >= 40
+114,left,LAD,mid,20,native 53%DS >= 40
+114,right,RCA,prox,10,host r_fit 0.77 mm < 1.0
+114,right,RCA,prox,20,host r_fit 0.77 mm < 1.0
+114,right,RCA,mid,10,host r_fit 0.69 mm < 1.0
+114,right,RCA,mid,20,host r_fit 0.69 mm < 1.0
+124,left,LAD,prox,10,host r_fit 0.62 mm < 1.0
+124,left,LAD,prox,20,host r_fit 0.62 mm < 1.0
+124,left,LAD,mid,10,host r_fit 0.62 mm < 1.0
+124,left,LAD,mid,20,host r_fit 0.62 mm < 1.0
+124,left,LCX,prox,10,host r_fit 0.87 mm < 1.0
+124,left,LCX,prox,20,host r_fit 0.87 mm < 1.0
+124,left,LCX,mid,10,host r_fit 0.77 mm < 1.0
+124,left,LCX,mid,20,host r_fit 0.77 mm < 1.0
+124,right,RCA,prox,10,host r_fit 0.79 mm < 1.0
+124,right,RCA,prox,20,host r_fit 0.79 mm < 1.0
+124,right,RCA,mid,10,host r_fit 0.73 mm < 1.0
+124,right,RCA,mid,20,host r_fit 0.73 mm < 1.0
+125,left,LAD,prox,10,native 43%DS >= 40
+125,left,LAD,prox,20,native 43%DS >= 40
+125,left,LCX,mid,10,host r_fit 0.84 mm < 1.0
+125,left,LCX,mid,20,host r_fit 0.84 mm < 1.0
+129,left,LCX,prox,20,measurement node unresolved
+129,left,LCX,mid,10,host r_fit 0.75 mm < 1.0
+129,left,LCX,mid,20,window outside same-label vessel
+138,left,LCX,prox,10,measurement node unresolved
+138,left,LCX,prox,20,run-off < 20 mm
+138,left,LCX,mid,10,window outside same-label vessel
+138,left,LCX,mid,20,window outside same-label vessel
+139,left,LAD,prox,10,host r_fit 0.94 mm < 1.0
+139,left,LAD,prox,20,host r_fit 0.94 mm < 1.0
+139,left,LAD,mid,10,host r_fit 0.74 mm < 1.0
+139,left,LAD,mid,20,host r_fit 0.74 mm < 1.0
+139,left,LCX,prox,10,host r_fit 0.66 mm < 1.0
+139,left,LCX,prox,20,host r_fit 0.66 mm < 1.0
+139,left,LCX,mid,10,window outside same-label vessel
+139,left,LCX,mid,20,window outside same-label vessel
+148,left,LAD,prox,10,host r_fit 0.91 mm < 1.0
+148,left,LAD,prox,20,host r_fit 0.91 mm < 1.0
+148,left,LAD,mid,10,host r_fit 0.91 mm < 1.0
+148,left,LAD,mid,20,host r_fit 0.91 mm < 1.0
+148,left,LCX,prox,10,host r_fit 0.92 mm < 1.0
+148,left,LCX,prox,20,host r_fit 0.92 mm < 1.0
+148,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+148,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+173,left,LAD,prox,10,host r_fit 0.80 mm < 1.0
+173,left,LAD,prox,20,host r_fit 0.80 mm < 1.0
+173,left,LAD,mid,10,host r_fit 0.73 mm < 1.0
+173,left,LAD,mid,20,host r_fit 0.73 mm < 1.0
+173,left,LCX,prox,10,host r_fit 0.84 mm < 1.0
+173,left,LCX,prox,20,host r_fit 0.84 mm < 1.0
+173,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+173,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+173,right,RCA,prox,10,host r_fit 0.88 mm < 1.0
+173,right,RCA,prox,20,host r_fit 0.88 mm < 1.0
+173,right,RCA,mid,10,host r_fit 0.83 mm < 1.0
+173,right,RCA,mid,20,host r_fit 0.83 mm < 1.0
+175,left,LAD,prox,10,host r_fit 0.76 mm < 1.0
+175,left,LAD,prox,20,host r_fit 0.76 mm < 1.0
+175,left,LAD,mid,10,host r_fit 0.73 mm < 1.0
+175,left,LAD,mid,20,host r_fit 0.73 mm < 1.0
+175,left,LCX,prox,10,host r_fit 0.86 mm < 1.0
+175,left,LCX,prox,20,host r_fit 0.86 mm < 1.0
+175,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+175,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+175,right,RCA,mid,10,host r_fit 0.98 mm < 1.0
+175,right,RCA,mid,20,host r_fit 0.98 mm < 1.0
+196,left,LAD,-,-,vessel absent
+196,left,LCX,mid,10,measurement node unresolved
+196,left,LCX,mid,20,measurement node unresolved
+196,right,RCA,prox,10,host r_fit 0.96 mm < 1.0
+196,right,RCA,prox,20,host r_fit 0.96 mm < 1.0
+196,right,RCA,mid,10,host r_fit 0.87 mm < 1.0
+196,right,RCA,mid,20,host r_fit 0.87 mm < 1.0
+211,left,LCX,prox,10,host r_fit 0.92 mm < 1.0
+211,left,LCX,prox,20,host r_fit 0.92 mm < 1.0
+211,left,LCX,mid,10,host r_fit 0.69 mm < 1.0
+211,left,LCX,mid,20,host r_fit 0.69 mm < 1.0
+218,left,LAD,prox,10,native 45%DS >= 40
+218,left,LAD,prox,20,native 45%DS >= 40
+218,left,LAD,mid,20,native 45%DS >= 40
+218,left,LCX,mid,10,host r_fit 0.91 mm < 1.0
+218,left,LCX,mid,20,host r_fit 0.91 mm < 1.0
+244,left,LAD,mid,10,host r_fit 0.87 mm < 1.0
+244,left,LAD,mid,20,host r_fit 0.87 mm < 1.0
+244,left,LCX,prox,10,host r_fit 0.95 mm < 1.0
+244,left,LCX,prox,20,host r_fit 0.95 mm < 1.0
+244,left,LCX,mid,10,host r_fit 0.84 mm < 1.0
+244,left,LCX,mid,20,host r_fit 0.84 mm < 1.0
+251,left,LAD,prox,10,host r_fit 0.94 mm < 1.0
+251,left,LAD,prox,20,host r_fit 0.94 mm < 1.0
+251,left,LAD,mid,10,host r_fit 0.68 mm < 1.0
+251,left,LAD,mid,20,host r_fit 0.68 mm < 1.0
+251,left,LCX,prox,10,host r_fit 0.84 mm < 1.0
+251,left,LCX,prox,20,host r_fit 0.84 mm < 1.0
+251,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+251,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+252,left,LAD,mid,10,host r_fit 0.97 mm < 1.0
+252,left,LAD,mid,20,host r_fit 0.97 mm < 1.0
+252,left,LCX,prox,10,measurement node unresolved
+252,left,LCX,prox,20,measurement node unresolved
+252,left,LCX,mid,10,host r_fit 0.59 mm < 1.0
+252,left,LCX,mid,20,host r_fit 0.59 mm < 1.0
+252,right,RCA,mid,20,window outside same-label vessel
+265,left,LAD,prox,10,host r_fit 0.84 mm < 1.0
+265,left,LAD,prox,20,host r_fit 0.84 mm < 1.0
+265,left,LAD,mid,10,host r_fit 0.80 mm < 1.0
+265,left,LAD,mid,20,host r_fit 0.80 mm < 1.0
+265,left,LCX,prox,10,host r_fit 0.83 mm < 1.0
+265,left,LCX,prox,20,host r_fit 0.83 mm < 1.0
+265,left,LCX,mid,10,host r_fit 0.70 mm < 1.0
+265,left,LCX,mid,20,window outside same-label vessel
+265,right,RCA,mid,10,host r_fit 0.99 mm < 1.0
+265,right,RCA,mid,20,host r_fit 0.99 mm < 1.0
+271,left,LAD,mid,10,host r_fit 0.77 mm < 1.0
+271,left,LAD,mid,20,host r_fit 0.77 mm < 1.0
+271,left,LCX,prox,10,host r_fit 0.81 mm < 1.0
+271,left,LCX,prox,20,host r_fit 0.81 mm < 1.0
+271,left,LCX,mid,10,host r_fit 0.66 mm < 1.0
+271,left,LCX,mid,20,host r_fit 0.66 mm < 1.0
+271,right,RCA,prox,10,host r_fit 0.99 mm < 1.0
+271,right,RCA,prox,20,host r_fit 0.99 mm < 1.0
+271,right,RCA,mid,10,host r_fit 0.92 mm < 1.0
+271,right,RCA,mid,20,host r_fit 0.92 mm < 1.0
+272,left,LAD,prox,10,host r_fit 0.84 mm < 1.0
+272,left,LAD,prox,20,host r_fit 0.84 mm < 1.0
+272,left,LCX,prox,10,host r_fit 0.78 mm < 1.0
+272,left,LCX,prox,20,host r_fit 0.78 mm < 1.0
+272,left,LCX,mid,10,window outside same-label vessel
+272,left,LCX,mid,20,window outside same-label vessel
+273,right,RCA,prox,10,host r_fit 0.93 mm < 1.0
+273,right,RCA,prox,20,host r_fit 0.93 mm < 1.0
+273,right,RCA,mid,10,host r_fit 0.75 mm < 1.0
+273,right,RCA,mid,20,window outside same-label vessel
+274,left,LCX,prox,10,host r_fit 0.86 mm < 1.0
+274,left,LCX,prox,20,host r_fit 0.86 mm < 1.0
+274,left,LCX,mid,10,host r_fit 0.62 mm < 1.0
+274,left,LCX,mid,20,window outside same-label vessel
+274,right,RCA,prox,10,host r_fit 0.88 mm < 1.0
+274,right,RCA,prox,20,host r_fit 0.88 mm < 1.0
+274,right,RCA,mid,10,host r_fit 0.83 mm < 1.0
+274,right,RCA,mid,20,host r_fit 0.83 mm < 1.0
+280,left,LAD,mid,10,host r_fit 0.90 mm < 1.0
+280,left,LAD,mid,20,host r_fit 0.90 mm < 1.0
+280,left,LCX,prox,10,host r_fit 0.82 mm < 1.0
+280,left,LCX,prox,20,host r_fit 0.82 mm < 1.0
+280,left,LCX,mid,10,window outside same-label vessel
+280,left,LCX,mid,20,window outside same-label vessel
+284,left,LAD,mid,10,host r_fit 0.84 mm < 1.0
+284,left,LAD,mid,20,host r_fit 0.84 mm < 1.0
+284,left,LCX,prox,10,host r_fit 0.93 mm < 1.0
+284,left,LCX,prox,20,host r_fit 0.93 mm < 1.0
+284,left,LCX,mid,10,host r_fit 0.86 mm < 1.0
+284,left,LCX,mid,20,host r_fit 0.86 mm < 1.0
+300,left,LAD,prox,10,host r_fit 0.77 mm < 1.0
+300,left,LAD,prox,20,host r_fit 0.77 mm < 1.0
+300,left,LAD,mid,10,host r_fit 0.82 mm < 1.0
+300,left,LAD,mid,20,host r_fit 0.82 mm < 1.0
+300,left,LCX,prox,10,host r_fit 0.93 mm < 1.0
+300,left,LCX,prox,20,host r_fit 0.93 mm < 1.0
+300,left,LCX,mid,10,host r_fit 0.72 mm < 1.0
+300,left,LCX,mid,20,host r_fit 0.72 mm < 1.0
+306,left,LCX,mid,10,measurement node unresolved
+306,left,LCX,mid,20,run-off < 20 mm
+306,right,RCA,prox,10,native 42%DS >= 40
+306,right,RCA,prox,20,native 42%DS >= 40
+316,left,LAD,prox,10,host r_fit 0.93 mm < 1.0
+316,left,LAD,prox,20,host r_fit 0.93 mm < 1.0
+316,left,LAD,mid,10,host r_fit 0.81 mm < 1.0
+316,left,LAD,mid,20,host r_fit 0.81 mm < 1.0
+316,left,LCX,prox,10,host r_fit 0.98 mm < 1.0
+316,left,LCX,prox,20,host r_fit 0.98 mm < 1.0
+316,left,LCX,mid,10,host r_fit 0.73 mm < 1.0
+316,left,LCX,mid,20,host r_fit 0.73 mm < 1.0
+324,left,LAD,prox,20,native 41%DS >= 40
+324,left,LAD,mid,10,host r_fit 0.92 mm < 1.0
+324,left,LAD,mid,20,host r_fit 0.92 mm < 1.0
+324,right,RCA,mid,10,native 50%DS >= 40
+324,right,RCA,mid,20,native 50%DS >= 40
+328,left,LCX,prox,10,host r_fit 0.88 mm < 1.0
+328,left,LCX,prox,20,host r_fit 0.88 mm < 1.0
+328,left,LCX,mid,10,host r_fit 0.85 mm < 1.0
+328,left,LCX,mid,20,host r_fit 0.85 mm < 1.0
+328,right,RCA,mid,10,native 41%DS >= 40
+328,right,RCA,mid,20,native 41%DS >= 40
+341,left,LAD,mid,10,host r_fit 1.00 mm < 1.0
+341,left,LAD,mid,20,host r_fit 1.00 mm < 1.0
+341,left,LCX,prox,10,host r_fit 0.94 mm < 1.0
+341,left,LCX,prox,20,host r_fit 0.94 mm < 1.0
+341,left,LCX,mid,10,host r_fit 0.83 mm < 1.0
+341,left,LCX,mid,20,host r_fit 0.83 mm < 1.0
+363,left,LAD,prox,10,host r_fit 0.92 mm < 1.0
+363,left,LAD,prox,20,host r_fit 0.92 mm < 1.0
+363,left,LAD,mid,10,host r_fit 0.79 mm < 1.0
+363,left,LAD,mid,20,host r_fit 0.79 mm < 1.0
+363,left,LCX,prox,10,host r_fit 0.96 mm < 1.0
+363,left,LCX,prox,20,host r_fit 0.96 mm < 1.0
+363,left,LCX,mid,10,host r_fit 0.73 mm < 1.0
+363,left,LCX,mid,20,host r_fit 0.73 mm < 1.0
+363,right,RCA,mid,10,host r_fit 0.98 mm < 1.0
+363,right,RCA,mid,20,host r_fit 0.98 mm < 1.0
+377,left,LAD,mid,10,host r_fit 0.96 mm < 1.0
+377,left,LAD,mid,20,host r_fit 0.96 mm < 1.0
+377,left,LCX,prox,10,host r_fit 0.95 mm < 1.0
+377,left,LCX,prox,20,host r_fit 0.95 mm < 1.0
+377,left,LCX,mid,10,host r_fit 0.83 mm < 1.0
+377,left,LCX,mid,20,host r_fit 0.83 mm < 1.0
+377,right,RCA,prox,20,native 53%DS >= 40
+377,right,RCA,mid,10,baseline FFR 0.899 < 0.90
+377,right,RCA,mid,20,baseline FFR 0.894 < 0.90
+389,left,LAD,prox,10,host r_fit 0.62 mm < 1.0
+389,left,LAD,prox,20,host r_fit 0.62 mm < 1.0
+389,left,LAD,mid,10,host r_fit 0.89 mm < 1.0
+389,left,LAD,mid,20,host r_fit 0.89 mm < 1.0
+389,left,LCX,prox,10,host r_fit 0.64 mm < 1.0
+389,left,LCX,prox,20,host r_fit 0.64 mm < 1.0
+389,left,LCX,mid,10,window outside same-label vessel
+389,left,LCX,mid,20,window outside same-label vessel
+389,right,RCA,prox,10,native 54%DS >= 40
+389,right,RCA,prox,20,native 54%DS >= 40
+389,right,RCA,mid,10,native 43%DS >= 40
+389,right,RCA,mid,20,native 54%DS >= 40
+406,left,LAD,prox,10,host r_fit 0.91 mm < 1.0
+406,left,LAD,prox,20,host r_fit 0.91 mm < 1.0
+406,left,LAD,mid,10,host r_fit 0.79 mm < 1.0
+406,left,LAD,mid,20,host r_fit 0.79 mm < 1.0
+406,left,LCX,mid,10,host r_fit 0.88 mm < 1.0
+406,left,LCX,mid,20,host r_fit 0.88 mm < 1.0
+406,right,RCA,prox,10,native 50%DS >= 40
+406,right,RCA,prox,20,native 50%DS >= 40
+406,right,RCA,mid,10,native 50%DS >= 40
+406,right,RCA,mid,20,native 50%DS >= 40
+408,left,LAD,prox,10,host r_fit 0.81 mm < 1.0
+408,left,LAD,prox,20,host r_fit 0.81 mm < 1.0
+408,left,LAD,mid,10,host r_fit 0.74 mm < 1.0
+408,left,LAD,mid,20,host r_fit 0.74 mm < 1.0
+408,left,LCX,prox,10,host r_fit 0.97 mm < 1.0
+408,left,LCX,prox,20,host r_fit 0.97 mm < 1.0
+408,left,LCX,mid,10,host r_fit 0.86 mm < 1.0
+408,left,LCX,mid,20,host r_fit 0.86 mm < 1.0
+408,right,RCA,prox,10,host r_fit 0.93 mm < 1.0
+408,right,RCA,prox,20,host r_fit 0.93 mm < 1.0
+408,right,RCA,mid,10,host r_fit 0.83 mm < 1.0
+408,right,RCA,mid,20,host r_fit 0.83 mm < 1.0
+417,left,LCX,prox,10,host r_fit 0.85 mm < 1.0
+417,left,LCX,prox,20,host r_fit 0.85 mm < 1.0
+417,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+417,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+417,right,RCA,prox,10,native 42%DS >= 40
+417,right,RCA,prox,20,native 42%DS >= 40
+423,left,LAD,prox,10,host r_fit 0.93 mm < 1.0
+423,left,LAD,prox,20,host r_fit 0.93 mm < 1.0
+423,left,LAD,mid,10,host r_fit 0.91 mm < 1.0
+423,left,LAD,mid,20,host r_fit 0.91 mm < 1.0
+423,left,LCX,prox,10,measurement node unresolved
+423,left,LCX,prox,20,measurement node unresolved
+423,left,LCX,mid,10,host r_fit 0.71 mm < 1.0
+423,left,LCX,mid,20,host r_fit 0.71 mm < 1.0
+431,left,LAD,prox,10,host r_fit 0.95 mm < 1.0
+431,left,LAD,prox,20,host r_fit 0.95 mm < 1.0
+431,left,LAD,mid,10,host r_fit 0.83 mm < 1.0
+431,left,LAD,mid,20,host r_fit 0.83 mm < 1.0
+431,left,LCX,prox,10,host r_fit 0.60 mm < 1.0
+431,left,LCX,prox,20,host r_fit 0.60 mm < 1.0
+431,left,LCX,mid,10,host r_fit 0.72 mm < 1.0
+431,left,LCX,mid,20,window outside same-label vessel
+431,right,RCA,mid,10,host r_fit 0.99 mm < 1.0
+431,right,RCA,mid,20,host r_fit 0.99 mm < 1.0
+436,left,LAD,prox,10,host r_fit 0.88 mm < 1.0
+436,left,LAD,prox,20,host r_fit 0.88 mm < 1.0
+436,left,LAD,mid,10,host r_fit 0.69 mm < 1.0
+436,left,LAD,mid,20,host r_fit 0.69 mm < 1.0
+436,left,LCX,prox,10,host r_fit 0.72 mm < 1.0
+436,left,LCX,prox,20,host r_fit 0.72 mm < 1.0
+436,left,LCX,mid,10,host r_fit 0.67 mm < 1.0
+436,left,LCX,mid,20,host r_fit 0.67 mm < 1.0
+436,right,RCA,mid,10,host r_fit 0.96 mm < 1.0
+436,right,RCA,mid,20,host r_fit 0.96 mm < 1.0
+448,left,LAD,mid,10,host r_fit 0.87 mm < 1.0
+448,left,LAD,mid,20,host r_fit 0.87 mm < 1.0
+448,left,LCX,prox,10,native 49%DS >= 40
+448,left,LCX,prox,20,measurement node unresolved
+448,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+448,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+454,left,LCX,prox,10,measurement node unresolved
+454,left,LCX,prox,20,measurement node unresolved
+454,left,LCX,mid,10,host r_fit 0.75 mm < 1.0
+454,left,LCX,mid,20,window outside same-label vessel
+461,left,LCX,prox,20,measurement node unresolved
+461,left,LCX,mid,10,host r_fit 0.77 mm < 1.0
+461,left,LCX,mid,20,host r_fit 0.77 mm < 1.0
+465,left,LAD,mid,10,host r_fit 0.85 mm < 1.0
+465,left,LAD,mid,20,host r_fit 0.85 mm < 1.0
+465,left,LCX,prox,10,host r_fit 0.90 mm < 1.0
+465,left,LCX,prox,20,host r_fit 0.90 mm < 1.0
+465,left,LCX,mid,10,host r_fit 0.93 mm < 1.0
+465,left,LCX,mid,20,host r_fit 0.93 mm < 1.0
+466,left,LAD,prox,10,measurement node unresolved
+466,left,LAD,prox,20,measurement node unresolved
+466,left,LAD,mid,10,host r_fit 0.72 mm < 1.0
+466,left,LAD,mid,20,host r_fit 0.72 mm < 1.0
+471,left,LAD,mid,10,host r_fit 0.93 mm < 1.0
+471,left,LAD,mid,20,host r_fit 0.93 mm < 1.0
+471,left,LCX,prox,10,measurement node unresolved
+471,left,LCX,prox,20,measurement node unresolved
+471,left,LCX,mid,10,host r_fit 0.67 mm < 1.0
+471,left,LCX,mid,20,host r_fit 0.67 mm < 1.0
+471,right,RCA,mid,10,host r_fit 1.00 mm < 1.0
+471,right,RCA,mid,20,host r_fit 1.00 mm < 1.0
+473,left,LAD,prox,10,native 55%DS >= 40
+473,left,LAD,prox,20,native 55%DS >= 40
+473,left,LAD,mid,10,native 55%DS >= 40
+473,left,LAD,mid,20,native 55%DS >= 40
+473,left,LCX,mid,10,measurement node unresolved
+473,left,LCX,mid,20,measurement node unresolved
+474,left,LAD,prox,10,host r_fit 0.87 mm < 1.0
+474,left,LAD,prox,20,host r_fit 0.87 mm < 1.0
+474,left,LAD,mid,10,host r_fit 0.93 mm < 1.0
+474,left,LAD,mid,20,host r_fit 0.93 mm < 1.0
+474,left,LCX,prox,10,host r_fit 0.95 mm < 1.0
+474,left,LCX,prox,20,host r_fit 0.95 mm < 1.0
+474,left,LCX,mid,10,host r_fit 0.70 mm < 1.0
+474,left,LCX,mid,20,host r_fit 0.70 mm < 1.0
+488,left,LAD,mid,10,host r_fit 0.91 mm < 1.0
+488,left,LAD,mid,20,host r_fit 0.91 mm < 1.0
+488,left,LCX,prox,10,measurement node unresolved
+488,left,LCX,prox,20,measurement node unresolved
+488,left,LCX,mid,10,host r_fit 0.67 mm < 1.0
+488,left,LCX,mid,20,window outside same-label vessel
+488,right,RCA,prox,10,native 44%DS >= 40
+488,right,RCA,prox,20,native 44%DS >= 40
+488,right,RCA,mid,20,native 44%DS >= 40
+496,left,LAD,prox,10,host r_fit 0.80 mm < 1.0
+496,left,LAD,prox,20,host r_fit 0.80 mm < 1.0
+496,left,LAD,mid,10,host r_fit 0.77 mm < 1.0
+496,left,LAD,mid,20,host r_fit 0.77 mm < 1.0
+496,left,LCX,prox,10,host r_fit 0.77 mm < 1.0
+496,left,LCX,prox,20,host r_fit 0.77 mm < 1.0
+496,left,LCX,mid,10,host r_fit 0.92 mm < 1.0
+496,left,LCX,mid,20,host r_fit 0.92 mm < 1.0
+502,left,LAD,mid,10,host r_fit 0.79 mm < 1.0
+502,left,LAD,mid,20,host r_fit 0.79 mm < 1.0
+502,left,LCX,prox,10,measurement node unresolved
+502,left,LCX,prox,20,measurement node unresolved
+502,left,LCX,mid,10,host r_fit 0.70 mm < 1.0
+502,left,LCX,mid,20,host r_fit 0.70 mm < 1.0
+502,right,RCA,-,-,vessel absent
+507,left,LAD,prox,10,host r_fit 0.88 mm < 1.0
+507,left,LAD,prox,20,host r_fit 0.88 mm < 1.0
+507,left,LAD,mid,10,host r_fit 0.57 mm < 1.0
+507,left,LAD,mid,20,host r_fit 0.57 mm < 1.0
+507,left,LCX,prox,10,host r_fit 0.86 mm < 1.0
+507,left,LCX,prox,20,host r_fit 0.86 mm < 1.0
+507,left,LCX,mid,10,host r_fit 0.81 mm < 1.0
+507,left,LCX,mid,20,host r_fit 0.81 mm < 1.0
+509,left,LAD,prox,10,native 51%DS >= 40
+509,left,LAD,prox,20,native 51%DS >= 40
+512,left,LAD,mid,10,host r_fit 0.90 mm < 1.0
+512,left,LAD,mid,20,host r_fit 0.90 mm < 1.0
+512,left,LCX,prox,10,measurement node unresolved
+512,left,LCX,prox,20,measurement node unresolved
+512,left,LCX,mid,10,host r_fit 0.72 mm < 1.0
+512,left,LCX,mid,20,host r_fit 0.72 mm < 1.0
+527,left,LAD,mid,10,native 42%DS >= 40
+527,left,LAD,mid,20,native 47%DS >= 40
+527,left,LCX,prox,10,host r_fit 0.86 mm < 1.0
+527,left,LCX,prox,20,host r_fit 0.86 mm < 1.0
+527,left,LCX,mid,10,host r_fit 0.69 mm < 1.0
+527,left,LCX,mid,20,host r_fit 0.69 mm < 1.0
+527,right,RCA,mid,10,native 45%DS >= 40
+527,right,RCA,mid,20,native 45%DS >= 40
+543,left,LAD,prox,20,native 45%DS >= 40
+543,left,LAD,mid,10,host r_fit 0.95 mm < 1.0
+543,left,LAD,mid,20,host r_fit 0.95 mm < 1.0
+543,left,LCX,prox,10,host r_fit 0.81 mm < 1.0
+543,left,LCX,prox,20,host r_fit 0.81 mm < 1.0
+543,left,LCX,mid,10,host r_fit 0.71 mm < 1.0
+543,left,LCX,mid,20,host r_fit 0.71 mm < 1.0
+544,left,LAD,mid,10,host r_fit 0.93 mm < 1.0
+544,left,LAD,mid,20,host r_fit 0.93 mm < 1.0
+544,left,LCX,mid,10,measurement node unresolved
+544,left,LCX,mid,20,measurement node unresolved
+546,left,LCX,prox,10,host r_fit 0.85 mm < 1.0
+546,left,LCX,prox,20,host r_fit 0.85 mm < 1.0
+546,left,LCX,mid,10,host r_fit 0.82 mm < 1.0
+546,left,LCX,mid,20,host r_fit 0.82 mm < 1.0
+546,right,RCA,mid,10,host r_fit 0.98 mm < 1.0
+546,right,RCA,mid,20,host r_fit 0.98 mm < 1.0
+549,left,LAD,mid,10,host r_fit 0.80 mm < 1.0
+549,left,LAD,mid,20,host r_fit 0.80 mm < 1.0
+549,left,LCX,prox,10,host r_fit 0.65 mm < 1.0
+549,left,LCX,prox,20,host r_fit 0.65 mm < 1.0
+549,left,LCX,mid,10,host r_fit 0.73 mm < 1.0
+549,left,LCX,mid,20,host r_fit 0.73 mm < 1.0
+549,right,RCA,prox,10,host r_fit 0.81 mm < 1.0
+549,right,RCA,prox,20,host r_fit 0.81 mm < 1.0
+549,right,RCA,mid,10,host r_fit 0.77 mm < 1.0
+549,right,RCA,mid,20,host r_fit 0.77 mm < 1.0
+554,left,LAD,prox,10,host r_fit 0.78 mm < 1.0
+554,left,LAD,prox,20,host r_fit 0.78 mm < 1.0
+554,left,LAD,mid,10,host r_fit 0.76 mm < 1.0
+554,left,LAD,mid,20,host r_fit 0.76 mm < 1.0
+554,left,LCX,prox,10,host r_fit 0.64 mm < 1.0
+554,left,LCX,prox,20,host r_fit 0.64 mm < 1.0
+554,left,LCX,mid,10,window outside same-label vessel
+554,left,LCX,mid,20,window outside same-label vessel
+554,right,RCA,prox,10,host r_fit 0.87 mm < 1.0
+554,right,RCA,prox,20,host r_fit 0.87 mm < 1.0
+554,right,RCA,mid,10,host r_fit 0.81 mm < 1.0
+554,right,RCA,mid,20,host r_fit 0.81 mm < 1.0
+569,left,LAD,prox,10,native 40%DS >= 40
+569,left,LAD,prox,20,measurement node unresolved
+569,left,LAD,mid,10,host r_fit 0.99 mm < 1.0
+569,left,LAD,mid,20,host r_fit 0.99 mm < 1.0
+580,left,LAD,mid,10,host r_fit 0.98 mm < 1.0
+580,left,LAD,mid,20,host r_fit 0.98 mm < 1.0
+580,left,LCX,mid,10,host r_fit 0.97 mm < 1.0
+580,left,LCX,mid,20,host r_fit 0.97 mm < 1.0
+580,right,RCA,prox,10,host r_fit 0.84 mm < 1.0
+580,right,RCA,prox,20,host r_fit 0.84 mm < 1.0
+580,right,RCA,mid,10,host r_fit 0.75 mm < 1.0
+580,right,RCA,mid,20,host r_fit 0.75 mm < 1.0
+593,left,LAD,mid,10,host r_fit 0.94 mm < 1.0
+593,left,LAD,mid,20,host r_fit 0.94 mm < 1.0
+593,left,LCX,prox,10,host r_fit 0.73 mm < 1.0
+593,left,LCX,prox,20,host r_fit 0.73 mm < 1.0
+593,left,LCX,mid,10,host r_fit 0.75 mm < 1.0
+593,left,LCX,mid,20,host r_fit 0.75 mm < 1.0
+616,left,LAD,prox,10,host r_fit 0.93 mm < 1.0
+616,left,LAD,prox,20,host r_fit 0.93 mm < 1.0
+616,left,LAD,mid,10,host r_fit 0.82 mm < 1.0
+616,left,LAD,mid,20,host r_fit 0.82 mm < 1.0
+616,left,LCX,mid,10,host r_fit 0.91 mm < 1.0
+616,left,LCX,mid,20,host r_fit 0.91 mm < 1.0
+618,left,LAD,mid,10,host r_fit 0.95 mm < 1.0
+618,left,LAD,mid,20,host r_fit 0.95 mm < 1.0
+618,right,RCA,prox,10,host r_fit 0.80 mm < 1.0
+618,right,RCA,prox,20,host r_fit 0.80 mm < 1.0
+618,right,RCA,mid,10,host r_fit 0.71 mm < 1.0
+618,right,RCA,mid,20,host r_fit 0.71 mm < 1.0
+625,left,LAD,mid,10,host r_fit 0.84 mm < 1.0
+625,left,LAD,mid,20,host r_fit 0.84 mm < 1.0
+625,left,LCX,prox,10,host r_fit 1.00 mm < 1.0
+625,left,LCX,prox,20,host r_fit 1.00 mm < 1.0
+625,left,LCX,mid,10,window outside same-label vessel
+625,left,LCX,mid,20,window outside same-label vessel
+645,left,LAD,mid,10,host r_fit 0.88 mm < 1.0
+645,left,LAD,mid,20,host r_fit 0.88 mm < 1.0
+645,left,LCX,mid,10,host r_fit 0.93 mm < 1.0
+645,left,LCX,mid,20,host r_fit 0.93 mm < 1.0
+657,left,LAD,prox,10,host r_fit 0.87 mm < 1.0
+657,left,LAD,prox,20,host r_fit 0.87 mm < 1.0
+657,left,LAD,mid,10,host r_fit 0.75 mm < 1.0
+657,left,LAD,mid,20,host r_fit 0.75 mm < 1.0
+657,left,LCX,prox,10,host r_fit 0.74 mm < 1.0
+657,left,LCX,prox,20,window outside same-label vessel
+657,left,LCX,mid,10,window outside same-label vessel
+657,left,LCX,mid,20,window outside same-label vessel
+657,right,RCA,prox,10,host r_fit 0.84 mm < 1.0
+657,right,RCA,prox,20,host r_fit 0.84 mm < 1.0
+657,right,RCA,mid,10,host r_fit 0.79 mm < 1.0
+657,right,RCA,mid,20,host r_fit 0.79 mm < 1.0
+659,left,LAD,mid,10,host r_fit 0.91 mm < 1.0
+659,left,LAD,mid,20,host r_fit 0.91 mm < 1.0
+659,left,LCX,prox,20,measurement node unresolved
+659,left,LCX,mid,10,host r_fit 0.83 mm < 1.0
+659,left,LCX,mid,20,host r_fit 0.83 mm < 1.0
+661,left,LAD,mid,10,run-off < 20 mm
+661,left,LAD,mid,20,run-off < 20 mm
+661,left,LCX,mid,10,run-off < 20 mm
+661,left,LCX,mid,20,run-off < 20 mm
+667,left,LAD,mid,10,host r_fit 0.84 mm < 1.0
+667,left,LAD,mid,20,host r_fit 0.84 mm < 1.0
+667,right,RCA,prox,10,host r_fit 0.97 mm < 1.0
+667,right,RCA,prox,20,host r_fit 0.97 mm < 1.0
+667,right,RCA,mid,10,host r_fit 0.91 mm < 1.0
+667,right,RCA,mid,20,host r_fit 0.91 mm < 1.0
+669,left,LAD,prox,10,native 41%DS >= 40
+669,left,LAD,prox,20,native 41%DS >= 40
+669,left,LAD,mid,10,host r_fit 0.94 mm < 1.0
+669,left,LAD,mid,20,host r_fit 0.94 mm < 1.0
+669,left,LCX,mid,20,measurement node unresolved
+669,right,RCA,mid,10,host r_fit 1.00 mm < 1.0
+669,right,RCA,mid,20,host r_fit 1.00 mm < 1.0
+675,left,LAD,mid,10,host r_fit 0.82 mm < 1.0
+675,left,LAD,mid,20,host r_fit 0.82 mm < 1.0
+675,left,LCX,mid,10,host r_fit 0.87 mm < 1.0
+675,left,LCX,mid,20,host r_fit 0.87 mm < 1.0
+676,left,LAD,prox,10,host r_fit 0.99 mm < 1.0
+676,left,LAD,prox,20,host r_fit 0.99 mm < 1.0
+676,left,LAD,mid,10,host r_fit 0.79 mm < 1.0
+676,left,LAD,mid,20,host r_fit 0.79 mm < 1.0
+676,left,LCX,prox,10,host r_fit 0.89 mm < 1.0
+676,left,LCX,prox,20,host r_fit 0.89 mm < 1.0
+676,left,LCX,mid,10,host r_fit 0.89 mm < 1.0
+676,left,LCX,mid,20,host r_fit 0.89 mm < 1.0
+676,right,RCA,prox,10,native 42%DS >= 40
+676,right,RCA,prox,20,native 42%DS >= 40
+676,right,RCA,mid,10,native 46%DS >= 40
+676,right,RCA,mid,20,native 46%DS >= 40
+680,left,LAD,prox,10,host r_fit 0.83 mm < 1.0
+680,left,LAD,prox,20,host r_fit 0.83 mm < 1.0
+680,left,LAD,mid,10,host r_fit 0.78 mm < 1.0
+680,left,LAD,mid,20,host r_fit 0.78 mm < 1.0
+680,left,LCX,prox,10,host r_fit 0.90 mm < 1.0
+680,left,LCX,prox,20,host r_fit 0.90 mm < 1.0
+680,left,LCX,mid,10,host r_fit 0.76 mm < 1.0
+680,left,LCX,mid,20,host r_fit 0.76 mm < 1.0
+680,right,RCA,prox,10,host r_fit 0.97 mm < 1.0
+680,right,RCA,prox,20,host r_fit 0.97 mm < 1.0
+680,right,RCA,mid,10,host r_fit 0.91 mm < 1.0
+680,right,RCA,mid,20,host r_fit 0.91 mm < 1.0
+683,left,LAD,prox,10,run-off < 20 mm
+683,left,LAD,prox,20,run-off < 20 mm
+683,left,LAD,mid,10,window outside same-label vessel
+683,left,LAD,mid,20,window outside same-label vessel
+683,left,LCX,prox,20,run-off < 20 mm
+683,left,LCX,mid,10,window outside same-label vessel
+683,left,LCX,mid,20,window outside same-label vessel
+687,left,LCX,mid,10,host r_fit 0.80 mm < 1.0
+687,left,LCX,mid,20,host r_fit 0.80 mm < 1.0
+690,left,LAD,mid,10,native 40%DS >= 40
+690,left,LAD,mid,20,native 40%DS >= 40
+690,left,LCX,mid,10,host r_fit 0.92 mm < 1.0
+690,left,LCX,mid,20,host r_fit 0.92 mm < 1.0
+698,left,LCX,mid,10,host r_fit 0.86 mm < 1.0
+698,left,LCX,mid,20,host r_fit 0.86 mm < 1.0
+725,left,LAD,prox,10,host r_fit 0.97 mm < 1.0
+725,left,LAD,prox,20,host r_fit 0.97 mm < 1.0
+725,left,LAD,mid,10,host r_fit 0.97 mm < 1.0
+725,left,LAD,mid,20,host r_fit 0.97 mm < 1.0
+725,left,LCX,mid,10,host r_fit 0.87 mm < 1.0
+725,left,LCX,mid,20,host r_fit 0.87 mm < 1.0
+727,left,LAD,mid,10,host r_fit 0.96 mm < 1.0
+727,left,LAD,mid,20,host r_fit 0.96 mm < 1.0
+727,left,LCX,prox,10,host r_fit 0.85 mm < 1.0
+727,left,LCX,prox,20,host r_fit 0.85 mm < 1.0
+727,left,LCX,mid,10,host r_fit 0.70 mm < 1.0
+727,left,LCX,mid,20,host r_fit 0.70 mm < 1.0
+738,left,LAD,prox,10,host r_fit 0.71 mm < 1.0
+738,left,LAD,prox,20,host r_fit 0.71 mm < 1.0
+738,left,LAD,mid,10,host r_fit 0.75 mm < 1.0
+738,left,LAD,mid,20,host r_fit 0.75 mm < 1.0
+738,left,LCX,mid,10,host r_fit 0.85 mm < 1.0
+738,left,LCX,mid,20,host r_fit 0.85 mm < 1.0
+738,right,RCA,prox,10,host r_fit 0.97 mm < 1.0
+738,right,RCA,prox,20,host r_fit 0.97 mm < 1.0
+738,right,RCA,mid,10,host r_fit 0.90 mm < 1.0
+738,right,RCA,mid,20,host r_fit 0.90 mm < 1.0
+751,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+751,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+751,right,RCA,prox,10,host r_fit 0.78 mm < 1.0
+751,right,RCA,prox,20,host r_fit 0.78 mm < 1.0
+751,right,RCA,mid,10,host r_fit 0.70 mm < 1.0
+751,right,RCA,mid,20,host r_fit 0.70 mm < 1.0
+754,left,LAD,mid,10,native 40%DS >= 40
+754,left,LAD,mid,20,native 40%DS >= 40
+754,right,RCA,prox,10,measurement node unresolved
+754,right,RCA,prox,20,measurement node unresolved
+754,right,RCA,mid,10,host r_fit 0.74 mm < 1.0
+754,right,RCA,mid,20,host r_fit 0.74 mm < 1.0
+758,left,LAD,prox,10,host r_fit 0.98 mm < 1.0
+758,left,LAD,prox,20,host r_fit 0.98 mm < 1.0
+758,right,RCA,prox,10,host r_fit 0.95 mm < 1.0
+758,right,RCA,prox,20,host r_fit 0.95 mm < 1.0
+758,right,RCA,mid,10,host r_fit 0.88 mm < 1.0
+758,right,RCA,mid,20,host r_fit 0.88 mm < 1.0
+759,left,LAD,mid,10,host r_fit 0.87 mm < 1.0
+759,left,LAD,mid,20,host r_fit 0.87 mm < 1.0
+759,left,LCX,prox,10,host r_fit 0.86 mm < 1.0
+759,left,LCX,prox,20,host r_fit 0.86 mm < 1.0
+759,left,LCX,mid,10,host r_fit 0.80 mm < 1.0
+759,left,LCX,mid,20,host r_fit 0.80 mm < 1.0
+759,right,RCA,mid,10,host r_fit 0.99 mm < 1.0
+759,right,RCA,mid,20,host r_fit 0.99 mm < 1.0
+768,left,LAD,prox,10,host r_fit 0.53 mm < 1.0
+768,left,LAD,prox,20,host r_fit 0.53 mm < 1.0
+768,left,LAD,mid,10,host r_fit 0.65 mm < 1.0
+768,left,LAD,mid,20,host r_fit 0.65 mm < 1.0
+768,left,LCX,prox,10,host r_fit 0.96 mm < 1.0
+768,left,LCX,prox,20,host r_fit 0.96 mm < 1.0
+768,left,LCX,mid,10,host r_fit 0.72 mm < 1.0
+768,left,LCX,mid,20,host r_fit 0.72 mm < 1.0
+768,right,RCA,prox,10,native 43%DS >= 40
+768,right,RCA,prox,20,native 43%DS >= 40
+768,right,RCA,mid,20,native 43%DS >= 40
+773,left,LAD,mid,10,host r_fit 0.85 mm < 1.0
+773,left,LAD,mid,20,host r_fit 0.85 mm < 1.0
+773,left,LCX,prox,10,native 52%DS >= 40
+773,left,LCX,prox,20,native 52%DS >= 40
+773,left,LCX,mid,10,host r_fit 0.93 mm < 1.0
+773,left,LCX,mid,20,host r_fit 0.93 mm < 1.0
+773,right,RCA,mid,10,host r_fit 0.93 mm < 1.0
+773,right,RCA,mid,20,host r_fit 0.93 mm < 1.0
+775,left,LAD,prox,10,host r_fit 0.77 mm < 1.0
+775,left,LAD,prox,20,host r_fit 0.77 mm < 1.0
+775,left,LAD,mid,10,host r_fit 0.75 mm < 1.0
+775,left,LAD,mid,20,host r_fit 0.75 mm < 1.0
+775,left,LCX,prox,10,host r_fit 0.94 mm < 1.0
+775,left,LCX,prox,20,host r_fit 0.94 mm < 1.0
+775,left,LCX,mid,10,host r_fit 0.85 mm < 1.0
+775,left,LCX,mid,20,host r_fit 0.85 mm < 1.0
+775,right,RCA,prox,10,native 59%DS >= 40
+775,right,RCA,prox,20,native 59%DS >= 40
+775,right,RCA,mid,10,baseline FFR 0.810 < 0.90
+775,right,RCA,mid,20,baseline FFR 0.802 < 0.90
+789,left,LAD,prox,10,host r_fit 0.94 mm < 1.0
+789,left,LAD,prox,20,host r_fit 0.94 mm < 1.0
+789,left,LAD,mid,10,host r_fit 0.95 mm < 1.0
+789,left,LAD,mid,20,host r_fit 0.95 mm < 1.0
+789,left,LCX,mid,10,host r_fit 0.93 mm < 1.0
+789,left,LCX,mid,20,host r_fit 0.93 mm < 1.0
+790,left,LAD,mid,10,host r_fit 0.98 mm < 1.0
+790,left,LAD,mid,20,host r_fit 0.98 mm < 1.0
+790,left,LCX,prox,10,host r_fit 0.83 mm < 1.0
+790,left,LCX,prox,20,host r_fit 0.83 mm < 1.0
+790,left,LCX,mid,10,host r_fit 0.62 mm < 1.0
+790,left,LCX,mid,20,host r_fit 0.62 mm < 1.0
+790,right,RCA,prox,10,host r_fit 0.94 mm < 1.0
+790,right,RCA,prox,20,host r_fit 0.94 mm < 1.0
+790,right,RCA,mid,10,host r_fit 0.87 mm < 1.0
+790,right,RCA,mid,20,host r_fit 0.87 mm < 1.0
+799,left,LAD,prox,10,host r_fit 0.96 mm < 1.0
+799,left,LAD,prox,20,host r_fit 0.96 mm < 1.0
+799,left,LAD,mid,10,host r_fit 0.90 mm < 1.0
+799,left,LAD,mid,20,host r_fit 0.90 mm < 1.0
+799,left,LCX,prox,10,host r_fit 0.94 mm < 1.0
+799,left,LCX,prox,20,host r_fit 0.94 mm < 1.0
+799,left,LCX,mid,10,host r_fit 0.75 mm < 1.0
+799,left,LCX,mid,20,host r_fit 0.75 mm < 1.0
+806,right,RCA,mid,10,host r_fit 0.89 mm < 1.0
+806,right,RCA,mid,20,host r_fit 0.89 mm < 1.0
+808,left,LCX,mid,10,host r_fit 0.89 mm < 1.0
+808,left,LCX,mid,20,host r_fit 0.89 mm < 1.0
+813,left,LAD,prox,10,host r_fit 0.90 mm < 1.0
+813,left,LAD,prox,20,host r_fit 0.90 mm < 1.0
+813,left,LAD,mid,10,host r_fit 0.80 mm < 1.0
+813,left,LAD,mid,20,host r_fit 0.80 mm < 1.0
+813,left,LCX,prox,10,measurement node unresolved
+813,left,LCX,prox,20,measurement node unresolved
+813,left,LCX,mid,10,host r_fit 0.72 mm < 1.0
+813,left,LCX,mid,20,window outside same-label vessel
+817,left,LAD,mid,10,host r_fit 0.81 mm < 1.0
+817,left,LAD,mid,20,host r_fit 0.81 mm < 1.0
+817,left,LCX,prox,10,host r_fit 0.87 mm < 1.0
+817,left,LCX,prox,20,host r_fit 0.87 mm < 1.0
+817,left,LCX,mid,10,host r_fit 0.80 mm < 1.0
+817,left,LCX,mid,20,host r_fit 0.80 mm < 1.0
+817,right,RCA,prox,10,host r_fit 0.96 mm < 1.0
+817,right,RCA,prox,20,host r_fit 0.96 mm < 1.0
+817,right,RCA,mid,10,host r_fit 0.89 mm < 1.0
+817,right,RCA,mid,20,host r_fit 0.89 mm < 1.0
+825,left,LCX,prox,10,host r_fit 0.97 mm < 1.0
+825,left,LCX,prox,20,host r_fit 0.97 mm < 1.0
+825,left,LCX,mid,10,host r_fit 0.82 mm < 1.0
+825,left,LCX,mid,20,host r_fit 0.82 mm < 1.0
+828,left,LAD,mid,10,native 45%DS >= 40
+828,left,LAD,mid,20,native 45%DS >= 40
+828,left,LCX,prox,10,host r_fit 0.87 mm < 1.0
+828,left,LCX,prox,20,window outside same-label vessel
+828,left,LCX,mid,10,window outside same-label vessel
+828,left,LCX,mid,20,window outside same-label vessel
+828,right,RCA,prox,10,native 47%DS >= 40
+828,right,RCA,prox,20,native 47%DS >= 40
+828,right,RCA,mid,10,native 47%DS >= 40
+828,right,RCA,mid,20,native 47%DS >= 40
+830,left,LAD,prox,10,host r_fit 0.89 mm < 1.0
+830,left,LAD,prox,20,host r_fit 0.89 mm < 1.0
+830,left,LAD,mid,10,host r_fit 0.82 mm < 1.0
+830,left,LAD,mid,20,host r_fit 0.82 mm < 1.0
+830,right,RCA,mid,10,host r_fit 0.98 mm < 1.0
+830,right,RCA,mid,20,host r_fit 0.98 mm < 1.0
+837,left,LAD,prox,20,measurement node unresolved
+837,left,LAD,mid,10,host r_fit 0.84 mm < 1.0
+837,left,LAD,mid,20,host r_fit 0.84 mm < 1.0
+837,left,LCX,mid,10,host r_fit 0.87 mm < 1.0
+837,left,LCX,mid,20,host r_fit 0.87 mm < 1.0
+869,left,LAD,mid,10,host r_fit 0.93 mm < 1.0
+869,left,LAD,mid,20,host r_fit 0.93 mm < 1.0
+869,left,LCX,prox,10,host r_fit 1.00 mm < 1.0
+869,left,LCX,prox,20,host r_fit 1.00 mm < 1.0
+869,left,LCX,mid,10,host r_fit 0.74 mm < 1.0
+869,left,LCX,mid,20,host r_fit 0.74 mm < 1.0
+874,left,LAD,mid,10,host r_fit 0.87 mm < 1.0
+874,left,LAD,mid,20,host r_fit 0.87 mm < 1.0
+874,left,LCX,prox,10,host r_fit 0.88 mm < 1.0
+874,left,LCX,prox,20,host r_fit 0.88 mm < 1.0
+874,left,LCX,mid,10,host r_fit 0.79 mm < 1.0
+874,left,LCX,mid,20,host r_fit 0.79 mm < 1.0
+878,left,LAD,mid,10,host r_fit 0.94 mm < 1.0
+878,left,LAD,mid,20,host r_fit 0.94 mm < 1.0
+878,left,LCX,prox,10,host r_fit 0.83 mm < 1.0
+878,left,LCX,prox,20,host r_fit 0.83 mm < 1.0
+878,left,LCX,mid,10,host r_fit 0.74 mm < 1.0
+878,left,LCX,mid,20,host r_fit 0.74 mm < 1.0
+890,left,LAD,mid,10,host r_fit 0.95 mm < 1.0
+890,left,LAD,mid,20,host r_fit 0.95 mm < 1.0
+890,left,LCX,prox,10,host r_fit 0.68 mm < 1.0
+890,left,LCX,prox,20,host r_fit 0.68 mm < 1.0
+890,left,LCX,mid,10,window outside same-label vessel
+890,left,LCX,mid,20,window outside same-label vessel
+901,left,LAD,mid,10,host r_fit 0.87 mm < 1.0
+901,left,LAD,mid,20,host r_fit 0.87 mm < 1.0
+901,left,LCX,prox,10,host r_fit 0.73 mm < 1.0
+901,left,LCX,prox,20,host r_fit 0.73 mm < 1.0
+901,left,LCX,mid,10,host r_fit 0.66 mm < 1.0
+901,left,LCX,mid,20,host r_fit 0.66 mm < 1.0
+907,left,LAD,prox,10,native 50%DS >= 40
+907,left,LAD,prox,20,native 50%DS >= 40
+907,left,LAD,mid,10,measurement node unresolved
+907,left,LAD,mid,20,measurement node unresolved
+907,left,LCX,mid,10,measurement node unresolved
+907,left,LCX,mid,20,measurement node unresolved
+907,right,RCA,mid,10,measurement node unresolved
+907,right,RCA,mid,20,measurement node unresolved
+908,left,LAD,prox,10,host r_fit 0.91 mm < 1.0
+908,left,LAD,prox,20,host r_fit 0.91 mm < 1.0
+908,left,LAD,mid,10,host r_fit 0.88 mm < 1.0
+908,left,LAD,mid,20,host r_fit 0.88 mm < 1.0
+908,right,RCA,-,-,vessel absent
+909,left,LAD,prox,10,host r_fit 0.71 mm < 1.0
+909,left,LAD,prox,20,host r_fit 0.71 mm < 1.0
+909,left,LAD,mid,10,host r_fit 0.71 mm < 1.0
+909,left,LAD,mid,20,host r_fit 0.71 mm < 1.0
+909,left,LCX,prox,10,host r_fit 0.62 mm < 1.0
+909,left,LCX,prox,20,host r_fit 0.62 mm < 1.0
+909,left,LCX,mid,10,host r_fit 0.58 mm < 1.0
+909,left,LCX,mid,20,host r_fit 0.58 mm < 1.0
+909,right,RCA,prox,10,host r_fit 0.87 mm < 1.0
+909,right,RCA,prox,20,host r_fit 0.87 mm < 1.0
+909,right,RCA,mid,10,host r_fit 0.84 mm < 1.0
+909,right,RCA,mid,20,host r_fit 0.84 mm < 1.0
+928,left,LCX,mid,10,host r_fit 0.96 mm < 1.0
+928,left,LCX,mid,20,host r_fit 0.96 mm < 1.0
+932,right,RCA,mid,10,host r_fit 0.99 mm < 1.0
+932,right,RCA,mid,20,host r_fit 0.99 mm < 1.0
+935,left,LCX,mid,10,host r_fit 0.92 mm < 1.0
+935,left,LCX,mid,20,host r_fit 0.92 mm < 1.0
+937,left,LAD,mid,10,measurement node unresolved
+937,left,LAD,mid,20,measurement node unresolved
+937,right,RCA,prox,10,host r_fit 0.79 mm < 1.0
+937,right,RCA,prox,20,host r_fit 0.79 mm < 1.0
+937,right,RCA,mid,10,host r_fit 0.66 mm < 1.0
+937,right,RCA,mid,20,host r_fit 0.66 mm < 1.0
+941,left,LAD,prox,10,host r_fit 0.82 mm < 1.0
+941,left,LAD,prox,20,host r_fit 0.82 mm < 1.0
+941,left,LAD,mid,10,host r_fit 0.70 mm < 1.0
+941,left,LAD,mid,20,host r_fit 0.70 mm < 1.0
+941,left,LCX,prox,10,host r_fit 0.61 mm < 1.0
+941,left,LCX,prox,20,host r_fit 0.61 mm < 1.0
+941,left,LCX,mid,10,window outside same-label vessel
+941,left,LCX,mid,20,window outside same-label vessel
+941,right,RCA,prox,10,host r_fit 0.99 mm < 1.0
+941,right,RCA,prox,20,host r_fit 0.99 mm < 1.0
+941,right,RCA,mid,10,host r_fit 0.96 mm < 1.0
+941,right,RCA,mid,20,host r_fit 0.96 mm < 1.0
+947,left,LCX,prox,10,native 52%DS >= 40
+947,left,LCX,prox,20,native 52%DS >= 40
+947,left,LCX,mid,10,host r_fit 0.91 mm < 1.0
+947,left,LCX,mid,20,host r_fit 0.91 mm < 1.0
+952,left,LAD,prox,10,host r_fit 0.99 mm < 1.0
+952,left,LAD,prox,20,host r_fit 0.99 mm < 1.0
+952,left,LAD,mid,10,host r_fit 0.80 mm < 1.0
+952,left,LAD,mid,20,host r_fit 0.80 mm < 1.0
+952,left,LCX,prox,10,window outside same-label vessel
+952,left,LCX,prox,20,window outside same-label vessel
+952,left,LCX,mid,10,window outside same-label vessel
+952,left,LCX,mid,20,window outside same-label vessel
+954,left,LAD,mid,10,host r_fit 0.90 mm < 1.0
+954,left,LAD,mid,20,host r_fit 0.90 mm < 1.0
+954,left,LCX,prox,10,host r_fit 0.77 mm < 1.0
+954,left,LCX,prox,20,host r_fit 0.77 mm < 1.0
+954,left,LCX,mid,10,host r_fit 0.63 mm < 1.0
+954,left,LCX,mid,20,window outside same-label vessel
+958,left,LAD,mid,10,host r_fit 0.97 mm < 1.0
+958,left,LAD,mid,20,host r_fit 0.97 mm < 1.0
+958,left,LCX,prox,10,host r_fit 0.84 mm < 1.0
+958,left,LCX,prox,20,host r_fit 0.84 mm < 1.0
+958,left,LCX,mid,10,host r_fit 0.74 mm < 1.0
+958,left,LCX,mid,20,host r_fit 0.74 mm < 1.0
+973,left,LAD,prox,10,host r_fit 0.97 mm < 1.0
+973,left,LAD,prox,20,host r_fit 0.97 mm < 1.0
+973,left,LAD,mid,10,host r_fit 0.84 mm < 1.0
+973,left,LAD,mid,20,host r_fit 0.84 mm < 1.0
+973,left,LCX,mid,10,run-off < 20 mm
+973,left,LCX,mid,20,run-off < 20 mm
+980,left,LCX,mid,10,host r_fit 0.97 mm < 1.0
+980,left,LCX,mid,20,window outside same-label vessel
+984,left,LCX,mid,10,measurement node unresolved
+984,left,LCX,mid,20,run-off < 20 mm
+985,left,LCX,prox,10,host r_fit 0.85 mm < 1.0
+985,left,LCX,prox,20,host r_fit 0.85 mm < 1.0
+985,left,LCX,mid,10,host r_fit 0.81 mm < 1.0
+985,left,LCX,mid,20,host r_fit 0.81 mm < 1.0
+993,left,LAD,prox,10,native 58%DS >= 40
+993,left,LAD,prox,20,native 58%DS >= 40
+993,left,LCX,mid,10,measurement node unresolved
+993,left,LCX,mid,20,measurement node unresolved
+993,right,RCA,prox,10,native 49%DS >= 40
+993,right,RCA,prox,20,native 49%DS >= 40
+993,right,RCA,mid,10,native 49%DS >= 40
+993,right,RCA,mid,20,native 49%DS >= 40
+995,left,LAD,-,-,vessel absent
+995,left,LCX,prox,10,host r_fit 0.71 mm < 1.0
+995,left,LCX,prox,20,host r_fit 0.71 mm < 1.0
+995,left,LCX,mid,10,host r_fit 0.61 mm < 1.0
+995,left,LCX,mid,20,host r_fit 0.61 mm < 1.0
+995,right,RCA,prox,20,native 40%DS >= 40
+995,right,RCA,mid,10,host r_fit 0.97 mm < 1.0
+995,right,RCA,mid,20,host r_fit 0.97 mm < 1.0
+997,left,LAD,prox,10,native 41%DS >= 40
+997,left,LAD,prox,20,native 41%DS >= 40
+997,left,LAD,mid,10,host r_fit 0.89 mm < 1.0
+997,left,LAD,mid,20,host r_fit 0.89 mm < 1.0
+997,left,LCX,prox,10,host r_fit 0.93 mm < 1.0
+997,left,LCX,prox,20,host r_fit 0.93 mm < 1.0
+997,left,LCX,mid,10,host r_fit 0.85 mm < 1.0
+997,left,LCX,mid,20,host r_fit 0.85 mm < 1.0

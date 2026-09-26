@@ -1,0 +1,42 @@
+{
+  "frame": "mm, LPS. The ImageCAS-X NIfTI affine is RAS: negate x and y before applying inv(affine) to reach voxel indices. Verified \u2014 with the flip 42/42 deletion points land inside the lumen, without it 0/42.",
+  "instance": {
+    "scan": 14,
+    "side": "left",
+    "vessel": "LAD",
+    "loc": "prox",
+    "L_mm": 20.0,
+    "ds_pct": 80,
+    "c_mm": 19.712737527771008
+  },
+  "error_type": "T1_missed_branch",
+  "tier": "real",
+  "bed": "discrete",
+  "truncation_r_ref_mm": 0.6,
+  "resolved_r_fit_mm": 0.75,
+  "murray_exponent": 2.66,
+  "n_outlets": 5,
+  "n_territories": 2,
+  "measurement": {
+    "tree_node": 133,
+    "s_mm": 49.89174407176872,
+    "note": "the node the 0D model reports at; NOT necessarily c + L/2 + 20 mm if the error type removed that point \u2014 see the T2 open item in CFD-ARM-SPEC \u00a717"
+  },
+  "protocol_C": {
+    "variant": "per-outlet prescribed flow, then R_i = (p_i - P_v)/Q_i (CFD-ARM-SPEC \u00a72.2) \u2014 EXACTLY determined, one target per outlet",
+    "zerod_primary": "ONE global bed scaling against territory totals (STATISTICS-PLAN \u00a7P2) \u2014 OVER-determined",
+    "target_definition": "DECISION B1, settled 2026-09-19: each territory's target is the CLEAN tree's FULL outflow, including the share of any branch the error deleted. Per-outlet targets distribute that total across surviving outlets in proportion to their own clean flow (see territories.csv for both totals; their ratio is the scaling applied).",
+    "comparability": "these are DIFFERENT fits and must not be compared as if identical: the 0D twin must run the identical per-outlet procedure for the ladder comparison. The difference is second order for kappa but first order for the residual panel, where it would otherwise read as a fidelity effect. Magnitudes are quantified analysis-side (they are 0D predictions and are withheld under \u00a713). See territories.csv for both clean totals.",
+    "settled": "Decision B1 was settled 2026-09-19: the FULL territory total. No longer an open question."
+  },
+  "provenance": {
+    "centreline_vtk_sha256": "5b95337f8cf2e6c50c883f4c1d5a5f25f5dc567514b5da559b4711527c0c07a3",
+    "mask_nii_sha256": "e810bfec20e7e6cd5ec69d31908426bb093781fb56e8993fe62f1e03c8cc0c28",
+    "exporter_sha256": "d49a2c32c42189b86bcb2184a6d92525a1457db16b076fcbe30a161de80a3d03",
+    "exporter": "export_cfd_case.py",
+    "spec": "CFD-ARM-SPEC.md v0.2",
+    "detector_spec": "DETECTOR-SPEC.md v0.2 (station rule \u00a78)",
+    "exported": "2026-09-19"
+  },
+  "blinding": "expected_0D.json deliberately absent (CFD-ARM-SPEC \u00a713). NOTE: bc_A x bc_C_flows reconstructs the CLEAN outlet pressures exactly; what is blind is the CORRUPTED-geometry pressure prediction and the error-induced change in it."
+}
