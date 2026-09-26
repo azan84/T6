@@ -3,14 +3,16 @@
 # Case: Stage A sten70 (70 % diameter stenosis, straight tapered vessel), A5 coarse mesh (198,252 cells), steady laminar simpleFoam, coded resistance outlet (R = 6.974826e9 Pa s/m3, fixed relax 0.2), 2000 iterations.
 # Returned result it reproduces: outlet flow 1.17392231e-06 m3/s (stageA_A5_ladders.csv, A5 sten70 coarse; also reference_result.json of this folder from a fresh run of THIS script).
 # usage: ./run_smoke_test.sh [NPROC=8] [WORKDIR=./smoke_work]      needs: OpenFOAM ESI v2406 (source $FOAM_BASHRC, default /usr/lib/openfoam/openfoam2406/etc/bashrc; cartesianMesh = cfMesh is part of it; wmake + g++ for the coded BC), OpenMPI, python3 + numpy.
-# PASS = complete run (End, 2000 iterations, 2000 finite rows per monitor), same mesh (STL sha256, checkMesh OK, exactly 2 wall->patch rewrites, cells EQUAL to the reference) and outlet flow within 0.1 % of reference_result.json (and of the returned value), see compare_smoke.py.
+# PASS = complete run (exact 'End' line, log 'Time =' 1..2000 each once in order, monitors with iterations exactly 1..2000 and finite values), same mesh (STL sha256, checkMesh OK, exactly 1 inlet + 1 outlet wall->patch rewrite,
+#   cells EQUAL to the reference; compare_smoke.py re-verifies STL hash, boundary types and checkMesh log from the retained work directory) and outlet flow within 0.1 % of reference_result.json (and of the returned value), see compare_smoke.py.
 # Timing claim: about 10 minutes on 8 PHYSICAL cores of a workstation (see reference_result.json); the 30-minute claim needs 8 physical cores (NPROC > physical cores is refused unless SMOKE_ALLOW_FEWER_CORES=1).
 # env: WRITE_REFERENCE=1 = reference run: step 6 writes $HERE/reference_result.json from this run (no comparison; only if the run is complete and the mesh checks hold) and exits 0; without it, reference_result.json must exist (checked before any expensive step).
 #      GEN = path of make_stageA_geometry.py (default $HERE/../stageA/make_stageA_geometry.py); OMP_NUM_THREADS (default 8) for cartesianMesh (cfMesh cell count depends on the thread count).
 #      SMOKE_ALLOW_FEWER_CORES=1: allow NPROC > physical cores (a warning; the timing claim does not hold).
-# writes <WORKDIR>/smoke_checks.json: stl_sha256, checkMesh_ok, cells, patch_rewrites, omp_num_threads (read by compare_smoke.py).
-# exit codes: 0 PASS (or reference written); 1 FAIL (flow criterion); 2 setup error (preflight: python3/numpy, OpenFOAM commands, wmake/g++, NPROC, physical cores; workdir, reference file, geometry generator missing);
-#             3 NON-COMPARABLE: geometry/mesh step failed, STL hash differs, checkMesh failed, patch rewrite not exactly 2, different cell count, or run incomplete (never PASS); 4 simpleFoam failed.
+#      SMOKE_PHYS_CORES=<n>: physical core count when lscpu cannot establish it (nproc counts logical CPUs and is never used as the physical count); without it (or SMOKE_ALLOW_FEWER_CORES=1) exit 2.
+# writes <WORKDIR>/smoke_checks.json: stl_sha256, checkMesh_ok, cells, inlet_rewrites, outlet_rewrites, omp_num_threads (read by compare_smoke.py).
+# exit codes: 0 PASS (or reference written); 1 FAIL (flow criterion); 2 setup error (preflight: python3/numpy, OpenFOAM v2406 (WM_PROJECT_VERSION), OpenFOAM commands, wmake/g++, NPROC, physical cores; workdir, reference file, geometry generator missing);
+#             3 NON-COMPARABLE: geometry/mesh step failed, STL hash differs, checkMesh failed, patch rewrites not exactly inlet 1 + outlet 1, different cell count, or run incomplete (never PASS); 4 simpleFoam failed.
 set -u
 HERE=$(cd "$(dirname "$0")" && pwd); NP=${1:-8}; W=${2:-$HERE/smoke_work}
 FOAM_BASHRC=${FOAM_BASHRC:-/usr/lib/openfoam/openfoam2406/etc/bashrc}; GEN=${GEN:-$HERE/../stageA/make_stageA_geometry.py}; REF="$HERE/reference_result.json"
@@ -24,9 +26,16 @@ command -v python3 > /dev/null || { echo "preflight: python3 not found"; exit 2;
 python3 -c "import numpy" 2> /dev/null || { echo "preflight: python3 cannot import numpy (pip install numpy)"; exit 2; }
 [ -f "$FOAM_BASHRC" ] || { echo "OpenFOAM v2406 bashrc not found: $FOAM_BASHRC (set FOAM_BASHRC)"; exit 2; }
 source "$FOAM_BASHRC" || exit 2
+echo "WM_PROJECT_VERSION=${WM_PROJECT_VERSION:-<unset>} (required: v2406, ESI)"
+[ "${WM_PROJECT_VERSION:-}" = v2406 ] || { echo "preflight: WM_PROJECT_VERSION '${WM_PROJECT_VERSION:-}' is not v2406 (ESI OpenFOAM v2406 required; set FOAM_BASHRC)"; exit 2; }
 for c in cartesianMesh checkMesh decomposePar mpirun simpleFoam; do command -v "$c" > /dev/null || { echo "preflight: $c not found after sourcing $FOAM_BASHRC"; exit 2; }; done
 for c in wmake g++; do command -v "$c" > /dev/null || { echo "preflight: $c not found (needed to compile the coded resistance BC)"; exit 2; }; done
-PHYS=$(lscpu -p=CORE,SOCKET 2> /dev/null | grep -v '^#' | sort -u | wc -l); [ "${PHYS:-0}" -gt 0 ] 2> /dev/null || PHYS=$(nproc)
+PHYS=$(lscpu -p=CORE,SOCKET 2> /dev/null | grep -v '^#' | grep -E '^[0-9]+,[0-9]+$' | sort -u | wc -l)
+if ! [ "${PHYS:-0}" -gt 0 ] 2> /dev/null; then
+    if [[ "${SMOKE_PHYS_CORES:-}" =~ ^[1-9][0-9]*$ ]]; then PHYS=$SMOKE_PHYS_CORES; echo "physical cores from SMOKE_PHYS_CORES: $PHYS (lscpu could not establish them)"
+    elif [ "${SMOKE_ALLOW_FEWER_CORES:-0}" = 1 ]; then PHYS=0; echo "WARNING: lscpu could not establish the physical core count; SMOKE_ALLOW_FEWER_CORES=1: running anyway, the timing claim does not hold"
+    else echo "preflight: lscpu cannot establish the physical core count (nproc counts logical CPUs, not used): set SMOKE_PHYS_CORES=<physical cores> or SMOKE_ALLOW_FEWER_CORES=1"; exit 2; fi
+fi
 if [ "$NP" -gt "$PHYS" ]; then
     [ "${SMOKE_ALLOW_FEWER_CORES:-0}" = 1 ] || { echo "preflight: NPROC $NP > $PHYS physical cores (set SMOKE_ALLOW_FEWER_CORES=1 to run anyway)"; exit 2; }
     echo "WARNING: the 30-minute claim needs 8 physical cores (NPROC $NP, physical cores $PHYS)"
@@ -34,10 +43,10 @@ elif [ "$PHYS" -lt 8 ] || [ "$NP" -lt 8 ]; then echo "WARNING: the 30-minute cla
 [ ! -e "$W" ] || { echo "$W exists: remove it or choose another WORKDIR"; exit 2; }
 export OMP_NUM_THREADS=${OMP_NUM_THREADS:-8}
 T0=$(date +%s); step() { echo "$(date +%T) [+$(( $(date +%s) - T0 )) s] $*"; }
-SHA=""; CHK_OK=null; CELLS=null; REWRITES=null
+SHA=""; CHK_OK=null; CELLS=null; RW_IN=null; RW_OUT=null
 write_checks() { python3 -c 'import json, sys; a = sys.argv[1:]; j = lambda s: json.loads(s)
-json.dump(dict(stl_sha256=a[0] or None, stl_sha256_expected=a[1], checkMesh_ok=j(a[2]), cells=j(a[3]), patch_rewrites=j(a[4]), omp_num_threads=a[5]), open("smoke_checks.json", "w"), indent=1)' \
-    "$SHA" "$STL_SHA256" "$CHK_OK" "$CELLS" "$REWRITES" "$OMP_NUM_THREADS"; }
+json.dump(dict(stl_sha256=a[0] or None, stl_sha256_expected=a[1], checkMesh_ok=j(a[2]), cells=j(a[3]), inlet_rewrites=j(a[4]), outlet_rewrites=j(a[5]), omp_num_threads=a[6]), open("smoke_checks.json", "w"), indent=1)' \
+    "$SHA" "$STL_SHA256" "$CHK_OK" "$CELLS" "$RW_IN" "$RW_OUT" "$OMP_NUM_THREADS"; }
 mkdir -p "$W/constant/triSurface" "$W/geo" && cd "$W" || exit 2
 step "1/6 geometry (analytic, numpy only): sten70.stl"
 python3 "$GEN" geo --ds 70 > log.geometry 2>&1 || { echo "geometry failed, see $W/log.geometry"; exit 3; }
@@ -56,9 +65,9 @@ for p in ("inlet", "outlet"): s, n[p] = re.subn(r"(\b%s\s*\{[^}]*?type\s+)wall(\
 open(f, "w").write(s); print(n["inlet"], n["outlet"])
 PY
 ); read -r RW_IN RW_OUT <<< "$RW"; echo "wall -> patch rewrites: inlet ${RW_IN:-?}, outlet ${RW_OUT:-?}"
-[[ "${RW_IN:-x}${RW_OUT:-x}" =~ ^[0-9]+$ ]] && REWRITES=$(( RW_IN + RW_OUT ))
+[[ "${RW_IN:-x}" =~ ^[0-9]+$ ]] || RW_IN=null; [[ "${RW_OUT:-x}" =~ ^[0-9]+$ ]] || RW_OUT=null
 write_checks
-[ "${RW_IN:-}" = 1 ] && [ "${RW_OUT:-}" = 1 ] || { echo "NON-COMPARABLE: wall -> patch rewrites must be exactly 2 (inlet 1, outlet 1): inlet ${RW_IN:-?}, outlet ${RW_OUT:-?}"; exit 3; }
+[ "${RW_IN:-}" = 1 ] && [ "${RW_OUT:-}" = 1 ] || { echo "NON-COMPARABLE: wall -> patch rewrites must be exactly inlet 1 and outlet 1: inlet ${RW_IN:-?}, outlet ${RW_OUT:-?}"; exit 3; }
 step "4/6 decomposePar ($NP subdomains)"; decomposePar -force > log.decomposePar 2>&1 || { echo "decomposePar failed"; exit 3; }
 step "5/6 simpleFoam -parallel (2000 iterations; the coded BC is compiled on first use: about 1-2 minutes)"
 mpirun -np "$NP" --bind-to core --map-by core simpleFoam -parallel > log.simpleFoam 2>&1; RC=$?
