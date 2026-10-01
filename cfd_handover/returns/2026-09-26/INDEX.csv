@@ -66,3 +66,5 @@ stageA_A2_sweep.csv,0b,"A2 sweep / Item 2 severity sweep (sec 6, 11.3)",6,
 stageA_A5_ladders.csv,0b,"A5 ladders (Table 3, sec 9, 11.3)",7,
 stageA_NOTES_partial.md,0b,caveats of the Stage A / Item tables,,
 stageA_summary.csv,0b,Stage A running summary (sec 2-9),12,
+B2_throughput/B2_throughput.csv,B2,report sec. Task B2 (2026-10-01),,scan 14
+B2_throughput/results_L16/ + results_L8x2/ + calibration/ + driver.log,B2,evidence behind B2_throughput.csv,,scan 14

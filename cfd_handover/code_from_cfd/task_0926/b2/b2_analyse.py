@@ -8,6 +8,11 @@ no SMT sibling / bound CPU busy with non-owned work, every contended reason is W
 the Windows non-WSL CPU mean over the run is < WIN_BG_MAX (1.0) core and the two layouts' means differ by < WIN_SYM_MAX (0.3) core. Such a run is sensitivity evidence only (similar mean Windows load does not prove equal
 temporal contention or Hyper-V core placement). Any Linux-side reason (non-owned Linux CPU, bound-CPU occupancy, no samples, bindings) or asymmetry: INVALID. The numbers are always written.
 Ratio row: ratio_status VALID (valid=True) if both layouts are VALID; CONDITIONALLY_COMPARABLE (valid=False, sensitivity evidence only) if both are at least conditionally comparable; else NOT CLAIMED.
+Paused foreign jobs (fix 27): stopped_foreign_override / stopped_foreign_count (isolation_evidence.json) on every job and layout row, a note only; a resumed stopped job reaches validity through contended ('foreign stopped job...', a non-Windows reason).
+Memory (fix 27 attempt 2, notes only): MEMK keys of isolation_evidence.json (stopped foreign count / RSS pre and post, min MemAvailable, swap used at start / end and whether it grew, owned-session major faults,
+dmesg OOM lines; attempt 3: also the host-wide pswpin and pgmajfault deltas) on every job and layout row; the ratio row notes 'stopped foreign population differs between layouts' (pid:starttime sets) and flags swap growth in either layout (swap_grew_layouts).
+Host-level non-owned CPU (fix 27 attempt 3): host_nonowned_cores_mean / _max (isolation_evidence.json run_host_nonowned_cores) on every job row; over its thresholds it is the contended reason
+'host-level non-owned CPU over threshold' (a non-Windows reason: INVALID); host_nonowned_forks_upper_bound (host_forks) is an UPPER BOUND on foreign forks, informational only (Fable attempt 1).
 Order and host state (finding 6): every job row carries run_order (1/2 by launch_epoch of run_status.json), launch_time and host_load_at_start (host_before.txt); one replicate in one fixed order, see b2_design.md.
 A job that does not settle within its budget is reported (settled=False, iterations_run = its last iteration); its layout's throughput is then empty with the note 'job X did not settle within N iterations'.
 usage: b2_analyse.py <out.csv>"""
@@ -18,6 +23,12 @@ B = os.environ.get("B2_ROOT", f"{P}/b2")
 WIN_BG_MAX, WIN_SYM_MAX = 1.0, 0.3            # cores: Windows non-WSL background tolerated over the run (mean) / max difference of the two layouts' means
 WINDOWS_REASONS = ("Windows non-WSL CPU over the run over threshold", "windows pre-run load", "windows pre-run check ")     # prefixes of b2_isolation.py contended_reasons that are Windows-side only
 LAYOUTS = {"L16": [("L16", f"{B}/L16/case")], "L8x2": [("L8x2_A", f"{B}/L8/caseA"), ("L8x2_B", f"{B}/L8/caseB")]}
+MEMK = ("stopped_foreign_rss_mb_pre", "stopped_foreign_count_post", "stopped_foreign_rss_mb_post", "run_memavailable_mb_min", "mem_swap_used_mb_start", "mem_swap_used_mb_end", "mem_swap_grew",
+        "mem_pswpin_delta_host", "mem_pswpout_delta_host", "mem_pgmajfault_delta_host", "mem_owned_session_majflt", "mem_dmesg_oom")
+def memrow(ev):
+    """memory / paused-job evidence as CSV-ready columns (lists joined; empty if the key is missing)"""
+    ev = ev or {}; f = lambda v: ("none" if not v else " | ".join(v)) if isinstance(v, list) else ("" if v is None else v)
+    return {k: f(ev.get(k)) for k in MEMK}
 def job(label, case):
     r = B1.analyse(label, "14", case, "out_600", "resistance", "B2 throughput measurement, scan 14 baseline")
     r["settled"] = r.get("status") == "ok" and r.get("iter_first_settled") is not None
@@ -80,7 +91,10 @@ if __name__ == "__main__":
         ok, wbg, stat, why = vd[lay]; ev = res[lay][2]; js = [job(l, c) for l, c in jobs]; per[lay] = (ok, why, js)
         for r in js:
             r.update(layout=lay, ranks_per_job=(16 if lay == "L16" else 8), layout_status=stat, layout_valid=ok, valid_with_windows_background=wbg, layout_note=why, **meta[lay])
-            if ev: r.update(windows_nonwsl_cores_mean=(ev.get("run_windows_nonwsl_cores") or {}).get("mean"), linux_nonowned_cores_mean=(ev.get("run_linux_nonowned_cores") or {}).get("mean"), contended_evidence=ev.get("contended"))
+            if ev: r.update(windows_nonwsl_cores_mean=(ev.get("run_windows_nonwsl_cores") or {}).get("mean"), linux_nonowned_cores_mean=(ev.get("run_linux_nonowned_cores") or {}).get("mean"),
+                                host_nonowned_cores_mean=(ev.get("run_host_nonowned_cores") or {}).get("mean"), host_nonowned_cores_max=(ev.get("run_host_nonowned_cores") or {}).get("max"), contended_evidence=ev.get("contended"),
+                                host_nonowned_forks_upper_bound=(ev.get("host_forks") or {}).get("nonowned_forks_upper_bound"),
+                                stopped_foreign_override=ev.get("stopped_foreign_override", False), stopped_foreign_count=ev.get("stopped_foreign_count", 0), **memrow(ev))
             rows.append(r)
     def W(js): return [j.get("wall_to_first_settled_incl_startup_s") for j in js]
     s, miss = {}, {}
@@ -91,7 +105,8 @@ if __name__ == "__main__":
         s[lay] = dict(rate=sum(3600.0 / x for x in w), paired=len(w) * 3600.0 / max(w), wall=w)
     out = []
     for lay in ("L16", "L8x2"):
-        ok, wbg, stat, why = vd[lay]; base = dict(layout=lay, jobs=len(per[lay][2]), layout_status=stat, valid=ok, valid_with_windows_background=wbg, run_order=meta[lay]["run_order"])
+        ok, wbg, stat, why = vd[lay]; base = dict(layout=lay, jobs=len(per[lay][2]), layout_status=stat, valid=ok, valid_with_windows_background=wbg, run_order=meta[lay]["run_order"],
+                    stopped_foreign_override=(res[lay][2] or {}).get("stopped_foreign_override", ""), stopped_foreign_count=(res[lay][2] or {}).get("stopped_foreign_count", ""), **memrow(res[lay][2]))
         if s.get(lay): out.append(dict(base, wall_to_settle_s_each=" / ".join(str(x) for x in s[lay]["wall"]), solves_per_hour_sum_of_rates=round(s[lay]["rate"], 4), solves_per_hour_paired=round(s[lay]["paired"], 4), note=why))
         else: out.append(dict(base, wall_to_settle_s_each="", solves_per_hour_sum_of_rates="", solves_per_hour_paired="", note="; ".join(miss[lay] + [why])))
     st = [vd[l][2] for l in ("L16", "L8x2")]; w1, w2 = wms["L16"], wms["L8x2"]
@@ -99,9 +114,19 @@ if __name__ == "__main__":
         rstat = "VALID"; wnote = f"Windows background load {w1}/{w2} cores, symmetric" if None not in (w1, w2) else f"Windows background load {w1}/{w2} cores (not measured in both layouts)"
     elif all(x in ("VALID", CC) for x in st): rstat = RATIO_CC.format(w1=w1, w2=w2); wnote = "not VALID: " + "; ".join(f"{l} {vd[l][2]}" for l in ("L16", "L8x2") if vd[l][2] != "VALID")
     else: rstat = "NOT CLAIMED"; wnote = "not claimed: " + "; ".join(f"{l} {vd[l][2]} ({vd[l][3]})" for l in ("L16", "L8x2") if vd[l][2] == "INVALID")
+    evs = {l: res[l][2] for l in ("L16", "L8x2")}; rn = []                  # ratio-level memory / paused-job notes (fix 27 attempt 2), not validity criteria
+    pops = {l: set((e or {}).get("stopped_foreign_population") or []) for l, e in evs.items()}
+    if None in evs.values(): pdiff = ""
+    else:
+        pdiff = pops["L16"] != pops["L8x2"]
+        if pdiff: rn.append(f"stopped foreign population differs between layouts (L16 {len(pops['L16'])}, L8x2 {len(pops['L8x2'])}, {len(pops['L16'] & pops['L8x2'])} common pid:start)")
+    sg = [l for l, e in evs.items() if (e or {}).get("mem_swap_grew") is True]; sgu = [l for l, e in evs.items() if (e or {}).get("mem_swap_grew") is None]
+    if sg: rn.append("FLAG: swap grew during " + " and ".join(sg))
+    if sgu: rn.append("swap growth not measured for " + " and ".join(sgu))
+    rx = dict(stopped_foreign_population_differs=pdiff, swap_grew_layouts=" ".join(sg) or ("" if sgu else "none")); rnote = "".join("; " + x for x in rn)
     if s.get("L16") and s.get("L8x2"): out.append(dict(layout="ratio L8x2 / L16", solves_per_hour_sum_of_rates=round(s["L8x2"]["rate"] / s["L16"]["rate"], 4), solves_per_hour_paired=round(s["L8x2"]["paired"] / s["L16"]["paired"], 4),
-                                                          valid=(rstat == "VALID"), ratio_status=rstat, note=wnote + ("" if rstat == "VALID" else " (VALID only if both layouts are VALID)")))
-    else: out.append(dict(layout="ratio L8x2 / L16", solves_per_hour_sum_of_rates="", solves_per_hour_paired="", valid=False, ratio_status="NOT CLAIMED", note="not computed: " + "; ".join(miss["L16"] + miss["L8x2"])))
+                                                          valid=(rstat == "VALID"), ratio_status=rstat, note=wnote + ("" if rstat == "VALID" else " (VALID only if both layouts are VALID)") + rnote, **rx))
+    else: out.append(dict(layout="ratio L8x2 / L16", solves_per_hour_sum_of_rates="", solves_per_hour_paired="", valid=False, ratio_status="NOT CLAIMED", note="not computed: " + "; ".join(miss["L16"] + miss["L8x2"]) + rnote, **rx))
     cols = []
     for r in rows + out:
         for k in r:

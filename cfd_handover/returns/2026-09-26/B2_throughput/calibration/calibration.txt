@@ -1,0 +1,15 @@
+calibration 20261001_074246: 150/150 iterations, runner rc 0, end all_jobs_finished, controlled_end True, clock 511.0 s, 103 host samples (4.98 s)
+  host_nonowned_cores_all                  {'n': 103, 'mean': 0.2256, 'p95': 0.5079, 'max': 0.6139, 'min': 0.066}
+  host_minus_owned_raw_cores_all           {'n': 103, 'mean': 0.2256, 'p95': 0.5079, 'max': 0.6139, 'min': 0.066}
+  host_busy_cores_all                      {'n': 103, 'mean': 16.1743, 'p95': 16.5221, 'max': 16.616, 'min': 10.7933}
+  owned_ledger_cores_all                   {'n': 103, 'mean': 15.9487, 'p95': 16.0465, 'max': 16.1175, 'min': 10.6477}
+  host_nonowned_cores_loaded               {'n': 102, 'mean': 0.2264, 'p95': 0.5079, 'max': 0.6139, 'min': 0.066}
+  host_minus_owned_raw_cores_loaded        {'n': 102, 'mean': 0.2264, 'p95': 0.5079, 'max': 0.6139, 'min': 0.066}
+  perpid_nonowned_cores_all                {'n': 103, 'mean': 0.1826, 'p95': 0.408, 'max': 0.45, 'min': 0.0893}
+  perpid_owned_cores_all                   {'n': 103, 'mean': 15.6944, 'p95': 16.0425, 'max': 16.1135, 'min': 0.0033}
+  host_minus_perpid_nonowned_cores_all     {'n': 103, 'mean': 0.043, 'p95': 0.1139, 'max': 0.176, 'min': -0.1699}
+  loaded samples (owned >= 12 cores): 102; evidence contended=yes ['Windows non-WSL CPU over the run over threshold', 'non-owned work on the bound CPUs / SMT siblings', 'windows pre-run load overridden (TASK4_ALLOW_WINDOWS_LOAD=1)']; bindings_verified=True; mode used criterion
+  host_forks {'forks_delta_run': 4300, 'owned_new_pids_seen': 116, 'nonowned_new_pids_seen': 42, 'nonowned_forks_upper_bound': 4184, 'note': "informational, UPPER BOUND: /proc/stat 'processes' delta over the sampled run minus the owned new pids seen; owned forks are not counted properly (the runner's, the sampler's and the jobs' short-lived children that start and exit between two samples are never seen), so nonowned_forks_upper_bound = forks - owned seen overstates the foreign forks; it is not a validity criterion"}
+  stopped_foreign_postrun {'prerun': 31, 'still_stopped': 31, 'resumed': 0, 'vanished': 0, 'undecided': 0, 'new_running': 0, 'new_stopped': 0, 'watcher_new': 0}
+  top non-owned (per-PID, max core) {'claude(1218956)': 0.322, 'pause_marissa_l(1662291)': 0.312, 'systemd(1)': 0.176}
+  threshold rule -> {'usable': True, 'HOST_MODE': 'criterion', 'HOST_MEAN_MAX': 0.48, 'HOST_MAX_MAX': 1.62, 'note': 'rule (b2_design.md): usable if mean < 0.25 and p95 < 1.0 core; HOST_MEAN_MAX = max(0.30, mean + 0.25), HOST_MAX_MAX = max(1.25, max + 1.0), rounded up to 0.01'}

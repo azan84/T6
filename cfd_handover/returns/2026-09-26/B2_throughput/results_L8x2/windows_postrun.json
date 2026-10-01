@@ -1,0 +1,26 @@
+{
+ "status": "pass",
+ "window_s": 10.9771508,
+ "sum_nonexcluded_cores": 0.185,
+ "max_process_cores": 0.1466,
+ "offenders": [],
+ "top10": [
+  "WindowsTerminal(16428) 0.147",
+  "Taskmgr(24016) 0.016",
+  "Core Temp(25252) 0.011",
+  "explorer(11292) 0.003",
+  "svchost(10580) 0.003",
+  "conhost(9276) 0.001",
+  "CrossDeviceService(13944) 0.001",
+  "msrdc(2924) 0.001",
+  "PhoneExperienceHost(7348) 0.001",
+  "amdow(20476) 0.000"
+ ],
+ "excluded_cores": {
+  "powershell": 0.046
+ },
+ "null_cpu_processes": 129,
+ "processor_total_pct_incl_wsl": 8.48353466484978,
+ "thresholds": "refuse if one process > 0.25 core or the sum > 0.5 core (excluded: vmmemWSL, vmmem, System, Idle, the querying powershell)",
+ "override": false
+}

@@ -1,0 +1,32 @@
+# B2_ALLOW_STOPPED_FOREIGN=1 2026-10-01 09:46:00: foreign offender processes ignored by the pre-run guard because every thread is stopped (T/t); they hold memory (RSS sum 5618 MB) but use no CPU
+# pid state=<thread states> threads=<n> cpu_ticks=<utime+stime+cutime+cstime> start=<starttime> rss_kb=<VmRSS> cmdline
+1323410 state=T threads=1 cpu_ticks=1045044 start=23884552 rss_kb=453684 simpleFoam 
+1323417 state=T threads=1 cpu_ticks=1041195 start=23884554 rss_kb=293636 simpleFoam 
+1323422 state=T threads=1 cpu_ticks=1043276 start=23884554 rss_kb=218440 simpleFoam 
+1323424 state=T threads=1 cpu_ticks=1027744 start=23884555 rss_kb=220432 simpleFoam 
+1323425 state=T threads=1 cpu_ticks=1027164 start=23884555 rss_kb=207728 simpleFoam 
+1323441 state=T threads=4 cpu_ticks=697 start=23886310 rss_kb=25600 mpirun --oversubscribe -np 4 simpleFoam -parallel 
+1323445 state=T threads=3 cpu_ticks=1058508 start=23886332 rss_kb=215904 simpleFoam -parallel 
+1323446 state=T threads=3 cpu_ticks=1067516 start=23886332 rss_kb=198980 simpleFoam -parallel 
+1323447 state=T threads=3 cpu_ticks=1067495 start=23886333 rss_kb=194544 simpleFoam -parallel 
+1323448 state=T threads=3 cpu_ticks=1067538 start=23886333 rss_kb=199676 simpleFoam -parallel 
+1323466 state=T threads=4 cpu_ticks=569 start=23887195 rss_kb=25600 mpirun --oversubscribe -np 4 simpleFoam -parallel 
+1323471 state=T threads=3 cpu_ticks=1058879 start=23887216 rss_kb=281460 simpleFoam -parallel 
+1323472 state=T threads=3 cpu_ticks=1066442 start=23887217 rss_kb=287412 simpleFoam -parallel 
+1323473 state=T threads=3 cpu_ticks=1066535 start=23887218 rss_kb=290192 simpleFoam -parallel 
+1323474 state=T threads=3 cpu_ticks=1066478 start=23887219 rss_kb=295248 simpleFoam -parallel 
+1328634 state=T threads=1 cpu_ticks=1007962 start=23902655 rss_kb=229220 simpleFoam 
+1371646 state=T threads=1 cpu_ticks=577860 start=24321964 rss_kb=133980 simpleFoam 
+1371648 state=T threads=1 cpu_ticks=578927 start=24321966 rss_kb=136472 simpleFoam 
+1384151 state=T threads=1 cpu_ticks=3301 start=24950657 rss_kb=414640 simpleFoam 
+1384190 state=T threads=1 cpu_ticks=3364 start=24950675 rss_kb=225608 simpleFoam 
+1387857 state=T threads=1 cpu_ticks=1224 start=24952676 rss_kb=190692 simpleFoam 
+1387883 state=T threads=1 cpu_ticks=1280 start=24952679 rss_kb=239256 simpleFoam 
+1387899 state=T threads=1 cpu_ticks=1219 start=24952682 rss_kb=183700 simpleFoam 
+1387915 state=T threads=1 cpu_ticks=1263 start=24952689 rss_kb=196644 simpleFoam 
+1387916 state=T threads=1 cpu_ticks=1251 start=24952689 rss_kb=190812 simpleFoam 
+1387938 state=T threads=1 cpu_ticks=1222 start=24952706 rss_kb=190528 simpleFoam 
+1297397 state=T threads=1 cpu_ticks=91877 start=23710748 rss_kb=2108 /bin/bash -c source /home/azan/.claude/shell-snapshots/snapshot-bash-1790784575282-t48v4n.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && { \builtin unalias -- 'unsetenv'; \builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'mkdir -p logs/aborted_start && mv logs/*.log logs/aborted_start/ 2>/dev/null; python3 scripts/make_cases.py > logs/make_cases.log 2>&1 && source /usr/lib/openfoam/openfoam2406/etc/bashrc && ls -d cases/*/ | xargs -P 16 -I{} sh -c '"'"'cd {} && checkMesh > log.checkMesh 2>&1'"'"' && echo "meshOK: $(grep -l '"'"'Mesh OK'"'"' cases/*/log.checkMesh | wc -l) / $(ls -d cases/*/ | wc -l)" && grep -v "^.* KE" cases/queue.txt > cases/queue_wr.txt && grep " .*/KE" cases/queue.txt | tac > cases/queue_wf.txt && wc -l cases/queue_w?.txt && QUEUE=queue_wf.txt setsid nohup bash scripts/run_queue.sh 4 > logs/run_wf.log 2>&1 < /dev/null &  sleep 1; echo launched-bg' && pwd -P >| /tmp/claude-1f12-cwd 
+1309290 state=T threads=1 cpu_ticks=2018679 start=23789574 rss_kb=3840 bash scripts/run_queue.sh 4 
+1319250 state=T threads=1 cpu_ticks=16559 start=23884476 rss_kb=3328 bash scripts/run_queue.sh 14 
+1378953 state=T threads=1 cpu_ticks=1081 start=24948483 rss_kb=3072 bash scripts/run_queue.sh 8 
