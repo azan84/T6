@@ -1,0 +1,16 @@
+1. **MAJOR — reused PID can hide a new running offender.** In [b2_run.sh](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/b2/fix27/b2_run.sh:42), every PID appearing in the pre-run list is excluded from the fresh post-run scan. A pre-run process whose PID was reused is correctly classified as `vanished` at line 36, but the replacement process is then skipped even if it is a new running `simpleFoam`/`mpirun`. This violates the post-run requirement. Exclusion must use PID plus start time, or reused PIDs must remain eligible for `new_running`.
+
+2. **MINOR — vanished/new-stopped processes are not conservatively reflected in evidence.** [b2_isolation.py](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/b2/fix27/b2_isolation.py:282) considers only `resumed`, `new_running`, and `undecided`. A process that resumed and exited becomes `vanished`; a newly started process caught by the watcher becomes `new_stopped`. Either may have consumed CPU. The sampler only computes deltas for PIDs present in consecutive snapshots ([b2_isolation.py](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/b2/fix27/b2_isolation.py:183)), so short-lived activity is not guaranteed to be observed. Contrary to [FIX27_REPORT.md](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/b2/fix27/FIX27_REPORT.md:118), such CPU is not always captured. For strict isolation, any `vanished` or `new_stopped` entry should at least require manual disposition, preferably `contended=unknown`.
+
+3. **MINOR — memory disclosure is adequate as a note, but insufficient to establish absence of memory pressure.** [b2_design.md](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/b2/fix27/b2_design.md:18) records paused RSS and minimum `MemAvailable`, but no swap usage, major faults, or memory-pressure evidence. With 27 GB RAM, approximately 5.5 GB paused RSS and a 16 GB L8x2 requirement leave roughly 5.5 GB nominal headroom, so the run is reasonable—not automatically invalid. It must be described as a throughput comparison with approximately 5.5 GB reserved by paused foreign jobs, not an unqualified empty-host result. Report the stopped-process count/RSS, minimum `MemAvailable` for each layout, and confirmation that swap did not grow and no OOM/material reclaim pressure occurred. The same stopped population must remain present for both layouts; otherwise the fixed run order introduces another asymmetry.
+
+The override’s admission logic otherwise meets the brief: it requires every readable thread state to be `T/t`; unreadable or mixed-state processes remain offenders; running foreign shims are refused; and load, disk, Windows, exclusivity, case-preparation, sampling, and measurement logic are unchanged.
+
+Validation completed without running real cases or solvers:
+
+- `bash -n`: passed.
+- `python3 -m py_compile`: passed using a temporary bytecode location.
+- `test_fix27.sh`: 8 passed, 0 failed. The mixed-thread ptrace case was skipped because ptrace was denied in this audit environment; its all-thread logic was inspected directly.
+- The audit namespace could not see the host PIDs recorded in `paused.pids`, so the operator must confirm immediately before each real launch that all listed/live foreign offenders have every thread stopped.
+
+VERDICT: NOT READY
