@@ -1,0 +1,35 @@
+synthetic package /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/pkg/SYN_tube_test__baseline__real, mesh /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/mesh: 40740 cells, checkMesh OK True
+pkg/SYN_tube_test__baseline__real: measurement probe p004 FAILED_SECTION_RULE (['S1: normal 30.0 deg from the centreline tangent (> 20.0)']); RELOCATED to tree_node 33 (+0.500 mm of arc); original monitor: measurementOrigFlux/measurementOrigP
+built case_syn (resistance): outlets ['out_40'], closed [], ranks 2, mesh hard-linked, E0 MEMBER, extensions: SPEC DEFAULT 3 D (D = 2 r_mm of outlets.csv), not the as-built lengths, probe planes: throat CHECKED_ON_MESH h=2.000 mm, measurement_orig ORIGINAL PACKAGE PROBE: bounded section passes the mesh check (S3) but FAILED_SECTION_RULE; monitor measurementOrigP, NOT the measurement used h=2.000 mm, measurement RELOCATED (package probe FAILED_SECTION_RULE): CHECKED_ON_MESH, strict rule PASS h=2.000 mm; measurement probe used p004_reloc (section rule FAILED_SECTION_RULE)
+(a) refusal before the solve:
+[post 16:01:27] /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn: the last run of log.simpleFoam is not complete (see /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/out/run_completion_syn_resistance.json): nothing done
+Finalising parallel run
+(b) post-processing:
+RUN COMPLETE: last Time 1000 = endTime, End at line 46134
+[post 16:04:23] package verified against build_info package_hashes: /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/pkg/SYN_tube_test__baseline__real
+RECONSTRUCT OK: time 1000, fields {'U': 999266, 'p': 331386}
+[post 16:04:33] as-meshed radius: regenerated; provenance written
+cross-check measurementP vs probes row p004_reloc (measurement_relocated): p/P_aorta 0.979376 vs 0.979376 (diff -4.27e-09); area 3.12869 vs 3.12869 mm2: OK
+cross-check measurementOrigP vs probes row p004 (measurement): p/P_aorta 0.979591 vs 0.979591 (diff +2.56e-09); area 3.61270 vs 3.61270 mm2: OK
+cross-check throatP vs probes row p002 (throat): p/P_aorta 0.976302 vs 0.976302 (diff +2.18e-09); area 1.12887 vs 1.12887 mm2: OK
+wrote /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/out/flow_state_syn_resistance.csv: 10/10 valid sections, time 1000.0; max offset/r_eq 0.0000 at s-s_throat 5.0 mm, direction persistence 0.185
+wrote /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/out/post_summary_syn_resistance.json: flags GEOMETRY_GATES_MISSING;D34_MISSING;MEASUREMENT_PROBE_RELOCATED, verdict CONVERGED, wall clock 157 s, cells 40740, peak RAM 
+[post 16:04:36] POSTDONE syn resistance (processor directories kept: remove them only after checking /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/out/reconstruct_check_syn_resistance.json and the outputs)
+(c) output checks:
+outputs OK: probes 7 rows (relocated row valid), radius 41 nodes, results row CONVERGED, history 1000 it (measurementP 0.979376 vs section 0.979376; measurementOrigP 0.979591), B1 first settled 527, flow-state max offset/r_eq 3.40e-10, wall clock 157 s
+(d) second run:
+second run reused the reconstruction, the radius files and the cached analysis
+(e) processor directories kept:
+case_syn/processor0 case_syn/processor1 
+(f) appended partial run:
+RUN NOT COMPLETE: the last 'End' (line 46134) precedes the last 'Time = ' line (46141): a later run is running or aborted; lines after the last End: ['46137: Build  : v2406', '46138: Exec   : simpleFo
+(g) package not matching build_info hashes:
+PACKAGE NOT VERIFIED against /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn/build_info.json package_hashes (/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/pkg_t/SYN_tube_test__basel
+(h) analysis completion flag false (no 'Finalising parallel run'):
+case_syn: --require-finished: analysis completion flag strict.log_finished is false -> exit 4
+(i) radius provenance of another mesh / unchecked reuse:
+radius outputs NOT reusable: mesh sha256 differs
+[post 16:04:56] as-meshed radius: regenerated; provenance written
+[post 16:05:03] as-meshed radius: REUSED UNCHECKED (POST_REUSE_UNCHECKED=1: mesh/package provenance NOT verified)
+guards (f)-(i) OK; final run reuses with verified provenance
+PASS: post_case_generic.sh end to end on a synthetic finished solve (evidence in test_output/post_case_generic_synthetic/)

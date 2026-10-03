@@ -1,0 +1,8 @@
+A_res_mp ok first 546 perm 771 end 1200 floored 546 dFFR(first) -6.658020393568442e-06 B1 clk 546 / 1200
+B_pre_mp ok first 500 perm 684 end 1200 floored 800 dFFR(first) 3.225886882063378e-07 B1 (D8 prescribed-flow variant) clk 500 / 1200
+C_pre_proxy ok first 847 perm 847 end 1200 floored 847 dFFR(first) 0.0 PROXY_NOT_B1 clk 847 / 1200
+
+returns folder: None
+
+PASS {'A_res_mp': ('B1', '546', '546', 'RUN THE FULL BUDGET (D8 production default: no early stop is authorised); the D8 rule on measurementP WOULD stop at iteration 546 (max(first settled 546, floor none)): not applied'), 'B_pre_mp': ('B1 (D8 prescribed-flow variant)', '500', '800', 'RUN THE FULL BUDGET (D8 production default: no early stop is authorised); the D8 rule on measurementP WOULD stop at iteration 800 (max(first settled 500, floor 800)): not applied'), 'C_pre_proxy': ('PROXY_NOT_B1', '847', '847', 'RUN THE FULL BUDGET (D8 production default: no early stop is authorised); PROXY_NOT_B1: the proxy settles at 847 (floored) but is not a stopping rule')}
+PASS test_manifest

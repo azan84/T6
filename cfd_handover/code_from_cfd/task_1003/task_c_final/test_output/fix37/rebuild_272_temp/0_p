@@ -1,0 +1,69 @@
+FoamFile { version 2.0; format ascii; class volScalarField; object p; }
+dimensions      [0 2 -2 0 0 0 0];
+internalField   uniform 11.31979245;
+
+boundaryField
+{
+    inlet   { type totalPressure; p0 uniform 11.31979245; value uniform 11.31979245; }
+    wall    { type zeroGradient; }
+    out_279
+    {
+        type            codedFixedValue;
+        value           uniform 7.59814461;
+        name            res279;
+        code
+        #{
+            const scalar R     = 1.34598387e+10;
+            const scalar Pv    = 666.61;
+            const scalar rho   = 1060.0;
+            const scalar relax = 0.08247209;
+            const fvsPatchField<scalar>& phip =
+                patch().lookupPatchField<surfaceScalarField, scalar>("phi");
+            const scalar Q = gSum(phip);
+            const scalar pTarget = (Pv + R*Q)/rho;
+            const volScalarField& pFld = db().lookupObject<volScalarField>("p");
+            const scalarField pOld(pFld.prevIter().boundaryField()[patch().index()]);
+            operator==((1.0 - relax)*pOld + relax*pTarget);
+        #};
+    }
+    out_396
+    {
+        type            codedFixedValue;
+        value           uniform 7.05694713;
+        name            res396;
+        code
+        #{
+            const scalar R     = 1.34427552e+10;
+            const scalar Pv    = 666.61;
+            const scalar rho   = 1060.0;
+            const scalar relax = 0.07504597;
+            const fvsPatchField<scalar>& phip =
+                patch().lookupPatchField<surfaceScalarField, scalar>("phi");
+            const scalar Q = gSum(phip);
+            const scalar pTarget = (Pv + R*Q)/rho;
+            const volScalarField& pFld = db().lookupObject<volScalarField>("p");
+            const scalarField pOld(pFld.prevIter().boundaryField()[patch().index()]);
+            operator==((1.0 - relax)*pOld + relax*pTarget);
+        #};
+    }
+    out_620
+    {
+        type            codedFixedValue;
+        value           uniform 7.62940976;
+        name            res620;
+        code
+        #{
+            const scalar R     = 1.34117824e+10;
+            const scalar Pv    = 666.61;
+            const scalar rho   = 1060.0;
+            const scalar relax = 0.09845584;
+            const fvsPatchField<scalar>& phip =
+                patch().lookupPatchField<surfaceScalarField, scalar>("phi");
+            const scalar Q = gSum(phip);
+            const scalar pTarget = (Pv + R*Q)/rho;
+            const volScalarField& pFld = db().lookupObject<volScalarField>("p");
+            const scalarField pOld(pFld.prevIter().boundaryField()[patch().index()]);
+            operator==((1.0 - relax)*pOld + relax*pTarget);
+        #};
+    }
+}

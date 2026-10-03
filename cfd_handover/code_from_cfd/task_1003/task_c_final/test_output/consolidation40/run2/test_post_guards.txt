@@ -1,0 +1,29 @@
+PACKAGE NOT VERIFIED against /tmp/post_guards_ygqdtgkb/pkcase/build_info.json package_hashes (/tmp/post_guards_ygqdtgkb/root_tamper/14_left_LAD_prox_20mm_80ds__baseline__real): probes.csv: sha256 bda25af9fa5c != recorded 24731a254369
+PACKAGE NOT VERIFIED against /tmp/post_guards_ygqdtgkb/pkcase/build_info.json package_hashes (/tmp/post_guards_ygqdtgkb/root_missing/14_left_LAD_prox_20mm_80ds__baseline__real): mask_edit.json: recorded in build_info but missing in /tmp/post_guards_ygqdtgkb/root_missing/14_left_LAD_prox_20mm_80ds__baseline__real
+PACKAGE NOT VERIFIED against /tmp/post_guards_ygqdtgkb/pkcase2/build_info.json package_hashes (/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real): build_info.json has no package_hashes: the package cannot be verified
+PACKAGE NOT VERIFIED against /tmp/post_guards_ygqdtgkb/pkcase3/build_info.json package_hashes (/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real): package name 14_left_LAD_prox_20mm_80ds__baseline__real != build_info package other_name
+  run_completion complete                     -> COMPLETE
+  run_completion no_end                       -> refused: no line that is exactly 'End'
+  run_completion appended_partial_run         -> refused: the last 'End' (line 258) precedes the last 'Time = ' line (313): a later run is running or aborted; lines aft
+  run_completion appended_header_only         -> refused: the last run (from the last header line) has no 'Time = ' line; the last 'End' (line 258) precedes the last ru
+  run_completion end_before_last_time         -> refused: the last 'End' (line 158) precedes the last 'Time = ' line (256): a later run is running or aborted; lines aft
+  run_completion early_stop_residualControl   -> refused: last Time 42 != endTime 50.0 (run stopped before the budget)
+  run_completion restart_last_run_complete    -> COMPLETE
+  run_completion complete_crlf                -> COMPLETE
+  run_completion fatal_after_end              -> refused: lines after the last End: ['261: --> FOAM FATAL ERROR: something']
+  run_completion end_line_not_exact           -> refused: no line that is exactly 'End'
+  (3) finished guard: last run must complete with Time == endTime; analysis completion flag enforced by the runner (--require-finished)
+  (1) resolution: 14_left_LAD_prox_20mm_80ds__baseline__real -> /home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real; 473_left_LCX_prox_20mm_60ds__baseline__real -> /mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/P5/473_left_LCX_prox_20mm_60ds__baseline__real; explicit root used alone (no fallback)
+/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real
+/tmp/post_guards_ygqdtgkb/root_explicit/14_left_LAD_prox_20mm_80ds__baseline__real
+  (1) package check: verified copy OK; tampered probes.csv, missing mask_edit.json, no recorded hashes, other package name -> refused; runs before anything is generated
+no radius provenance as_meshed_radius_X_provenance.json: regenerate
+wrote /tmp/post_guards_ygqdtgkb/radout/as_meshed_radius_X_provenance.json
+radius outputs reusable: provenance verified (mesh sha256 f301226f5e71, package hashes equal)
+radius outputs NOT reusable: mesh sha256 differs
+wrote /tmp/post_guards_ygqdtgkb/radout/as_meshed_radius_X_provenance.json
+radius outputs reusable: provenance verified (mesh sha256 42f0a063c7d3, package hashes equal)
+radius outputs NOT reusable: package hashes differ
+radius outputs NOT reusable: as_meshed_radius_X_inscribed.csv changed since it was generated
+  (4) radius provenance: no record / mesh changed / package changed / output edited -> regenerate; same mesh+package -> reuse
+PASS: post guards (package resolution + build_info hash verification, last-run completion, radius provenance)

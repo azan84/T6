@@ -1,0 +1,27 @@
+{
+ "mesher": "cfMesh cartesianMesh (OpenFOAM ESI v2406)",
+ "openfoam_version": "ESI v2406",
+ "vmtk_version": "1.5.0",
+ "extension_lengths_mm": "{\"out_40\": 6.0}",
+ "sources": {
+  "geometry_gates": null,
+  "geometry_gates_source": "not found",
+  "mesh_gates": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/mesh/mesh_gates.json",
+  "mesh_gates_source": "build_info mesh_source_dir",
+  "d34": null,
+  "d34_source": "not found",
+  "manual_repair_needed": "no manual-repair record in mesh_gates.json, build_info.json"
+ },
+ "n_cells": 40740,
+ "checkMesh_ok": true,
+ "max_nonortho_deg": null,
+ "max_skewness": null,
+ "neg_volumes": 0,
+ "n_bl_layers": 4,
+ "throat_cells_across": null,
+ "throat_cell_um_p95": null,
+ "outlets_lost_in_mesh": "",
+ "manual_repair_needed": false,
+ "flags": "GEOMETRY_GATES_MISSING;D34_MISSING;MEASUREMENT_PROBE_RELOCATED",
+ "notes": "geometry gates json NOT FOUND: geometry columns left empty | strict checkMesh failed checks: 0 (standard checkMesh OK); mesh GATES_PASS True | d34.json NOT FOUND: D3/D4 columns left empty | E0 guard MEMBER | extension lengths: SPEC DEFAULT 3 D (D = 2 r_mm of outlets.csv), not the as-built lengths | vmtk use: vmtksurfacesmoothing (Taubin, 30 it) only; no vmtksurfaceremeshing"
+}

@@ -1,0 +1,13 @@
+44,55d43
+<     out_396Flux
+<     {
+<         type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+<         writeControl timeStep; writeInterval 1; writeFields false; log true;
+<         regionType patch; name out_396; operation sum; fields (phi);
+<     }
+<     out_396Pressure
+<     {
+<         type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+<         writeControl timeStep; writeInterval 1; writeFields false; log true;
+<         regionType patch; name out_396; operation areaAverage; fields (p);
+<     }

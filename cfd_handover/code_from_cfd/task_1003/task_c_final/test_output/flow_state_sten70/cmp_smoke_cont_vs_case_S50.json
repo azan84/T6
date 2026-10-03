@@ -1,0 +1,206 @@
+{
+ "profile_A": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/test_output/flow_state_sten70/smoke_cont.csv",
+ "profile_B": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/test_output/flow_state_sten70/case_S50.csv",
+ "n_specified": 26,
+ "n_compared": 25,
+ "complete_profile": false,
+ "stations_excluded_invalid": [
+  {
+   "s_from_throat_mm": 22.0,
+   "invalid_in": [
+    "B"
+   ]
+  }
+ ],
+ "stations_unmatched": [],
+ "stations_missing": {},
+ "stations_not_specified": {},
+ "offset_tol": 0.03,
+ "per_station": [
+  {
+   "s_from_throat_mm": 2.0,
+   "vector_diff": 1.4726641637322197e-05,
+   "magnitude_diff": 1.3977471277784093e-05,
+   "offset_A": 2.124799081542664e-05,
+   "offset_B": 7.270519537642549e-06
+  },
+  {
+   "s_from_throat_mm": 3.0,
+   "vector_diff": 5.1344017762349766e-05,
+   "magnitude_diff": 5.113893495742374e-05,
+   "offset_A": 5.1611744498710285e-05,
+   "offset_B": 4.728095412865425e-07
+  },
+  {
+   "s_from_throat_mm": 4.0,
+   "vector_diff": 0.00021207764113419242,
+   "magnitude_diff": 0.00020915231414777544,
+   "offset_A": 0.00021458344097004064,
+   "offset_B": 5.431126822265197e-06
+  },
+  {
+   "s_from_throat_mm": 5.0,
+   "vector_diff": 0.000553665768445936,
+   "magnitude_diff": 0.000540553860970236,
+   "offset_A": 0.000565706504502389,
+   "offset_B": 2.5152643532152977e-05
+  },
+  {
+   "s_from_throat_mm": 6.0,
+   "vector_diff": 0.0010108000342883773,
+   "magnitude_diff": 0.0009825166749382161,
+   "offset_A": 0.001036690603720373,
+   "offset_B": 5.417392878215685e-05
+  },
+  {
+   "s_from_throat_mm": 7.0,
+   "vector_diff": 0.0014839339687638595,
+   "magnitude_diff": 0.0014373170618207588,
+   "offset_A": 0.001517670553038366,
+   "offset_B": 8.035349121760725e-05
+  },
+  {
+   "s_from_throat_mm": 8.0,
+   "vector_diff": 0.001821703924125423,
+   "magnitude_diff": 0.0017658679529141987,
+   "offset_A": 0.0018630248619695765,
+   "offset_B": 9.715690905537777e-05
+  },
+  {
+   "s_from_throat_mm": 9.0,
+   "vector_diff": 0.00209395386695703,
+   "magnitude_diff": 0.002029648709895422,
+   "offset_A": 0.0021391179606820507,
+   "offset_B": 0.00010946925078662829
+  },
+  {
+   "s_from_throat_mm": 10.0,
+   "vector_diff": 0.0022688006382574548,
+   "magnitude_diff": 0.002198471170827335,
+   "offset_A": 0.0023168119973503787,
+   "offset_B": 0.00011834082652304363
+  },
+  {
+   "s_from_throat_mm": 11.0,
+   "vector_diff": 0.0023868288350074795,
+   "magnitude_diff": 0.002314313932615192,
+   "offset_A": 0.002438478584093319,
+   "offset_B": 0.0001241646514781271
+  },
+  {
+   "s_from_throat_mm": 12.0,
+   "vector_diff": 0.002463429280473664,
+   "magnitude_diff": 0.0023861924789508084,
+   "offset_A": 0.0025174059023290287,
+   "offset_B": 0.00013121342337822054
+  },
+  {
+   "s_from_throat_mm": 13.0,
+   "vector_diff": 0.0025236185424214056,
+   "magnitude_diff": 0.002443037858494159,
+   "offset_A": 0.0025779948880063986,
+   "offset_B": 0.00013495702951223985
+  },
+  {
+   "s_from_throat_mm": 14.0,
+   "vector_diff": 0.002555818582744588,
+   "magnitude_diff": 0.0024712019488973553,
+   "offset_A": 0.0026111637713279756,
+   "offset_B": 0.00013996182243062013
+  },
+  {
+   "s_from_throat_mm": 15.0,
+   "vector_diff": 0.002557726848525931,
+   "magnitude_diff": 0.002472711938099822,
+   "offset_A": 0.00261568115747618,
+   "offset_B": 0.00014296921937635788
+  },
+  {
+   "s_from_throat_mm": 16.0,
+   "vector_diff": 0.002542156938642733,
+   "magnitude_diff": 0.0024523182695179962,
+   "offset_A": 0.0025974016588001386,
+   "offset_B": 0.0001450833892821425
+  },
+  {
+   "s_from_throat_mm": 17.0,
+   "vector_diff": 0.0024925260922194713,
+   "magnitude_diff": 0.002402608181834941,
+   "offset_A": 0.0025532622745515735,
+   "offset_B": 0.00015065409271663267
+  },
+  {
+   "s_from_throat_mm": 18.0,
+   "vector_diff": 0.002435170068027474,
+   "magnitude_diff": 0.002350165322769332,
+   "offset_A": 0.002494425291981489,
+   "offset_B": 0.00014425996921215703
+  },
+  {
+   "s_from_throat_mm": 19.0,
+   "vector_diff": 0.0023668367339901215,
+   "magnitude_diff": 0.0022655877743502683,
+   "offset_A": 0.0024225338513234277,
+   "offset_B": 0.00015694607697315963
+  },
+  {
+   "s_from_throat_mm": 20.0,
+   "vector_diff": 0.0022619789674123694,
+   "magnitude_diff": 0.0021812924808452152,
+   "offset_A": 0.0023296361647090623,
+   "offset_B": 0.000148343683863847
+  },
+  {
+   "s_from_throat_mm": 21.0,
+   "vector_diff": 0.002175737262932586,
+   "magnitude_diff": 0.002075653636349406,
+   "offset_A": 0.0022257936180061742,
+   "offset_B": 0.00015013998165676825
+  },
+  {
+   "s_from_throat_mm": 23.0,
+   "vector_diff": 0.0018498754487649885,
+   "magnitude_diff": 0.001814259967566366,
+   "offset_A": 0.0019876987942407166,
+   "offset_B": 0.00017343882667435073
+  },
+  {
+   "s_from_throat_mm": 24.0,
+   "vector_diff": 0.001644015695925667,
+   "magnitude_diff": 0.0016396836972742336,
+   "offset_A": 0.001857379296492351,
+   "offset_B": 0.00021769559921811744
+  },
+  {
+   "s_from_throat_mm": 25.0,
+   "vector_diff": 0.0014729707521423184,
+   "magnitude_diff": 0.0014076826283381354,
+   "offset_A": 0.0017014064918675863,
+   "offset_B": 0.00029372386352945093
+  },
+  {
+   "s_from_throat_mm": 26.0,
+   "vector_diff": 0.0013703359467114738,
+   "magnitude_diff": 0.001211703930436338,
+   "offset_A": 0.001564794250891132,
+   "offset_B": 0.0003530903204547942
+  },
+  {
+   "s_from_throat_mm": 26.5,
+   "vector_diff": 0.0013414700065410737,
+   "magnitude_diff": 0.0011645323270050045,
+   "offset_A": 0.001517546329669188,
+   "offset_B": 0.00035301400266418367
+  }
+ ],
+ "max_vector_diff_offset_over_req": null,
+ "at_s_from_throat_mm": null,
+ "profile_criterion": "INDETERMINATE",
+ "indeterminate_reason": "pre-registered statistic = max over the FULL specified profile; not available: invalid section at s-s_throat [22.0] mm",
+ "subset_max_vector_diff_INFORMATION_ONLY": 0.002557726848525931,
+ "subset_at_s_from_throat_mm": 15.0,
+ "subset_max_magnitude_diff_INFORMATION_ONLY": 0.002472711938099822,
+ "subset_note": "max over the stations valid in both, NOT the pre-registered statistic. The full-profile max is >= this value, so a subset max above the tolerance bounds the full statistic above it as well, while a subset max below it says nothing about the excluded stations; no replacement rule is pre-registered, so the verdict stays INDETERMINATE either way.",
+ "subset_max_exceeds_tol": false,
+ "verdict": "STATES INDETERMINATE (profile criterion only: FFR criterion not evaluated, no --ffr)"
+}

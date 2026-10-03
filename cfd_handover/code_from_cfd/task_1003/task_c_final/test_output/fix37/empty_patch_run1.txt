@@ -1,0 +1,41 @@
+blockMesh boundary: {'inlet': {'type': 'patch', 'nFaces': 36}, 'out_1': {'type': 'patch', 'nFaces': 36}, 'out_2': {'type': 'patch', 'nFaces': 0}, 'wall': {'type': 'wall', 'nFaces': 960}}
+build_info outlets_lost_in_mesh: {"patch": "out_2", "code_name": "res2", "R_used": 13000000000.0, "R_ref": 13000000000.0, "relax": 0.07142857142857142, "Q_target_m3s": 2e-07, "R_own": 1000000000.0, "G": 13.0, "tree_node": 2, "territory_id": "T2", "p_init_kin": 3.0817075471698114, "nFaces": 0, "reason": "stub: declared with no faces in blockMeshDict", "flag": "OUTLET_LOST_IN_MESH", "bc_written": "codedFixedValue p (inert on 0 faces) + inletOutlet U", "monitors": "none (0 faces: fatal in v2406)"}
+build_info bc_bookkeeping: {"n_outlets_package": 2, "n_outlets_in_mesh": 1, "outlets_in_mesh": ["out_1"], "outlets_lost_in_mesh": ["out_2"], "bcC_Q_target_total_mls": 0.7, "bcC_Q_target_in_mesh_mls": 0.5, "bcC_Q_target_lost_mls": 0.19999999999999998, "bc_error_criteria_over": "the outlets in the mesh only (1 of 2)", "lost_territory": "CLOSED: the territory of out_2 receives no flow (Q = 0 reported, flag OUTLET_LOST_IN_MESH); its bc_C target is not delivered and its bc_A R is not applied (the coded BC on an empty patch does nothing)"}
+NEGATIVE CONTROL (old monitors on the 0-face patch): simpleFoam rc=1; FATAL excerpt:
+FOAM FATAL ERROR: (openfoam-2406 patch=260127)
+surfaceFieldValue out_2Flux: patch(out_2):
+    The patches: (out_2)
+    resulted in 0 faces
+
+
+    From void Foam::functionObjects::fieldValues::surfaceFieldValue::setPatchFaces()
+    in file fieldValues/surfaceFieldValue/surfaceFieldValue.C at line 388.
+
+FOAM exiting
+
+
+simpleFoam (fixed case) rc=0, log tail:
+    sum(inlet) of phi = -1.2280867e-06
+
+surfaceFieldValue inletPressure write:
+    areaAverage(inlet) of p = 11.301922
+
+surfaceFieldValue out_1Flux write:
+    sum(out_1) of phi = 1.2281236e-06
+
+surfaceFieldValue out_1Pressure write:
+    areaAverage(out_1) of p = 6.7757992
+
+End
+dynamicCode lines: ['Using dynamicCode for patch out_1 on field p at line 13 in "/tmp/emptypatch_zww6xr7g/case/0/p/boundaryField/out_1"', 'Could not load "/tmp/emptypatch_zww6xr7g/case/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres1_327d090eb57687de4f8eddbf9436864dc764bdb1.so"', '/tmp/emptypatch_zww6xr7g/case/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres1_327d090eb57687de4f8eddbf9436864dc764bdb1.so: cannot open shared object file: No such file or directory', 'Creating new library in "dynamicCode/res1/platforms/linux64GccDPInt32Opt/lib/libres1_327d090eb57687de4f8eddbf9436864dc764bdb1.so"', 'Invoking wmake libso /tmp/emptypatch_zww6xr7g/case/dynamicCode/res1', 'wmake libso /tmp/emptypatch_zww6xr7g/case/dynamicCode/res1', 'link: /tmp/emptypatch_zww6xr7g/case/dynamicCode/res1/../platforms/linux64GccDPInt32Opt/lib/libres1_327d090eb57687de4f8eddbf9436864dc764bdb1.so', 'Using dynamicCode for patch out_2 on field p at line 33 in "/tmp/emptypatch_zww6xr7g/case/0/p/boundaryField/out_2"', 'Could not load "/tmp/emptypatch_zww6xr7g/case/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres2_327d090eb57687de4f8eddbf9436864dc764bdb1.so"', '/tmp/emptypatch_zww6xr7g/case/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres2_327d090eb57687de4f8eddbf9436864dc764bdb1.so: cannot open shared object file: No such file or directory', 'Creating new library in "dynamicCode/res2/platforms/linux64GccDPInt32Opt/lib/libres2_327d090eb57687de4f8eddbf9436864dc764bdb1.so"', 'Invoking wmake libso /tmp/emptypatch_zww6xr7g/case/dynamicCode/res2', 'wmake libso /tmp/emptypatch_zww6xr7g/case/dynamicCode/res2', 'link: /tmp/emptypatch_zww6xr7g/case/dynamicCode/res2/../platforms/linux64GccDPInt32Opt/lib/libres2_327d090eb57687de4f8eddbf9436864dc764bdb1.so']
+out_1 flux per iteration [1.04577807e-06, 1.22812355e-06], area-average p [6.62955122, 6.7757992]
+case: VERDICT UNCONVERGED  residuals p=4.52e-04 U=(4.3e-01,3.0e-01,3.0e-01) log iter 2; failed checks: ['p_residual_lt_1e_5', 'U_residual_lt_1e_5', 'at_least_200_iterations', 'all_bc_err_lt_0_1pct', 'all_Q_band200_lt_0_1pct', 'inlet_p_band200_lt_0_1pct', 'out_1_P_band200_lt_0_1pct', 'inlet_flux_band200_lt_0_1pct']
+case: last iter 2, sum outlets 1.22812 mL/s, mass imbalance 0.0030038596787613538 %, inlet static p 11980.04 Pa (0.99842 Paorta), band(200) 0.1580 %
+outlet         Q mL/s   0D mL/s  Q/0D-1 %    P/Pao   BCerr %  band200 %  band500 %
+out_1         1.22812   0.50000   +145.62  0.59858  -56.8167   16.03812   16.03812
+case: STRICT checks {'monitors_time_aligned': True, 'inlet_flux_band200_lt_0_1pct': False, 'log_no_fatal_or_nonfinite': True, 'residuals_all_finite': True} inlet-flux band(200) 16.03781844572779 %, log finished False
+M1_outlets rows:
+   {'outlet_id': 'out_1', 'Q_mls': '1.1369508099999999', 'Q_target_bcC_mls': '0.5', 'p_bar_Pa': '7104.8357226', 'closed': '0', 'lost_in_mesh': '0', 'flag': '', 'R_source': 'bc_A.csv'}
+   {'outlet_id': 'out_2', 'Q_mls': '0.0', 'Q_target_bcC_mls': '0.19999999999999998', 'p_bar_Pa': 'N/A', 'closed': '1', 'lost_in_mesh': '1', 'flag': 'OUTLET_LOST_IN_MESH', 'R_source': 'bc_A.csv on a 0-face patch: NOT applied (no flow)'}
+M1_results flags: OUTLET_LOST_IN_MESH;NOT_CONVERGED | outlets_lost_in_mesh: out_2 | converged: UNCONVERGED
+PASS: 0-face outlet patch: coded BC accepted on the empty patch (2 serial simpleFoam iterations, End), its monitors omitted (they are fatal: negative control), post path reports Q 0 / p N/A / OUTLET_LOST_IN_MESH

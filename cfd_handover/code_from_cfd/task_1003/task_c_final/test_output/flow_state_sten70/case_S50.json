@@ -1,0 +1,29 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/u3d/case_S50",
+ "label": "case_S50",
+ "time": 3000.0,
+ "cells": 2687640,
+ "path": {
+  "straight_x": {
+   "x_throat_mm": 30.0,
+   "x_meas_mm": 56.5,
+   "y_mm": 0.0,
+   "z_mm": 0.0
+  },
+  "r_ref_mm": 2.0
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 26,
+ "n_valid": 25,
+ "max_offset_over_req": 0.00035309032045479423,
+ "mean_offset_over_req": 0.0001382990983287732,
+ "s_from_throat_at_max_mm": 26.0,
+ "mean_oN": 6.652473288552844e-05,
+ "mean_oB": -6.259865120688883e-05,
+ "direction_persistence_R": 0.7991933721932445,
+ "mean_direction_deg": -24.528805661413323,
+ "invalid_stations": [
+  20
+ ]
+}

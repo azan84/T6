@@ -1,0 +1,19 @@
+MANIFEST.sha256 (148 entries, written 2026-10-03T08:06:49Z by make_manifest.sh)
+Hashes are SHA-256 over LF-NORMALISED content: for text files (no NUL byte) every CR byte is removed before hashing (tr -d '\r');
+binary files (containing a NUL byte) are hashed raw. MANIFEST.sha256 has no comment lines, so plain 'sha256sum -c MANIFEST.sha256'
+(or 'shasum -a 256 -c MANIFEST.sha256') works on it as is for an LF copy of the files.
+For a copy with any line-ending convention (e.g. CRLF after a Windows/Drive round trip) run: verify_manifest.sh <dir>
+(same normalisation; it also ignores '#' lines and CR bytes in MANIFEST.sha256 itself).
+Text files that contain CR bytes on the writing machine (plain sha256sum -c reports them FAILED, verify_manifest.sh passes them):
+  test_output/flow_state_sten70/a5_arch8.csv
+  test_output/flow_state_sten70/case_S50.csv
+  test_output/flow_state_sten70/smoke_cont.csv
+  test_output/post_case_generic_synthetic/M1_monitor_history_syn_resistance.csv
+  test_output/post_case_generic_synthetic/M1_outlets_syn_resistance.csv
+  test_output/post_case_generic_synthetic/M1_probes_syn_resistance.csv
+  test_output/post_case_generic_synthetic/M1_results.csv
+  test_output/post_case_generic_synthetic/as_meshed_radius_syn.csv
+  test_output/post_case_generic_synthetic/as_meshed_radius_syn_detail.csv
+  test_output/post_case_generic_synthetic/as_meshed_radius_syn_inscribed.csv
+  test_output/post_case_generic_synthetic/flow_state_syn_resistance.csv
+  test_output/post_case_generic_synthetic/settle_syn_resistance.csv

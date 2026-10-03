@@ -1,0 +1,26 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn",
+ "label": "syn_resistance",
+ "time": 1000.0,
+ "cells": 40740,
+ "path": {
+  "package": "SYN_tube_test__baseline__real",
+  "throat_probe": "p002",
+  "throat_tree_node": 12,
+  "measurement": "RELOCATED probe p004_reloc (package probe p004 failed the strict section rule; build_info)",
+  "measurement_tree_node": 33,
+  "path_nodes": 34
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 10,
+ "n_valid": 10,
+ "max_offset_over_req": 3.403261258940969e-10,
+ "mean_offset_over_req": 9.248383814570503e-11,
+ "s_from_throat_at_max_mm": 5.0,
+ "mean_oN": 1.573412301657748e-11,
+ "mean_oB": 1.7246842590915584e-11,
+ "direction_persistence_R": 0.18545126000309234,
+ "mean_direction_deg": 22.5797265298761,
+ "invalid_stations": []
+}

@@ -1,0 +1,9 @@
+{
+ "name": "A1_D7_12p5",
+ "ranks": 16,
+ "ram_gb": 14,
+ "disk_gb": 6,
+ "priority": 1,
+ "cmd": "cd /tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot && PAIR_ROOT=/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot RUN_SET_MAX_RANKS=16 bash ./run_set_generic.sh m1/cases/baseline_D7_12p5_resistance && grep -q \"^End\" m1/cases/baseline_D7_12p5_resistance/log.simpleFoam && source /usr/lib/openfoam/openfoam2406/etc/bashrc && cd m1/cases/baseline_D7_12p5_resistance && nice -n 10 reconstructPar -latestTime > log.reconstructPar 2>&1 && echo \"A1_D7_12p5 solve + reconstruct OK\"",
+ "after": []
+}

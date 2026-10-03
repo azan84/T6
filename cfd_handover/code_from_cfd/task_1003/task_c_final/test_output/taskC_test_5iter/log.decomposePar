@@ -1,0 +1,153 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2406                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _1653fa08-20260127 OPENFOAM=2406 patch=260127 version=2406
+Arch   : "LSB;label=32;scalar=64"
+Exec   : decomposePar
+Date   : Oct 03 2026
+Time   : 11:13:02
+Host   : Azan
+PID    : 2668001
+I/O    : uncollated
+Case   : /home/azan/paper6_t6_work/taskC_test
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+Decomposing mesh
+
+Create mesh
+
+Calculating distribution of cells
+Decomposition method scotch [4] (region region0)
+
+Finished decomposition in 4.28 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+
+Processor 0
+    Number of cells = 913651
+    Number of points = 980200
+    Number of faces shared with processor 1 = 2529
+    Number of processor patches = 1
+    Number of processor faces = 2529
+    Number of boundary faces = 120155
+
+Processor 1
+    Number of cells = 913138
+    Number of points = 965102
+    Number of faces shared with processor 0 = 2529
+    Number of faces shared with processor 3 = 1030
+    Number of processor patches = 2
+    Number of processor faces = 3559
+    Number of boundary faces = 88173
+
+Processor 2
+    Number of cells = 914799
+    Number of points = 967999
+    Number of faces shared with processor 3 = 862
+    Number of processor patches = 1
+    Number of processor faces = 862
+    Number of boundary faces = 97613
+
+Processor 3
+    Number of cells = 915559
+    Number of points = 979669
+    Number of faces shared with processor 1 = 1030
+    Number of faces shared with processor 2 = 862
+    Number of processor patches = 2
+    Number of processor faces = 1892
+    Number of boundary faces = 103921
+
+Number of processor faces = 4421
+Max number of cells = 915559 (0.13915219% above average 914286.75)
+Max number of processor patches = 2 (33.333333% above average 1.5)
+Max number of faces between processors = 3559 (61.004298% above average 2210.5)
+
+Time = 0
+Using dynamicCode for patch out_160 on field p at line 13 in "/home/azan/paper6_t6_work/taskC_test/0/p/boundaryField/out_160"
+Could not load "/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres160_afc9122cec3ce74e9e2c86769e92f811922319f8.so"
+/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres160_afc9122cec3ce74e9e2c86769e92f811922319f8.so: cannot open shared object file: No such file or directory
+Creating new library in "dynamicCode/res160/platforms/linux64GccDPInt32Opt/lib/libres160_afc9122cec3ce74e9e2c86769e92f811922319f8.so"
+Invoking wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res160
+wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res160
+    ln: ./lnInclude
+    dep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    link: /home/azan/paper6_t6_work/taskC_test/dynamicCode/res160/../platforms/linux64GccDPInt32Opt/lib/libres160_afc9122cec3ce74e9e2c86769e92f811922319f8.so
+Using dynamicCode for patch out_425 on field p at line 33 in "/home/azan/paper6_t6_work/taskC_test/0/p/boundaryField/out_425"
+Could not load "/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres425_ab0e74278c17feda5eb75ea4d86bdef497b9bad4.so"
+/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres425_ab0e74278c17feda5eb75ea4d86bdef497b9bad4.so: cannot open shared object file: No such file or directory
+Creating new library in "dynamicCode/res425/platforms/linux64GccDPInt32Opt/lib/libres425_ab0e74278c17feda5eb75ea4d86bdef497b9bad4.so"
+Invoking wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res425
+wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res425
+    ln: ./lnInclude
+    dep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    link: /home/azan/paper6_t6_work/taskC_test/dynamicCode/res425/../platforms/linux64GccDPInt32Opt/lib/libres425_ab0e74278c17feda5eb75ea4d86bdef497b9bad4.so
+Using dynamicCode for patch out_600 on field p at line 53 in "/home/azan/paper6_t6_work/taskC_test/0/p/boundaryField/out_600"
+Could not load "/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres600_9d69c36b5e032e937163abd64318d484049244c8.so"
+/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres600_9d69c36b5e032e937163abd64318d484049244c8.so: cannot open shared object file: No such file or directory
+Creating new library in "dynamicCode/res600/platforms/linux64GccDPInt32Opt/lib/libres600_9d69c36b5e032e937163abd64318d484049244c8.so"
+Invoking wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res600
+wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res600
+    ln: ./lnInclude
+    dep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    link: /home/azan/paper6_t6_work/taskC_test/dynamicCode/res600/../platforms/linux64GccDPInt32Opt/lib/libres600_9d69c36b5e032e937163abd64318d484049244c8.so
+Using dynamicCode for patch out_639 on field p at line 73 in "/home/azan/paper6_t6_work/taskC_test/0/p/boundaryField/out_639"
+Could not load "/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres639_d1198a6ae81449a5b994efdbad5811147efbf7a7.so"
+/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres639_d1198a6ae81449a5b994efdbad5811147efbf7a7.so: cannot open shared object file: No such file or directory
+Creating new library in "dynamicCode/res639/platforms/linux64GccDPInt32Opt/lib/libres639_d1198a6ae81449a5b994efdbad5811147efbf7a7.so"
+Invoking wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res639
+wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res639
+    ln: ./lnInclude
+    dep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    link: /home/azan/paper6_t6_work/taskC_test/dynamicCode/res639/../platforms/linux64GccDPInt32Opt/lib/libres639_d1198a6ae81449a5b994efdbad5811147efbf7a7.so
+Using dynamicCode for patch out_742 on field p at line 93 in "/home/azan/paper6_t6_work/taskC_test/0/p/boundaryField/out_742"
+Could not load "/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres742_4134dbe3397dea0624402a168f6912c4de12dd0e.so"
+/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres742_4134dbe3397dea0624402a168f6912c4de12dd0e.so: cannot open shared object file: No such file or directory
+Creating new library in "dynamicCode/res742/platforms/linux64GccDPInt32Opt/lib/libres742_4134dbe3397dea0624402a168f6912c4de12dd0e.so"
+Invoking wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res742
+wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res742
+    ln: ./lnInclude
+    dep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    link: /home/azan/paper6_t6_work/taskC_test/dynamicCode/res742/../platforms/linux64GccDPInt32Opt/lib/libres742_4134dbe3397dea0624402a168f6912c4de12dd0e.so
+Using dynamicCode for patch out_868 on field p at line 113 in "/home/azan/paper6_t6_work/taskC_test/0/p/boundaryField/out_868"
+Could not load "/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres868_1778f10bae6da0ead7856f5712581bd849c1bec8.so"
+/home/azan/paper6_t6_work/taskC_test/dynamicCode/platforms/linux64GccDPInt32Opt/lib/libres868_1778f10bae6da0ead7856f5712581bd849c1bec8.so: cannot open shared object file: No such file or directory
+Creating new library in "dynamicCode/res868/platforms/linux64GccDPInt32Opt/lib/libres868_1778f10bae6da0ead7856f5712581bd849c1bec8.so"
+Invoking wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res868
+wmake libso /home/azan/paper6_t6_work/taskC_test/dynamicCode/res868
+    ln: ./lnInclude
+    dep: fixedValueFvPatchFieldTemplate.C
+    Ctoo: fixedValueFvPatchFieldTemplate.C
+    link: /home/azan/paper6_t6_work/taskC_test/dynamicCode/res868/../platforms/linux64GccDPInt32Opt/lib/libres868_1778f10bae6da0ead7856f5712581bd849c1bec8.so
+
+Processor 0: field transfer
+Processor 1: field transfer
+Processor 2: field transfer
+Processor 3: field transfer
+
+End
+

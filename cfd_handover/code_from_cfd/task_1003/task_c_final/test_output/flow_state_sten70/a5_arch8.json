@@ -1,0 +1,27 @@
+{
+ "case": "/home/azan/paper6_t6_work/a5_arch8",
+ "label": "a5_arch8",
+ "time": 2000.0,
+ "cells": 198252,
+ "path": {
+  "straight_x": {
+   "x_throat_mm": 30.0,
+   "x_meas_mm": 56.5,
+   "y_mm": 0.0,
+   "z_mm": 0.0
+  },
+  "r_ref_mm": 2.0
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 26,
+ "n_valid": 26,
+ "max_offset_over_req": 0.36364218442811247,
+ "mean_offset_over_req": 0.2079174038257874,
+ "s_from_throat_at_max_mm": 10.0,
+ "mean_oN": 0.1467764679105866,
+ "mean_oB": -0.14726260401111785,
+ "direction_persistence_R": 0.9999884371145891,
+ "mean_direction_deg": -45.052730236452504,
+ "invalid_stations": []
+}

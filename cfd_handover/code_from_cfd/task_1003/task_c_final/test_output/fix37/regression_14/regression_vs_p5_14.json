@@ -1,0 +1,46 @@
+{
+ "n_compared": 1402,
+ "n_different": 0,
+ "differences": [],
+ "only_in_reference": [],
+ "only_in_new": [
+  "/GATES_DECISIVE/frame_check",
+  "/GATES_DECISIVE/clip_loops_and_outward_normals",
+  "/GATES_DECISIVE/extensions_outward",
+  "/GATES_DECISIVE/final_surface_closed_one_part_positive_volume",
+  "/GATES_DECISIVE/lesion_relative_throat_gate",
+  "/GATES_DECISIVE/lesion_purity_fold_window_edge_labels",
+  "/GATES_DECISIVE/surfaceCheck_closed_one_part",
+  "/GATES_DECISIVE/surfaceCheck_not_self_intersecting",
+  "/GATES_DECISIVE/self_intersection_positive_control_flagged",
+  "/GATES_REPORTED_NON_DECISIVE/lesion_literal_absolute_r_target_check",
+  "/ALL_GATES_PASS_INCLUDING_REPORTED"
+ ],
+ "n_only_in_new": 11,
+ "GATES_ref": {
+  "frame_check": true,
+  "mask_sha256_matches_package_(no_shipped_counts)": true,
+  "clip_loops_and_outward_normals": true,
+  "extensions_outward": true,
+  "final_surface_closed_one_part_positive_volume": true,
+  "lesion_relative_throat_gate": true,
+  "lesion_purity_fold_window_edge_labels": true,
+  "lesion_literal_absolute_r_target_check": false,
+  "surfaceCheck_closed_one_part": true,
+  "surfaceCheck_not_self_intersecting": false,
+  "self_intersection_positive_control_flagged": true
+ },
+ "GATES_new": {
+  "frame_check": true,
+  "mask_sha256_matches_package_(no_shipped_counts)": true,
+  "clip_loops_and_outward_normals": true,
+  "extensions_outward": true,
+  "final_surface_closed_one_part_positive_volume": true,
+  "lesion_relative_throat_gate": true,
+  "lesion_purity_fold_window_edge_labels": true,
+  "lesion_literal_absolute_r_target_check": false,
+  "surfaceCheck_closed_one_part": true,
+  "surfaceCheck_not_self_intersecting": false,
+  "self_intersection_positive_control_flagged": true
+ }
+}

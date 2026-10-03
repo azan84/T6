@@ -1,0 +1,482 @@
+{
+ "case": "taskC_test",
+ "mode": "resistance",
+ "nproc": 4,
+ "endTime": 3000,
+ "writeInterval": 250,
+ "purgeWrite": 3,
+ "ramp_iters": 0,
+ "mesh_link": "hard-linked",
+ "p0_kin": 11.319792452830189,
+ "P_aorta_Pa": 11998.98,
+ "closed_patches": [],
+ "throat_plane": {
+  "point_m": [
+   0.04353410720825195,
+   -0.14993318176269532,
+   0.12295011138916016
+  ],
+  "normal": [
+   0.41055524042352165,
+   -0.3932599947911303,
+   -0.8226730645023359
+  ],
+  "bounds_m": [
+   [
+    0.04122834680652078,
+    -0.1522389421644265,
+    0.12064435098742898
+   ],
+   [
+    0.04583986760998313,
+    -0.14762742136096416,
+    0.12525587179089134
+   ]
+  ]
+ },
+ "measurement_plane": {
+  "point_m": [
+   0.05413552474975586,
+   -0.1687080078125,
+   0.10244835662841797
+  ],
+  "normal": [
+   0.15255270822324354,
+   -0.7286071698830082,
+   -0.6677269376091003
+  ],
+  "bounds_m": [
+   [
+    0.05227624416645602,
+    -0.17056728839579985,
+    0.10058907604511813
+   ],
+   [
+    0.055994805333055696,
+    -0.16684872722920016,
+    0.1043076372117178
+   ]
+  ]
+ },
+ "outlets": [
+  {
+   "patch": "out_160",
+   "code_name": "res160",
+   "R_used": 87321458051.23224,
+   "R_ref": 87321458051.23224,
+   "relax": 0.015515760190345177,
+   "Q_target_m3s": 9.526337218187127e-08,
+   "R_own": 1376211774.4578226,
+   "G": 63.45059653746512
+  },
+  {
+   "patch": "out_425",
+   "code_name": "res425",
+   "R_used": 104160994749.21861,
+   "R_ref": 104160994749.21861,
+   "relax": 0.014693453562512608,
+   "Q_target_m3s": 1.0437238952330091e-07,
+   "R_own": 1553308201.2967877,
+   "G": 67.0575193398575
+  },
+  {
+   "patch": "out_600",
+   "code_name": "res600",
+   "R_used": 106380175492.59866,
+   "R_ref": 106380175492.59866,
+   "relax": 0.006976228464399488,
+   "Q_target_m3s": 7.821426859620307e-08,
+   "R_own": 747346065.2121696,
+   "G": 142.34392933131667
+  },
+  {
+   "patch": "out_639",
+   "code_name": "res639",
+   "R_used": 98380140600.68935,
+   "R_ref": 98380140600.68935,
+   "relax": 0.003597101457911657,
+   "Q_target_m3s": 1.125801977787901e-07,
+   "R_own": 355160896.9645579,
+   "G": 277.0016109360904
+  },
+  {
+   "patch": "out_742",
+   "code_name": "res742",
+   "R_used": 86330625122.01407,
+   "R_ref": 86330625122.01407,
+   "relax": 0.035385235210191955,
+   "Q_target_m3s": 1.234458658940483e-07,
+   "R_own": 3166890646.185609,
+   "G": 27.260374533612584
+  },
+  {
+   "patch": "out_868",
+   "code_name": "res868",
+   "R_used": 78537807740.31738,
+   "R_ref": 78537807740.31738,
+   "relax": 0.039881981795101086,
+   "Q_target_m3s": 1.350949401152109e-07,
+   "R_own": 3262352501.6046877,
+   "G": 24.07397965170415
+  }
+ ],
+ "mesh_patches": {
+  "inlet": {
+   "type": "patch",
+   "nFaces": 6375
+  },
+  "out_160": {
+   "type": "patch",
+   "nFaces": 1802
+  },
+  "out_425": {
+   "type": "patch",
+   "nFaces": 1056
+  },
+  "out_600": {
+   "type": "patch",
+   "nFaces": 798
+  },
+  "out_639": {
+   "type": "patch",
+   "nFaces": 807
+  },
+  "out_742": {
+   "type": "patch",
+   "nFaces": 1617
+  },
+  "out_868": {
+   "type": "patch",
+   "nFaces": 3203
+  },
+  "wall": {
+   "type": "wall",
+   "nFaces": 394204
+  }
+ },
+ "family": "m1",
+ "package": "14_left_LAD_prox_20mm_80ds__baseline__real",
+ "instance": {
+  "scan": 14,
+  "side": "left",
+  "vessel": "LAD",
+  "loc": "prox",
+  "L_mm": 20.0,
+  "ds_pct": 80,
+  "c_mm": 19.712737527771008
+ },
+ "error_type": "baseline",
+ "stage": "resistance",
+ "label": null,
+ "pilot_label": null,
+ "e0_guard": {
+  "status": "MEMBER",
+  "csv": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/CFD-SUBSET-FROZEN-2026-09-18.csv",
+  "scan": "14",
+  "side": "left"
+ },
+ "package_hashes": {
+  "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+  "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+  "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+  "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+  "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+  "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+  "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+  "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+ },
+ "closed_outlets": [],
+ "extension_lengths_mm": {
+  "out_160": 3.628145414031007,
+  "out_425": 3.5078256456729653,
+  "out_600": 3.343829795541327,
+  "out_639": 3.2905903055782386,
+  "out_742": 4.493405172620706,
+  "out_868": 4.732842927252486
+ },
+ "extension_source": "as-built, from m1/out_returns/extensions_baseline.json",
+ "R_own_definition": "terminal segment of the package centreline (r_ref_mm radii) + extension at the leaf radius, Poiseuille 8 mu L/(pi r^4); used only for relax",
+ "R_own_details": {
+  "out_160": {
+   "R_own_r_ref": 1376211774.4578226,
+   "R_own_MIS_variant": 1910035922.099173,
+   "segment_length_mm": 20.29019954829145,
+   "n_edges": 42,
+   "R_segment": 1165219479.8624604,
+   "R_extension": 210992294.59536213,
+   "r_leaf_mm": 0.6469259151503007,
+   "ext_mm": 3.628145414031007,
+   "field": "r_ref_mm"
+  },
+  "out_425": {
+   "R_own_r_ref": 1553308201.2967877,
+   "R_own_MIS_variant": 4384707327.202107,
+   "segment_length_mm": 64.17038421331793,
+   "n_edges": 136,
+   "R_segment": 1287367977.739416,
+   "R_extension": 265940223.5573718,
+   "r_leaf_mm": 0.6054294167717015,
+   "ext_mm": 3.5078256456729653,
+   "field": "r_ref_mm"
+  },
+  "out_600": {
+   "R_own_r_ref": 747346065.2121696,
+   "R_own_MIS_variant": 891651837.4803278,
+   "segment_length_mm": 8.094731307696165,
+   "n_edges": 17,
+   "R_segment": 485673622.3452035,
+   "R_extension": 261672442.86696613,
+   "r_leaf_mm": 0.6006501225554999,
+   "ext_mm": 3.343829795541327,
+   "field": "r_ref_mm"
+  },
+  "out_639": {
+   "R_own_r_ref": 355160896.9645579,
+   "R_own_MIS_variant": 735333113.9969943,
+   "segment_length_mm": 3.7326738249895213,
+   "n_edges": 11,
+   "R_segment": 126216457.33536436,
+   "R_extension": 228944439.62919354,
+   "r_leaf_mm": 0.6185658715941345,
+   "ext_mm": 3.2905903055782386,
+   "field": "r_ref_mm"
+  },
+  "out_742": {
+   "R_own_r_ref": 3166890646.185609,
+   "R_own_MIS_variant": 3785655344.834531,
+   "segment_length_mm": 51.12884174830561,
+   "n_edges": 101,
+   "R_segment": 2910025771.8547587,
+   "R_extension": 256864874.3308501,
+   "r_leaf_mm": 0.6497072929531458,
+   "ext_mm": 4.493405172620706,
+   "field": "r_ref_mm"
+  },
+  "out_868": {
+   "R_own_r_ref": 3262352501.6046877,
+   "R_own_MIS_variant": 3727200034.63604,
+   "segment_length_mm": 61.2376680538362,
+   "n_edges": 126,
+   "R_segment": 3027677081.3815866,
+   "R_extension": 234675420.22310114,
+   "r_leaf_mm": 0.6732302910434911,
+   "ext_mm": 4.732842927252486,
+   "field": "r_ref_mm"
+  }
+ },
+ "throat_probe": "p004",
+ "measurement_probe": "p011",
+ "probe_section_check": {
+  "throat": {
+   "probe_id": "p004",
+   "status": "CHECKED_ON_MESH",
+   "h_final_mm": 2.3057604017311766,
+   "bounds_m": [
+    [
+     0.04122834680652078,
+     -0.1522389421644265,
+     0.12064435098742898
+    ],
+    [
+     0.04583986760998313,
+     -0.14762742136096416,
+     0.12525587179089134
+    ]
+   ],
+   "sizing": {
+    "probe_id": "p004",
+    "kind": "throat",
+    "tree_node": 73,
+    "point_mm": [
+     43.53410720825195,
+     -149.9331817626953,
+     122.95011138916016
+    ],
+    "normal": [
+     0.41055524042352165,
+     -0.3932599947911303,
+     -0.8226730645023359
+    ],
+    "r_ref_mm": 1.1528802008655883,
+    "r_own_mm": 0.23057604017311759,
+    "r_own_field": "r_target_mm",
+    "cos_own": 0.9972447487984956,
+    "h_mm": 2.3057604017311766,
+    "h_min_mm": 0.6005770174134258,
+    "h_pref_mm": 2.3057604017311766,
+    "h_clear_mm": 8.7939081003763,
+    "n_other_crossings_infinite_plane": 15,
+    "nearest_other": {
+     "x_mm": [
+      49.647548921917355,
+      -140.16957867135696,
+      121.33375973544739
+     ],
+     "r_mm": 0.7036151161000537,
+     "segment": "IM",
+     "branch_id": 3,
+     "Linf_dist_mm": 9.763603091338354
+    },
+    "ok": true,
+    "reason": null
+   },
+   "mesh_check": {
+    "h_mm": 2.3057604017311766,
+    "box_lo_m": [
+     0.04122834680652078,
+     -0.1522389421644265,
+     0.12064435098742898
+    ],
+    "box_hi_m": [
+     0.045839867609983126,
+     -0.14762742136096416,
+     0.12525587179089134
+    ],
+    "crop_radius_mm": 6.993694165878823,
+    "n_regions_local_unbounded": 1,
+    "own_region": 0,
+    "regions_with_centres_in_box": [
+     0
+    ],
+    "own_min_margin_over_cell": 79.67052667802707,
+    "others_max_margin_over_cell": null,
+    "own_section_area_mm2": 0.23886334961649416,
+    "bounded_section_area_mm2": 0.23886334961649416,
+    "area_ref_mm2": 0.16702374827031832,
+    "own_max_dist_mm": 0.3169518147049729,
+    "bounded_area_over_pi_r_own2": 1.4301160888205404,
+    "bounded_r_eq_mm": 0.2757400326936683,
+    "centroid_offset_over_req": 0.13648799687205715,
+    "fails": [],
+    "ok": true
+   },
+   "attempts": [
+    {
+     "h_mm": 2.3057604017311766,
+     "fails": []
+    }
+   ],
+   "infinite_plane_unbounded": {
+    "n_components": 4,
+    "total_area_mm2": 8.351139866993472,
+    "probe_component_area_mm2": 0.23886334961649416
+   }
+  },
+  "measurement": {
+   "probe_id": "p011",
+   "status": "CHECKED_ON_MESH",
+   "h_final_mm": 1.8592805832998367,
+   "bounds_m": [
+    [
+     0.05227624416645602,
+     -0.17056728839579985,
+     0.10058907604511813
+    ],
+    [
+     0.055994805333055696,
+     -0.16684872722920016,
+     0.1043076372117178
+    ]
+   ],
+   "sizing": {
+    "probe_id": "p011",
+    "kind": "measurement",
+    "tree_node": 175,
+    "point_mm": [
+     54.13552474975586,
+     -168.7080078125,
+     102.44835662841797
+    ],
+    "normal": [
+     0.15255270822324354,
+     -0.7286071698830082,
+     -0.6677269376091003
+    ],
+    "r_ref_mm": 0.9296402916499183,
+    "r_own_mm": 0.9260068923964508,
+    "r_own_field": "r_target_mm",
+    "cos_own": 0.9932305132730702,
+    "h_mm": 1.8592805832998367,
+    "h_min_mm": 1.5120136705711753,
+    "h_pref_mm": 1.8592805832998367,
+    "h_clear_mm": 4.5250989190091815,
+    "n_other_crossings_infinite_plane": 4,
+    "nearest_other": {
+     "x_mm": [
+      59.50811298643338,
+      -165.63690350957793,
+      100.32469551932519
+     ],
+     "r_mm": 0.5317748907162675,
+     "segment": "D1",
+     "branch_id": 9,
+     "Linf_dist_mm": 5.372588236677522
+    },
+    "ok": true,
+    "reason": null
+   },
+   "mesh_check": {
+    "h_mm": 1.8592805832998367,
+    "box_lo_m": [
+     0.05227624416645602,
+     -0.17056728839579985,
+     0.10058907604511814
+    ],
+    "box_hi_m": [
+     0.055994805333055696,
+     -0.16684872722920016,
+     0.1043076372117178
+    ],
+    "crop_radius_mm": 8.776409790180319,
+    "n_regions_local_unbounded": 2,
+    "own_region": 0,
+    "regions_with_centres_in_box": [
+     0
+    ],
+    "own_min_margin_over_cell": 8.250977596497338,
+    "others_max_margin_over_cell": -31.209331496267346,
+    "own_section_area_mm2": 3.369555689084884,
+    "bounded_section_area_mm2": 3.369555689084884,
+    "area_ref_mm2": 2.69388040392381,
+    "own_max_dist_mm": 1.163783526935534,
+    "bounded_area_over_pi_r_own2": 1.2508185902302524,
+    "bounded_r_eq_mm": 1.0356461209711325,
+    "centroid_offset_over_req": 0.09004929643590212,
+    "fails": [],
+    "ok": true
+   },
+   "attempts": [
+    {
+     "h_mm": 1.8592805832998367,
+     "fails": []
+    }
+   ],
+   "infinite_plane_unbounded": {
+    "n_components": 2,
+    "total_area_mm2": 5.308577979404433,
+    "probe_component_area_mm2": 3.369555689084884
+   }
+  },
+  "rule": "(authoritative, pyvista on the actual polyMesh; the builder refuses the case if it fails): the plane is cut through the cells around the probe; on the resulting section\n  (1) the cut cells whose centres are in the box form exactly ONE connected component, the one nearest the probe (no other vessel inside the box);\n  (2) that component lies wholly inside the box (the box does not clip the lumen section), with a margin of >= 0.5 local cell sizes for the centres (pyvista centre = point mean, OpenFOAM centre = centroid);\n  (3) every cut cell of any other component has its centre outside the box by >= 0.5 local cell sizes;\n  (4) area of the bounded section within [0.4, 2.5] x pi r_own^2 and its centroid within 0.5 r_eq of the probe."
+ },
+ "production_ready": true,
+ "blinding": "no 0D twin / zerod_ffr / Tree / outlets_837 import in this code path; analyze_case.py registers a constants-only zerod_ffr stand-in",
+ "p_bcA_x_bcC_Pa": {
+  "out_160": 8985.146557798196,
+  "out_425": 11538.141917099947,
+  "out_600": 8987.057619289331,
+  "out_639": 11742.265686330786,
+  "out_742": 11323.768771361507,
+  "out_868": 11276.670433458125
+ },
+ "p_init_capped": {
+  "out_160": false,
+  "out_425": false,
+  "out_600": false,
+  "out_639": false,
+  "out_742": false,
+  "out_868": false
+ },
+ "n_bl_layers_recorded_by_mesh_stage": null,
+ "note_bcA_bcC": "Pv + R(bc_A) Q(bc_C) equals the CLEAN outlet pressures for clean_nolesion and baseline; for T1_missed_branch bc_C holds the FULL territory flows (decision B1), so it is only a reference and exceeds P_aorta at the outlet that inherits the deleted branch (19.1 kPa for out_558 vs 12.0 kPa); the prescribed-mode bc_err of analyze_case compares the CFD patch p with it and is reported, not judged; initial outlet p is capped at 0.98 p0"
+}

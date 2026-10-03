@@ -1,0 +1,95 @@
+{
+ "n_compared": 1381,
+ "n_different": 5,
+ "differences": [
+  {
+   "key": "/mask_edit/shipped_voxels_removed",
+   "ref": 1310,
+   "new": null
+  },
+  {
+   "key": "/mask_edit/shipped_components",
+   "ref": 2,
+   "new": null
+  },
+  {
+   "key": "/mask_edit/erosion_shipped",
+   "ref": 25,
+   "new": null
+  },
+  {
+   "key": "/mask_edit/voxels_removed_matches_shipped",
+   "ref": true,
+   "new": null
+  },
+  {
+   "key": "/mask_edit/components_match_shipped",
+   "ref": true,
+   "new": null
+  }
+ ],
+ "only_in_reference": [
+  "/GATES/mask_edit_matches_shipped_voxels_and_components"
+ ],
+ "only_in_new": [
+  "/frame_check/package_stated/with_flip[0]",
+  "/frame_check/package_stated/with_flip[1]",
+  "/frame_check/package_stated/without_flip[0]",
+  "/frame_check/package_stated/without_flip[1]",
+  "/frame_check/package_stated/observed_with_flip[0]",
+  "/frame_check/package_stated/observed_with_flip[1]",
+  "/frame_check/package_stated/observed_without_flip[0]",
+  "/frame_check/package_stated/observed_without_flip[1]",
+  "/frame_check/package_stated/counts_match",
+  "/frame_check/package_stated/fractions_match",
+  "/mask_edit/components_unchanged_by_edit",
+  "/lesion/throat_selection/throat_tree_node",
+  "/lesion/throat_selection/r_target_at_throat_mm",
+  "/lesion/throat_selection/radial_scale_at_throat",
+  "/lesion/throat_selection/argmin_radial_scale_tree_node",
+  "/lesion/throat_selection/global_min_r_target_mm",
+  "/lesion/throat_selection/global_argmin_r_target_tree_node",
+  "/lesion/throat_selection/throat_is_min_radial_scale_node",
+  "/lesion/lesion_length_mm",
+  "/lesion/lesion_centre_s_mm",
+  "/lesion/ds_pct",
+  "/GATES_DECISIVE/frame_check",
+  "/GATES_DECISIVE/clip_loops_and_outward_normals",
+  "/GATES_DECISIVE/extensions_outward",
+  "/GATES_DECISIVE/final_surface_closed_one_part_positive_volume",
+  "/GATES_DECISIVE/lesion_relative_throat_gate",
+  "/GATES_DECISIVE/lesion_purity_fold_window_edge_labels",
+  "/GATES_DECISIVE/surfaceCheck_closed_one_part",
+  "/GATES_DECISIVE/surfaceCheck_not_self_intersecting",
+  "/GATES_DECISIVE/self_intersection_positive_control_flagged",
+  "/GATES_REPORTED_NON_DECISIVE/lesion_literal_absolute_r_target_check",
+  "/ALL_GATES_PASS_INCLUDING_REPORTED"
+ ],
+ "n_only_in_new": 32,
+ "GATES_ref": {
+  "frame_check": true,
+  "mask_edit_matches_shipped_voxels_and_components": true,
+  "clip_loops_and_outward_normals": true,
+  "extensions_outward": true,
+  "final_surface_closed_one_part_positive_volume": true,
+  "lesion_relative_throat_gate": true,
+  "lesion_purity_fold_window_edge_labels": true,
+  "lesion_literal_absolute_r_target_check": false,
+  "surfaceCheck_closed_one_part": true,
+  "surfaceCheck_not_self_intersecting": false,
+  "self_intersection_positive_control_flagged": true
+ },
+ "GATES_new": {
+  "frame_check": true,
+  "mask_sha256_matches_package_(no_shipped_counts)": true,
+  "clip_loops_and_outward_normals": true,
+  "extensions_outward": true,
+  "final_surface_closed_one_part_positive_volume": true,
+  "lesion_relative_throat_gate": true,
+  "lesion_purity_fold_window_edge_labels": true,
+  "lesion_literal_absolute_r_target_check": false,
+  "surfaceCheck_closed_one_part": true,
+  "surfaceCheck_not_self_intersecting": false,
+  "self_intersection_positive_control_flagged": true
+ }
+}

@@ -1,0 +1,535 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2406                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _1653fa08-20260127 OPENFOAM=2406 patch=260127 version=2406
+Arch   : "LSB;label=32;scalar=64"
+Exec   : simpleFoam -parallel
+Date   : Oct 03 2026
+Time   : 11:14:08
+Host   : Azan
+PID    : 2669188
+I/O    : uncollated
+Case   : /home/azan/paper6_t6_work/taskC_test
+nProcs : 4
+Hosts  :
+(
+    (Azan 4)
+)
+Pstream initialized with:
+    floatTransfer      : false
+    maxCommsSize       : 0
+    nProcsSimpleSum    : 0
+    nonBlockingExchange: 0 (tuning: 0)
+    exchange algorithm : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+SIMPLE: no convergence criteria found. Calculations will run for 5 steps.
+
+Reading field p
+
+Using dynamicCode for patch out_160 on field p at line 38 in "/home/azan/paper6_t6_work/taskC_test/processor0/0/p/boundaryField/out_160"
+Using dynamicCode for patch out_425 on field p at line 57 in "/home/azan/paper6_t6_work/taskC_test/processor0/0/p/boundaryField/out_425"
+Using dynamicCode for patch out_600 on field p at line 76 in "/home/azan/paper6_t6_work/taskC_test/processor0/0/p/boundaryField/out_600"
+Using dynamicCode for patch out_639 on field p at line 95 in "/home/azan/paper6_t6_work/taskC_test/processor0/0/p/boundaryField/out_639"
+Using dynamicCode for patch out_742 on field p at line 114 in "/home/azan/paper6_t6_work/taskC_test/processor0/0/p/boundaryField/out_742"
+Using dynamicCode for patch out_868 on field p at line 133 in "/home/azan/paper6_t6_work/taskC_test/processor0/0/p/boundaryField/out_868"
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+No MRF models present
+
+No finite volume options present
+
+Starting time loop
+
+surfaceFieldValue inletFlux:
+    operation     = sum
+
+
+surfaceFieldValue inletPressure:
+    operation     = areaAverage
+
+
+surfaceFieldValue out_160Flux:
+    operation     = sum
+
+
+surfaceFieldValue out_160Pressure:
+    operation     = areaAverage
+
+
+surfaceFieldValue out_425Flux:
+    operation     = sum
+
+
+surfaceFieldValue out_425Pressure:
+    operation     = areaAverage
+
+
+surfaceFieldValue out_600Flux:
+    operation     = sum
+
+
+surfaceFieldValue out_600Pressure:
+    operation     = areaAverage
+
+
+surfaceFieldValue out_639Flux:
+    operation     = sum
+
+
+surfaceFieldValue out_639Pressure:
+    operation     = areaAverage
+
+
+surfaceFieldValue out_742Flux:
+    operation     = sum
+
+
+surfaceFieldValue out_742Pressure:
+    operation     = areaAverage
+
+
+surfaceFieldValue out_868Flux:
+    operation     = sum
+
+
+surfaceFieldValue out_868Pressure:
+    operation     = areaAverage
+
+
+surfaceFieldValue throatFlux:
+    operation     = areaNormalIntegrate
+    sampled surface: sampledPlane: throatFlux : origin:(0.043534107 -0.14993318 0.12295011) normal:(0.41055524 -0.39325999 -0.82267306) triangulate:1
+
+
+surfaceFieldValue throatP:
+    operation     = areaAverage
+    sampled surface: sampledPlane: throatP : origin:(0.043534107 -0.14993318 0.12295011) normal:(0.41055524 -0.39325999 -0.82267306) triangulate:1
+
+
+surfaceFieldValue measurementFlux:
+    operation     = areaNormalIntegrate
+    sampled surface: sampledPlane: measurementFlux : origin:(0.054135525 -0.16870801 0.10244836) normal:(0.15255271 -0.72860717 -0.66772694) triangulate:1
+
+
+surfaceFieldValue measurementP:
+    operation     = areaAverage
+    sampled surface: sampledPlane: measurementP : origin:(0.054135525 -0.16870801 0.10244836) normal:(0.15255271 -0.72860717 -0.66772694) triangulate:1
+
+
+Time = 1
+
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.040199326, No Iterations 3
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 0.039600916, No Iterations 3
+smoothSolver:  Solving for Uz, Initial residual = 1, Final residual = 0.039771906, No Iterations 3
+GAMG:  Solving for p, Initial residual = 1, Final residual = 0.0091911971, No Iterations 8
+GAMG:  Solving for p, Initial residual = 0.011225327, Final residual = 9.5758477e-05, No Iterations 7
+time step continuity errors : sum local = 0.033662366, global = 0.00025708732, cumulative = 0.00025708732
+ExecutionTime = 8.12 s  ClockTime = 8 s
+
+surfaceFieldValue inletFlux write:
+    total faces   = 6375
+    total area    = 9.4094541e-06
+
+    sum(inlet) of phi = -5.6312462e-08
+
+surfaceFieldValue inletPressure write:
+    total faces   = 6375
+    total area    = 9.4094541e-06
+
+    areaAverage(inlet) of p = 11.319792
+
+surfaceFieldValue out_160Flux write:
+    total faces   = 1802
+    total area    = 2.062133e-06
+
+    sum(out_160) of phi = 5.2585351e-09
+
+surfaceFieldValue out_160Pressure write:
+    total faces   = 1802
+    total area    = 2.062133e-06
+
+    areaAverage(out_160) of p = 8.4400246
+
+surfaceFieldValue out_425Flux write:
+    total faces   = 1056
+    total area    = 1.1813365e-06
+
+    sum(out_425) of phi = 8.4559224e-09
+
+surfaceFieldValue out_425Pressure write:
+    total faces   = 1056
+    total area    = 1.1813365e-06
+
+    areaAverage(out_425) of p = 10.83983
+
+surfaceFieldValue out_600Flux write:
+    total faces   = 798
+    total area    = 8.1228361e-07
+
+    sum(out_600) of phi = 1.6176582e-09
+
+surfaceFieldValue out_600Pressure write:
+    total faces   = 798
+    total area    = 8.1228361e-07
+
+    areaAverage(out_600) of p = 8.4619283
+
+surfaceFieldValue out_639Flux write:
+    total faces   = 807
+    total area    = 8.5870919e-07
+
+    sum(out_639) of phi = -2.8354024e-09
+
+surfaceFieldValue out_639Pressure write:
+    total faces   = 807
+    total area    = 8.5870919e-07
+
+    areaAverage(out_639) of p = 11.066333
+
+surfaceFieldValue out_742Flux write:
+    total faces   = 1617
+    total area    = 1.9151138e-06
+
+    sum(out_742) of phi = 1.7914917e-08
+
+surfaceFieldValue out_742Pressure write:
+    total faces   = 1617
+    total area    = 1.9151138e-06
+
+    areaAverage(out_742) of p = 10.576073
+
+surfaceFieldValue out_868Flux write:
+    total faces   = 3203
+    total area    = 5.1061815e-06
+
+    sum(out_868) of phi = 2.6208338e-08
+
+surfaceFieldValue out_868Pressure write:
+    total faces   = 3203
+    total area    = 5.1061815e-06
+
+    areaAverage(out_868) of p = 10.518609
+
+surfaceFieldValue throatFlux write:
+    total faces   = 1943
+    total area    = 2.3886311e-07
+
+    total area = 2.3886311e-07
+    areaNormalIntegrate(throatFluxPlane) of U = 2.0522289e-09
+
+surfaceFieldValue throatP write:
+    total faces   = 1943
+    total area    = 2.3886311e-07
+
+    total area = 2.3886311e-07
+    areaAverage(throatPPlane) of p = 10.111078
+
+surfaceFieldValue measurementFlux write:
+    total faces   = 1677
+    total area    = 3.3695534e-06
+
+    total area = 3.3695534e-06
+    areaNormalIntegrate(measurementFluxPlane) of U = 4.6443136e-10
+
+surfaceFieldValue measurementP write:
+    total faces   = 1677
+    total area    = 3.3695534e-06
+
+    total area = 3.3695534e-06
+    areaAverage(measurementPPlane) of p = 8.6907839
+
+Time = 2
+
+smoothSolver:  Solving for Ux, Initial residual = 0.22218857, Final residual = 0.0099697606, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.23393383, Final residual = 0.010963958, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.21519888, Final residual = 0.010629043, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.42512365, Final residual = 0.0034411461, No Iterations 8
+GAMG:  Solving for p, Initial residual = 0.012964585, Final residual = 7.4102737e-05, No Iterations 10
+time step continuity errors : sum local = 0.012954903, global = 0.00036114668, cumulative = 0.00061823399
+ExecutionTime = 14.57 s  ClockTime = 15 s
+
+surfaceFieldValue inletFlux write:
+    sum(inlet) of phi = -9.1664624e-08
+
+surfaceFieldValue inletPressure write:
+    areaAverage(inlet) of p = 11.31979
+
+surfaceFieldValue out_160Flux write:
+    sum(out_160) of phi = 9.8274302e-09
+
+surfaceFieldValue out_160Pressure write:
+    areaAverage(out_160) of p = 8.4056822
+
+surfaceFieldValue out_425Flux write:
+    sum(out_425) of phi = 1.5421923e-08
+
+surfaceFieldValue out_425Pressure write:
+    areaAverage(out_425) of p = 10.798483
+
+surfaceFieldValue out_600Flux write:
+    sum(out_600) of phi = 2.2553414e-09
+
+surfaceFieldValue out_600Pressure write:
+    areaAverage(out_600) of p = 8.4458745
+
+surfaceFieldValue out_639Flux write:
+    sum(out_639) of phi = -5.4697536e-09
+
+surfaceFieldValue out_639Pressure write:
+    areaAverage(out_639) of p = 11.054786
+
+surfaceFieldValue out_742Flux write:
+    sum(out_742) of phi = 2.9497577e-08
+
+surfaceFieldValue out_742Pressure write:
+    areaAverage(out_742) of p = 10.485966
+
+surfaceFieldValue out_868Flux write:
+    sum(out_868) of phi = 4.0564079e-08
+
+surfaceFieldValue out_868Pressure write:
+    areaAverage(out_868) of p = 10.423515
+
+surfaceFieldValue throatFlux write:
+    total area = 2.3886311e-07
+    areaNormalIntegrate(throatFluxPlane) of U = 9.095712e-09
+
+surfaceFieldValue throatP write:
+    total area = 2.3886311e-07
+    areaAverage(throatPPlane) of p = 9.3444534
+
+surfaceFieldValue measurementFlux write:
+    total area = 3.3695534e-06
+    areaNormalIntegrate(measurementFluxPlane) of U = 1.986329e-09
+
+surfaceFieldValue measurementP write:
+    total area = 3.3695534e-06
+    areaAverage(measurementPPlane) of p = 6.9982604
+
+Time = 3
+
+smoothSolver:  Solving for Ux, Initial residual = 0.27498623, Final residual = 0.021876915, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.39139126, Final residual = 0.02994265, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.25753691, Final residual = 0.020415198, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.21016158, Final residual = 0.0015535347, No Iterations 6
+GAMG:  Solving for p, Initial residual = 0.030790917, Final residual = 0.00023968757, No Iterations 10
+time step continuity errors : sum local = 0.012485075, global = -0.00013159228, cumulative = 0.00048664171
+ExecutionTime = 20.31 s  ClockTime = 20 s
+
+surfaceFieldValue inletFlux write:
+    sum(inlet) of phi = -1.3000947e-07
+
+surfaceFieldValue inletPressure write:
+    areaAverage(inlet) of p = 11.319778
+
+surfaceFieldValue out_160Flux write:
+    sum(out_160) of phi = 1.3751646e-08
+
+surfaceFieldValue out_160Pressure write:
+    areaAverage(out_160) of p = 8.3732516
+
+surfaceFieldValue out_425Flux write:
+    sum(out_425) of phi = 2.2313983e-08
+
+surfaceFieldValue out_425Pressure write:
+    areaAverage(out_425) of p = 10.760335
+
+surfaceFieldValue out_600Flux write:
+    sum(out_600) of phi = 3.3298696e-09
+
+surfaceFieldValue out_600Pressure write:
+    areaAverage(out_600) of p = 8.4299882
+
+surfaceFieldValue out_639Flux write:
+    sum(out_639) of phi = -8.0065339e-09
+
+surfaceFieldValue out_639Pressure write:
+    areaAverage(out_639) of p = 11.042987
+
+surfaceFieldValue out_742Flux write:
+    sum(out_742) of phi = 4.2068236e-08
+
+surfaceFieldValue out_742Pressure write:
+    areaAverage(out_742) of p = 10.406831
+
+surfaceFieldValue out_868Flux write:
+    sum(out_868) of phi = 5.6394872e-08
+
+surfaceFieldValue out_868Pressure write:
+    areaAverage(out_868) of p = 10.342286
+
+surfaceFieldValue throatFlux write:
+    total area = 2.3886311e-07
+    areaNormalIntegrate(throatFluxPlane) of U = 1.7899168e-08
+
+surfaceFieldValue throatP write:
+    total area = 2.3886311e-07
+    areaAverage(throatPPlane) of p = 9.5685975
+
+surfaceFieldValue measurementFlux write:
+    total area = 3.3695534e-06
+    areaNormalIntegrate(measurementFluxPlane) of U = 3.7028367e-09
+
+surfaceFieldValue measurementP write:
+    total area = 3.3695534e-06
+    areaAverage(measurementPPlane) of p = 7.4897026
+
+Time = 4
+
+smoothSolver:  Solving for Ux, Initial residual = 0.18384167, Final residual = 0.015088176, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.17176157, Final residual = 0.013777649, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.16684495, Final residual = 0.013768943, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.23365857, Final residual = 0.0010516132, No Iterations 9
+GAMG:  Solving for p, Initial residual = 0.025888583, Final residual = 0.00022193168, No Iterations 5
+time step continuity errors : sum local = 0.015199155, global = 0.0009200753, cumulative = 0.001406717
+ExecutionTime = 25.58 s  ClockTime = 26 s
+
+surfaceFieldValue inletFlux write:
+    sum(inlet) of phi = -1.6946769e-07
+
+surfaceFieldValue inletPressure write:
+    areaAverage(inlet) of p = 11.319743
+
+surfaceFieldValue out_160Flux write:
+    sum(out_160) of phi = 1.8915968e-08
+
+surfaceFieldValue out_160Pressure write:
+    areaAverage(out_160) of p = 8.3424768
+
+surfaceFieldValue out_425Flux write:
+    sum(out_425) of phi = 2.9817541e-08
+
+surfaceFieldValue out_425Pressure write:
+    areaAverage(out_425) of p = 10.725341
+
+surfaceFieldValue out_600Flux write:
+    sum(out_600) of phi = 4.7431446e-09
+
+surfaceFieldValue out_600Pressure write:
+    areaAverage(out_600) of p = 8.4143609
+
+surfaceFieldValue out_639Flux write:
+    sum(out_639) of phi = -1.0255904e-08
+
+surfaceFieldValue out_639Pressure write:
+    areaAverage(out_639) of p = 11.030947
+
+surfaceFieldValue out_742Flux write:
+    sum(out_742) of phi = 5.5476612e-08
+
+surfaceFieldValue out_742Pressure write:
+    areaAverage(out_742) of p = 10.339403
+
+surfaceFieldValue out_868Flux write:
+    sum(out_868) of phi = 7.1870848e-08
+
+surfaceFieldValue out_868Pressure write:
+    areaAverage(out_868) of p = 10.276062
+
+surfaceFieldValue throatFlux write:
+    total area = 2.3886311e-07
+    areaNormalIntegrate(throatFluxPlane) of U = 2.4783531e-08
+
+surfaceFieldValue throatP write:
+    total area = 2.3886311e-07
+    areaAverage(throatPPlane) of p = 10.140914
+
+surfaceFieldValue measurementFlux write:
+    total area = 3.3695534e-06
+    areaNormalIntegrate(measurementFluxPlane) of U = 5.0637666e-09
+
+surfaceFieldValue measurementP write:
+    total area = 3.3695534e-06
+    areaAverage(measurementPPlane) of p = 8.7460427
+
+Time = 5
+
+smoothSolver:  Solving for Ux, Initial residual = 0.091006917, Final residual = 0.0070576281, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 0.082479698, Final residual = 0.0064536885, No Iterations 2
+smoothSolver:  Solving for Uz, Initial residual = 0.086130074, Final residual = 0.0069421187, No Iterations 2
+GAMG:  Solving for p, Initial residual = 0.28918337, Final residual = 0.0024892286, No Iterations 6
+GAMG:  Solving for p, Initial residual = 0.017986503, Final residual = 0.00014575494, No Iterations 11
+time step continuity errors : sum local = 0.0070515699, global = -0.00028539819, cumulative = 0.0011213188
+ExecutionTime = 31.4 s  ClockTime = 31 s
+
+surfaceFieldValue inletFlux write:
+    sum(inlet) of phi = -2.1121358e-07
+
+surfaceFieldValue inletPressure write:
+    areaAverage(inlet) of p = 11.319684
+
+surfaceFieldValue out_160Flux write:
+    sum(out_160) of phi = 2.3142356e-08
+
+surfaceFieldValue out_160Pressure write:
+    areaAverage(out_160) of p = 8.3138254
+
+surfaceFieldValue out_425Flux write:
+    sum(out_425) of phi = 3.7273329e-08
+
+surfaceFieldValue out_425Pressure write:
+    areaAverage(out_425) of p = 10.693751
+
+surfaceFieldValue out_600Flux write:
+    sum(out_600) of phi = 5.5399634e-09
+
+surfaceFieldValue out_600Pressure write:
+    areaAverage(out_600) of p = 8.3990632
+
+surfaceFieldValue out_639Flux write:
+    sum(out_639) of phi = -1.2410648e-08
+
+surfaceFieldValue out_639Pressure write:
+    areaAverage(out_639) of p = 11.018695
+
+surfaceFieldValue out_742Flux write:
+    sum(out_742) of phi = 6.9510635e-08
+
+surfaceFieldValue out_742Pressure write:
+    areaAverage(out_742) of p = 10.284284
+
+surfaceFieldValue out_868Flux write:
+    sum(out_868) of phi = 8.7816578e-08
+
+surfaceFieldValue out_868Pressure write:
+    areaAverage(out_868) of p = 10.22435
+
+surfaceFieldValue throatFlux write:
+    total area = 2.3886311e-07
+    areaNormalIntegrate(throatFluxPlane) of U = 2.937206e-08
+
+surfaceFieldValue throatP write:
+    total area = 2.3886311e-07
+    areaAverage(throatPPlane) of p = 10.336392
+
+surfaceFieldValue measurementFlux write:
+    total area = 3.3695534e-06
+    areaNormalIntegrate(measurementFluxPlane) of U = 5.9277426e-09
+
+surfaceFieldValue measurementP write:
+    total area = 3.3695534e-06
+    areaAverage(measurementPPlane) of p = 9.1896906
+
+End
+
+Finalising parallel run

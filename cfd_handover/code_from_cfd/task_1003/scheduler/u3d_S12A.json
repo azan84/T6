@@ -1,0 +1,11 @@
+{
+ "name": "u3d_S12A",
+ "ranks": 8,
+ "ram_gb": 9.8,
+ "disk_gb": 5,
+ "priority": 5,
+ "cmd": "nice -n 10 bash /home/azan/paper6_t6_work/lane2/u3d_job.sh S12A 8",
+ "after": [
+  "u3d_S25B"
+ ]
+}

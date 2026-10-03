@@ -1,0 +1,10 @@
+test_b1_settle.py                rc=0    0s  PASS {'A_res_mp': ('B1', '546', '546', 'RUN THE FULL BUDGET (D8 production default: no early stop is authorised); the D8 rule on measurementP WOULD stop at iteration 546 (max(first settled 546, floor 
+test_flow_state_profile.py       rc=0   21s  PASS: analytic offset/r_eq = a/4 = 0.1 reproduced (x tube and oblique tube, frame-independent), axisymmetric 0, compare AGREE/DIFFER as designed; invalid/missing/unmatched stations -> STATES INDETERMI
+test_post_guards.py              rc=0    0s  PASS: post guards (package resolution + build_info hash verification, last-run completion, radius provenance)
+test_manifest.sh                 rc=0    1s  PASS test_manifest
+test_flags_p5.py                 rc=0    1s  PASS: 5 cases, expected flag sets reproduced
+test_section_rule.py             rc=0   17s  PASS
+test_p5_stub.py                  rc=0   18s  PASS: 5 P5 packages built (case files, stub mesh)
+test_empty_patch_coded_bc.py     rc=0   67s  PASS: 0-face outlet patch: coded BC accepted on the empty patch (2 serial simpleFoam iterations, End), its monitors omitted (they are fatal: negative control), post path reports Q 0 / p N/A / OUTLET_L
+test_flow_state_sten70.sh        rc=0   59s  PASS: a5_arch8 (deflected) vs smoke_cont (axisymmetric) STATES DIFFER on the full profile; both comparisons with case_S50 INDETERMINATE (invalid x = 52 mm section), never AGREE on a subset
+test_post_case_generic.sh        rc=0  233s  PASS: post_case_generic.sh end to end on a synthetic finished solve (evidence in test_output/post_case_generic_synthetic/)

@@ -1,0 +1,14 @@
+[post 16:04:45] case /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn package SYN_tube_test__baseline__real label syn mode resistance out /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/out (P=/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot, helpers /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/pf)
+[post 16:04:45] + python3 /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/pf/post_helpers.py finished /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn --json /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/out/run_completion_syn_resistance.json
+RUN COMPLETE: last Time 1000 = endTime, End at line 46134
+[post 16:04:45] + post_helpers.py package-check /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn SYN_tube_test__baseline__real --pkg-root /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/pkg
+[post 16:04:45] package verified against build_info package_hashes: /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/pkg/SYN_tube_test__baseline__real
+[post 16:04:45] + nice -n 10 python3 /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/pf/analyze_case.py /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn --json /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn/analysis_pf.json --cached --require-finished
+/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn/analysis_pf.json: cached analysis STALE, regenerating: log.simpleFoam: changed (size 1805568 -> 1805544, sha256 b61aa0d6cc80 -> 7821be38d475)
+case_syn: VERDICT CONVERGED  residuals p=7.74e-09 U=(9.3e-10,9.1e-10,9.0e-10) log iter 1000; failed checks: []
+case_syn: last iter 1000, sum outlets 0.55340 mL/s, mass imbalance -1.0842054349206985e-06 %, inlet static p 11981.36 Pa (0.99853 Paorta), band(200) 0.0000 %
+outlet         Q mL/s   0D mL/s  Q/0D-1 %    P/Pao   BCerr %  band200 %  band500 %
+out_40        0.55340   0.53964     +2.55  0.97797   +0.0000    0.00004    0.01440
+case_syn: STRICT checks {'monitors_time_aligned': True, 'inlet_flux_band200_lt_0_1pct': True, 'log_no_fatal_or_nonfinite': True, 'residuals_all_finite': True} inlet-flux band(200) 4.571732817623614e-05 %, log finished False
+case_syn: --require-finished: analysis completion flag strict.log_finished is false -> exit 4
+[post 16:04:46] step failed (exit 4): nice -n 10 python3 /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/pf/analyze_case.py /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn --json /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn/analysis_pf.json --cached --require-finished

@@ -1,0 +1,16 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn",
+ "processor_dirs": [
+  "processor0",
+  "processor1"
+ ],
+ "latest_processor0": "1000",
+ "latest_reconstructed": "1000",
+ "fields": {
+  "U": 999266,
+  "p": 331386
+ },
+ "fails": [],
+ "ok": true,
+ "note": "processor directories are NOT removed by post_case_generic.sh; remove them only after this check is ok and the outputs are verified"
+}

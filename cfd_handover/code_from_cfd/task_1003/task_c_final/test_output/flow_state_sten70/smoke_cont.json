@@ -1,0 +1,27 @@
+{
+ "case": "/home/azan/paper6_t6_work/smoke_cont",
+ "label": "smoke_cont",
+ "time": 12000.0,
+ "cells": 198252,
+ "path": {
+  "straight_x": {
+   "x_throat_mm": 30.0,
+   "x_meas_mm": 56.5,
+   "y_mm": 0.0,
+   "z_mm": 0.0
+  },
+  "r_ref_mm": 2.0
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 26,
+ "n_valid": 26,
+ "max_offset_over_req": 0.00261568115747618,
+ "mean_offset_over_req": 0.0018403909560513955,
+ "s_from_throat_at_max_mm": 15.0,
+ "mean_oN": 0.0004614316590657938,
+ "mean_oB": -0.0017790956092300489,
+ "direction_persistence_R": 0.9403135274728264,
+ "mean_direction_deg": -71.26517423930883,
+ "invalid_stations": []
+}

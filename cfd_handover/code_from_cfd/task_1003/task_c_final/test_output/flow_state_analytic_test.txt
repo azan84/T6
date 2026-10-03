@@ -1,0 +1,2 @@
+{"x_tube_a0.4_phi30": 0.09991, "oblique_tube_a0.4_phi75": 0.09991, "x_tube_a0": 0.0, "compare_same": 0.0, "compare_a04_vs_a0": 0.09991, "compare_a04_vs_a032": 0.01998}
+PASS: analytic offset/r_eq = a/4 = 0.1 reproduced (x tube and oblique tube, frame-independent), axisymmetric 0, compare AGREE/DIFFER as designed; invalid/missing/unmatched stations -> STATES INDETERMINATE (never AGREE on a subset)

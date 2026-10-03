@@ -1,0 +1,10 @@
+# Region type : sampledSurface throatFluxPlane
+# Faces         : 1943
+# Area          : 2.38863110e-07
+# Scale factor  : 1.00000000e+00
+# Time          	Area	areaNormalIntegrate(U)
+1               	2.38863110e-07	2.05222893e-09
+2               	2.38863110e-07	9.09571200e-09
+3               	2.38863110e-07	1.78991676e-08
+4               	2.38863110e-07	2.47835310e-08
+5               	2.38863110e-07	2.93720602e-08

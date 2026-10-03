@@ -1,0 +1,9 @@
+{
+ "name": "p5_138",
+ "ranks": 8,
+ "ram_gb": 7.0,
+ "disk_gb": 6,
+ "priority": 4,
+ "cmd": "POST_CMD='cd /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot && P=/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot GATES_JSON=/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/out/138/gates.json MESH_GATES_JSON=/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/mesh/138/mesh_gates.json D34_JSON=/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/mesh/138/d34.json OMP_NUM_THREADS=4 bash /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/post_case_generic.sh /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/138_resistance 138_left_LAD_prox_20mm_70ds__baseline__real 138 resistance /mnt/e/Paper6-T6/Paper6-T6/cfd_handover/returns/2026-10-03/P5/138' DISK_NEED_GB=6 bash /home/azan/paper6_t6_work/lane2/case_job.sh /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/138_resistance 8",
+ "after": []
+}

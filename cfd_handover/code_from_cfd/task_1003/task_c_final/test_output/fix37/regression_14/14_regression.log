@@ -1,0 +1,40 @@
+[15:26:54] mask_deletion_reference_impl ...
+[15:27:18] mask_deletion_reference_impl done in 23.31 s
+[15:29:00] parent_radius_edt ...
+[15:29:10] parent_radius_edt done in 10.03 s
+[15:29:12] marching_cubes ...
+[15:29:12] marching_cubes done in 0.18 s
+[0m[33m2026-10-03 15:29:12.268 ( 139.620s) [    73758A194480]       vtkXMLWriter.cxx:1157  WARN| vtkXMLPolyDataWriter (0x613cb88b6d80): Using legacy vtkDataArray API, which may result in precision loss[0m
+[0m[33m2026-10-03 15:29:12.270 ( 139.621s) [    73758A194480]       vtkXMLWriter.cxx:1157  WARN| vtkXMLPolyDataWriter (0x613cb88b6d80): Using legacy vtkDataArray API, which may result in precision loss[0m
+[15:29:12] taubin_smoothing_vmtk ...
+[15:29:13] taubin_smoothing_vmtk done in 1.55 s
+[15:29:14] clip_at_inlet_and_outlets ...
+[15:29:14] clip_at_inlet_and_outlets done in 0.22 s
+[15:29:15] lesion_subdivision ...
+  refine pass 0: 5909 edges split -> 60939 triangles
+  refine pass 1: 23490 edges split -> 107919 triangles
+  refine pass 2: 93619 edges split -> 295157 triangles
+  refine pass 3: 336114 edges split -> 967385 triangles
+  refine pass 4: 86462 edges split -> 1140309 triangles
+  refine pass 5: 162 edges split -> 1140633 triangles
+  refine pass 6: 44 edges split -> 1140721 triangles
+  refine pass 7: 7 edges split -> 1140735 triangles
+  refine pass 8: 2 edges split -> 1140739 triangles
+  refine pass 9: 1 edges split -> 1140741 triangles
+  refine pass 10: 1 edges split -> 1140743 triangles
+  refine: converged after 11 passes; 1140743 triangles
+[15:30:52] lesion_subdivision done in 97.44 s
+[15:30:52] lesion_deformation ...
+[15:30:55] lesion_deformation done in 2.6 s
+[15:30:58] lesion_asbuilt_sections ...
+[15:31:28] lesion_asbuilt_sections done in 29.44 s
+[15:31:59] write_stl ...
+[15:33:07] write_stl done in 67.77 s
+[15:33:08] surfaceCheck ...
+[15:33:37] surfaceCheck done in 29.08 s
+[15:33:37] surface_radius_csv ...
+[15:34:58] surface_radius_csv done in 80.59 s
+[15:34:58] positive_control ...
+[15:36:23] positive_control done in 84.96 s
+{"case": "14_left_LAD_prox_20mm_80ds__baseline__real", "status": "DONE: decisive gates FAILED: surfaceCheck_not_self_intersecting; reported (non-decisive) check failed: lesion_literal_absolute_r_target_check", "wall_clock_total_s": 569.8}
+rc=0

@@ -1,0 +1,2304 @@
+{
+ "14_regression": {
+  "case": "14_left_LAD_prox_20mm_80ds__baseline__real",
+  "scan": 14,
+  "side": "left",
+  "vessel": "LAD",
+  "L_mm": 20.0,
+  "ds_pct": 80.0,
+  "status": "DONE: gates FAILED: lesion_literal_absolute_r_target_check, surfaceCheck_not_self_intersecting",
+  "failed_gates": [
+   "lesion_literal_absolute_r_target_check",
+   "surfaceCheck_not_self_intersecting"
+  ],
+  "throat_node": 73,
+  "r_target_mm": 0.23057604017311759,
+  "radial_scale": 0.20812386732536053,
+  "h_max_mm": 0.028822005021639698,
+  "lesion_outlet": "out_600",
+  "throat_selection": {
+   "throat_tree_node": 73,
+   "r_target_at_throat_mm": 0.23057604017311759,
+   "radial_scale_at_throat": 0.20812386732536053,
+   "argmin_r_target_on_lesion_path_tree_node": 73,
+   "argmin_radial_scale_tree_node": 73,
+   "global_min_r_target_mm": 0.23057604017311759,
+   "global_argmin_r_target_tree_node": 73,
+   "lesion_outlet": "out_600",
+   "lesion_path_segments": [
+    "LAD",
+    "LM"
+   ],
+   "throat_is_min_radial_scale_node": true
+  },
+  "rel_gate_pct": [
+   0.0016326195957372391,
+   0.02229035560272763,
+   0.024418367540701702
+  ],
+  "rel_PASS": true,
+  "abs_pct": [
+   14.03917836886064,
+   19.52254453095734,
+   -10.105070438260789
+  ],
+  "abs_PASS": false,
+  "asbuilt_mm": {
+   "insc_circle": 0.26294702172887735,
+   "area_equiv": 0.27559035029363255,
+   "sphere_at_axis": 0.20727616889987155
+  },
+  "purity_fold_window_PASS": true,
+  "fold_min_dot": 0.3685304616822229,
+  "G3": 0.9979508196721312,
+  "frame": [
+   [
+    121,
+    121
+   ],
+   [
+    0,
+    121
+   ]
+  ],
+  "frame_stated": {
+   "with_flip": [
+    42,
+    42
+   ],
+   "without_flip": [
+    0,
+    42
+   ],
+   "observed_with_flip": [
+    121,
+    121
+   ],
+   "observed_without_flip": [
+    0,
+    121
+   ],
+   "counts_match": false,
+   "fractions_match": true,
+   "note": "the meta.json frame text is the same template sentence in every package seen; its counts are compared, not asserted"
+  },
+  "voxels_removed": 1310,
+  "components_before_after": [
+   2,
+   2
+  ],
+  "erosion_f": {
+   "1.1": 0,
+   "1.15": 7,
+   "1.2": 15,
+   "1.25": 26,
+   "1.3": 33,
+   "1.5": 57,
+   "2.0": 106
+  },
+  "clip_loops": [
+   7,
+   7
+  ],
+  "tri": 1169068,
+  "vol_mm3": 1204.370893136776,
+  "final_self_intersecting": true,
+  "si_clusters": [
+   {
+    "n_points": 8,
+    "centroid_mm": [
+     59.56,
+     -184.2,
+     48.65
+    ],
+    "nearest_node": 285,
+    "segment": "LAD",
+    "distance_to_node_mm": 1.22,
+    "node_r_source_mm": 0.93,
+    "distance_over_r_source": 1.32,
+    "nearest_outlet": "out_600",
+    "distance_to_outlet_mm": 8.82,
+    "in_lesion_window": false
+   },
+   {
+    "n_points": 8,
+    "centroid_mm": [
+     58.07,
+     -163.71,
+     102.15
+    ],
+    "nearest_node": 133,
+    "segment": "D1",
+    "distance_to_node_mm": 0.86,
+    "node_r_source_mm": 0.53,
+    "distance_over_r_source": 1.62,
+    "nearest_outlet": "out_160",
+    "distance_to_outlet_mm": 12.68,
+    "in_lesion_window": false
+   }
+  ],
+  "raw_mc_self_intersecting": true,
+  "smoothed_self_intersecting": true,
+  "poscontrol": true,
+  "extensions": {
+   "inlet": {
+    "L_mm": 13.011,
+    "D_mm": 2.602,
+    "mult": 5.0,
+    "loop_Deq_mm": 3.461
+   },
+   "out_160": {
+    "L_mm": 3.628,
+    "D_mm": 1.209,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.621
+   },
+   "out_425": {
+    "L_mm": 3.508,
+    "D_mm": 1.169,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.227
+   },
+   "out_600": {
+    "L_mm": 3.344,
+    "D_mm": 1.115,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.018
+   },
+   "out_639": {
+    "L_mm": 3.291,
+    "D_mm": 1.097,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.046
+   },
+   "out_742": {
+    "L_mm": 4.493,
+    "D_mm": 1.498,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.562
+   },
+   "out_868": {
+    "L_mm": 4.733,
+    "D_mm": 1.578,
+    "mult": 3.0,
+    "loop_Deq_mm": 2.55
+   }
+  },
+  "geometry_wall_s": 405.6,
+  "runs_log": [],
+  "cells": 3657147,
+  "strict_failed": 3,
+  "strict_lines": [
+   "***Error in face tets: 1058 faces with low quality or negative volume decomposition tets.",
+   "***Concave cells (using face planes) found, number of cells: 52",
+   "***Faces with small volume ratio (< 0.01) found, number of faces: 30"
+  ],
+  "std_OK": true,
+  "patches": {
+   "inlet": 6375,
+   "out_160": 1802,
+   "out_425": 1056,
+   "out_600": 798,
+   "out_639": 807,
+   "out_742": 1617,
+   "out_868": 3203,
+   "wall": 394204
+  },
+  "patches_ok": true,
+  "cells_across": {
+   "per_diameter": [
+    36,
+    40,
+    37,
+    38,
+    39,
+    40,
+    44,
+    43
+   ],
+   "median": 39.5,
+   "min": 36,
+   "chord_lengths_mm": [
+    0.5625,
+    0.56,
+    0.542,
+    0.531,
+    0.5315,
+    0.546,
+    0.5685,
+    0.566
+   ],
+   "method": "8 in-plane diameters through the section centroid, 0.5 um sampling, runs of equal cell ids inside the lumen"
+  },
+  "throat_area_err_pct": -0.15763233165984047,
+  "p95_throat_um": 25.724178702324934,
+  "BL": {
+   "first4_stack_median": 16.5,
+   "first_cell_median": 3.25,
+   "note": "run lengths from the wall of the first 4 cells on both ends of 8 diameters"
+  },
+  "mesh_GATES_PASS": true,
+  "rss_gb": 2.74,
+  "cartesian_elapsed": "1:16.96",
+  "mesh_wall_s": 176.3,
+  "mesh_total_s": 221.0,
+  "max_nonortho": 55.623075,
+  "max_skew": 1.8503359,
+  "max_aspect": 10.978647,
+  "lesion_outlet_mesh": "out_600",
+  "d1_chain": "out_160",
+  "measure_error": null,
+  "flagged": {
+   "concaveCells": {
+    "n_points": 676,
+    "per_segment": {
+     "LAD": 117,
+     "LM": 75,
+     "LCX": 131,
+     "IM": 120,
+     "D1": 157,
+     "OM1": 34,
+     "OM2": 42
+    },
+    "min_dist_to_throat_mm": 2.7142629117869803,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 24,
+    "n_on_lad_path": 160,
+    "n_in_throat25_zone": 12,
+    "n_at_25um_interfaces_pm1mm": 22,
+    "n_in_tube50_zone": 85,
+    "n_at_50um_interfaces_pm1mm": 56
+   },
+   "concaveFaces": {
+    "n_points": 640,
+    "per_segment": {
+     "LAD": 109,
+     "LM": 205,
+     "IM": 56,
+     "LCX": 172,
+     "D1": 53,
+     "OM1": 7,
+     "OM2": 38
+    },
+    "min_dist_to_throat_mm": 2.6471776885620892,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 3,
+    "n_on_lad_path": 166,
+    "n_in_throat25_zone": 12,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 49,
+    "n_at_50um_interfaces_pm1mm": 19
+   },
+   "lowQualityTetFaces": {
+    "n_points": 4240,
+    "per_segment": {
+     "LAD": 876,
+     "LM": 238,
+     "LCX": 821,
+     "IM": 1045,
+     "D1": 368,
+     "OM1": 176,
+     "OM2": 716
+    },
+    "min_dist_to_throat_mm": 1.429636087748804,
+    "n_within_2mm_of_selfintersection_sites": 67,
+    "n_within_4mm_of_caps": 383,
+    "n_on_lad_path": 764,
+    "n_in_throat25_zone": 56,
+    "n_at_25um_interfaces_pm1mm": 38,
+    "n_in_tube50_zone": 359,
+    "n_at_50um_interfaces_pm1mm": 111
+   },
+   "lowVolRatioFaces": {
+    "n_points": 50,
+    "per_segment": {
+     "LM": 4,
+     "LCX": 17,
+     "IM": 9,
+     "D1": 20
+    },
+    "min_dist_to_throat_mm": 18.18006724237437,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 4,
+    "n_in_throat25_zone": 0,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 0,
+    "n_at_50um_interfaces_pm1mm": 0
+   }
+  },
+  "D4": "FAIL",
+  "D3": "FAIL",
+  "d34_min_throat_mm": 1.429636087748804,
+  "d34_min_meas_mm": 2.5467399875043646,
+  "d34_checks": {
+   "concaveCells": {
+    "n": 52,
+    "thr": 2.7142629117869803,
+    "meas": 6.831410196360456,
+    "thr_disc": 2.6553585301248632,
+    "meas_disc": 6.773447002999604
+   },
+   "concaveFaces": {
+    "n": null,
+    "thr": 2.6471776885620892,
+    "meas": 6.830633177473047,
+    "thr_disc": 2.606126535937331,
+    "meas_disc": 6.750651117722465
+   },
+   "lowQualityTetFaces": {
+    "n": 1058,
+    "thr": 1.429636087748804,
+    "meas": 2.5467399875043646,
+    "thr_disc": 1.3769017440735642,
+    "meas_disc": 2.073753031223645
+   },
+   "lowVolRatioFaces": {
+    "n": 30,
+    "thr": 18.18006724237437,
+    "meas": 8.688607273936666,
+    "thr_disc": 18.030934631146863,
+    "meas_disc": 7.69032999146658
+   },
+   "skewFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "nonOrthoFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "wrongOrientedFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "underdeterminedCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "zeroVolumeCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "lowWeightFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   }
+  },
+  "d34_within_2mm": [
+   "lowQualityTetFaces"
+  ]
+ },
+ "138": {
+  "case": "138_left_LAD_prox_20mm_70ds__baseline__real",
+  "scan": 138,
+  "side": "left",
+  "vessel": "LAD",
+  "L_mm": 20.0,
+  "ds_pct": 70.0,
+  "status": "DONE: gates FAILED: lesion_literal_absolute_r_target_check",
+  "failed_gates": [
+   "lesion_literal_absolute_r_target_check"
+  ],
+  "throat_node": 62,
+  "r_target_mm": 0.4026458314375019,
+  "radial_scale": 0.3707334895830572,
+  "h_max_mm": 0.050330728929687735,
+  "lesion_outlet": "out_439",
+  "throat_selection": {
+   "throat_tree_node": 62,
+   "r_target_at_throat_mm": 0.4026458314375019,
+   "radial_scale_at_throat": 0.3707334895830572,
+   "argmin_r_target_on_lesion_path_tree_node": 62,
+   "argmin_radial_scale_tree_node": 62,
+   "global_min_r_target_mm": 0.4026458314375019,
+   "global_argmin_r_target_tree_node": 62,
+   "lesion_outlet": "out_439",
+   "lesion_path_segments": [
+    "LAD",
+    "LM"
+   ],
+   "throat_is_min_radial_scale_node": true
+  },
+  "rel_gate_pct": [
+   0.014187468266468883,
+   0.013688931671707039,
+   0.35385399071918844
+  ],
+  "rel_PASS": true,
+  "abs_pct": [
+   4.29480341497519,
+   15.127908123901257,
+   -4.262379018563545
+  ],
+  "abs_PASS": false,
+  "asbuilt_mm": {
+   "insc_circle": 0.41993867835633497,
+   "area_equiv": 0.46355772288208547,
+   "sphere_at_axis": 0.38548353999918905
+  },
+  "purity_fold_window_PASS": true,
+  "fold_min_dot": 0.921591742200833,
+  "G3": 0.9968173138128581,
+  "frame": [
+   [
+    67,
+    67
+   ],
+   [
+    0,
+    67
+   ]
+  ],
+  "frame_stated": {
+   "with_flip": [
+    42,
+    42
+   ],
+   "without_flip": [
+    0,
+    42
+   ],
+   "observed_with_flip": [
+    67,
+    67
+   ],
+   "observed_without_flip": [
+    0,
+    67
+   ],
+   "counts_match": false,
+   "fractions_match": true,
+   "note": "the meta.json frame text is the same template sentence in every package seen; its counts are compared, not asserted"
+  },
+  "voxels_removed": 694,
+  "components_before_after": [
+   2,
+   2
+  ],
+  "erosion_f": {
+   "1.1": 0,
+   "1.15": 5,
+   "1.2": 6,
+   "1.25": 11,
+   "1.3": 14,
+   "1.5": 27,
+   "2.0": 59
+  },
+  "clip_loops": [
+   6,
+   6
+  ],
+  "tri": 484432,
+  "vol_mm3": 1396.1058479947376,
+  "final_self_intersecting": false,
+  "si_clusters": [],
+  "raw_mc_self_intersecting": true,
+  "smoothed_self_intersecting": false,
+  "poscontrol": true,
+  "extensions": {
+   "inlet": {
+    "L_mm": 15.164,
+    "D_mm": 3.033,
+    "mult": 5.0,
+    "loop_Deq_mm": 3.915
+   },
+   "out_159": {
+    "L_mm": 3.235,
+    "D_mm": 1.078,
+    "mult": 3.0,
+    "loop_Deq_mm": 0.872
+   },
+   "out_439": {
+    "L_mm": 3.43,
+    "D_mm": 1.143,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.639
+   },
+   "out_496": {
+    "L_mm": 3.409,
+    "D_mm": 1.136,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.089
+   },
+   "out_571": {
+    "L_mm": 3.976,
+    "D_mm": 1.325,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.517
+   },
+   "out_712": {
+    "L_mm": 4.541,
+    "D_mm": 1.514,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.717
+   }
+  },
+  "geometry_wall_s": 347.1,
+  "runs_log": [
+   [
+    "2026-10-03_11:51:15",
+    "geometry",
+    "0",
+    "349"
+   ],
+   [
+    "2026-10-03_12:05:57",
+    "mesh",
+    "0",
+    "882"
+   ],
+   [
+    "2026-10-03_12:05:58",
+    "d34",
+    "0",
+    "1232"
+   ]
+  ],
+  "cells": 4941176,
+  "strict_failed": 4,
+  "strict_lines": [
+   "***Max skewness = 4.8129956, 2 highly skew faces detected which may impair the quality of the results",
+   "***Error in face tets: 834 faces with low quality or negative volume decomposition tets.",
+   "***Concave cells (using face planes) found, number of cells: 49",
+   "***Faces with small volume ratio (< 0.01) found, number of faces: 31"
+  ],
+  "std_OK": false,
+  "patches": {
+   "inlet": 7793,
+   "out_159": 581,
+   "out_439": 1562,
+   "out_496": 907,
+   "out_571": 1519,
+   "out_712": 2030,
+   "wall": 470749
+  },
+  "patches_ok": true,
+  "cells_across": {
+   "per_diameter": [
+    55,
+    65,
+    65,
+    61,
+    71,
+    67,
+    55,
+    50
+   ],
+   "median": 63.0,
+   "min": 50,
+   "chord_lengths_mm": [
+    0.876,
+    0.933,
+    0.9905,
+    1.0035,
+    0.9735,
+    0.9215,
+    0.8575,
+    0.8455
+   ],
+   "method": "8 in-plane diameters through the section centroid, 0.5 um sampling, runs of equal cell ids inside the lumen"
+  },
+  "throat_area_err_pct": -0.05772883292670672,
+  "p95_throat_um": 25.595225602481076,
+  "BL": {
+   "first4_stack_median": 20.5,
+   "first_cell_median": 4.0,
+   "note": "run lengths from the wall of the first 4 cells on both ends of 8 diameters"
+  },
+  "mesh_GATES_PASS": false,
+  "rss_gb": 3.49,
+  "cartesian_elapsed": "7:15.55",
+  "mesh_wall_s": 878.1,
+  "mesh_total_s": 879.9,
+  "max_nonortho": 52.63096,
+  "max_skew": 4.8129956,
+  "max_aspect": 12.484171,
+  "lesion_outlet_mesh": "out_439",
+  "d1_chain": "out_496",
+  "measure_error": null,
+  "flagged": {
+   "concaveCells": {
+    "n_points": 622,
+    "per_segment": {
+     "LAD": 183,
+     "LM": 103,
+     "LCX": 34,
+     "OM2": 54,
+     "D1": 248
+    },
+    "min_dist_to_throat_mm": 5.539749254746678,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 6,
+    "n_on_lad_path": 140,
+    "n_in_throat25_zone": 0,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 101,
+    "n_at_50um_interfaces_pm1mm": 0
+   },
+   "concaveFaces": {
+    "n_points": 515,
+    "per_segment": {
+     "LAD": 247,
+     "LM": 64,
+     "LCX": 49,
+     "OM2": 44,
+     "OM1": 60,
+     "D1": 51
+    },
+    "min_dist_to_throat_mm": 3.7094724593220496,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 1,
+    "n_on_lad_path": 221,
+    "n_in_throat25_zone": 11,
+    "n_at_25um_interfaces_pm1mm": 19,
+    "n_in_tube50_zone": 122,
+    "n_at_50um_interfaces_pm1mm": 0
+   },
+   "lowQualityTetFaces": {
+    "n_points": 3445,
+    "per_segment": {
+     "LAD": 1009,
+     "LM": 170,
+     "LCX": 580,
+     "OM2": 574,
+     "OM1": 287,
+     "D1": 825
+    },
+    "min_dist_to_throat_mm": 0.44812857822319585,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 224,
+    "n_on_lad_path": 928,
+    "n_in_throat25_zone": 70,
+    "n_at_25um_interfaces_pm1mm": 67,
+    "n_in_tube50_zone": 391,
+    "n_at_50um_interfaces_pm1mm": 33
+   },
+   "lowVolRatioFaces": {
+    "n_points": 60,
+    "per_segment": {
+     "LAD": 23,
+     "LM": 8,
+     "D1": 29
+    },
+    "min_dist_to_throat_mm": 6.869072384233001,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 12,
+    "n_in_throat25_zone": 0,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 3,
+    "n_at_50um_interfaces_pm1mm": 0
+   },
+   "skewFaces": {
+    "n_points": 6,
+    "per_segment": {
+     "LCX": 6
+    },
+    "min_dist_to_throat_mm": 44.23935407054291,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 0,
+    "n_in_throat25_zone": 0,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 0,
+    "n_at_50um_interfaces_pm1mm": 0
+   }
+  },
+  "D4": "FAIL",
+  "D3": "FAIL",
+  "d34_min_throat_mm": 0.44812857822319585,
+  "d34_min_meas_mm": 1.0178176998332105,
+  "d34_checks": {
+   "concaveCells": {
+    "n": 49,
+    "thr": 5.539749254746678,
+    "meas": 11.552203239001635,
+    "thr_disc": 5.532614239582476,
+    "meas_disc": 10.589706914829476
+   },
+   "concaveFaces": {
+    "n": null,
+    "thr": 3.7094724593220496,
+    "meas": 6.288706108367326,
+    "thr_disc": 3.6697620470380734,
+    "meas_disc": 5.982192308132583
+   },
+   "lowQualityTetFaces": {
+    "n": 834,
+    "thr": 0.44812857822319585,
+    "meas": 1.0178176998332105,
+    "thr_disc": 0.05437971803788416,
+    "meas_disc": 0.1348127042697477
+   },
+   "lowVolRatioFaces": {
+    "n": 31,
+    "thr": 6.869072384233001,
+    "meas": 13.106167318897919,
+    "thr_disc": 6.705778730066158,
+    "meas_disc": 12.737459662349464
+   },
+   "skewFaces": {
+    "n": 2,
+    "thr": 44.23935407054291,
+    "meas": 62.80564716046842,
+    "thr_disc": 43.8019850573049,
+    "meas_disc": 61.87034813521646
+   },
+   "nonOrthoFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "wrongOrientedFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "underdeterminedCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "zeroVolumeCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "lowWeightFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   }
+  },
+  "d34_within_2mm": [
+   "lowQualityTetFaces"
+  ]
+ },
+ "69": {
+  "case": "69_left_LCX_prox_20mm_65ds__baseline__real",
+  "scan": 69,
+  "side": "left",
+  "vessel": "LCX",
+  "L_mm": 20.0,
+  "ds_pct": 65.0,
+  "status": "DONE: gates FAILED: lesion_purity_fold_window_edge_labels, lesion_literal_absolute_r_target_check, self_intersection_positive_control_flagged",
+  "failed_gates": [
+   "lesion_purity_fold_window_edge_labels",
+   "lesion_literal_absolute_r_target_check",
+   "self_intersection_positive_control_flagged"
+  ],
+  "throat_node": 76,
+  "r_target_mm": 0.5206042073084889,
+  "radial_scale": 0.34416391498326476,
+  "h_max_mm": 0.06507552591356111,
+  "lesion_outlet": "out_657",
+  "throat_selection": {
+   "throat_tree_node": 76,
+   "r_target_at_throat_mm": 0.5206042073084889,
+   "radial_scale_at_throat": 0.34416391498326476,
+   "argmin_r_target_on_lesion_path_tree_node": 76,
+   "argmin_radial_scale_tree_node": 76,
+   "global_min_r_target_mm": 0.5153303938373472,
+   "global_argmin_r_target_tree_node": 360,
+   "lesion_outlet": "out_657",
+   "lesion_path_segments": [
+    "LCX",
+    "LM"
+   ],
+   "throat_is_min_radial_scale_node": true
+  },
+  "rel_gate_pct": [
+   0.012099135208321066,
+   0.029973344267730795,
+   0.014573635222081549
+  ],
+  "rel_PASS": true,
+  "abs_pct": [
+   3.2463483323555753,
+   10.1529274079454,
+   -4.939050401512635
+  ],
+  "abs_PASS": false,
+  "asbuilt_mm": {
+   "insc_circle": 0.5375048333106209,
+   "area_equiv": 0.5734607745592294,
+   "sphere_at_axis": 0.4948913031171273
+  },
+  "purity_fold_window_PASS": false,
+  "fold_min_dot": 0.6567822910383959,
+  "G3": 0.9986263736263736,
+  "frame": [
+   [
+    85,
+    85
+   ],
+   [
+    0,
+    85
+   ]
+  ],
+  "frame_stated": {
+   "with_flip": [
+    42,
+    42
+   ],
+   "without_flip": [
+    0,
+    42
+   ],
+   "observed_with_flip": [
+    85,
+    85
+   ],
+   "observed_without_flip": [
+    0,
+    85
+   ],
+   "counts_match": false,
+   "fractions_match": true,
+   "note": "the meta.json frame text is the same template sentence in every package seen; its counts are compared, not asserted"
+  },
+  "voxels_removed": 1095,
+  "components_before_after": [
+   2,
+   2
+  ],
+  "erosion_f": {
+   "1.1": 0,
+   "1.15": 6,
+   "1.2": 8,
+   "1.25": 13,
+   "1.3": 19,
+   "1.5": 41,
+   "2.0": 79
+  },
+  "clip_loops": [
+   5,
+   5
+  ],
+  "tri": 343852,
+  "vol_mm3": 1303.0283278412787,
+  "final_self_intersecting": false,
+  "si_clusters": [],
+  "raw_mc_self_intersecting": true,
+  "smoothed_self_intersecting": false,
+  "poscontrol": false,
+  "extensions": {
+   "inlet": {
+    "L_mm": 18.12,
+    "D_mm": 3.624,
+    "mult": 5.0,
+    "loop_Deq_mm": 4.276
+   },
+   "out_282": {
+    "L_mm": 4.052,
+    "D_mm": 1.351,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.658
+   },
+   "out_369": {
+    "L_mm": 3.517,
+    "D_mm": 1.172,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.148
+   },
+   "out_486": {
+    "L_mm": 3.46,
+    "D_mm": 1.153,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.009
+   },
+   "out_657": {
+    "L_mm": 3.332,
+    "D_mm": 1.111,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.068
+   }
+  },
+  "geometry_wall_s": 260.0,
+  "runs_log": [
+   [
+    "2026-10-03_12:10:21",
+    "geometry",
+    "0",
+    "263"
+   ],
+   [
+    "2026-10-03_12:16:36",
+    "mesh",
+    "0",
+    "375"
+   ],
+   [
+    "2026-10-03_12:16:37",
+    "d34",
+    "0",
+    "639"
+   ]
+  ],
+  "cells": 4218023,
+  "strict_failed": 3,
+  "strict_lines": [
+   "***Error in face tets: 739 faces with low quality or negative volume decomposition tets.",
+   "***Concave cells (using face planes) found, number of cells: 74",
+   "***Faces with small volume ratio (< 0.01) found, number of faces: 71"
+  ],
+  "std_OK": true,
+  "patches": {
+   "inlet": 10366,
+   "out_282": 1727,
+   "out_369": 985,
+   "out_486": 781,
+   "out_657": 847,
+   "wall": 386977
+  },
+  "patches_ok": true,
+  "cells_across": {
+   "per_diameter": [
+    71,
+    82,
+    83,
+    76,
+    76,
+    67,
+    76,
+    78
+   ],
+   "median": 76.0,
+   "min": 67,
+   "chord_lengths_mm": [
+    1.1505,
+    1.197,
+    1.22,
+    1.1925,
+    1.129,
+    1.0785,
+    1.0815,
+    1.1125
+   ],
+   "method": "8 in-plane diameters through the section centroid, 0.5 um sampling, runs of equal cell ids inside the lumen"
+  },
+  "throat_area_err_pct": -0.04213672857973361,
+  "p95_throat_um": 25.63660760660545,
+  "BL": {
+   "first4_stack_median": 19.25,
+   "first_cell_median": 3.5,
+   "note": "run lengths from the wall of the first 4 cells on both ends of 8 diameters"
+  },
+  "mesh_GATES_PASS": true,
+  "rss_gb": 2.86,
+  "cartesian_elapsed": "2:37.41",
+  "mesh_wall_s": 346.0,
+  "mesh_total_s": 373.4,
+  "max_nonortho": 58.831762,
+  "max_skew": 1.8333993,
+  "max_aspect": 11.346912,
+  "lesion_outlet_mesh": "out_657",
+  "d1_chain": null,
+  "measure_error": null,
+  "flagged": {
+   "concaveCells": {
+    "n_points": 1123,
+    "per_segment": {
+     "LM": 183,
+     "LAD": 95,
+     "D1": 46,
+     "LCX": 160,
+     "OM1": 639
+    },
+    "min_dist_to_throat_mm": 2.805874394251959,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 34,
+    "n_on_lad_path": 143,
+    "n_in_throat25_zone": 74,
+    "n_at_25um_interfaces_pm1mm": 82,
+    "n_in_tube50_zone": 143,
+    "n_at_50um_interfaces_pm1mm": 10
+   },
+   "concaveFaces": {
+    "n_points": 466,
+    "per_segment": {
+     "LM": 87,
+     "LAD": 85,
+     "D1": 7,
+     "LCX": 183,
+     "OM1": 104
+    },
+    "min_dist_to_throat_mm": 2.7427546392367192,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 5,
+    "n_on_lad_path": 174,
+    "n_in_throat25_zone": 45,
+    "n_at_25um_interfaces_pm1mm": 50,
+    "n_in_tube50_zone": 143,
+    "n_at_50um_interfaces_pm1mm": 48
+   },
+   "lowQualityTetFaces": {
+    "n_points": 3165,
+    "per_segment": {
+     "LAD": 353,
+     "LM": 200,
+     "D1": 688,
+     "LCX": 1164,
+     "OM1": 760
+    },
+    "min_dist_to_throat_mm": 2.5959208957442828,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 464,
+    "n_on_lad_path": 1028,
+    "n_in_throat25_zone": 153,
+    "n_at_25um_interfaces_pm1mm": 181,
+    "n_in_tube50_zone": 332,
+    "n_at_50um_interfaces_pm1mm": 109
+   },
+   "lowVolRatioFaces": {
+    "n_points": 133,
+    "per_segment": {
+     "LM": 26,
+     "LAD": 4,
+     "OM1": 103
+    },
+    "min_dist_to_throat_mm": 10.254576448995797,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 0,
+    "n_in_throat25_zone": 0,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 0,
+    "n_at_50um_interfaces_pm1mm": 0
+   }
+  },
+  "D4": "PASS",
+  "D3": "PASS",
+  "d34_min_throat_mm": 2.5959208957442828,
+  "d34_min_meas_mm": 2.0397555874953426,
+  "d34_checks": {
+   "concaveCells": {
+    "n": 74,
+    "thr": 2.805874394251959,
+    "meas": 11.393483364432006,
+    "thr_disc": 2.7427365317084638,
+    "meas_disc": 11.25383369761886
+   },
+   "concaveFaces": {
+    "n": null,
+    "thr": 2.7427546392367192,
+    "meas": 7.990002429839903,
+    "thr_disc": 2.6860344319129736,
+    "meas_disc": 7.761036276444544
+   },
+   "lowQualityTetFaces": {
+    "n": 739,
+    "thr": 2.5959208957442828,
+    "meas": 2.0397555874953426,
+    "thr_disc": 2.4239890360384764,
+    "meas_disc": 1.5706985723599278
+   },
+   "lowVolRatioFaces": {
+    "n": 71,
+    "thr": 10.254576448995797,
+    "meas": 18.40145429552062,
+    "thr_disc": 9.951198740851936,
+    "meas_disc": 17.937767774304238
+   },
+   "skewFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "nonOrthoFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "wrongOrientedFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "underdeterminedCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "zeroVolumeCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "lowWeightFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   }
+  },
+  "d34_within_2mm": []
+ },
+ "473": {
+  "case": "473_left_LCX_prox_20mm_60ds__baseline__real",
+  "scan": 473,
+  "side": "left",
+  "vessel": "LCX",
+  "L_mm": 20.0,
+  "ds_pct": 60.0,
+  "status": "REJECTED: relative as-built throat differs from radial_scale by more than 1 % (no repair attempted; artefacts below are for inspection only)",
+  "failed_gates": [
+   "lesion_relative_throat_gate",
+   "lesion_literal_absolute_r_target_check"
+  ],
+  "throat_node": 81,
+  "r_target_mm": 0.6031250282039874,
+  "radial_scale": 0.40377456696361536,
+  "h_max_mm": 0.07539062852549842,
+  "lesion_outlet": "out_836",
+  "throat_selection": {
+   "throat_tree_node": 81,
+   "r_target_at_throat_mm": 0.6031250282039874,
+   "radial_scale_at_throat": 0.40377456696361536,
+   "argmin_r_target_on_lesion_path_tree_node": 81,
+   "argmin_radial_scale_tree_node": 82,
+   "global_min_r_target_mm": 0.457311628177176,
+   "global_argmin_r_target_tree_node": 571,
+   "lesion_outlet": "out_836",
+   "lesion_path_segments": [
+    "LCX",
+    "LM"
+   ],
+   "throat_is_min_radial_scale_node": false
+  },
+  "rel_gate_pct": [
+   0.01900491613964217,
+   0.03613295881172984,
+   1.780351017302939
+  ],
+  "rel_PASS": false,
+  "abs_pct": [
+   2.150651912915924,
+   6.549371227719258,
+   -5.071147364002937
+  ],
+  "abs_PASS": false,
+  "asbuilt_mm": {
+   "insc_circle": 0.6160961481603311,
+   "area_equiv": 0.6426259252683529,
+   "sphere_at_axis": 0.5725396692345789
+  },
+  "purity_fold_window_PASS": true,
+  "fold_min_dot": 0.903119537894829,
+  "G3": 0.9983870967741936,
+  "frame": [
+   [
+    126,
+    126
+   ],
+   [
+    0,
+    126
+   ]
+  ],
+  "frame_stated": {
+   "with_flip": [
+    42,
+    42
+   ],
+   "without_flip": [
+    0,
+    42
+   ],
+   "observed_with_flip": [
+    126,
+    126
+   ],
+   "observed_without_flip": [
+    0,
+    126
+   ],
+   "counts_match": false,
+   "fractions_match": true,
+   "note": "the meta.json frame text is the same template sentence in every package seen; its counts are compared, not asserted"
+  },
+  "voxels_removed": 1224,
+  "components_before_after": [
+   2,
+   2
+  ],
+  "erosion_f": {
+   "1.1": 0,
+   "1.15": 7,
+   "1.2": 8,
+   "1.25": 14,
+   "1.3": 18,
+   "1.5": 36,
+   "2.0": 70
+  },
+  "clip_loops": [
+   7,
+   7
+  ],
+  "tri": 287282,
+  "vol_mm3": 2108.6759763827918,
+  "final_self_intersecting": false,
+  "si_clusters": [],
+  "raw_mc_self_intersecting": true,
+  "smoothed_self_intersecting": false,
+  "poscontrol": true,
+  "extensions": {
+   "inlet": {
+    "L_mm": 19.019,
+    "D_mm": 3.804,
+    "mult": 5.0,
+    "loop_Deq_mm": 5.168
+   },
+   "out_160": {
+    "L_mm": 3.759,
+    "D_mm": 1.253,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.215
+   },
+   "out_372": {
+    "L_mm": 3.164,
+    "D_mm": 1.055,
+    "mult": 3.0,
+    "loop_Deq_mm": 0.947
+   },
+   "out_571": {
+    "L_mm": 2.744,
+    "D_mm": 0.915,
+    "mult": 3.0,
+    "loop_Deq_mm": 0.597
+   },
+   "out_633": {
+    "L_mm": 3.425,
+    "D_mm": 1.142,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.018
+   },
+   "out_691": {
+    "L_mm": 3.308,
+    "D_mm": 1.103,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.086
+   },
+   "out_836": {
+    "L_mm": 3.109,
+    "D_mm": 1.036,
+    "mult": 3.0,
+    "loop_Deq_mm": 0.997
+   }
+  },
+  "geometry_wall_s": 366.7,
+  "runs_log": [
+   [
+    "2026-10-03_12:22:45",
+    "geometry",
+    "3",
+    "368"
+   ],
+   [
+    "2026-10-03_12:31:07",
+    "mesh",
+    "0",
+    "502"
+   ],
+   [
+    "2026-10-03_12:31:08",
+    "d34",
+    "0",
+    "871"
+   ]
+  ],
+  "cells": 5487673,
+  "strict_failed": 3,
+  "strict_lines": [
+   "***Error in face tets: 1026 faces with low quality or negative volume decomposition tets.",
+   "***Concave cells (using face planes) found, number of cells: 115",
+   "***Faces with small volume ratio (< 0.01) found, number of faces: 66"
+  ],
+  "std_OK": true,
+  "patches": {
+   "inlet": 14991,
+   "out_160": 1027,
+   "out_372": 672,
+   "out_571": 347,
+   "out_633": 749,
+   "out_691": 878,
+   "out_836": 771,
+   "wall": 477887
+  },
+  "patches_ok": true,
+  "cells_across": {
+   "per_diameter": [
+    79,
+    89,
+    88,
+    83,
+    86,
+    81,
+    86,
+    90
+   ],
+   "median": 86.0,
+   "min": 79,
+   "chord_lengths_mm": [
+    1.2975,
+    1.2885,
+    1.294,
+    1.29,
+    1.269,
+    1.2465,
+    1.284,
+    1.3295
+   ],
+   "method": "8 in-plane diameters through the section centroid, 0.5 um sampling, runs of equal cell ids inside the lumen"
+  },
+  "throat_area_err_pct": -0.03729589424392721,
+  "p95_throat_um": 25.614176589999577,
+  "BL": {
+   "first4_stack_median": 17.5,
+   "first_cell_median": 3.0,
+   "note": "run lengths from the wall of the first 4 cells on both ends of 8 diameters"
+  },
+  "mesh_GATES_PASS": true,
+  "rss_gb": 3.72,
+  "cartesian_elapsed": "3:09.50",
+  "mesh_wall_s": 457.6,
+  "mesh_total_s": 500.0,
+  "max_nonortho": 58.115334,
+  "max_skew": 1.9133754,
+  "max_aspect": 13.013993,
+  "lesion_outlet_mesh": "out_836",
+  "d1_chain": null,
+  "measure_error": null,
+  "flagged": {
+   "concaveCells": {
+    "n_points": 1645,
+    "per_segment": {
+     "LAD": 133,
+     "LM": 656,
+     "LCX": 451,
+     "D2": 49,
+     "OM1": 238,
+     "OM2": 101,
+     "D1": 17
+    },
+    "min_dist_to_throat_mm": 1.334347606977893,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 112,
+    "n_on_lad_path": 304,
+    "n_in_throat25_zone": 78,
+    "n_at_25um_interfaces_pm1mm": 70,
+    "n_in_tube50_zone": 193,
+    "n_at_50um_interfaces_pm1mm": 16
+   },
+   "concaveFaces": {
+    "n_points": 659,
+    "per_segment": {
+     "LM": 164,
+     "LAD": 36,
+     "LCX": 235,
+     "D2": 24,
+     "OM1": 164,
+     "OM2": 19,
+     "D1": 17
+    },
+    "min_dist_to_throat_mm": 3.530076919127323,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 8,
+    "n_on_lad_path": 170,
+    "n_in_throat25_zone": 41,
+    "n_at_25um_interfaces_pm1mm": 77,
+    "n_in_tube50_zone": 151,
+    "n_at_50um_interfaces_pm1mm": 20
+   },
+   "lowQualityTetFaces": {
+    "n_points": 4376,
+    "per_segment": {
+     "LAD": 938,
+     "LM": 281,
+     "LCX": 1230,
+     "D1": 365,
+     "D2": 341,
+     "OM2": 598,
+     "OM1": 623
+    },
+    "min_dist_to_throat_mm": 1.3192116847081548,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 564,
+    "n_on_lad_path": 972,
+    "n_in_throat25_zone": 182,
+    "n_at_25um_interfaces_pm1mm": 268,
+    "n_in_tube50_zone": 382,
+    "n_at_50um_interfaces_pm1mm": 37
+   },
+   "lowVolRatioFaces": {
+    "n_points": 145,
+    "per_segment": {
+     "LM": 99,
+     "LAD": 4,
+     "LCX": 16,
+     "OM1": 26
+    },
+    "min_dist_to_throat_mm": 1.3444146980418952,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 11,
+    "n_in_throat25_zone": 4,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 11,
+    "n_at_50um_interfaces_pm1mm": 0
+   }
+  },
+  "D4": "FAIL",
+  "D3": "FAIL",
+  "d34_min_throat_mm": 1.3192116847081548,
+  "d34_min_meas_mm": 1.0695781693120985,
+  "d34_checks": {
+   "concaveCells": {
+    "n": 115,
+    "thr": 1.334347606977893,
+    "meas": 1.8281331168004995,
+    "thr_disc": 1.2469867477567511,
+    "meas_disc": 1.0329922922798784
+   },
+   "concaveFaces": {
+    "n": null,
+    "thr": 3.530076919127323,
+    "meas": 1.0695781693120985,
+    "thr_disc": 3.4379335194030265,
+    "meas_disc": 0.38079825109951554
+   },
+   "lowQualityTetFaces": {
+    "n": 1026,
+    "thr": 1.3192116847081548,
+    "meas": 1.245582099865063,
+    "thr_disc": 1.2198932969071874,
+    "meas_disc": 0.11183610663772979
+   },
+   "lowVolRatioFaces": {
+    "n": 66,
+    "thr": 1.3444146980418952,
+    "meas": 2.1425327044208893,
+    "thr_disc": 1.2521268370593834,
+    "meas_disc": 1.307374627192654
+   },
+   "skewFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "nonOrthoFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "wrongOrientedFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "underdeterminedCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "zeroVolumeCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "lowWeightFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   }
+  },
+  "d34_within_2mm": [
+   "concaveCells",
+   "concaveFaces",
+   "lowQualityTetFaces",
+   "lowVolRatioFaces"
+  ]
+ },
+ "272": {
+  "case": "272_right_RCA_prox_10mm_65ds__baseline__real",
+  "scan": 272,
+  "side": "right",
+  "vessel": "RCA",
+  "L_mm": 10.0,
+  "ds_pct": 65.0,
+  "status": "DONE: gates FAILED: lesion_literal_absolute_r_target_check, surfaceCheck_not_self_intersecting",
+  "failed_gates": [
+   "lesion_literal_absolute_r_target_check",
+   "surfaceCheck_not_self_intersecting"
+  ],
+  "throat_node": 55,
+  "r_target_mm": 0.551137409871611,
+  "radial_scale": 0.32680211815391996,
+  "h_max_mm": 0.06889217623395137,
+  "lesion_outlet": "out_620",
+  "throat_selection": {
+   "throat_tree_node": 55,
+   "r_target_at_throat_mm": 0.551137409871611,
+   "radial_scale_at_throat": 0.32680211815391996,
+   "argmin_r_target_on_lesion_path_tree_node": 55,
+   "argmin_radial_scale_tree_node": 55,
+   "global_min_r_target_mm": 0.4198009798145939,
+   "global_argmin_r_target_tree_node": 380,
+   "lesion_outlet": "out_620",
+   "lesion_path_segments": [
+    "RCA"
+   ],
+   "throat_is_min_radial_scale_node": true
+  },
+  "rel_gate_pct": [
+   0.04125527652476535,
+   0.12328601580493537,
+   0.022490872761760095
+  ],
+  "rel_PASS": true,
+  "abs_pct": [
+   9.257570362990307,
+   17.366161756221853,
+   5.487855092108007
+  ],
+  "abs_PASS": false,
+  "asbuilt_mm": {
+   "insc_circle": 0.6021593433872376,
+   "area_equiv": 0.6468488239689664,
+   "sphere_at_axis": 0.5813830322837623
+  },
+  "purity_fold_window_PASS": true,
+  "fold_min_dot": 0.6688816286332178,
+  "G3": 0.9967186218211649,
+  "frame": [
+   [
+    194,
+    194
+   ],
+   [
+    0,
+    194
+   ]
+  ],
+  "frame_stated": {
+   "with_flip": [
+    42,
+    42
+   ],
+   "without_flip": [
+    0,
+    42
+   ],
+   "observed_with_flip": [
+    194,
+    194
+   ],
+   "observed_without_flip": [
+    0,
+    194
+   ],
+   "counts_match": false,
+   "fractions_match": true,
+   "note": "the meta.json frame text is the same template sentence in every package seen; its counts are compared, not asserted"
+  },
+  "voxels_removed": 1887,
+  "components_before_after": [
+   2,
+   2
+  ],
+  "erosion_f": {
+   "1.1": 0,
+   "1.15": 7,
+   "1.2": 18,
+   "1.25": 23,
+   "1.3": 28,
+   "1.5": 51,
+   "2.0": 91
+  },
+  "clip_loops": [
+   4,
+   4
+  ],
+  "tri": 199516,
+  "vol_mm3": 1334.35166018323,
+  "final_self_intersecting": true,
+  "si_clusters": [
+   {
+    "n_points": 1,
+    "centroid_mm": [
+     3.59,
+     -195.37,
+     233.81
+    ],
+    "nearest_node": 0,
+    "segment": "RCA",
+    "distance_to_node_mm": 5.44,
+    "node_r_source_mm": 1.66,
+    "distance_over_r_source": 3.28,
+    "nearest_outlet": "out_279",
+    "distance_to_outlet_mm": 53.53,
+    "in_lesion_window": false
+   }
+  ],
+  "raw_mc_self_intersecting": true,
+  "smoothed_self_intersecting": false,
+  "poscontrol": true,
+  "extensions": {
+   "inlet": {
+    "L_mm": 16.592,
+    "D_mm": 3.318,
+    "mult": 5.0,
+    "loop_Deq_mm": 3.801
+   },
+   "out_279": {
+    "L_mm": 3.371,
+    "D_mm": 1.124,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.174
+   },
+   "out_396": {
+    "L_mm": 3.17,
+    "D_mm": 1.057,
+    "mult": 3.0,
+    "loop_Deq_mm": 1.203
+   },
+   "out_620": {
+    "L_mm": 3.357,
+    "D_mm": 1.119,
+    "mult": 3.0,
+    "loop_Deq_mm": 0.854
+   }
+  },
+  "geometry_wall_s": 232.6,
+  "runs_log": [
+   [
+    "2026-10-03_12:35:03",
+    "geometry",
+    "0",
+    "235"
+   ],
+   [
+    "2026-10-03_12:47:59",
+    "mesh",
+    "0",
+    "776"
+   ],
+   [
+    "2026-10-03_12:48:01",
+    "d34",
+    "0",
+    "1013"
+   ]
+  ],
+  "cells": 7639018,
+  "strict_failed": 3,
+  "strict_lines": [
+   "***Error in face tets: 466 faces with low quality or negative volume decomposition tets.",
+   "***Concave cells (using face planes) found, number of cells: 38",
+   "***Faces with small volume ratio (< 0.01) found, number of faces: 15"
+  ],
+  "std_OK": true,
+  "patches": {
+   "inlet": 6991,
+   "out_279": 970,
+   "out_396": 0,
+   "out_620": 542,
+   "wall": 525417
+  },
+  "patches_ok": false,
+  "cells_across": {
+   "per_diameter": [
+    68,
+    85,
+    89,
+    86,
+    81,
+    89,
+    88,
+    78
+   ],
+   "median": 85.5,
+   "min": 68,
+   "chord_lengths_mm": [
+    1.332,
+    1.307,
+    1.2705,
+    1.274,
+    1.259,
+    1.252,
+    1.306,
+    1.342
+   ],
+   "method": "8 in-plane diameters through the section centroid, 0.5 um sampling, runs of equal cell ids inside the lumen"
+  },
+  "throat_area_err_pct": -0.01529284015635568,
+  "p95_throat_um": 25.538821839126445,
+  "BL": {
+   "first4_stack_median": 17.25,
+   "first_cell_median": 3.5,
+   "note": "run lengths from the wall of the first 4 cells on both ends of 8 diameters"
+  },
+  "mesh_GATES_PASS": false,
+  "rss_gb": 4.98,
+  "cartesian_elapsed": "4:13.47",
+  "mesh_wall_s": 618.9,
+  "mesh_total_s": 774.4,
+  "max_nonortho": 55.864739,
+  "max_skew": 2.0535388,
+  "max_aspect": 12.295147,
+  "lesion_outlet_mesh": "out_620",
+  "d1_chain": null,
+  "measure_error": null,
+  "flagged": {
+   "concaveCells": {
+    "n_points": 532,
+    "per_segment": {
+     "RCA": 320,
+     "R-PDA": 186,
+     "R-PLA": 26
+    },
+    "min_dist_to_throat_mm": 0.8308786080725512,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 9,
+    "n_on_lad_path": 105,
+    "n_in_throat25_zone": 44,
+    "n_at_25um_interfaces_pm1mm": 20,
+    "n_in_tube50_zone": 44,
+    "n_at_50um_interfaces_pm1mm": 0
+   },
+   "concaveFaces": {
+    "n_points": 885,
+    "per_segment": {
+     "RCA": 802,
+     "R-PDA": 50,
+     "R-PLA": 33
+    },
+    "min_dist_to_throat_mm": 0.8766740896177162,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 256,
+    "n_in_throat25_zone": 98,
+    "n_at_25um_interfaces_pm1mm": 87,
+    "n_in_tube50_zone": 172,
+    "n_at_50um_interfaces_pm1mm": 41
+   },
+   "lowQualityTetFaces": {
+    "n_points": 2109,
+    "per_segment": {
+     "RCA": 945,
+     "R-PDA": 769,
+     "R-PLA": 395
+    },
+    "min_dist_to_throat_mm": 1.2119820346781398,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 48,
+    "n_on_lad_path": 593,
+    "n_in_throat25_zone": 156,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 191,
+    "n_at_50um_interfaces_pm1mm": 14
+   },
+   "lowVolRatioFaces": {
+    "n_points": 31,
+    "per_segment": {
+     "RCA": 10,
+     "R-PDA": 21
+    },
+    "min_dist_to_throat_mm": 32.232750400670405,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 2,
+    "n_in_throat25_zone": 0,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 0,
+    "n_at_50um_interfaces_pm1mm": 0
+   }
+  },
+  "D4": "FAIL",
+  "D3": "FAIL",
+  "d34_min_throat_mm": 0.8308786080725512,
+  "d34_min_meas_mm": 2.013478064842647,
+  "d34_checks": {
+   "concaveCells": {
+    "n": 38,
+    "thr": 0.8308786080725512,
+    "meas": 2.380407339651508,
+    "thr_disc": 0.5983012905166688,
+    "meas_disc": 1.5616008909219867
+   },
+   "concaveFaces": {
+    "n": null,
+    "thr": 0.8766740896177162,
+    "meas": 2.013478064842647,
+    "thr_disc": 0.6520651325583005,
+    "meas_disc": 1.4397472284461614
+   },
+   "lowQualityTetFaces": {
+    "n": 466,
+    "thr": 1.2119820346781398,
+    "meas": 2.1763500669921565,
+    "thr_disc": 0.8790098264873148,
+    "meas_disc": 1.309071222807052
+   },
+   "lowVolRatioFaces": {
+    "n": 15,
+    "thr": 32.232750400670405,
+    "meas": 37.27216885741379,
+    "thr_disc": 31.959324125983123,
+    "meas_disc": 36.43165652492918
+   },
+   "skewFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "nonOrthoFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "wrongOrientedFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "underdeterminedCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "zeroVolumeCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "lowWeightFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   }
+  },
+  "d34_within_2mm": [
+   "concaveCells",
+   "concaveFaces",
+   "lowQualityTetFaces"
+  ]
+ },
+ "139": {
+  "case": "139_right_RCA_prox_10mm_70ds__baseline__real",
+  "scan": 139,
+  "side": "right",
+  "vessel": "RCA",
+  "L_mm": 10.0,
+  "ds_pct": 70.0,
+  "status": "REJECTED: relative as-built throat differs from radial_scale by more than 1 % (no repair attempted; artefacts below are for inspection only)",
+  "failed_gates": [
+   "lesion_relative_throat_gate",
+   "lesion_literal_absolute_r_target_check"
+  ],
+  "throat_node": 44,
+  "r_target_mm": 0.3048661818332669,
+  "radial_scale": 0.2982276534509864,
+  "h_max_mm": 0.038108272729158364,
+  "lesion_outlet": "out_367",
+  "throat_selection": {
+   "throat_tree_node": 44,
+   "r_target_at_throat_mm": 0.3048661818332669,
+   "radial_scale_at_throat": 0.2982276534509864,
+   "argmin_r_target_on_lesion_path_tree_node": 44,
+   "argmin_radial_scale_tree_node": 44,
+   "global_min_r_target_mm": 0.3048661818332669,
+   "global_argmin_r_target_tree_node": 44,
+   "lesion_outlet": "out_367",
+   "lesion_path_segments": [
+    "RCA"
+   ],
+   "throat_is_min_radial_scale_node": true
+  },
+  "rel_gate_pct": [
+   0.0283942873474885,
+   0.06031801887735888,
+   3.332398992221197
+  ],
+  "rel_PASS": false,
+  "abs_pct": [
+   7.55775550541784,
+   11.971954844434297,
+   -0.4023560606080445
+  ],
+  "abs_PASS": false,
+  "asbuilt_mm": {
+   "insc_circle": 0.3279072224749278,
+   "area_equiv": 0.3413646234582966,
+   "sphere_at_axis": 0.30363953427391643
+  },
+  "purity_fold_window_PASS": true,
+  "fold_min_dot": 0.7586663236469625,
+  "G3": 0.9985052316890882,
+  "frame": [
+   [
+    61,
+    61
+   ],
+   [
+    0,
+    61
+   ]
+  ],
+  "frame_stated": {
+   "with_flip": [
+    42,
+    42
+   ],
+   "without_flip": [
+    0,
+    42
+   ],
+   "observed_with_flip": [
+    61,
+    61
+   ],
+   "observed_without_flip": [
+    0,
+    61
+   ],
+   "counts_match": false,
+   "fractions_match": true,
+   "note": "the meta.json frame text is the same template sentence in every package seen; its counts are compared, not asserted"
+  },
+  "voxels_removed": 665,
+  "components_before_after": [
+   2,
+   2
+  ],
+  "erosion_f": {
+   "1.1": 0,
+   "1.15": 5,
+   "1.2": 14,
+   "1.25": 21,
+   "1.3": 25,
+   "1.5": 49,
+   "2.0": 78
+  },
+  "clip_loops": [
+   3,
+   3
+  ],
+  "tri": 337006,
+  "vol_mm3": 754.6453682857491,
+  "final_self_intersecting": false,
+  "si_clusters": [],
+  "raw_mc_self_intersecting": true,
+  "smoothed_self_intersecting": false,
+  "poscontrol": true,
+  "extensions": {
+   "inlet": {
+    "L_mm": 10.818,
+    "D_mm": 2.164,
+    "mult": 5.0,
+    "loop_Deq_mm": 3.415
+   },
+   "out_367": {
+    "L_mm": 3.349,
+    "D_mm": 1.116,
+    "mult": 3.0,
+    "loop_Deq_mm": 0.854
+   },
+   "out_550": {
+    "L_mm": 3.128,
+    "D_mm": 1.043,
+    "mult": 3.0,
+    "loop_Deq_mm": 0.753
+   }
+  },
+  "geometry_wall_s": 316.1,
+  "runs_log": [
+   [
+    "2026-10-03_12:53:19",
+    "geometry",
+    "3",
+    "318"
+   ],
+   [
+    "2026-10-03_12:58:57",
+    "mesh",
+    "0",
+    "338"
+   ],
+   [
+    "2026-10-03_12:58:58",
+    "d34",
+    "0",
+    "657"
+   ]
+  ],
+  "cells": 4138185,
+  "strict_failed": 3,
+  "strict_lines": [
+   "***Error in face tets: 480 faces with low quality or negative volume decomposition tets.",
+   "***Concave cells (using face planes) found, number of cells: 33",
+   "***Faces with small volume ratio (< 0.01) found, number of faces: 12"
+  ],
+  "std_OK": true,
+  "patches": {
+   "inlet": 7048,
+   "out_367": 554,
+   "out_550": 438,
+   "wall": 377582
+  },
+  "patches_ok": true,
+  "cells_across": {
+   "per_diameter": [
+    45,
+    43,
+    42,
+    44,
+    51,
+    47,
+    39,
+    43
+   ],
+   "median": 43.5,
+   "min": 39,
+   "chord_lengths_mm": [
+    0.6635,
+    0.6675,
+    0.6835,
+    0.696,
+    0.707,
+    0.7015,
+    0.6875,
+    0.6725
+   ],
+   "method": "8 in-plane diameters through the section centroid, 0.5 um sampling, runs of equal cell ids inside the lumen"
+  },
+  "throat_area_err_pct": -0.0738647354914801,
+  "p95_throat_um": 25.52358080064753,
+  "BL": {
+   "first4_stack_median": 17.25,
+   "first_cell_median": 3.5,
+   "note": "run lengths from the wall of the first 4 cells on both ends of 8 diameters"
+  },
+  "mesh_GATES_PASS": true,
+  "rss_gb": 2.95,
+  "cartesian_elapsed": "2:18.40",
+  "mesh_wall_s": 310.3,
+  "mesh_total_s": 336.8,
+  "max_nonortho": 55.5724,
+  "max_skew": 1.91382,
+  "max_aspect": 11.358617,
+  "lesion_outlet_mesh": "out_367",
+  "d1_chain": null,
+  "measure_error": null,
+  "flagged": {
+   "concaveCells": {
+    "n_points": 432,
+    "per_segment": {
+     "R-PLA": 29,
+     "RCA": 403
+    },
+    "min_dist_to_throat_mm": 3.8379271426071955,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 6,
+    "n_on_lad_path": 301,
+    "n_in_throat25_zone": 10,
+    "n_at_25um_interfaces_pm1mm": 70,
+    "n_in_tube50_zone": 238,
+    "n_at_50um_interfaces_pm1mm": 30
+   },
+   "concaveFaces": {
+    "n_points": 429,
+    "per_segment": {
+     "R-PDA": 70,
+     "R-PLA": 21,
+     "RCA": 338
+    },
+    "min_dist_to_throat_mm": 2.5857938880752296,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 344,
+    "n_in_throat25_zone": 110,
+    "n_at_25um_interfaces_pm1mm": 113,
+    "n_in_tube50_zone": 270,
+    "n_at_50um_interfaces_pm1mm": 6
+   },
+   "lowQualityTetFaces": {
+    "n_points": 2157,
+    "per_segment": {
+     "RCA": 892,
+     "R-PDA": 387,
+     "R-PLA": 878
+    },
+    "min_dist_to_throat_mm": 1.5493486853134968,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 137,
+    "n_on_lad_path": 1510,
+    "n_in_throat25_zone": 154,
+    "n_at_25um_interfaces_pm1mm": 109,
+    "n_in_tube50_zone": 579,
+    "n_at_50um_interfaces_pm1mm": 85
+   },
+   "lowVolRatioFaces": {
+    "n_points": 20,
+    "per_segment": {
+     "R-PLA": 4,
+     "RCA": 16
+    },
+    "min_dist_to_throat_mm": 25.743232243847885,
+    "n_within_2mm_of_selfintersection_sites": 0,
+    "n_within_4mm_of_caps": 0,
+    "n_on_lad_path": 4,
+    "n_in_throat25_zone": 0,
+    "n_at_25um_interfaces_pm1mm": 0,
+    "n_in_tube50_zone": 0,
+    "n_at_50um_interfaces_pm1mm": 0
+   }
+  },
+  "D4": "FAIL",
+  "D3": "FAIL",
+  "d34_min_throat_mm": 1.5493486853134968,
+  "d34_min_meas_mm": 1.7927540247533746,
+  "d34_checks": {
+   "concaveCells": {
+    "n": 33,
+    "thr": 3.8379271426071955,
+    "meas": 1.825122381590848,
+    "thr_disc": 3.7695268530603454,
+    "meas_disc": 1.5414054656346876
+   },
+   "concaveFaces": {
+    "n": null,
+    "thr": 2.5857938880752296,
+    "meas": 1.8103229340232097,
+    "thr_disc": 2.5086037065467783,
+    "meas_disc": 1.5414054656346876
+   },
+   "lowQualityTetFaces": {
+    "n": 480,
+    "thr": 1.5493486853134968,
+    "meas": 1.7927540247533746,
+    "thr_disc": 1.4294569461921816,
+    "meas_disc": 1.4573879514691908
+   },
+   "lowVolRatioFaces": {
+    "n": 12,
+    "thr": 25.743232243847885,
+    "meas": 43.84700039376991,
+    "thr_disc": 25.540017652565894,
+    "meas_disc": 43.25073413055315
+   },
+   "skewFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "nonOrthoFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "wrongOrientedFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "underdeterminedCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "zeroVolumeCells": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   },
+   "lowWeightFaces": {
+    "n": null,
+    "thr": null,
+    "meas": null,
+    "thr_disc": null,
+    "meas_disc": null
+   }
+  },
+  "d34_within_2mm": [
+   "concaveCells",
+   "concaveFaces",
+   "lowQualityTetFaces"
+  ]
+ }
+}

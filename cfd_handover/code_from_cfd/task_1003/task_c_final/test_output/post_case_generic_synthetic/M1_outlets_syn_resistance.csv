@@ -1,0 +1,2 @@
+case,mode,outlet_id,tree_node,R_SI,R_source,relax,Q_mls,Q_target_bcC_mls,Q_over_target_minus_1_pct,Q_band_last100_pct,p_bar_Pa,p_bar_over_Paorta,p_bar_band_last100_pct,p_bcA_x_bcC_Pa,closed,lost_in_mesh,flag
+syn,resistance,out_40,40,20000000000.0,bc_A.csv,0.013068640364285298,0.55340065807,0.5396366666666667,2.5506034436751035,8.492942549553112e-06,11734.623152000004,0.9779683899798153,0.0,11459.343333333332,0,0,

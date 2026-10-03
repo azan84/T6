@@ -1,0 +1,17 @@
+{
+ "case": "272_resistance",
+ "mode": "resistance",
+ "note": "stub for analyze_solve.py: Q0_mls is the TARGET flow (prescribed/bc_C), R_out the reference resistance law; NO 0D prediction",
+ "outlets": {
+  "out_279": {
+   "R_out": 13459838741.886534,
+   "Q0_mls": 0.5488493158721943,
+   "relax": 0.0824720865081195
+  },
+  "out_620": {
+   "R_out": 13411782357.944126,
+   "Q0_mls": 0.5532869643855423,
+   "relax": 0.09845583779398222
+  }
+ }
+}

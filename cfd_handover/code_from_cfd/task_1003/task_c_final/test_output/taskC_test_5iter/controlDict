@@ -1,0 +1,160 @@
+FoamFile { version 2.0; format ascii; class dictionary; object controlDict; }
+application     simpleFoam;
+startFrom       startTime;
+startTime       0;
+stopAt          endTime;
+endTime         5;
+deltaT          1;
+writeControl    timeStep;
+writeInterval   250;
+purgeWrite      3;
+writeFormat     binary;
+writePrecision  8;
+writeCompression off;
+timeFormat      general;
+timePrecision   8;
+runTimeModifiable true;
+
+functions
+{
+    inletFlux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name inlet; operation sum; fields (phi);
+    }
+    inletPressure
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name inlet; operation areaAverage; fields (p);
+    }
+    out_160Flux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_160; operation sum; fields (phi);
+    }
+    out_160Pressure
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_160; operation areaAverage; fields (p);
+    }
+    out_425Flux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_425; operation sum; fields (phi);
+    }
+    out_425Pressure
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_425; operation areaAverage; fields (p);
+    }
+    out_600Flux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_600; operation sum; fields (phi);
+    }
+    out_600Pressure
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_600; operation areaAverage; fields (p);
+    }
+    out_639Flux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_639; operation sum; fields (phi);
+    }
+    out_639Pressure
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_639; operation areaAverage; fields (p);
+    }
+    out_742Flux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_742; operation sum; fields (phi);
+    }
+    out_742Pressure
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_742; operation areaAverage; fields (p);
+    }
+    out_868Flux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_868; operation sum; fields (phi);
+    }
+    out_868Pressure
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true;
+        regionType patch; name out_868; operation areaAverage; fields (p);
+    }
+    throatFlux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true; writeArea true;
+        regionType sampledSurface; name throatFluxPlane;
+        sampledSurfaceDict
+        {
+            type plane; planeType pointAndNormal;
+            pointAndNormalDict { point (4.353410721e-02 -1.499331818e-01 1.229501114e-01); normal (4.105552404e-01 -3.932599948e-01 -8.226730645e-01); }
+            bounds (4.122834681e-02 -1.522389422e-01 1.206443510e-01) (4.583986761e-02 -1.476274214e-01 1.252558718e-01);
+            interpolate false;
+        }
+        operation areaNormalIntegrate; fields (U);
+    }
+    throatP
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true; writeArea true;
+        regionType sampledSurface; name throatPPlane;
+        sampledSurfaceDict
+        {
+            type plane; planeType pointAndNormal;
+            pointAndNormalDict { point (4.353410721e-02 -1.499331818e-01 1.229501114e-01); normal (4.105552404e-01 -3.932599948e-01 -8.226730645e-01); }
+            bounds (4.122834681e-02 -1.522389422e-01 1.206443510e-01) (4.583986761e-02 -1.476274214e-01 1.252558718e-01);
+            interpolate false;
+        }
+        operation areaAverage; fields (p);
+    }
+    measurementFlux
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true; writeArea true;
+        regionType sampledSurface; name measurementFluxPlane;
+        sampledSurfaceDict
+        {
+            type plane; planeType pointAndNormal;
+            pointAndNormalDict { point (5.413552475e-02 -1.687080078e-01 1.024483566e-01); normal (1.525527082e-01 -7.286071699e-01 -6.677269376e-01); }
+            bounds (5.227624417e-02 -1.705672884e-01 1.005890760e-01) (5.599480533e-02 -1.668487272e-01 1.043076372e-01);
+            interpolate false;
+        }
+        operation areaNormalIntegrate; fields (U);
+    }
+    measurementP
+    {
+        type surfaceFieldValue; libs ("libfieldFunctionObjects.so");
+        writeControl timeStep; writeInterval 1; writeFields false; log true; writeArea true;
+        regionType sampledSurface; name measurementPPlane;
+        sampledSurfaceDict
+        {
+            type plane; planeType pointAndNormal;
+            pointAndNormalDict { point (5.413552475e-02 -1.687080078e-01 1.024483566e-01); normal (1.525527082e-01 -7.286071699e-01 -6.677269376e-01); }
+            bounds (5.227624417e-02 -1.705672884e-01 1.005890760e-01) (5.599480533e-02 -1.668487272e-01 1.043076372e-01);
+            interpolate false;
+        }
+        operation areaAverage; fields (p);
+    }
+}

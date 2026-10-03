@@ -1,0 +1,26 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/case_syn",
+ "package_arg": "SYN_tube_test__baseline__real",
+ "pkg_root_arg": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/pkg",
+ "package_dir": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/taskFinal/.post_test_tmp/pkg/SYN_tube_test__baseline__real",
+ "recorded": {
+  "outlets.csv": "2508ebc923cdb80fd611a30ace527ddde241c3ac09b6774ccbf0724d97d662f3",
+  "bc_A.csv": "0d0ca3fdc4ca8fd5836203f337232b6f7d639bc52b3df033482274febc10aff4",
+  "bc_C_flows.csv": "b0394d11ec27ee6d971e048c431a53574e0394e272be875a48031bfc602a17da",
+  "probes.csv": "4e7c27e3be3c99e13b3d93fcb4382c6d54e5afeeb3945636172d9a4e2eae3724",
+  "inlet.json": "4cd3ef8fd556c1b1cf47873909fa16e5e12df8f8958930658f98da0aa329ff8c",
+  "centreline.vtp": "79b25407840ab49539bd6acf98c1240f04df9dde08840c78620457b0ee5119cb",
+  "meta.json": "4a84e40a1652eb52a56cc2587dffff4abd21985dc5a5b6e42c0a021d31714603"
+ },
+ "now": {
+  "outlets.csv": "2508ebc923cdb80fd611a30ace527ddde241c3ac09b6774ccbf0724d97d662f3",
+  "bc_A.csv": "0d0ca3fdc4ca8fd5836203f337232b6f7d639bc52b3df033482274febc10aff4",
+  "bc_C_flows.csv": "b0394d11ec27ee6d971e048c431a53574e0394e272be875a48031bfc602a17da",
+  "probes.csv": "4e7c27e3be3c99e13b3d93fcb4382c6d54e5afeeb3945636172d9a4e2eae3724",
+  "inlet.json": "4cd3ef8fd556c1b1cf47873909fa16e5e12df8f8958930658f98da0aa329ff8c",
+  "centreline.vtp": "79b25407840ab49539bd6acf98c1240f04df9dde08840c78620457b0ee5119cb",
+  "meta.json": "4a84e40a1652eb52a56cc2587dffff4abd21985dc5a5b6e42c0a021d31714603"
+ },
+ "fails": [],
+ "ok": true
+}
