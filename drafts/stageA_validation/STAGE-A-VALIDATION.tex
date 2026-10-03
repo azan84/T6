@@ -24,14 +24,14 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{T6 CFD verification and pilot report, to 2026-10-01}
+\rhead{T6 CFD verification and pilot report, to 2026-10-03}
 \lhead{Paper 6 / T6}
 \rfoot{\thepage}
 
 \title{T6 CFD Verification: Stage A and the Real-Lumen Pilot\\
 \large Verification of the OpenFOAM setup for the T6 3D CFD arm, with the scan-837 pipeline pilot (a living report)}
 \author{T6 CFD verification log\\ Stage A (A1--A5) run; Items 1--6 (\S\ref{sec:workorder}),\\ the scan-837 pilot and its follow-ups to 2026-09-26}
-\date{2026-09-18 to 2026-10-01}
+\date{2026-09-18 to 2026-10-03}
 
 \begin{document}
 \maketitle
@@ -1695,6 +1695,32 @@ clean & out\_868 & 0.1351 & +0.0000 & +1.8 \\
 \textbf{Set-up.} Scan-14 baseline, resistance mode (3{,}657{,}147 cells; the case rebuilt on 2026-10-01 from the deposited code, geometry and mesh identical to the returned records), 1600 iterations, no field writes; each job stopped by the B1 rule (first settled iteration 1229 in all three jobs). L16: one job, 16 ranks, one rank pinned per physical core; L8x2: two jobs side by side on disjoint sets of 8 physical cores. One replicate per layout, in the order L16 then L8x2 (2026-10-01, 08:15--12:50). The host was shared with another project of the study lead; at the study lead's request its processes were paused (SIGSTOP; 30 matching solver and queue processes holding 5.6\,GB of memory) and kept paused by a watcher, and resumed afterwards. The runner was extended for this (fix 27: admits only fully stopped foreign processes, re-checks them just before launch, records their fate and memory, and adds a host-level CPU measure calibrated beforehand by a rule fixed in advance, giving thresholds 0.48/1.62 cores); the change needed three Opus~5.5 and two Fable~5.1 attempts and four audit rounds (GPT-5.6 Sol and Gemini~3.8 Flash; final verdicts READY WITH CONDITIONS from both). The Windows pre-check was overridden (the terminal process used about 0.5 core), so the best attainable label was CONDITIONALLY COMPARABLE.
 
 \textbf{Result.} L16 reached the settle point after 4143\,s (0.869 solves per hour; an earlier uncontended 16-rank solve of the same case took 4067\,s, $+1.9\%$); the two L8x2 jobs after 8834 and 8895\,s (together 0.812 solves per hour; 0.809 if paired by the slower job). L8x2/L16 $=0.935$: on this host one 16-rank job gives about 7\% more solves per hour than two 8-rank jobs. \textbf{Status: both layouts are INVALID under the strict isolation rule and the ratio is NOT CLAIMED.} The non-owned CPU was small on average (per-process mean 0.039 and 0.045 core, host-level 0.070 and 0.077 core, i.e.\ below 0.5\% of the 16 cores) but had short peaks above the 1-core limit: in L16 the coordinating Claude session (1.15 cores), in L8x2 the operating system's daily package update (\texttt{apt}/\texttt{unattended-upgrades}, \texttt{systemd} up to 3.2 cores) and an automatic update of a command-line tool (\texttt{npm install}). All 30 paused processes stayed paused through both layouts, no new foreign job appeared, swap was not used, and the minimum available memory was 17.4 and 12.7\,GB. The 7\% figure is therefore reported as indicative only; a claim needs a replicate on a host with automatic updates disabled and no interactive session, ideally in both orders.
+
+\subsection{Task A of the 2026-10-03 work order: the D7 sensitivity test (first variant)}
+\label{sec:taskA}
+\textbf{Question and rule (pre-registered before any solve, \texttt{TASK\_A\_DESIGN.md}).} Decision D7 makes Gate M1 a pass for the lesion cases only through a declared deviation backed by a sensitivity test: the scan-14 baseline is re-meshed with the throat zone at 12.5\,$\mu$m instead of 25\,$\mu$m ($\pm4$\,mm, everything else of the production recipe unchanged) and solved in resistance mode with the production template of Task~C (bounded probe monitors, fields kept, 16 ranks and 3000 iterations as the returned solve). The acceptance statistic is the section-averaged pressure at the measurement probe p011, $p/P_\text{aorta}$ on the reconstructed iteration-3000 fields by the same connected-section method as the returned value (0.8697575): the variant passes with deviations if the difference is below $U_{3D}=0.00055$ (provisional), otherwise M1 fails for the lesion cases and the fallback of section~9 of the work order opens. No surface repair is allowed. Variant A1 is the plain 12.5\,$\mu$m zone; a second variant with the zone interfaces shifted by 1\,mm (A2) was built because A1 still has flagged face-tets within 2\,mm of the throat, and the production mesh is re-solved as a reproducibility control (A0); both are running at the time of writing.
+
+\textbf{A1.} 6{,}241{,}438 cells (the production mesh has 3{,}657{,}147), 25\,$\mu$m $\to$ 12.5\,$\mu$m cells in the throat zone (median 12.50\,$\mu$m, 66 cells across the throat at least), standard \texttt{checkMesh} OK, strict \texttt{checkMesh}: 3 failed checks as for the production mesh, the nearest flagged entity (poorly decomposing face tets) 0.70\,mm from the throat centre (1.43\,mm in the production mesh; D4 FAIL as before) and 2.55\,mm from the measurement probe. The solve converged (strict checks pass, B1 SETTLED rule on the new \texttt{measurementP} monitor first met at iteration 2193 of 3000; 18{,}627\,s on a shared host).
+
+\textbf{Result.} $p/P_\text{aorta}$ at p011 is 0.87165 against the returned 0.86976: $\Delta=+0.00189$, 3.4 times $U_{3D}$, so by the rule A1 does \emph{not} meet the acceptance criterion. The pressure upstream of the lesion is identical to five decimals (probes at $-20$ to $-5$\,mm: differences $\leq10^{-5}$); the difference arises across the throat ($+0.00099$ in the throat plane, $+0.00195$ five millimetres distal) and then stays constant ($+0.00189\pm0.00001$) along the next 90\,mm of the LAD (Fig.~\ref{fig:taskA-profile}); it corresponds to 22.7\,Pa (0.17\,mmHg) less added loss across the lesion on the finer throat mesh. The outlet flows change by at most $+0.24\%$ (out\_160 and out\_600; the other four outlets $<0.003\%$). Whether this is a resolution effect or the ordinary mesh-to-mesh variation of a regenerated cfMesh mesh is decided by the control A0 (production mesh regenerated and re-solved) and by A2; no conclusion on M1 is drawn from A1 alone, and nothing was repaired. The flow state was not classified: the pre-registered curved-lumen diagnostic (centroid offset of the axial velocity over the section radius every 1\,mm from the throat to p011) gives a profile with a maximum of 0.53 radii 9\,mm distal to the throat for A1 and needs the second variant for the agree/differ comparison; the two-state behaviour of the straight sten70 case is not assumed to apply to this lumen.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_taskA_A1_pressure_profile.png}
+\caption[Task A, variant A1: pressure along the LAD against the returned baseline]{\label{fig:taskA-profile}Task A, variant A1 (throat zone 12.5\,$\mu$m): section-mean $p/P_\text{aorta}$ at the package probes along the LAD against the returned baseline (25\,$\mu$m), and the difference (lower panel; dashed: $\pm U_{3D}$). Identical upstream of the lesion, a constant offset of $+0.0019$ downstream.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/img_taskA_A1_cpr_cfd.png}
+\caption[Task A, variant A1: curved-planar reformation of the segmentation with the CFD speed]{\label{fig:taskA-cpr}Imaging part: curved-planar reformation of the unmodified ImageCAS-X lumen label (white) along the lesion vessel in two orthogonal planes with the CFD speed $|U|$ of variant A1 in the CFD domain, and $p/P_\text{aorta}$ on the axis (bottom). The synthetic 80\% stenosis exists only in the CFD surface: the label is wider than the CFD lumen at the throat (white margins), and the jet leaves the throat towards the distal vessel. Red dotted: throat; cyan dashed: measurement probe p011. Script \texttt{code\_\allowbreak{}from\_\allowbreak{}cfd/\allowbreak{}task\_\allowbreak{}1003/\allowbreak{}viz/\allowbreak{}viz\_\allowbreak{}imaging.py}.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_taskA_A1_wall_pressure.png}
+\caption[Task A, variant A1: wall pressure of the left coronary tree]{\label{fig:taskA-wall}Variant A1: wall pressure $p/P_\text{aorta}$ of the whole left coronary tree in three views and a close-up of the 6\,mm around the throat (same colour scale).}
+\end{figure}
 
 \subsection{Item 5: RCR outlet BC verification --- \PASS{}}
 \label{sec:item5-status}
