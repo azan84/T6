@@ -10,7 +10,8 @@
 #   L watcher forms, coverage and the REFUSAL through the real runner (a pgrep wrapper on PATH hides the host's real watchers from the runner: FAKE_PGREP_HIDE), M p95 / fork label / informational host mode.
 # Fable attempt 2 (FABLE_BRIEF_27b): N the third watcher form pause_marissa_light2.sh <s> through the real runner (N1-N4), the host's live light2 watcher read-only (N5), the calibrated thresholds
 #   0.48 / 1.62 reproduced from calibration.json by b2_isolation.calib_rule and its edges (N6), and the evidence at the new max threshold: 1.61 core -> no host-level reason, 1.62 -> yes (N7).
-HERE=$(cd "$(dirname "$0")" && pwd); T=$(mktemp -d /tmp/fix27test.XXXXXX); MINE=(); PASS=0; FAILN=0
+HERE=$(cd "$(dirname "$0")" && pwd); T=$(mktemp -d "${TMPDIR:-/tmp}/fix27test.XXXXXX"); MINE=(); PASS=0; FAILN=0
+S=$(cd "$HERE/.." && pwd); export PYTHONDONTWRITEBYTECODE=1     # fix 28: the scripts under test are the DEPLOYED ones in b2/ (identical to fix27/); the fix27_a*_snapshot dirs are b2/ siblings ($HERE/../)
 cleanup() { for p in "${MINE[@]}"; do kill -KILL "$p" 2>/dev/null; done; sleep 0.3; rm -rf "$T"; }
 trap cleanup EXIT
 ok() { echo "PASS: $*"; PASS=$((PASS+1)); }; bad() { echo "FAIL: $*"; FAILN=$((FAILN+1)); }
@@ -20,7 +21,7 @@ C=$T/b2/L16/case; mkdir -p "$C/system" "$T/bin"; echo "endTime 1600;" > "$C/syst
 for i in $(seq 0 15); do mkdir -p "$C/processor$i/0" "$C/processor$i/constant/polyMesh"; done
 cp /bin/sleep "$T/bin/simpleFoam"                                     # comm = simpleFoam (pgrep -x matches the comm, not argv[0])
 printf '#!/bin/bash\nsleep 600\n' > "$T/bin/t_queue_shim.sh"; chmod +x "$T/bin/t_queue_shim.sh"     # cmdline matches 'queue.*\.sh'
-run() { env B2_ROOT="$T/b2" B2_EXCLUSIVE_OK=1 B2_SKIP_FOAM_ENV=1 B2_POWERSHELL=/bin/false B2_WIN_CHECK_S=1 "$@" bash "$HERE/b2_run.sh" L16 > "$T/out" 2> "$T/err"; echo $? > "$T/rc"; }
+run() { env B2_ROOT="$T/b2" B2_EXCLUSIVE_OK=1 B2_SKIP_FOAM_ENV=1 B2_POWERSHELL=/bin/false B2_WIN_CHECK_S=1 "$@" bash "$S/b2_run.sh" L16 > "$T/out" 2> "$T/err"; echo $? > "$T/rc"; }
 OUT=$T/b2/results_L16
 # a long shim pause watcher of this test (light form): the runner refuses with the override unless a watcher covers B2_MAX_RUNTIME_S (Fable attempt 1); the host's real watcher may or may not be alive
 printf '#!/bin/bash\nsleep 600\n' > "$T/bin/pause_marissa_light.sh"; chmod +x "$T/bin/pause_marissa_light.sh"; bash "$T/bin/pause_marissa_light.sh" 100000 & LW=$!; MINE+=($LW); sleep 0.3; MINE+=($(pgrep -P $LW))
@@ -73,7 +74,7 @@ kill -KILL $TR $M 2>/dev/null; wait $TR 2>/dev/null
 echo "== supplementary A: stopped_postrun (helpers extracted from b2_run.sh)"
 "$T/bin/simpleFoam" 600 & P2=$!; bash -c 'while :; do :; done' & P3=$!; "$T/bin/simpleFoam" 600 & P4=$!; MINE+=($P2 $P3 $P4); sleep 0.3; kill -STOP $P2 $P3 $P4; sleep 0.2
 A=$T/postA; mkdir -p "$A"
-( eval "$(sed -n '/^PAT1=/,/^# --- end of the stopped-foreign helpers/p' "$HERE/b2_run.sh")"; OUT=$A; SELF=" $$ $BASHPID "; SP=""; U=""; session_pids() { :; }
+( eval "$(sed -n '/^PAT1=/,/^# --- end of the stopped-foreign helpers/p' "$S/b2_run.sh")"; OUT=$A; SELF=" $$ $BASHPID "; SP=""; U=""; session_pids() { :; }
   { echo "# test"; for p in $S1 $P2 $P3 $P4; do proc_info $p; done; } > "$OUT/stopped_foreign_prerun.txt"
   kill -CONT $P2; kill -CONT $P3; sleep 1; kill -STOP $P3; kill -KILL $P4; sleep 0.3      # P2 resumed (running now), P3 ran and is stopped again (CPU grew), P4 gone
   "$T/bin/simpleFoam" 600 & N1=$!; echo $N1 > "$T/n1"; sleep 0.3
@@ -87,7 +88,7 @@ echo "== supplementary B: b2_isolation.py evidence on fabricated results"
 E1=$T/ev1; E2=$T/ev2; E3=$T/ev3; mkdir -p $E1 $E2 $E3; cp "$A"/stopped_foreign_*.txt $E1/
 cp "$A/stopped_foreign_prerun.txt" $E2/; printf '# x\nsummary prerun=4 still_stopped=4 resumed=0 vanished=0 undecided=0 new_running=0 new_stopped=0\n' > $E2/stopped_foreign_postrun.txt
 cp "$A/stopped_foreign_prerun.txt" $E3/
-for e in $E1 $E2 $E3; do python3 "$HERE/b2_isolation.py" evidence $e > /dev/null; python3 -c 'import json,sys; e=json.load(open(sys.argv[1]+"/isolation_evidence.json")); print(sys.argv[1][-3:], e["contended"], e["stopped_foreign_override"], e["stopped_foreign_count"], [r for r in e["contended_reasons"] if r.startswith("foreign")])' $e; done > "$T/ev"; cat "$T/ev"
+for e in $E1 $E2 $E3; do python3 "$S/b2_isolation.py" evidence $e > /dev/null; python3 -c 'import json,sys; e=json.load(open(sys.argv[1]+"/isolation_evidence.json")); print(sys.argv[1][-3:], e["contended"], e["stopped_foreign_override"], e["stopped_foreign_count"], [r for r in e["contended_reasons"] if r.startswith("foreign")])' $e; done > "$T/ev"; cat "$T/ev"
 grep -q "^ev1 yes True 4 \['foreign stopped job resumed during the run (2 resumed, 1 new running" "$T/ev" && grep -q "^ev2 unknown True 4 \[\]" "$T/ev" && grep -q "^ev3 unknown True 4 \['foreign stopped job resumed during the run: not decidable" "$T/ev" \
   && ok "evidence: resumed -> yes with the reason; all still stopped -> no stopped-foreign reason; postrun missing -> unknown" || bad "evidence"
 kill -KILL $P2 $P3 2>/dev/null
@@ -103,7 +104,7 @@ fakestart() { proc_info "$1" | awk '{ for (i = 1; i <= NF; i++) if ($i ~ /^start
 echo "== supplementary A2: reused pid (pre-run pid alive with another start time) -> vanished AND eligible for new_running / new_stopped"
 "$T/bin/simpleFoam" 600 & R2=$!; "$T/bin/simpleFoam" 600 & Q2=$!; MINE+=($R2 $Q2); sleep 0.3; kill -STOP $Q2; sleep 0.2
 A2=$T/postA2; mkdir -p "$A2"; declare -f fakestart > "$T/fakestart.sh"
-withhelpers "$HERE/b2_run.sh" "$A2" 'source $T/fakestart.sh; { echo "# test"; proc_info $S1; fakestart $R2; fakestart $Q2; } > $OUT/stopped_foreign_prerun.txt; stopped_postrun'
+withhelpers "$S/b2_run.sh" "$A2" 'source $T/fakestart.sh; { echo "# test"; proc_info $S1; fakestart $R2; fakestart $Q2; } > $OUT/stopped_foreign_prerun.txt; stopped_postrun'
 grep -v '^#' "$A2/stopped_foreign_postrun.txt" | grep -E "^[a-z_]+ ($S1|$R2|$Q2) |^summary" | cut -c1-160
 grep -q "^still_stopped $S1 " "$A2/stopped_foreign_postrun.txt" && grep -q "^vanished $R2 " "$A2/stopped_foreign_postrun.txt" && grep -q "^vanished $Q2 " "$A2/stopped_foreign_postrun.txt" \
   && grep -q "^new_running $R2 " "$A2/stopped_foreign_postrun.txt" && grep -q "^new_stopped $Q2 " "$A2/stopped_foreign_postrun.txt" && ! grep -q "^new_[a-z]* $S1 " "$A2/stopped_foreign_postrun.txt" \
@@ -116,20 +117,20 @@ kill -KILL $R2 $Q2 2>/dev/null
 
 echo "== supplementary C: memory snapshot and dmesg OOM filter (helpers from b2_run.sh)"
 MC=$T/memC; mkdir -p "$MC" "$T/fakebin"
-withhelpers "$HERE/b2_run.sh" "$MC" 'mem_snapshot > $OUT/memory_prerun.txt; mem_snapshot > $OUT/memory_postrun.txt; dmesg_oom'
+withhelpers "$S/b2_run.sh" "$MC" 'mem_snapshot > $OUT/memory_prerun.txt; mem_snapshot > $OUT/memory_postrun.txt; dmesg_oom'
 cat "$MC/memory_prerun.txt"; head -1 "$MC/dmesg_oom.txt" | cut -c1-120
 [ "$(grep -cE '^(MemTotal|MemAvailable|SwapTotal|SwapFree):|^(pswpin|pswpout|pgmajfault|uptime_s|epoch) ' "$MC/memory_prerun.txt")" -eq 9 ] && head -1 "$MC/dmesg_oom.txt" | grep -q '^readable' \
   && ok "memory snapshot has the 9 keys; host dmesg readable" || bad "memory snapshot / host dmesg"
 printf 'uptime_s 1000\n' > "$MC/memory_prerun.txt"; printf 'uptime_s 2000\n' > "$MC/memory_postrun.txt"
 printf '#!/bin/sh\necho "[  500.000001] Out of memory: Killed process 11 (early)"\necho "[ 1500.000001] Out of memory: Killed process 99 (simpleFoam) total-vm:1kB"\necho "[ 1500.100000] unrelated line"\necho "[ 2500.000001] oom-kill:constraint=CONSTRAINT_NONE (late)"\n' > "$T/fakebin/dmesg"; chmod +x "$T/fakebin/dmesg"
-PATH="$T/fakebin:$PATH" withhelpers "$HERE/b2_run.sh" "$MC" 'dmesg_oom'; cat "$MC/dmesg_oom.txt"
+PATH="$T/fakebin:$PATH" withhelpers "$S/b2_run.sh" "$MC" 'dmesg_oom'; cat "$MC/dmesg_oom.txt"
 [ "$(grep -vc '^readable' "$MC/dmesg_oom.txt")" -eq 1 ] && grep -q "Killed process 99 (simpleFoam)" "$MC/dmesg_oom.txt" && ok "dmesg: only the OOM line inside the run window is kept" || bad "dmesg window filter"
 printf '#!/bin/sh\necho "dmesg: read kernel buffer failed: Operation not permitted" >&2; exit 1\n' > "$T/fakebin/dmesg"
-PATH="$T/fakebin:$PATH" withhelpers "$HERE/b2_run.sh" "$MC" 'dmesg_oom'; [ "$(cat "$MC/dmesg_oom.txt")" = "not readable" ] && ok "dmesg unreadable -> 'not readable'" || bad "dmesg not readable"
+PATH="$T/fakebin:$PATH" withhelpers "$S/b2_run.sh" "$MC" 'dmesg_oom'; [ "$(cat "$MC/dmesg_oom.txt")" = "not readable" ] && ok "dmesg unreadable -> 'not readable'" || bad "dmesg not readable"
 
 echo "== supplementary D: sampler writes owned_majflt.txt (a shim session leader as the 'mpirun', TASK4_POWERSHELL=/bin/false)"
 MD=$T/samp; mkdir -p "$MD"; setsid "$T/bin/simpleFoam" 2 & SL=$!; MINE+=($SL); sleep 0.2
-TASK4_POWERSHELL=/bin/false B2_NRANKS=1 timeout 20 python3 "$HERE/b2_isolation.py" sample $SL $$ "$MD" 0.5 1000; cat "$MD/owned_majflt.txt"
+TASK4_POWERSHELL=/bin/false B2_NRANKS=1 timeout 20 python3 "$S/b2_isolation.py" sample $SL $$ "$MD" 0.5 1000; cat "$MD/owned_majflt.txt"
 grep -Eq "^owned_session_majflt [0-9]+ processes 1$" "$MD/owned_majflt.txt" && [ "$(head -1 "$MD/isolation_samples.csv" | tr ',' '\n' | wc -l)" -eq 16 ] && [ "$(wc -l < "$MD/host_cpu_samples.csv")" -ge 2 ] \
   && ok "owned_majflt.txt written (1 session process), CSV columns unchanged (16), host_cpu_samples.csv written" || bad "sampler majflt"
 
@@ -144,9 +145,9 @@ for k in 0 1 2 3 4 5; do mkclean $T/c$k; done
 for k in 1 2 3 4; do cp "$A/stopped_foreign_prerun.txt" $T/c$k/; done
 sumline 4 0 0 0 0 > $T/c1/stopped_foreign_postrun.txt; sumline 3 0 1 0 0 > $T/c2/stopped_foreign_postrun.txt; sumline 4 0 0 0 1 > $T/c3/stopped_foreign_postrun.txt; sumline 2 1 1 0 0 > $T/c4/stopped_foreign_postrun.txt
 cp "$A2"/stopped_foreign_*.txt $T/c5/
-withhelpers "$HERE/b2_run.sh" "$T/c1" 'mem_snapshot > $OUT/memory_prerun.txt; mem_snapshot > $OUT/memory_postrun.txt; dmesg_oom'
+withhelpers "$S/b2_run.sh" "$T/c1" 'mem_snapshot > $OUT/memory_prerun.txt; mem_snapshot > $OUT/memory_postrun.txt; dmesg_oom'
 awk '$1 == "SwapFree:" { $2 = $2 - 2048 } 1' "$T/c1/memory_postrun.txt" > "$T/c1/mp" && mv "$T/c1/mp" "$T/c1/memory_postrun.txt"; echo "owned_session_majflt 42 processes 3" > "$T/c1/owned_majflt.txt"
-for k in 0 1 2 3 4 5; do B2_NRANKS=2 python3 "$HERE/b2_isolation.py" evidence $T/c$k > /dev/null
+for k in 0 1 2 3 4 5; do B2_NRANKS=2 python3 "$S/b2_isolation.py" evidence $T/c$k > /dev/null
   python3 -c 'import json,sys; e=json.load(open(sys.argv[1]+"/isolation_evidence.json")); print(sys.argv[1][-2:], e["contended"], e["stopped_foreign_override"], [r for r in e["contended_reasons"]])' $T/c$k; done > "$T/evE"; cat "$T/evE"
 grep -q "^c0 no False \[\]$" "$T/evE" && grep -q "^c1 no True \[\]$" "$T/evE" \
   && grep -q "^c2 unknown True \['foreign stopped job vanished or new foreign job appeared during the run: CPU use not excluded (1 vanished, 0 new stopped)'\]$" "$T/evE" \
@@ -172,7 +173,7 @@ echo "== supplementary F: b2_analyse.py rows and ratio notes (fake B2_ROOT; the 
 an() {  # an <dir> <L16 evidence src> <L8x2 evidence src>
   for l in L16 L8x2; do mkdir -p "$1/b2/results_$l"; echo '{"controlled_end": true, "launch_epoch": 1}' > "$1/b2/results_$l/run_status.json"; done
   cp "$2/isolation_evidence.json" "$1/b2/results_L16/"; cp "$3/isolation_evidence.json" "$1/b2/results_L8x2/"
-  PYTHONPATH="$HERE/../.." B2_ROOT="$1/b2" python3 "$HERE/b2_analyse.py" "$1/out.csv" > /dev/null
+  PYTHONPATH="$HERE/../.." B2_ROOT="$1/b2" python3 "$S/b2_analyse.py" "$1/out.csv" > /dev/null
   python3 -c 'import csv,sys; r=list(csv.DictReader(open(sys.argv[1]))); x=r[-1]; l=[q for q in r if q.get("layout")=="L16" and q.get("jobs")][0]
 print("ratio:", x["stopped_foreign_population_differs"], "|", x["swap_grew_layouts"], "|", x["note"][-230:]); print("L16 row:", {k: l[k][:60] for k in ("stopped_foreign_count", "stopped_foreign_rss_mb_pre", "mem_swap_grew", "mem_owned_session_majflt", "mem_dmesg_oom")})' "$1/out.csv"; }
 an $T/anF1 $T/c1 $T/c5 | tee "$T/anF1.txt"; an $T/anF2 $T/c2 $T/c3 | tee "$T/anF2.txt"
@@ -191,7 +192,7 @@ pgrep() { [ "$1 $2" = "-a -x" ] && for p in $G1S $G1R $GONE $G1U; do echo "$p si
 eval "orig_$(declare -f proc_states)"; proc_states() { [ "$1" = "$G1U" ] && return 1; orig_proc_states "$1"; }
 offender_scan; echo "STOPPEDK=[$STOPPEDK]"; echo "OFF1:"; echo "$OFF1"; echo "OFF2=[$OFF2]"
 G1
-withhelpers "$HERE/b2_run.sh" "$T" 'source $T/g1.sh' > "$T/g1.out"; cat "$T/g1.out"
+withhelpers "$S/b2_run.sh" "$T" 'source $T/g1.sh' > "$T/g1.out"; cat "$T/g1.out"
 grep -q "STOPPEDK=\[ $G1S:[0-9]* \]" "$T/g1.out" && grep -q "pid $G1R: simpleFoam 600 \[snapshot: state=[RS]" "$T/g1.out" && grep -q "pid $GONE: simpleFoam 600 \[snapshot: state=gone\]" "$T/g1.out" \
   && grep -q "pid $G1U: simpleFoam 600 \[snapshot: state=? " "$T/g1.out" \
   && ok "single snapshot: stopped -> ignored (pid:start kept); running, vanished (state=gone), unreadable thread states (state=?) -> offenders named with their snapshot" || bad "offender_scan"
@@ -217,7 +218,7 @@ kill -KILL $G2N 2>/dev/null; rm -rf "$OUT"
 echo "== attempt 3 H: post-run exclusions of the runner/ancestors (SELFK), sampler (SPK), umbrella (UK) and session are pid+start based"
 "$T/bin/simpleFoam" 600 & HR=$!; setsid "$T/bin/simpleFoam" 600 & HL=$!; MINE+=($HR $HL); sleep 0.3; HRS=$(cut -d' ' -f22 /proc/$HR/stat); HLS=$(cut -d' ' -f22 /proc/$HL/stat)
 hcase() {  # hcase <name> <commands setting the exclusion tokens>
-  local d=$T/h_$1; mkdir -p "$d"; withhelpers "$HERE/b2_run.sh" "$d" "{ echo '# test'; proc_info $S1; } > \$OUT/stopped_foreign_prerun.txt; session_pids() { ps -e -o pid=,sid= | awk -v s=\"\$U\" '\$2==s {print \$1}'; }; $2; stopped_postrun" 2> /dev/null
+  local d=$T/h_$1; mkdir -p "$d"; withhelpers "$S/b2_run.sh" "$d" "{ echo '# test'; proc_info $S1; } > \$OUT/stopped_foreign_prerun.txt; session_pids() { ps -e -o pid=,sid= | awk -v s=\"\$U\" '\$2==s {print \$1}'; }; $2; stopped_postrun" 2> /dev/null
   echo "$1: $(grep -cE "^new_running ($HR|$HL) " "$d/stopped_foreign_postrun.txt") of the two shims reported"; }
 { hcase self_match "SELFK=\" $HR:$HRS \"; SPK=\"$HL:$HLS\""; hcase self_reused "SELFK=\" $HR:$((HRS-1)) \"; SPK=\"$HL:$((HLS-1))\""
   hcase uk_match "UK=\"$HR:$HRS\"; U=$HL; U_START=$HLS"; hcase uk_reused "UK=\"$HR:$((HRS-1))\"; U=$HL; U_START=$((HLS-1))"; } | tee "$T/h.out"
@@ -228,7 +229,7 @@ grep -qE "^new_running ($HR|$HL) " "$HA/stopped_foreign_postrun.txt" && bad "att
 kill -KILL $HR $HL 2>/dev/null
 
 echo "== attempt 3 I1: host-level accounting on synthetic /proc/stat files and a synthetic owned ledger (b2_isolation.py functions)"
-python3 - "$HERE" "$T" <<'PY' | tee "$T/i1.out"
+python3 - "$S" "$T" <<'PY' | tee "$T/i1.out"
 import sys; sys.path.insert(0, sys.argv[1]); import b2_isolation as I; T = sys.argv[2]
 open(f"{T}/stat0", "w").write("cpu  100 10 50 5000 70 5 5 3 7 0\ncpu0 50 5 25 2500 35 2 3 1 7 0\ncpu1 50 5 25 2500 35 3 2 2 0 0\nintr 1\nprocesses 1000\n")
 open(f"{T}/stat1", "w").write("cpu  1000 10 50 9000 900 5 5 103 507 0\ncpu0 500 5 25 4500 450 2 3 51 507 0\ncpu1 500 5 25 4500 450 3 2 52 0 0\nintr 1\nprocesses 1040\n")
@@ -254,7 +255,7 @@ echo "== attempt 3 I2: real sampler (interval 4 s): an OWNED and then a NON-owne
 I2=$T/i2; mkdir -p "$I2"
 setsid bash -c "while [ ! -e $T/go_owned ]; do sleep 0.05; done; for i in 1 2 3; do timeout 2.5 sh -c 'while :; do :; done' & done; wait; sleep 60" & IU=$!     # the owned session (its leader = the sampler's 'mpirun')
 "$T/bin/simpleFoam" 120 & IR=$!; MINE+=($IU $IR)                                                                                                  # a fake runner without children
-TASK4_POWERSHELL=/bin/false B2_NRANKS=1 timeout 60 python3 "$HERE/b2_isolation.py" sample $IU $IR "$I2" 4 100000 & ISP=$!; MINE+=($ISP)
+TASK4_POWERSHELL=/bin/false B2_NRANKS=1 timeout 60 python3 "$S/b2_isolation.py" sample $IU $IR "$I2" 4 100000 & ISP=$!; MINE+=($ISP)
 waitrows() { local i=0 L; until { mapfile -t L < "$I2/host_cpu_samples.csv"; } 2>/dev/null && [ ${#L[@]} -ge "$1" ] || [ $i -ge 200 ]; do sleep 0.1; i=$((i+1)); done; }    # builtins + sleep: little non-owned CPU of its own
 waitrows 2; sleep 0.2; touch "$T/go_owned"                                             # data row 2 = the interval with the owned burst
 waitrows 3; sleep 0.2
@@ -267,7 +268,7 @@ for i in range(3):
         os._exit(0)
 time.sleep(12)' & NP=$!; MINE+=($NP)                                                       # data row 3 = the interval with the non-owned burst
 waitrows 5; kill -TERM $ISP; wait $ISP 2>/dev/null; pkill -KILL -s $IU; wait $IU 2>/dev/null    # sampler first: the test shell (non-owned) reaps IU and gets its cutime (7.5 core-s)
-printf '{"status": "pass"}' > "$I2/windows_prerun.json"; B2_NRANKS=1 python3 "$HERE/b2_isolation.py" evidence "$I2" > /dev/null
+printf '{"status": "pass"}' > "$I2/windows_prerun.json"; B2_NRANKS=1 python3 "$S/b2_isolation.py" evidence "$I2" > /dev/null
 python3 - "$I2" <<'PY' | tee "$T/i2.out"
 import csv, json, sys
 d = sys.argv[1]; h = list(csv.DictReader(open(f"{d}/host_cpu_samples.csv"))); s = list(csv.DictReader(open(f"{d}/isolation_samples.csv")))
@@ -296,11 +297,11 @@ grep -q JOK "$T/j.out" && ok "analyse rows carry pswpin / pswpout / pgmajfault d
 echo "== attempt 3 K: pause watcher record (host_before.txt lines) and paused.pids growth -> watcher_new -> contended=unknown"
 printf '#!/bin/bash\nsleep 600\n' > "$T/bin/pause_marissa.sh"; chmod +x "$T/bin/pause_marissa.sh"; bash "$T/bin/pause_marissa.sh" --watch 50 & KW=$!; MINE+=($KW); sleep 0.3; MINE+=($(pgrep -P $KW))
 printf '1 06:00 a\n2 06:00 b\n3 06:00 c\n' > "$T/paused.pids"; KD=$T/kdir; mkdir -p "$KD"
-withhelpers "$HERE/b2_run.sh" "$KD" "PAUSED=$T/paused.pids; pause_watchers 2> $T/k.err; printf '%s' \"\$WATCH_REPORT\" > $T/k.out; echo PPL0=\$PPL0 >> $T/k.out; { echo '# test'; proc_info $S1; } > \$OUT/stopped_foreign_prerun.txt
+withhelpers "$S/b2_run.sh" "$KD" "PAUSED=$T/paused.pids; pause_watchers 2> $T/k.err; printf '%s' \"\$WATCH_REPORT\" > $T/k.out; echo PPL0=\$PPL0 >> $T/k.out; { echo '# test'; proc_info $S1; } > \$OUT/stopped_foreign_prerun.txt
   echo '4 07:00 simpleFoam caught' >> \$PAUSED; stopped_postrun 2>> $T/k.err"
-withhelpers "$HERE/b2_run.sh" "$KD" "pgrep() { :; }; pause_watchers 2> $T/k2.err; printf '%s' \"\$WATCH_REPORT\"" > "$T/k2.out"
+withhelpers "$S/b2_run.sh" "$KD" "pgrep() { :; }; pause_watchers 2> $T/k2.err; printf '%s' \"\$WATCH_REPORT\"" > "$T/k2.out"
 cat "$T/k.out" "$T/k.err" "$T/k2.out" "$T/k2.err" | cut -c1-230; grep -E "^#|^summary" "$KD/stopped_foreign_postrun.txt" | tail -3
-mkclean "$T/c6"; cp "$KD"/stopped_foreign_*.txt "$T/c6/"; B2_NRANKS=2 python3 "$HERE/b2_isolation.py" evidence "$T/c6" > /dev/null
+mkclean "$T/c6"; cp "$KD"/stopped_foreign_*.txt "$T/c6/"; B2_NRANKS=2 python3 "$S/b2_isolation.py" evidence "$T/c6" > /dev/null
 python3 -c 'import json,sys; e=json.load(open(sys.argv[1]+"/isolation_evidence.json")); print("c6", e["contended"], e["contended_reasons"])' "$T/c6" | tee "$T/k3.out"
 grep -q "^pause watcher alive: pid $KW, form pause_marissa.sh --watch (/proc scan every 10 s), started .* for 50 s, running [0-9]* s, about [0-9]* s left" "$T/k.out" && grep -q "WARNING: pause watcher $KW ends before" "$T/k.err" && grep -q "^PPL0=3$" "$T/k.out" \
   && grep -q "^pause watcher alive: pid $LW, form pause_marissa_light.sh (pgrep scan every 30 s), started .* for 100000 s, running [0-9]* s, about 9[0-9]* s left" "$T/k.out" \
@@ -354,7 +355,7 @@ run B2_ROOT="$T/b2_calib/x" B2_CALIB_ENDTIME=150 B2_ALLOW_STOPPED_FOREIGN=1 B2_P
 rm -rf "$T/b2_calib/x/results_L16"; run B2_ROOT="$T/b2_calib/x" B2_ALLOW_STOPPED_FOREIGN=1 B2_POWERSHELL="$T/bin/fakeps.sh" B2_STOP_BEFORE_LAUNCH=1 B2_MAX_RUNTIME_S=20; grep -q "endTime is not 1600" "$T/err" && ok "L9 the same copy without B2_CALIB_ENDTIME -> refused (endTime is not 1600)" || bad "L9"
 
 echo "== Fable M: evidence p95, forks labelled as an upper bound, informational host-level mode (gross thresholds -> unknown, never yes)"
-python3 - "$HERE" "$T" <<'PY' | tee "$T/m.out"
+python3 - "$S" "$T" <<'PY' | tee "$T/m.out"
 import sys, json, os, csv; sys.path.insert(0, sys.argv[1]); import b2_isolation as I; T = sys.argv[2]
 e = json.load(open(f"{T}/i2/isolation_evidence.json")); h = list(csv.DictReader(open(f"{T}/i2/host_cpu_samples.csv")))
 v = sorted(float(r["host_nonowned_cores"]) for r in h); p95 = v[max(0, -(-95 * len(v) // 100) - 1)]
@@ -379,9 +380,9 @@ printf '#!/bin/bash\nsleep 600\n' > "$T/bin/pause_marissa_light2.sh"; chmod +x "
 bash "$T/bin/pause_marissa_light2.sh" 100000 & XW=$!; MINE+=($XW); sleep 0.3; MINE+=($(pgrep -P $XW))
 for i in $(seq 60); do awk '{exit !($1 < 1.4)}' /proc/loadavg && break; sleep 5; done
 lrun FAKE_PGREP_HIDE="/marissa_pause/|pause_marissa_light.sh 100000"; grep -E "pause watcher|pre-launch pause" "$OUT/host_before.txt" | cut -c1-400 > "$T/n1.txt"; cat "$T/n1.txt"
-[ "$(cat $T/rc)" = 3 ] && grep -q "^pause watcher alive: pid $XW, form pause_marissa_light2.sh (two pgrep calls every 30 s, seen PIDs skipped), started .* for 100000 s, running [0-9]* s, about 9[0-9]* s left (ends about 2026-.*); B2_MAX_RUNTIME_S 14400; cmdline: bash $T/bin/pause_marissa_light2.sh 100000" "$T/n1.txt" \
-  && ! grep -q "alive: pid $LW" "$T/n1.txt" && grep -q "^pre-launch pause watcher recheck .*: passed (1 alive, 9[0-9]* s left >= B2_MAX_RUNTIME_S 14400 s" "$T/n1.txt" && ! grep -q "WARNING: pause watcher" "$T/err" \
-  && ok "N1 light2 form alone: recognised, start time + remaining coverage recorded, guard and pre-launch recheck passed" || bad "N1"
+[ "$(cat $T/rc)" = 3 ] && grep -q "^pause watcher alive: pid $XW, form pause_marissa_light2.sh (two pgrep calls every 30 s, seen PIDs skipped), started .* for 100000 s, running [0-9]* s, about \(9[0-9]*\|100000\) s left (ends about 2026-.*); B2_MAX_RUNTIME_S 14400; cmdline: bash $T/bin/pause_marissa_light2.sh 100000" "$T/n1.txt" \
+  && ! grep -q "alive: pid $LW" "$T/n1.txt" && grep -q "^pre-launch pause watcher recheck .*: passed (1 alive, \(9[0-9]*\|100000\) s left >= B2_MAX_RUNTIME_S 14400 s" "$T/n1.txt" && ! grep -q "WARNING: pause watcher" "$T/err" \
+  && ok "N1 light2 form alone: recognised, start time + remaining coverage recorded (9... s left, or 100000 s when sampled at elapsed 0), guard and pre-launch recheck passed" || bad "N1"
 bash "$T/bin/pause_marissa_light2.sh" 30 & XS=$!; MINE+=($XS); sleep 0.3; MINE+=($(pgrep -P $XS))
 lrun FAKE_PGREP_HIDE="/marissa_pause/|pause_marissa_light.sh 100000|pause_marissa_light2.sh 100000"
 [ "$(cat $T/rc)" = 1 ] && grep -q "^FAIL: pause watcher guard: the pause watcher's remaining coverage ([0-9]* s) is shorter than B2_MAX_RUNTIME_S (14400 s)" "$T/err" && grep -q "^WARNING: pause watcher $XS ends before" "$T/err" && [ ! -e "$OUT" ] \
@@ -389,19 +390,26 @@ lrun FAKE_PGREP_HIDE="/marissa_pause/|pause_marissa_light.sh 100000|pause_mariss
 kill -KILL $XS $(pgrep -P $XS) 2>/dev/null
 bash "$T/bin/pause_marissa_light2.sh" & XD=$!; MINE+=($XD); sleep 0.3; MINE+=($(pgrep -P $XD))                   # no argument: the script's default 36000 s (${1:-36000})
 lrun FAKE_PGREP_HIDE="/marissa_pause/|pause_marissa_light.sh 100000|pause_marissa_light2.sh 100000"; grep -E "pause watcher" "$OUT/host_before.txt" | cut -c1-200 > "$T/n3.txt"; cat "$T/n3.txt"
-[ "$(cat $T/rc)" = 3 ] && grep -q "^pause watcher alive: pid $XD, form pause_marissa_light2.sh .* for 36000 s, running [0-9]* s, about 359[0-9]* s left" "$T/n3.txt" && ok "N3 light2 form without argument -> the script's default 36000 s" || bad "N3"
+[ "$(cat $T/rc)" = 3 ] && grep -q "^pause watcher alive: pid $XD, form pause_marissa_light2.sh .* for 36000 s, running [0-9]* s, about \(359[0-9][0-9]\|36000\) s left" "$T/n3.txt" && ok "N3 light2 form without argument -> the script's default 36000 s (35900..35999 s left, or 36000 s when sampled at elapsed 0)" || bad "N3"
 kill -KILL $XD $XW $(pgrep -P $XD) $(pgrep -P $XW) 2>/dev/null; rm -rf "$OUT"
 lrun FAKE_PGREP_HIDE="/marissa_pause/|pause_marissa_light.sh 100000"
 [ "$(cat $T/rc)" = 1 ] && grep -q "needs a live pause watcher (pause_marissa_light2.sh <s>, pause_marissa_light.sh <s> or pause_marissa.sh --watch <s>) .*: none alive" "$T/err" && grep -q "no 'pause_marissa_light2.sh <s>', 'pause_marissa_light.sh <s>' or 'pause_marissa.sh --watch <s>' process alive" "$T/err" && [ ! -e "$OUT" ] \
   && ok "N4 no watcher of any of the three forms -> REFUSED; the messages name all three forms" || bad "N4"
 rm -f "$T/bin/pgrep"
 HW=$(cat /home/azan/paper6_t6_work/marissa_pause/watcher.pid 2>/dev/null); HC=$(tr '\0' ' ' < /proc/${HW:-0}/cmdline 2>/dev/null)     # the host's real watcher: only read (pgrep, ps, /proc)
+# fix 28 attempt 2: N5 no longer hard-codes the watcher's argument (it was 43200, the live watcher now runs with 50000): the argument is read from the live watcher's cmdline
+# (the token after pause_marissa_light2.sh, the script's default 36000 when absent) and the report must give 'for <arg> s, running E s, about L s left' with E + L = <arg>, L >= 14400.
 if [[ "$HC" == *pause_marissa_light2.sh* ]]; then
-  ND=$T/n5; mkdir -p "$ND"; withhelpers "$HERE/b2_run.sh" "$ND" "PAUSED=/home/azan/paper6_t6_work/marissa_pause/paused.pids; pause_watchers 2> $T/n5.err; printf '%s' \"\$WATCH_REPORT\"" > "$T/n5.out"; cut -c1-230 "$T/n5.out"
-  grep -q "^pause watcher alive: pid $HW, form pause_marissa_light2.sh (two pgrep calls every 30 s, seen PIDs skipped), started 2026-.* for 43200 s, running [0-9]* s, about [0-9]* s left (ends about 2026-.*); B2_MAX_RUNTIME_S 14400; cmdline: /bin/bash /home/azan/paper6_t6_work/marissa_pause/pause_marissa_light2.sh 43200" "$T/n5.out" \
-    && ! grep -q "WARNING: pause watcher $HW ends before" "$T/n5.err" && ok "N5 the host's live watcher (pid $HW: pause_marissa_light2.sh 43200) is recognised with its start time and remaining coverage >= 14400 s (read only)" || bad "N5"
-else echo "N5 skipped: no live host watcher of the light2 form (watcher.pid '$HW': '${HC:0:80}')"; fi
-python3 - "$HERE" <<'PY2' | tee "$T/n6.out"
+  read -ra HA <<< "$HC"; HN=""; for k in "${!HA[@]}"; do [[ "${HA[$k]}" == *pause_marissa_light2.sh ]] && { HN=${HA[$((k+1))]:-36000}; break; }; done
+  ND=$T/n5; mkdir -p "$ND"; withhelpers "$S/b2_run.sh" "$ND" "PAUSED=/home/azan/paper6_t6_work/marissa_pause/paused.pids; pause_watchers 2> $T/n5.err; printf '%s' \"\$WATCH_REPORT\"" > "$T/n5.out"; cut -c1-230 "$T/n5.out"
+  N5L=$(grep "^pause watcher alive: pid $HW, " "$T/n5.out"); N5E=$(sed -n 's/.*, running \([0-9]*\) s, about \(-\?[0-9]*\) s left .*/\1/p' <<< "$N5L"); N5R=$(sed -n 's/.*, running \([0-9]*\) s, about \(-\?[0-9]*\) s left .*/\2/p' <<< "$N5L")
+  echo "N5 live watcher pid $HW, argument read from its cmdline: '$HN'; reported running '$N5E' s, left '$N5R' s"
+  [[ "$HN" =~ ^[0-9]+$ ]] && [[ "$N5E" =~ ^[0-9]+$ ]] && [[ "$N5R" =~ ^-?[0-9]+$ ]] \
+    && grep -q "^pause watcher alive: pid $HW, form pause_marissa_light2.sh (two pgrep calls every 30 s, seen PIDs skipped), started 2026-.* for $HN s, running [0-9]* s, about -\?[0-9]* s left (ends about 2026-.*); B2_MAX_RUNTIME_S 14400; cmdline: ${HC% }\$" "$T/n5.out" \
+    && [ $((N5E + N5R)) -eq "$HN" ] && [ "$N5R" -le "$HN" ] && [ "$N5R" -ge 14400 ] && ! grep -q "WARNING: pause watcher $HW ends before" "$T/n5.err" \
+    && ok "N5 the host's live watcher (pid $HW: pause_marissa_light2.sh $HN, argument read from its cmdline) is recognised with its start time; running $N5E s + $N5R s left = $HN s, remaining >= 14400 s (read only)" || bad "N5"
+else echo "SKIP: N5: no live host watcher of the light2 form (watcher.pid '$HW': '${HC:0:80}')"; fi
+python3 - "$S" <<'PY2' | tee "$T/n6.out"
 import sys, json; sys.path.insert(0, sys.argv[1]); import b2_isolation as I
 f = "/home/azan/paper6_t6_work/b2_calib/20261001_074246/calibration.json"; c = json.load(open(f)); s = c["host_nonowned_cores_all"]; r = I.calib_rule(s["mean"], s["p95"], s["max"]); j = c["threshold_rule"]
 print("calibration.json", c["calibration_run"], "mean/p95/max", s["mean"], s["p95"], s["max"], "-> calib_rule", r["HOST_MODE"], r["HOST_MEAN_MAX"], r["HOST_MAX_MAX"], "| in the file", j["HOST_MODE"], j["HOST_MEAN_MAX"], j["HOST_MAX_MAX"],
@@ -414,15 +422,20 @@ ok = ((r["HOST_MODE"], r["HOST_MEAN_MAX"], r["HOST_MAX_MAX"]) == (j["HOST_MODE"]
 print("N6OK" if ok else "N6BAD")
 PY2
 grep -q N6OK "$T/n6.out" && ok "N6 calib_rule on calibration.json 20261001_074246 -> criterion 0.48 / 1.62 = the file's threshold_rule = the deployed HOST_* constants (CALIB_* = the file's figures); floor 0.30 / 1.25 at zero noise; mean >= 0.25 or p95 >= 1.0 -> informational" || bad "N6"
-python3 - "$HERE" "$T" <<'PY2' | tee "$T/n7.out"
-import sys, json, csv; sys.path.insert(0, sys.argv[1]); import b2_isolation as I; T = sys.argv[2]; d = f"{T}/i2"
+python3 - "$S" "$T" <<'PY2' | tee "$T/n7.out"
+# fix 28: N7 no longer mutates the live 4-sample CSV of I2 (its mean could exceed HOST_MEAN_MAX 0.48 with the 1.61 sample, so the MEAN flagged it). It builds its own host_cpu_samples.csv:
+# n = 100 samples, 99 at 0.05 core + one at 1.61 / 1.62 -> mean 0.0656 / 0.0657 << 0.48, so only the max boundary (HOST_MAX_MAX 1.62) decides. The other files are copied from I2.
+import sys, json, csv, shutil; sys.path.insert(0, sys.argv[1]); import b2_isolation as I; T = sys.argv[2]; d = f"{T}/n7"
+shutil.rmtree(d, ignore_errors=True); shutil.copytree(f"{T}/i2", d); tpl = list(csv.DictReader(open(f"{d}/host_cpu_samples.csv")))[0]
 def run(mx):
-    rows = list(csv.DictReader(open(f"{d}/host_cpu_samples.csv"))); rows[2]["host_nonowned_cores"] = str(mx)
-    with open(f"{d}/host_cpu_samples.csv", "w", newline="") as fh: w = csv.DictWriter(fh, fieldnames=rows[0].keys()); w.writeheader(); w.writerows(rows)
-    I.evidence(d); e = json.load(open(f"{d}/isolation_evidence.json")); h = [r for r in e["contended_reasons"] if "host-level" in r]; print(f"criterion mode, sample max {mx}: host stat {e['run_host_nonowned_cores']} host reasons {h}"); return e, h
-e1, h1 = run(1.61); e2, h2 = run(1.62)
-print("N7OK" if not h1 and h2 == ["host-level non-owned CPU over threshold"] and e2["contended"] == "yes" and "0.48" in e1["host_level_rule"] and "1.62" in e1["host_level_rule"] and "20261001_074246" in e1["host_level_rule"] else "N7BAD")
+    rows = [dict(tpl, elapsed_s=str(4 * (i + 1)), host_nonowned_cores=str(mx if i == 50 else 0.05)) for i in range(100)]
+    with open(f"{d}/host_cpu_samples.csv", "w", newline="") as fh: w = csv.DictWriter(fh, fieldnames=list(tpl.keys())); w.writeheader(); w.writerows(rows)
+    I.evidence(d); e = json.load(open(f"{d}/isolation_evidence.json")); h = [r for r in e["contended_reasons"] if "host-level" in r]; print(f"criterion mode, n=100, 99 x 0.05 + one {mx}: host stat {e['run_host_nonowned_cores']} host reasons {h}"); return e, h
+e1, h1 = run(1.61); e2, h2 = run(1.62); s1, s2 = e1["run_host_nonowned_cores"], e2["run_host_nonowned_cores"]
+ctl = s1["n"] == s2["n"] == 100
+ctl = ctl and s1["mean"] < 0.1 and s2["mean"] < 0.1 and s1["max"] == 1.61 and s2["max"] == 1.62      # the dataset is as built: low mean, the max is the sample under test
+print("N7OK" if ctl and I.HOST_MODE == "criterion" and not h1 and h2 == ["host-level non-owned CPU over threshold"] and e2["contended"] == "yes" and "0.48" in e1["host_level_rule"] and "1.62" in e1["host_level_rule"] and "20261001_074246" in e1["host_level_rule"] else "N7BAD")
 PY2
-grep -q N7OK "$T/n7.out" && ok "N7 evidence at the calibrated thresholds: a sample of 1.61 core gives no host-level reason, 1.62 core gives contended=yes; host_level_rule names 0.48 / 1.62 and the calibration stamp" || bad "N7"
+grep -q N7OK "$T/n7.out" && ok "N7 evidence at the calibrated thresholds (own synthetic CSV, n=100, mean 0.066): a sample of 1.61 core gives no host-level reason, 1.62 core gives contended=yes; host_level_rule names 0.48 / 1.62 and the calibration stamp" || bad "N7"
 
 echo "== result: $PASS passed, $FAILN failed"; [ $FAILN -eq 0 ]
