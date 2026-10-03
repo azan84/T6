@@ -1,5 +1,31 @@
 # Paper 6 / T6 — Study Plan v2 (quality-first, deadline-unbound)
 
+> ## DECISION 2026-10-03 — submit a reduced paper to the JBHI special issue before 15 October 2026
+>
+> **Decided by the corresponding author.** This reverses §11's "regular JBHI later is preferred" for this paper.
+> - **Content:** C1 + C2 at 0D (error model and the three-protocol ablation on the frozen cohort, both beds, against
+>   the noise floor), plus scan 14 as a 3D **case study**, not a replication. H4 and H5 are stated as registered and
+>   pending (`drafts/registration-2026-10-03/PRE-LODGING-ADDENDUM-2026-10-03.md` §A5). The detector (C3) and E6 are
+>   out of this submission.
+> - **If desk-rejected:** finish the full 3D batch and go to another journal with the full CFD arm (TMI or MedIA,
+>   per §11's upgrade path). If it is rejected after review, the same applies, with the reviews used.
+> - **Length: do enough, within 8 pages** (the over-length charge threshold). Anything not needed for C2 stays out.
+> - **No promise of a follow-up (operator, 2026-10-03).** Paper 1 states only the fact: H4 and H5 are registered and
+>   their results are not part of this report. Neither the text nor the cover letter says they will be reported
+>   separately, because that is not confirmed.
+> - **During review:** CFD work continues. If reviewers ask for 3D results, they go into the revision (2-month window).
+>   If the paper is accepted without them, whether the remaining work (H4, the radius-definition gap, H5, H7) becomes a
+>   second paper is decided then, citing paper 1 and the same registration.
+> - **Order:** lodge the OSF registration → run the ablation (not before) → write → co-author sign-off → submit by
+>   2026-10-14. CFD work continues in parallel under `cfd_handover/WORK-ORDER-2026-10-03.md`.
+> - **CFP verified 2026-10-03** on embs.org: deadline 15 October 2026. Guest editors include M. Colombo and S. Celi.
+>   JBHI: IEEE double-column; 8 pages before over-length charges ($250/page for pp. 9–10, $350 beyond); 14 pages
+>   max including supplementary; abstract ≤ 250 words with no abbreviations; single-blind review.
+> - **Submission blocker still open:** ICMJE criterion 2 for Mohd Azan and Ming Kwang Tan. Send them the draft for
+>   critical revision, not sign-off, and record what they change.
+>
+> ---
+>
 > ## RESUME HERE — state at 2026-09-26 (CFD report v3 read; supersedes the 2026-09-19 banner below where they differ)
 >
 > **`STAGE-A-VALIDATION (3).pdf` (65 pp.) was checked on 2026-09-26. The response is `cfd_handover/WORK-ORDER-2026-09-26.md`.**
@@ -678,6 +704,10 @@ nameable — each author must be able to say which part they vouch for. Plausibl
 verification suite** and the **CFD arm's validation**, but that is a guess, and guessing is what this table exists to
 prevent. **Name it before lodging**; until then the row reads "TO BE NAMED" deliberately.
 
+> **NAMED 2026-10-03 by the corresponding author: both.** Ming Kwang Tan vouches for the **verification of the 0D
+> model** (the V1–V10 suite) **and the validation of the 3D CFD arm** (Stage A, Gate M1, U₃D). Criterion 2 is still
+> open for him (see the ICMJE table).
+
 Otherwise authorship is settled: order, byline forms, corresponding author, and a CRediT block for every author.
 
 > **Note on adding an author at this point:** doing it *before* lodging is clean. Adding one *after* registration is
@@ -693,7 +723,7 @@ Otherwise authorship is settled: order, byline forms, corresponding author, and 
 | Detector (C3) | parameter-plausibility and anatomical-plausibility statistics, splits, external test | Methodology, Software, Formal analysis | **Ismadi** |
 | 3D CFD arm | Stage A → Gate M1 → Stages B–D on the 16-core machine | Investigation, Validation, Software, **Resources** (the compute) | **Mohd Azan** |
 | Analysis and drafting | the manuscript; formal analysis alongside Ismadi | **Writing – original draft**, Formal analysis | **Fadillah Yamin** |
-| **Method and verification** | **Investigation, Methodology, Validation** — **the specific block is TO BE NAMED**, see the note below | Investigation, Methodology, Validation | **Ming Kwang Tan** |
+| **Method and verification** | **verification of the 0D model (the V1–V10 suite) and validation of the 3D CFD arm (Stage A, Gate M1, U₃D)** — named 2026-10-03 | Investigation, Methodology, Validation | **Ming Kwang Tan** |
 | Study design and critical revision | the question, the framing, the method | **Conceptualization, Methodology, Writing – review & editing** | **Xin Wang** |
 | Clinical anchor (E6) | invasive-FFR cohort, ethics, clinical interpretation | Resources, Investigation | **not pursued for this paper** — E6 is an extension; if it lands it brings its own author and that is a normal registration amendment |
 
@@ -706,7 +736,7 @@ which **every** author must meet, exposes something the CRediT view hid.
 |---|---|---|---|---|
 | **Fadillah Yamin** | formal analysis | **drafting** — original draft | at submission | the analysis and the written account |
 | **Mohd Azan Mohammed Sapardi** | the 3D CFD arm: Stage A, Gate M1, Stages B–D, and the compute | **⚠ NOT YET RECORDED** | at submission | the CFD arm and its reported failure rates |
-| **Ming Kwang Tan** | investigation, methodology, validation — **block TO BE NAMED** | **⚠ NOT YET RECORDED** | at submission | **the part he names** |
+| **Ming Kwang Tan** | verification of the 0D model and validation of the 3D CFD arm (named 2026-10-03) | **⚠ NOT YET RECORDED** | at submission | the 0D verification suite and the 3D validation results |
 | **Xin Wang** | conception and design of the study | **critical revision** — review & editing | at submission | the question, framing and method |
 | **Mohd-Zulhilmi Paiz Ismadi** | 0D model, error injection, ablation, detector, statistics | **drafting** | at submission | the model, the code and every reported number |
 

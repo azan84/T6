@@ -6,7 +6,7 @@ last revision (2026-09-19) and lodging, with the date of each item and what had 
 It is additive. Nothing in `STATISTICS-PLAN.md` §1–§11 is edited. Where an item supersedes a sentence there, the
 sentence is named.
 
-Items marked ⚑ need the corresponding author's confirmation before lodging.
+All items were confirmed by the corresponding author on 2026-10-03.
 
 ---
 
@@ -23,7 +23,7 @@ provisional value, the first branch applies: H4 proceeds as specified, κ agains
 
 U₃D is a verification quantity measured on an idealised geometry. It is not an outcome on any cohort instance.
 
-## A2. ⚑ The radius definition in the 0D–3D comparison (adds to §P4)
+## A2. The radius definition in the 0D–3D comparison (adds to §P4)
 
 **What is known, and when.** On 2026-09-26 the first real-lumen 3D case (scan 14, left LAD, 80 %DS, a cohort
 instance in the 3D subset) showed that the meshed lumen is wider than the 0D radius. The 0D radius is the vmtk
@@ -33,7 +33,7 @@ after seeing the 3D numbers and before any 0D comparison was solved, the analysi
 comparison uses a 0D twin rebuilt on the as-meshed radius (`code/ingest_cfd_radius.py`). That twin keeps the
 package's healthy reference, bed and boundary conditions, and only the epicardial radius differs.
 
-**Registered H4 analysis (proposed):**
+**Registered H4 analysis (confirmed by the corresponding author 2026-10-03, before lodging):**
 - **Primary H4 test (fidelity):** κ for flip agreement and Bland–Altman for ΔFFR between 3D and the 0D twin on the
   **as-meshed area-equivalent radius**, solved under the identical per-outlet boundary conditions the 3D case
   received (resistance per outlet for Protocols A and B, prescribed flow per outlet for Protocol C).
@@ -67,8 +67,8 @@ between the two, both are reported and the difference is stated.
 
 - **Gate M1 (scan 14)** passed its mesh-to-solution criteria with declared deviations: the throat gate is relative,
   not absolute (D2); a self-intersection comes from the mask (D3); and strict `checkMesh` flags are localised (D4).
-  On the two lesion cases, flagged cells lie 1.43 mm from the throat centre, inside the 2 mm rule. ⚑ This is
-  resolved by a pre-specified sensitivity test (D7): re-mesh the throat at 12.5 µm and accept only if the
+  On the two lesion cases, flagged cells lie 1.43 mm from the throat centre, inside the 2 mm rule. This is
+  resolved by a pre-specified sensitivity test (D7, confirmed 2026-10-03): re-mesh the throat at 12.5 µm and accept only if the
   measurement-probe FFR changes by less than U₃D. The deviations are reported in the paper.
 - **P5 pilot.** Five further 3D-subset instances (scans 138, 69, 473, 272 and 139, chosen by the fixed rule in
   `P5-PILOT-DECISION-RULE-2026-10-03.md`) are solved at baseline only, after lodging, to measure how far the
@@ -81,10 +81,11 @@ between the two, both are reported and the difference is stated.
 All six hypotheses H1–H6 are reported. The 3D batch (H4) and the detector (H5) take longer than the 0D ablation
 (H1–H3, H6). If a manuscript is submitted before H4 or H5 data exist:
 - it reports H1–H3 and H6 in full against this plan;
-- it states H4 and H5 as registered and pending, in those words, with this registration cited;
+- it states that H4 and H5 are registered and that their results are not part of that report, with this
+  registration cited;
 - the Holm–Bonferroni correction (§7) stays over the full family of six, so the earlier report is not made less
   conservative by testing fewer hypotheses;
-- H4 and H5 are reported when complete, in the revision or in a follow-up that cites this registration.
+- H4 and H5 results are reported when complete, citing this registration.
 
 No hypothesis is dropped by staging.
 

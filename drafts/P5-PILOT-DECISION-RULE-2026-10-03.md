@@ -21,7 +21,8 @@ Take the closest 1 LAD (LAD already has scan 14), 2 LCx and 2 RCA.
 | 139 | RCA | 10 mm 70 %DS | 0.773 | 67 |
 
 Packages were exported 2026-10-03 with `export_cfd_case.py --instance <row> --error baseline --tier real` into
-`drafts/packages_P5-2026-10-03/`. The exporter's no-predictions check passed.
+`drafts/packages_P5-2026-10-03/`, then released to `cfd_handover/packages/P5/` with `WORK-ORDER-2026-10-03.md` on the
+same day. The exporter's no-predictions check passed.
 
 ## Analysis (run `code/m1_zerod_vs_3d.py`, adapted to resistance mode only, on each returned case)
 Per case: Δ_def = FFR_3D − FFR_0D(requested) and Δ_phys = FFR_3D − FFR_0D(as-meshed area-equivalent twin), at the

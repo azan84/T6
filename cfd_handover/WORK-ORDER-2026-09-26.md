@@ -1,3 +1,6 @@
+> **⚠ SUPERSEDED as the entry point on 2026-10-03: read `WORK-ORDER-2026-10-03.md` first.** This file stays binding
+> wherever 10-03 does not change it.
+
 # CFD work order — 2026-09-26. Read this before anything else in this folder.
 
 **For:** the CFD machine (the one that produced `STAGE-A-VALIDATION (3).pdf`, 65 pp., built 2026-09-26).

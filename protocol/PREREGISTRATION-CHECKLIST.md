@@ -124,7 +124,8 @@ so a subset test would never have found it — which is why fit diagnostics are 
       Automation In Construction Manuscript.docx`, a manuscript by this same five-author team in this same order,
       which lists him as affiliations 1 and 3. `AuthorsDetails.docx` gives only his external affiliation because it
       is a contacts list.
-- [ ] **Ming Kwang Tan — which block of the work he vouches for.** Roles (*Investigation, Methodology, Validation*)
+- [x] **Ming Kwang Tan — which block of the work he vouches for. NAMED 2026-10-03: both the 0D model verification
+      (V1–V10) and the 3D CFD arm validation (Stage A, Gate M1, U₃D).** Previous text: Roles (*Investigation, Methodology, Validation*)
       are not a body of work, and ICMJE accountability needs a nameable part. **The last authorship item.**
 - [x] **Xin Wang's byline form CONFIRMED 2026-09-19 — "Xin Wang", Wang as surname.** ORCID 0000-0002-5854-5287
       records given-names "Xin", family-name "Wang", with no credit-name and no other-name variants. **This project
