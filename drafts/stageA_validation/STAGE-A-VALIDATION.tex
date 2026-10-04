@@ -1696,24 +1696,55 @@ clean & out\_868 & 0.1351 & +0.0000 & +1.8 \\
 
 \textbf{Result.} L16 reached the settle point after 4143\,s (0.869 solves per hour; an earlier uncontended 16-rank solve of the same case took 4067\,s, $+1.9\%$); the two L8x2 jobs after 8834 and 8895\,s (together 0.812 solves per hour; 0.809 if paired by the slower job). L8x2/L16 $=0.935$: on this host one 16-rank job gives about 7\% more solves per hour than two 8-rank jobs. \textbf{Status: both layouts are INVALID under the strict isolation rule and the ratio is NOT CLAIMED.} The non-owned CPU was small on average (per-process mean 0.039 and 0.045 core, host-level 0.070 and 0.077 core, i.e.\ below 0.5\% of the 16 cores) but had short peaks above the 1-core limit: in L16 the coordinating Claude session (1.15 cores), in L8x2 the operating system's daily package update (\texttt{apt}/\texttt{unattended-upgrades}, \texttt{systemd} up to 3.2 cores) and an automatic update of a command-line tool (\texttt{npm install}). All 30 paused processes stayed paused through both layouts, no new foreign job appeared, swap was not used, and the minimum available memory was 17.4 and 12.7\,GB. The 7\% figure is therefore reported as indicative only; a claim needs a replicate on a host with automatic updates disabled and no interactive session, ideally in both orders.
 
-\subsection{Task A of the 2026-10-03 work order: the D7 sensitivity test (first variant)}
+\subsection{Task A of the 2026-10-03 work order: the D7 sensitivity test (variants A1 and A2)}
 \label{sec:taskA}
-\textbf{Question and rule (pre-registered before any solve, \texttt{TASK\_A\_DESIGN.md}).} Decision D7 makes Gate M1 a pass for the lesion cases only through a declared deviation backed by a sensitivity test: the scan-14 baseline is re-meshed with the throat zone at 12.5\,$\mu$m instead of 25\,$\mu$m ($\pm4$\,mm, everything else of the production recipe unchanged) and solved in resistance mode with the production template of Task~C (bounded probe monitors, fields kept, 16 ranks and 3000 iterations as the returned solve). The acceptance statistic is the section-averaged pressure at the measurement probe p011, $p/P_\text{aorta}$ on the reconstructed iteration-3000 fields by the same connected-section method as the returned value (0.8697575): the variant passes with deviations if the difference is below $U_{3D}=0.00055$ (provisional), otherwise M1 fails for the lesion cases and the fallback of section~9 of the work order opens. No surface repair is allowed. Variant A1 is the plain 12.5\,$\mu$m zone; a second variant with the zone interfaces shifted by 1\,mm (A2) was built because A1 still has flagged face-tets within 2\,mm of the throat, and the production mesh is re-solved as a reproducibility control (A0); both are running at the time of writing.
+\textbf{Question and rule (pre-registered before any solve, \texttt{TASK\_A\_DESIGN.md}).} Decision D7 makes Gate M1 a pass for the lesion cases only through a declared deviation backed by a sensitivity test: the scan-14 baseline is re-meshed with the throat zone at 12.5\,$\mu$m instead of 25\,$\mu$m and solved in resistance mode with the production template of Task~C (bounded probe monitors, fields kept, 16 ranks and 3000 iterations as the returned solve). The acceptance statistic is the section-averaged pressure at the measurement probe p011, $p/P_\text{aorta}$ on the reconstructed iteration-3000 fields by the same connected-section method as the returned value (0.8697575): a variant passes with deviations if the difference is below $U_{3D}=0.00055$ (provisional), otherwise M1 fails for the lesion cases and the fallback of section~9 of the work order opens. No surface repair is allowed. Variant A1 is the plain 12.5\,$\mu$m zone ($\pm4$\,mm); A2 shifts the zone interfaces by 1\,mm ($-3$ to $+5$\,mm), as in the U3D ladder, because A1 still has flagged face-tets within 2\,mm of the throat. The production mesh regenerated and re-solved (control A0) is running at the time of writing.
 
-\textbf{A1.} 6{,}241{,}438 cells (the production mesh has 3{,}657{,}147), 25\,$\mu$m $\to$ 12.5\,$\mu$m cells in the throat zone (median 12.50\,$\mu$m, 66 cells across the throat at least), standard \texttt{checkMesh} OK, strict \texttt{checkMesh}: 3 failed checks as for the production mesh, the nearest flagged entity (poorly decomposing face tets) 0.70\,mm from the throat centre (1.43\,mm in the production mesh; D4 FAIL as before) and 2.55\,mm from the measurement probe. The solve converged (strict checks pass, B1 SETTLED rule on the new \texttt{measurementP} monitor first met at iteration 2193 of 3000; 18{,}627\,s on a shared host).
+\begin{table}[H]
+\centering
+\caption{\label{tab:taskA}Task A: scan-14 baseline, resistance mode, 16 ranks, 3000 iterations. $\Delta$ = $p/P_\text{aorta}$ minus the returned baseline (25\,$\mu$m zone) at the same probe.}
+\small
+\begin{tabular}{lrrr}
+\toprule
+ & returned (25\,$\mu$m) & A1 (12.5\,$\mu$m) & A2 (12.5\,$\mu$m, shifted) \\
+\midrule
+cells & 3{,}657{,}147 & 6{,}241{,}438 & 8{,}308{,}794 \\
+upstream probe p003 ($-4.7$\,mm): $\Delta$ & --- & $-0.00001$ & $-0.00001$ \\
+throat plane p004: $\Delta$ & --- & $+0.00099$ & $+0.00097$ \\
+5\,mm distal p005: $\Delta$ & --- & $+0.00195$ & $+0.00200$ \\
+measurement probe p011: $p/P_\text{aorta}$ & 0.86976 & 0.87165 & 0.87183 \\
+\textbf{$\Delta$ at p011} & --- & $\mathbf{+0.00189}$ & $\mathbf{+0.00207}$ \\
+$\Delta$ at the end of the tree (p023, 90\,mm distal) & --- & $+0.00188$ & $+0.00206$ \\
+outlet flows out\_160 / out\_600 & --- & $+0.24\%$ / $+0.24\%$ & $+0.25\%$ / $+0.25\%$ \\
+other four outlets & --- & $<0.003\%$ & $<0.001\%$ \\
+strict \texttt{checkMesh}: nearest flagged entity to the throat / to p011 (mm) & 1.43 / 2.55 & 0.70 / 2.55 & 0.70 / 2.55 \\
+D4 & FAIL & FAIL & FAIL \\
+strict residual criterion (final $U_y$ residual $<10^{-5}$) & --- & met & $1.08\times10^{-5}$: not met \\
+B1 SETTLED rule on \texttt{measurementP}: first settled iteration & --- & 2193 & 2614 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\textbf{Result.} $p/P_\text{aorta}$ at p011 is 0.87165 against the returned 0.86976: $\Delta=+0.00189$, 3.4 times $U_{3D}$, so by the rule A1 does \emph{not} meet the acceptance criterion. The pressure upstream of the lesion is identical to five decimals (probes at $-20$ to $-5$\,mm: differences $\leq10^{-5}$); the difference arises across the throat ($+0.00099$ in the throat plane, $+0.00195$ five millimetres distal) and then stays constant ($+0.00189\pm0.00001$) along the next 90\,mm of the LAD (Fig.~\ref{fig:taskA-profile}); it corresponds to 22.7\,Pa (0.17\,mmHg) less added loss across the lesion on the finer throat mesh. The outlet flows change by at most $+0.24\%$ (out\_160 and out\_600; the other four outlets $<0.003\%$). Whether this is a resolution effect or the ordinary mesh-to-mesh variation of a regenerated cfMesh mesh is decided by the control A0 (production mesh regenerated and re-solved) and by A2; no conclusion on M1 is drawn from A1 alone, and nothing was repaired. The flow state was not classified: the pre-registered curved-lumen diagnostic (centroid offset of the axial velocity over the section radius every 1\,mm from the throat to p011) gives a profile with a maximum of 0.53 radii 9\,mm distal to the throat for A1 and needs the second variant for the agree/differ comparison; the two-state behaviour of the straight sten70 case is not assumed to apply to this lumen.
+\textbf{Result.} Neither variant meets the acceptance criterion: $|\Delta|$ at p011 is $0.00189$ (A1) and $0.00207$ (A2), 3.4 and 3.8 times $U_{3D}$ (22.7 and 24.9\,Pa, 0.17 and 0.19\,mmHg). The pressure upstream of the lesion is identical to five decimals; the difference arises across the throat and then stays constant along the next 90\,mm of the LAD (Fig.~\ref{fig:taskA-profile}), i.e. the finer throat zone changes the added loss across the lesion by $0.0019$ to $0.0021$ and nothing else. The two 12.5\,$\mu$m variants agree with each other to $0.00018$ (below $U_{3D}$), so this is not an artefact of where the refined zone ends; the outlet flows change by at most $0.25\%$. Whether the shift is a resolution effect or the ordinary variation of a regenerated cfMesh mesh is decided by the control A0, which is not part of the work order's acceptance rule; by the rule as written M1 fails for the lesion cases and the fallback discussion opens (not decided here). The strict \texttt{checkMesh} flag nearest to the throat (face tets, 0.70\,mm) is the same entity in both variants, so it is not removed by either zone choice; nothing was repaired. A2 is marked not converged in the returns only because the final $U_y$ residual ($1.08\times10^{-5}$) exceeds the strict $10^{-5}$ threshold; its inlet pressure varies by 0.0004\,Pa over the last 500 iterations and the monitors settle at iteration 2614.
+
+\textbf{Flow state.} The pre-registered curved-lumen diagnostic (flux-weighted velocity centroid offset over the section radius every 1\,mm from the throat to p011) is INDETERMINATE for A1 against A2: the profile is not available at the section 23--24\,mm distal to the throat (invalid section), and the rule requires the full profile. For information only, over the 28 of 30 stations valid in both, the profiles differ by up to 0.22 radii (at 9\,mm distal to the throat; tolerance 0.03) while the FFR criterion agrees ($0.00018<0.00055$). No claim of bistability is made: the two-state behaviour of the straight sten70 case is not assumed for this lumen, and a two-state restart demonstration is not part of this task.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/cfd_taskA_A1_pressure_profile.png}
-\caption[Task A, variant A1: pressure along the LAD against the returned baseline]{\label{fig:taskA-profile}Task A, variant A1 (throat zone 12.5\,$\mu$m): section-mean $p/P_\text{aorta}$ at the package probes along the LAD against the returned baseline (25\,$\mu$m), and the difference (lower panel; dashed: $\pm U_{3D}$). Identical upstream of the lesion, a constant offset of $+0.0019$ downstream.}
+\includegraphics[width=\textwidth]{figures/cfd_taskA_profile.png}
+\caption[Task A: pressure along the LAD against the returned baseline]{\label{fig:taskA-profile}Task A: section-mean $p/P_\text{aorta}$ at the package probes along the LAD for the returned baseline (25\,$\mu$m), A1 and A2 (12.5\,$\mu$m), and the differences (lower panel; dashed: $\pm U_{3D}$). Identical upstream of the lesion, a constant offset of about $+0.002$ downstream.}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/img_taskA_A1_cpr_cfd.png}
-\caption[Task A, variant A1: curved-planar reformation of the segmentation with the CFD speed]{\label{fig:taskA-cpr}Imaging part: curved-planar reformation of the unmodified ImageCAS-X lumen label (white) along the lesion vessel in two orthogonal planes with the CFD speed $|U|$ of variant A1 in the CFD domain, and $p/P_\text{aorta}$ on the axis (bottom). The synthetic 80\% stenosis exists only in the CFD surface: the label is wider than the CFD lumen at the throat (white margins), and the jet leaves the throat towards the distal vessel. Red dotted: throat; cyan dashed: measurement probe p011. Script \texttt{code\_\allowbreak{}from\_\allowbreak{}cfd/\allowbreak{}task\_\allowbreak{}1003/\allowbreak{}viz/\allowbreak{}viz\_\allowbreak{}imaging.py}.}
+\caption[Task A, variant A1: curved-planar reformation of the segmentation with the CFD speed]{\label{fig:taskA-cpr}Imaging part, variant A1: curved-planar reformation of the unmodified ImageCAS-X lumen label (white) along the lesion vessel in two orthogonal planes with the CFD speed $|U|$ in the CFD domain, and $p/P_\text{aorta}$ on the axis (bottom). The synthetic 80\% stenosis exists only in the CFD surface: the label is wider than the CFD lumen at the throat (white margins). Red dotted: throat; cyan dashed: measurement probe p011. Script \texttt{code\_\allowbreak{}from\_\allowbreak{}cfd/\allowbreak{}task\_\allowbreak{}1003/\allowbreak{}viz/\allowbreak{}viz\_\allowbreak{}imaging.py}.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/img_taskA_A2_cpr_cfd.png}
+\caption[Task A, variant A2: curved-planar reformation of the segmentation with the CFD speed]{\label{fig:taskA-cpr2}Variant A2 (zone interfaces shifted by 1\,mm), same layout as Fig.~\ref{fig:taskA-cpr}.}
 \end{figure}
 
 \begin{figure}[H]
