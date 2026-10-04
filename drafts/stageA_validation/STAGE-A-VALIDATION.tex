@@ -1753,6 +1753,12 @@ B1 SETTLED rule on \texttt{measurementP}: first settled iteration & --- & 1421 &
 \caption[Task A, variant A1: wall pressure of the left coronary tree]{\label{fig:taskA-wall}Variant A1: wall pressure $p/P_\text{aorta}$ of the whole left coronary tree in three views and a close-up of the 6\,mm around the throat (same colour scale).}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_taskA_A2_wall_pressure.png}
+\caption[Task A, variant A2: wall pressure of the left coronary tree]{\label{fig:taskA-wall2}Variant A2 (zone interfaces shifted by 1\,mm): wall pressure, same layout and colour scale as Fig.~\ref{fig:taskA-wall}.}
+\end{figure}
+
 \subsection{Task B of the 2026-10-03 work order: making $U_{3D}$ final (levels re-run so far)}
 \label{sec:taskB}
 \textbf{Procedure} (rule of \texttt{U3D\_CHECK\_DESIGN.md}, dated extension of 2026-10-03, written before any of these runs). The remaining levels of the sten70 ladder are re-run with the fields kept, at 8 ranks on regenerated meshes with the original cell counts and budgets, one after the other (S25B, S12A, S12B); each run is classified by its own job script: \emph{axisymmetric} if it is SETTLED, the jet centroid is within 10\,$\mu$m of the axis at $x=50$ and 56.5\,mm and the FFR equals the original within $10^{-4}$ (the original level is then verified on the same state), \emph{deflected} at 30\,$\mu$m or more at either station, otherwise inconclusive. If all five levels are axisymmetric, $U_{3D}$ becomes final; if any is deflected the ladder is reported per state.
@@ -1813,6 +1819,12 @@ scan & vessel & L / DS & cells & verdict & Re$_\text{throat}$ & $p/P_\text{aorta
 \centering
 \includegraphics[width=\textwidth]{figures/cfd_p5_138_wall.png}
 \caption[P5 scan 138: wall pressure]{P5 scan 138: wall pressure $p/P_\text{aorta}$ of the tree in three views and the 6\,mm around the throat.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/cfd_p5_138_profile.png}
+\caption[P5 scan 138: pressure along the lesion vessel]{P5 scan 138: section-mean $p/P_\text{aorta}$ at the package probes along the lesion vessel (resistance mode), with the throat and measurement probes marked.}
 \end{figure}
 %%P5_END
 
