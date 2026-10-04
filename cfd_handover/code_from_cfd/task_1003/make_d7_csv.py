@@ -11,10 +11,15 @@ for tag, lab, desc, _ in V:
     s = json.load(open(f)); r = res[lab]; P = {x["probe_id"]: x for x in csv.DictReader(open(f"{O}/M1_probes_{lab}_resistance.csv"))}
     q = {x["outlet_id"]: float(x["Q_mls"]) for x in csv.DictReader(open(f"{O}/M1_outlets_{lab}_resistance.csv"))}
     p11 = float(P["p011"]["p_over_Paorta"]); p4 = float(P["p004"]["p_over_Paorta"])
-    rows.append(dict(variant=tag, description=desc, status="finished", cells=r["n_cells"], iterations=r["iterations"], converged=r["converged"], p011_over_Paorta=f"{p11:.7f}", returned_p011=REF, delta_FFR_vs_returned=f"{p11-REF:+.7f}",
-                     abs_delta_over_U3D=f"{abs(p11-REF)/0.00055:.2f}", acceptance_D7=("PASS_WITH_DEVIATIONS_candidate" if abs(p11-REF) < 0.00055 else "NOT_MET (|delta| >= U3D 0.00055)"), p004_throat_over_Paorta=f"{p4:.7f}",
-                     max_outlet_flow_change_pct=f"{max(abs(100*(q[k]/q0[k]-1)) for k in q0 if k in q):.3f}", D3_verdict=r.get("D3_verdict"), D4_verdict=r.get("D4_verdict"), D34_min_dist_throat_mm=r.get("D34_min_dist_throat_mm"),
-                     D34_min_dist_measurement_mm=r.get("D34_min_dist_measurement_mm"), flags=r.get("flags"), wall_clock_s_contended=s.get("wall_clock_s") or r.get("wallclock_min"), note="flow-state comparison A1 vs A2: STATES INDETERMINATE (pre-registered rule: invalid section 23-24 mm distal to the throat); FFR criterion AGREE (0.00018)" if tag in ("A1", "A2") else "")
+    delta = p11 - REF
+    rows.append(dict(
+        variant=tag, description=desc, status="finished", cells=r["n_cells"], iterations=r["iterations"], converged=r["converged"],
+        p011_over_Paorta=f"{p11:.7f}", returned_p011=REF, delta_FFR_vs_returned=f"{delta:+.7f}", abs_delta_over_U3D=f"{abs(delta)/0.00055:.2f}",
+        acceptance_D7=("PASS_WITH_DEVIATIONS_candidate" if abs(delta) < 0.00055 else "NOT_MET (|delta| >= U3D 0.00055)"), p004_throat_over_Paorta=f"{p4:.7f}",
+        max_outlet_flow_change_pct=f"{max(abs(100 * (q[k] / q0[k] - 1)) for k in q0 if k in q):.3f}", D3_verdict=r.get("D3_verdict"), D4_verdict=r.get("D4_verdict"),
+        D34_min_dist_throat_mm=r.get("D34_min_dist_throat_mm"), D34_min_dist_measurement_mm=r.get("D34_min_dist_measurement_mm"), flags=r.get("flags"),
+        wall_clock_s_contended=s.get("wall_clock_s") or r.get("wallclock_min"),
+        note=("flow-state comparison A1 vs A2: STATES INDETERMINATE (pre-registered rule: invalid section 23-24 mm distal to the throat); FFR criterion AGREE (0.00018)" if tag in ("A1", "A2") else "")))
 keys = [];  [keys.append(k) for r in rows for k in r if k not in keys]
 with open(f"{R}/2026-10-03/M1_D7_sensitivity.csv", "w", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=keys); w.writeheader(); w.writerows(rows)
