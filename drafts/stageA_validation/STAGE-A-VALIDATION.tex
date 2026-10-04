@@ -1751,6 +1751,40 @@ S12B & 7{,}649{,}800 & 3000 & \multicolumn{4}{l}{queued after S12A} \\
 \caption[Task B: axial velocity of the re-run U3D levels S50 and S25B]{\label{fig:taskB-states}Task B: axial velocity on the two mid-planes of the re-run levels S50 and S25B (throat at 30\,mm, $U_x=0$ contour in black, dashed: measurement station 56.5\,mm). Both jets are axisymmetric and the FFR equals the original value (to $10^{-6}$ and $3\times10^{-8}$). Script \texttt{code\_\allowbreak{}from\_\allowbreak{}cfd/\allowbreak{}task\_\allowbreak{}1003/\allowbreak{}viz/\allowbreak{}viz\_\allowbreak{}u3d\_\allowbreak{}states.py}.}
 \end{figure}
 
+%%P5_BEGIN
+\subsection{Task P5 of the 2026-10-03 work order: five-case baseline pilot (results so far)}
+\label{sec:p5}
+\textbf{Design.} Five new cohort baselines (scans 138, 69, 473, 272, 139; selected by the analysis side by a fixed rule), baseline geometry only, one resistance-mode solve each with the production recipe (25\,$\mu$m throat zone, 4 boundary layers, bounded probe monitors of Task~C, 3000 iterations, fields kept), built by the generalised pipeline (\texttt{code\_\allowbreak{}from\_\allowbreak{}cfd/\allowbreak{}task\_\allowbreak{}1003/\allowbreak{}p5\_\allowbreak{}builders}; its regression on scan 14 reproduces the STL byte for byte and the mesh cell count). Gates are reported, not repaired: a case that fails a gate is solved and returned flagged. The solves ran concurrently with other jobs (up to 32 MPI ranks on the 16 physical cores, at the study lead's request), so the wall-clock columns of the returns are contended. No 0D prediction is available or used for these cohort scans; the 3D values below are for the analysis side to compare.
+
+\begin{table}[H]
+\centering
+\caption{\label{tab:p5}P5 cases: lesion vessel, length / diameter stenosis (mm / \%), cells, convergence verdict, throat Reynolds number, $p/P_\text{aorta}$ at the measurement probe used, and the machine-readable gate flags (D2: relative throat gate; D3/D4: strict \texttt{checkMesh} within 2\,mm of the throat or the measurement probe).}
+\small
+\resizebox{\textwidth}{!}{\begin{tabular}{llrrlrll}
+\toprule
+scan & vessel & L / DS & cells & verdict & Re$_\text{throat}$ & $p/P_\text{aorta}$ at measurement & flags \\
+\midrule
+138 & LAD & 20 / 70 & 4{,}941{,}176 & converged & 264 & 0.87816 (p010) & D3\_FAIL, D4\_FAIL, CHECKMESH\_STANDARD\_FAIL \\
+69 & LCx & 20 / 65 & \multicolumn{5}{l}{queued} \\
+473 & LCx & 20 / 60 & \multicolumn{5}{l}{queued} \\
+272 & RCA & 10 / 65 & \multicolumn{5}{l}{queued} \\
+139 & RCA & 10 / 70 & \multicolumn{5}{l}{queued} \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_p5_138_cpr_cfd.png}
+\caption[P5 scan 138: segmentation reformation with the CFD speed]{P5 scan 138 (LAD, 20\,mm, 70\%DS): curved-planar reformation of the unmodified lumen label (white) in two orthogonal planes with the CFD speed $|U|$ in the CFD domain (the synthetic stenosis exists only in the CFD surface), and $p/P_\text{aorta}$ on the axis (bottom); red dotted: throat, cyan dashed: measurement probe.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_p5_138_wall.png}
+\caption[P5 scan 138: wall pressure]{P5 scan 138: wall pressure $p/P_\text{aorta}$ of the tree in three views and the 6\,mm around the throat.}
+\end{figure}
+%%P5_END
+
 \subsection{Item 5: RCR outlet BC verification --- \PASS{}}
 \label{sec:item5-status}
 The Crank-Nicolson coded RCR BC (\S\ref{sec:item1}'s design revision, independently verified standalone
