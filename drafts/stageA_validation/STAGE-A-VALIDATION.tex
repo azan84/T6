@@ -1774,13 +1774,13 @@ level & cells & iterations & FFR re-run & FFR original & offset 50 / 56.5\,mm ($
 S50 & 2{,}687{,}640 & 3000 & 0.793363 & 0.793362 & 0.0 / 0.4 & axisymmetric \\
 S25A & 3{,}194{,}196 & 4000 & 0.791103 & 0.791103 & 0.0 / 0.1 & axisymmetric \\
 S25B & 3{,}299{,}948 & 4000 & 0.791197 & 0.791197 & 0.0 / 0.1 & axisymmetric \\
-S12A & 6{,}739{,}168 & 6000 & \multicolumn{4}{l}{queued (about 10 GB RAM; waits for memory)} \\
+S12A & 6{,}739{,}168 & 6000 & 0.790308 & 0.790308 & 0.0 / 0.0 & axisymmetric \\
 S12B & 7{,}649{,}800 & 3000 & \multicolumn{4}{l}{queued after S12A} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Result so far.} S25B reproduces the original value to $3\times10^{-8}$ (last-100 band $6\times10^{-8}$, drift over the final 500 iterations $5\times10^{-9}$) with an axisymmetric jet, so rule (a) holds: the original S25B, the coarse level of the shifted-zone family, was on the axisymmetric state. With S50, S25A and S25B verified, both zone families are verified at their two coarser levels; the two finest levels (S12A, S12B, 6.7 and 7.6 million cells) are still to be re-run, and $U_{3D}$ stays provisional until then (decision D9). The re-runs use 8 ranks and regenerated meshes (the originals 16 ranks on the original meshes): the evidence about the original state is the FFR reproduction within $10^{-4}$ together with the jet state, not decomposition identity. Fig.~\ref{fig:taskB-states} shows the axisymmetric jet of S50 and S25B in the two mid-planes.
+\textbf{Result so far.} S25B reproduces the original value to $3\times10^{-8}$ (last-100 band $6\times10^{-8}$, drift over the final 500 iterations $5\times10^{-9}$) with an axisymmetric jet, so rule (a) holds: the original S25B, the coarse level of the shifted-zone family, was on the axisymmetric state. With S50, S25A and S25B verified, both zone families are verified at their two coarser levels; S12A (6.7 million cells, 6000 iterations) reproduces the original value to $3\times10^{-7}$ (last-100 band $2\times10^{-8}$) with an axisymmetric jet, so rule (a) holds for it too; only the finest level S12B (7.6 million cells) is still to be re-run, and $U_{3D}$ stays provisional until then (decision D9). The re-runs use 8 ranks and regenerated meshes (the originals 16 ranks on the original meshes): the evidence about the original state is the FFR reproduction within $10^{-4}$ together with the jet state, not decomposition identity. Fig.~\ref{fig:taskB-states} shows the axisymmetric jet of S50 and S25B in the two mid-planes.
 
 \begin{figure}[H]
 \centering
@@ -1802,8 +1802,8 @@ S12B & 7{,}649{,}800 & 3000 & \multicolumn{4}{l}{queued after S12A} \\
 scan & vessel & L / DS & cells & verdict & Re$_\text{throat}$ & $p/P_\text{aorta}$ at measurement & flags \\
 \midrule
 138 & LAD & 20 / 70 & 4{,}941{,}176 & converged & 264 & 0.87816 (p010) & D3\_FAIL, D4\_FAIL, CHECKMESH\_STANDARD\_FAIL \\
-69 & LCx & 20 / 65 & \multicolumn{5}{l}{queued} \\
-473 & LCx & 20 / 60 & \multicolumn{5}{l}{queued} \\
+69 & LCx & 20 / 65 & 4{,}218{,}023 & converged & 366 & 0.86960 (p012) & LESION\_PURITY\_GATE\_FAIL, POSITIVE\_CONTROL\_UNDETECTED \\
+473 & LCx & 20 / 60 & 5{,}487{,}673 & converged & 400 & 0.88685 (p011, relocated) & D2\_RELATIVE\_THROAT\_GATE\_FAIL, D3\_FAIL, D4\_FAIL, MEASUREMENT\_PROBE\_RELOCATED \\
 272 & RCA & 10 / 65 & \multicolumn{5}{l}{queued} \\
 139 & RCA & 10 / 70 & \multicolumn{5}{l}{queued} \\
 \bottomrule
@@ -1825,6 +1825,39 @@ scan & vessel & L / DS & cells & verdict & Re$_\text{throat}$ & $p/P_\text{aorta
 \centering
 \includegraphics[width=0.85\textwidth]{figures/cfd_p5_138_profile.png}
 \caption[P5 scan 138: pressure along the lesion vessel]{P5 scan 138: section-mean $p/P_\text{aorta}$ at the package probes along the lesion vessel (resistance mode), with the throat and measurement probes marked.}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_p5_69_cpr_cfd.png}
+\caption[P5 scan 69: segmentation reformation with the CFD speed]{P5 scan 69 (LCx, 20\,mm, 65\%DS): same layout as for scan 138.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_p5_69_wall.png}
+\caption[P5 scan 69: wall pressure]{P5 scan 69: wall pressure $p/P_\text{aorta}$ of the tree in three views and the 6\,mm around the throat.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/cfd_p5_69_profile.png}
+\caption[P5 scan 69: pressure along the lesion vessel]{P5 scan 69: section-mean $p/P_\text{aorta}$ along the lesion vessel at the package probes.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_p5_473_cpr_cfd.png}
+\caption[P5 scan 473: segmentation reformation with the CFD speed]{P5 scan 473 (LCx, 20\,mm, 60\%DS): same layout as for scan 138.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/cfd_p5_473_wall.png}
+\caption[P5 scan 473: wall pressure]{P5 scan 473: wall pressure $p/P_\text{aorta}$ of the tree in three views and the 6\,mm around the throat.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/cfd_p5_473_profile.png}
+\caption[P5 scan 473: pressure along the lesion vessel]{P5 scan 473: section-mean $p/P_\text{aorta}$ along the lesion vessel at the package probes.}
 \end{figure}
 %%P5_END
 
