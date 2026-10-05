@@ -1,0 +1,28 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/69_resistance",
+ "package_arg": "69_left_LCX_prox_20mm_65ds__baseline__real",
+ "pkg_root_arg": null,
+ "package_dir": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/P5/69_left_LCX_prox_20mm_65ds__baseline__real",
+ "recorded": {
+  "outlets.csv": "3aba4c8693d1fe36960bd607c5c29a58b31a118e1310c0fea0f5a69048faf842",
+  "bc_A.csv": "3a8958776943c6c8da0c66f9a2dfde00fd95b1f014ec3af7778012684e465ded",
+  "bc_C_flows.csv": "d4524946b0c753f1c0237f7d5c8256b3e5a37987cb45b7c4d0608475f0397b96",
+  "probes.csv": "a276d19ef72a091484787f4be06d6e15ef4db332aea5d667dea5251327f41974",
+  "inlet.json": "0e7e4dbd66f94c5481c9fbcf950a636aaa276200b83fa39b2ca9a1e0489b777c",
+  "centreline.vtp": "5d07d0ec016bae1f8a1a32a9cfec03847fbe63be4f78bffc9cf4b44dec141602",
+  "meta.json": "2224351cbd502947dc0ca062b5c45997c8bb76da3b66c9fc40467eba561dabc9",
+  "mask_edit.json": "8cd327e9fe1c57f732eb71092b7879659fd4900ede03316816efc65cc8912bd8"
+ },
+ "now": {
+  "outlets.csv": "3aba4c8693d1fe36960bd607c5c29a58b31a118e1310c0fea0f5a69048faf842",
+  "bc_A.csv": "3a8958776943c6c8da0c66f9a2dfde00fd95b1f014ec3af7778012684e465ded",
+  "bc_C_flows.csv": "d4524946b0c753f1c0237f7d5c8256b3e5a37987cb45b7c4d0608475f0397b96",
+  "probes.csv": "a276d19ef72a091484787f4be06d6e15ef4db332aea5d667dea5251327f41974",
+  "inlet.json": "0e7e4dbd66f94c5481c9fbcf950a636aaa276200b83fa39b2ca9a1e0489b777c",
+  "centreline.vtp": "5d07d0ec016bae1f8a1a32a9cfec03847fbe63be4f78bffc9cf4b44dec141602",
+  "meta.json": "2224351cbd502947dc0ca062b5c45997c8bb76da3b66c9fc40467eba561dabc9",
+  "mask_edit.json": "8cd327e9fe1c57f732eb71092b7879659fd4900ede03316816efc65cc8912bd8"
+ },
+ "fails": [],
+ "ok": true
+}

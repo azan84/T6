@@ -1,0 +1,29 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/139_resistance",
+ "label": "139_resistance",
+ "time": 3000.0,
+ "cells": 4138185,
+ "path": {
+  "package": "139_right_RCA_prox_10mm_70ds__baseline__real",
+  "throat_probe": "p004",
+  "throat_tree_node": 44,
+  "measurement": "package probe p009",
+  "measurement_tree_node": 93,
+  "path_nodes": 94
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 25,
+ "n_valid": 23,
+ "max_offset_over_req": 0.847484522693769,
+ "mean_offset_over_req": 0.24289862793709047,
+ "s_from_throat_at_max_mm": 6.0,
+ "mean_oN": -0.12294600001729976,
+ "mean_oB": -0.06051750869199695,
+ "direction_persistence_R": 0.1930066511958864,
+ "mean_direction_deg": -53.25839263860567,
+ "invalid_stations": [
+  8,
+  17
+ ]
+}

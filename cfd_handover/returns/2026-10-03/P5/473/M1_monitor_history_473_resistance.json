@@ -1,0 +1,109 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/473_resistance",
+ "measurement_probe_used": "p011_reloc",
+ "measurement_probe_package": "p011",
+ "relocated": true,
+ "monitors": [
+  "measurementFlux",
+  "measurementOrigFlux",
+  "measurementOrigP",
+  "measurementP",
+  "throatFlux",
+  "throatP"
+ ],
+ "n_iterations": 3000,
+ "every_iteration": {
+  "measurementP": true,
+  "measurementFlux": true,
+  "throatP": true,
+  "throatFlux": true,
+  "measurementOrigP": true,
+  "measurementOrigFlux": true
+ },
+ "measurementP": {
+  "last_iteration": 3000,
+  "last": 9.99916714,
+  "last100_mean": 9.999167149800003,
+  "last100_band_rel": 5.0004165182202136e-09,
+  "area_last_m2": 2.30076228e-06,
+  "last_p_over_Paorta": 0.8833348474953705,
+  "last100_mean_p_over_Paorta": 0.883334848361111
+ },
+ "measurementFlux": {
+  "last_iteration": 3000,
+  "last": 5.31013812e-07,
+  "last100_mean": 5.310138033999999e-07,
+  "last100_band_rel": 4.707975541264099e-08,
+  "area_last_m2": 2.30076228e-06
+ },
+ "throatP": {
+  "last_iteration": 3000,
+  "last": 9.91982668,
+  "last100_mean": 9.919826658100002,
+  "last100_band_rel": 7.0565749660148735e-09,
+  "area_last_m2": 1.30098514e-06,
+  "last_p_over_Paorta": 0.87632584443011,
+  "last100_mean_p_over_Paorta": 0.8763258424954455
+ },
+ "throatFlux": {
+  "last_iteration": 3000,
+  "last": 1.52500276e-06,
+  "last100_mean": 1.5250027562999996e-06,
+  "last100_band_rel": 6.557365221120774e-09,
+  "area_last_m2": 1.30098514e-06
+ },
+ "measurementOrigP": {
+  "last_iteration": 3000,
+  "last": 10.0389211,
+  "last100_mean": 10.038921131000004,
+  "last100_band_rel": 1.9922459590131288e-08,
+  "area_last_m2": 9.79814886e-06,
+  "last_p_over_Paorta": 0.886846745806727,
+  "last100_mean_p_over_Paorta": 0.8868467485452934
+ },
+ "measurementOrigFlux": {
+  "last_iteration": 3000,
+  "last": 1.02960305e-06,
+  "last100_mean": 1.0296030991e-06,
+  "last100_band_rel": 1.0683728523317518e-07,
+  "area_last_m2": 9.79814886e-06
+ },
+ "cross_check_probes_csv": {
+  "measurementP": {
+   "probe_id": "p011_reloc",
+   "kind": "measurement_relocated",
+   "section_p_over_Paorta": 0.883334848165752,
+   "section_area_mm2": 2.300764556188656,
+   "monitor_last_p_over_Paorta": 0.8833348474953705,
+   "monitor_area_mm2": 2.30076228,
+   "difference": -6.703815280673098e-10,
+   "area_rel_diff": -9.89318376887205e-07,
+   "note": "monitor = sampledPlane areaAverage on the bounded plane at the last iteration; section = connected-section pullback of the reconstructed fields (pf/m1_probes.py): same plane, different sampling (cell-centre cut vs pyvista slice)",
+   "area_flag": "OK"
+  },
+  "measurementOrigP": {
+   "probe_id": "p011",
+   "kind": "measurement",
+   "section_p_over_Paorta": 0.8868467474851904,
+   "section_area_mm2": 9.798145682885258,
+   "monitor_last_p_over_Paorta": 0.886846745806727,
+   "monitor_area_mm2": 9.79814886,
+   "difference": -1.6784634793154396e-09,
+   "area_rel_diff": 3.242567363503923e-07,
+   "note": "monitor = sampledPlane areaAverage on the bounded plane at the last iteration; section = connected-section pullback of the reconstructed fields (pf/m1_probes.py): same plane, different sampling (cell-centre cut vs pyvista slice)",
+   "area_flag": "OK"
+  },
+  "throatP": {
+   "probe_id": "p004",
+   "kind": "throat",
+   "section_p_over_Paorta": 0.8763258502422383,
+   "section_area_mm2": 1.3009852481456514,
+   "monitor_last_p_over_Paorta": 0.87632584443011,
+   "monitor_area_mm2": 1.30098514,
+   "difference": -5.812128334170552e-09,
+   "area_rel_diff": -8.312596277981754e-08,
+   "note": "monitor = sampledPlane areaAverage on the bounded plane at the last iteration; section = connected-section pullback of the reconstructed fields (pf/m1_probes.py): same plane, different sampling (cell-centre cut vs pyvista slice)",
+   "area_flag": "OK"
+  }
+ }
+}

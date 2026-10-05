@@ -1,0 +1,15 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_resistance",
+ "processor_dirs": [],
+ "latest_processor0": null,
+ "latest_reconstructed": "3000",
+ "fields": {
+  "U": 150172453,
+  "p": 49988610
+ },
+ "fails": [
+  "no time directory in processor0"
+ ],
+ "ok": false,
+ "note": "processor directories are NOT removed by post_case_generic.sh; remove them only after this check is ok and the outputs are verified"
+}

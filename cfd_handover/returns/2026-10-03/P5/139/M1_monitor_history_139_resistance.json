@@ -1,0 +1,77 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/139_resistance",
+ "measurement_probe_used": "p009",
+ "measurement_probe_package": "p009",
+ "relocated": false,
+ "monitors": [
+  "measurementFlux",
+  "measurementP",
+  "throatFlux",
+  "throatP"
+ ],
+ "n_iterations": 3000,
+ "every_iteration": {
+  "measurementP": true,
+  "measurementFlux": true,
+  "throatP": true,
+  "throatFlux": true
+ },
+ "measurementP": {
+  "last_iteration": 3000,
+  "last": 9.69809139,
+  "last100_mean": 9.698091405699998,
+  "last100_band_rel": 1.2373568597236995e-08,
+  "area_last_m2": 3.70069181e-06,
+  "last_p_over_Paorta": 0.8567375621427822,
+  "last100_mean_p_over_Paorta": 0.8567375635297333
+ },
+ "measurementFlux": {
+  "last_iteration": 3000,
+  "last": 4.80269458e-07,
+  "last100_mean": 4.802694559900001e-07,
+  "last100_band_rel": 6.246493449595815e-09,
+  "area_last_m2": 3.70069181e-06
+ },
+ "throatP": {
+  "last_iteration": 3000,
+  "last": 9.52033924,
+  "last100_mean": 9.5203392482,
+  "last100_band_rel": 6.302296385782247e-09,
+  "area_last_m2": 3.68523981e-07,
+  "last_p_over_Paorta": 0.84103478749027,
+  "last100_mean_p_over_Paorta": 0.841034788214665
+ },
+ "throatFlux": {
+  "last_iteration": 3000,
+  "last": 4.79490924e-07,
+  "last100_mean": 4.7949092353e-07,
+  "last100_band_rel": 2.0855452200544677e-09,
+  "area_last_m2": 3.68523981e-07
+ },
+ "cross_check_probes_csv": {
+  "measurementP": {
+   "probe_id": "p009",
+   "kind": "measurement",
+   "section_p_over_Paorta": 0.8567375639422679,
+   "section_area_mm2": 3.7006901641115344,
+   "monitor_last_p_over_Paorta": 0.8567375621427822,
+   "monitor_area_mm2": 3.7006918100000004,
+   "difference": -1.7994856715830565e-09,
+   "area_rel_diff": 4.4475176053104803e-07,
+   "note": "monitor = sampledPlane areaAverage on the bounded plane at the last iteration; section = connected-section pullback of the reconstructed fields (pf/m1_probes.py): same plane, different sampling (cell-centre cut vs pyvista slice)",
+   "area_flag": "OK"
+  },
+  "throatP": {
+   "probe_id": "p004",
+   "kind": "throat",
+   "section_p_over_Paorta": 0.8410359432474627,
+   "section_area_mm2": 0.36833724641921484,
+   "monitor_last_p_over_Paorta": 0.84103478749027,
+   "monitor_area_mm2": 0.368523981,
+   "difference": -1.1557571926168464e-06,
+   "area_rel_diff": 0.0005069663266490387,
+   "note": "monitor = sampledPlane areaAverage on the bounded plane at the last iteration; section = connected-section pullback of the reconstructed fields (pf/m1_probes.py): same plane, different sampling (cell-centre cut vs pyvista slice)",
+   "area_flag": "OK"
+  }
+ }
+}

@@ -1,0 +1,138 @@
+{
+ "case_dir": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/69_resistance",
+ "label": "69",
+ "mode": "resistance",
+ "package": "69_left_LCX_prox_20mm_65ds__baseline__real",
+ "verdict": "CONVERGED",
+ "verdict_analyze_solve": "CONVERGED",
+ "failed_checks": [],
+ "last_iteration": 3000,
+ "log_finished": true,
+ "analysis_log_finished": true,
+ "run_completion": {
+  "log": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/69_resistance/log.simpleFoam",
+  "end_time_controlDict": 3000.0,
+  "n_run_headers": 1,
+  "last_header_line": 59,
+  "last_time_line": 168107,
+  "last_end_line": 168163,
+  "last_time": "3000",
+  "fails": [],
+  "ok": true
+ },
+ "package_check": {
+  "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/69_resistance",
+  "package_arg": "69_left_LCX_prox_20mm_65ds__baseline__real",
+  "pkg_root_arg": null,
+  "package_dir": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/P5/69_left_LCX_prox_20mm_65ds__baseline__real",
+  "recorded": {
+   "outlets.csv": "3aba4c8693d1fe36960bd607c5c29a58b31a118e1310c0fea0f5a69048faf842",
+   "bc_A.csv": "3a8958776943c6c8da0c66f9a2dfde00fd95b1f014ec3af7778012684e465ded",
+   "bc_C_flows.csv": "d4524946b0c753f1c0237f7d5c8256b3e5a37987cb45b7c4d0608475f0397b96",
+   "probes.csv": "a276d19ef72a091484787f4be06d6e15ef4db332aea5d667dea5251327f41974",
+   "inlet.json": "0e7e4dbd66f94c5481c9fbcf950a636aaa276200b83fa39b2ca9a1e0489b777c",
+   "centreline.vtp": "5d07d0ec016bae1f8a1a32a9cfec03847fbe63be4f78bffc9cf4b44dec141602",
+   "meta.json": "2224351cbd502947dc0ca062b5c45997c8bb76da3b66c9fc40467eba561dabc9",
+   "mask_edit.json": "8cd327e9fe1c57f732eb71092b7879659fd4900ede03316816efc65cc8912bd8"
+  },
+  "now": {
+   "outlets.csv": "3aba4c8693d1fe36960bd607c5c29a58b31a118e1310c0fea0f5a69048faf842",
+   "bc_A.csv": "3a8958776943c6c8da0c66f9a2dfde00fd95b1f014ec3af7778012684e465ded",
+   "bc_C_flows.csv": "d4524946b0c753f1c0237f7d5c8256b3e5a37987cb45b7c4d0608475f0397b96",
+   "probes.csv": "a276d19ef72a091484787f4be06d6e15ef4db332aea5d667dea5251327f41974",
+   "inlet.json": "0e7e4dbd66f94c5481c9fbcf950a636aaa276200b83fa39b2ca9a1e0489b777c",
+   "centreline.vtp": "5d07d0ec016bae1f8a1a32a9cfec03847fbe63be4f78bffc9cf4b44dec141602",
+   "meta.json": "2224351cbd502947dc0ca062b5c45997c8bb76da3b66c9fc40467eba561dabc9",
+   "mask_edit.json": "8cd327e9fe1c57f732eb71092b7879659fd4900ede03316816efc65cc8912bd8"
+  },
+  "fails": [],
+  "ok": true
+ },
+ "radius_outputs": "regenerated; provenance written",
+ "wall_clock_s": 37092,
+ "execution_time_s": 37061.5,
+ "cells": 4218023,
+ "nproc": 8,
+ "peak_ram_gb": "",
+ "peak_ram_source": "not available (no PEAK_RAM_GB, no MEMLOG sampler file)",
+ "measurement_probe_package": "p012",
+ "measurement_probe_used": "p012",
+ "measurement_section_rule": "PASS",
+ "measurement_probe_relocated": null,
+ "processor_dirs_kept": [
+  "processor0",
+  "processor1",
+  "processor2",
+  "processor3",
+  "processor4",
+  "processor5",
+  "processor6",
+  "processor7"
+ ],
+ "outputs": {
+  "run_completion_69_resistance.json": {
+   "size_bytes": 287,
+   "sha256": "bf92b1ae1e77487784852d229c7d25ac54ed2343e716290b5cfebbbd222b0a3e"
+  },
+  "package_check_69_resistance.json": {
+   "size_bytes": 1713,
+   "sha256": "87465f414285641acbcd415156a12f3ac87c55def86138c9ba1b0ebb3037d5cd"
+  },
+  "M1_probes_69_resistance.csv": {
+   "size_bytes": 6044,
+   "sha256": "588c9848d29662920336187ce1539e25be5344f78866065b9f51eb2e6388f1be"
+  },
+  "M1_outlets_69_resistance.csv": {
+   "size_bytes": 1119,
+   "sha256": "402b2ebac12093cbb56b9f73c01c0f6db4deb20ad34307f985449df1804f9673"
+  },
+  "M1_results.csv": {
+   "size_bytes": 2362,
+   "sha256": "016105715d510c93350c23c35d6871225dffab37503d3e4ffd9e3ad5b8c1ad6a"
+  },
+  "fill_69_resistance.json": {
+   "size_bytes": 2623,
+   "sha256": "3f011af868170f99360fb124630c20bc11c29cba18f1c0f0263bb20cf75d855c"
+  },
+  "M1_monitor_history_69_resistance.csv": {
+   "size_bytes": 634956,
+   "sha256": "bb168ea6dc74b6e38ed57e0bfa8264290f4581ff444d834fdca124d81c73c2fe"
+  },
+  "M1_monitor_history_69_resistance.json": {
+   "size_bytes": 2584,
+   "sha256": "43ad3934d8e058bcbee5804d5d79e6c4d67e17623d29822cf5821abe3ac5957b"
+  },
+  "settle_69_resistance.csv": {
+   "size_bytes": 1368,
+   "sha256": "de2fb7ade53445b0ee0b95b3ad6952db8f065475333dea450d728c0158e3fa4f"
+  },
+  "reconstruct_check_69_resistance.json": {
+   "size_bytes": 529,
+   "sha256": "8be8fa5e7c7fd8cd62d492621cdbe63e21d556db2c33c7414737b2029d7c0731"
+  },
+  "as_meshed_radius_69.csv": {
+   "size_bytes": 59604,
+   "sha256": "fdc90a9b00a538a6c1163d9daad761b125b1e1f89359054b32536c6ef44843fe"
+  },
+  "as_meshed_radius_69_inscribed.csv": {
+   "size_bytes": 59621,
+   "sha256": "880487d76a1c75ac92d389b247a9aab23427a068228ea554598cc1cb6555bf80"
+  },
+  "as_meshed_radius_69_detail.csv": {
+   "size_bytes": 134004,
+   "sha256": "577aedd23dc1ac716651bab4a69b08262f3903693e6667ce5204c4cfd41baa08"
+  },
+  "as_meshed_radius_69_provenance.json": {
+   "size_bytes": 1548,
+   "sha256": "a8e99fcb4d019cfd2d6551060955981d20ec2a983c18713fe5ecc0ca9f01e871"
+  },
+  "flow_state_69_resistance.csv": {
+   "size_bytes": 19043,
+   "sha256": "27634c0ea92f14e8de1105bc59289cfe47869a5f4251fef7e9e481bbed31505b"
+  }
+ },
+ "missing_outputs": [],
+ "flags": "LESION_PURITY_GATE_FAIL;POSITIVE_CONTROL_UNDETECTED",
+ "outlets_lost_in_mesh": [],
+ "reference_comparison": "not requested (set REF_FFR)"
+}

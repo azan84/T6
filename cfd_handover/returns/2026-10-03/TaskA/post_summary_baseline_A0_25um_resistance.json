@@ -1,0 +1,139 @@
+{
+ "case_dir": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_A0_25um_resistance",
+ "label": "baseline_A0_25um",
+ "mode": "resistance",
+ "package": "14_left_LAD_prox_20mm_80ds__baseline__real",
+ "verdict": "CONVERGED",
+ "verdict_analyze_solve": "CONVERGED",
+ "failed_checks": [],
+ "last_iteration": 3000,
+ "log_finished": true,
+ "analysis_log_finished": true,
+ "run_completion": {
+  "log": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_A0_25um_resistance/log.simpleFoam",
+  "end_time_controlDict": 3000.0,
+  "n_run_headers": 1,
+  "last_header_line": 61,
+  "last_time_line": 204125,
+  "last_end_line": 204193,
+  "last_time": "3000",
+  "fails": [],
+  "ok": true
+ },
+ "package_check": {
+  "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_A0_25um_resistance",
+  "package_arg": "14_left_LAD_prox_20mm_80ds__baseline__real",
+  "pkg_root_arg": null,
+  "package_dir": "/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real",
+  "recorded": {
+   "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+   "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+   "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+   "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+   "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+   "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+   "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+   "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+  },
+  "now": {
+   "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+   "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+   "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+   "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+   "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+   "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+   "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+   "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+  },
+  "fails": [],
+  "ok": true
+ },
+ "radius_outputs": "not recorded",
+ "wall_clock_s": 17734,
+ "execution_time_s": 17696.93,
+ "cells": 3657147,
+ "nproc": 16,
+ "peak_ram_gb": "",
+ "peak_ram_source": "not available (no PEAK_RAM_GB, no MEMLOG sampler file)",
+ "measurement_probe_package": "p011",
+ "measurement_probe_used": "p011",
+ "measurement_section_rule": "PASS",
+ "measurement_probe_relocated": null,
+ "processor_dirs_kept": [],
+ "outputs": {
+  "run_completion_baseline_A0_25um_resistance.json": {
+   "size_bytes": 298,
+   "sha256": "0cb1a28f67dab4c5255049041695cc930b77c1174682cdc9e980dc65afe6f188"
+  },
+  "package_check_baseline_A0_25um_resistance.json": {
+   "size_bytes": 1743,
+   "sha256": "856c14edb0f97589eda0f57180a5993479114781d4ab260501a79a252760fe51"
+  },
+  "M1_probes_baseline_A0_25um_resistance.csv": {
+   "size_bytes": 9000,
+   "sha256": "8769449b72ba250901718172a8a4c7212b150946a4584353977c185bb054f5f0"
+  },
+  "M1_outlets_baseline_A0_25um_resistance.csv": {
+   "size_bytes": 1693,
+   "sha256": "a6d5bc9e8c8a9319ab7ae89521d48f622b3cce93308eedc21380ab3707f7f555"
+  },
+  "M1_results.csv": {
+   "size_bytes": 6181,
+   "sha256": "048e127d83dfc64067354acc282020549318e9c1df49f6af3ccb9a2c07a53cb6"
+  },
+  "fill_baseline_A0_25um_resistance.json": {
+   "size_bytes": 2651,
+   "sha256": "a8f91dc13a192b0b9eedb7dab35f048a21069de5d7eb620e32a5d007f0ed7a9a"
+  },
+  "M1_monitor_history_baseline_A0_25um_resistance.csv": {
+   "size_bytes": 632664,
+   "sha256": "227ce19227a318dc495dbc27c02e73d4f4618b44477d707aa2da3442b8ef7e02"
+  },
+  "M1_monitor_history_baseline_A0_25um_resistance.json": {
+   "size_bytes": 2583,
+   "sha256": "95faaa2ba6645f016be82651bb2c14b94c29d0d1a8363e5adf3983143a897ac1"
+  },
+  "settle_baseline_A0_25um_resistance.csv": {
+   "size_bytes": 1415,
+   "sha256": "1d9528894e2751e0a132780cd6e8af2fd3f97f7a285dd061b0981c543daf2e05"
+  },
+  "reconstruct_check_baseline_A0_25um_resistance.json": {
+   "size_bytes": 673,
+   "sha256": "b1d7d3f0c126bcaf44f1028d13174a2f5693c1f44581e85750b4ce57cba20ee0"
+  },
+  "as_meshed_radius_baseline_A0_25um.csv": {
+   "size_bytes": 73794,
+   "sha256": "721a1f05558717591d4f792f47c1e30d23fb252faefe39c211ca78df8b6f71fd"
+  },
+  "as_meshed_radius_baseline_A0_25um_inscribed.csv": {
+   "size_bytes": 73825,
+   "sha256": "da7f2fd8d0b6da1a8d2a3f9f0c01f3f99752aa5e63ec2e953aa80e7339e5cbcb"
+  },
+  "as_meshed_radius_baseline_A0_25um_detail.csv": {
+   "size_bytes": 178655,
+   "sha256": "ce12f74475808b47a3ca4ad7994e1f7cee839d12d88d12aa6576c833f3d69b75"
+  },
+  "as_meshed_radius_baseline_A0_25um_provenance.json": {
+   "size_bytes": 1631,
+   "sha256": "ef73914b6c723965d5e565f366269f579da18e542eb12d34c092fe2b91b6eb17"
+  },
+  "flow_state_baseline_A0_25um_resistance.csv": {
+   "size_bytes": 19940,
+   "sha256": "f5844f4a21eb67118b93a26f4ebb5d6ddff856aaa101505c1ff8f15eb3ce43f6"
+  }
+ },
+ "missing_outputs": [],
+ "flags": "SELF_INTERSECTION;D3_FAIL;D4_FAIL",
+ "outlets_lost_in_mesh": [],
+ "reference_comparison": {
+  "reference": 0.8697574904997768,
+  "value": 0.8697574904997768,
+  "probe_id": "p011",
+  "time": "3000.0",
+  "DeltaFFR": 0.0,
+  "tol": 0.00055,
+  "within": true,
+  "measurementP_last100_mean_p_over_Paorta_B1": 0.8697574912372551,
+  "statement": "FFR(p011, reconstructed time 3000.0) = 0.8697575; DeltaFFR vs reference 0.8697574904997768 = +0.0000000: |DeltaFFR| < 0.00055; measurementP last-100 mean 0.8697575 (B1, reported separately)"
+ }
+}

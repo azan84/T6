@@ -1,0 +1,22 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/69_resistance",
+ "processor_dirs": [
+  "processor0",
+  "processor1",
+  "processor2",
+  "processor3",
+  "processor4",
+  "processor5",
+  "processor6",
+  "processor7"
+ ],
+ "latest_processor0": "3000",
+ "latest_reconstructed": "3000",
+ "fields": {
+  "U": 101587325,
+  "p": 33831621
+ },
+ "fails": [],
+ "ok": true,
+ "note": "processor directories are NOT removed by post_case_generic.sh; remove them only after this check is ok and the outputs are verified"
+}

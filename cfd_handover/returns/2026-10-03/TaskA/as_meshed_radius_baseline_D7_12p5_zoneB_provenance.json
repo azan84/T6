@@ -1,0 +1,31 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_zoneB_resistance",
+ "mesh": {
+  "polyMesh": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_zoneB_resistance/constant/polyMesh",
+  "files": [
+   "boundary",
+   "faces",
+   "meshMetaDict",
+   "neighbour",
+   "owner",
+   "points"
+  ],
+  "sha256": "16601600da5186aa8c9fb157fb1a0b212cd9e39f24bb63b598c400b4d9af2995"
+ },
+ "package_dir": "/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real",
+ "package_hashes": {
+  "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+  "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+  "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+  "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+  "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+  "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+  "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+  "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+ },
+ "outputs": {
+  "as_meshed_radius_baseline_D7_12p5_zoneB.csv": "d61f33553a9980afb5c8202c3a255d3dd11b9f91af1b496d76f60c3f6e7e4247",
+  "as_meshed_radius_baseline_D7_12p5_zoneB_inscribed.csv": "281ab264621db7f633d0eb2025219c247cfba61b16fa0cbf347d7fcc0e721a58",
+  "as_meshed_radius_baseline_D7_12p5_zoneB_detail.csv": "4d63044fae289155b311c4fcdf04393c5b30e974d790633285b97fd309184a88"
+ }
+}

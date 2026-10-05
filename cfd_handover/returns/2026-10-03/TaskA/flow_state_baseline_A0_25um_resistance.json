@@ -1,0 +1,29 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_A0_25um_resistance",
+ "label": "baseline_A0_25um_resistance",
+ "time": 3000.0,
+ "cells": 3657147,
+ "path": {
+  "package": "14_left_LAD_prox_20mm_80ds__baseline__real",
+  "throat_probe": "p004",
+  "throat_tree_node": 73,
+  "measurement": "package probe p011",
+  "measurement_tree_node": 175,
+  "path_nodes": 132
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 30,
+ "n_valid": 28,
+ "max_offset_over_req": 0.517144137267061,
+ "mean_offset_over_req": 0.16169758686395416,
+ "s_from_throat_at_max_mm": 8.999999999999996,
+ "mean_oN": -0.1263943589721643,
+ "mean_oB": 0.06507686214310938,
+ "direction_persistence_R": 0.5782608260445439,
+ "mean_direction_deg": 159.5435431507824,
+ "invalid_stations": [
+  21,
+  22
+ ]
+}

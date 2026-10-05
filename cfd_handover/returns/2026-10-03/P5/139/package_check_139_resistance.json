@@ -1,0 +1,28 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/139_resistance",
+ "package_arg": "139_right_RCA_prox_10mm_70ds__baseline__real",
+ "pkg_root_arg": null,
+ "package_dir": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/P5/139_right_RCA_prox_10mm_70ds__baseline__real",
+ "recorded": {
+  "outlets.csv": "ae550f783bb10394e668ee4b7053711450ea3fd8319eb2a63540d05a2de9594b",
+  "bc_A.csv": "61ff77274e511c5021b85b2629e919a07afb4b94f7f6d414eda6f55605136982",
+  "bc_C_flows.csv": "4ea7877172ef69210b0aa348a2fc4f8b2149de594ac73850462f87462f89857e",
+  "probes.csv": "1eda30f14e54aa3844fb87fc736f23f8741702a24b273bc706b696646fa2acd3",
+  "inlet.json": "475027b8351691aff6b540dc4b12428c9ee5afcadd47e3f54b029e1db5365c43",
+  "centreline.vtp": "f79aabcb4359162e397173fcea010929ed5fbd24bf3767208256accaa0b90ce7",
+  "meta.json": "0deac0f9626729281c00d5449640b2b4992b01a0c818ebb8b55bd3afa2ff503a",
+  "mask_edit.json": "af86ca1b00904a48bb0564ecc4a66c843fb44c524634c91ebb3f33672d2a118a"
+ },
+ "now": {
+  "outlets.csv": "ae550f783bb10394e668ee4b7053711450ea3fd8319eb2a63540d05a2de9594b",
+  "bc_A.csv": "61ff77274e511c5021b85b2629e919a07afb4b94f7f6d414eda6f55605136982",
+  "bc_C_flows.csv": "4ea7877172ef69210b0aa348a2fc4f8b2149de594ac73850462f87462f89857e",
+  "probes.csv": "1eda30f14e54aa3844fb87fc736f23f8741702a24b273bc706b696646fa2acd3",
+  "inlet.json": "475027b8351691aff6b540dc4b12428c9ee5afcadd47e3f54b029e1db5365c43",
+  "centreline.vtp": "f79aabcb4359162e397173fcea010929ed5fbd24bf3767208256accaa0b90ce7",
+  "meta.json": "0deac0f9626729281c00d5449640b2b4992b01a0c818ebb8b55bd3afa2ff503a",
+  "mask_edit.json": "af86ca1b00904a48bb0564ecc4a66c843fb44c524634c91ebb3f33672d2a118a"
+ },
+ "fails": [],
+ "ok": true
+}

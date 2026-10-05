@@ -1,0 +1,29 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_zoneB_resistance",
+ "label": "baseline_D7_12p5_zoneB_resistance",
+ "time": 3000.0,
+ "cells": 8308794,
+ "path": {
+  "package": "14_left_LAD_prox_20mm_80ds__baseline__real",
+  "throat_probe": "p004",
+  "throat_tree_node": 73,
+  "measurement": "package probe p011",
+  "measurement_tree_node": 175,
+  "path_nodes": 132
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 30,
+ "n_valid": 28,
+ "max_offset_over_req": 0.4949459250817033,
+ "mean_offset_over_req": 0.15056749371207304,
+ "s_from_throat_at_max_mm": 4.9999999999999964,
+ "mean_oN": -0.08860410042960853,
+ "mean_oB": 0.0777117455127102,
+ "direction_persistence_R": 0.5077496473198867,
+ "mean_direction_deg": 145.37194669205542,
+ "invalid_stations": [
+  21,
+  22
+ ]
+}

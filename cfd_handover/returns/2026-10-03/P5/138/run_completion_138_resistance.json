@@ -1,0 +1,11 @@
+{
+ "log": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/138_resistance/log.simpleFoam",
+ "end_time_controlDict": 3000.0,
+ "n_run_headers": 1,
+ "last_header_line": 60,
+ "last_time_line": 186116,
+ "last_end_line": 186178,
+ "last_time": "3000",
+ "fails": [],
+ "ok": true
+}

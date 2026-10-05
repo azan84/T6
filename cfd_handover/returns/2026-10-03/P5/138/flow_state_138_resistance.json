@@ -1,0 +1,26 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/138_resistance",
+ "label": "138_resistance",
+ "time": 3000.0,
+ "cells": 4941176,
+ "path": {
+  "package": "138_left_LAD_prox_20mm_70ds__baseline__real",
+  "throat_probe": "p004",
+  "throat_tree_node": 62,
+  "measurement": "package probe p010",
+  "measurement_tree_node": 249,
+  "path_nodes": 114
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 30,
+ "n_valid": 30,
+ "max_offset_over_req": 0.8867436558819493,
+ "mean_offset_over_req": 0.3289400331139183,
+ "s_from_throat_at_max_mm": 8.0,
+ "mean_oN": -0.019473311045581573,
+ "mean_oB": 0.24360238224077696,
+ "direction_persistence_R": 0.5893330311283049,
+ "mean_direction_deg": 106.11780354906114,
+ "invalid_stations": []
+}

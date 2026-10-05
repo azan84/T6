@@ -1,0 +1,28 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_resistance",
+ "package_arg": "14_left_LAD_prox_20mm_80ds__baseline__real",
+ "pkg_root_arg": null,
+ "package_dir": "/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real",
+ "recorded": {
+  "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+  "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+  "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+  "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+  "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+  "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+  "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+  "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+ },
+ "now": {
+  "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+  "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+  "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+  "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+  "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+  "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+  "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+  "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+ },
+ "fails": [],
+ "ok": true
+}

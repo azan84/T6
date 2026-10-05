@@ -1,0 +1,31 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/473_resistance",
+ "label": "473_resistance",
+ "time": 3000.0,
+ "cells": 5487673,
+ "path": {
+  "package": "473_left_LCX_prox_20mm_60ds__baseline__real",
+  "throat_probe": "p004",
+  "throat_tree_node": 81,
+  "measurement": "RELOCATED probe p011_reloc (package probe p011 failed the strict section rule; build_info)",
+  "measurement_tree_node": 646,
+  "path_nodes": 106
+ },
+ "start_mm": 2.0,
+ "step_mm": 1.0,
+ "n_stations": 33,
+ "n_valid": 29,
+ "max_offset_over_req": 0.6117210319159083,
+ "mean_offset_over_req": 0.3676084358228919,
+ "s_from_throat_at_max_mm": 11.000000000000004,
+ "mean_oN": -0.07851687518482331,
+ "mean_oB": -0.05632307515459644,
+ "direction_persistence_R": 0.2312087489280317,
+ "mean_direction_deg": -117.38665306377439,
+ "invalid_stations": [
+  11,
+  28,
+  29,
+  31
+ ]
+}

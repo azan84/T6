@@ -1,0 +1,141 @@
+{
+ "case_dir": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_zoneB_resistance",
+ "label": "baseline_D7_12p5_zoneB",
+ "mode": "resistance",
+ "package": "14_left_LAD_prox_20mm_80ds__baseline__real",
+ "verdict": "UNCONVERGED",
+ "verdict_analyze_solve": "UNCONVERGED",
+ "failed_checks": [
+  "U_residual_lt_1e_5"
+ ],
+ "last_iteration": 3000,
+ "log_finished": true,
+ "analysis_log_finished": true,
+ "run_completion": {
+  "log": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_zoneB_resistance/log.simpleFoam",
+  "end_time_controlDict": 3000.0,
+  "n_run_headers": 1,
+  "last_header_line": 61,
+  "last_time_line": 204125,
+  "last_end_line": 204193,
+  "last_time": "3000",
+  "fails": [],
+  "ok": true
+ },
+ "package_check": {
+  "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_zoneB_resistance",
+  "package_arg": "14_left_LAD_prox_20mm_80ds__baseline__real",
+  "pkg_root_arg": null,
+  "package_dir": "/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real",
+  "recorded": {
+   "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+   "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+   "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+   "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+   "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+   "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+   "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+   "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+  },
+  "now": {
+   "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+   "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+   "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+   "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+   "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+   "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+   "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+   "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+  },
+  "fails": [],
+  "ok": true
+ },
+ "radius_outputs": "not recorded",
+ "wall_clock_s": 51000,
+ "execution_time_s": 50921.11,
+ "cells": 8308794,
+ "nproc": 16,
+ "peak_ram_gb": "",
+ "peak_ram_source": "not available (no PEAK_RAM_GB, no MEMLOG sampler file)",
+ "measurement_probe_package": "p011",
+ "measurement_probe_used": "p011",
+ "measurement_section_rule": "not evaluated (pre-strict-rule build)",
+ "measurement_probe_relocated": null,
+ "processor_dirs_kept": [],
+ "outputs": {
+  "run_completion_baseline_D7_12p5_zoneB_resistance.json": {
+   "size_bytes": 304,
+   "sha256": "5efdd607b8aabafb109aff2a1ca51ab788dd57db2d69818939a4e480cc4d979c"
+  },
+  "package_check_baseline_D7_12p5_zoneB_resistance.json": {
+   "size_bytes": 1749,
+   "sha256": "52e4f61e310a2f9a3fac558e731732387e0484036775dbe8261817804f05e130"
+  },
+  "M1_probes_baseline_D7_12p5_zoneB_resistance.csv": {
+   "size_bytes": 9178,
+   "sha256": "5eb8c3d12c36f5ecbbee2dfd41560f64bfd04373c1d3415e0d40c0c26facdb42"
+  },
+  "M1_outlets_baseline_D7_12p5_zoneB_resistance.csv": {
+   "size_bytes": 1734,
+   "sha256": "0e98788c798307a5d956f8a01b3518c6ad350aa7fd12de2b5d354103d7d748f4"
+  },
+  "M1_results.csv": {
+   "size_bytes": 4374,
+   "sha256": "6b655d1fce55e756ceb75e0f38738a47cc83361e07db22f590d344293f9fd9ba"
+  },
+  "fill_baseline_D7_12p5_zoneB_resistance.json": {
+   "size_bytes": 2669,
+   "sha256": "dd714273637cadec320515fd99b73c1ab5fe5c76ad3a92944a0e3b083e0e3cd4"
+  },
+  "M1_monitor_history_baseline_D7_12p5_zoneB_resistance.csv": {
+   "size_bytes": 638744,
+   "sha256": "14ab0ec393466f80f1cbc60c36039a65bbc0ffd2d9918f458e900af71913ff1a"
+  },
+  "M1_monitor_history_baseline_D7_12p5_zoneB_resistance.json": {
+   "size_bytes": 2603,
+   "sha256": "1228a8d3aa39fdd2c41fa3224d7821cf30ae282526de67e7fc075804eba9f8c1"
+  },
+  "settle_baseline_D7_12p5_zoneB_resistance.csv": {
+   "size_bytes": 1425,
+   "sha256": "7858b9302f84cd2c438642ffcdb8bf28eba62368a3177dc3c2f3b092e4746890"
+  },
+  "reconstruct_check_baseline_D7_12p5_zoneB_resistance.json": {
+   "size_bytes": 454,
+   "sha256": "4dd5473374704d209446c59076c2eeb96514dcabdc17af28df5228a579a23f1f"
+  },
+  "as_meshed_radius_baseline_D7_12p5_zoneB.csv": {
+   "size_bytes": 73809,
+   "sha256": "d61f33553a9980afb5c8202c3a255d3dd11b9f91af1b496d76f60c3f6e7e4247"
+  },
+  "as_meshed_radius_baseline_D7_12p5_zoneB_inscribed.csv": {
+   "size_bytes": 73840,
+   "sha256": "281ab264621db7f633d0eb2025219c247cfba61b16fa0cbf347d7fcc0e721a58"
+  },
+  "as_meshed_radius_baseline_D7_12p5_zoneB_detail.csv": {
+   "size_bytes": 183189,
+   "sha256": "4d63044fae289155b311c4fcdf04393c5b30e974d790633285b97fd309184a88"
+  },
+  "as_meshed_radius_baseline_D7_12p5_zoneB_provenance.json": {
+   "size_bytes": 1661,
+   "sha256": "5856186d6d0564b157b1dc7f7b0aacb141e808bbfd425e872a7f77f4e564fe43"
+  },
+  "flow_state_baseline_D7_12p5_zoneB_resistance.csv": {
+   "size_bytes": 20127,
+   "sha256": "3d771ca2d14aac0884a1b6b3d05142010561d810afee8f5c16f40a4c8f204d5c"
+  }
+ },
+ "missing_outputs": [],
+ "flags": "SELF_INTERSECTION;D3_FAIL;D4_FAIL;NOT_CONVERGED",
+ "outlets_lost_in_mesh": [],
+ "reference_comparison": {
+  "reference": 0.8697574904997768,
+  "value": 0.8718320760460757,
+  "probe_id": "p011",
+  "time": "3000.0",
+  "DeltaFFR": 0.0020745855462989127,
+  "tol": 0.00055,
+  "within": false,
+  "measurementP_last100_mean_p_over_Paorta_B1": 0.8718354777902789,
+  "statement": "FFR(p011, reconstructed time 3000.0) = 0.8718321; DeltaFFR vs reference 0.8697574904997768 = +0.0020746: |DeltaFFR| >= 0.00055; measurementP last-100 mean 0.8718355 (B1, reported separately)"
+ }
+}

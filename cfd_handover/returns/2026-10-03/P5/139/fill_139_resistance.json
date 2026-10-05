@@ -1,0 +1,46 @@
+{
+ "mesher": "cfMesh cartesianMesh (OpenFOAM ESI v2406)",
+ "openfoam_version": "ESI v2406",
+ "vmtk_version": "1.5.0",
+ "extension_lengths_mm": "{\"out_367\": 3.348904544901375, \"out_550\": 3.1280922873865267}",
+ "sources": {
+  "geometry_gates": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/out/139/gates.json",
+  "geometry_gates_source": "--gates",
+  "mesh_gates": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/mesh/139/mesh_gates.json",
+  "mesh_gates_source": "--mesh-gates",
+  "d34": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/mesh/139/d34.json",
+  "d34_source": "--d34",
+  "manual_repair_needed": "no manual-repair record in gates.json, mesh_gates.json, build_info.json"
+ },
+ "geometry_step_ok": false,
+ "geometry_all_gates_pass_including_reported": false,
+ "geometry_gates_failed_decisive": [
+  "lesion_relative_throat_gate"
+ ],
+ "geometry_gates_failed_reported_only": [
+  "lesion_literal_absolute_r_target_check"
+ ],
+ "n_surface_components": 1,
+ "throat_radius_asbuilt_mm": 0.3413646234582966,
+ "throat_radius_target_mm": 0.3048661818332669,
+ "throat_pct_error": 11.971954844434297,
+ "subdivision_edge_mm": 0.038108272729158364,
+ "n_cells": 4138185,
+ "checkMesh_ok": true,
+ "max_nonortho_deg": 55.5724,
+ "max_skewness": 1.91382,
+ "neg_volumes": 0,
+ "n_bl_layers": 4,
+ "throat_cells_across": 39,
+ "throat_cell_um_p95": 25.52358080064753,
+ "D3_verdict": "FAIL",
+ "D4_verdict": "FAIL",
+ "D34_min_dist_throat_mm": 1.5493486853134968,
+ "D34_min_dist_measurement_mm": 1.7927540247533746,
+ "D34_checks_within_2mm": "concaveCells;concaveFaces;lowQualityTetFaces",
+ "D34_probes": "throat p004, measurement p009",
+ "outlets_lost_in_mesh": "",
+ "manual_repair_needed": false,
+ "flags": "D2_RELATIVE_THROAT_GATE_FAIL;D3_FAIL;D4_FAIL",
+ "notes": "failed DECISIVE geometry gates: ['lesion_relative_throat_gate']; reported-only (D10, non-decisive) check failed: ['lesion_literal_absolute_r_target_check'] | throat as-built radius is the area-equivalent one; relative gate 0.06031801887735888 % | strict checkMesh failed checks: 3 (standard checkMesh OK); mesh GATES_PASS True | D3 FAIL / D4 FAIL: nearest strict-checkMesh entity 1.549 mm from the throat probe p004, 1.793 mm from the measurement probe p009 (limit 2 mm; checks within 2 mm: ['concaveCells', 'concaveFaces', 'lowQualityTetFaces']) | E0 guard MEMBER | extension lengths: as-built, from /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/out/139_extensions.json | vmtk use: vmtksurfacesmoothing (Taubin, 30 it) only; no vmtksurfaceremeshing"
+}

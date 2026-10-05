@@ -1,0 +1,31 @@
+{
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/139_resistance",
+ "mesh": {
+  "polyMesh": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/139_resistance/constant/polyMesh",
+  "files": [
+   "boundary",
+   "faces",
+   "meshMetaDict",
+   "neighbour",
+   "owner",
+   "points"
+  ],
+  "sha256": "316bc4e269242c1e520496221476d38bf588534c4a9a4db0e25017dc091dd3fb"
+ },
+ "package_dir": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/P5/139_right_RCA_prox_10mm_70ds__baseline__real",
+ "package_hashes": {
+  "outlets.csv": "ae550f783bb10394e668ee4b7053711450ea3fd8319eb2a63540d05a2de9594b",
+  "bc_A.csv": "61ff77274e511c5021b85b2629e919a07afb4b94f7f6d414eda6f55605136982",
+  "bc_C_flows.csv": "4ea7877172ef69210b0aa348a2fc4f8b2149de594ac73850462f87462f89857e",
+  "probes.csv": "1eda30f14e54aa3844fb87fc736f23f8741702a24b273bc706b696646fa2acd3",
+  "inlet.json": "475027b8351691aff6b540dc4b12428c9ee5afcadd47e3f54b029e1db5365c43",
+  "centreline.vtp": "f79aabcb4359162e397173fcea010929ed5fbd24bf3767208256accaa0b90ce7",
+  "meta.json": "0deac0f9626729281c00d5449640b2b4992b01a0c818ebb8b55bd3afa2ff503a",
+  "mask_edit.json": "af86ca1b00904a48bb0564ecc4a66c843fb44c524634c91ebb3f33672d2a118a"
+ },
+ "outputs": {
+  "as_meshed_radius_139.csv": "ab32a919d8db6ac08c633a0c826052cae355f889435a93292494a0469d3f2895",
+  "as_meshed_radius_139_inscribed.csv": "0b11f5bd3f2276ac340f980b3bb804b3ed7b7b8c9d15f9a569ce07387b584a31",
+  "as_meshed_radius_139_detail.csv": "5b2d4196df468f5a043a20c0f8d18e1a4cff3a457f0257b83ad79ae0c69b5f1d"
+ }
+}

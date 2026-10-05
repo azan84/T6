@@ -1,0 +1,304 @@
+{
+ "case_dir": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/473_resistance",
+ "label": "473",
+ "mode": "resistance",
+ "package": "473_left_LCX_prox_20mm_60ds__baseline__real",
+ "verdict": "CONVERGED",
+ "verdict_analyze_solve": "CONVERGED",
+ "failed_checks": [],
+ "last_iteration": 3000,
+ "log_finished": true,
+ "analysis_log_finished": true,
+ "run_completion": {
+  "log": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/473_resistance/log.simpleFoam",
+  "end_time_controlDict": 3000.0,
+  "n_run_headers": 1,
+  "last_header_line": 61,
+  "last_time_line": 228133,
+  "last_end_line": 228209,
+  "last_time": "3000",
+  "fails": [],
+  "ok": true
+ },
+ "package_check": {
+  "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/cases_v2/473_resistance",
+  "package_arg": "473_left_LCX_prox_20mm_60ds__baseline__real",
+  "pkg_root_arg": null,
+  "package_dir": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/P5/473_left_LCX_prox_20mm_60ds__baseline__real",
+  "recorded": {
+   "outlets.csv": "fbfbe2fc4ac3c320b0f3670e5294d1bfcd06c670ff9499e27f04a0269f0af6fa",
+   "bc_A.csv": "64db48cde64812b01b7bb0262f43c29bb40cd6d04f75e671677a08885ad29636",
+   "bc_C_flows.csv": "64b427444636506e201fabdcde6bb6f9bd9465a1c21017c47ebf7e4f823c80c9",
+   "probes.csv": "214d09a47ffa8644dd0f77ca5be99fd42f2c4eabd68dc3ddf99fbf906025dd44",
+   "inlet.json": "d7b2692002e160b5986238188cddf090439f333834844b00d2cab48de8b67510",
+   "centreline.vtp": "1dac5498b14e13fb49ab97a0970126a55f8fb56f9d671eaeb8f32ec6cef240ed",
+   "meta.json": "9e353a43f114300c8f80f80578e13347b0003f31958b93cde6cedfb98011fcee",
+   "mask_edit.json": "c05ad9dae08a473afe7f4f0014d3570bf2f1d7b4e179b883b9eba327c6d89c59"
+  },
+  "now": {
+   "outlets.csv": "fbfbe2fc4ac3c320b0f3670e5294d1bfcd06c670ff9499e27f04a0269f0af6fa",
+   "bc_A.csv": "64db48cde64812b01b7bb0262f43c29bb40cd6d04f75e671677a08885ad29636",
+   "bc_C_flows.csv": "64b427444636506e201fabdcde6bb6f9bd9465a1c21017c47ebf7e4f823c80c9",
+   "probes.csv": "214d09a47ffa8644dd0f77ca5be99fd42f2c4eabd68dc3ddf99fbf906025dd44",
+   "inlet.json": "d7b2692002e160b5986238188cddf090439f333834844b00d2cab48de8b67510",
+   "centreline.vtp": "1dac5498b14e13fb49ab97a0970126a55f8fb56f9d671eaeb8f32ec6cef240ed",
+   "meta.json": "9e353a43f114300c8f80f80578e13347b0003f31958b93cde6cedfb98011fcee",
+   "mask_edit.json": "c05ad9dae08a473afe7f4f0014d3570bf2f1d7b4e179b883b9eba327c6d89c59"
+  },
+  "fails": [],
+  "ok": true
+ },
+ "radius_outputs": "regenerated; provenance written",
+ "wall_clock_s": 35826,
+ "execution_time_s": 35821.53,
+ "cells": 5487673,
+ "nproc": 8,
+ "peak_ram_gb": "",
+ "peak_ram_source": "not available (no PEAK_RAM_GB, no MEMLOG sampler file)",
+ "measurement_probe_package": "p011",
+ "measurement_probe_used": "p011_reloc",
+ "measurement_section_rule": "FAILED_SECTION_RULE",
+ "measurement_probe_relocated": {
+  "original": {
+   "probe_id": "p011",
+   "tree_node": 642,
+   "point_mm": [
+    43.802162170410156,
+    -152.98678588867188,
+    138.22970581054688
+   ],
+   "normal": [
+    -0.253426808555229,
+    0.5918247459478999,
+    -0.7651916902248842
+   ],
+   "r_ref_mm": 0.8692494543055458,
+   "s_mm": "50.44657937826541",
+   "section_rule": {
+    "probe_id": "p011",
+    "tree_node": 642,
+    "S1_S2_centreline": {
+     "angle_deg": 36.63911380741745,
+     "max_angle_deg": 20.0,
+     "tangent": [
+      -0.7541181280484763,
+      0.5280570453958235,
+      -0.3904633219093632
+     ],
+     "bifurcation_clearance_required_mm": 1.3038741814583186,
+     "non_degree2_nodes_within": [
+      {
+       "tree_node": 424,
+       "point_index": 396,
+       "arc_from_probe_mm": -0.8403628446239964,
+       "degree": 3
+      }
+     ],
+     "nearest_non_degree2_node": {
+      "arc_from_probe_mm": -0.8403628446239964,
+      "degree": 3,
+      "tree_node": 424
+     },
+     "ok_angle": false,
+     "ok_bifurcation": false,
+     "ok": false
+    },
+    "S3_mesh_check_ok": true,
+    "S4_area": {
+     "area_over_pi_r_ref2": 4.127671843398354,
+     "limits": [
+      0.625,
+      1.6
+     ],
+     "ok": false
+    },
+    "mesh_checked": true,
+    "why_not_ok": [
+     "S1: normal 36.6 deg from the centreline tangent (> 20.0)",
+     "S2: non-degree-2 node(s) within 1.304 mm: [(424, -0.84, 3)]",
+     "S3/S4: area 4.128 x pi r_ref^2 outside [0.625, 1.6]"
+    ],
+    "infinite_plane_unbounded": {
+     "n_components": 3,
+     "total_area_mm2": 21.00599669919478,
+     "probe_component_area_mm2": 9.798145605244697
+    },
+    "status": "FAILED_SECTION_RULE"
+   },
+   "original_monitor": "measurementOrigFlux/measurementOrigP",
+   "original_monitor_note": null
+  },
+  "relocated": {
+   "probe_id": "p011_reloc",
+   "tree_node": 646,
+   "point_mm": [
+    42.17549133300781,
+    -151.48284912109375,
+    136.44998168945312
+   ],
+   "normal": [
+    -0.5048105894490393,
+    0.5259042300400691,
+    -0.6845370768673348
+   ],
+   "r_ref_mm": 0.8413563746319629,
+   "arc_from_original_mm": 2.8528414398839033,
+   "S1_S2_centreline": {
+    "angle_deg": 0.0,
+    "max_angle_deg": 20.0,
+    "tangent": [
+     -0.5048105894490393,
+     0.5259042300400691,
+     -0.6845370768673348
+    ],
+    "bifurcation_clearance_required_mm": 1.2620345619479443,
+    "non_degree2_nodes_within": [],
+    "nearest_non_degree2_node": {
+     "arc_from_probe_mm": -3.6932042845078996,
+     "degree": 3,
+     "tree_node": 424
+    },
+    "ok_angle": true,
+    "ok_bifurcation": true,
+    "ok": true
+   },
+   "S4_area": {
+    "area_over_pi_r_ref2": 1.0345758185956,
+    "limits": [
+     0.625,
+     1.6
+    ],
+    "ok": true
+   },
+   "mesh_checked": true
+  },
+  "rule": "nearest node of the same vessel path within 3.0 mm of arc (ties distal) passing S1-S4; normal = local path tangent",
+  "candidates_rejected_before": [
+   {
+    "tree_node": 643,
+    "arc_from_probe_mm": 0.6554346173395516,
+    "fails": "S3/S4: centreline clearance -1.202 mm < h_min 1.673 mm: another vessel is too close to the probe section for an axis-aligned box"
+   },
+   {
+    "tree_node": 424,
+    "arc_from_probe_mm": -0.8403628446239964,
+    "fails": "S1/S2",
+    "nearest_non_degree2": {
+     "arc_from_probe_mm": 0.0,
+     "degree": 3,
+     "tree_node": 424
+    }
+   },
+   {
+    "tree_node": 644,
+    "arc_from_probe_mm": 1.3766635060778754,
+    "fails": "S3/S4: centreline clearance -0.122 mm < h_min 1.568 mm: another vessel is too close to the probe section for an axis-aligned box"
+   },
+   {
+    "tree_node": 423,
+    "arc_from_probe_mm": -1.895641802813543,
+    "fails": "S1/S2",
+    "nearest_non_degree2": {
+     "arc_from_probe_mm": 1.0552789581895468,
+     "degree": 3,
+     "tree_node": 424
+    }
+   },
+   {
+    "tree_node": 645,
+    "arc_from_probe_mm": 2.1148817997030136,
+    "fails": "S3/S4: centreline clearance 0.315 mm < h_min 1.477 mm: another vessel is too close to the probe section for an axis-aligned box"
+   },
+   {
+    "tree_node": 422,
+    "arc_from_probe_mm": -2.5467582290024993,
+    "fails": "S1/S2",
+    "nearest_non_degree2": {
+     "arc_from_probe_mm": 1.706395384378503,
+     "degree": 3,
+     "tree_node": 424
+    }
+   }
+  ],
+  "monitors": {
+   "measurementP": "p011_reloc",
+   "measurementOrigP": "p011"
+  }
+ },
+ "processor_dirs_kept": [
+  "processor0",
+  "processor1",
+  "processor2",
+  "processor3",
+  "processor4",
+  "processor5",
+  "processor6",
+  "processor7"
+ ],
+ "outputs": {
+  "run_completion_473_resistance.json": {
+   "size_bytes": 288,
+   "sha256": "d42bc0ebe053a65d4a2d69af8aee96d9e0709ac1b0f758a0ca93dff3a654823c"
+  },
+  "package_check_473_resistance.json": {
+   "size_bytes": 1716,
+   "sha256": "996cfa74e4ce3c77edf23f87d7dc252b0b7ab6950376e6408c6224ecb91c5f4a"
+  },
+  "M1_probes_473_resistance.csv": {
+   "size_bytes": 6395,
+   "sha256": "32dbafd6fe446a861178dec3f35cb02a788b46b9764284493298f810bc437a98"
+  },
+  "M1_outlets_473_resistance.csv": {
+   "size_bytes": 1536,
+   "sha256": "780a65223faba495a17ef704c9f4aa3a1a7a3cb17dc8663dc649958b547ca0f1"
+  },
+  "M1_results.csv": {
+   "size_bytes": 3010,
+   "sha256": "7910745b26f9543af7933832536e3ca2c320d4252d190b861b193a5c6c5156b5"
+  },
+  "fill_473_resistance.json": {
+   "size_bytes": 2851,
+   "sha256": "02886724161166fb39794e281e08c2ff2ed6fe77a050b234320fc15ba048088a"
+  },
+  "M1_monitor_history_473_resistance.csv": {
+   "size_bytes": 940307,
+   "sha256": "11dfad1fd0a7c66219aaf138996f953e358357d0a231f15b5f40ea4788275d1e"
+  },
+  "M1_monitor_history_473_resistance.json": {
+   "size_bytes": 3797,
+   "sha256": "8004620ff351e9ec2e1823d8f671b2b68e19fc47f9975d8f9e466d6cb3be44ad"
+  },
+  "settle_473_resistance.csv": {
+   "size_bytes": 1364,
+   "sha256": "5b146b83e3f7d0a3f49cfde83125aaa1ef324b0a7599b268ea2bf46a67303d51"
+  },
+  "reconstruct_check_473_resistance.json": {
+   "size_bytes": 530,
+   "sha256": "46efd6b509dc640df729efeabe7292a40be1a7d9871d55a9ee35aa3b0465c854"
+  },
+  "as_meshed_radius_473.csv": {
+   "size_bytes": 73747,
+   "sha256": "211a5199f2dc20f20c33097fee9e8f0e27263f13237a8e9a8c4e035d5e0b3996"
+  },
+  "as_meshed_radius_473_inscribed.csv": {
+   "size_bytes": 73795,
+   "sha256": "1f8149a9f8497f988b2a0f8407bef696654572386a9e5f940464d00547c18982"
+  },
+  "as_meshed_radius_473_detail.csv": {
+   "size_bytes": 169130,
+   "sha256": "ad56980944270b9662edb794b9f5ad5e6be53b271178d7d26868eeb9cd3f7e5f"
+  },
+  "as_meshed_radius_473_provenance.json": {
+   "size_bytes": 1554,
+   "sha256": "832852482b61b9239a42a7ad3dcccfb095a11f7e9b595970c21c50a317b9c59f"
+  },
+  "flow_state_473_resistance.csv": {
+   "size_bytes": 21515,
+   "sha256": "adee8a0d597974e580db2356ad69b2e4049543bfdad595ddee280b5b64cd9b33"
+  }
+ },
+ "missing_outputs": [],
+ "flags": "D2_RELATIVE_THROAT_GATE_FAIL;D3_FAIL;D4_FAIL;MEASUREMENT_PROBE_RELOCATED",
+ "outlets_lost_in_mesh": [],
+ "reference_comparison": "not requested (set REF_FFR)"
+}
