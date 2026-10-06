@@ -11,6 +11,10 @@
  },
  "cfmesh_maxCellSize_mm": 0.2,
  "cfmesh_root_level": 10,
+ "n_refinement_objects": 104,
+ "neck_node381_to_out_396_sphere_centre_mm": 9.568,
+ "out_396_sphere_radius_mm": 4.0,
+ "mesher_log_unconnected": true,
  "rows": [
   {
    "tree_node": 370,
@@ -22,7 +26,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5279381713665254,
    "r_eq_smoothed_mm": 0.520469610185915,
-   "r_eq_final_mm": 0.5204707005866991
+   "r_eq_final_mm": 0.5204707005866991,
+   "xyz_mm": [
+    21.471,
+    -169.922,
+    186.62
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 371,
@@ -34,7 +44,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5392074370462256,
    "r_eq_smoothed_mm": 0.5485539881038785,
-   "r_eq_final_mm": 0.5485542593142599
+   "r_eq_final_mm": 0.5485542593142599,
+   "xyz_mm": [
+    21.788,
+    -170.128,
+    186.45
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 372,
@@ -46,7 +62,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5790233137883456,
    "r_eq_smoothed_mm": 0.5376099007403791,
-   "r_eq_final_mm": 0.5376070206516373
+   "r_eq_final_mm": 0.5376070206516373,
+   "xyz_mm": [
+    22.055,
+    -170.388,
+    186.28
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 373,
@@ -58,7 +80,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5413172777731149,
    "r_eq_smoothed_mm": 0.545853838996041,
-   "r_eq_final_mm": 0.5458536269394968
+   "r_eq_final_mm": 0.5458536269394968,
+   "xyz_mm": [
+    22.292,
+    -170.697,
+    186.067
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 374,
@@ -70,7 +98,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5599916846225244,
    "r_eq_smoothed_mm": 0.5473778828603872,
-   "r_eq_final_mm": 0.5473768991714544
+   "r_eq_final_mm": 0.5473768991714544,
+   "xyz_mm": [
+    22.56,
+    -171.008,
+    185.834
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 375,
@@ -82,7 +116,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5641351036359886,
    "r_eq_smoothed_mm": 0.5619994146240606,
-   "r_eq_final_mm": 0.5620004597691
+   "r_eq_final_mm": 0.5620004597691,
+   "xyz_mm": [
+    22.875,
+    -171.274,
+    185.63
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 376,
@@ -94,7 +134,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.564700401369571,
    "r_eq_smoothed_mm": 0.5475021419601713,
-   "r_eq_final_mm": 0.5475004089539821
+   "r_eq_final_mm": 0.5475004089539821,
+   "xyz_mm": [
+    23.21,
+    -171.511,
+    185.496
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 377,
@@ -106,7 +152,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5507943166904677,
    "r_eq_smoothed_mm": 0.5594899012830233,
-   "r_eq_final_mm": 0.5594878175005049
+   "r_eq_final_mm": 0.5594878175005049,
+   "xyz_mm": [
+    23.526,
+    -171.778,
+    185.405
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 378,
@@ -118,7 +170,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5066768571711064,
    "r_eq_smoothed_mm": 0.5235966431467872,
-   "r_eq_final_mm": 0.5235979833333531
+   "r_eq_final_mm": 0.5235979833333531,
+   "xyz_mm": [
+    23.786,
+    -172.095,
+    185.281
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 379,
@@ -130,7 +188,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.4651279723259957,
    "r_eq_smoothed_mm": 0.4215971607790452,
-   "r_eq_final_mm": 0.4215972848858189
+   "r_eq_final_mm": 0.4215972848858189,
+   "xyz_mm": [
+    23.993,
+    -172.436,
+    185.121
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 380,
@@ -142,7 +206,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.4298524230652602,
    "r_eq_smoothed_mm": 0.34173221215635446,
-   "r_eq_final_mm": 0.34173280014012425
+   "r_eq_final_mm": 0.34173280014012425,
+   "xyz_mm": [
+    24.179,
+    -172.783,
+    185.006
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 381,
@@ -154,7 +224,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.3393737926814022,
    "r_eq_smoothed_mm": 0.2782294598968887,
-   "r_eq_final_mm": 0.2782269303484336
+   "r_eq_final_mm": 0.2782269303484336,
+   "xyz_mm": [
+    24.378,
+    -173.131,
+    184.97
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 382,
@@ -166,7 +242,13 @@
    "edt_max_within_1mm": 0.5,
    "r_eq_raw_mc_mm": 0.3811513528832384,
    "r_eq_smoothed_mm": 0.3455983976068437,
-   "r_eq_final_mm": 0.34559887643644643
+   "r_eq_final_mm": 0.34559887643644643,
+   "xyz_mm": [
+    24.607,
+    -173.479,
+    185.005
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 383,
@@ -178,7 +260,13 @@
    "edt_max_within_1mm": 0.5,
    "r_eq_raw_mc_mm": 0.5235762728992837,
    "r_eq_smoothed_mm": 0.5011302052636192,
-   "r_eq_final_mm": 0.501130494503014
+   "r_eq_final_mm": 0.501130494503014,
+   "xyz_mm": [
+    24.837,
+    -173.826,
+    185.11
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 384,
@@ -190,7 +278,13 @@
    "edt_max_within_1mm": 0.5,
    "r_eq_raw_mc_mm": 0.6486039150219677,
    "r_eq_smoothed_mm": 0.6245501648543176,
-   "r_eq_final_mm": 0.6245473571695171
+   "r_eq_final_mm": 0.6245473571695171,
+   "xyz_mm": [
+    25.036,
+    -174.174,
+    185.225
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 385,
@@ -202,7 +296,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.6188984045288942,
    "r_eq_smoothed_mm": 0.6212124856597541,
-   "r_eq_final_mm": 0.6212092876881908
+   "r_eq_final_mm": 0.6212092876881908,
+   "xyz_mm": [
+    25.222,
+    -174.521,
+    185.225
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 386,
@@ -214,7 +314,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5512964220385582,
    "r_eq_smoothed_mm": 0.5663153906916824,
-   "r_eq_final_mm": 0.5663177745546565
+   "r_eq_final_mm": 0.5663177745546565,
+   "xyz_mm": [
+    25.428,
+    -174.869,
+    185.11
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 387,
@@ -226,7 +332,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5850795488094958,
    "r_eq_smoothed_mm": 0.5816135161006619,
-   "r_eq_final_mm": 0.5816148287210157
+   "r_eq_final_mm": 0.5816148287210157,
+   "xyz_mm": [
+    25.689,
+    -175.217,
+    185.004
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 388,
@@ -238,7 +350,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5884938874839277,
    "r_eq_smoothed_mm": 0.5862795629568076,
-   "r_eq_final_mm": 0.5862781534118107
+   "r_eq_final_mm": 0.5862781534118107,
+   "xyz_mm": [
+    26.004,
+    -175.564,
+    184.96
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 389,
@@ -250,7 +368,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5768453790914372,
    "r_eq_smoothed_mm": 0.5489217452027647,
-   "r_eq_final_mm": 0.5489234558692797
+   "r_eq_final_mm": 0.5489234558692797,
+   "xyz_mm": [
+    26.339,
+    -175.912,
+    184.952
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 390,
@@ -262,7 +386,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.6290673450217281,
    "r_eq_smoothed_mm": 0.5958836320127908,
-   "r_eq_final_mm": 0.595884473446095
+   "r_eq_final_mm": 0.595884473446095,
+   "xyz_mm": [
+    26.655,
+    -176.26,
+    184.96
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 391,
@@ -274,7 +404,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.6103696339998964,
    "r_eq_smoothed_mm": 0.6078939126108741,
-   "r_eq_final_mm": 0.607893777946292
+   "r_eq_final_mm": 0.607893777946292,
+   "xyz_mm": [
+    26.915,
+    -176.607,
+    185.005
+   ],
+   "refinement_objects_covering": []
   },
   {
    "tree_node": 392,
@@ -286,7 +422,13 @@
    "edt_max_within_1mm": 0.6089867553272916,
    "r_eq_raw_mc_mm": 0.5234581880501031,
    "r_eq_smoothed_mm": 0.5388333628289769,
-   "r_eq_final_mm": 0.5388349749977235
+   "r_eq_final_mm": 0.5388349749977235,
+   "xyz_mm": [
+    27.121,
+    -176.955,
+    185.121
+   ],
+   "refinement_objects_covering": []
   }
  ]
 }

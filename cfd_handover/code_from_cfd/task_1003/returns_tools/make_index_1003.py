@@ -3,7 +3,9 @@ content for text files (CRLF -> LF, as the analysis side's check requires), raw 
 import csv, hashlib, os, re, sys
 R = sys.argv[1] if len(sys.argv) > 1 else "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/returns/2026-10-03"
 DESC = [(r"^NOTE\.md$", "status and narrative of this return (read first)"),
-        (r"M1_D7_sensitivity\.csv$", "Task A: D7 sensitivity verdict per variant (A1, A2, A0)"),
+        (r"M1_D7_sensitivity\.csv$", "Task A: D7 sensitivity verdict per variant (A1, A2, A0), first issue"),
+        (r"M1_D7_sensitivity_.*\.csv$", "Task A: D7 sensitivity, re-issue (A0 labelled control; overall M1 verdict column)"),
+        (r"M1_geometry_gates_D7.*\.csv$", "Task A: geometry/mesh gates and D3/D4 distances of A1, A2, A0 (M1_geometry_gates.csv format)"),
         (r"M1_results\.csv$", "M1_results-format row(s): geometry, mesh, solve, gates, flags"),
         (r"M1_probes_", "probe sections: p/P_aorta, area, r_eq, flow, Re per package probe"),
         (r"M1_outlets_", "per outlet: R used, Q, p (lost outlets flagged)"),
@@ -13,6 +15,7 @@ DESC = [(r"^NOTE\.md$", "status and narrative of this return (read first)"),
         (r"as_meshed_radius_.*_detail\.csv$", "as-meshed radius, per-section detail"),
         (r"as_meshed_radius_.*_provenance\.json$", "provenance of the as-meshed radius files"),
         (r"as_meshed_radius_.*\.csv$", "as-meshed lumen radius, area-equivalent (D10)"),
+        (r"settle_.*_2026-10-06\.csv$", "B1 SETTLED rule on measurementP, re-issue with the contended column filled"),
         (r"settle_.*\.csv$", "B1 SETTLED rule on measurementP (information; full budget run per D8)"),
         (r"flow_state_.*\.csv$", "flow-state profile (jet centroid offset along the lesion vessel)"),
         (r"flow_state_.*\.json$", "flow-state summary / comparison verdict"),
@@ -28,7 +31,10 @@ DESC = [(r"^NOTE\.md$", "status and narrative of this return (read first)"),
         (r"U3D_jet_state_check_.*\.csv$", "Task B: all five U3D levels, FFR reproduction, jet state, GCI21 -> U3D final"),
         (r"ROOT_CAUSE_272_.*\.md$", "P5 272: root cause of the lost outlet out_396 and of the self-intersection flag"),
         (r"neck272\.json$", "P5 272: neck measurements (mask EDT, MC/smoothed/final section radii)"),
-        (r"selfint272_.*\.json$", "P5 272: exact edge-triangle crossing test around the surfaceCheck point")]
+        (r"selfint272_.*\.json$", "P5 272: edge-triangle crossing test around the surfaceCheck point"),
+        (r"tritri272_.*\.json$", "P5 272: triangle-triangle distance / crossing / fold check around a surfaceCheck point"),
+        (r"log\.surfaceCheck\.", "P5 272: surfaceCheck log on a sub-surface around the reported point (or the full surface)"),
+        (r"selfInterPoints\..*\.points\.txt$", "P5 272: points surfaceCheck reported as self-intersections (OBJ vertex lines, renamed .txt)")]
 def task(rel):
     top = rel.split("/")[0]
     return {"TaskA": "A", "TaskB": "B", "P5": "P5"}.get(top, "A" if rel.startswith("M1_D7") else "all")

@@ -1,0 +1,24 @@
+{
+ "point_m": [
+  0.000424399,
+  -0.195895,
+  0.235757
+ ],
+ "R_mm": 1.0,
+ "selection": "triangles with ANY vertex within R",
+ "n_triangles": 348,
+ "bbox_margin_um": 50.0,
+ "n_nonadjacent_pairs_tested": 1179,
+ "min_nonadjacent_triangle_distance_um": 14.342,
+ "closest_pair": [
+  179882,
+  179885
+ ],
+ "pairs_beyond_margin_not_tested": "non-adjacent pairs whose bounding boxes are > 50 um apart (their distance is > 50 um)",
+ "edge_adjacent_folds_dot_lt_minus0p5": [],
+ "vertex_adjacent_opposite_edge_crossings": [],
+ "quality_min": 0.1639,
+ "quality_p1": 0.1639,
+ "edge_um_min": 14.41,
+ "edge_um_max": 378.48
+}

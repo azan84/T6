@@ -1,8 +1,8 @@
 # INDEX of returns/2026-10-03; sha256_lf = sha256 of the file with CRLF normalised to LF (text files) or of the raw bytes
 file,task,scan,content,csv_data_rows,bytes,sha256_lf
-M1_D7_sensitivity.csv,A,,"Task A: D7 sensitivity verdict per variant (A1, A2, A0)",3,1442,a44fc0bc63498294f6f07d554ea4b0af0f9b03e1518405f0c7ab08e5ca958a2b
-M1_D7_sensitivity_2026-10-06.csv,A,,,3,1866,dffa4b63ab3b2f049839df12edb784c2c44c424667ad6292497a66f2e9c6975c
-NOTE.md,all,,status and narrative of this return (read first),,15034,92d9e2105158fb422bc32337ade7c535310a6a589c0bf75ed18d223bf4dc24b6
+M1_D7_sensitivity.csv,A,,"Task A: D7 sensitivity verdict per variant (A1, A2, A0), first issue",3,1442,a44fc0bc63498294f6f07d554ea4b0af0f9b03e1518405f0c7ab08e5ca958a2b
+M1_D7_sensitivity_2026-10-06.csv,A,,"Task A: D7 sensitivity, re-issue (A0 labelled control; overall M1 verdict column)",3,1866,dffa4b63ab3b2f049839df12edb784c2c44c424667ad6292497a66f2e9c6975c
+NOTE.md,all,,status and narrative of this return (read first),,16288,ded4cd314d23037aad2decfdb02c97ad02715116df031286c39578a8b282e85d
 P5/138/M1_monitor_history_138_resistance.csv,P5,138,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,637661,0e12df54ecbb7b3b9de75ee03d2c4c0bc0d61a65916932e13ae5cd094926bbee
 P5/138/M1_monitor_history_138_resistance.json,P5,138,provenance of the monitor history,,2592,b60725db864c3b335c0e01fbf34d28c9558160c8eed56e46f957cc7f298e6c6d
 P5/138/M1_outlets_138_resistance.csv,P5,138,"per outlet: R used, Q, p (lost outlets flagged)",5,1383,ffc023a72b69e900c4350132601aa185a6ade3fc40a71d396d0fed0a14a40462
@@ -21,6 +21,7 @@ P5/138/post_summary_138_resistance.json,P5,138,post-processing summary with sha2
 P5/138/reconstruct_check_138_resistance.json,P5,138,reconstructPar verification,,530,b5786c3c358495004fbc212d7b65d017f1dab17189a67bb448ff3fe71981249a
 P5/138/run_completion_138_resistance.json,P5,138,solver completion record,,288,2356d05820d788246556c403d7204eaa8066113ee521e153409e63fc4d49764d
 P5/138/settle_138_resistance.csv,P5,138,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1352,9b25f33cb8eca991700d9a2a781b91e0cd9894dd55632db35c450c1834302294
+P5/138/settle_138_resistance_2026-10-06.csv,P5,138,"B1 SETTLED rule on measurementP, re-issue with the contended column filled",1,1513,bb14dc7ffcb49f12aed1a40be08b8a5daf93a27cd640124207eb86dc4943ff4c
 P5/139/M1_monitor_history_139_resistance.csv,P5,139,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,650386,8daf9965cba67f38f6f616bb200f4ac56416e5dc0e9d9c179577e425714c933c
 P5/139/M1_monitor_history_139_resistance.json,P5,139,provenance of the monitor history,,2585,6e3df9d77d74a364f56e098020ea3c80314ebc0f827c740200d0e037250bb185
 P5/139/M1_outlets_139_resistance.csv,P5,139,"per outlet: R used, Q, p (lost outlets flagged)",2,682,fdaa70e14fd66ccff1b08563ae9160680485e2ffeba5886eff7f6f71e3bb5396
@@ -39,12 +40,13 @@ P5/139/post_summary_139_resistance.json,P5,139,post-processing summary with sha2
 P5/139/reconstruct_check_139_resistance.json,P5,139,reconstructPar verification,,529,36b36305e45764887a277cf8a6016d8a4de916b446384fd2f53c9535f954505e
 P5/139/run_completion_139_resistance.json,P5,139,solver completion record,,288,9f94caf0e60828aded3b170007eda080189ef4e32ac00d8d15dbd2a8b260316b
 P5/139/settle_139_resistance.csv,P5,139,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1360,0b76633c7dfdb5ecaa93a9a3e85fe2f92c2dc39cb1a0ab66b7a3786ecf741bac
+P5/139/settle_139_resistance_2026-10-06.csv,P5,139,"B1 SETTLED rule on measurementP, re-issue with the contended column filled",1,1521,c871212ae5d0f5680dea863cbe26beec1555ead5ccc2592328aa94fc4df62e4c
 P5/272/M1_monitor_history_272_resistance.csv,P5,272,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,629903,90cc3e7ebb60040c8cf3b0ab09d8a1889c5eeda965e75fefece1d98188bed0cc
 P5/272/M1_monitor_history_272_resistance.json,P5,272,provenance of the monitor history,,2595,a3c84f3256d7cf97b851e0cc0f0639b39b35396c34c33b0d34c75cd4fda36921
 P5/272/M1_outlets_272_resistance.csv,P5,272,"per outlet: R used, Q, p (lost outlets flagged)",3,879,f18432f7888fa20da407fbb70fcf6874a05651a8b3263ee9ec6277d9399e3ddb
 P5/272/M1_probes_272_resistance.csv,P5,272,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",35,9443,9b75f2061450c993b01eb39425303d73a6e282203dc1afe9c15c2ba4ced150ea
 P5/272/M1_results.csv,P5,272,"M1_results-format row(s): geometry, mesh, solve, gates, flags",1,2766,c99490dde9bb37ae6aea3a942cdd197d676795235804ae260c5cbfa3c985c411
-P5/272/ROOT_CAUSE_272_2026-10-06.md,P5,272,P5 272: root cause of the lost outlet out_396 and of the self-intersection flag,,5061,aecab416b2f8205b2a44bfdd65c241810402ffc36f90e4bab1ffd2bdf1de99fc
+P5/272/ROOT_CAUSE_272_2026-10-06.md,P5,272,P5 272: root cause of the lost outlet out_396 and of the self-intersection flag,,7031,287589c49d0a650986a458ab0d81798dd36db0253f2cd2bc692a03ff0aa4e0ea
 P5/272/as_meshed_radius_272.csv,P5,272,"as-meshed lumen radius, area-equivalent (D10)",469,43649,4757d94f3470821369aa7a9654e39c1fe228e8364413f02d47fcb889a6f71bf3
 P5/272/as_meshed_radius_272_detail.csv,P5,272,"as-meshed radius, per-section detail",469,104779,6af0fbbe3dd868113e091be4d940c64171da2f5ab72405bdcc46e625b84d0aab
 P5/272/as_meshed_radius_272_inscribed.csv,P5,272,"as-meshed lumen radius, inscribed circle (D10)",469,43671,06a3bbcf1646ad4f2c7207f2c62a81b84ff9e1c17ab8805b6878ceb556715b07
@@ -52,15 +54,30 @@ P5/272/as_meshed_radius_272_provenance.json,P5,272,provenance of the as-meshed r
 P5/272/fill_272_resistance.json,P5,272,inputs used to fill the M1_results row,,2813,795acb14aa75cb2ed1e32f611d0df77e8086af320900fc12291c99da168c7212
 P5/272/flow_state_272_resistance.csv,P5,272,flow-state profile (jet centroid offset along the lesion vessel),25,16311,fd62817b0b26fe62be3e750c2c351c9ef76466374d52916d4feb0c33103b08f2
 P5/272/flow_state_272_resistance.json,P5,272,flow-state summary / comparison verdict,,749,b91fe17c44c5d43e84189dd7bfd54f991a196f515de29a4cab560f33336fe8d9
-P5/272/neck272.json,P5,272,"P5 272: neck measurements (mask EDT, MC/smoothed/final section radii)",,8984,5cda814f845042b849777f4d65151dae554c27fa6ba80653c55613f3f4c62bdb
+P5/272/neck272.json,P5,272,"P5 272: neck measurements (mask EDT, MC/smoothed/final section radii)",,11352,fda51adf94297ed49c5467e634b12a26a3219b04556ac59104575a15e6213b85
 P5/272/package_check_272_resistance.json,P5,272,package hashes and E0 membership check,,1718,b98a94244875429846e1d5c7d319c71f7728011c78ef4c2aeaca069b99f6105a
 P5/272/post_272_resistance.log,P5,272,post-processing log,,11281,8679f784fe851c9e39093fe68870fa18f772a00be4afd8c30c6c313a8fb4a723
 P5/272/post_summary_272_resistance.json,P5,272,post-processing summary with sha256 of every output,,5394,13d6ba09224895f838413b0d8595857ef1a871256c9a19a68f2a71e2cbe36c25
 P5/272/reconstruct_check_272_resistance.json,P5,272,reconstructPar verification,,530,340055d0cfb9a58b50d780f61bea3a49b2d2e9f89f8ae9be49a47da47c6b000b
 P5/272/run_completion_272_resistance.json,P5,272,solver completion record,,288,f7ae66bbe76ea6d5d576fabe5290e00b57d58f88d7640d84ee2f6b25d18ec9de
-P5/272/selfint272_R0.6mm.json,P5,272,P5 272: exact edge-triangle crossing test around the surfaceCheck point,,158,8286110f2767851f482df072349ebd9f213f6b0146f85bb4b4dfa488e822f564
-P5/272/selfint272_R3mm.json,P5,272,P5 272: exact edge-triangle crossing test around the surfaceCheck point,,159,b00972b805cb61ed2478938e7c2f91662016acb4cca5abac8dece0a3d32d5daf
+P5/272/selfint272_R0.6mm.json,P5,272,P5 272: edge-triangle crossing test around the surfaceCheck point,,158,8286110f2767851f482df072349ebd9f213f6b0146f85bb4b4dfa488e822f564
+P5/272/selfint272_R3mm.json,P5,272,P5 272: edge-triangle crossing test around the surfaceCheck point,,159,b00972b805cb61ed2478938e7c2f91662016acb4cca5abac8dece0a3d32d5daf
 P5/272/settle_272_resistance.csv,P5,272,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1354,4b5e194ea45b29f406708dcbbe244e91626750af1a13f1a32129bb120c111d7a
+P5/272/settle_272_resistance_2026-10-06.csv,P5,272,"B1 SETTLED rule on measurementP, re-issue with the contended column filled",1,1515,c00c1aaab7d82ec960ce935a18da63a158d2ad5e2d5d4a5ca8117703067019c3
+P5/272/surfaceCheck_subsurface_logs/log.surfaceCheck.R20mm,P5,272,P5 272: surfaceCheck log on a sub-surface around the reported point (or the full surface),,2966,0d3f1abeb6ea1c7e1a6140d992fe4c923a27d342f460fbd64e87a6fda44ee3e8
+P5/272/surfaceCheck_subsurface_logs/log.surfaceCheck.R3mm,P5,272,P5 272: surfaceCheck log on a sub-surface around the reported point (or the full surface),,2840,ed3b4d9c18d17e91ce81331e621a148f3f6eb25e947710a98cbf0e524b376606
+P5/272/surfaceCheck_subsurface_logs/log.surfaceCheck.R40mm,P5,272,P5 272: surfaceCheck log on a sub-surface around the reported point (or the full surface),,2973,884a299872f93ab12675de0771ad4540579b51a1d2c9d59cb43d4dd16bed5c2c
+P5/272/surfaceCheck_subsurface_logs/log.surfaceCheck.R8mm,P5,272,P5 272: surfaceCheck log on a sub-surface around the reported point (or the full surface),,2970,6ad54a4d728accf5e4d006a0f8c38bb6dd609860b4f5bbffde185d286aee19d7
+P5/272/surfaceCheck_subsurface_logs/log.surfaceCheck.full,P5,272,P5 272: surfaceCheck log on a sub-surface around the reported point (or the full surface),,2908,b5efaabd1d9da9bd5f72383848a3526b9bebbd8a947bf6b443a813f5b6a26c24
+P5/272/surfaceCheck_subsurface_logs/selfInterPoints.R20mm.points.txt,P5,272,"P5 272: points surfaceCheck reported as self-intersections (OBJ vertex lines, renamed .txt)",,540,c00d52a1d94cb0a0ecd57a6314ff2f6a6e6d46c893f3f5267c7d545b07b70687
+P5/272/surfaceCheck_subsurface_logs/selfInterPoints.R3mm.points.txt,P5,272,"P5 272: points surfaceCheck reported as self-intersections (OBJ vertex lines, renamed .txt)",,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+P5/272/surfaceCheck_subsurface_logs/selfInterPoints.R40mm.points.txt,P5,272,"P5 272: points surfaceCheck reported as self-intersections (OBJ vertex lines, renamed .txt)",,130,ac67cc05c88b8b486a003ad23f536bf796c44bd6d7204dd0cbed5ba8b3689d52
+P5/272/surfaceCheck_subsurface_logs/selfInterPoints.R8mm.points.txt,P5,272,"P5 272: points surfaceCheck reported as self-intersections (OBJ vertex lines, renamed .txt)",,65,633046ddf933e2a3e0cd1d6afc1fd46e03aba0c0ea85d4dbdd6b8a7d1186b561
+P5/272/surfaceCheck_subsurface_logs/selfInterPoints.full.points.txt,P5,272,"P5 272: points surfaceCheck reported as self-intersections (OBJ vertex lines, renamed .txt)",,32,570f24dbee880f12fc8f80ff5f030cf818b0148942f282df6792915ce3c07b8e
+P5/272/tritri272_R1mm_at_0.000424399_-0.195895_0.235757.json,P5,272,P5 272: triangle-triangle distance / crossing / fold check around a surfaceCheck point,,609,29ecfbdcf011032cfeffcb2a700089bfb1aeda007f09130280a5b7d8c811e76b
+P5/272/tritri272_R1mm_at_0.00167743_-0.195838_0.235468.json,P5,272,P5 272: triangle-triangle distance / crossing / fold check around a surfaceCheck point,,608,a6f0bc5a5a846522167811f98e168f53241c186bd4d53ea80416170a36ab0509
+P5/272/tritri272_R1mm_at_0.00946026_-0.191048_0.236175.json,P5,272,P5 272: triangle-triangle distance / crossing / fold check around a surfaceCheck point,,607,85f76057ad892f7756a16c84eeeb4f6412c1da0835edf21067384174925664bf
+P5/272/tritri272_R3mm.json,P5,272,P5 272: triangle-triangle distance / crossing / fold check around a surfaceCheck point,,607,4aeaf6386cfbe69f6eeedb1a5aad3bd47925d491ddbd9d99d23628877beadb9c
 P5/473/M1_monitor_history_473_resistance.csv,P5,473,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,940307,e41b07a0de03055d2146d4e347d7b86b6d39e92993ad7740ece38623959d8eb7
 P5/473/M1_monitor_history_473_resistance.json,P5,473,provenance of the monitor history,,3797,8004620ff351e9ec2e1823d8f671b2b68e19fc47f9975d8f9e466d6cb3be44ad
 P5/473/M1_outlets_473_resistance.csv,P5,473,"per outlet: R used, Q, p (lost outlets flagged)",6,1536,7d50168c02d439a10f20ffc3e49e705e09e2fb1e22cd56ddb03fd40acf21c3f5
@@ -79,6 +96,7 @@ P5/473/post_summary_473_resistance.json,P5,473,post-processing summary with sha2
 P5/473/reconstruct_check_473_resistance.json,P5,473,reconstructPar verification,,530,46efd6b509dc640df729efeabe7292a40be1a7d9871d55a9ee35aa3b0465c854
 P5/473/run_completion_473_resistance.json,P5,473,solver completion record,,288,d42bc0ebe053a65d4a2d69af8aee96d9e0709ac1b0f758a0ca93dff3a654823c
 P5/473/settle_473_resistance.csv,P5,473,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1364,eb6339ff8b87663a3d3cd7a90d92d6ea193125f30c1800b621b2719de60975fc
+P5/473/settle_473_resistance_2026-10-06.csv,P5,473,"B1 SETTLED rule on measurementP, re-issue with the contended column filled",1,1525,129808f2fba1f46a7a18c549605aba7055581c5c0e7194a7f15507ef25d2b8d8
 P5/69/M1_monitor_history_69_resistance.csv,P5,69,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,634956,8b8998c3109c41720dc20cfb0402ec6e6f33baab2b6b5b0d681fd4801beb5044
 P5/69/M1_monitor_history_69_resistance.json,P5,69,provenance of the monitor history,,2584,43ad3934d8e058bcbee5804d5d79e6c4d67e17623d29822cf5821abe3ac5957b
 P5/69/M1_outlets_69_resistance.csv,P5,69,"per outlet: R used, Q, p (lost outlets flagged)",4,1119,66026be57ff712af45c6e4dfe0a08842f3cbfe50711d505ee3982327346ff5ff
@@ -97,7 +115,8 @@ P5/69/post_summary_69_resistance.json,P5,69,post-processing summary with sha256 
 P5/69/reconstruct_check_69_resistance.json,P5,69,reconstructPar verification,,529,8be8fa5e7c7fd8cd62d492621cdbe63e21d556db2c33c7414737b2029d7c0731
 P5/69/run_completion_69_resistance.json,P5,69,solver completion record,,287,bf92b1ae1e77487784852d229c7d25ac54ed2343e716290b5cfebbbd222b0a3e
 P5/69/settle_69_resistance.csv,P5,69,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1368,f5ed3fe5d745ddf1d1e479634684b0f3a9fb4cb99a03e8e4be5b444e16fb428e
-TaskA/M1_geometry_gates_D7-2026-10-03.csv,A,,,3,6629,4bffad4adc3aac730dcd87459fb1ab04b5005c0376272016c2dd0db1963694cf
+P5/69/settle_69_resistance_2026-10-06.csv,P5,69,"B1 SETTLED rule on measurementP, re-issue with the contended column filled",1,1529,0f8edf4477e5b09b13cfe16ba149b36ee99dd7a68e2f989af64a490086b69aa8
+TaskA/M1_geometry_gates_D7-2026-10-03.csv,A,,"Task A: geometry/mesh gates and D3/D4 distances of A1, A2, A0 (M1_geometry_gates.csv format)",3,6629,4bffad4adc3aac730dcd87459fb1ab04b5005c0376272016c2dd0db1963694cf
 TaskA/M1_monitor_history_baseline_A0_25um_resistance.csv,A,,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,632664,5cfbf55c9f21f91ecd908b2496b1c8f4d232e3f9ec9461cbcb8ccbcee6e8907b
 TaskA/M1_monitor_history_baseline_A0_25um_resistance.json,A,,provenance of the monitor history,,2583,95faaa2ba6645f016be82651bb2c14b94c29d0d1a8363e5adf3983143a897ac1
 TaskA/M1_monitor_history_baseline_D7_12p5_resistance.csv,A,,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,638481,42915d9a0d74e02b3d347f39e8b18b7b10f8fd6508fa4bf870f5c05b05942bab

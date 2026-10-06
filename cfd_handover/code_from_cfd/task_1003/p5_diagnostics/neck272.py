@@ -51,8 +51,32 @@ for i, r in enumerate(rows):
         ar = section(p, X[i], n, scales[k])
         rec[f"r_eq_{k}_mm"] = float(np.sqrt(ar / np.pi)) if ar == ar else None
     res.append(rec)
+# cfMesh sizing at the neck, parsed from the meshDict and the mesher log (not assumed): maxCellSize, root level, and membership of every neck
+# node in every objectRefinement (sphere: distance to the centre <= radius; cone: projection inside the axis segment and distance <= radius0 = radius1)
+import re
+MD = open(f"{P5}/mesh/272/system/meshDict").read(); LOG = open(f"{P5}/mesh/272/log.cartesianMesh").read()
+maxcell = float(re.search(r"maxCellSize\s+([\d.eE+-]+);", MD).group(1)); lvl = int(re.search(r"corresponds to octree level (\d+)", LOG).group(1))
+objs = []
+for m_ in re.finditer(r"(\w+)\s*\{\s*type (\w+);\s*cellSize ([\d.eE+-]+);([^}]*)\}", MD):
+    n_, t_, cs_, body = m_.groups()
+    vec = lambda k: np.array([float(a) for a in re.search(k + r"\s*\(([^)]*)\)", body).group(1).split()]) * 1e3
+    sca = lambda k: float(re.search(k + r"\s+([\d.eE+-]+);", body).group(1)) * 1e3
+    objs.append((n_, t_, float(cs_) * 1e3, (vec("centre"), sca("radius")) if t_ == "sphere" else (vec("p0"), vec("p1"), sca("radius0"))))
+def covering(x):
+    out = []
+    for n_, t_, cs_, g in objs:
+        if t_ == "sphere": inside = np.linalg.norm(x - g[0]) <= g[1]
+        else:
+            a_ = g[1] - g[0]; L_ = np.linalg.norm(a_); u_ = a_ / L_; t = (x - g[0]) @ u_; inside = 0 <= t <= L_ and np.linalg.norm(x - g[0] - t * u_) <= g[2]
+        if inside: out.append(f"{n_} ({cs_:.3f} mm)")
+    return out
+for rec, x in zip(res, X): rec["xyz_mm"] = x.round(3).tolist(); rec["refinement_objects_covering"] = covering(x * 1.0)
+sph = {n_: g for n_, t_, cs_, g in objs if t_ == "sphere"}
+neck = X[[i for i, r in enumerate(rows) if int(r["tree_node"]) == 381][0]]
 info = dict(voxel_spacing_mm=sp.tolist(), surface_units={k: ("m" if s == 1e-3 else "mm") for k, s in scales.items()},
-            cfmesh_maxCellSize_mm=0.2, cfmesh_root_level=10, rows=res)
+            cfmesh_maxCellSize_mm=maxcell * 1e3, cfmesh_root_level=lvl, n_refinement_objects=len(objs),
+            neck_node381_to_out_396_sphere_centre_mm=round(float(np.linalg.norm(neck - sph["out_396_ref"][0])), 3), out_396_sphere_radius_mm=sph["out_396_ref"][1],
+            mesher_log_unconnected=bool(re.search(r"Mesh has 2 unconnected regions", LOG)), rows=res)
 json.dump(info, open(f"{OUT}/neck272.json", "w"), indent=1)
 print("spacing", sp, info["surface_units"])
 for x in res: print({k: (round(v, 3) if isinstance(v, float) else v) for k, v in x.items()})
