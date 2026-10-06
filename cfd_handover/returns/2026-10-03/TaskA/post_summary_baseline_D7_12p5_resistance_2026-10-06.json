@@ -1,0 +1,145 @@
+{
+ "case_dir": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_resistance",
+ "label": "baseline_D7_12p5",
+ "mode": "resistance",
+ "package": "14_left_LAD_prox_20mm_80ds__baseline__real",
+ "verdict": "CONVERGED",
+ "verdict_analyze_solve": "CONVERGED",
+ "failed_checks": [],
+ "last_iteration": 3000,
+ "log_finished": true,
+ "analysis_log_finished": true,
+ "run_completion": {
+  "log": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_resistance/log.simpleFoam",
+  "end_time_controlDict": 3000.0,
+  "n_run_headers": 1,
+  "last_header_line": 61,
+  "last_time_line": 204125,
+  "last_end_line": 204193,
+  "last_time": "3000",
+  "fails": [],
+  "ok": true
+ },
+ "package_check": {
+  "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/cases/baseline_D7_12p5_resistance",
+  "package_arg": "14_left_LAD_prox_20mm_80ds__baseline__real",
+  "pkg_root_arg": null,
+  "package_dir": "/home/azan/paper6_t6_work/scratchpad/zipcheck/cfd_handover/packages/M1/14_left_LAD_prox_20mm_80ds__baseline__real",
+  "recorded": {
+   "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+   "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+   "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+   "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+   "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+   "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+   "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+   "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+  },
+  "now": {
+   "outlets.csv": "406e1b9d6623a950dd632443ca8feb6f10b370dd889868bda566e025cabfc703",
+   "bc_A.csv": "b8ce0b87efcb45441ffbb55524f4026d784a0330a63fa2b12b588d5dce96a94e",
+   "bc_C_flows.csv": "f3cedb82ba231364bd5e74ef15cef58499614b57b138b5ab76e9d475f219728b",
+   "probes.csv": "24731a2543696c6ff08d594b084464b3d66f449151345b31d1004733253c81e1",
+   "inlet.json": "4b17f801636f3692c3a7a352f579611e6c9a33fc214eaaf12e81a2526dd1d69a",
+   "centreline.vtp": "023203731889775327c8eb31f0b7bb5dd38e00c5df077f79fc22bb531b8461a0",
+   "meta.json": "90c8652c712f3e7ea77064ea92f71d04778fcdf51cb5336e192aebb24f494bef",
+   "mask_edit.json": "1e77494ccd7323e3809ab2933c13ba734c97b7df7f4ab0e1768cc8309fa0c488"
+  },
+  "fails": [],
+  "ok": true
+ },
+ "radius_outputs": "not recorded",
+ "wall_clock_s": 18627,
+ "execution_time_s": 18504.19,
+ "cells": 6241438,
+ "nproc": 16,
+ "peak_ram_gb": "",
+ "peak_ram_source": "not available (no PEAK_RAM_GB, no MEMLOG sampler file)",
+ "measurement_probe_package": "p011",
+ "measurement_probe_used": "p011",
+ "measurement_section_rule": "not evaluated (pre-strict-rule build)",
+ "measurement_probe_relocated": null,
+ "processor_dirs_kept": [],
+ "outputs": {
+  "run_completion_baseline_D7_12p5_resistance.json": {
+   "size_bytes": 298,
+   "sha256": "00985dd0b40bdd65e7c78306135b03b473c2617f6b0023fca328b1415ac8e2c9"
+  },
+  "package_check_baseline_D7_12p5_resistance.json": {
+   "size_bytes": 1743,
+   "sha256": "ced82788c052787f98e2b476230f80b88afe3a8f261f532afc11fa8f6e47a965"
+  },
+  "M1_probes_baseline_D7_12p5_resistance.csv": {
+   "size_bytes": 8987,
+   "sha256": "8f335795904a160de921a94a5a263af7ed556ccff155809a4d7cd6175caa7cb5"
+  },
+  "M1_outlets_baseline_D7_12p5_resistance.csv": {
+   "size_bytes": 1709,
+   "sha256": "e8a019bb6046bca0e20114a1d337da04bd8d3666886ce75f9b0e757900170c82"
+  },
+  "M1_results.csv": {
+   "size_bytes": 6181,
+   "sha256": "048e127d83dfc64067354acc282020549318e9c1df49f6af3ccb9a2c07a53cb6",
+   "superseded_entry_2026-10-06": {
+    "size_bytes": 4167,
+    "sha256": "30bcb3af9cf1db61a63cd55d92eb76d9fe1cfa9287a8db289787e1aec2d3909f",
+    "note": "aggregate at the time this summary was written (fewer rows)"
+   }
+  },
+  "fill_baseline_D7_12p5_resistance.json": {
+   "size_bytes": 2657,
+   "sha256": "7012f4e2c2a2b4bb541246f284f4100a7f6f617ad0e35c0239a9234fac660a59"
+  },
+  "M1_monitor_history_baseline_D7_12p5_resistance.csv": {
+   "size_bytes": 638481,
+   "sha256": "30da026577482757bd43edc9974990ee63e466f12704e0203b25586618ad422b"
+  },
+  "M1_monitor_history_baseline_D7_12p5_resistance.json": {
+   "size_bytes": 2584,
+   "sha256": "2c38b15adb435d1bcd3bd2424c745a244e6a7397116e5e03410cf9618d3cf117"
+  },
+  "settle_baseline_D7_12p5_resistance.csv": {
+   "size_bytes": 1408,
+   "sha256": "c59a0e1a5f8ddf2c9374c5f1a54e15fb773bf37ab56ef2687221a06a93e97814"
+  },
+  "reconstruct_check_baseline_D7_12p5_resistance.json": {
+   "size_bytes": 448,
+   "sha256": "dc417300a2a6d5ad26339019feec527c40cbba9110d07aa97d3d4f50dbd2feea"
+  },
+  "as_meshed_radius_baseline_D7_12p5.csv": {
+   "size_bytes": 73803,
+   "sha256": "b05bbcaf75d570faea72596378d6cdb6762dbfaab63e7a43880eba0e75c543d0"
+  },
+  "as_meshed_radius_baseline_D7_12p5_inscribed.csv": {
+   "size_bytes": 73834,
+   "sha256": "b21ce32b759fbbe88138be7d64bf2f7b22f06135192c0359fc18f2893844f3ed"
+  },
+  "as_meshed_radius_baseline_D7_12p5_detail.csv": {
+   "size_bytes": 178696,
+   "sha256": "5ed120aa0063a41a98a9f1874cccae692cd76a56fc0552c85d4a872a3be0f4ed"
+  },
+  "as_meshed_radius_baseline_D7_12p5_provenance.json": {
+   "size_bytes": 1631,
+   "sha256": "5c2ddb0dd957a21a72697eac2c88d7884cb1d844c514e7ab3263b4102d91f740"
+  },
+  "flow_state_baseline_D7_12p5_resistance.csv": {
+   "size_bytes": 19954,
+   "sha256": "dfadc16b729f1c8950667f47c2c1ee54af4629dfdb8f68553e7a6bb1f5a46f83"
+  }
+ },
+ "missing_outputs": [],
+ "flags": "SELF_INTERSECTION;D3_FAIL;D4_FAIL",
+ "outlets_lost_in_mesh": [],
+ "reference_comparison": {
+  "reference": 0.8697574904997768,
+  "value": 0.8716491067877609,
+  "probe_id": "p011",
+  "time": "3000.0",
+  "DeltaFFR": 0.001891616287984066,
+  "tol": 0.00055,
+  "within": false,
+  "measurementP_last100_mean_p_over_Paorta_B1": 0.8716410568935027,
+  "statement": "FFR(p011, reconstructed time 3000.0) = 0.8716491; DeltaFFR vs reference 0.8697574904997768 = +0.0018916: |DeltaFFR| >= 0.00055; measurementP last-100 mean 0.8716411 (B1, reported separately)"
+ },
+ "reissue_2026-10-06": "entry for the shared aggregate M1_results.csv updated to the current file (post-hoc audit GPT-5.6 Sol AB-6); all other entries re-verified unchanged"
+}

@@ -2,7 +2,7 @@
 file,task,scan,content,csv_data_rows,bytes,sha256_lf
 M1_D7_sensitivity.csv,A,,"Task A: D7 sensitivity verdict per variant (A1, A2, A0), first issue",3,1442,a44fc0bc63498294f6f07d554ea4b0af0f9b03e1518405f0c7ab08e5ca958a2b
 M1_D7_sensitivity_2026-10-06.csv,A,,"Task A: D7 sensitivity, re-issue (A0 labelled control; overall M1 verdict column)",3,1866,dffa4b63ab3b2f049839df12edb784c2c44c424667ad6292497a66f2e9c6975c
-NOTE.md,all,,status and narrative of this return (read first),,16288,ded4cd314d23037aad2decfdb02c97ad02715116df031286c39578a8b282e85d
+NOTE.md,all,,status and narrative of this return (read first),,16726,41e311380060c54a8bef9452616fd656525d58c1f30e3655ad3eea4368559573
 P5/138/M1_monitor_history_138_resistance.csv,P5,138,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,637661,0e12df54ecbb7b3b9de75ee03d2c4c0bc0d61a65916932e13ae5cd094926bbee
 P5/138/M1_monitor_history_138_resistance.json,P5,138,provenance of the monitor history,,2592,b60725db864c3b335c0e01fbf34d28c9558160c8eed56e46f957cc7f298e6c6d
 P5/138/M1_outlets_138_resistance.csv,P5,138,"per outlet: R used, Q, p (lost outlets flagged)",5,1383,ffc023a72b69e900c4350132601aa185a6ade3fc40a71d396d0fed0a14a40462
@@ -159,7 +159,9 @@ TaskA/post_baseline_D7_12p5_resistance.log,A,,post-processing log,,14189,bd0cd7a
 TaskA/post_baseline_D7_12p5_zoneB_resistance.log,A,,post-processing log,,14818,a6079720710edcfc923fb5348ae435fb3770b2b8d78811dc8c12f4946f3daaab
 TaskA/post_summary_baseline_A0_25um_resistance.json,A,,post-processing summary with sha256 of every output,,5866,749a1c384a37b226992b28195ea6a8098d04f204d14a76e6f330aea5a767f7f1
 TaskA/post_summary_baseline_D7_12p5_resistance.json,A,,post-processing summary with sha256 of every output,,5918,4a1e131570332bfa103f0249c78c840e3787bf228ae89477b325b24d424fa1e8
+TaskA/post_summary_baseline_D7_12p5_resistance_2026-10-06.json,A,,"post-processing summary, re-issue (M1_results.csv entry updated to the current aggregate)",,6315,fed0b3970bb8fb10454d2529996c7927859d301919a45e48dd7fe4db3438c675
 TaskA/post_summary_baseline_D7_12p5_zoneB_resistance.json,A,,post-processing summary with sha256 of every output,,6070,00aed080e232503c25dae74e885068093dd8e487e57fa8c3fbb5742f739cc622
+TaskA/post_summary_baseline_D7_12p5_zoneB_resistance_2026-10-06.json,A,,"post-processing summary, re-issue (M1_results.csv entry updated to the current aggregate)",,6467,f55ba6c2aad61f51d33bfb15cd05fc88bf632bd1d342bbce7474a9016707a550
 TaskA/reconstruct_check_baseline_A0_25um_resistance.json,A,,reconstructPar verification,,673,b1d7d3f0c126bcaf44f1028d13174a2f5693c1f44581e85750b4ce57cba20ee0
 TaskA/reconstruct_check_baseline_D7_12p5_resistance.json,A,,reconstructPar verification,,448,dc417300a2a6d5ad26339019feec527c40cbba9110d07aa97d3d4f50dbd2feea
 TaskA/reconstruct_check_baseline_D7_12p5_zoneB_resistance.json,A,,reconstructPar verification,,454,4dd5473374704d209446c59076c2eeb96514dcabdc17af28df5228a579a23f1f
