@@ -34,11 +34,16 @@ DESC = [(r"^NOTE\.md$", "status and narrative of this return (read first)"),
         (r"neck272\.json$", "P5 272: neck measurements (mask EDT, MC/smoothed/final section radii)"),
         (r"selfint272_.*\.json$", "P5 272: edge-triangle crossing test around the surfaceCheck point"),
         (r"tritri272_.*\.json$", "P5 272: triangle-triangle distance / crossing / fold check around a surfaceCheck point"),
+        (r"localise272\.json$", "P5 272: localisation of the region cfMesh deleted (STL vertices far from the meshed wall, by tree node)"),
+        (r"log\.surfaceMeshExtract$", "P5 272: log of the wall-patch extraction used by the localisation"),
+        (r"B2_replicates_summary_.*\.csv$", "Task D: B2 runs 1-3 side by side (times, ratios, validity, offenders)"),
+        (r"B2_throughput\.csv$", "Task D: B2 analysis of one run (b2_analyse.py)"),
+        (r"^(analyse\.log|run_L16\.log|run_L8x2\.log|driver3\.log|b2_driver3\.sh)$", "Task D: B2 run log / driver"),
         (r"log\.surfaceCheck\.", "P5 272: surfaceCheck log on a sub-surface around the reported point (or the full surface)"),
         (r"selfInterPoints\..*\.points\.txt$", "P5 272: points surfaceCheck reported as self-intersections (OBJ vertex lines, renamed .txt)")]
 def task(rel):
     top = rel.split("/")[0]
-    return {"TaskA": "A", "TaskB": "B", "P5": "P5"}.get(top, "A" if rel.startswith("M1_D7") else "all")
+    return {"TaskA": "A", "TaskB": "B", "P5": "P5", "TaskD_B2": "D"}.get(top, "A" if rel.startswith("M1_D7") else "all")
 rows = []
 for d, _, fs in os.walk(R):
     for f in sorted(fs):
@@ -47,7 +52,7 @@ for d, _, fs in os.walk(R):
         text = f.endswith((".csv", ".json", ".md", ".txt", ".log"))
         h = hashlib.sha256(b.replace(b"\r\n", b"\n") if text else b).hexdigest()
         n = sum(1 for _ in csv.reader(b.decode("utf-8", "replace").splitlines()) if _ and not _[0].startswith("#")) - 1 if f.endswith(".csv") else ""
-        desc = next((t for pat, t in DESC if re.search(pat, f)), "")
+        desc = next((t for pat, t in DESC if re.search(pat, f)), "Task D: B2 isolation/run evidence file (see b2_run.sh header)" if rel.startswith("TaskD_B2/") else "")
         case = rel.split("/")[1] if rel.startswith("P5/") else ""
         rows.append(dict(file=rel, task=task(rel), scan=case, content=desc, csv_data_rows=n, bytes=len(b), sha256_lf=h))
 rows.sort(key=lambda r: r["file"])

@@ -1,4 +1,4 @@
-MANIFEST.sha256 (458 entries, written 2026-10-06T07:27:34Z by make_manifest.sh)
+MANIFEST.sha256 (460 entries, written 2026-10-06T11:18:43Z by make_manifest.sh)
 Hashes are SHA-256 over LF-NORMALISED content: for text files (no NUL byte) every CR byte is removed before hashing (tr -d '\r');
 binary files (containing a NUL byte) are hashed raw. MANIFEST.sha256 has no comment lines, so plain 'sha256sum -c MANIFEST.sha256'
 (or 'shasum -a 256 -c MANIFEST.sha256') works on it as is for an LF copy of the files.

@@ -1,0 +1,86 @@
+1791268981 first snapshot (120 processes)
+1791269042 nonwsl_cores 1.1854 top WindowsTerminal(23300) 0.561
+1791269102 nonwsl_cores 0.6963 top remoting_host(24796) 0.254
+1791269162 nonwsl_cores 0.5341 top remoting_host(24796) 0.220
+1791269222 nonwsl_cores 0.4918 top remoting_host(24796) 0.200
+1791269282 nonwsl_cores 0.4783 top remoting_host(24796) 0.174
+1791269342 nonwsl_cores 0.2923 top remoting_host(24796) 0.086
+1791269402 nonwsl_cores 0.4237 top remoting_host(24796) 0.112
+1791269462 nonwsl_cores 0.5309 top remoting_host(24796) 0.234
+1791269522 nonwsl_cores 0.5432 top remoting_host(24796) 0.231
+1791269582 nonwsl_cores 0.8319 top WindowsTerminal(23300) 0.336
+1791269642 nonwsl_cores 0.4784 top remoting_host(24796) 0.227
+1791269702 nonwsl_cores 0.4095 top remoting_host(24796) 0.181
+1791269762 nonwsl_cores 0.4186 top remoting_host(24796) 0.198
+1791269822 nonwsl_cores 0.4027 top remoting_host(24796) 0.186
+1791269882 nonwsl_cores 0.3186 top remoting_host(24796) 0.124
+1791269942 nonwsl_cores 0.2095 top remoting_host(24796) 0.069
+1791270002 nonwsl_cores 0.3015 top remoting_host(24796) 0.071
+1791270062 nonwsl_cores 0.3844 top dllhost(24992) 0.173
+1791270122 nonwsl_cores 0.2198 top remoting_host(24796) 0.075
+1791270182 nonwsl_cores 0.2109 top remoting_host(24796) 0.077
+1791270242 nonwsl_cores 0.2713 top remoting_host(24796) 0.078
+1791270302 nonwsl_cores 0.3705 top dllhost(24992) 0.170
+1791270362 nonwsl_cores 0.2499 top remoting_host(24796) 0.076
+1791270422 nonwsl_cores 0.2233 top remoting_host(24796) 0.078
+1791270482 nonwsl_cores 0.2413 top remoting_host(24796) 0.074
+1791270542 nonwsl_cores 0.2303 top remoting_host(24796) 0.075
+1791270602 nonwsl_cores 0.3268 top remoting_host(24796) 0.068
+1791270662 nonwsl_cores 0.3470 top dllhost(24992) 0.150
+1791270722 nonwsl_cores 0.2324 top remoting_host(24796) 0.090
+1791270782 nonwsl_cores 0.2173 top remoting_host(24796) 0.078
+1791270842 nonwsl_cores 0.2033 top remoting_host(24796) 0.072
+1791270902 nonwsl_cores 0.2077 top remoting_host(24796) 0.072
+1791270962 nonwsl_cores 0.2093 top remoting_host(24796) 0.075
+1791271022 nonwsl_cores 0.2241 top remoting_host(24796) 0.082
+1791271082 nonwsl_cores 0.3850 top dllhost(24992) 0.180
+1791271142 nonwsl_cores 0.2343 top remoting_host(24796) 0.076
+1791271202 nonwsl_cores 0.2714 top remoting_host(24796) 0.077
+1791271262 nonwsl_cores 0.2326 top remoting_host(24796) 0.074
+1791271322 nonwsl_cores 0.2123 top remoting_host(24796) 0.071
+1791271382 nonwsl_cores 0.1963 top remoting_host(24796) 0.068
+1791271442 nonwsl_cores 0.3206 top dllhost(24992) 0.112
+1791271502 nonwsl_cores 0.3312 top dllhost(24992) 0.123
+1791271562 nonwsl_cores 0.2192 top remoting_host(24796) 0.074
+1791271622 nonwsl_cores 0.1930 top remoting_host(24796) 0.063
+1791271682 nonwsl_cores 0.4649 top dllhost(24992) 0.258
+1791271742 nonwsl_cores 0.2347 top remoting_host(24796) 0.070
+1791271802 nonwsl_cores 0.2556 top remoting_host(24796) 0.065
+1791271862 nonwsl_cores 0.2022 top remoting_host(24796) 0.071
+1791271922 nonwsl_cores 0.2068 top remoting_host(24796) 0.075
+1791271982 nonwsl_cores 0.2024 top remoting_host(24796) 0.071
+1791272042 nonwsl_cores 0.1987 top remoting_host(24796) 0.075
+1791272102 nonwsl_cores 0.1839 top remoting_host(24796) 0.066
+1791272162 nonwsl_cores 0.2090 top remoting_host(24796) 0.076
+1791272222 nonwsl_cores 0.2276 top remoting_host(24796) 0.075
+1791272282 nonwsl_cores 0.2078 top remoting_host(24796) 0.075
+1791272342 nonwsl_cores 0.2011 top remoting_host(24796) 0.069
+1791272402 nonwsl_cores 0.2749 top remoting_host(24796) 0.078
+1791272463 nonwsl_cores 0.2018 top remoting_host(24796) 0.069
+1791272523 nonwsl_cores 0.2153 top remoting_host(24796) 0.077
+1791272583 nonwsl_cores 0.2093 top remoting_host(24796) 0.084
+1791272642 nonwsl_cores 0.1515 top Core Temp(25252) 0.034
+1791272702 nonwsl_cores 0.1230 top explorer(11292) 0.028
+1791272762 nonwsl_cores 0.1330 top Core Temp(25252) 0.031
+1791272822 nonwsl_cores 0.1326 top explorer(11292) 0.032
+1791272882 nonwsl_cores 0.1422 top Core Temp(25252) 0.035
+1791272942 nonwsl_cores 0.1325 top Core Temp(25252) 0.031
+1791273002 nonwsl_cores 0.1977 top msedgewebview2(17516) 0.065
+1791273063 nonwsl_cores 0.1334 top explorer(11292) 0.035
+1791273122 nonwsl_cores 0.1376 top Core Temp(25252) 0.031
+1791273183 nonwsl_cores 0.1278 top explorer(11292) 0.033
+1791273243 nonwsl_cores 0.1371 top Core Temp(25252) 0.038
+1791273303 nonwsl_cores 0.1284 top explorer(11292) 0.037
+1791273363 nonwsl_cores 0.1180 top explorer(11292) 0.032
+1791273423 nonwsl_cores 0.1265 top explorer(11292) 0.034
+1791273483 nonwsl_cores 0.1364 top Core Temp(25252) 0.037
+1791273543 nonwsl_cores 0.1225 top Core Temp(25252) 0.034
+1791273603 nonwsl_cores 0.1963 top msedgewebview2(17516) 0.060
+1791273663 nonwsl_cores 0.1259 top explorer(11292) 0.032
+1791273723 nonwsl_cores 0.1247 top explorer(11292) 0.036
+1791273783 nonwsl_cores 0.1356 top explorer(11292) 0.032
+1791273843 nonwsl_cores 0.1262 top explorer(11292) 0.032
+1791273903 nonwsl_cores 0.1229 top explorer(11292) 0.034
+1791273963 nonwsl_cores 0.1316 top explorer(11292) 0.032
+1791274023 nonwsl_cores 0.1383 top Core Temp(25252) 0.034
+1791274078 nonwsl_cores 0.1342 top explorer(11292) 0.034 (closing)

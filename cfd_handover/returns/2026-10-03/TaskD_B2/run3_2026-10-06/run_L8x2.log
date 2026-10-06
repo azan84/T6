@@ -1,0 +1,4 @@
+16:11:54 launched L8x2: umbrella/session 3440239
+isolation_evidence.json: contended=yes ['non-owned Linux CPU over threshold']
+/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/b2/L8/caseA: 1600 steps, ExecutionTime = 10921.44 s  ClockTime = 10925 s
+/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/b2/L8/caseB: 1600 steps, ExecutionTime = 11014.21 s  ClockTime = 11017 s

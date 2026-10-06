@@ -1,0 +1,1 @@
+{"status": "load", "sum_nonexcluded_cores": 0.612, "max_process_cores": 0.4605, "offenders": ["WindowsTerminal(23300) 0.460 cores"], "error": null}

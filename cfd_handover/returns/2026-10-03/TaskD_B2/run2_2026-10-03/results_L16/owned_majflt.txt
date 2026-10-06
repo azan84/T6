@@ -1,0 +1,1 @@
+owned_session_majflt 570 processes 18

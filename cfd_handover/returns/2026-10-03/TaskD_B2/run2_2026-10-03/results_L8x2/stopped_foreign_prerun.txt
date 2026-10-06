@@ -1,0 +1,2 @@
+# B2_ALLOW_STOPPED_FOREIGN=1 2026-10-03 05:55:35: foreign offender processes ignored by the pre-run guard because every thread is stopped (T/t); they hold memory (RSS sum 0 MB) but use no CPU
+# pid state=<thread states> threads=<n> cpu_ticks=<utime+stime+cutime+cstime> start=<starttime> rss_kb=<VmRSS> cmdline

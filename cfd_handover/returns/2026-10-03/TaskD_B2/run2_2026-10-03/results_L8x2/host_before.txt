@@ -1,0 +1,12 @@
+Sat Oct  3 05:55:48 +08 2026
+ 05:55:48 up 4 days, 21:16,  1 user,  load average: 0.30, 0.21, 0.93
+Model name:                           AMD Ryzen Threadripper PRO 3955WX 16-Cores
+Thread(s) per core:                   2
+Core(s) per socket:                   16
+Socket(s):                            1
+layout L8x2; load at start 0.35
+stopped foreign processes ignored (B2_ALLOW_STOPPED_FOREIGN=1): 0 (RSS 0 MB; list in stopped_foreign_prerun.txt)
+pause watcher alive: pid 2527812, form pause_marissa_light2.sh (two pgrep calls every 30 s, seen PIDs skipped), started 2026-10-03 05:54:53 for 50000 s, running 42 s, about 49958 s left (ends about 2026-10-03 19:48:13); B2_MAX_RUNTIME_S 14400; cmdline: /bin/bash /home/azan/paper6_t6_work/marissa_pause/pause_marissa_light2.sh 50000
+pause log /home/azan/paper6_t6_work/marissa_pause/paused.pids: not readable
+pre-launch offender recheck 05:55:48: passed (no running offender; 0 stopped foreign processes, same pid+start set as at the guard)
+pre-launch pause watcher recheck 05:55:48: passed (1 alive, 49945 s left >= B2_MAX_RUNTIME_S 14400 s; paused.pids unreadable lines)

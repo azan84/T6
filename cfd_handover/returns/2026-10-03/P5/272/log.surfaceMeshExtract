@@ -1,0 +1,38 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2406                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _1653fa08-20260127 OPENFOAM=2406 patch=260127 version=2406
+Arch   : "LSB;label=32;scalar=64"
+Exec   : surfaceMeshExtract -case /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/mesh/272 -constant -patches (wall) /home/azan/paper6_t6_work/opus_sched/post_b2/wall272.vtk
+Date   : Oct 06 2026
+Time   : 19:16:37
+Host   : Azan
+PID    : 3468338
+I/O    : uncollated
+Case   : /home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/p5/mesh/272
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Extracting surface from boundaryMesh ...
+
+Including all processor patches.
+
+Including patches (wall)
+
+Reading mesh from time 0
+Create polyMesh for time = 0
+
+Time [0] = constant
+surfZone 0 : wall
+Writing merged surface to "/home/azan/paper6_t6_work/opus_sched/post_b2/wall272.vtk"
+End
+

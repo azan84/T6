@@ -1,0 +1,6 @@
+WARNING: B2_ALLOW_STOPPED_FOREIGN=1: 0 stopped foreign processes ignored by the offender guard (RSS 0 MB), listed in /tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/b2/results_L8x2/stopped_foreign_prerun.txt
+05:55:48 launched L8x2: umbrella/session 2536480
+stopped foreign processes: summary prerun=0 still_stopped=0 resumed=0 vanished=0 undecided=0 new_running=0 new_stopped=0
+isolation_evidence.json: contended=yes ['non-owned Linux CPU over threshold', 'host-level non-owned CPU over threshold', 'non-owned work on the bound CPUs / SMT siblings']
+/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/b2/L8/caseA: 1600 steps, ExecutionTime = 11223.79 s  ClockTime = 11229 s
+/tmp/claude-1000/-mnt-e-Paper6-T6/d3d689cf-6b0f-4d2a-a7a7-6e02a27b7588/scratchpad/item3_M1_pilot/b2/L8/caseB: 1600 steps, ExecutionTime = 11220.06 s  ClockTime = 11223 s

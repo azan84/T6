@@ -1,0 +1,47 @@
+{
+ "n_stl_vertices": 99760,
+ "n_wall_points": 526687,
+ "threshold_mm": 0.3,
+ "n_far": 754,
+ "far_segments": [
+  "R-PDA",
+  "R-PLA",
+  "RCA"
+ ],
+ "far_tree_node_range": {
+  "R-PDA": [
+   279,
+   396
+  ],
+  "R-PLA": [
+   620,
+   620
+  ],
+  "RCA": [
+   0,
+   0
+  ]
+ },
+ "far_count_by_node": {
+  "R-PDA:279": 1,
+  "R-PDA:381": 4,
+  "R-PDA:382": 12,
+  "R-PDA:383": 14,
+  "R-PDA:384": 17,
+  "R-PDA:385": 15,
+  "R-PDA:386": 11,
+  "R-PDA:387": 21,
+  "R-PDA:388": 23,
+  "R-PDA:389": 16,
+  "R-PDA:390": 21,
+  "R-PDA:391": 20,
+  "R-PDA:392": 15,
+  "R-PDA:393": 14,
+  "R-PDA:394": 14,
+  "R-PDA:395": 17,
+  "R-PDA:396": 517,
+  "R-PLA:620": 1,
+  "RCA:0": 1
+ },
+ "max_distance_mm": 7.518
+}

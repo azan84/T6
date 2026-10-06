@@ -1,0 +1,1 @@
+readable: dmesg lines matching OOM with kernel time in [433663.76, 438890.95] s (first buffered line: [    0.000000] L)
