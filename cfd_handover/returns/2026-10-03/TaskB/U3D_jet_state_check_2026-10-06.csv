@@ -1,0 +1,8 @@
+level,cells,iterations,mpi_ranks,FFR_original,FFR_rerun,dFFR,FFR_last100_band,offset_x50_um,offset_x56p5_um,verdict,source
+S50,2687640,3000,8,0.793362,0.793363,1e-06,,0.0,0.4,axisymmetric,"jet_offset_S50.txt + FFR as reported (report U3D (v) update, 2026-10-02); 6-digit FFR"
+S25A,3194196,4000,8,0.791103,0.791103,0.0,,0.0,0.1,axisymmetric,"jet_offset_S25A.txt + FFR as reported (report U3D (v) update, 2026-10-02); 6-digit FFR"
+S25B,3299948,4000,8,0.791197,0.791196969,-3.15e-08,6.36e-08,0.0,0.1,axisymmetric,result_S25B.json (2026-10-04 05:45:45)
+S12A,6739168,6000,8,0.790308,0.790308279,2.788e-07,2.47e-08,0.0,0.0,axisymmetric,result_S12A.json (2026-10-05 03:06:04)
+S12B,7649800,3000,8,0.790418,0.790417633,-3.67e-07,5.04e-08,1.2,2.3,axisymmetric,result_S12B.json (2026-10-05 10:37:30)
+# GCI21 (absolute, from the original values): zone A p=1.507 GCI=0.000540; zone B p=1.475 GCI=0.000547; U3D = max = 0.00055
+# all five levels axisymmetric (rule (a) of u3d_check/U3D_CHECK_DESIGN.md): U3D final under D9
