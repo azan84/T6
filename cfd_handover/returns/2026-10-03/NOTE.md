@@ -1,7 +1,15 @@
-# NOTE, CFD machine returns 2026-10-03 (answers WORK-ORDER-2026-10-03; work in progress, updated as tasks finish)
+# NOTE, CFD machine returns 2026-10-03 (answers WORK-ORDER-2026-10-03; updated 2026-10-06)
 
 ## Blinding incident, logged first (2026-10-03)
 `drafts/P5-PILOT-DECISION-RULE-2026-10-03.md` (analysis side, pushed to the shared GitHub repo with commit 3b91d29) says in its own header that it quotes 0D FFR values of cohort scans and is not for `cfd_handover/`. It was pulled with the rest of that commit and read on this machine on 2026-10-03 (the 0D FFR of scans 138, 69, 473, 272 and 139 and the decision thresholds are therefore known to the CFD side). Handling: the file was NOT copied into `cfd_handover/`; no CFD input, setting, case selection or analysis uses those values (CFD solves take no 0D input and the packages carry none); the P5 solves are run exactly as the work order states. Recommendation to the analysis side: keep analysis-only files out of the shared repository, and decide whether the exposure matters for the P5 pilot.
+
+## Status at 2026-10-06 (read this first)
+- **Task A (D7): finished.** A1 +0.00189, A2 +0.00207 (both >= U3D 0.00055: acceptance NOT met, M1 fails for the lesion cases, section 9 fallback is the analysis side's), control A0 +0.0000000 (so the offset is the 12.5 um resolution effect, not mesh-regeneration noise). `M1_D7_sensitivity.csv`, `TaskA/`.
+- **Task C: finished** (template and runner in `code_from_cfd/task_1003/task_c_final`).
+- **Task P5: all five cases finished and returned** (`P5/<scan>/`), all CONVERGED at 3000 iterations, flagged as listed below; no case repaired. Correction of 2026-10-06: the report table had printed 0.88685 for scan 473, the value of the rejected package probe p011; the value used and returned is 0.88333 at p011_reloc.
+- **Task B: finished. U3D = 0.00055 is FINAL (D9):** all five levels re-run with fields kept are on the axisymmetric jet state and reproduce their original FFR within 4e-7 (`TaskB/U3D_jet_state_check_2026-10-06.csv`).
+- **Task D (B2 replicate): third run in progress** (started 2026-10-06 14:42, L16 then L8x2). It cannot become VALID (see the Task D section at the end).
+- Scan 272: root cause of the lost outlet out_396 and of the self-intersection flag, see `P5/272/ROOT_CAUSE_272_2026-10-06.md`.
 
 ## Status of the previous order
 B2 repeat (reversed order, auto-updates off, other projects absent): L16 4160 s, L8x2 9018 / 9005 s to the B1 settle point, ratio 0.923, both layouts INVALID again (short non-owned CPU peaks), ratio NOT CLAIMED; run 1 gave 0.935. Task 4 was not measured (runner defect, fix pending, see later).
@@ -24,3 +32,30 @@ A2 = throat zone 12.5 um with the zone interfaces shifted 1 mm (-3..+5 mm), 8,30
 
 ## Task A, control A0 finished 2026-10-04 13:47 (TaskA/)
 A0 = the regenerated production mesh (25 um throat zone, 3,657,147 cells) re-solved with the Task C template, 16 ranks, 3000 iterations, CONVERGED (B1 first settled iteration 1421). **p011 p/P_aorta = 0.8697575, DeltaFFR = 0.0000000 vs the returned value** (identical at every probe and outlet to the printed digits): the pipeline, the template change and mesh regeneration do not change the result. Therefore the +0.00189 (A1) and +0.00207 (A2) are a genuine effect of the 12.5 um throat zone: the production recipe is under-resolved by about 0.002 in p/P_aorta (0.2 %) on this 80 %DS lesion; the finer zone lowers the added loss across the lesion. D4/D3 flags of A0 are those of the returned mesh (face tets 1.43 mm from the throat). Flow-state profile A0 vs A1: max offset difference 0.019 r_eq (within the 0.03 tolerance) although FFR differs by 0.0019; the comparison is INDETERMINATE by rule (invalid section 23-24 mm distal). By the D7 rule the acceptance criterion is not met (M1 fails for the lesion cases; section 9 fallback: analysis side). Not repaired, no CFD-side change of the production recipe.
+
+## Task B (U3D final) finished 2026-10-05 (TaskB/)
+S12A (6,739,168 cells, 6000 iterations) and S12B (7,649,800 cells, 3000 iterations), both re-run on regenerated meshes at 8 ranks with fields kept: axisymmetric jet (offsets 0.0/0.0 um and 1.2/2.3 um at x = 50/56.5 mm), FFR 0.7903083 and 0.7904176 against the original 0.790308 and 0.790418 (dFFR +2.8e-7 and -3.7e-7), SETTLED (last-100 band 2.5e-8 and 5.0e-8). With S50 and S25A (2026-10-02) and S25B (2026-10-04) all five levels follow rule (a) of `U3D_CHECK_DESIGN.md`: every original level is verified on the axisymmetric state. GCI21 from the original values: zone A 0.00054 (p 1.51), zone B 0.00055 (p 1.47): **U3D = 0.00055, final under D9.** The verification rests on FFR reproduction plus jet state of the re-runs, not on decomposition identity (8 vs 16 ranks, regenerated meshes). Files: `TaskB/result_<level>.json`, `jet_offset_<level>.txt`, `verdict_<level>.txt`, `U3D_jet_state_check_2026-10-06.csv` (script `code_from_cfd/task_1003/taskB_summary/make_taskB_final.py`).
+
+## Task P5 finished 2026-10-05 (P5/<scan>/)
+Baseline geometry, resistance mode (bc_A), production recipe, Task C probe monitors, 8 ranks, 3000 iterations each, all CONVERGED; E0 MEMBER for every scan; no 0D input or output anywhere in the pipeline. Wall clock is CONTENDED (32 concurrent ranks).
+
+| scan | vessel, L/DS | cells | p/P_aorta at measurement (probe) | Re_throat | B1 first settled (it) | flags |
+|---|---|---|---|---|---|---|
+| 138 | LAD 20 mm/70 % | 4,941,176 | 0.87816 (p010) | 264 | 1203 | D3_FAIL;D4_FAIL;CHECKMESH_STANDARD_FAIL |
+| 69 | LCx 20 mm/65 % | 4,218,023 | 0.86960 (p012) | 366 | 1099 | LESION_PURITY_GATE_FAIL;POSITIVE_CONTROL_UNDETECTED |
+| 473 | LCx 20 mm/60 % | 5,487,673 | 0.88333 (p011_reloc) | 400 | 1619 | D2_RELATIVE_THROAT_GATE_FAIL;D3_FAIL;D4_FAIL;MEASUREMENT_PROBE_RELOCATED |
+| 272 | RCA 10 mm/65 % | 7,639,018 | 0.93861 (p009) | 320 | 1305 | SELF_INTERSECTION;D3_FAIL;D4_FAIL;OUTLET_LOST_IN_MESH (out_396) |
+| 139 | RCA 10 mm/70 % | 4,138,185 | 0.85674 (p009) | 236 | 968 | D2_RELATIVE_THROAT_GATE_FAIL;D3_FAIL;D4_FAIL |
+
+- 473: the package probe p011 failed the section rule (degree-3 node 0.84 mm away, centreline angle 36.6 deg > 20 deg) and was relocated deterministically to p011_reloc (tree node 646, 2.85 mm distal); measurementP monitors the relocated plane (cross-check 6.7e-10). The D3/D4 distance (1.07 mm) is to the package probe p011, not to p011_reloc.
+- 272: out_396 has 0 faces; the solve has no flow through it (bc_A's resistance there is not applied; `M1_outlets` row closed/lost_in_mesh). Root cause (2026-10-06, read-only): a one-voxel neck of the mask in the distal R-PDA, narrowed by marching cubes and by the recipe's Taubin smoothing (r_eq 0.278 mm, inscribed 0.228 mm), meshed with 200 um root cells because no refinement object covers non-lesion branches: cfMesh disconnects and deletes the distal region. Any tree with a non-lesion branch narrower than about 2.5 root cells between the lesion path and an outlet can lose that outlet the same way (a recipe question for the analysis side). The single surfaceCheck self-intersection point (inlet extension) is not a geometric crossing (exact test, 3 mm neighbourhood) but a tool-tolerance artefact; the flag stays as returned. Details: `P5/272/ROOT_CAUSE_272_2026-10-06.md`.
+- The case directories are kept outside Drive for the batch (work order section 5.3).
+
+## Task D (B2 replicate), third run 2026-10-06 (in progress)
+Started 14:42:46 (`b2_driver3.sh`, original order L16 then L8x2, B2_ALLOW_WINDOWS_LOAD=1 -> evidence at best 'unknown'). Already at t = 160 s the coordinating Claude session on this host used 1.40 cores (> the 1.0-core per-sample limit), so by the frozen rule L16 is contended = yes (INVALID) whatever follows; the work order's condition "no interactive session on the host" is not met either. The ratio of this run will therefore NOT be claimed; its wall-clock numbers are reported as a third replicate of the raw throughput only. Result rows will be added to `B2_throughput/` of 2026-09-26 style when the run finishes.
+
+## Corrections and additions of 2026-10-06 (post-hoc audit of Tasks A/B by GPT-5.6 Sol)
+- `M1_D7_sensitivity_2026-10-06.csv` re-issues `M1_D7_sensitivity.csv` (kept unchanged): the control A0 is now labelled `CONTROL_NOT_APPLICABLE` (it is not a D7 variant; the first issue said `PASS_WITH_DEVIATIONS_candidate`), and every row carries `M1_D7_overall = M1_FAIL_LESION_CASES`. All numbers are unchanged.
+- `TaskA/M1_geometry_gates_D7-2026-10-03.csv` (required by Task A step 2, missing until now): A1, A2 and A0 in the `M1_geometry_gates.csv` format: strict checkMesh 3 failed checks each (face tets 1206 / 1299 / 1058, concave cells 62 / 72 / 52, small volume ratio 30 / 31 / 30), nearest face-tet entity 0.698 / 0.698 / 1.430 mm from the throat centre, 2.547 mm from p011; D3 and D4 FAIL for all three.
+- Wording in the A1 paragraph above ("upstream identical to 5 decimals", "+0.00189 +-1e-5 for 90 mm"): upstream the variants differ from the returned baseline by at most 1.5e-5; downstream the offset varies by less than 1e-4 (A1 +0.00195 to +0.00188, A2 +0.00200 to +0.00209). The 12.5 um result is a resolution SENSITIVITY of 0.0019-0.0021 relative to the 25 um production recipe, not an estimate of the asymptotic error (no finer level was run).
+- `TaskA/post_summary_baseline_D7_12p5*_resistance.json` list a sha256 of `TaskA/M1_results.csv` taken when that aggregate held fewer rows; the current file is authenticated by the A0 summary and by `INDEX.csv` (sha256 of every file of this return, LF-normalised).

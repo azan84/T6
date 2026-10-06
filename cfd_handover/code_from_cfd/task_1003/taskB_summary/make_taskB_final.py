@@ -22,6 +22,5 @@ def gci(f3, f2, f1):
 pA, gA = gci(orig["S50"], orig["S25A"], orig["S12A"]); pB, gB = gci(orig["S50"], orig["S25B"], orig["S12B"])
 with open(out, "w", newline="") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
-    f.write(f"# GCI21 (absolute, from the original values): zone A p={pA:.3f} GCI={gA:.6f}; zone B p={pB:.3f} GCI={gB:.6f}; U3D = max = {max(gA, gB):.5f}\n")
-    f.write("# all five levels axisymmetric (rule (a) of u3d_check/U3D_CHECK_DESIGN.md): U3D final under D9\n")
-print(open(out).read())
+
+print(open(out).read()); print(f"GCI21 (absolute, original values): zone A p={pA:.3f} GCI={gA:.6f}; zone B p={pB:.3f} GCI={gB:.6f}; U3D = {max(gA, gB):.5f}")

@@ -1,0 +1,42 @@
+"""returns/2026-10-03/M1_geometry_gates_D7-2026-10-03.csv (work order 2026-10-03 Task A step 2: the Task A meshes in the M1_geometry_gates.csv format, dated):
+the D7 variants A1 (12.5 um throat zone), A2 (12.5 um, shifted zone interfaces) and the control A0 (production 25 um mesh regenerated). Same columns and logic as
+task_0926/make_geometry_gates_csv.py; geometry gates from m1/out/baseline/gates.json (all three share the returned baseline surface), mesh gates from
+m1/mesh/<mesh>/mesh_gates.json, distances from m1/out_returns/d34_<variant>.json. Read-only. usage: make_geometry_gates_d7.py <out.csv>"""
+import os, sys, json, csv
+HERE = "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1"
+CASES = [("baseline_D7_12p5", "A1: throat zone 12.5 um +-4 mm", "baseline_D7_12p5", "d34_D7_12p5.json"), ("baseline_D7_12p5_zoneB", "A2: throat zone 12.5 um, interfaces shifted +1 mm", "baseline_D7_12p5_zoneB", "d34_D7_12p5_zoneB.json"),
+         ("baseline_A0_25um", "A0 control: production 25 um mesh regenerated", "baseline_v2", "d34_A0_25um.json")]
+def build():
+    rows = []
+    for case, label, mesh, d34f in CASES:
+        g = json.load(open(f"{HERE}/out/baseline/gates.json")); mg = json.load(open(f"{HERE}/mesh/{mesh}/mesh_gates.json")); d = json.load(open(f"{HERE}/out_returns/{d34f}"))[case]; G = g["GATES"]; les = g.get("lesion") or {}; thr = les.get("throat") or {}
+        rel, lit = thr.get("RELATIVE_GATE") or {}, thr.get("LITERAL_ABSOLUTE_vs_r_target") or {}; asb = thr.get("asbuilt_mm") or {}; fs = g["final_surface"]; c = d["checks"]
+        worst = min(((k, e) for k, e in c.items() if e["min_dist_to_throat_centre_mm"] is not None), key=lambda t: t[1]["min_dist_to_throat_centre_mm"])
+        r = dict(case=case, label=label, package=g["case"], scan=g["scan"], side=g["side"], cohort_status="frozen cohort, in CFD subset (E0 assertion PASSED against CFD-SUBSET-FROZEN-2026-09-18.csv sha256 8e0079a0...)",
+                 manual_repair=False, pipeline_gates_frame_check=G["frame_check"], pipeline_gate_mask_edit_matches_shipped=G["mask_edit_matches_shipped_voxels_and_components"], pipeline_gate_clip_loops_outward=G["clip_loops_and_outward_normals"],
+                 pipeline_gate_extensions_outward=G["extensions_outward"], pipeline_gate_surface_closed_one_part_positive_volume=G["final_surface_closed_one_part_positive_volume"],
+                 D2_relative_throat_gate_pass=G.get("lesion_relative_throat_gate"), relative_dev_insc_pct=rel.get("insc_circle_pct"), relative_dev_area_equiv_pct=rel.get("area_equiv_pct"), relative_dev_axis_sphere_pct=rel.get("sphere_at_axis_pct"), relative_tolerance_pct=rel.get("tolerance_pct"),
+                 radial_scale_package=thr.get("radial_scale"), r_target_mm=thr.get("r_target_mm"), r_source_mm=thr.get("r_source_mm"),
+                 absolute_check_reported_not_decisive_pass=(G.get("lesion_literal_absolute_r_target_check") if les else None), absolute_dev_insc_pct=lit.get("insc_circle_pct"), absolute_dev_area_equiv_pct=lit.get("area_equiv_pct"), absolute_dev_axis_sphere_pct=lit.get("sphere_at_axis_pct"),
+                 asbuilt_r_insc_mm=asb.get("insc_circle"), asbuilt_r_area_equiv_mm=asb.get("area_equiv"), asbuilt_r_axis_sphere_mm=asb.get("sphere_at_axis"),
+                 self_intersecting_raw_marching_cubes=d["raw_mc_surface_self_intersecting"], self_intersecting_smoothed=(fs.get("surfaceCheck_smoothed_left_tree_surface") or {}).get("self_intersecting"), self_intersecting_final_surface=(fs.get("surfaceCheck") or {}).get("self_intersecting"),
+                 self_intersection_clusters=len(d["self_intersection_clusters"]), self_intersection_clusters_min_dist_to_throat_mm=(min(x["d_throat_mm"] for x in d["self_intersection_clusters"]) if d["self_intersection_clusters"] else None),
+                 self_intersection_clusters_min_dist_to_measurement_mm=(min(x["d_measurement_mm"] for x in d["self_intersection_clusters"]) if d["self_intersection_clusters"] else None),
+                 cells=mg["cells"], checkMesh_standard_OK=mg["checkMesh_standard_OK"], checkMesh_strict_failed_checks=mg["strict_failed_checks"], strict_failure_lines=" | ".join(mg["strict_failure_lines"]),
+                 n_faces_low_quality_face_tets=c["lowQualityTetFaces"]["n_entities_in_log"], n_concave_cells=c["concaveCells"]["n_entities_in_log"], n_faces_small_volume_ratio=c["lowVolRatioFaces"]["n_entities_in_log"],
+                 throat_probe=d["throat_probe"], throat_probe_kind_note="lesion throat", measurement_probe=d["measurement_probe"],
+                 min_dist_flagged_to_throat_centre_mm=d["min_over_checks_throat_centre_mm"], check_of_min_dist_to_throat=worst[0], min_dist_flagged_to_measurement_centre_mm=d["min_over_checks_measurement_centre_mm"])
+        for s, short in (("lowQualityTetFaces", "face_tets"), ("concaveCells", "concave_cells"), ("concaveFaces", "concave_faces"), ("lowVolRatioFaces", "small_vol_ratio")):
+            r[f"{short}_min_dist_throat_centre_mm"] = c[s]["min_dist_to_throat_centre_mm"]; r[f"{short}_min_dist_throat_disc_mm"] = c[s]["min_dist_to_throat_disc_mm"]
+            r[f"{short}_min_dist_measurement_centre_mm"] = c[s]["min_dist_to_measurement_centre_mm"]; r[f"{short}_min_dist_measurement_disc_mm"] = c[s]["min_dist_to_measurement_disc_mm"]
+        r.update(checks_within_2mm=" ".join(d["checks_within_2mm"]) or "none", n_face_tet_vertex_points_within_2mm_of_throat=c["lowQualityTetFaces"]["n_points_within_2mm_of_throat"], D3_self_intersection_verdict=d["D3_verdict"], D4_strict_checkMesh_verdict=d["D4_verdict"],
+                 distance_basis="vertices of the flagged faces/cells written by checkMesh -writeSets vtk, in mm, package frame; centre = to the probe's centreline point, disc = to the probe's cross-section disc (as-meshed area-equivalent radius)",
+                 M1_status_D6=("PASS WITH DEVIATIONS (D2 relative gate decisive; absolute check and D3/D4 conditions as reported)" if (d["D3_verdict"] in ("PASS",) or d["D3_verdict"].startswith("NOT")) and d["D4_verdict"] == "PASS" else "FAILS M1 under D3/D4 (a flagged entity lies within 2 mm of the throat or measurement probe); reported, not repaired"))
+        rows.append(r)
+    return rows
+if __name__ == "__main__":
+    rows = build(); out = sys.argv[1]
+    with open(out, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
+    print("wrote", out, len(rows), "rows,", len(rows[0]), "columns")
+    for r in rows: print(r["case"], "| D2 relative", r["D2_relative_throat_gate_pass"], "| abs", r["absolute_check_reported_not_decisive_pass"], "| D3", r["D3_self_intersection_verdict"], "| D4", r["D4_strict_checkMesh_verdict"], "| within 2 mm:", r["checks_within_2mm"])

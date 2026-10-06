@@ -1,0 +1,164 @@
+# INDEX of returns/2026-10-03; sha256_lf = sha256 of the file with CRLF normalised to LF (text files) or of the raw bytes
+file,task,scan,content,csv_data_rows,bytes,sha256_lf
+M1_D7_sensitivity.csv,A,,"Task A: D7 sensitivity verdict per variant (A1, A2, A0)",3,1442,a44fc0bc63498294f6f07d554ea4b0af0f9b03e1518405f0c7ab08e5ca958a2b
+M1_D7_sensitivity_2026-10-06.csv,A,,,3,1866,dffa4b63ab3b2f049839df12edb784c2c44c424667ad6292497a66f2e9c6975c
+NOTE.md,all,,status and narrative of this return (read first),,15034,92d9e2105158fb422bc32337ade7c535310a6a589c0bf75ed18d223bf4dc24b6
+P5/138/M1_monitor_history_138_resistance.csv,P5,138,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,637661,0e12df54ecbb7b3b9de75ee03d2c4c0bc0d61a65916932e13ae5cd094926bbee
+P5/138/M1_monitor_history_138_resistance.json,P5,138,provenance of the monitor history,,2592,b60725db864c3b335c0e01fbf34d28c9558160c8eed56e46f957cc7f298e6c6d
+P5/138/M1_outlets_138_resistance.csv,P5,138,"per outlet: R used, Q, p (lost outlets flagged)",5,1383,ffc023a72b69e900c4350132601aa185a6ade3fc40a71d396d0fed0a14a40462
+P5/138/M1_probes_138_resistance.csv,P5,138,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",37,10017,ec7ee00f5ac410eee23a3ac7260fbdd7bd028e9658d88e7ad0cfcff7a4367be5
+P5/138/M1_results.csv,P5,138,"M1_results-format row(s): geometry, mesh, solve, gates, flags",1,2362,7275b733c54a304894ae68c116402904db1b3c05321fac5eb2d841821f5737f3
+P5/138/as_meshed_radius_138.csv,P5,138,"as-meshed lumen radius, area-equivalent (D10)",646,63554,597fff96024a3e7ffb2336895c9e766da07cd96740ab1c7c6e64e68a6dbca642
+P5/138/as_meshed_radius_138_detail.csv,P5,138,"as-meshed radius, per-section detail",646,146425,a0c0006872b9e6eccb3e80b4f05fe9a4b5a7485947f80ee86abd9e80f3894d45
+P5/138/as_meshed_radius_138_inscribed.csv,P5,138,"as-meshed lumen radius, inscribed circle (D10)",646,63599,0a95d18b1b28ccb212b82ca2ba583d422e6617f1984ff0bcac276b1ef9cbc803
+P5/138/as_meshed_radius_138_provenance.json,P5,138,provenance of the as-meshed radius files,,1554,7a5a9796f9a917b635b1548bbf84b5e4746d0569290efaa4096b473c9661d876
+P5/138/fill_138_resistance.json,P5,138,inputs used to fill the M1_results row,,2520,39d86a4ab7d008197972ee7b1f294dfdb918f8139b39fa62e87795e49ba7141b
+P5/138/flow_state_138_resistance.csv,P5,138,flow-state profile (jet centroid offset along the lesion vessel),30,19152,daf5f25753efcd4984b32f90e87d57672a5351a8df924f0cf4d7e2592f7c9416
+P5/138/flow_state_138_resistance.json,P5,138,flow-state summary / comparison verdict,,751,66190a3b2e2c115b51f58cbcf837626ff04d05725c16da0c67902f4a99f2aee5
+P5/138/package_check_138_resistance.json,P5,138,package hashes and E0 membership check,,1716,804a73fa0962804c6f8087fe4fb4a459224ffa148448a7fbadf32c479c2e95f5
+P5/138/post_138_resistance.log,P5,138,post-processing log,,11353,d5753d36b13cbaaff4a332c126164d00ae44d257e7ef3ace03ed653dc2901583
+P5/138/post_summary_138_resistance.json,P5,138,post-processing summary with sha256 of every output,,5366,d9ad478c544c6f8733fd96eb151dd09674c095b42f1ecdbee53f00c16619d84e
+P5/138/reconstruct_check_138_resistance.json,P5,138,reconstructPar verification,,530,b5786c3c358495004fbc212d7b65d017f1dab17189a67bb448ff3fe71981249a
+P5/138/run_completion_138_resistance.json,P5,138,solver completion record,,288,2356d05820d788246556c403d7204eaa8066113ee521e153409e63fc4d49764d
+P5/138/settle_138_resistance.csv,P5,138,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1352,9b25f33cb8eca991700d9a2a781b91e0cd9894dd55632db35c450c1834302294
+P5/139/M1_monitor_history_139_resistance.csv,P5,139,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,650386,8daf9965cba67f38f6f616bb200f4ac56416e5dc0e9d9c179577e425714c933c
+P5/139/M1_monitor_history_139_resistance.json,P5,139,provenance of the monitor history,,2585,6e3df9d77d74a364f56e098020ea3c80314ebc0f827c740200d0e037250bb185
+P5/139/M1_outlets_139_resistance.csv,P5,139,"per outlet: R used, Q, p (lost outlets flagged)",2,682,fdaa70e14fd66ccff1b08563ae9160680485e2ffeba5886eff7f6f71e3bb5396
+P5/139/M1_probes_139_resistance.csv,P5,139,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",33,9317,5fe3f91c3ed3fd9b7beb36945bd41457dd295f9123a304728707d9bf09639e63
+P5/139/M1_results.csv,P5,139,"M1_results-format row(s): geometry, mesh, solve, gates, flags",1,2303,9dc0c2f0de2eae23c617b0b2acc3f22bed7a5113b70f071c6ab2d5de7d3949a6
+P5/139/as_meshed_radius_139.csv,P5,139,"as-meshed lumen radius, area-equivalent (D10)",498,48858,c768dfbc8bad162f7e2dd840fc0e3211b40e8bb86673a74635a7a4794dc72e83
+P5/139/as_meshed_radius_139_detail.csv,P5,139,"as-meshed radius, per-section detail",498,115161,00c4aa799b0d0dcc35daf28697b928549e277f9f263bff7d3503e6f3e6092e6e
+P5/139/as_meshed_radius_139_inscribed.csv,P5,139,"as-meshed lumen radius, inscribed circle (D10)",498,48874,25e16fb0d0c1402995aab1153656a63c504de396ea31a0ca830bae41ebe2c5a7
+P5/139/as_meshed_radius_139_provenance.json,P5,139,provenance of the as-meshed radius files,,1555,f9bd88163d8a095d47d431e99cca21b3e848d679245a9cf978ed01f80955ad98
+P5/139/fill_139_resistance.json,P5,139,inputs used to fill the M1_results row,,2535,0a197b8ff126da37d6c929089dd95360b9e6a5dd997092cea88cf74fd3ae6e95
+P5/139/flow_state_139_resistance.csv,P5,139,flow-state profile (jet centroid offset along the lesion vessel),25,16351,524eb2bcdbd09519ef17054d88a7f07b55cac409904c9a28a71e9ae62d0d62e0
+P5/139/flow_state_139_resistance.json,P5,139,flow-state summary / comparison verdict,,762,de799b89d1b4859f1f5c944670211230d62fba772dee8314ca2a7321a014d5f9
+P5/139/package_check_139_resistance.json,P5,139,package hashes and E0 membership check,,1718,4bb910d64a24091c6d3709abb5bc346aa1fe10d101bc9acf47deae9de37d32fc
+P5/139/post_139_resistance.log,P5,139,post-processing log,,11080,301112f9243a3d4205f102cde32e7a71765a5162b95813a0fcf101e8875aef29
+P5/139/post_summary_139_resistance.json,P5,139,post-processing summary with sha256 of every output,,5372,50a72be06d92bdecb034a6b47301742d7c75df445999ff0ddab67db8657862d2
+P5/139/reconstruct_check_139_resistance.json,P5,139,reconstructPar verification,,529,36b36305e45764887a277cf8a6016d8a4de916b446384fd2f53c9535f954505e
+P5/139/run_completion_139_resistance.json,P5,139,solver completion record,,288,9f94caf0e60828aded3b170007eda080189ef4e32ac00d8d15dbd2a8b260316b
+P5/139/settle_139_resistance.csv,P5,139,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1360,0b76633c7dfdb5ecaa93a9a3e85fe2f92c2dc39cb1a0ab66b7a3786ecf741bac
+P5/272/M1_monitor_history_272_resistance.csv,P5,272,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,629903,90cc3e7ebb60040c8cf3b0ab09d8a1889c5eeda965e75fefece1d98188bed0cc
+P5/272/M1_monitor_history_272_resistance.json,P5,272,provenance of the monitor history,,2595,a3c84f3256d7cf97b851e0cc0f0639b39b35396c34c33b0d34c75cd4fda36921
+P5/272/M1_outlets_272_resistance.csv,P5,272,"per outlet: R used, Q, p (lost outlets flagged)",3,879,f18432f7888fa20da407fbb70fcf6874a05651a8b3263ee9ec6277d9399e3ddb
+P5/272/M1_probes_272_resistance.csv,P5,272,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",35,9443,9b75f2061450c993b01eb39425303d73a6e282203dc1afe9c15c2ba4ced150ea
+P5/272/M1_results.csv,P5,272,"M1_results-format row(s): geometry, mesh, solve, gates, flags",1,2766,c99490dde9bb37ae6aea3a942cdd197d676795235804ae260c5cbfa3c985c411
+P5/272/ROOT_CAUSE_272_2026-10-06.md,P5,272,P5 272: root cause of the lost outlet out_396 and of the self-intersection flag,,5061,aecab416b2f8205b2a44bfdd65c241810402ffc36f90e4bab1ffd2bdf1de99fc
+P5/272/as_meshed_radius_272.csv,P5,272,"as-meshed lumen radius, area-equivalent (D10)",469,43649,4757d94f3470821369aa7a9654e39c1fe228e8364413f02d47fcb889a6f71bf3
+P5/272/as_meshed_radius_272_detail.csv,P5,272,"as-meshed radius, per-section detail",469,104779,6af0fbbe3dd868113e091be4d940c64171da2f5ab72405bdcc46e625b84d0aab
+P5/272/as_meshed_radius_272_inscribed.csv,P5,272,"as-meshed lumen radius, inscribed circle (D10)",469,43671,06a3bbcf1646ad4f2c7207f2c62a81b84ff9e1c17ab8805b6878ceb556715b07
+P5/272/as_meshed_radius_272_provenance.json,P5,272,provenance of the as-meshed radius files,,1555,40b31a878533ea955e482f9f71e44757980a373564ece6ddcff4ea3f1c209e13
+P5/272/fill_272_resistance.json,P5,272,inputs used to fill the M1_results row,,2813,795acb14aa75cb2ed1e32f611d0df77e8086af320900fc12291c99da168c7212
+P5/272/flow_state_272_resistance.csv,P5,272,flow-state profile (jet centroid offset along the lesion vessel),25,16311,fd62817b0b26fe62be3e750c2c351c9ef76466374d52916d4feb0c33103b08f2
+P5/272/flow_state_272_resistance.json,P5,272,flow-state summary / comparison verdict,,749,b91fe17c44c5d43e84189dd7bfd54f991a196f515de29a4cab560f33336fe8d9
+P5/272/neck272.json,P5,272,"P5 272: neck measurements (mask EDT, MC/smoothed/final section radii)",,8984,5cda814f845042b849777f4d65151dae554c27fa6ba80653c55613f3f4c62bdb
+P5/272/package_check_272_resistance.json,P5,272,package hashes and E0 membership check,,1718,b98a94244875429846e1d5c7d319c71f7728011c78ef4c2aeaca069b99f6105a
+P5/272/post_272_resistance.log,P5,272,post-processing log,,11281,8679f784fe851c9e39093fe68870fa18f772a00be4afd8c30c6c313a8fb4a723
+P5/272/post_summary_272_resistance.json,P5,272,post-processing summary with sha256 of every output,,5394,13d6ba09224895f838413b0d8595857ef1a871256c9a19a68f2a71e2cbe36c25
+P5/272/reconstruct_check_272_resistance.json,P5,272,reconstructPar verification,,530,340055d0cfb9a58b50d780f61bea3a49b2d2e9f89f8ae9be49a47da47c6b000b
+P5/272/run_completion_272_resistance.json,P5,272,solver completion record,,288,f7ae66bbe76ea6d5d576fabe5290e00b57d58f88d7640d84ee2f6b25d18ec9de
+P5/272/selfint272_R0.6mm.json,P5,272,P5 272: exact edge-triangle crossing test around the surfaceCheck point,,158,8286110f2767851f482df072349ebd9f213f6b0146f85bb4b4dfa488e822f564
+P5/272/selfint272_R3mm.json,P5,272,P5 272: exact edge-triangle crossing test around the surfaceCheck point,,159,b00972b805cb61ed2478938e7c2f91662016acb4cca5abac8dece0a3d32d5daf
+P5/272/settle_272_resistance.csv,P5,272,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1354,4b5e194ea45b29f406708dcbbe244e91626750af1a13f1a32129bb120c111d7a
+P5/473/M1_monitor_history_473_resistance.csv,P5,473,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,940307,e41b07a0de03055d2146d4e347d7b86b6d39e92993ad7740ece38623959d8eb7
+P5/473/M1_monitor_history_473_resistance.json,P5,473,provenance of the monitor history,,3797,8004620ff351e9ec2e1823d8f671b2b68e19fc47f9975d8f9e466d6cb3be44ad
+P5/473/M1_outlets_473_resistance.csv,P5,473,"per outlet: R used, Q, p (lost outlets flagged)",6,1536,7d50168c02d439a10f20ffc3e49e705e09e2fb1e22cd56ddb03fd40acf21c3f5
+P5/473/M1_probes_473_resistance.csv,P5,473,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",23,6395,3d8044c44c437c5df2fc356d79439705413fd198e68470fd1726e72ec97c0f61
+P5/473/M1_results.csv,P5,473,"M1_results-format row(s): geometry, mesh, solve, gates, flags",1,3010,5607996b2f61f71705c838c7235cba04df3723ba62a7c6be82936ab206c569b6
+P5/473/as_meshed_radius_473.csv,P5,473,"as-meshed lumen radius, area-equivalent (D10)",751,73747,057c17f7b173e7049d92d44b92e498db896cdfb7a6ac9d33cb678b7bdd69c977
+P5/473/as_meshed_radius_473_detail.csv,P5,473,"as-meshed radius, per-section detail",751,169130,39a06e50140612b1edd6749794041f692727753f6a1c56df6806076d64528241
+P5/473/as_meshed_radius_473_inscribed.csv,P5,473,"as-meshed lumen radius, inscribed circle (D10)",751,73795,25b371317949e87ead8ea93a48579a07ce6e4a49b3b94c877b8efdd6666f109c
+P5/473/as_meshed_radius_473_provenance.json,P5,473,provenance of the as-meshed radius files,,1554,832852482b61b9239a42a7ad3dcccfb095a11f7e9b595970c21c50a317b9c59f
+P5/473/fill_473_resistance.json,P5,473,inputs used to fill the M1_results row,,2851,02886724161166fb39794e281e08c2ff2ed6fe77a050b234320fc15ba048088a
+P5/473/flow_state_473_resistance.csv,P5,473,flow-state profile (jet centroid offset along the lesion vessel),33,21515,a71492efd0cf2915dd20e8bff6a3f0bdd1636577c4cafd9642771efef164c81b
+P5/473/flow_state_473_resistance.json,P5,473,flow-state summary / comparison verdict,,864,de2f34d3e78d6b5d6d6bca0872f69165ce36927608021d91c40015659347fae2
+P5/473/package_check_473_resistance.json,P5,473,package hashes and E0 membership check,,1716,996cfa74e4ce3c77edf23f87d7dc252b0b7ab6950376e6408c6224ecb91c5f4a
+P5/473/post_473_resistance.log,P5,473,post-processing log,,11753,e78050b1e2a324ff820c55df51c9a7c3ec75556a927548027aab1e4ab76763a4
+P5/473/post_summary_473_resistance.json,P5,473,post-processing summary with sha256 of every output,,9685,6f68a3a31aab292f2dcea3893b24ffa152c834bd7e8916ff1bec056074a9875e
+P5/473/reconstruct_check_473_resistance.json,P5,473,reconstructPar verification,,530,46efd6b509dc640df729efeabe7292a40be1a7d9871d55a9ee35aa3b0465c854
+P5/473/run_completion_473_resistance.json,P5,473,solver completion record,,288,d42bc0ebe053a65d4a2d69af8aee96d9e0709ac1b0f758a0ca93dff3a654823c
+P5/473/settle_473_resistance.csv,P5,473,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1364,eb6339ff8b87663a3d3cd7a90d92d6ea193125f30c1800b621b2719de60975fc
+P5/69/M1_monitor_history_69_resistance.csv,P5,69,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,634956,8b8998c3109c41720dc20cfb0402ec6e6f33baab2b6b5b0d681fd4801beb5044
+P5/69/M1_monitor_history_69_resistance.json,P5,69,provenance of the monitor history,,2584,43ad3934d8e058bcbee5804d5d79e6c4d67e17623d29822cf5821abe3ac5957b
+P5/69/M1_outlets_69_resistance.csv,P5,69,"per outlet: R used, Q, p (lost outlets flagged)",4,1119,66026be57ff712af45c6e4dfe0a08842f3cbfe50711d505ee3982327346ff5ff
+P5/69/M1_probes_69_resistance.csv,P5,69,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",22,6044,036e175cd48cda757a57c875e53fe471a7728ad5d8519aaa29d37d8984271242
+P5/69/M1_results.csv,P5,69,"M1_results-format row(s): geometry, mesh, solve, gates, flags",1,2362,3207d8a6778b2e2042d2f90da7e8c3836eb2bdcaacd57a1000d465c70e893ced
+P5/69/as_meshed_radius_69.csv,P5,69,"as-meshed lumen radius, area-equivalent (D10)",604,59604,abe8fb5e246b0048d0f435a9b6631e7f9b29aebcdc75d245979177ed2abc7af8
+P5/69/as_meshed_radius_69_detail.csv,P5,69,"as-meshed radius, per-section detail",604,134004,1c16994aeea638869c70c189e759c097fed5e606d9863af3bf330127985e0e20
+P5/69/as_meshed_radius_69_inscribed.csv,P5,69,"as-meshed lumen radius, inscribed circle (D10)",604,59621,1548f2271093469c03cd39c3d88c661e0e429e213b56145178421cceb0819828
+P5/69/as_meshed_radius_69_provenance.json,P5,69,provenance of the as-meshed radius files,,1548,a8e99fcb4d019cfd2d6551060955981d20ec2a983c18713fe5ecc0ca9f01e871
+P5/69/fill_69_resistance.json,P5,69,inputs used to fill the M1_results row,,2623,3f011af868170f99360fb124630c20bc11c29cba18f1c0f0263bb20cf75d855c
+P5/69/flow_state_69_resistance.csv,P5,69,flow-state profile (jet centroid offset along the lesion vessel),30,19043,eb677032474262b2508088efb8f9f57c422846214b7c5de0ee3903a5c70f0039
+P5/69/flow_state_69_resistance.json,P5,69,flow-state summary / comparison verdict,,751,51a53ea46690ab92323d561962252a74baa7c411ac1b9615519c9f11ecd93ba0
+P5/69/package_check_69_resistance.json,P5,69,package hashes and E0 membership check,,1713,87465f414285641acbcd415156a12f3ac87c55def86138c9ba1b0ebb3037d5cd
+P5/69/post_69_resistance.log,P5,69,post-processing log,,11167,af37e0c8dc4365c722ac760cc29919118c35efef5e61ddb71aa163a1b3bf1882
+P5/69/post_summary_69_resistance.json,P5,69,post-processing summary with sha256 of every output,,5355,723f05770c081add2a0fdfdc9aba40f01787797eb28eeb53d8a05303031b332c
+P5/69/reconstruct_check_69_resistance.json,P5,69,reconstructPar verification,,529,8be8fa5e7c7fd8cd62d492621cdbe63e21d556db2c33c7414737b2029d7c0731
+P5/69/run_completion_69_resistance.json,P5,69,solver completion record,,287,bf92b1ae1e77487784852d229c7d25ac54ed2343e716290b5cfebbbd222b0a3e
+P5/69/settle_69_resistance.csv,P5,69,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1368,f5ed3fe5d745ddf1d1e479634684b0f3a9fb4cb99a03e8e4be5b444e16fb428e
+TaskA/M1_geometry_gates_D7-2026-10-03.csv,A,,,3,6629,4bffad4adc3aac730dcd87459fb1ab04b5005c0376272016c2dd0db1963694cf
+TaskA/M1_monitor_history_baseline_A0_25um_resistance.csv,A,,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,632664,5cfbf55c9f21f91ecd908b2496b1c8f4d232e3f9ec9461cbcb8ccbcee6e8907b
+TaskA/M1_monitor_history_baseline_A0_25um_resistance.json,A,,provenance of the monitor history,,2583,95faaa2ba6645f016be82651bb2c14b94c29d0d1a8363e5adf3983143a897ac1
+TaskA/M1_monitor_history_baseline_D7_12p5_resistance.csv,A,,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,638481,42915d9a0d74e02b3d347f39e8b18b7b10f8fd6508fa4bf870f5c05b05942bab
+TaskA/M1_monitor_history_baseline_D7_12p5_resistance.json,A,,provenance of the monitor history,,2584,2c38b15adb435d1bcd3bd2424c745a244e6a7397116e5e03410cf9618d3cf117
+TaskA/M1_monitor_history_baseline_D7_12p5_zoneB_resistance.csv,A,,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,638744,26681f62a5e5e7ed58a614ec8f1b70007fc612a89a0c9e1241d6538ae2ce3d6c
+TaskA/M1_monitor_history_baseline_D7_12p5_zoneB_resistance.json,A,,provenance of the monitor history,,2603,1228a8d3aa39fdd2c41fa3224d7821cf30ae282526de67e7fc075804eba9f8c1
+TaskA/M1_outlets_baseline_A0_25um_resistance.csv,A,,"per outlet: R used, Q, p (lost outlets flagged)",6,1693,4eca2de2649c11ac55b09b89856c47ae11ee288971265c001d70a85d8d938fc1
+TaskA/M1_outlets_baseline_D7_12p5_resistance.csv,A,,"per outlet: R used, Q, p (lost outlets flagged)",6,1709,7e1c0bfb907371eed71078080c434739c44ceb970827b33fe11c8d3ae776e02f
+TaskA/M1_outlets_baseline_D7_12p5_zoneB_resistance.csv,A,,"per outlet: R used, Q, p (lost outlets flagged)",6,1734,1d29fa0af475691f87ce28a628f2c33adff9652d6ed033c6c4d12c94b427e4d1
+TaskA/M1_probes_baseline_A0_25um_resistance.csv,A,,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",31,9000,88ec98a4689549d9b16d7441085efb01510fa1821214f8980980ba4e3b78b81d
+TaskA/M1_probes_baseline_D7_12p5_resistance.csv,A,,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",31,8987,f7d4405abc9f523fca29788988a720a1a5a7b084d3e52dea239973a1e7ee8d89
+TaskA/M1_probes_baseline_D7_12p5_zoneB_resistance.csv,A,,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",31,9178,03fbcaddb363e5ba66f289320bb3e10f796ae9fdc0b52faace26bf08c45d0c37
+TaskA/M1_results.csv,A,,"M1_results-format row(s): geometry, mesh, solve, gates, flags",3,6181,9f6794edb53a6a487c7bbd67654373b3983092bd01d28b247334bb218b183b97
+TaskA/as_meshed_radius_baseline_A0_25um.csv,A,,"as-meshed lumen radius, area-equivalent (D10)",748,73794,bc131c772deda12f63fd6e2cc545f929dde15046a8661ae926b7cec7fd816fda
+TaskA/as_meshed_radius_baseline_A0_25um_detail.csv,A,,"as-meshed radius, per-section detail",748,178655,049d981c66c50b57c1fe499ad5e2649038001f0ae27c1df9e4a793ca7631ed20
+TaskA/as_meshed_radius_baseline_A0_25um_inscribed.csv,A,,"as-meshed lumen radius, inscribed circle (D10)",748,73825,bf6af7ae161f9b35d7e921e111063d7ecf87006ebdf4615b5afcd05a1e6af7f1
+TaskA/as_meshed_radius_baseline_A0_25um_provenance.json,A,,provenance of the as-meshed radius files,,1631,ef73914b6c723965d5e565f366269f579da18e542eb12d34c092fe2b91b6eb17
+TaskA/as_meshed_radius_baseline_D7_12p5.csv,A,,"as-meshed lumen radius, area-equivalent (D10)",748,73803,bcf1a0712c7363a98416cd6b58115c1558cb1ec62ea61189531ba80ed77b4c6f
+TaskA/as_meshed_radius_baseline_D7_12p5_detail.csv,A,,"as-meshed radius, per-section detail",748,178696,9c095c177dbd43b491a80de58ea0d99672d0233653e28075360f7b9b194409a8
+TaskA/as_meshed_radius_baseline_D7_12p5_inscribed.csv,A,,"as-meshed lumen radius, inscribed circle (D10)",748,73834,b29d23879a560cae59f9331a20bba80bd2ecded7a38ac705e77d079cc96e058a
+TaskA/as_meshed_radius_baseline_D7_12p5_provenance.json,A,,provenance of the as-meshed radius files,,1631,5c2ddb0dd957a21a72697eac2c88d7884cb1d844c514e7ab3263b4102d91f740
+TaskA/as_meshed_radius_baseline_D7_12p5_zoneB.csv,A,,"as-meshed lumen radius, area-equivalent (D10)",748,73809,39168771e666ee8ca1a1de2fd0df5f5dfb94a81484d3af0610cd263c7b65f4c4
+TaskA/as_meshed_radius_baseline_D7_12p5_zoneB_detail.csv,A,,"as-meshed radius, per-section detail",748,183189,a7e8fc5ed81fa8217b872fb736241b4db78a3aecf883f8a0dd28f4f2ac8a0103
+TaskA/as_meshed_radius_baseline_D7_12p5_zoneB_inscribed.csv,A,,"as-meshed lumen radius, inscribed circle (D10)",748,73840,59391fb4870cf40a4e5bfb055956cc26092bca46208d1892adeea823ac1187bf
+TaskA/as_meshed_radius_baseline_D7_12p5_zoneB_provenance.json,A,,provenance of the as-meshed radius files,,1661,5856186d6d0564b157b1dc7f7b0aacb141e808bbfd425e872a7f77f4e564fe43
+TaskA/fill_baseline_A0_25um_resistance.json,A,,inputs used to fill the M1_results row,,2651,a8f91dc13a192b0b9eedb7dab35f048a21069de5d7eb620e32a5d007f0ed7a9a
+TaskA/fill_baseline_D7_12p5_resistance.json,A,,inputs used to fill the M1_results row,,2657,7012f4e2c2a2b4bb541246f284f4100a7f6f617ad0e35c0239a9234fac660a59
+TaskA/fill_baseline_D7_12p5_zoneB_resistance.json,A,,inputs used to fill the M1_results row,,2669,dd714273637cadec320515fd99b73c1ab5fe5c76ad3a92944a0e3b083e0e3cd4
+TaskA/flow_state_baseline_A0_25um_resistance.csv,A,,flow-state profile (jet centroid offset along the lesion vessel),30,19940,cfa12df5a375b49ed0a11662c02098697db029fdf7958d093bfed58c6ded8f70
+TaskA/flow_state_baseline_A0_25um_resistance.json,A,,flow-state summary / comparison verdict,,797,dc777af80de108794c4adad208ea0aa09d11e96026871e2b7147854e025bfa39
+TaskA/flow_state_baseline_D7_12p5_resistance.csv,A,,flow-state profile (jet centroid offset along the lesion vessel),30,19954,9494c4771a1d5abc731a734eaf3ff101555125743d2573230674eec01e22deb7
+TaskA/flow_state_baseline_D7_12p5_resistance.json,A,,flow-state summary / comparison verdict,,799,79bfd34d3cc16f45c412e2f3bd1823cefde95580e6a7ad6e0f5017f3842b16c4
+TaskA/flow_state_baseline_D7_12p5_zoneB_resistance.csv,A,,flow-state profile (jet centroid offset along the lesion vessel),30,20127,5ee00d2e8c6dc4afa9dfe473ae406dba02b7fbe9d263baef20abda05c816656c
+TaskA/flow_state_baseline_D7_12p5_zoneB_resistance.json,A,,flow-state summary / comparison verdict,,812,ccfb1b9986da815f20b6ffbad95e33eca8b43728a9e54d58abecd016573db6cf
+TaskA/package_check_baseline_A0_25um_resistance.json,A,,package hashes and E0 membership check,,1743,856c14edb0f97589eda0f57180a5993479114781d4ab260501a79a252760fe51
+TaskA/package_check_baseline_D7_12p5_resistance.json,A,,package hashes and E0 membership check,,1743,ced82788c052787f98e2b476230f80b88afe3a8f261f532afc11fa8f6e47a965
+TaskA/package_check_baseline_D7_12p5_zoneB_resistance.json,A,,package hashes and E0 membership check,,1749,52e4f61e310a2f9a3fac558e731732387e0484036775dbe8261817804f05e130
+TaskA/post_baseline_A0_25um_resistance.log,A,,post-processing log,,12298,340cc002bb568eb572eddc6488167d53a1dbb29e40eee537f71f754b7c9b444a
+TaskA/post_baseline_D7_12p5_resistance.log,A,,post-processing log,,14189,bd0cd7a6e7ad859832f03e3332175cdc82865ce9afdac168ae18d03acc7751ee
+TaskA/post_baseline_D7_12p5_zoneB_resistance.log,A,,post-processing log,,14818,a6079720710edcfc923fb5348ae435fb3770b2b8d78811dc8c12f4946f3daaab
+TaskA/post_summary_baseline_A0_25um_resistance.json,A,,post-processing summary with sha256 of every output,,5866,749a1c384a37b226992b28195ea6a8098d04f204d14a76e6f330aea5a767f7f1
+TaskA/post_summary_baseline_D7_12p5_resistance.json,A,,post-processing summary with sha256 of every output,,5918,4a1e131570332bfa103f0249c78c840e3787bf228ae89477b325b24d424fa1e8
+TaskA/post_summary_baseline_D7_12p5_zoneB_resistance.json,A,,post-processing summary with sha256 of every output,,6070,00aed080e232503c25dae74e885068093dd8e487e57fa8c3fbb5742f739cc622
+TaskA/reconstruct_check_baseline_A0_25um_resistance.json,A,,reconstructPar verification,,673,b1d7d3f0c126bcaf44f1028d13174a2f5693c1f44581e85750b4ce57cba20ee0
+TaskA/reconstruct_check_baseline_D7_12p5_resistance.json,A,,reconstructPar verification,,448,dc417300a2a6d5ad26339019feec527c40cbba9110d07aa97d3d4f50dbd2feea
+TaskA/reconstruct_check_baseline_D7_12p5_zoneB_resistance.json,A,,reconstructPar verification,,454,4dd5473374704d209446c59076c2eeb96514dcabdc17af28df5228a579a23f1f
+TaskA/run_completion_baseline_A0_25um_resistance.json,A,,solver completion record,,298,0cb1a28f67dab4c5255049041695cc930b77c1174682cdc9e980dc65afe6f188
+TaskA/run_completion_baseline_D7_12p5_resistance.json,A,,solver completion record,,298,00985dd0b40bdd65e7c78306135b03b473c2617f6b0023fca328b1415ac8e2c9
+TaskA/run_completion_baseline_D7_12p5_zoneB_resistance.json,A,,solver completion record,,304,5efdd607b8aabafb109aff2a1ca51ab788dd57db2d69818939a4e480cc4d979c
+TaskA/settle_baseline_A0_25um_resistance.csv,A,,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1415,1958c73536443b8ee25468b7e33297bd563e6831d6052b64ae5e82b706429db5
+TaskA/settle_baseline_D7_12p5_resistance.csv,A,,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1408,c019fd89d7155400c6b0dbdf1a6a9f27307236ded01fd813f36610565c935345
+TaskA/settle_baseline_D7_12p5_zoneB_resistance.csv,A,,B1 SETTLED rule on measurementP (information; full budget run per D8),1,1425,887e5df563bbc44653cb79f112c0f37c0e49deaa20ba3b5f3ad1a05791a8c68e
+TaskB/U3D_jet_state_check_2026-10-06.csv,B,,"Task B: all five U3D levels, FFR reproduction, jet state, GCI21 -> U3D final",5,795,40ebc66b51e956db583452ea8d415c5e2f4c30244bd0a3be998c6c059b8384fa
+TaskB/jet_offset_S12A.txt,B,,Task B: jet centroid offset along x per U3D level,,269,145b66b39e664175ef9c1834c1654c71539ca00deabbff2c355b9f02481018c3
+TaskB/jet_offset_S12B.txt,B,,Task B: jet centroid offset along x per U3D level,,269,a6459230cc2356b156a6910dce0dc02f506e710387780a54a6c7ae20087aaf31
+TaskB/jet_offset_S25A.txt,B,,Task B: jet centroid offset along x per U3D level,,269,94cb2c771dbc4b45d4d89ad4639e27b90745151b9374c16fe7acb718e8c53e16
+TaskB/jet_offset_S25B.txt,B,,Task B: jet centroid offset along x per U3D level,,269,0f8392de08d01a52b9f0b220a14816527444a6ad26695b71fa89432f4de084f7
+TaskB/jet_offset_S50.txt,B,,Task B: jet centroid offset along x per U3D level,,268,94b5e23ba108bdf7fd9ea5b2048532bb480a5fa27f86d0d712605b2650da1175
+TaskB/result_S12A.json,B,,Task B: jet-state re-run result and rule verdict per U3D level,,2620,61946891307e112a63d324028de4b56ca90f7102f3b61043ec8c0ed0b943d371
+TaskB/result_S12B.json,B,,Task B: jet-state re-run result and rule verdict per U3D level,,2622,35672b462844819779e73644a048573145861e373c215c5565774d5d24b2c576
+TaskB/result_S25B.json,B,,Task B: jet-state re-run result and rule verdict per U3D level,,2622,4ae5f69eee7f69daf86ed999b024a8703f2198d4fbcea412edde46fe4f6fc637
+TaskB/verdict_S12A.txt,B,,Task B: one-line verdict per U3D level,,682,e7d52f1e9001d4ea62924ecfbf06c829bfab3886a7a72d6f4a43e6a2169a9a66
+TaskB/verdict_S12B.txt,B,,Task B: one-line verdict per U3D level,,682,13f69dd0e2625ef1a08a67612806731de7e056df9cda3484ecc3211747ff54a0
+TaskB/verdict_S25B.txt,B,,Task B: one-line verdict per U3D level,,682,981db05b88e8a1a6fa2fd5920bf1b82546f43cd14cf2a1943c122619bbfa6aa5
