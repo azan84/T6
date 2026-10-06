@@ -1,0 +1,11 @@
+{
+ "point_m": [
+  0.00358718,
+  -0.195366,
+  0.233808
+ ],
+ "n_triangles_within_R": 83,
+ "R_mm": 0.6,
+ "crossing_pairs": [],
+ "min_vertex_spacing_um": 10.648
+}
