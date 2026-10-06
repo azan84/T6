@@ -2,7 +2,7 @@
 file,task,scan,content,csv_data_rows,bytes,sha256_lf
 M1_D7_sensitivity.csv,A,,"Task A: D7 sensitivity verdict per variant (A1, A2, A0), first issue",3,1442,a44fc0bc63498294f6f07d554ea4b0af0f9b03e1518405f0c7ab08e5ca958a2b
 M1_D7_sensitivity_2026-10-06.csv,A,,"Task A: D7 sensitivity, re-issue (A0 labelled control; overall M1 verdict column)",3,1866,dffa4b63ab3b2f049839df12edb784c2c44c424667ad6292497a66f2e9c6975c
-NOTE.md,all,,status and narrative of this return (read first),,17916,c83394cfae2e883005b2ec8fda0b181638c3f563501a94a5d21dcab17f834751
+NOTE.md,all,,status and narrative of this return (read first),,18007,7e9151932b9872a8412f2e52dc333a6b72f85772e01ef2c0fba0e81a2a087e7a
 P5/138/M1_monitor_history_138_resistance.csv,P5,138,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,637661,0e12df54ecbb7b3b9de75ee03d2c4c0bc0d61a65916932e13ae5cd094926bbee
 P5/138/M1_monitor_history_138_resistance.json,P5,138,provenance of the monitor history,,2592,b60725db864c3b335c0e01fbf34d28c9558160c8eed56e46f957cc7f298e6c6d
 P5/138/M1_outlets_138_resistance.csv,P5,138,"per outlet: R used, Q, p (lost outlets flagged)",5,1383,ffc023a72b69e900c4350132601aa185a6ade3fc40a71d396d0fed0a14a40462
@@ -46,7 +46,7 @@ P5/272/M1_monitor_history_272_resistance.json,P5,272,provenance of the monitor h
 P5/272/M1_outlets_272_resistance.csv,P5,272,"per outlet: R used, Q, p (lost outlets flagged)",3,879,f18432f7888fa20da407fbb70fcf6874a05651a8b3263ee9ec6277d9399e3ddb
 P5/272/M1_probes_272_resistance.csv,P5,272,"probe sections: p/P_aorta, area, r_eq, flow, Re per package probe",35,9443,9b75f2061450c993b01eb39425303d73a6e282203dc1afe9c15c2ba4ced150ea
 P5/272/M1_results.csv,P5,272,"M1_results-format row(s): geometry, mesh, solve, gates, flags",1,2766,c99490dde9bb37ae6aea3a942cdd197d676795235804ae260c5cbfa3c985c411
-P5/272/ROOT_CAUSE_272_2026-10-06.md,P5,272,P5 272: root cause of the lost outlet out_396 and of the self-intersection flag,,7727,fa7f9f25e02b842c92667550a0660cbe4c63a543ee604dde880b453f4cf48b5d
+P5/272/ROOT_CAUSE_272_2026-10-06.md,P5,272,P5 272: root cause of the lost outlet out_396 and of the self-intersection flag,,7909,7754a2c982cda4841a6dfbbd77a22638a71f6317d7c253f42f2358c4db283d19
 P5/272/as_meshed_radius_272.csv,P5,272,"as-meshed lumen radius, area-equivalent (D10)",469,43649,4757d94f3470821369aa7a9654e39c1fe228e8364413f02d47fcb889a6f71bf3
 P5/272/as_meshed_radius_272_detail.csv,P5,272,"as-meshed radius, per-section detail",469,104779,6af0fbbe3dd868113e091be4d940c64171da2f5ab72405bdcc46e625b84d0aab
 P5/272/as_meshed_radius_272_inscribed.csv,P5,272,"as-meshed lumen radius, inscribed circle (D10)",469,43671,06a3bbcf1646ad4f2c7207f2c62a81b84ff9e1c17ab8805b6878ceb556715b07
