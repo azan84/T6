@@ -8,7 +8,7 @@
 - **Task C: finished** (template and runner in `code_from_cfd/task_1003/task_c_final`).
 - **Task P5: all five cases finished and returned** (`P5/<scan>/`), all CONVERGED at 3000 iterations, flagged as listed below; no case repaired. Correction of 2026-10-06: the report table had printed 0.88685 for scan 473, the value of the rejected package probe p011; the value used and returned is 0.88333 at p011_reloc.
 - **Task B: finished. U3D = 0.00055 is FINAL (D9):** all five levels re-run with fields kept are on the axisymmetric jet state and reproduce their original FFR within 4e-7 (`TaskB/U3D_jet_state_check_2026-10-06.csv`).
-- **Task D (B2 replicate): runs 2 (10-03) and 3 (10-06) done, all layouts INVALID, ratio 0.923 / 0.920 NOT CLAIMED**; a valid replicate (no Claude session on the host) is still open (see the Task D section).
+- **Task D (B2 replicate): run 4 (2026-10-06/07, no Claude session alive, both orders) done.** Order L8x2 then L16: both layouts VALID, ratio L8x2/L16 = 0.895 (paired 0.892) CLAIMED for that order (one 16-rank job gives ~12 % more solves/h than two 8-rank jobs). Order L16 then L8x2: L16 VALID, L8x2 INVALID (one OS update burst, systemd 3.4 / unattended-upgrades 1.09 cores), ratio 0.911 NOT CLAIMED. By the work order's rule (all four runs VALID) the ratio is therefore established for ONE order only. Runs 1-3 (all INVALID, 0.935 / 0.923 / 0.920) are in the Task D section. Data: `TaskD_B2/run4_2026-10-07/`.
 - Scan 272: diagnosis (evidence-consistent mechanism; deleted region localised by its far-vertex cluster to the R-PDA beyond the neck) of the lost outlet out_396 and of the self-intersection flag, see `P5/272/ROOT_CAUSE_272_2026-10-06.md`.
 
 ## Status of the previous order

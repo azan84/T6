@@ -2,7 +2,7 @@
 file,task,scan,content,csv_data_rows,bytes,sha256_lf
 M1_D7_sensitivity.csv,A,,"Task A: D7 sensitivity verdict per variant (A1, A2, A0), first issue",3,1442,a44fc0bc63498294f6f07d554ea4b0af0f9b03e1518405f0c7ab08e5ca958a2b
 M1_D7_sensitivity_2026-10-06.csv,A,,"Task A: D7 sensitivity, re-issue (A0 labelled control; overall M1 verdict column)",3,1866,dffa4b63ab3b2f049839df12edb784c2c44c424667ad6292497a66f2e9c6975c
-NOTE.md,all,,status and narrative of this return (read first),,18007,7e9151932b9872a8412f2e52dc333a6b72f85772e01ef2c0fba0e81a2a087e7a
+NOTE.md,all,,status and narrative of this return (read first),,18411,6fd600448fc0d892b37fddd4ddba7ae772916ac56ef0958a908b859b65eb79c2
 P5/138/M1_monitor_history_138_resistance.csv,P5,138,"every-iteration probe monitor history (measurementP, throatP, ...)",3000,637661,0e12df54ecbb7b3b9de75ee03d2c4c0bc0d61a65916932e13ae5cd094926bbee
 P5/138/M1_monitor_history_138_resistance.json,P5,138,provenance of the monitor history,,2592,b60725db864c3b335c0e01fbf34d28c9558160c8eed56e46f957cc7f298e6c6d
 P5/138/M1_outlets_138_resistance.csv,P5,138,"per outlet: R used, Q, p (lost outlets flagged)",5,1383,ffc023a72b69e900c4350132601aa185a6ade3fc40a71d396d0fed0a14a40462
@@ -185,7 +185,7 @@ TaskB/result_S25B.json,B,,Task B: jet-state re-run result and rule verdict per U
 TaskB/verdict_S12A.txt,B,,Task B: one-line verdict per U3D level,,682,e7d52f1e9001d4ea62924ecfbf06c829bfab3886a7a72d6f4a43e6a2169a9a66
 TaskB/verdict_S12B.txt,B,,Task B: one-line verdict per U3D level,,682,13f69dd0e2625ef1a08a67612806731de7e056df9cda3484ecc3211747ff54a0
 TaskB/verdict_S25B.txt,B,,Task B: one-line verdict per U3D level,,682,981db05b88e8a1a6fa2fd5920bf1b82546f43cd14cf2a1943c122619bbfa6aa5
-TaskD_B2/B2_replicates_summary_2026-10-06.csv,D,,"Task D: B2 runs 1-3 side by side (times, ratios, validity, offenders)",3,1134,73c499c21c0895676bed4d53592699c21530177afd0e6db9df0b37c48bd57fce
+TaskD_B2/B2_replicates_summary_2026-10-06.csv,D,,"Task D: B2 runs 1-3 side by side (times, ratios, validity, offenders)",5,1618,78e72179ab359f248fcaa8351436774f3662fab5ebb8af270d5e6ae48bb2e7bc
 TaskD_B2/run2_2026-10-03/B2_throughput.csv,D,,Task D: B2 analysis of one run (b2_analyse.py),6,5569,e26216836b981d7cbf11a3f7dc3cf32884d54f8a57205017ec5564a3c3e996c8
 TaskD_B2/run2_2026-10-03/analyse.log,D,,Task D: B2 run log / driver,,2637,9d0eced43e3cf0d5f53494d909a4556c0d21ea0d50403d5f3f5aea6bcb5ac236
 TaskD_B2/run2_2026-10-03/results_L16/dmesg_oom.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,120,3547cd1053cbfd05908683ae79664cb9895a699e0e39f24d0f6c86a0de012d33
@@ -278,3 +278,89 @@ TaskD_B2/run3_2026-10-06/results_L8x2/windows_snapshots.log,D,,Task D: B2 isolat
 TaskD_B2/run3_2026-10-06/results_L8x2/winprecheck.out,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,113,bdc1e0ecd73a057d4fe9ee3415dfeff7c65d8fe39fe9c859848ec8bf9702b6b5
 TaskD_B2/run3_2026-10-06/run_L16.log,D,,Task D: B2 run log / driver,,492,70789112d0c8daa9bc857fc5b398d178cf38fdff2f9185ef74031611f3d297b6
 TaskD_B2/run3_2026-10-06/run_L8x2.log,D,,Task D: B2 run log / driver,,467,a2cae3aa0b3588c92facbaada980bf283f37b9c7aeb319e565043e55a3fec5da
+TaskD_B2/run4_2026-10-07/b2_driver4.sh,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,1599,7369472985c18f75404e56a2859fbb980597401cd283bb9d3ef76e111cd0ea92
+TaskD_B2/run4_2026-10-07/driver4.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,628,2535bf5c836c40517222d697dca9acb3689df8f52d9ad321fd7db36d94b8aa6f
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/B2_throughput.csv,D,,Task D: B2 analysis of one run (b2_analyse.py),6,4902,e04230f64bff7812ea8eff8657051b529b32d0620717af7535f06e4ccb3daa0b
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/analyse_A.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,1736,80510d194d0f1421cde37164effdc98b995a6f82c584cb3ea0adad31550ef1d4
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/dmesg_oom.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,120,0d9f84a68d5b44b183781d2d41d9bb167f8cba61cd33b32ea03806ae7ca00a18
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/host_after.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,164,e3cb31760fa6077955ab0832255b3d4469f43dcae02e3cb501f5a0f1c0973ce1
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/host_before.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,464,ab839a0500ffa937773a9bddbf96bd39e946db9f3317902d13c0acf5c0450092
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/host_cpu_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),1007,248293,722ad5a35430e6331d018aed1c6a628feccfb5da10f4e2854b1cc643d98a7cc4
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/isolation_evidence.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,11706,6581c9ecd5c8c2f6ef1ee54d692b906d28af2ba3452b7ba52805d6010ec7cf32
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/isolation_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),1008,125007,94f5a92f8f711adf5436640448d1e2e888df2542cd827f4425a95bc09c4e4815
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/job_rc.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,111,cb2afd88743ba91275f2f0ed818410775ae48dd57d046855facb01a2f2ef5b24
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/jobs.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/memory_postrun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,23e1efed558438a54643555adfdded09c05dcc444ba6f8045c006ed8a6217947
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/memory_prerun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,bda8a8fae3e652d7b088df2162028377cf870e1ec262428917ee4b41a19dc971
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/mpirun_bindings.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/owned_majflt.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,38,25c3dd1a9f13ff8576c399d866301c21a79aab46190799710f0e23fce43fc6f8
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/rank_affinity.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,390,7f96797c30c273938ae3f8dc0f95b5979dae8ecc91b3d12f0dcce6eccd241680
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/run_status.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,255,76d5e3105f376b6c7679ac57c8bc9044563189536bd7947e318424842235e07f
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/sampler.err,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/windows_postrun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,711,e8a06e28f34823622db80700225c8491589eea89927cf955964b88fbb107b927
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/windows_prerun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,704,2fa22d291a545c8484ad44d3d9662873e67bd31e9b7549723823af520becfc10
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/windows_snapshots.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,5267,90b06ebd0573f9feaf6796fe4b1aaadf5ff8d16be9a752019353a4a5496fd180
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L16/winprecheck.out,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,113,5b455c027aafb1cc0962b126a89279a6262bd1ce01dc63b24787dbd9a39c46de
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/dmesg_oom.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,120,22cafd9d85adedb96ab7b1c11c0230cffd9278c07e7b2f9a04b5880a454065ea
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/host_after.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,166,35f4c21c8c3e5663caad667d69ec194bb01b1c917ff0bbd6c7cc54a8a85fe0ef
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/host_before.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,464,9f57f3134d8b17ed284f86ecde061c3a4e59c20cbcdaf51f2174741a298a8f07
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/host_cpu_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),2231,550121,114d1fdad9fd7c2b5764519694ec6c3285a2b5e7c4ead26389dfc4f146e00bac
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/isolation_evidence.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,11729,67cf3a2313baf0fe41d2d48c0b1c77cc2d5b95f2abe860a29b3172b92355a628
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/isolation_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),2232,276576,9e0f99e64114b84c5b74fd97c47407fb9d2ababf839a2e55627791f5d70cce36
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/job_rc.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,222,459c01fb16e11b805d32f962c8536afb45f9994cd0811935d09662848ce2317f
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/jobs.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/memory_postrun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,ba4c01cc0d00b6a4aaa3308437256d0f447e10c5e783ddab4ac91bf3b0bd09e1
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/memory_prerun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,1879f6a4b93ade8676c62fd056c5819be2a90927f30e9d15406f80cf117188b5
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/mpirun_bindings.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/owned_majflt.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,39,25c0dda13636a44510e1d70c65e8aebd976a3c01a60398bc52204cc13bba56ec
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/rank_affinity.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,390,edf41653377cc2bbd722497dcd206de314d421fc45da0cbb5de9163fb749255f
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/run_status.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,261,692c5ca040f5b75ff29b3eb22aa44f5b8f1856a6bb4f40126c9cc7ca578f5947
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/sampler.err,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/windows_postrun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,716,5371da3f067eaf41d60ea8e54f86b3f6de317e66777196cd11818139a7bb83a9
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/windows_prerun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,713,1c216f52686bd29b05a4cee805cdf0aa7b916a8a42e017b498cb5a5ad80125b6
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/windows_snapshots.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,11735,c6bba9c4ebcde739ae9f1bd1641b26c749083b83c15c829dc0e9eb8b2ef643f9
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/results_L8x2/winprecheck.out,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,111,b8e7a1bdda7f65c0062279429b752c47b4c841a64a50a36bf1d0fadf0d024cf8
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/run_L16_A.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,257,6c3ffd6bb46b4f178d81b2b11933c5c78e3dc884fea2256a92d970ba3f0400b4
+TaskD_B2/run4_2026-10-07/pairA_L8x2_then_L16/run_L8x2_A.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,430,eebe276d9e668437a4a96fceee1d74ca46610a438e02f00f3d24101828ca5a15
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/B2_throughput.csv,D,,Task D: B2 analysis of one run (b2_analyse.py),6,5903,9c8e7f3e9bf0eeaa5845cbe5aabc99432ecdce8182a39ec30069726a16e537dc
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/analyse_B.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,2265,a797bc60fccaddc93e4c27ad6d06fb38895781b7053663f234f42aa4f0ce4c36
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/dmesg_oom.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,120,fc9ae9fb1085633eb5501dd6873d49b8267626f389f3a13ff457f89ab47f01a3
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/host_after.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,164,40c2deb9a2919963c95827503092a1db98ebe6ffc99544d1b133cc7d2c3c7c08
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/host_before.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,464,d1089eccf99bbf813f1f6accae80e6bd93cb9d5943dd67ddbb58d49689d749b5
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/host_cpu_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),1010,249024,54e2183fbca8387a06910785a1321f2a3824683a095f77ed82663c1627550bf3
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/isolation_evidence.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,11718,e4757ea6e14bcd4a84c4fd920eae24fecfb60eb2f2f665d823066efab08206ed
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/isolation_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),1011,125245,15675634b2aa87c3005f0f808591e2088ba252ed8d2cb6476e2bc541d0e3f2da
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/job_rc.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,111,cb2afd88743ba91275f2f0ed818410775ae48dd57d046855facb01a2f2ef5b24
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/jobs.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/memory_postrun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,5eb2950e250cd1633e59b846976649b4c4170a83280b850b1bff9f5ed529ed5a
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/memory_prerun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,f1beac6812b3f092d2a9b12501d48dcc4a06a019dc77b43ee87e9fbf03b5ceb7
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/mpirun_bindings.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/owned_majflt.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,38,4d7aaf54e45de13604c30479f044c909a257f3fbb9b30cc95db6a1262a7069ad
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/rank_affinity.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,390,de615b8fd85803da5105369266233f11bab3f74c3d84ba6a8c6a8c5ed60e81bd
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/run_status.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,255,fc03393c6f6dae04eeff83688509b3306713e399be8210debd0e9845debb3cfe
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/sampler.err,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/windows_postrun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,722,3323a96d2a2dd4889904c3816d85c712c1d341a278947a7ff24c2efba47f358c
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/windows_prerun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,723,2c467d8d5c0d3ec41455c6f2c3f7f4bcfdb0263c29940d8be3e7bf541ec4aab2
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/windows_snapshots.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,5330,d96b76ea03693adc2613e61ec391e155e917fe588d116f36e1e847548dad31c7
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L16/winprecheck.out,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,113,3548b4c758f57538372bb957e68177239b6d3d2e0f350e2dd3cfb88123520c42
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/dmesg_oom.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,120,7c9df1a69448854778213b135c35b0c03458f3da6f8794c062afd23bb2625882
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/host_after.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,166,1512509b5d304d0ddbfcece01a1c0a70c8c2040b421d90fa3e55ea00949cc2cd
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/host_before.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,465,f9acf8ac485a985d1a1a0ca84a9004e0ccd7692720bd9760f51d97682c68a8fe
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/host_cpu_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),2200,542527,79d0e4eed95626dfbe62f43aa8482feabbbd3fc1112a33f78023b5401de930ca
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/isolation_evidence.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,11806,a9e608b2211820d6d89c6dd9f57de1cfee914cff1c9e49b06b96d10348375c46
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/isolation_samples.csv,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),2201,272921,b310f3f2e88de594961565c176b98bc795530a3450a6e3ebaacc8652c57ca8c1
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/job_rc.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,222,459c01fb16e11b805d32f962c8536afb45f9994cd0811935d09662848ce2317f
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/jobs.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/memory_postrun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,4b9d0ad846da6a7166364312e41f2133740ea777dd9d11ad38de45cfc5e167f2
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/memory_prerun.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,194,796802dcd9e50ecd76d6b4c350c3eb01ba032ea58c7da77ae9f9777c2539a1e7
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/mpirun_bindings.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/owned_majflt.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,38,48e6210d9b984e7bcf3d633d13135e7fb5070c1803edebdd7f3a2bbd9441d1e5
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/rank_affinity.txt,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,390,a236f03b9da3a6115688c82dac34b768f341f51e36730dfd4127d24137aaa7a4
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/run_status.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,261,bf4656157836939c8167fb2905ab4541daa9080fe1941e3ef794c34acbe8832d
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/sampler.err,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,0,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/windows_postrun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,713,629425e04583effcb3fbd52a6e3261fb0cd90fba9237d6f8698e5d060a2d5553
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/windows_prerun.json,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,706,55ca0af50a2122fcb5b23d25281cb0134e3ef876a3cfcb39a115a1c4b779d96a
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/windows_snapshots.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,11525,dc492269525d293766069bc978db9729e0f289c7a1330886d9552928d264ae51
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/results_L8x2/winprecheck.out,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,113,3ff7193ad05edf047f39eab1d45f934620533856c020066ed9371746d5088c0b
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/run_L16_B.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,256,8e098d53ceaaec78f5f1221855a729a0567e3eee2bf73b24be6a1224b4471408
+TaskD_B2/run4_2026-10-07/pairB_L16_then_L8x2/run_L8x2_B.log,D,,Task D: B2 isolation/run evidence file (see b2_run.sh header),,518,cec7f5816229d6c69274c257c30b6a4da83a2fe2364e8a0709c23ce5155d2bcc

@@ -1,0 +1,9 @@
+MemTotal:       28733556 kB
+MemAvailable:   27570812 kB
+SwapTotal:      16777216 kB
+SwapFree:       16513692 kB
+pswpin 29531
+pswpout 196669
+pgmajfault 230223
+uptime_s 762934.16
+epoch 1791318885

@@ -1,0 +1,13 @@
+{
+ "layout": "L16",
+ "end_reason": "all_jobs_finished",
+ "bounded_stop": "none",
+ "job_exit_codes": [
+  0
+ ],
+ "launch_epoch": 1791308544,
+ "end_epoch": 1791313593,
+ "survivors_of_owned_session": [],
+ "controlled_end": true,
+ "calibration_endtime": null
+}

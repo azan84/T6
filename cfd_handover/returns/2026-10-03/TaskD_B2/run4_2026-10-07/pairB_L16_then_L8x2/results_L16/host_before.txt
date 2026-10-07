@@ -1,0 +1,8 @@
+Wed Oct  7 03:10:21 +08 2026
+ 03:10:21 up 8 days, 18:31,  1 user,  load average: 0.38, 7.39, 12.49
+Model name:                           AMD Ryzen Threadripper PRO 3955WX 16-Cores
+Thread(s) per core:                   2
+Core(s) per socket:                   16
+Socket(s):                            1
+layout L16; load at start 0.45
+pre-launch offender recheck 03:10:21: passed (no running offender; 0 stopped foreign processes, same pid+start set as at the guard)

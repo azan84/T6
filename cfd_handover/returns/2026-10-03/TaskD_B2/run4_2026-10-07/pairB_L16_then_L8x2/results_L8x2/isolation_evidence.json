@@ -1,0 +1,278 @@
+{
+ "schema": "b2 isolation evidence (from task4 v1.3)",
+ "written": "2026-10-07 07:42:12",
+ "lscpu": "Architecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nAddress sizes:                        48 bits physical, 48 bits virtual\nByte Order:                           Little Endian\nCPU(s):                               32\nOn-line CPU(s) list:                  0-31\nVendor ID:                            AuthenticAMD\nModel name:                           AMD Ryzen Threadripper PRO 3955WX 16-Cores\nCPU family:                           23\nModel:                                49\nThread(s) per core:                   2\nCore(s) per socket:                   16\nSocket(s):                            1\nStepping:                             0\nBogoMIPS:                             7785.45\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip rdpid\nVirtualization:                       AMD-V\nHypervisor vendor:                    Microsoft\nVirtualization type:                  full\nL1d cache:                            512 KiB (16 instances)\nL1i cache:                            512 KiB (16 instances)\nL2 cache:                             8 MiB (16 instances)\nL3 cache:                             16 MiB (1 instance)\nNUMA node(s):                         1\nNUMA node0 CPU(s):                    0-31\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Not affected\nVulnerability Retbleed:               Mitigation; untrained return thunk; SMT enabled with STIBP protection\nVulnerability Spec rstack overflow:   Vulnerable: Safe RET, no microcode\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected\n",
+ "numa_nodes": [
+  "node0"
+ ],
+ "topology_note": "guest (WSL2 / Hyper-V) topology: vCPU-to-physical-core placement is decided by the Windows hypervisor and cannot be verified from the guest",
+ "bindings_report": {
+  "raw_lines": [],
+  "ranks": {},
+  "n_ranks": 0,
+  "distinct_cores": [],
+  "verified": false
+ },
+ "rank_affinity_observed": {
+  "lines": [
+   "3518367 simpleFoam 16-17",
+   "3518368 simpleFoam 18-19",
+   "3518369 simpleFoam 0-1",
+   "3518370 simpleFoam 20-21",
+   "3518371 simpleFoam 2-3",
+   "3518372 simpleFoam 22-23",
+   "3518373 simpleFoam 4-5",
+   "3518374 simpleFoam 24-25",
+   "3518375 simpleFoam 6-7",
+   "3518376 simpleFoam 26-27",
+   "3518377 simpleFoam 8-9",
+   "3518378 simpleFoam 28-29",
+   "3518379 simpleFoam 10-11",
+   "3518380 simpleFoam 30-31",
+   "3518381 simpleFoam 12-13",
+   "3518382 simpleFoam 14-15"
+  ],
+  "bound_logical_cpus": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31
+  ],
+  "verified": true,
+  "rule": "16 rank processes, 16 disjoint Cpus_allowed_list sets, each within one core (SMT siblings), on 16 distinct (package, core_id) physical cores"
+ },
+ "thread_siblings_list": {
+  "0": "0-1",
+  "1": "0-1",
+  "2": "2-3",
+  "3": "2-3",
+  "4": "4-5",
+  "5": "4-5",
+  "6": "6-7",
+  "7": "6-7",
+  "8": "8-9",
+  "9": "8-9",
+  "10": "10-11",
+  "11": "10-11",
+  "12": "12-13",
+  "13": "12-13",
+  "14": "14-15",
+  "15": "14-15",
+  "16": "16-17",
+  "17": "16-17",
+  "18": "18-19",
+  "19": "18-19",
+  "20": "20-21",
+  "21": "20-21",
+  "22": "22-23",
+  "23": "22-23",
+  "24": "24-25",
+  "25": "24-25",
+  "26": "26-27",
+  "27": "26-27",
+  "28": "28-29",
+  "29": "28-29",
+  "30": "30-31",
+  "31": "30-31"
+ },
+ "bindings_verified": true,
+ "governor": "unavailable in this WSL2 guest",
+ "frequency_note": "no cpufreq in the guest; /proc/cpuinfo 'cpu MHz' is sampled (bound_cpu_mhz_mean) but in WSL2 it is normally the constant nominal value, not the actual clock; turbo/power plan are not visible",
+ "windows_prerun": {
+  "status": "pass",
+  "window_s": 10.4538533,
+  "sum_nonexcluded_cores": 0.1121,
+  "max_process_cores": 0.0463,
+  "offenders": [],
+  "top10": [
+   "WindowsTerminal(23300) 0.046",
+   "remoting_host(24796) 0.016",
+   "Core Temp(25252) 0.015",
+   "Taskmgr(23624) 0.015",
+   "explorer(11292) 0.010",
+   "GoogleDriveFS(2520) 0.004",
+   "avpui(14624) 0.001",
+   "msrdc(2924) 0.001",
+   "svchost(10580) 0.001",
+   "amdow(20476) 0.000"
+  ],
+  "excluded_cores": {
+   "powershell": 0.051
+  },
+  "null_cpu_processes": 130,
+  "processor_total_pct_incl_wsl": 0.874657485343446,
+  "thresholds": "refuse if one process > 0.25 core or the sum > 0.5 core (excluded: vmmemWSL, vmmem, System, Idle, the querying powershell)",
+  "override": false
+ },
+ "windows_postrun": {
+  "status": "pass",
+  "window_s": 11.1630132,
+  "sum_nonexcluded_cores": 0.1162,
+  "max_process_cores": 0.056,
+  "offenders": [],
+  "top10": [
+   "WindowsTerminal(23300) 0.056",
+   "Core Temp(25252) 0.018",
+   "Taskmgr(23624) 0.015",
+   "explorer(11292) 0.013",
+   "remoting_host(24796) 0.010",
+   "avpui(14624) 0.003",
+   "GoogleDriveFS(2520) 0.001",
+   "amdow(20476) 0.000",
+   "AMDRSServ(12976) 0.000",
+   "AMDRSSrcExt(24452) 0.000"
+  ],
+  "excluded_cores": {
+   "powershell": 0.067
+  },
+  "null_cpu_processes": 128,
+  "processor_total_pct_incl_wsl": 5.32498683274492,
+  "thresholds": "refuse if one process > 0.25 core or the sum > 0.5 core (excluded: vmmemWSL, vmmem, System, Idle, the querying powershell)",
+  "override": false
+ },
+ "run_linux_nonowned_cores": {
+  "n": 2200,
+  "mean": 0.0065,
+  "max": 3.3671,
+  "p95": 0.02
+ },
+ "run_procstat_minus_perprocess_cores_crosscheck": {
+  "n": 2200,
+  "mean": 0.0418,
+  "max": 14.5891,
+  "p95": 0.058
+ },
+ "run_bound_cpus_nonowned_cores": {
+  "n": 2200,
+  "mean": 0.003,
+  "max": 1.0019,
+  "p95": 0.012
+ },
+ "run_bound_cpus_procstat_minus_ranks_cores_crosscheck": {
+  "n": 2200,
+  "mean": 0.0519,
+  "max": 14.5951,
+  "p95": 0.072
+ },
+ "procstat_note": "procstat_minus_perprocess: cross-check only (tick-sampled /proc/stat in this WSL2 guest disagrees with per-process accounting in both directions). The host-level criterion (run_host_nonowned_cores) uses /proc/stat busy minus the owned ledger with its own thresholds (HOST_*)",
+ "run_host_nonowned_cores": {
+  "n": 2200,
+  "mean": 0.0303,
+  "max": 1.0579,
+  "p95": 0.064
+ },
+ "run_host_busy_cores": {
+  "n": 2200,
+  "mean": 15.99,
+  "max": 17.049,
+  "p95": 16.0698
+ },
+ "run_host_minus_owned_raw_cores": {
+  "n": 2200,
+  "mean": 0.0297,
+  "max": 1.0579,
+  "p95": 0.064
+ },
+ "host_forks": {
+  "forks_delta_run": 21069,
+  "owned_new_pids_seen": 2202,
+  "nonowned_new_pids_seen": 457,
+  "nonowned_forks_upper_bound": 18867,
+  "note": "informational, UPPER BOUND: /proc/stat 'processes' delta over the sampled run minus the owned new pids seen; owned forks are not counted properly (the runner's, the sampler's and the jobs' short-lived children that start and exit between two samples are never seen), so nonowned_forks_upper_bound = forks - owned seen overstates the foreign forks; it is not a validity criterion"
+ },
+ "host_level_rule": "non-owned host CPU per sample = max(0, host busy - owned); host busy = /proc/stat cpu user+nice+system+irq+softirq+steal (guest inside user; idle, iowait excluded); owned = delta of utime+stime+cutime+cstime over the owned processes (umbrella session, runner and its descendants, sampler) keyed by pid+starttime: children reaped by an owned parent (also those born and gone between two samples) enter through the parent's cutime/cstime; mode criterion: contended yes if mean >= 0.48 or max >= 1.62 core; thresholds from the calibration rule of b2_design.md (calibration 20261001_074246: mean 0.2256, p95 0.5079, max 0.6139 core; the per-PID thresholds 0.25 / 1.0 are unchanged)",
+ "host_level_mode": "criterion",
+ "run_linux_nonowned_top_processes_max_cores": {
+  "systemd(1)": 3.361,
+  "unattended-upgr(3530692)": 1.086,
+  "codex(1145439)": 0.19,
+  "wsl-pro-service(3524754)": 0.084,
+  "systemd-udevd(83)": 0.02,
+  "codex(3395708)": 0.018,
+  "init(8)": 0.012,
+  "python3.10(495)": 0.01,
+  "cron(340)": 0.006,
+  "ollama(348)": 0.004
+ },
+ "run_windows_nonwsl_cores": {
+  "n": 184,
+  "mean": 0.2857,
+  "max": 0.3636,
+  "p95": 0.3454
+ },
+ "run_psi_cpu_some_frac": {
+  "n": 2200,
+  "mean": 0.0005,
+  "max": 0.0125,
+  "p95": 0.0007
+ },
+ "run_steal_cores": {
+  "n": 2200,
+  "mean": 0.0,
+  "max": 0.0,
+  "p95": 0.0
+ },
+ "run_memavailable_mb_min": 17366.0,
+ "run_bound_cpu_mhz": {
+  "n": 2200,
+  "mean": 3892.7,
+  "max": 3892.7,
+  "p95": 3892.7
+ },
+ "sibling_of_bound_cpu_busy_with_nonowned_work": true,
+ "sibling_rule": "non-owned processes' CPU attributed to their last CPU (/proc/<pid>/stat field 39), summed over the bound CPUs and their SMT siblings; busy if mean > 0.1 or max > 0.5 core (approximate: a process may migrate within a 5-s interval)",
+ "stopped_foreign_override": false,
+ "stopped_foreign_count": 0,
+ "stopped_foreign_postrun": null,
+ "stopped_foreign_note": "override not used",
+ "stopped_foreign_rss_mb_pre": null,
+ "stopped_foreign_population": [],
+ "stopped_foreign_count_post": null,
+ "stopped_foreign_rss_mb_post": null,
+ "mem_memavailable_mb_start": 26911,
+ "mem_memavailable_mb_end": 26916,
+ "mem_swap_used_mb_start": 257.3,
+ "mem_swap_used_mb_end": 257.3,
+ "mem_swap_grew": false,
+ "mem_pswpin_delta_host": 0,
+ "mem_pswpout_delta_host": 0,
+ "mem_pgmajfault_delta_host": 92,
+ "mem_owned_session_majflt": 246,
+ "mem_owned_session_majflt_note": "sum over 19 owned-session processes of majflt at each one's last sample (faults after the last sample are not counted)",
+ "mem_dmesg_oom": [],
+ "memory_note": "memory is a note, not a validity criterion: paused foreign jobs hold RSS (stopped_foreign_rss_mb_*); pressure evidence = run_memavailable_mb_min (sampler), swap used at start/end (SwapTotal - SwapFree) and mem_swap_grew, pswpin/pswpout and pgmajfault deltas (host-wide), mem_owned_session_majflt, mem_dmesg_oom (OOM lines during the run)",
+ "contended": "yes",
+ "contended_reasons": [
+  "non-owned Linux CPU over threshold",
+  "non-owned work on the bound CPUs / SMT siblings"
+ ],
+ "contended_rule": "no ONLY if: pre-run Windows check passed; non-owned Linux CPU mean < 0.25 and max < 1.0 core; host-level non-owned CPU mean < 0.48 and max < 1.62 core; Windows non-WSL CPU over the run < 0.5 core; no non-owned work on the bound CPUs; bindings verified; with B2_ALLOW_STOPPED_FOREIGN=1 no pre-run stopped foreign process ran, vanished or was undecidable, no new foreign offender (running or stopped) was present at the end and the pause watcher's log did not grow. yes if a threshold is exceeded or a stopped foreign job ran; else unknown"
+}
