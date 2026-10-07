@@ -1,0 +1,25 @@
+bed,error_type,protocol,ok,skipped: fewer than 2 shared territories to match,skipped: no bed left
+discrete,T1_missed_branch,A_fixed,77,0,0
+discrete,T1_missed_branch,B_rederived,77,0,0
+discrete,T1_missed_branch,C_flowmatched,44,33,0
+discrete,T2_truncation,A_fixed,60,0,36
+discrete,T2_truncation,B_rederived,96,0,0
+discrete,T2_truncation,C_flowmatched,60,36,0
+discrete,T3_stenosis_length,A_fixed,97,0,0
+discrete,T3_stenosis_length,B_rederived,97,0,0
+discrete,T3_stenosis_length,C_flowmatched,97,0,0
+discrete,T4_taper,A_fixed,97,0,0
+discrete,T4_taper,B_rederived,97,0,0
+discrete,T4_taper,C_flowmatched,97,0,0
+leaky,T1_missed_branch,A_fixed,118,0,0
+leaky,T1_missed_branch,B_rederived,118,0,0
+leaky,T1_missed_branch,C_flowmatched,71,47,0
+leaky,T2_truncation,A_fixed,147,0,2
+leaky,T2_truncation,B_rederived,149,0,0
+leaky,T2_truncation,C_flowmatched,100,49,0
+leaky,T3_stenosis_length,A_fixed,150,0,0
+leaky,T3_stenosis_length,B_rederived,150,0,0
+leaky,T3_stenosis_length,C_flowmatched,150,0,0
+leaky,T4_taper,A_fixed,150,0,0
+leaky,T4_taper,B_rederived,150,0,0
+leaky,T4_taper,C_flowmatched,150,0,0

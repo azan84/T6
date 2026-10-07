@@ -22,160 +22,184 @@
 \BIBdecl
 
 \bibitem{tonino2009}
-P.~A. Tonino, B.~De~Bruyne, N.~H. Pijls, U.~Siebert, F.~Ikeno, M.~van~`t Veer,
-  V.~Klauss, G.~Manoharan, T.~Engstrøm, K.~G. Oldroyd, P.~N. Ver~Lee, P.~A.
-  MacCarthy, and W.~F. Fearon, ``Fractional flow reserve versus angiography for
-  guiding percutaneous coronary intervention,'' \emph{New England Journal of
-  Medicine}, vol. 360, no.~3, p. 213–224, 2009.
+P.~A.~L. Tonino \emph{et~al.}, ``Fractional flow reserve versus angiography for
+  guiding percutaneous coronary intervention,'' \emph{N. Engl. J. Med.}, vol.
+  360, no.~3, pp. 213--224, 2009.
 
 \bibitem{taylor2013}
 C.~A. Taylor, T.~A. Fonte, and J.~K. Min, ``Computational fluid dynamics
   applied to cardiac computed tomography for noninvasive quantification of
-  fractional flow reserve,'' \emph{Journal of the American College of
-  Cardiology}, vol.~61, no.~22, p. 2233–2241, 2013.
+  fractional flow reserve: {S}cientific basis,'' \emph{J. Amer. Coll.
+  Cardiol.}, vol.~61, no.~22, pp. 2233--2241, 2013.
 
 \bibitem{norgaard2014}
-B.~L. Nørgaard, J.~Leipsic, S.~Gaur, S.~Seneviratne, B.~S. Ko, H.~Ito, J.~M.
-  Jensen, L.~Mauri, B.~De~Bruyne, H.~Bezerra, K.~Osawa, M.~Marwan, C.~Naber,
-  A.~Erglis, S.-J. Park, E.~H. Christiansen, A.~Kaltoft, J.~F. Lassen, H.~E.
-  Bøtker, and S.~Achenbach, ``Diagnostic performance of noninvasive fractional
-  flow reserve derived from coronary computed tomography angiography in
-  suspected coronary artery disease,'' \emph{Journal of the American College of
-  Cardiology}, vol.~63, no.~12, p. 1145–1155, 2014.
-
-\bibitem{itu2016}
-L.~Itu, S.~Rapaka, T.~Passerini, B.~Georgescu, C.~Schwemmer, M.~Schoebinger,
-  T.~Flohr, P.~Sharma, and D.~Comaniciu, ``A machine-learning approach for
-  computation of fractional flow reserve from coronary computed tomography,''
-  \emph{Journal of Applied Physiology}, vol. 121, no.~1, p. 42–52, 2016.
+B.~L. Nørgaard \emph{et~al.}, ``Diagnostic performance of noninvasive
+  fractional flow reserve derived from coronary computed tomography angiography
+  in suspected coronary artery disease: {T}he {NXT} trial ({A}nalysis of
+  {C}oronary {B}lood {F}low {U}sing {CT} {A}ngiography: {N}ext {S}teps),''
+  \emph{J. Amer. Coll. Cardiol.}, vol.~63, no.~12, pp. 1145--1155, 2014.
 
 \bibitem{kim2010}
 H.~J. Kim, I.~E. Vignon-Clementel, J.~S. Coogan, C.~A. Figueroa, K.~E. Jansen,
   and C.~A. Taylor, ``Patient-specific modeling of blood flow and pressure in
-  human coronary arteries,'' \emph{Annals of Biomedical Engineering}, vol.~38,
-  no.~10, p. 3195–3209, 2010.
+  human coronary arteries,'' \emph{Ann. Biomed. Eng.}, vol.~38, no.~10, pp.
+  3195--3209, 2010.
+
+\bibitem{fossan2026}
+F.~E. Fossan \emph{et~al.}, ``Relevance of autoregulation in the diagnosis of
+  coronary artery disease with {CT-FFR},'' \emph{Amer. J. Physiol. Heart Circ.
+  Physiol.}, vol. 330, no.~1, pp. H157--H169, 2026.
+
+\bibitem{itu2016}
+L.~Itu \emph{et~al.}, ``A machine-learning approach for computation of
+  fractional flow reserve from coronary computed tomography,'' \emph{J. Appl.
+  Physiol.}, vol. 121, no.~1, pp. 42--52, 2016.
 
 \bibitem{murray1926}
 C.~D. Murray, ``The physiological principle of minimum work: I. the vascular
-  system and the cost of blood volume,'' \emph{Proceedings of the National
-  Academy of Sciences}, vol.~12, no.~3, p. 207–214, 1926.
+  system and the cost of blood volume,'' \emph{Proc. Nat. Acad. Sci. USA},
+  vol.~12, no.~3, pp. 207--214, 1926.
+
+\bibitem{menon2024}
+K.~Menon \emph{et~al.}, ``Personalized coronary and myocardial blood flow
+  models incorporating {CT} perfusion imaging and synthetic vascular trees,''
+  \emph{npj Imag.}, vol.~2, no.~1, 2024, art. no. 9.
+
+\bibitem{arminio2026}
+M.~Arminio \emph{et~al.}, ``Patient-specific biomechanical investigation of
+  percutaneous pulmonary valves: {T}owards the integration of routinely
+  acquired clinical data and fluid-structure interaction simulations,''
+  \emph{IEEE J. Biomed. Health Inform.}, 2026, early access, doi:
+  10.1109/JBHI.2026.3708991.
 
 \bibitem{sankaran2015tmi}
 S.~Sankaran, L.~Grady, and C.~A. Taylor, ``Fast computation of hemodynamic
-  sensitivity to lumen segmentation uncertainty,'' \emph{IEEE Transactions on
-  Medical Imaging}, vol.~34, no.~12, p. 2562–2571, 2015.
+  sensitivity to lumen segmentation uncertainty,'' \emph{IEEE Trans. Med.
+  Imag.}, vol.~34, no.~12, pp. 2562--2571, 2015.
 
 \bibitem{sankaran2015cmame}
-------, ``Impact of geometric uncertainty on hemodynamic simulations using
-  machine learning,'' \emph{Computer Methods in Applied Mechanics and
-  Engineering}, vol. 297, p. 167–190, 2015.
+S.~Sankaran, L.~Grady, and C.~A. Taylor, ``Impact of geometric uncertainty on
+  hemodynamic simulations using machine learning,'' \emph{Comput. Methods Appl.
+  Mech. Eng.}, vol. 297, pp. 167--190, 2015.
 
 \bibitem{fernandez2024}
-D.~Fernández‐Martínez, M.~R. González‐Fernández, J.~M.
-  Nogales‐Asensio, and C.~Ferrera, ``Impact of minimal lumen segmentation
-  uncertainty on patient‐specific coronary simulations: A look at
-  ffr<sub>ct</sub>,'' \emph{International Journal for Numerical Methods in
-  Biomedical Engineering}, vol.~40, no.~6, Apr. 2024.
+D.~Fern{\'a}ndez-Mart{\'i}nez, M.~R. Gonz{\'a}lez-Fern{\'a}ndez, J.~M.
+  Nogales-Asensio, and C.~Ferrera, ``Impact of minimal lumen segmentation
+  uncertainty on patient-specific coronary simulations: {A} look at
+  {FFR$_{\mathrm{CT}}$},'' \emph{Int. J. Numer. Methods Biomed. Eng.}, vol.~40,
+  no.~6, 2024, art. no. e3822.
+
+\bibitem{dalmaso2025}
+C.~Dalmaso, F.~E. Fossan, A.~T. Bråten, and L.~O. Müller, ``Uncertainty
+  quantification and sensitivity analysis for non-invasive model-based
+  instantaneous wave-free ratio prediction,'' \emph{Int. J. Numer. Methods
+  Biomed. Eng.}, vol.~41, no.~1, 2025, art. no. e3898.
 
 \bibitem{sankaran2016}
 S.~Sankaran, H.~J. Kim, G.~Choi, and C.~A. Taylor, ``Uncertainty quantification
   in coronary blood flow simulations: Impact of geometry, boundary conditions
-  and blood viscosity,'' \emph{Journal of Biomechanics}, vol.~49, no.~12, p.
-  2540–2547, 2016.
+  and blood viscosity,'' \emph{J. Biomech.}, vol.~49, no.~12, pp. 2540--2547,
+  2016.
 
 \bibitem{tanade2022}
 C.~Tanade, S.~J. Chen, J.~A. Leopold, and A.~Randles, ``Analysis identifying
   minimal governing parameters for clinically accurate in silico fractional
-  flow reserve,'' \emph{Frontiers in Medical Technology}, vol.~4, Dec. 2022.
-
-\bibitem{colebank2019}
-M.~J. Colebank, L.~M. Paun, M.~U. Qureshi, N.~Chesler, D.~Husmeier, M.~S.
-  Olufsen, and L.~E. Fix, ``Influence of image segmentation on one-dimensional
-  fluid dynamics predictions in the mouse pulmonary arteries,'' \emph{Journal
-  of The Royal Society Interface}, vol.~16, no. 159, p. 20190284, 2019.
+  flow reserve,'' \emph{Front. Med. Technol.}, vol.~4, 2022, art. no. 1034801.
 
 \bibitem{korte2023}
-J.~Korte, S.~Voß, G.~Janiga, O.~Beuing, D.~Behme, S.~Saalfeld, and P.~Berg,
-  ``Is accurate lumen segmentation more important than outlet boundary
-  condition in image-based blood flow simulations for intracranial aneurysms?''
-  \emph{Cardiovascular Engineering and Technology}, vol.~14, no.~5, p.
-  617–630, 2023.
+J.~Korte \emph{et~al.}, ``Is accurate lumen segmentation more important than
+  outlet boundary condition in image-based blood flow simulations for
+  intracranial aneurysms?'' \emph{Cardiovasc. Eng. Technol.}, vol.~14, no.~5,
+  pp. 617--630, 2023.
+
+\bibitem{colebank2019}
+M.~J. Colebank \emph{et~al.}, ``Influence of image segmentation on
+  one-dimensional fluid dynamics predictions in the mouse pulmonary arteries,''
+  \emph{J. Roy. Soc. Interface}, vol.~16, no. 159, 2019, art. no. 20190284.
 
 \bibitem{bransby2026}
-K.~M. Bransby, E.~{\O}ksnebjerg, K.~Kj{\ae}r, J.~Kirkeby, Y.~El~Youssef,
-  A.~Jim{\'e}nez, P.~R. Pedersson, M.~C. de~Knegt, K.~F. Kofoed, and R.~R.
-  Paulsen, ``{ImageCAS-X}: a dataset and benchmark for coronary artery
-  segmentation and centerline extraction in coronary {CT} angiography,''
-  arXiv:2608.30404, 2026.
+K.~M. Bransby \emph{et~al.}, ``{ImageCAS-X}: a dataset and benchmark for
+  coronary artery segmentation and centerline extraction in coronary {CT}
+  angiography,'' arXiv:2608.30404, 2026.
 
-\bibitem{gosling2020}
-R.~C. Gosling, J.~Sturdy, P.~D. Morris, F.~E. Fossan, L.~R. Hellevik,
-  P.~Lawford, D.~R. Hose, and J.~Gunn, ``Effect of side branch flow upon
-  physiological indices in coronary artery disease,'' \emph{Journal of
-  Biomechanics}, vol. 103, p. 109698, 2020.
-
-\bibitem{menon2024}
-K.~Menon, M.~O. Khan, Z.~A. Sexton, J.~Richter, P.~K. Nguyen, S.~B. Malik,
-  J.~Boyd, K.~Nieman, and A.~L. Marsden, ``Personalized coronary and myocardial
-  blood flow models incorporating ct perfusion imaging and synthetic vascular
-  trees,'' \emph{npj Imaging}, vol.~2, no.~1, May 2024.
-
-\bibitem{fossan2026}
-F.~E. Fossan, A.~T. Bråten, A.~Lucca, L.~O. Müller, A.~Jørgensen, R.~Wiseth,
-  and L.~R. Hellevik, ``Relevance of autoregulation in the diagnosis of
-  coronary artery disease with ct-ffr,'' \emph{American Journal of
-  Physiology-Heart and Circulatory Physiology}, vol. 330, no.~1, p.
-  H157–H169, 2026.
+\bibitem{chen2025}
+F.~Chen, J.~Ge, Y.~Zheng, K.~Guo, F.~Cao, and J.~Liang, ``Ensembled-{SAMs} for
+  enhanced small coronary artery segmentation in {CCTA} images,'' \emph{IEEE J.
+  Biomed. Health Inform.}, vol.~29, no.~7, pp. 4612--4622, 2025.
 
 \bibitem{gamage2022}
-P.~T. Gamage, P.~Dong, J.~Lee, Y.~Gharaibeh, V.~N. Zimin, H.~G. Bezerra, D.~L.
-  Wilson, and L.~Gu, ``Fractional flow reserve (ffr) estimation from oct-based
-  cfd simulations: Role of side branches,'' \emph{Applied Sciences}, vol.~12,
-  no.~11, p. 5573, 2022.
+P.~T. Gamage \emph{et~al.}, ``Fractional flow reserve ({FFR}) estimation from
+  {OCT}-based {CFD} simulations: {R}ole of side branches,'' \emph{Appl. Sci.},
+  vol.~12, no.~11, 2022, art. no. 5573.
+
+\bibitem{gosling2020}
+R.~C. Gosling \emph{et~al.}, ``Effect of side branch flow upon physiological
+  indices in coronary artery disease,'' \emph{J. Biomech.}, vol. 103, 2020,
+  art. no. 109698.
 
 \bibitem{zeng2023}
-A.~Zeng, C.~Wu, G.~Lin, W.~Xie, J.~Hong, M.~Huang, J.~Zhuang, S.~Bi, D.~Pan,
-  N.~Ullah, K.~N. Khan, T.~Wang, Y.~Shi, X.~Li, and X.~Xu, ``Imagecas: A
-  large-scale dataset and benchmark for coronary artery segmentation based on
-  computed tomography angiography images,'' \emph{Computerized Medical Imaging
-  and Graphics}, vol. 109, p. 102287, 2023.
+A.~Zeng \emph{et~al.}, ``{ImageCAS}: {A} large-scale dataset and benchmark for
+  coronary artery segmentation based on computed tomography angiography
+  images,'' \emph{Comput. Med. Imag. Graph.}, vol. 109, 2023, art. no. 102287.
 
 \bibitem{imagecasx_data}
-K.~M. Bransby and R.~R. Paulsen, ``{ImageCAS-X},'' Zenodo, version 1, 2026.
+\BIBentryALTinterwordspacing
+K.~M. Bransby and R.~R. Paulsen, ``{ImageCAS-X},'' Zenodo, 2026. [Online].
+  Available: \url{https://doi.org/10.5281/zenodo.21887809}
+\BIBentrySTDinterwordspacing
+
+\bibitem{young1973}
+D.~F. Young and F.~Y. Tsai, ``Flow characteristics in models of arterial
+  stenoses---{I}. {S}teady flow,'' \emph{J. Biomech.}, vol.~6, no.~4, pp.
+  395--410, 1973.
 
 \bibitem{choy2008}
 J.~S. Choy and G.~S. Kassab, ``Scaling of myocardial mass to flow and
-  morphometry of coronary arteries,'' \emph{Journal of Applied Physiology},
-  vol. 104, no.~5, p. 1281–1286, 2008.
+  morphometry of coronary arteries,'' \emph{J. Appl. Physiol.}, vol. 104,
+  no.~5, pp. 1281--1286, 2008.
+
+\bibitem{dodge1992}
+J.~T. Dodge, B.~G. Brown, E.~L. Bolson, and H.~T. Dodge, ``Lumen diameter of
+  normal human coronary arteries. {Influence} of age, sex, anatomic variation,
+  and left ventricular hypertrophy or dilation,'' \emph{Circulation}, vol.~86,
+  no.~1, pp. 232--246, 1992.
+
+\bibitem{fournier2021}
+S.~Fournier \emph{et~al.}, ``Normal values of thermodilution-derived absolute
+  coronary blood flow and microvascular resistance in humans,''
+  \emph{EuroIntervention}, vol.~17, no.~4, pp. e309--e316, 2021.
 
 \bibitem{schindler2023}
-T.~H. Schindler, W.~F. Fearon, M.~Pelletier-Galarneau, G.~Ambrosio, U.~Sechtem,
-  T.~D. Ruddy, K.~K. Patel, D.~L. Bhatt, T.~M. Bateman, H.~Gewirtz, J.~Shirani,
-  J.~Knuuti, R.~J. Gropler, P.~Chareonthaitawee, R.~H. Slart, S.~Windecker,
-  P.~A. Kaufmann, M.~R. Abraham, V.~R. Taqueti, T.~J. Ford, P.~G. Camici, H.~R.
-  Schelbert, and V.~Dilsizian, ``Myocardial perfusion pet for the detection and
-  reporting of coronary microvascular dysfunction,'' \emph{JACC: Cardiovascular
-  Imaging}, vol.~16, no.~4, p. 536–548, 2023.
+T.~H. Schindler \emph{et~al.}, ``Myocardial perfusion {PET} for the detection
+  and reporting of coronary microvascular dysfunction: {A} {JACC}:
+  {C}ardiovascular {I}maging expert panel statement,'' \emph{JACC: Cardiovasc.
+  Imag.}, vol.~16, no.~4, pp. 536--548, 2023.
 
 \bibitem{brown2018}
-L.~A. Brown, S.~C. Onciul, D.~A. Broadbent, K.~Johnson, G.~J. Fent, J.~R.
-  Foley, P.~Garg, P.~G. Chew, K.~Knott, E.~Dall’Armellina, P.~P. Swoboda,
-  H.~Xue, J.~P. Greenwood, J.~C. Moon, P.~Kellman, and S.~Plein, ``Fully
-  automated, inline quantification of myocardial blood flow with cardiovascular
-  magnetic resonance: repeatability of measurements in healthy subjects,''
-  \emph{Journal of Cardiovascular Magnetic Resonance}, vol.~20, no.~1, p.~48,
-  2018.
+L.~A.~E. Brown \emph{et~al.}, ``Fully automated, inline quantification of
+  myocardial blood flow with cardiovascular magnetic resonance: repeatability
+  of measurements in healthy subjects,'' \emph{J. Cardiovasc. Magn. Reson.},
+  vol.~20, no.~1, 2018, art. no. 48.
 
 \bibitem{johnson2015}
-N.~P. Johnson, D.~T. Johnson, R.~L. Kirkeeide, C.~Berry, B.~De~Bruyne, W.~F.
-  Fearon, K.~G. Oldroyd, N.~H. Pijls, and K.~L. Gould, ``Repeatability of
-  fractional flow reserve despite variations in systemic
-  and coronary hemodynamics,'' \emph{JACC: Cardiovascular Interventions},
-  vol.~8, no.~8, p. 1018–1027, 2015.
+N.~P. Johnson \emph{et~al.}, ``Repeatability of fractional flow reserve despite
+  variations in systemic and coronary hemodynamics,'' \emph{JACC: Cardiovasc.
+  Interv.}, vol.~8, no.~8, pp. 1018--1027, 2015.
 
 \bibitem{petraco2013}
-R.~Petraco, S.~Sen, S.~Nijjer, M.~Echavarria-Pinto, J.~Escaned, D.~P. Francis,
-  and J.~E. Davies, ``Fractional flow reserve–guided revascularization,''
-  \emph{JACC: Cardiovascular Interventions}, vol.~6, no.~3, p. 222–225, 2013.
+R.~Petraco \emph{et~al.}, ``Fractional flow reserve-guided revascularization:
+  {P}ractical implications of a diagnostic gray zone and measurement
+  variability on clinical decisions,'' \emph{JACC: Cardiovasc. Interv.},
+  vol.~6, no.~3, pp. 222--225, 2013.
+
+\bibitem{shit2021}
+S.~Shit \emph{et~al.}, ``cl{D}ice -- {A} novel topology-preserving loss
+  function for tubular structure segmentation,'' in \emph{Proc. IEEE/CVF Conf.
+  Comput. Vis. Pattern Recognit. (CVPR)}, 2021, pp. 16\,555--16\,564.
+
+\bibitem{viceconti2025}
+M.~Viceconti \emph{et~al.}, ``Position paper: {E}xtending credibility
+  assessment of in silico medicine predictors to machine learning predictors,''
+  \emph{IEEE J. Biomed. Health Inform.}, vol.~29, no.~7, pp. 5284--5290, 2025.
 
 \end{thebibliography}

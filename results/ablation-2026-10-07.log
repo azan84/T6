@@ -1,0 +1,73 @@
+cohort 150 instances x 2 beds x 4 error types x 3 protocols = up to 3600 rows
+
+  10/150 instances  236 rows  0 failures  51s
+  20/150 instances  492 rows  0 failures  102s
+  SKIP 509_left discrete: slot not eligible under this bed
+  30/150 instances  731 rows  1 failures  146s
+  40/150 instances  987 rows  1 failures  209s
+  50/150 instances  1243 rows  1 failures  251s
+  SKIP 272_left discrete: slot not eligible under this bed
+  60/150 instances  1468 rows  2 failures  319s
+  70/150 instances  1720 rows  2 failures  373s
+  80/150 instances  1970 rows  2 failures  419s
+  90/150 instances  2218 rows  2 failures  476s
+  100/150 instances  2474 rows  2 failures  516s
+  110/150 instances  2712 rows  2 failures  570s
+  120/150 instances  2968 rows  2 failures  623s
+  130/150 instances  3218 rows  2 failures  667s
+  140/150 instances  3470 rows  2 failures  723s
+  150/150 instances  3728 rows  2 failures  764s
+
+wrote results/ablation-2026-10-07.csv  (3728 rows, 2 instance failures, 764s)
+      ablation-2026-10-07_territory.csv  (6480 territory rows)
+      ablation-2026-10-07_pullback.csv  (68975 pullback stations)
+
+==============================================================================================
+ABLATION — 3405/3728 rows solved  (skips: skipped: fewer than 2 shared territories to match: 198; skipped: no deletable downstream branch: 71; skipped: no bed left: 52; skipped: truncation point falls at the start of its segment: 2)
+==============================================================================================
+non-converged 0  |  max mass error 8.8e-09  |  territories per row: median 2
+
+--- bed = discrete ---
+error type          protocol           n  mean dFFR  mean |dFFR|   flips  flip %  flow resid
+T1_missed_branch    A_fixed          109    +0.1025       0.1025      33   30.3%      0.1762
+T1_missed_branch    B_rederived      109    +0.0451       0.0458       9    8.3%      0.2874
+T1_missed_branch    C_flowmatched     67    +0.0878       0.0878      10   14.9%      0.1446
+T2_truncation       A_fixed           97    +0.1950       0.1950      46   47.4%      0.2645
+T2_truncation       B_rederived      147    -0.0476       0.0581      23   15.6%      0.1487
+T2_truncation       C_flowmatched     97    -0.0826       0.0881      17   17.5%      0.1143
+T3_stenosis_length  A_fixed          148    -0.0091       0.0091       8    5.4%      0.0080
+T3_stenosis_length  B_rederived      148    -0.0091       0.0091       8    5.4%      0.0080
+T3_stenosis_length  C_flowmatched    143    -0.0115       0.0115       9    6.3%      0.0035
+T4_taper            A_fixed          148    -0.0200       0.0210      17   11.5%      0.0486
+T4_taper            B_rederived      148    -0.0052       0.0118       8    5.4%      0.0952
+T4_taper            C_flowmatched    143    -0.0122       0.0225       8    5.6%      0.0555
+clean                                148    +0.0000       0.0000       0    0.0%      0.0000
+
+--- bed = leaky ---
+error type          protocol           n  mean dFFR  mean |dFFR|   flips  flip %  flow resid
+T1_missed_branch    A_fixed          118    +0.0494       0.0494      21   17.8%      0.0868
+T1_missed_branch    B_rederived      118    +0.0125       0.0129       6    5.1%      0.0442
+T1_missed_branch    C_flowmatched     71    +0.0219       0.0223       6    8.5%      0.0307
+T2_truncation       A_fixed          147    +0.1233       0.1233      63   42.9%      0.1278
+T2_truncation       B_rederived      149    +0.0051       0.0133       7    4.7%      0.0180
+T2_truncation       C_flowmatched    100    +0.0046       0.0175       8    8.0%      0.0143
+T3_stenosis_length  A_fixed          150    -0.0092       0.0092       3    2.0%      0.0053
+T3_stenosis_length  B_rederived      150    -0.0092       0.0092       3    2.0%      0.0053
+T3_stenosis_length  C_flowmatched    150    -0.0150       0.0150       4    2.7%      0.0019
+T4_taper            A_fixed          150    -0.0259       0.0262      14    9.3%      0.0253
+T4_taper            B_rederived      150    -0.0025       0.0060       1    0.7%      0.0423
+T4_taper            C_flowmatched    150    -0.0338       0.0366       8    5.3%      0.0087
+clean                                150    +0.0000       0.0000       0    0.0%      0.0000
+
+--- THE THESIS: a model that passes its perfusion check (residual < 10%) while the FFR it reports is wrong by > 0.05 ---
+bed       protocol           n  median resid  passes check  …and wrong  …and flips
+discrete  A_fixed          502        0.0647     306 ( 61%)      29          23
+discrete  B_rederived      552        0.0948     257 ( 47%)       7          12
+discrete  C_flowmatched    450        0.0400     310 ( 69%)      55          20
+leaky     A_fixed          565        0.0338     408 ( 72%)      53          42
+leaky     B_rederived      567        0.0167     420 ( 74%)      10          14
+leaky     C_flowmatched    471        0.0060     448 ( 95%)      51          24
+  (A keeps the CLEAN bed on surviving nodes — the reference arm, not a naive case. It does NOT pass the
+   perfusion check by construction: since decision B1 the target is the FULL clean territory including
+   the deleted branch's share, which A cannot deliver through the vessels it has left, so A's residual is
+   the lost perfusion. B is the deployment case: the bed is re-derived from wrong anatomy. C is tuned.)
