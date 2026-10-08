@@ -1,0 +1,86 @@
+cohort 150 instances x 2 beds x 4 error types x 3 protocols = up to 3600 rows
+
+  10/150 instances  244 rows  0 failures  53s
+  SKIP 509_left discrete: slot not eligible under this bed
+  SKIP 754_left discrete: slot not eligible under this bed
+  20/150 instances  476 rows  2 failures  103s
+  30/150 instances  732 rows  2 failures  149s
+  SKIP 935_left discrete: slot not eligible under this bed
+  SKIP 669_left discrete: slot not eligible under this bed
+  40/150 instances  948 rows  4 failures  200s
+  SKIP 474_right discrete: slot not eligible under this bed
+  SKIP 928_right discrete: slot not eligible under this bed
+  50/150 instances  1180 rows  6 failures  237s
+  SKIP 869_left discrete: slot not eligible under this bed
+  SKIP 43_left discrete: slot not eligible under this bed
+  60/150 instances  1406 rows  8 failures  287s
+  SKIP 669_left discrete: slot not eligible under this bed
+  SKIP 808_left discrete: slot not eligible under this bed
+  70/150 instances  1626 rows  10 failures  329s
+  SKIP 335_left discrete: slot not eligible under this bed
+  80/150 instances  1865 rows  11 failures  374s
+  SKIP 687_left discrete: slot not eligible under this bed
+  90/150 instances  2102 rows  12 failures  438s
+  100/150 instances  2358 rows  12 failures  530s
+  SKIP 335_left discrete: slot not eligible under this bed
+  110/150 instances  2579 rows  13 failures  608s
+  120/150 instances  2825 rows  13 failures  886s
+  SKIP 825_right discrete: slot not eligible under this bed
+  130/150 instances  3062 rows  14 failures  1059s
+  140/150 instances  3306 rows  14 failures  1155s
+  SKIP 847_left discrete: slot not eligible under this bed
+  150/150 instances  3553 rows  15 failures  1230s
+
+wrote results/demand-replication-x2-2026-10-08/ablation.csv  (3553 rows, 15 instance failures, 1231s)
+      ablation_territory.csv  (6118 territory rows)
+      ablation_pullback.csv  (64669 pullback stations)
+
+==============================================================================================
+ABLATION — 3236/3553 rows solved  (skips: skipped: fewer than 2 shared territories to match: 189; skipped: no deletable downstream branch: 74; skipped: no bed left: 49; error: ValueError: 980_right_T1_missed_branch: healthy epicardial network passes at most 5.505 mL/s, below the demand 6.346 mL/s — tree ineligible for this bed/truncation: 2)
+==============================================================================================
+non-converged 0  |  max mass error 4.6e-09  |  territories per row: median 2
+
+--- bed = discrete ---
+error type          protocol           n  mean dFFR  mean |dFFR|   flips  flip %  flow resid
+T1_missed_branch    A_fixed           97    +0.1002       0.1002      40   41.2%      0.1706
+T1_missed_branch    B_rederived       95    +0.0505       0.0519      20   21.1%      0.2639
+T1_missed_branch    C_flowmatched     60    +0.0889       0.0912      22   36.7%      0.1488
+T2_truncation       A_fixed           88    +0.1980       0.1980      59   67.0%      0.2544
+T2_truncation       B_rederived      134    -0.0551       0.0624      12    9.0%      0.0935
+T2_truncation       C_flowmatched     88    -0.0814       0.0848       6    6.8%      0.0729
+T3_stenosis_length  A_fixed          135    -0.0077       0.0077       0    0.0%      0.0056
+T3_stenosis_length  B_rederived      135    -0.0077       0.0077       0    0.0%      0.0056
+T3_stenosis_length  C_flowmatched    129    -0.0094       0.0094       0    0.0%      0.0029
+T4_taper            A_fixed          135    -0.0146       0.0173       3    2.2%      0.0531
+T4_taper            B_rederived      135    -0.0037       0.0118       2    1.5%      0.0960
+T4_taper            C_flowmatched    129    -0.0091       0.0201       3    2.3%      0.0666
+clean                                135    +0.0000       0.0000       0    0.0%      0.0000
+
+--- bed = leaky ---
+error type          protocol           n  mean dFFR  mean |dFFR|   flips  flip %  flow resid
+T1_missed_branch    A_fixed          114    +0.0495       0.0495      24   21.1%      0.0851
+T1_missed_branch    B_rederived      114    +0.0114       0.0123       5    4.4%      0.0322
+T1_missed_branch    C_flowmatched     69    +0.0148       0.0287       6    8.7%      0.0250
+T2_truncation       A_fixed          146    +0.1251       0.1251      65   44.5%      0.1248
+T2_truncation       B_rederived      149    +0.0020       0.0132       7    4.7%      0.0174
+T2_truncation       C_flowmatched    100    +0.0008       0.0161       5    5.0%      0.0153
+T3_stenosis_length  A_fixed          150    -0.0075       0.0075       3    2.0%      0.0044
+T3_stenosis_length  B_rederived      150    -0.0075       0.0075       3    2.0%      0.0044
+T3_stenosis_length  C_flowmatched    150    -0.0091       0.0091       3    2.0%      0.0014
+T4_taper            A_fixed          150    -0.0250       0.0251      13    8.7%      0.0274
+T4_taper            B_rederived      150    -0.0033       0.0065       3    2.0%      0.0496
+T4_taper            C_flowmatched    149    -0.0399       0.0433      11    7.4%      0.0120
+clean                                150    +0.0000       0.0000       0    0.0%      0.0000
+
+--- THE THESIS: a model that passes its perfusion check (residual < 10%) while the FFR it reports is wrong by > 0.05 ---
+bed       protocol           n  median resid  passes check  …and wrong  …and flips
+discrete  A_fixed          455        0.0760     257 ( 56%)      18           5
+discrete  B_rederived      499        0.0798     256 ( 51%)      15           4
+discrete  C_flowmatched    406        0.0429     297 ( 73%)      42           8
+leaky     A_fixed          560        0.0384     399 ( 71%)      52          39
+leaky     B_rederived      563        0.0140     420 ( 75%)       5          13
+leaky     C_flowmatched    468        0.0066     446 ( 95%)      49          22
+  (A keeps the CLEAN bed on surviving nodes — the reference arm, not a naive case. It does NOT pass the
+   perfusion check by construction: since decision B1 the target is the FULL clean territory including
+   the deleted branch's share, which A cannot deliver through the vessels it has left, so A's residual is
+   the lost perfusion. B is the deployment case: the bed is re-derived from wrong anatomy. C is tuned.)

@@ -120,13 +120,13 @@ insertion. FFR is read 20~mm beyond the distal edge of the lesion.}\label{fig:st
 
 \FloatBarrier
 \section{Exclusions}
-Of 6\,944 swept instances, 150 were selected and 97 form the discrete arm; 2\,856 corrupted models were attempted and
-2\,599 solved, all of which converged. The missed branch was applicable to 77 of 97 (discrete) and 118 of 150 (leaky)
+Of 6\,944 swept instances, 150 were selected and 97 form the discrete arm; 2\,802 corrupted models were defined
+(an applicable error type under each of Protocols A--C) and 2\,599 solved, all of which converged. The missed branch was applicable to 77 of 97 (discrete) and 118 of 150 (leaky)
 instances; the others had no side branch distal to the lesion that could be deleted. The vessel break was not
 applicable to one instance in each bed, in which the 25~mm truncation point fell at the start of a centerline segment.
-Protocol C is defined only when at least two perfusion territories retain a vessel. A fit that ends at a search bound
+Protocols C and D are defined only when at least two perfusion territories retain a vessel, so Protocol D was solved on the same instances as Protocol C; its territory scaling reached the bound of $10^3$ in two discrete-bed missed-branch models of one tree, which kept perfusion residuals of 0.08 and 0.11 and $|\Delta\mathrm{FFR}| < 0.05$ and are retained. A fit that ends at a search bound
 is recorded as a failure; none did in the ablation or in the demand runs (Section~\ref{sec:demand}), and 10 of
-5\,860 noise-floor draws did (Section~\ref{sec:floor}). Under Protocol A a vessel break can remove every node that
+4\,940 noise-floor draws did (Section~\ref{sec:floor}). Under Protocol A a vessel break can remove every node that
 carries bed outflow (36 instances in the discrete bed, 2 in the leaky bed). Table~\ref{tab:excl} lists every
 exclusion; all other cells were solved for every applicable instance.
 \begin{table}[!ht]
