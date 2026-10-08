@@ -37,21 +37,19 @@ Taiwan.}}
 \begin{abstract}
 Fractional flow reserve, the pressure ratio that decides whether a coronary narrowing is treated, can be computed
 from computed tomography angiography. The computation depends on the segmented artery and on outlet boundary
-conditions derived from it, often tuned to match measured perfusion. Whether a model that matches perfusion can
-still assign the wrong treatment at 0.80 has not been tested. We inserted 150 stenoses into 108 coronary trees,
+conditions derived from it, often tuned to match measured perfusion. Whether tuning can hide a segmentation error
+that changes the treatment decision at 0.80 has not been tested. We inserted 150 stenoses into 108 coronary trees,
 applied four segmentation error types (missed side branch, vessel break, longer lesion, narrowed taper), and
-recomputed fractional flow reserve with a reduced-order model under four boundary-condition protocols: fixed,
-re-derived from the corrupted tree, and tuned to the clean tree's territory perfusion with one global or one
-per-territory parameter, in two microvascular bed structures. One case was solved in three dimensions. With fixed
-boundary conditions, the branching (topological) errors changed the decision in 32--33\% of models, against
-6--10\% for vessel-size (caliber) errors of inter-observer magnitude. Re-derived or tuned boundary conditions reduced
-topological decision changes to 5--20\%. Tuning matched perfusion but did not remove the error: after either form
-of tuning, 5--20\% of topological-error models and 4--18\% of caliber-error models passed a perfusion check
-stricter than measurement repeatability while their fractional flow reserve was wrong by more than 0.05, against
-3--4\% for correct anatomy; with re-derived boundary conditions, no caliber-error model did. Per-territory tuning
-corrected the typical missed branch, and in three dimensions it reduced a shift of 0.074 to $-0.0007$, as the
-reduced-order model predicted. Agreement with perfusion after tuning therefore does not show that the computed
-fractional flow reserve is correct; branching, caliber and the perfusion mismatch must be checked before tuning.
+recomputed fractional flow reserve with a reduced-order model under three boundary-condition protocols: fixed,
+re-derived from the corrupted tree, and tuned to the clean tree's territory perfusion, in two microvascular bed
+structures. One case was solved in three dimensions. With fixed boundary conditions, the branching
+(topological) errors changed the decision in 32--33\% of models, against 6--10\% for vessel-size (caliber) errors of inter-observer magnitude, close to the variability of repeat invasive measurement. Re-derived or tuned boundary
+conditions reduced topological decision changes to 5--20\%. Tuning, however, removed the perfusion mismatch that
+marked the error: 8--19\% of tuned models with a topological error passed a perfusion check stricter than
+measurement repeatability while their fractional flow reserve was wrong by more than 0.05. In three dimensions,
+prescribed territory flows reduced a missed-branch shift of 0.074 to below 0.001. A perfusion-matched coronary
+model can thus pass validation with a material error in its fractional flow reserve. Detecting it requires a check
+of the segmentation's branching structure and of the perfusion mismatch before tuning.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -93,12 +91,11 @@ inserted 150 stenoses into 108 real coronary trees from a public CT angiography 
 FFR spans the decision threshold, applied two topological and two caliber error types, and recomputed FFR with a
 reduced-order model under fixed, re-derived and tuned boundary conditions in two microvascular bed structures. The approach is new in three respects. First, segmentation error is judged by whether it changes the treatment
 decision at 0.80, not by a continuous sensitivity, and against the variability of repeat invasive FFR. Second, the
-same corrupted anatomy is solved under fixed, re-derived and tuned boundary conditions, with tuning by one global or
-one per-territory parameter, which isolates the effect of tuning, and topological errors are separated from caliber
-errors of measured inter-observer magnitude. Third, the test counts how often a model passes a perfusion check while
-its FFR is materially wrong, a failure of the check that, to our knowledge, has not been quantified, and a 3D
-computational fluid dynamics (CFD) case tests the reduced-order result. The results show what a perfusion check
-misses and which further checks a computed-FFR pipeline needs.
+same corrupted anatomy is solved under fixed, re-derived and tuned boundary conditions, which isolates the effect of
+tuning, and topological errors are separated from caliber errors of measured inter-observer magnitude. Third, the
+test counts how often a model passes a perfusion check while its FFR is materially wrong, a validation failure that,
+to our knowledge, has not been quantified, and a 3D computational fluid dynamics (CFD) case study confirms the
+mechanism. The results show what a perfusion check misses and which further checks a computed-FFR pipeline needs.
 
 % ---------------------------------------------------------------------------------------------------------------
 \section{Methods}
@@ -120,15 +117,15 @@ ImageCAS-X provides voxel-wise lumen masks, labeled centerlines and surfaces for
 ImageCAS dataset \cite{zeng2023,bransby2026,imagecasx_data}. We used its 160-scan test split, in which a second
 analyst re-annotated each scan. The two annotators agreed to a Dice similarity coefficient (DSC, the overlap of two
 masks) of 92.8\% and a 95th-percentile Hausdorff distance (HD95, the surface distance exceeded by 5\% of boundary
-points) of 2.46~mm \cite{bransby2026}. Each scan gives a left and a right coronary tree. The radius at each centerline point is the Euclidean distance from the point to
-the nearest background voxel of the mask.
+points) of 2.46~mm \cite{bransby2026}. Each scan gives a left and a right coronary tree. The radius at each centerline point is the distance from the point to the
+lumen boundary in the mask, less half a voxel.
 
 The dataset contains few lesions near the decision threshold, so we inserted one stenosis per instance into an
 otherwise unchanged tree. An instance is one lesion in one tree. A host vessel (left anterior descending, LAD; left circumflex, LCx; or right coronary artery, RCA) was eligible
 when image quality was at least adequate (2 on a 0--4 scale), the healthy reference radius $r_\mathrm{fit}$ at the
 lesion center (from a linear taper fit) was at least 1.0~mm, native narrowing was below 40\% diameter stenosis (DS),
 the measurement point 20~mm beyond the lesion lay on a vessel of radius at least 0.75~mm, and the FFR before
-insertion was at least 0.90. The lesion is an axisymmetric cosine narrowing (Supplementary Material),
+insertion was at least 0.90. The lesion is an axisymmetric cosine narrowing,
 \begin{equation}
 \begin{aligned}
 r'(s) &= \min\!\left(r,\; (1-w)\,r + w\,r_\mathrm{fit}\,(1-\mathrm{DS})\right),\\
@@ -399,7 +396,7 @@ resistances and with prescribed clean territory flows. Markers show 3D cross-sec
 difference 0.14~mm; throat area-equivalent radius 0.276 against 0.231~mm), and on the requested radius the
 reduced-order baseline was 0.761. Halving the cell size in the throat zone to 12.5~\textmu m changed the baseline
 FFR by 0.0019 and 0.0021 in two zone placements, against the error effect of 0.074, and a regenerated mesh at
-25~\textmu m reproduced the baseline value (Supplementary Material).
+25~\textmu m reproduced the baseline value.
 
 % ---------------------------------------------------------------------------------------------------------------
 \section{Discussion}

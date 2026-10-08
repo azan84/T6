@@ -1,0 +1,12 @@
+selected 150 instances from 104 trees (seed 20260918) -> sweep_test_selected.csv
+vessel       LAD  LCX  RCA  All
+band                           
+[0.65, 0.7)    9    8    8   25
+[0.7, 0.75)    9    8    8   25
+[0.75, 0.8)    8    9    8   25
+[0.8, 0.85)    8    9    8   25
+[0.85, 0.9)    8    9    8   25
+[0.9, 0.95)   13   12    0   25
+All           55   55   40  150
+
+shortfall vs target of 25 per band: none

@@ -1,0 +1,28 @@
+K_MURRAY = 562.0 s^-1 (scale 1.0)
+  10/150  80 rows  34s
+  20/150  160 rows  66s
+  SKIP 509_left discrete: slot not eligible under this bed
+  30/150  236 rows  98s
+  40/150  316 rows  144s
+  50/150  396 rows  181s
+  SKIP 272_left discrete: slot not eligible under this bed
+  60/150  472 rows  222s
+  70/150  552 rows  267s
+  80/150  632 rows  308s
+  90/150  712 rows  362s
+  100/150  792 rows  398s
+  110/150  872 rows  438s
+  120/150  952 rows  479s
+  130/150  1032 rows  516s
+  140/150  1112 rows  562s
+  150/150  1192 rows  599s
+
+wrote results/ablation-perterritory-2026-10-08.csv (1192 rows, 921 solved, 599s)
+discrete T1_missed_branch    n=  67  flips   1 ( 1.5%)  median |dFFR| 0.0034  median resid 0.0000  pass&wrong 15 (22.4%)  at_bound 2
+discrete T2_truncation       n=  97  flips   8 ( 8.2%)  median |dFFR| 0.0063  median resid 0.0000  pass&wrong 23 (23.7%)  at_bound 0
+discrete T3_stenosis_length  n= 143  flips   9 ( 6.3%)  median |dFFR| 0.0133  median resid 0.0000  pass&wrong 0 (0.0%)  at_bound 0
+discrete T4_taper            n= 143  flips  17 (11.9%)  median |dFFR| 0.0416  median resid 0.0000  pass&wrong 55 (38.5%)  at_bound 0
+leaky    T1_missed_branch    n=  71  flips   4 ( 5.6%)  median |dFFR| 0.0044  median resid 0.0000  pass&wrong 3 (4.2%)  at_bound 0
+leaky    T2_truncation       n= 100  flips   6 ( 6.0%)  median |dFFR| 0.0056  median resid 0.0000  pass&wrong 6 (6.0%)  at_bound 0
+leaky    T3_stenosis_length  n= 150  flips   4 ( 2.7%)  median |dFFR| 0.0109  median resid 0.0000  pass&wrong 0 (0.0%)  at_bound 0
+leaky    T4_taper            n= 150  flips   7 ( 4.7%)  median |dFFR| 0.0133  median resid 0.0000  pass&wrong 12 (8.0%)  at_bound 0
