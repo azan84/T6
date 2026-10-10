@@ -1,0 +1,27 @@
+taylor2013	10.1016/j.jacc.2012.11.083	0.93	AUTH_OK	Taylor	Computational Fluid Dynamics Applied to Cardiac Computed Tomography for Noninvasive Quanti
+norgaard2014	10.1016/j.jacc.2013.11.043	0.77	AUTH_OK	Nørgaard	Diagnostic Performance of Noninvasive Fractional Flow Reserve Derived From Coronary Comput
+tonino2009	10.1056/nejmoa0807611	1.00	AUTH_OK	Tonino	Fractional Flow Reserve versus Angiography for Guiding Percutaneous Coronary Intervention
+kim2010	10.1007/s10439-010-0083-6	1.00	AUTH_OK	Kim	Patient-Specific Modeling of Blood Flow and Pressure in Human Coronary Arteries
+itu2016	10.1152/japplphysiol.00752.2015	1.00	AUTH_OK	Itu	A machine-learning approach for computation of fractional flow reserve from coronary compu
+murray1926	10.1073/pnas.12.3.207	0.63	AUTH_OK	Murray	The Physiological Principle of Minimum Work
+choy2008	10.1152/japplphysiol.01261.2007	1.00	AUTH_OK	Choy	Scaling of myocardial mass to flow and morphometry of coronary arteries
+zeng2023	10.1016/j.compmedimag.2023.102287	0.99	AUTH_OK	Zeng	ImageCAS: A large-scale dataset and benchmark for coronary artery segmentation based on co
+gosling2020	10.1016/j.jbiomech.2020.109698	1.00	AUTH_OK	Gosling	Effect of side branch flow upon physiological indices in coronary artery disease
+fossan2026	10.1152/ajpheart.00442.2025	0.99	AUTH_OK	Fossan	Relevance of autoregulation in the diagnosis of coronary artery disease with CT-FFR
+gamage2022	10.3390/app12115573	0.98	AUTH_OK	Gamage	Fractional Flow Reserve (FFR) Estimation from OCT-Based CFD Simulations: Role of Side Bran
+tanade2022	10.3389/fmedt.2022.1034801	1.00	AUTH_OK	Tanade	Analysis identifying minimal governing parameters for clinically accurate in silico fracti
+fernandez2024	10.1002/cnm.3822	0.93	AUTH?	Fernández‐Martínez	Impact of minimal lumen segmentation uncertainty on patient‐specific coronary simulations:
+sankaran2015tmi	10.1109/tmi.2015.2445777	1.00	AUTH_OK	Sankaran	Fast Computation of Hemodynamic Sensitivity to Lumen Segmentation Uncertainty
+sankaran2015cmame	10.1016/j.cma.2015.08.014	1.00	AUTH_OK	Sankaran	Impact of geometric uncertainty on hemodynamic simulations using machine learning
+sankaran2016	10.1016/j.jbiomech.2016.01.002	1.00	AUTH_OK	Sankaran	Uncertainty quantification in coronary blood flow simulations: Impact of geometry, boundar
+colebank2019	10.1098/rsif.2019.0284	1.00	AUTH_OK	Colebank	Influence of image segmentation on one-dimensional fluid dynamics predictions in the mouse
+korte2023	10.1007/s13239-023-00675-1	1.00	AUTH_OK	Korte	Is Accurate Lumen Segmentation More Important than Outlet Boundary Condition in Image-Base
+menon2024	10.1038/s44303-024-00014-6	1.00	AUTH_OK	Menon	Personalized coronary and myocardial blood flow models incorporating CT perfusion imaging 
+dalmaso2025	10.1002/cnm.3898	1.00	AUTH_OK	Dalmaso	Uncertainty Quantification and Sensitivity Analysis for Non‐invasive Model‐Based Instantan
+johnson2015	10.1016/j.jcin.2015.01.039	0.99	AUTH_OK	Johnson	Repeatability of Fractional Flow Reserve Despite Variations in Systemic and Coronary Hemod
+petraco2013	10.1016/j.jcin.2012.10.014	0.48	AUTH_OK	Petraco	Fractional Flow Reserve–Guided Revascularization
+schindler2023	10.1016/j.jcmg.2022.12.015	0.77	AUTH_OK	Schindler	Myocardial Perfusion PET for the Detection and Reporting of Coronary Microvascular Dysfunc
+brown2018	10.1186/s12968-018-0462-y	1.00	AUTH_OK	Brown	Fully automated, inline quantification of myocardial blood flow with cardiovascular magnet
+young1973	10.1016/0021-9290(73)90099-7	0.98	AUTH_OK	Young	Flow characteristics in models of arterial stenoses — I. Steady flow
+fournier2021	10.4244/EIJ-D-20-00684	1.00	AUTH_OK	Fournier	Normal values of thermodilution-derived absolute coronary blood flow and microvascular res
+dodge1992	10.1161/01.CIR.86.1.232	1.00	AUTH_OK	Dodge	Lumen diameter of normal human coronary arteries. Influence of age, sex, anatomic variatio

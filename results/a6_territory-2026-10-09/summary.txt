@@ -1,0 +1,133 @@
+territories with a positive clean target, per instance (level 1 -> level 2):
+  discrete  n=97  L1 {2: 93, 3: 4}  L2 {2: 20, 3: 22, 4: 51, 5: 4}  L2 median 4  L2 incl. zero-target trunks {2: 20, 4: 22, 6: 51, 7: 4}
+  leaky     n=150  L1 {2: 142, 3: 8}  L2 {2: 30, 3: 3, 4: 30, 5: 24, 6: 55, 7: 8}  L2 median 5  L2 incl. zero-target trunks {2: 30, 4: 26, 6: 86, 7: 8}
+
+per bed x class x protocol: n, pass %, wrong %, passes-and-wrong %, P(wrong|pass) %, flip %
+  L1frozen discrete cal  C n= 194 pass 88 (82--92)   wrong 5 (2--9)      P&W   9 5 (2--9)      W|P   9/170 5 (3--10)     flip 8 (5--12)
+  L1frozen discrete cal  D n= 194 pass 100 (98--100) wrong 18 (13--24)   P&W  35 18 (13--24)   W|P  35/194 18 (13--24)   flip 11 (7--16)
+  L1frozen discrete topo C n= 104 pass 38 (29--47)   wrong 62 (52--70)   P&W  20 19 (13--28)   W|P  20/39  51 (36--66)   flip 19 (13--28)
+  L1frozen discrete topo D n= 104 pass 99 (95--100)  wrong 20 (14--29)   P&W  21 20 (14--29)   W|P  21/103 20 (14--29)   flip 8 (4--14)
+  L1frozen leaky    cal  C n= 300 pass 98 (96--99)   wrong 12 (9--17)    P&W  37 12 (9--17)    W|P  37/294 13 (9--17)    flip 4 (2--7)
+  L1frozen leaky    cal  D n= 300 pass 100 (99--100) wrong 4 (2--7)      P&W  12 4 (2--7)      W|P  12/300 4 (2--7)      flip 4 (2--6)
+  L1frozen leaky    topo C n= 171 pass 90 (85--94)   wrong 12 (8--18)    P&W  14 8 (5--13)     W|P  14/154 9 (5--15)     flip 8 (5--13)
+  L1frozen leaky    topo D n= 171 pass 100 (98--100) wrong 5 (3--10)     P&W   9 5 (3--10)     W|P   9/171 5 (3--10)     flip 6 (3--10)
+  L1drop   discrete cal  C n= 194 pass 88 (82--92)   wrong 5 (2--9)      P&W   9 5 (2--9)      W|P   9/170 5 (3--10)     flip 8 (5--12)
+  L1drop   discrete cal  D n= 194 pass 100 (98--100) wrong 18 (13--24)   P&W  35 18 (13--24)   W|P  35/194 18 (13--24)   flip 11 (7--16)
+  L1drop   discrete topo C n= 104 pass 38 (29--47)   wrong 62 (52--70)   P&W  20 19 (13--28)   W|P  20/39  51 (36--66)   flip 19 (13--28)
+  L1drop   discrete topo D n= 104 pass 99 (95--100)  wrong 20 (14--29)   P&W  21 20 (14--29)   W|P  21/103 20 (14--29)   flip 8 (4--14)
+  L1drop   leaky    cal  C n= 300 pass 98 (96--99)   wrong 12 (9--17)    P&W  37 12 (9--17)    W|P  37/294 13 (9--17)    flip 4 (2--7)
+  L1drop   leaky    cal  D n= 300 pass 100 (99--100) wrong 4 (2--7)      P&W  12 4 (2--7)      W|P  12/300 4 (2--7)      flip 4 (2--6)
+  L1drop   leaky    topo C n= 171 pass 90 (85--94)   wrong 12 (8--18)    P&W  14 8 (5--13)     W|P  14/154 9 (5--15)     flip 8 (5--13)
+  L1drop   leaky    topo D n= 171 pass 100 (98--100) wrong 5 (3--10)     P&W   9 5 (3--10)     W|P   9/171 5 (3--10)     flip 6 (3--10)
+  L1keep   discrete cal  C n= 194 pass 88 (82--92)   wrong 5 (2--9)      P&W   9 5 (2--9)      W|P   9/170 5 (3--10)     flip 8 (5--12)
+  L1keep   discrete cal  D n= 194 pass 100 (98--100) wrong 18 (13--24)   P&W  35 18 (13--24)   W|P  35/194 18 (13--24)   flip 11 (7--16)
+  L1keep   discrete topo C n= 104 pass 38 (29--47)   wrong 62 (52--70)   P&W  20 19 (13--28)   W|P  20/39  51 (36--66)   flip 19 (13--28)
+  L1keep   discrete topo D n= 104 pass 99 (95--100)  wrong 20 (14--29)   P&W  21 20 (14--29)   W|P  21/103 20 (14--29)   flip 8 (4--14)
+  L1keep   leaky    cal  C n= 300 pass 98 (96--99)   wrong 12 (9--17)    P&W  37 12 (9--17)    W|P  37/294 13 (9--17)    flip 4 (2--7)
+  L1keep   leaky    cal  D n= 300 pass 100 (99--100) wrong 4 (2--7)      P&W  12 4 (2--7)      W|P  12/300 4 (2--7)      flip 4 (2--6)
+  L1keep   leaky    topo C n= 171 pass 90 (85--94)   wrong 12 (8--18)    P&W  14 8 (5--13)     W|P  14/154 9 (5--15)     flip 8 (5--13)
+  L1keep   leaky    topo D n= 171 pass 100 (98--100) wrong 5 (3--10)     P&W   9 5 (3--10)     W|P   9/171 5 (3--10)     flip 6 (3--10)
+  L2keep   discrete cal  C n= 194 pass 89 (83--92)   wrong 5 (3--9)      P&W  10 5 (3--9)      W|P  10/172 6 (3--10)     flip 8 (5--12)
+  L2keep   discrete cal  D n= 194 pass 100 (98--100) wrong 23 (18--30)   P&W  45 23 (18--30)   W|P  45/194 23 (18--30)   flip 11 (7--16)
+  L2keep   discrete topo C n= 104 pass 23 (16--32)   wrong 63 (54--72)   P&W   7 7 (3--13)     W|P   7/24  29 (15--49)   flip 21 (14--30)
+  L2keep   discrete topo D n= 104 pass 71 (62--79)   wrong 26 (18--35)   P&W   3 3 (1--8)      W|P   3/74  4 (1--11)     flip 11 (6--18)
+  L2keep   leaky    cal  C n= 300 pass 81 (76--85)   wrong 14 (11--19)   P&W  37 12 (9--17)    W|P  37/243 15 (11--20)   flip 5 (3--8)
+  L2keep   leaky    cal  D n= 300 pass 100 (99--100) wrong 9 (7--13)     P&W  28 9 (7--13)     W|P  28/300 9 (7--13)     flip 4 (3--7)
+  L2keep   leaky    topo C n= 171 pass 58 (50--65)   wrong 18 (13--25)   P&W   8 5 (2--9)      W|P   8/99  8 (4--15)     flip 11 (7--16)
+  L2keep   leaky    topo D n= 171 pass 74 (67--80)   wrong 13 (9--19)    P&W   4 2 (1--6)      W|P   4/126 3 (1--8)      flip 9 (5--14)
+  L2drop   discrete cal  C n= 194 pass 89 (83--92)   wrong 5 (3--9)      P&W  10 5 (3--9)      W|P  10/172 6 (3--10)     flip 8 (5--12)
+  L2drop   discrete cal  D n= 194 pass 100 (98--100) wrong 23 (18--30)   P&W  45 23 (18--30)   W|P  45/194 23 (18--30)   flip 11 (7--16)
+  L2drop   discrete topo C n= 102 pass 47 (38--57)   wrong 63 (53--72)   P&W  27 26 (19--36)   W|P  27/48  56 (42--69)   flip 21 (14--29)
+  L2drop   discrete topo D n= 102 pass 100 (96--100) wrong 26 (19--36)   P&W  27 26 (19--36)   W|P  27/102 26 (19--36)   flip 10 (5--17)
+  L2drop   leaky    cal  C n= 300 pass 81 (76--85)   wrong 14 (11--19)   P&W  37 12 (9--17)    W|P  37/243 15 (11--20)   flip 5 (3--8)
+  L2drop   leaky    cal  D n= 300 pass 100 (99--100) wrong 9 (7--13)     P&W  28 9 (7--13)     W|P  28/300 9 (7--13)     flip 4 (3--7)
+  L2drop   leaky    topo C n= 171 pass 72 (65--78)   wrong 18 (13--25)   P&W  11 6 (4--11)     W|P  11/123 9 (5--15)     flip 11 (7--16)
+  L2drop   leaky    topo D n= 171 pass 100 (98--100) wrong 13 (9--19)    P&W  22 13 (9--19)    W|P  22/171 13 (9--19)    flip 9 (5--14)
+
+paired against L1frozen (exact McNemar): n paired, k frozen, k new, +new/-lost, p
+ L1drop: rows only in one run 0; max|ffr diff| 0; max|resid diff| 0
+   discrete cal  C pw    n= 194   9 ->   9 (+0/-0) p=1
+   discrete cal  C flip  n= 194  15 ->  15 (+0/-0) p=1
+   discrete cal  D pw    n= 194  35 ->  35 (+0/-0) p=1
+   discrete cal  D flip  n= 194  21 ->  21 (+0/-0) p=1
+   discrete topo C pw    n= 104  20 ->  20 (+0/-0) p=1
+   discrete topo C flip  n= 104  20 ->  20 (+0/-0) p=1
+   discrete topo D pw    n= 104  21 ->  21 (+0/-0) p=1
+   discrete topo D flip  n= 104   8 ->   8 (+0/-0) p=1
+   leaky    cal  C pw    n= 300  37 ->  37 (+0/-0) p=1
+   leaky    cal  C flip  n= 300  12 ->  12 (+0/-0) p=1
+   leaky    cal  D pw    n= 300  12 ->  12 (+0/-0) p=1
+   leaky    cal  D flip  n= 300  11 ->  11 (+0/-0) p=1
+   leaky    topo C pw    n= 171  14 ->  14 (+0/-0) p=1
+   leaky    topo C flip  n= 171  14 ->  14 (+0/-0) p=1
+   leaky    topo D pw    n= 171   9 ->   9 (+0/-0) p=1
+   leaky    topo D flip  n= 171  10 ->  10 (+0/-0) p=1
+ L1keep: rows only in one run 0; max|ffr diff| 0; max|resid diff| 0
+   discrete cal  C pw    n= 194   9 ->   9 (+0/-0) p=1
+   discrete cal  C flip  n= 194  15 ->  15 (+0/-0) p=1
+   discrete cal  D pw    n= 194  35 ->  35 (+0/-0) p=1
+   discrete cal  D flip  n= 194  21 ->  21 (+0/-0) p=1
+   discrete topo C pw    n= 104  20 ->  20 (+0/-0) p=1
+   discrete topo C flip  n= 104  20 ->  20 (+0/-0) p=1
+   discrete topo D pw    n= 104  21 ->  21 (+0/-0) p=1
+   discrete topo D flip  n= 104   8 ->   8 (+0/-0) p=1
+   leaky    cal  C pw    n= 300  37 ->  37 (+0/-0) p=1
+   leaky    cal  C flip  n= 300  12 ->  12 (+0/-0) p=1
+   leaky    cal  D pw    n= 300  12 ->  12 (+0/-0) p=1
+   leaky    cal  D flip  n= 300  11 ->  11 (+0/-0) p=1
+   leaky    topo C pw    n= 171  14 ->  14 (+0/-0) p=1
+   leaky    topo C flip  n= 171  14 ->  14 (+0/-0) p=1
+   leaky    topo D pw    n= 171   9 ->   9 (+0/-0) p=1
+   leaky    topo D flip  n= 171  10 ->  10 (+0/-0) p=1
+ L2keep: rows only in one run 0; max|ffr diff| 0.506; max|resid diff| 0.816
+   discrete cal  C pw    n= 194   9 ->  10 (+2/-1) p=1
+   discrete cal  C flip  n= 194  15 ->  15 (+0/-0) p=1
+   discrete cal  D pw    n= 194  35 ->  45 (+10/-0) p=0.00195
+   discrete cal  D flip  n= 194  21 ->  21 (+0/-0) p=1
+   discrete topo C pw    n= 104  20 ->   7 (+0/-13) p=0.000244
+   discrete topo C flip  n= 104  20 ->  22 (+3/-1) p=0.625
+   discrete topo D pw    n= 104  21 ->   3 (+0/-18) p=7.63e-06
+   discrete topo D flip  n= 104   8 ->  11 (+10/-7) p=0.629
+   leaky    cal  C pw    n= 300  37 ->  37 (+0/-0) p=1
+   leaky    cal  C flip  n= 300  12 ->  16 (+4/-0) p=0.125
+   leaky    cal  D pw    n= 300  12 ->  28 (+17/-1) p=0.000145
+   leaky    cal  D flip  n= 300  11 ->  13 (+3/-1) p=0.625
+   leaky    topo C pw    n= 171  14 ->   8 (+1/-7) p=0.0703
+   leaky    topo C flip  n= 171  14 ->  18 (+4/-0) p=0.125
+   leaky    topo D pw    n= 171   9 ->   4 (+2/-7) p=0.18
+   leaky    topo D flip  n= 171  10 ->  15 (+9/-4) p=0.267
+ L2drop: rows only in one run 4; max|ffr diff| 0.404; max|resid diff| 0.691
+   discrete cal  C pw    n= 194   9 ->  10 (+2/-1) p=1
+   discrete cal  C flip  n= 194  15 ->  15 (+0/-0) p=1
+   discrete cal  D pw    n= 194  35 ->  45 (+10/-0) p=0.00195
+   discrete cal  D flip  n= 194  21 ->  21 (+0/-0) p=1
+   discrete topo C pw    n= 102  20 ->  27 (+18/-11) p=0.265
+   discrete topo C flip  n= 102  20 ->  21 (+2/-1) p=1
+   discrete topo D pw    n= 102  21 ->  27 (+24/-18) p=0.441
+   discrete topo D flip  n= 102   8 ->  10 (+9/-7) p=0.804
+   leaky    cal  C pw    n= 300  37 ->  37 (+0/-0) p=1
+   leaky    cal  C flip  n= 300  12 ->  16 (+4/-0) p=0.125
+   leaky    cal  D pw    n= 300  12 ->  28 (+17/-1) p=0.000145
+   leaky    cal  D flip  n= 300  11 ->  13 (+3/-1) p=0.625
+   leaky    topo C pw    n= 171  14 ->  11 (+3/-6) p=0.508
+   leaky    topo C flip  n= 171  14 ->  18 (+4/-0) p=0.125
+   leaky    topo D pw    n= 171   9 ->  22 (+19/-6) p=0.0146
+   leaky    topo D flip  n= 171  10 ->  15 (+9/-4) p=0.267
+
+L2keep: rows with >= 1 unperfused territory (n_empty > 0)
+  discrete T1_missed_branch    C n=  44 with empty   23  pass among those 0
+  discrete T1_missed_branch    D n=  44 with empty   23  pass among those 0
+  discrete T2_truncation       C n=  60 with empty    7  pass among those 0
+  discrete T2_truncation       D n=  60 with empty    7  pass among those 0
+  discrete T3_stenosis_length  C n=  97 with empty    0  pass among those 0
+  discrete T3_stenosis_length  D n=  97 with empty    0  pass among those 0
+  discrete T4_taper            C n=  97 with empty    0  pass among those 0
+  discrete T4_taper            D n=  97 with empty    0  pass among those 0
+  leaky    T1_missed_branch    C n=  71 with empty   36  pass among those 0
+  leaky    T1_missed_branch    D n=  71 with empty   36  pass among those 0
+  leaky    T2_truncation       C n= 100 with empty    9  pass among those 0
+  leaky    T2_truncation       D n= 100 with empty    9  pass among those 0
+  leaky    T3_stenosis_length  C n= 150 with empty    0  pass among those 0
+  leaky    T3_stenosis_length  D n= 150 with empty    0  pass among those 0
+  leaky    T4_taper            C n= 150 with empty    0  pass among those 0
+  leaky    T4_taper            D n= 150 with empty    0  pass among those 0

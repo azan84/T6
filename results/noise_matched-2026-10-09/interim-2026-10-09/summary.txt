@@ -1,0 +1,47 @@
+rows 18586; draws per model-protocol: min 1, max 2, median 2; instances per bed: {'discrete': 97, 'leaky': 150}
+
+passes-and-wrong, % of models (nominal = noise-free targets; matched = averaged over the recorded draws; intervals = patient-level cluster bootstrap)
+     bed    cls       protocol  n_models  nominal_pw  matched_pw  matched_pw_lo  matched_pw_hi  excess_floor  excess_floor_lo  excess_floor_hi  excess_B  excess_B_lo  excess_B_hi  matched_flip  matched_pass  matched_wrong
+discrete    cal        A_fixed       194         3.1         1.5            0.5            3.0           1.5              0.3              3.0       1.5          0.3          3.1          10.3          50.8            3.1
+discrete    cal    B_rederived       194         0.0         0.0            0.0            0.0           0.0              0.0              0.0       0.0          0.0          0.0           7.7          47.9            0.0
+discrete    cal  C_flowmatched       194         4.6         9.8            6.4           13.7           5.2              1.5              9.0       9.8          6.6         13.7           9.8          71.9           11.6
+discrete    cal D_perterritory       194        18.0        26.5           21.3           31.6          11.6              7.0             16.0      26.5         21.4         31.6          12.1         100.0           26.5
+discrete  floor        A_fixed        97         0.0         0.0            0.0            0.0           NaN              NaN              NaN       NaN          NaN          NaN           0.0          52.6            0.0
+discrete  floor    B_rederived        97         0.0         0.0            0.0            0.0           NaN              NaN              NaN       NaN          NaN          NaN           0.0          52.6            0.0
+discrete  floor  C_flowmatched        97         0.0         4.6            2.1            7.5           NaN              NaN              NaN       NaN          NaN          NaN           8.2          74.7            5.2
+discrete  floor D_perterritory        97         0.0        14.9           10.4           19.9           NaN              NaN              NaN       NaN          NaN          NaN           8.2         100.0           14.9
+discrete throat        A_fixed       194        28.9        17.0           13.3           20.9          17.0             12.9             20.9       0.0          0.0          0.0          29.9          25.3           82.5
+discrete throat    B_rederived       194        28.9        17.0           13.0           20.8          17.0             13.2             21.0       0.0          0.0          0.0          29.9          25.3           82.5
+discrete throat  C_flowmatched       192        57.0        42.4           36.2           49.0          38.0             31.7             44.5      25.3         20.1         30.5          37.2          55.2           83.9
+discrete throat D_perterritory       194        80.4        78.4           71.6           84.8          63.4             55.7             70.3      61.3         55.2         67.4          38.1          95.4           83.0
+discrete   topo        A_fixed       137        12.4        12.0            7.4           17.2          12.0              7.3             16.9       7.3          1.9         13.5          32.8          13.9           86.9
+discrete   topo    B_rederived       137         1.5         4.7            2.0            8.2           4.7              2.0              8.0       0.0          0.0          0.0          15.3          14.2           43.1
+discrete   topo  C_flowmatched       104        19.2        20.7           13.9           27.7          18.3             11.2             25.2      14.4          8.3         20.5          21.6          34.6           60.1
+discrete   topo D_perterritory       104        20.2        37.5           28.4           46.3          17.3              9.7             25.0      31.2         22.3         39.8          16.3          99.5           37.5
+   leaky    cal        A_fixed       300         3.3         1.5            0.3            3.1           1.5              0.3              2.9       1.5          0.3          3.0           5.7          45.8            3.3
+   leaky    cal    B_rederived       300         0.0         0.0            0.0            0.0           0.0              0.0              0.0       0.0          0.0          0.0           1.3          38.0            0.0
+   leaky    cal  C_flowmatched       300        12.3        14.2           10.8           18.0          10.0              7.5             12.7      14.2         10.6         18.2           8.7          70.5           17.2
+   leaky    cal D_perterritory       300         4.0        14.3           10.8           18.0           5.3              2.3              8.4      14.3         10.6         17.9           7.0         100.0           14.3
+   leaky  floor        A_fixed       150         0.0         0.0            0.0            0.0           NaN              NaN              NaN       NaN          NaN          NaN           0.0          48.0            0.0
+   leaky  floor    B_rederived       150         0.0         0.0            0.0            0.0           NaN              NaN              NaN       NaN          NaN          NaN           0.0          48.0            0.0
+   leaky  floor  C_flowmatched       150         0.0         4.3            2.2            6.9           NaN              NaN              NaN       NaN          NaN          NaN           8.0          71.0            5.7
+   leaky  floor D_perterritory       150         0.0         9.0            5.5           13.2           NaN              NaN              NaN       NaN          NaN          NaN           5.0         100.0            9.0
+   leaky throat        A_fixed       300        42.3        22.2           18.6           25.9          22.2             18.5             26.4       0.0          0.0          0.0          36.0          31.8           79.3
+   leaky throat    B_rederived       300        42.3        22.2           18.6           26.1          22.2             18.6             26.0       0.0          0.0          0.0          36.0          31.8           79.3
+   leaky throat  C_flowmatched       299        68.6        48.8           43.2           54.6          45.0             38.6             51.2      26.6         22.1         31.5          38.0          61.9           80.3
+   leaky throat D_perterritory       300        81.0        79.7           74.3           84.5          70.7             64.7             76.0      57.5         52.6         62.4          38.0          99.5           80.2
+   leaky   topo        A_fixed       218        19.7        14.7           10.6           19.4          14.7             10.7             19.2      11.7          7.3         15.9          28.0          31.0           56.9
+   leaky   topo    B_rederived       218         4.6         3.0            1.0            5.3           3.0              0.9              5.4       0.0          0.0          0.0           5.5          38.3            6.4
+   leaky   topo  C_flowmatched       171         8.2         9.4            5.4           14.0           7.9              4.0             12.1       5.6          2.2          9.4          13.5          59.6           16.4
+   leaky   topo D_perterritory       171         5.3        19.9           14.5           25.8           6.7              3.3             10.5      16.1         11.2         21.4          10.5         100.0           19.9
+
+detectors against correct anatomy on the same draws
+     bed positives           detector  n_pos  n_pos_models  n_neg   auc  auc_lo  auc_hi  flagged_at_10pct  floor_flagged_at_10pct
+discrete      topo pretuning_residual    274           137    194 0.834   0.792   0.876            85.766                  47.423
+discrete       cal pretuning_residual    388           194    194 0.542   0.516   0.567            52.062                  47.423
+discrete    throat pretuning_residual    388           194    194 0.721   0.686   0.758            74.742                  47.423
+discrete      topo  abs_ln_C_vs_start    208           104    194 0.601   0.551   0.650               NaN                     NaN
+   leaky      topo pretuning_residual    436           218    300 0.572   0.541   0.602            61.697                  52.000
+   leaky       cal pretuning_residual    600           300    300 0.584   0.564   0.604            62.000                  52.000
+   leaky    throat pretuning_residual    600           300    300 0.639   0.611   0.668            68.167                  52.000
+   leaky      topo  abs_ln_C_vs_start    342           171    299 0.483   0.451   0.516               NaN                     NaN

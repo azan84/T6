@@ -1,0 +1,5 @@
+insertions 2384, clipped 0
+realised throat DS differs from applied DS by > 1e-9 in 0 insertions
+in-plane spacing (mm) per scan: {'count': 93.0, 'mean': 0.3568, 'std': 0.0309, 'min': 0.2949, '25%': 0.3398, '50%': 0.3516, '75%': 0.373, 'max': 0.4492}
+voxel-variant |dDS| (pp) per instance-bed: {'count': 298.0, 'mean': 7.22, 'std': 1.19, 'min': 4.46, '25%': 6.41, '50%': 7.26, '75%': 7.84, 'max': 9.82}
+throat radius change (mm) = spacing/4: median 0.0879

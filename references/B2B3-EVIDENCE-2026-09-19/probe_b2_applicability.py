@@ -6,7 +6,7 @@ import numpy as np, pandas as pd
 sys.path.insert(0, "code")
 from severity_sweep import load, plan, HOSTS, RUNOFF
 from error_types import T2_KEEP_BEYOND
-ROOT = Path("/Users/mzpi/Datasets/imagecas-x/ImageCAS-X_dataset")
+ROOT = Path("/Users/mzpi/Documents/Datasets/imagecas-x/ImageCAS-X_dataset")
 coh = pd.read_csv("protocol/COHORT-FROZEN-2026-09-18.csv").sort_values(["scan", "side"])
 rows = []
 for bed in ("leaky", "discrete"):

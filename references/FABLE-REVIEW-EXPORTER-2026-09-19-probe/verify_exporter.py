@@ -155,7 +155,7 @@ for n in [x for x in names if "baseline" in x or "T1" in x or "T4" in x]:
 # tangents: compare shipped normals to the last single edge
 section("tangents (outlets): cos(shipped normal, last edge)")
 import severity_sweep as ss
-root = Path.home() / "Datasets" / "imagecas-x" / "ImageCAS-X_dataset"
+root = Path.home() / "Documents" / "Datasets" / "imagecas-x" / "ImageCAS-X_dataset"
 for n in [x for x in names if "baseline" in x and x.startswith("14_")]:
     d = pk[n]; o = pd.read_csv(d / "outlets.csv"); t = load(root, 14, "left", "discrete")
     for r in o.itertuples():

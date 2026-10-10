@@ -1,0 +1,23 @@
+27c27
+< from the frozen cohort list, and every table and figure is generated from its output. The 3D case study is a separate
+---
+> from the cohort list, and every table and figure is generated from its output. The 3D case study is a separate
+29a30,37
+> 
+> Cohort selection (step 3) shuffles the 6\,944 instances with a fixed seed (20260918) and fills the six bands of
+> leaky-bed baseline FFR scarcest first, rotating the host vessel type and taking at most two instances per tree and
+> one per host vessel and band. Each host vessel keeps only the lesion positions and lengths that meet the eligibility
+> criteria, so it contributes fewer than 32 instances when a criterion fails at one position. The reduced-order solve (step 7)
+> starts from Poiseuille flow, averages successive flow iterates with a relaxation factor of 0.5, and stops when the
+> largest flow change falls below $10^{-8}$ of the largest flow or after 200 iterations; a solve that reaches the
+> cap is recorded as not converged, and none did.
+42,43c50,51
+<   most two per tree; 150 instances, list frozen and hashed.\modname{severity\_sweep.py}}};
+< \node[box] (bed) at (3*\px,0) {\parbox[t][2.32cm][t]{3.15cm}{\raggedright \textbf{4 Bed structures.} Leaky (150) and discrete (97); $C$ calibrated on the
+---
+>   most two per tree; 150 instances.\modname{severity\_sweep.py}}};
+> \node[box] (bed) at (3*\px,0) {\parbox[t][2.32cm][t]{3.15cm}{\raggedright \textbf{4 Bed structures.} Leaky (150) and discrete (97); $C_\mathrm{b}$ calibrated on the
+228c236
+< \parbox{0.95\textwidth}{\footnotesize Scale 1 is the primary analysis ($k = 562$~s$^{-1}$, frozen cohort). Scales 2 and 3 use
+---
+> \parbox{0.95\textwidth}{\footnotesize Scale 1 is the primary analysis ($k = 562$~s$^{-1}$, primary cohort). Scales 2 and 3 use

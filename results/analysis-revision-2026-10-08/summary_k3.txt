@@ -1,0 +1,81 @@
+instances per bed: {'discrete': 17, 'leaky': 150}
+
+bed      err                 proto              n  flip %          pass&wrong %     med|dFFR|
+discrete T1_missed_branch    A_fixed           10  0 (0--28)       0 (0--28)           0.0517
+discrete T1_missed_branch    B_rederived        8  0 (0--32)       0 (0--32)           0.0166
+discrete T1_missed_branch    C_flowmatched      6  0 (0--39)       0 (0--39)           0.0300
+discrete T1_missed_branch    D_perterritory     6  0 (0--39)       0 (0--39)           0.0052
+discrete T2_truncation       A_fixed           13  31 (13--58)     8 (1--33)           0.1139
+discrete T2_truncation       B_rederived       17  18 (6--41)      6 (1--27)           0.0186
+discrete T2_truncation       C_flowmatched     13  8 (1--33)       8 (1--33)           0.0162
+discrete T2_truncation       D_perterritory    13  8 (1--33)       8 (1--33)           0.0060
+discrete T3_stenosis_length  A_fixed           17  0 (0--18)       0 (0--18)           0.0039
+discrete T3_stenosis_length  B_rederived       17  0 (0--18)       0 (0--18)           0.0039
+discrete T3_stenosis_length  C_flowmatched     17  0 (0--18)       0 (0--18)           0.0045
+discrete T3_stenosis_length  D_perterritory    17  0 (0--18)       0 (0--18)           0.0047
+discrete T4_taper            A_fixed           17  6 (1--27)       0 (0--18)           0.0144
+discrete T4_taper            B_rederived       17  0 (0--18)       0 (0--18)           0.0100
+discrete T4_taper            C_flowmatched     17  6 (1--27)       12 (3--34)          0.0105
+discrete T4_taper            D_perterritory    17  12 (3--34)      6 (1--27)           0.0224
+leaky    T1_missed_branch    A_fixed          120  21 (15--29)     13 (8--21)          0.0428
+leaky    T1_missed_branch    B_rederived      120  5 (2--10)       6 (3--12)           0.0078
+leaky    T1_missed_branch    C_flowmatched     85  6 (3--13)       13 (7--22)          0.0186
+leaky    T1_missed_branch    D_perterritory    85  5 (2--11)       4 (1--10)           0.0069
+leaky    T2_truncation       A_fixed          142  44 (36--52)     17 (12--24)         0.1078
+leaky    T2_truncation       B_rederived      145  6 (3--11)       2 (1--6)            0.0085
+leaky    T2_truncation       C_flowmatched    105  7 (3--13)       3 (1--8)            0.0087
+leaky    T2_truncation       D_perterritory   105  8 (4--14)       5 (2--11)           0.0057
+leaky    T3_stenosis_length  A_fixed          150  3 (1--7)        0 (0--2)            0.0056
+leaky    T3_stenosis_length  B_rederived      150  3 (1--7)        0 (0--2)            0.0056
+leaky    T3_stenosis_length  C_flowmatched    150  3 (1--7)        1 (0--4)            0.0068
+leaky    T3_stenosis_length  D_perterritory   150  3 (1--8)        0 (0--2)            0.0068
+leaky    T4_taper            A_fixed          150  8 (5--13)       0 (0--2)            0.0227
+leaky    T4_taper            B_rederived      150  1 (0--5)        1 (0--4)            0.0041
+leaky    T4_taper            C_flowmatched    150  11 (7--17)      23 (17--31)         0.0065
+leaky    T4_taper            D_perterritory   150  5 (2--9)        5 (3--10)           0.0094
+
+class level
+  discrete cal  A_fixed          n=  34 flip 3 (1--15)      pass&wrong 0 (0--10)
+  discrete cal  B_rederived      n=  34 flip 0 (0--10)      pass&wrong 0 (0--10)
+  discrete cal  C_flowmatched    n=  34 flip 3 (1--15)      pass&wrong 6 (2--19)
+  discrete cal  D_perterritory   n=  34 flip 6 (2--19)      pass&wrong 3 (1--15)
+  discrete topo A_fixed          n=  23 flip 17 (7--37)     pass&wrong 4 (1--21)
+  discrete topo B_rederived      n=  25 flip 12 (4--30)     pass&wrong 4 (1--20)
+  discrete topo C_flowmatched    n=  19 flip 5 (1--25)      pass&wrong 5 (1--25)
+  discrete topo D_perterritory   n=  19 flip 5 (1--25)      pass&wrong 5 (1--25)
+  leaky    cal  A_fixed          n= 300 flip 5 (3--8)       pass&wrong 0 (0--1)
+  leaky    cal  B_rederived      n= 300 flip 2 (1--4)       pass&wrong 0 (0--2)
+  leaky    cal  C_flowmatched    n= 300 flip 7 (5--10)      pass&wrong 12 (9--16)
+  leaky    cal  D_perterritory   n= 300 flip 4 (2--7)       pass&wrong 3 (1--5)
+  leaky    topo A_fixed          n= 262 flip 33 (28--39)    pass&wrong 15 (11--20)
+  leaky    topo B_rederived      n= 265 flip 5 (3--9)       pass&wrong 4 (2--7)
+  leaky    topo C_flowmatched    n= 190 flip 6 (4--11)      pass&wrong 7 (4--12)
+  leaky    topo D_perterritory   n= 190 flip 6 (4--11)      pass&wrong 4 (2--8)
+
+paired passes-and-wrong (exact McNemar): n, k_first, k_second, +new, -lost, p
+  discrete topo C vs A: n=19 1->1 (+1/-1) p=1
+  discrete topo C vs B: n=19 1->1 (+0/-0) p=1
+  discrete topo D vs B: n=19 1->1 (+0/-0) p=1
+  discrete topo D vs C: n=19 1->1 (+0/-0) p=1
+  discrete cal  C vs A: n=34 0->2 (+2/-0) p=0.5
+  discrete cal  C vs B: n=34 0->2 (+2/-0) p=0.5
+  discrete cal  D vs B: n=34 0->1 (+1/-0) p=1
+  discrete cal  D vs C: n=34 2->1 (+1/-2) p=1
+  leaky    topo C vs A: n=190 40->14 (+3/-29) p=2.56e-06
+  leaky    topo C vs B: n=190 10->14 (+4/-0) p=0.125
+  leaky    topo D vs B: n=190 10->8 (+2/-4) p=0.688
+  leaky    topo D vs C: n=190 14->8 (+2/-8) p=0.109
+  leaky    cal  C vs A: n=300 0->36 (+36/-0) p=2.91e-11
+  leaky    cal  C vs B: n=300 1->36 (+35/-0) p=5.82e-11
+  leaky    cal  D vs B: n=300 1->8 (+7/-0) p=0.0156
+  leaky    cal  D vs C: n=300 36->8 (+5/-33) p=4.26e-06
+
+topological vs caliber flips under A (paired sign test on per-instance class proportions)
+  discrete A_fixed          topo>cal in 4/5 instances, p=0.375
+  discrete B_rederived      topo>cal in 3/3 instances, p=0.25
+  discrete C_flowmatched    topo>cal in 1/1 instances, p=1
+  discrete D_perterritory   topo>cal in 1/2 instances, p=1
+  leaky    A_fixed          topo>cal in 65/77 instances, p=5.92e-10
+  leaky    B_rederived      topo>cal in 8/12 instances, p=0.388
+  leaky    C_flowmatched    topo>cal in 7/14 instances, p=1
+  leaky    D_perterritory   topo>cal in 6/11 instances, p=1

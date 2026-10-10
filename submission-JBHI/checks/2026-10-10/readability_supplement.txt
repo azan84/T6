@@ -1,0 +1,29 @@
+file: supplement.tex
+
+  13 paragraphs, 48 sentences
+  sentence words: mean 22.7, median 24.0, p90 33, longest 40
+
+  sentences over the limit: 0
+  dense clause chains: 0
+  long paragraphs: 0
+  consecutive paragraphs opening alike: 0
+  paragraphs opening on a pronoun: 0
+  house-style hits: 16
+     - section=Exclusions | issue=semicolon
+       A Protocol C fit at its search bound is a failure (two half-voxel throat-error models; 10 of 4,940 floor draws
+     - section=Exclusions | issue=semicolon
+       Of these 64, 43 failed the check and 21 passed while materially wrong; excluding them would raise throat passe
+     - section=Exclusions | issue=semicolon
+       Under Protocol A a vessel break can remove every outflow node (36 discrete, 2 leaky); counted as reclassificat
+     - section=Hyperemic Demand | issue=semicolon
+       The ordering of topological against caliber errors, and of Protocols B and C against Protocol A, was unchanged
+     - section=Grey Zone | issue=semicolon
+       6 sec:grey Beyond-zone reclassifications end outside 0.75--0.85 (Table 1); 30 % (discrete) and 33 % (leaky) of
+     - section=Caliber Error at the Stenosis Throat | issue=semicolon
+       6 sec:throat The throat error (T5) re-inserts each lesion with its throat diameter changed by half the in-plan
+     - section=Caliber Error at the Stenosis Throat | issue=semicolon
+       Protocol C fits at the search bound were excluded (2 at half a voxel, 8 at x points); bound fits under Protoco
+     - section=Territory Granularity | issue=semicolon
+       6 sec:granularity Protocols C and D were repeated with each main-branch territory divided again at its first b
+     ... 8 more (use --json)
+  mechanical defects: 0

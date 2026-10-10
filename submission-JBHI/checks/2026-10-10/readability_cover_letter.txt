@@ -1,0 +1,24 @@
+file: cover_letter.tex
+
+  9 paragraphs, 32 sentences
+  sentence words: mean 22.7, median 18.5, p90 41, longest 58
+
+  sentences over the limit: 4
+     - section=front matter | words=58
+       letter geometry fontenc lmodern url enumitem same Mohd-Zulhilmi Ismadi of Mechanical Engineering, School of En
+     - section=front matter | words=52
+       We inserted 150 controlled stenoses into 108 coronary trees from a public CT angiography dataset, applied five
+     - section=front matter | words=55
+       With fixed boundary conditions, a missed side branch, a vessel break or a half-voxel error in throat diameter 
+     - section=front matter | words=48
+       With error models and correct anatomy tuned to the same noisy perfusion targets, a check stricter than measure
+  dense clause chains: 1
+     - section=front matter | commas=10
+       letter geometry fontenc lmodern url enumitem same Mohd-Zulhilmi Ismadi of Mechanical Engineering, School of En
+  long paragraphs: 0
+  consecutive paragraphs opening alike: 0
+  paragraphs opening on a pronoun: 0
+  house-style hits: 1
+     - section=front matter | issue=semicolon
+       letter geometry fontenc lmodern url enumitem same Mohd-Zulhilmi Ismadi of Mechanical Engineering, School of En
+  mechanical defects: 0

@@ -1,0 +1,32 @@
+The demand constant $k$ was scaled by 0.7 and 1.3 and the full ablation was repeated with the same frozen cohort
+(Table~\ref{tab:demand}). The ordering of topological against caliber errors under fixed boundary conditions, and of
+Protocols B and C against Protocol A for the topological errors, was unchanged at both levels in both beds. The taper,
+which flipped fewer decisions under Protocol C than under Protocol A at the primary demand, flipped one and two more
+at 1.3 times the demand (7 against 6 of 97; 11 against 9 of 150). The magnitudes changed with demand, which moves the
+clean FFR of every instance (leaky-bed median 0.869, 0.801 and 0.741 at 0.7, 1.0 and 1.3 times the demand) and
+therefore the number of instances near the threshold, as well as the pressure loss across the lesion. The proportion
+of tuned topological-error models that pass the perfusion check while materially wrong fell to 3\% in the leaky bed
+at 0.7 times the demand, comparable with the simulated floor for correct anatomy (3.9\% at the primary demand); in
+the discrete bed it remained between 12\% and 25\%.
+\begin{table}[!h]
+\caption{Sensitivity to Hyperemic Demand}\label{tab:demand}
+\centering\small
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+Bed & Demand scale & \multicolumn{2}{c}{Flip, \% (Protocol A)} & \multicolumn{2}{c}{Topological flip, \%} &
+Passes and wrong, \% & Missed-branch $\Delta$FFR\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+ & & Topological & Caliber & B & C & (C, topological) & median, A / C\\
+\midrule
+Discrete & 0.7 & 32 (25--40) & 6 (3--10) & 12 (8--18) & 18 (12--27) & 12 (7--19) & 0.070 / 0.057 \\
+ & 1.0 & 33 (26--41) & 10 (7--15) & 14 (10--20) & 19 (13--28) & 19 (13--28) & 0.095 / 0.077 \\
+ & 1.3 & 40 (32--48) & 5 (2--9) & 16 (11--22) & 19 (13--28) & 25 (18--34) & 0.106 / 0.091 \\
+Leaky & 0.7 & 20 (16--26) & 6 (4--9) & 7 (4--10) & 9 (5--14) & 3 (1--7) & 0.032 / 0.010 \\
+ & 1.0 & 32 (26--38) & 6 (4--9) & 5 (3--8) & 8 (5--13) & 8 (5--13) & 0.047 / 0.015 \\
+ & 1.3 & 37 (32--43) & 4 (2--7) & 5 (3--9) & 8 (4--13) & 12 (8--18) & 0.057 / 0.021 \\
+\bottomrule
+\end{tabular}
+\\[3pt]
+\parbox{0.9\textwidth}{\footnotesize Demand scale 1.0 is the primary analysis ($k = 562$~s$^{-1}$). Percentages with Wilson 95\%
+intervals in parentheses. Missed-branch $\Delta$FFR is over the instances in which Protocol C was defined.}
+\end{table}

@@ -1,0 +1,65 @@
+\documentclass[10pt]{letter}
+\usepackage[a4paper,margin=1.3cm,top=0.9cm,bottom=1.0cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{url}
+\urlstyle{same}
+\signature{Mohd-Zulhilmi Ismadi\\Department of Mechanical Engineering\\School of Engineering, Monash University Malaysia\\47500 Bandar Sunway, Selangor, Malaysia\\mohd.zulhilmi@monash.edu}
+\address{}
+\date{\today}
+\setlength{\longindentation}{0pt}
+\setlength{\indentedwidth}{\textwidth}
+\begin{document}
+\begin{letter}{Dr Monika Colombo, Dr Simona Celi, Dr David Marlevi and Dr Monica Sigovan\\Guest Editors, IEEE Journal of Biomedical and Health Informatics}
+\opening{Dear Dr Colombo, Dr Celi, Dr Marlevi and Dr Sigovan,}
+
+We submit the manuscript ``Segmentation Error and Boundary-Condition Tuning in Computed Coronary FFR: A Controlled
+In Silico Study'' to the special issue ``Integrating Imaging with Personalized Cardiovascular Medicine: Current
+Advances and Future Directions''. Our study addresses three challenges the call identifies, uncertainty propagation, segmentation errors
+and robust validation frameworks, for computed fractional flow reserve (FFR), under the topics Quantitative Image Analysis and Uncertainty
+Management, and Digital Twin Frameworks and Experimental Validation.
+
+Computed FFR guides coronary revascularization, and image-based models increasingly tune their outlet boundary
+conditions to perfusion imaging, as in a digital twin. Both steps depend on the segmented lumen, yet segmentation is
+usually judged by overlap scores and a tuned model by its agreement with perfusion. We tested both against the
+treatment decision. We inserted 150 controlled stenoses into 108 coronary trees from a public CT angiography dataset,
+applied five segmentation error types, including a half-voxel error in the stenosis throat, and recomputed FFR under
+fixed, re-derived and perfusion-tuned boundary conditions in two microvascular bed structures, with a
+three-dimensional case study and a demand replication.
+
+\textbf{Innovation.} First, the study judges segmentation error by whether it changes the treatment decision at FFR
+0.80, against the variability of repeat invasive FFR, rather than by a continuous sensitivity. Second, it solves the
+same corrupted anatomy under fixed, re-derived and tuned boundary conditions, which isolates the effect of tuning, and
+compares errors in the branching, in the caliber and at the stenosis throat. Third, it counts how often a model passes
+a perfusion check while its FFR is materially wrong, and measures what overlap scores reveal of these errors.
+
+\textbf{Main findings.}
+\begin{itemize}
+\item With fixed boundary conditions, a missed side branch, a vessel break or a half-voxel error in throat diameter
+each changed the decision at 0.80 in about a third of models in this threshold-stratified cohort (30--36\%), against
+6--10\% for caliber errors of inter-observer size away from the throat, close to the variability of repeat invasive
+measurement.
+\item Re-deriving or tuning the boundary conditions reduced topological decision changes but not throat ones. With
+error models and correct anatomy tuned to the same noisy perfusion targets, a check stricter than measurement
+repeatability passed 19\% (discrete bed) and 8\% (leaky bed) of topological-error models and 42--49\% of throat-error
+models while FFR was wrong by more than 0.05, against 3--4\% of correct models. A check one branching level finer
+removed most topological cases but few throat cases.
+\item A missed branch kept a near-perfect Dice score (0.97, as high as a taper and above the 0.93 agreement between two
+expert annotators), yet changed the decision about twice as often. The perfusion mismatch before tuning flagged topological errors only in the discrete bed (area under the curve 0.82 with the same noise on both), with a 48\% false-alarm rate under physiological noise.
+\end{itemize}
+
+\textbf{Significance.} The results locate where segmentation quality matters for the treatment decision, at the
+branching near the lesion and at the throat diameter, and show that neither check in common use, an overlap score or
+agreement with perfusion after tuning, certifies either. For coronary digital twins calibrated to perfusion, they
+quantify at the decision level why such agreement is calibration evidence rather than validation evidence. The test uses public data and open code and can be applied to other pipelines. It builds on three papers in the Journal: the credibility requirements for in silico predictors of
+Viceconti et al. (2025), the difficulty of segmenting small distal coronary segments shown by Chen et al. (2025), and
+the tuning of patient-specific simulation to clinical data by Arminio et al. (2026).
+
+The manuscript is entirely original and has not been copyrighted, published, submitted or accepted for publication
+elsewhere. All authors have read
+and approved the submission. The authors declare no conflicts of interest, and the work received no external funding.
+The study used a public, anonymized dataset (ImageCAS-X, CC BY 4.0). The analysis code is available at \url{https://github.com/zulhilmi-ismadi/ctffr-segmentation-ablation}. Supplementary Material accompanies the manuscript.
+
+\closing{Yours sincerely,}
+\end{letter}
+\end{document}

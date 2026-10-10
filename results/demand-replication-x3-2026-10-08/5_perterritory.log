@@ -1,2 +1,59 @@
 K_MURRAY = 1686.0 s^-1 (scale 3.0)
   SKIP 69_left discrete: slot not eligible under this bed
+  SKIP 687_left discrete: slot not eligible under this bed
+  SKIP 928_left discrete: slot not eligible under this bed
+  SKIP 935_left discrete: slot not eligible under this bed
+  10/150  64 rows  66s
+  SKIP 621_left discrete: slot not eligible under this bed
+  SKIP 812_left discrete: slot not eligible under this bed
+  20/150  136 rows  123s
+  SKIP 874_right discrete: slot not eligible under this bed
+  FAIL 947_right discrete: ValueError: 947_right: healthy epicardial network passes at most 9.612 mL/s, below the demand 11.783 mL/s — tree ineligible for this bed/truncation
+  SKIP 45_left discrete: slot not eligible under this bed
+  30/150  204 rows  176s
+  SKIP 869_left discrete: slot not eligible under this bed
+  FAIL 335_left discrete: ValueError: 335_left_T1_missed_branch: healthy epicardial network passes at most 17.935 mL/s, below the demand 19.402 mL/s — tree ineligible for this bed/truncation
+  SKIP 368_left discrete: slot not eligible under this bed
+  SKIP 461_left discrete: slot not eligible under this bed
+  SKIP 830_left discrete: slot not eligible under this bed
+  40/150  264 rows  240s
+  SKIP 993_left discrete: slot not eligible under this bed
+  SKIP 890_right discrete: slot not eligible under this bed
+  50/150  336 rows  294s
+  SKIP 687_left discrete: slot not eligible under this bed
+  60/150  412 rows  361s
+  SKIP 324_left discrete: slot not eligible under this bed
+  SKIP 618_left discrete: slot not eligible under this bed
+  SKIP 751_left discrete: slot not eligible under this bed
+  SKIP 932_left discrete: slot not eligible under this bed
+  SKIP 973_left discrete: slot not eligible under this bed
+  70/150  472 rows  410s
+  80/150  552 rows  441s
+  SKIP 947_left discrete: slot not eligible under this bed
+  SKIP 738_left discrete: slot not eligible under this bed
+  SKIP 754_left discrete: slot not eligible under this bed
+  SKIP 812_left discrete: slot not eligible under this bed
+  SKIP 830_left discrete: slot not eligible under this bed
+  SKIP 844_left discrete: slot not eligible under this bed
+  90/150  608 rows  472s
+  100/150  688 rows  499s
+  110/150  768 rows  531s
+  SKIP 973_left discrete: slot not eligible under this bed
+  SKIP 984_left discrete: slot not eligible under this bed
+  120/150  840 rows  562s
+  130/150  920 rows  595s
+  SKIP 102_left discrete: slot not eligible under this bed
+  140/150  996 rows  635s
+  SKIP 751_left discrete: slot not eligible under this bed
+  SKIP 844_left discrete: slot not eligible under this bed
+  150/150  1068 rows  675s
+
+wrote results/demand-replication-x3-2026-10-08/ablation-perterritory.csv (1068 rows, 844 solved, 675s)
+discrete T1_missed_branch    n=  58  flips   5 ( 8.6%)  median |dFFR| 0.0056  median resid 0.0000  pass&wrong 6 (10.3%)  at_bound 3
+discrete T2_truncation       n=  76  flips   5 ( 6.6%)  median |dFFR| 0.0069  median resid 0.0000  pass&wrong 13 (17.1%)  at_bound 0
+discrete T3_stenosis_length  n= 110  flips   1 ( 0.9%)  median |dFFR| 0.0081  median resid 0.0000  pass&wrong 0 (0.0%)  at_bound 0
+discrete T4_taper            n= 110  flips  12 (10.9%)  median |dFFR| 0.0338  median resid 0.0000  pass&wrong 35 (31.8%)  at_bound 5
+leaky    T1_missed_branch    n=  85  flips   4 ( 4.7%)  median |dFFR| 0.0069  median resid 0.0000  pass&wrong 3 (3.5%)  at_bound 0
+leaky    T2_truncation       n= 105  flips   8 ( 7.6%)  median |dFFR| 0.0057  median resid 0.0000  pass&wrong 5 (4.8%)  at_bound 0
+leaky    T3_stenosis_length  n= 150  flips   5 ( 3.3%)  median |dFFR| 0.0068  median resid 0.0000  pass&wrong 0 (0.0%)  at_bound 0
+leaky    T4_taper            n= 150  flips   7 ( 4.7%)  median |dFFR| 0.0094  median resid 0.0000  pass&wrong 8 (5.3%)  at_bound 0

@@ -4,7 +4,7 @@ from zerod_ffr import Tree, R_TRUNC_DISCRETE
 from severity_sweep import load, plan, insert, HOSTS, RUNOFF
 from error_types import T4_RADIUS_SCALE
 from pathlib import Path
-ROOT = Path("/Users/mzpi/Datasets/imagecas-x/ImageCAS-X_dataset")
+ROOT = Path("/Users/mzpi/Documents/Datasets/imagecas-x/ImageCAS-X_dataset")
 coh = pd.read_csv("protocol/COHORT-FROZEN-2026-09-18.csv")
 rows = []
 for bed in ("leaky", "discrete"):

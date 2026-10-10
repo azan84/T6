@@ -1,0 +1,481 @@
+IEEE.org | IEEE Xplore® | IEEE Standards |
+
+
+
+Prepare and Submit Your
+IEEE Spectrum | More Sites
+
+
+
+
+Manuscript
+
+Home › Prepare and Submit Your Manuscript
+
+
+
+
+        IEEE J-BHI accepts a new type of
+         papers, which describe a dataset
+
+
+
+The official template of papers submitted to IEEE JBHI is
+available here [https://template-
+selector.ieee.org/secure/templateSelector/publicationType]
+J-BHI publishes the latest advances and practical applications of
+IEEE.org | IEEE
+biomedical   andXplore®
+                 health |informatics
+                           IEEE Standards | information and communication
+                                      where
+technologies intersect with health, healthcare, life sciences and
+IEEE Spectrum | More Sites
+biomedicine. Manuscripts are normally submitted as regular papers,
+review papers or special issue papers. Communications articles are no
+longer published in J-BHI. For review papers, you must contact the
+Editor-in-Chief beforehand and prepare a review paper proposal which
+will be discussed on a case-by-case basis and assessed by the Editorial
+Office. The manuscript will be evaluated under the category it has been
+submitted (e.g., a regular paper will be accepted or rejected, but it cannot
+be re-categorised into a special issue once it is submitted). For studies
+involving human subjects, relevant institutional review board (IRB)
+approval must to be obtained and the paper must state explicitly the
+reference number of the IRB approval for the study. If the data are derived
+from a publicly available database, the original source and reference must
+be provided.
+
+
+The articles in this journal are peer reviewed in accordance with the
+requirements set forth in the IEEE Publication Services and Products
+Board Operations Manual. Each published article is reviewed by a
+minimum of three independent reviewers for regular and special issue
+papers and five independent reviewers for review papers using an
+anonymous peer review process, where the identities of the reviewers are
+not known to the authors, but the reviewers know the identities of the
+authors. Articles will be screened for plagiarism during the submission
+stage and before acceptance.
+
+
+
+IEEE Author Portal and Author
+Guide
+All manuscripts are to be submitted through IEEE Author Portal
+[https://ieee.atyponrex.com/journal/jbhi-embs] .
+
+
+
+Manuscript Style and Length
+All submissions must be in IEEE single spaced, double column format with
+embedded figures and tables ‐ the format required of final printed copy.
+The manuscripts should be converted to PDF for upload to ScholarOne.
+IEEE.org | IEEEScholarOne
+Alternatively, Xplore® | IEEE
+                           canStandards | Word files to PDF, but please
+                                convert MS
+proof-read the converted manuscript to make sure it is correct. Templates
+IEEE Spectrum | More Sites
+can be found at the IEEE Author Center
+[https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-
+journal-article/authoring-tools-and-templates/tools-for-ieee-
+authors/ieee-article-templates/] .
+
+
+COPYRIGHT. By policy, IEEE owns the copyright to the technical
+contributions it publishes on behalf of the interests of the IEEE, its
+authors, and their employers; and to facilitate the appropriate reuse of this
+material by others. To comply with United States copyright law, authors
+are required to sign and submit a completed IEEE Copyright Form with
+the finalized manuscript prior to publication. This form, which is to be
+completed electronically, returns to authors and their employers’ full
+rights to reuse their material for their own purposes. The form is to be
+completed once the manuscript has been accepted for publication.
+Completion is done by logging-in on the ScholarOne website (https://mc.
+manuscriptcentral.com/jbhi-embs).
+
+
+OPEN ACCESS. This publication is a hybrid journal, allowing either
+Traditional manuscript submission or Open Access (author pays)
+manuscript submission. Upon submission, if you choose to have your
+manuscript be an Open Access (OA) article, you commit to pay the
+discounted $2,800 OA fee if your manuscript is accepted for publication in
+order to enable unrestricted public access. Any other application charges
+(such as over-length page charge) will be billed separately once the
+manuscript formatting is complete but prior to the publication. If you
+would like your manuscript to be a Traditional submission, your article
+will be available to qualified subscribers and purchasers via IEEE Xplore.
+No OA payment is required for Traditional submission.
+
+
+Article Processing Charges (APCs)
+US$2800 for articles submitted in 2026.
+
+
+      IEEE Members receive a 5% discount
+
+      IEEE Society Members receive a 20% discount
+       Discounts cannot be combined
+IEEE.org | IEEE Xplore® | IEEE Standards |
+       Discounts
+IEEE Spectrum    do not
+              | More    apply to undergraduate and graduate students
+                     Sites
+
+      Corresponding authors from low-income countries (as classified
+      by the World Bank) are eligible for discounts on article processing
+      charges. For more information, please visit the IEEE Author
+      Center or Learn more about the program.
+
+
+Some institutions offer assistance for open access funding. Check our
+institutional partners list [https://open.ieee.org/for-
+institutions/institutional-partners/] to see if yours is one.
+
+
+PAGE LIMIT. The page limit is 14 pages for regular papers and 16 pages
+for review papers including supplementary material. The page limit must
+be implemented in both original submissions and revised papers.
+
+
+PAGE CHARGES.
+Voluntary page charges: For regular papers that are 8 pages or fewer and
+review papers that are 10 pages or fewer only voluntary page charges may
+be considered by the author ($110/page).
+
+
+Mandatory page charges: Regular papers that exceed eight (8) pages will
+incur mandatory overlength page charges. Review papers that exceed ten
+(10) pages incur mandatory page charges.
+
+
+The rate for pages 9 and 10 (for regular papers) is $250 per page, and the
+rate for page 11 and beyond (for regular and review papers) is $350 per
+page. Payment of these charges is not negotiable or voluntary. Further,
+submission by the author of his/her manuscript to this publication
+signifies acceptance of the requirement to pay mandatory pages charges.
+The author(s) or his/her/their company or institution will be billed for all
+pages according to the Page Charge policy. The Publisher holds the right to
+withhold publication of the current submission or any future submissions
+from the author(s) if this charge is not honored. To avoid incurring
+mandatory page charges, the author(s) are strongly advised to practice
+economy in the original manuscript submission and restraint in
+IEEE.org | IEEE
+preparation  of Xplore®
+                the final| manuscript
+                            IEEE Standards  |
+                                        following peer review.
+IEEE Spectrum | More Sites
+OPEN RESEARCHER AND CONTRIBUTOR ID (ORCID). All IEEE
+journals require an Open Researcher and Contributor ID (ORCID) for all
+authors. ORCID is a persistent unique identifier for researchers and
+functions similarly to an article’s Digital Object Identifier (DOI). ORCIDs
+enable accurate attribution and improved discoverability of an author’s
+published work. The author will need a registered ORCID in order to
+submit a manuscript or review a proof in this journal.
+
+
+OPEN RESEARCHER AND CONTRIBUTOR ID (ORCID). All IEEE
+journals require an Open Researcher and Contributor ID (ORCID) for all
+authors. ORCID is a persistent unique identifier for researchers and
+functions similarly to an article’s Digital Object Identifier (DOI). ORCIDs
+enable accurate attribution and improved discoverability of an author’s
+published work. The author will need a registered ORCID in order to
+submit a manuscript or review a proof in this journal.
+
+
+Prospective authors of review papers are required to complete the review
+paper proposal form provided by the IEEE Journal of Biomedical and
+Health Informatics (J-BHI) Editorial Office along with a literature review
+and Cochrane style systematic review assessment of each article based on
+the inclusion and exclusion criteria of the systematic review, including all
+relevant JBHI papers in bold. The review proposal is then to submitted to
+J-BHI via email (ontolimatics@gmail.com [javascript:;] and jbhi-
+office@embs.org [javascript:;] ). The proposal will be first reviewed
+by the Editor-in-Chief (EiC) Professor Peter L. Elkin to assess the scope
+suitability, followed by quality evaluation led by Editorial Office.
+
+
+You can find the review paper proposal template here:
+
+
+Download Proposals for a Review Paper (pdf)
+[https://www.embs.org/wp-
+content/uploads/2018/09/Proposal-for-JBHI-review-
+papers_2018.pdf]
+Download Proposals for a Review Paper (doc)
+IEEE.org | IEEE Xplore® | IEEE Standards |
+[https://www.embs.org/wp-
+content/uploads/2018/09/Proposal-for-JBHI-review-
+IEEE Spectrum | More Sites
+papers_2018.docx]
+
+
+(The papers must include details on the construction/development of the
+dataset, annotation, etc.
+The papers might also include AI/ML/DL models for the use of the data
+(optional) and provide an e-mail address from where other researchers can
+ask for permission to use the dataset for research purposes and
+development/training/testing of models.)
+
+
+
+Author Consent Form
+An Author Consent form for manuscripts that have more than one author
+is also required to ensure that all the authors are aware that the paper is
+being submitted to the Journal. The consent form with a hand-written
+signature must be uploaded as a supporting document along with the
+manuscript submission. The IEEE Engineering in Medicine and Biology
+Society will apply sanctions against authors who are discovered to have
+made duplicate submissions to other journals. These sanctions are:
+
+
+    1. immediate rejection of the manuscript in question;
+
+    2. immediate return to the author and co-authors of any and all
+      manuscripts currently under review;
+
+    3. prohibition against the authors/co-authors of any new submissions
+      to any of the Society’s journals for one calendar year from date of
+      formal notification.
+
+
+Download the J-BHI Author Consent Form.
+[https://www.embs.org/jbhi/wp-
+content/uploads/sites/18/2026/08/jbhi-consent_form_v3-
+1_fixed.pdf]
+Note: It is not allowed to add new authors in any stage of the
+IEEE.org
+revision | process
+            IEEE Xplore® | during
+                       and IEEE Standards |
+                                    the submission of the final files of
+accepted papers.
+IEEE Spectrum | More Sites
+
+
+Cover Letter
+All submissions must include a cover letter in the text box when
+submitting via IEEE Author Portal. This letter is only sent to editors;
+response to reviews should be submitted as a supporting document when
+uploading the revised manuscript. The letter should state:
+
+
+      Innovation and significance of the work in relation to the scope of
+      JBHI
+
+      Confirm that the manuscript is entirely original, has not been
+      copyrighted, published, submitted, or accepted for publication
+      elsewhere
+
+      For revision or resubmission, please state the original manuscript’s
+      ID number
+
+      If preliminary work of your paper has appeared as a conference
+      abstract or paper, please note J-BHI only allows submitting
+      manuscript if it is a substantially extended version of the original
+      conference paper. Such a submission is subject to the following
+      requirements:
+
+        1. the conference paper must be properly referenced;
+
+        2. state clearly in the cover letter what are the significant
+          improvements/changes made to the original paper. The authors
+          should include a statement, often at the end of the introduction,
+          such as “A preliminary version of this work has been reported
+          [reference]” and cite it in reference. You also need to note that
+            even if the paper is sufficiently different from the conference
+IEEE.org | IEEE Xplore® | IEEE Standards |
+            version, copyright issues may arise. If the conference paper was
+IEEE Spectrum | More Sites
+            not published by IEEE, the authors have to obtain permission
+           from the publisher of their conference paper to use copyrighted
+           material for submission to J-BHI.
+
+
+
+Title and Abstract
+For manuscripts, an abstract of not more than 250 words is allowable. The
+abstract should indicate the objective of the study, methods, major results,
+conclusions, and one sentence significance to biomedical research. This
+will make the abstract, by itself, a useful tool for information retrieval.
+Please be ready with this information when logging in IEEE Author Portal.
+When submitting via IEEE Author Portal, the author will be asked to
+enter: the title, names and contact information for all authors (full mailing
+address, institutional affiliations, and e-mail), the abstract. The name of
+the Corresponding Author who will serve as the main point of contact for
+the manuscript during the review and publication processes is entered
+separately. The abstract should be without abbreviations, footnotes,
+references, or mathematical equations.
+
+
+
+Figures and Tables
+Figures and tables should appear embedded in the text. If necessary, they
+could be appended with or without captions separate. All the text and
+figures should be in one file. If the authors believe it helpful to include very
+high resolution figures with excessive file size, please include low
+resolution versions in the text and attach high resolution images
+separately. Separate instructions will be given for preparation of final
+versions of accepted manuscripts. As computer software gives great
+flexibility in the creation of figures, we expect that figures, when printed
+both in draft and final version, will be visibly clear and clearly annotated so
+that they communicate easily and precisely the information intended. See
+Electronic Guidelines below for further information.
+References
+IEEE.org | IEEE Xplore® | IEEE Standards |
+
+IEEE Spectrum
+References    | More
+            should   Sites in a separate reference section at the end of this
+                   appear
+paper with items referred to by numerals in square brackets.
+References must be complete in the IEEE style as follows:
+
+
+      Style for papers: Author(s), first initials followed by last name, title,
+      periodical, volume, inclusive page numbers, month, year.
+
+      Style for books: Author(s), title, location, publisher, year, chapter,
+      page numbers.
+
+
+You can find an electronic style file for references in Preparation of
+Papers for IEEE Transactions and Journals
+[https://www.embs.org/wp-content/uploads/2020/04/TRANS-
+JOUR.pdf] .
+
+
+
+Suggested Reviewers
+Authors are encouraged to suggest 4 potential reviewers although they
+may not be requested to review the particular submission. Note these
+suggested reviewers must be fully independent (without any potential
+conflict of interest) of the work submitted and should be from a different
+institution to all the authors.
+
+
+
+Copyright
+It is the policy of the IEEE to own the copyright to the technical
+contributions it publishes on behalf of the interests of the IEEE, its
+authors, and their employers, and to facilitate the appropriate reuse of this
+material by others. To comply with the United States Copyright Law,
+authors are required to sign a digital version of the IEEE Copyright Form
+upon acceptance of the manuscript. Authors will automatically be
+redirected to the eCF (electronic Copyright Form) after they have
+submitted the final files. The eCF makes signing a publishing agreement
+easy. The form will determine which agreement meets your needs and
+IEEE.org | IEEE
+enable you      Xplore® | itIEEE
+            to complete          Standards |
+                             on-screen.
+IEEE Spectrum | More Sites
+More information can be found at
+https://journals.ieeeauthorcenter.ieee.org/choose-a-
+publishing-agreement/about-the-ieee-copyright-form/
+[https://journals.ieeeauthorcenter.ieee.org/choose-a-
+publishing-agreement/about-the-ieee-copyright-form/] .
+Questions can directed to copyrights@ieee.org [javascript:;] .
+
+
+
+IEEE Author Center
+Author-created PDF preprints must be Xplore compliant in order to be
+posted. IEEE has released a series of digital tools (including IEEE PDF
+Checker) for authors to check their PDFs for Xplore compliance. These
+tools can be found at the IEEE Author Center
+[https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-
+journal-article/authoring-tools-and-templates/tools-for-ieee-
+authors/] .
+
+
+
+Pre-Submission Professional Editing
+Services Available to IEEE Authors
+IEEE Publishing Operations has partnered with one of our established
+vendors, SPi Publisher Services, to offer pre-submission professional
+editing services to IEEE authors. The SPi copy editors will edit for
+grammar, usage, organization, and clarity, querying potentially
+substantive revisions as necessary. An author can use the service, at their
+own expense, as often as desired. Cost estimates are available immediately
+online. Edited manuscripts will generally be returned to the author within
+two weeks of submission.
+
+
+Refining the Use of English in Your Article
+
+
+Communicate your work clearly. If you are not fully proficient in English,
+consider using an English language editing service before submitting your
+article. An expert editing service can help you refine the use of English in
+IEEE.org | IEEE
+your article, soXplore®
+                 you can| communicate
+                           IEEE Standardsyour
+                                          | work more effectively.
+
+IEEE Spectrum | More Sites
+The use of an editing service is paid for by the author. It does not
+guarantee acceptance in an IEEE publication.
+
+
+IEEE authors are eligible for discounts at the following language editing
+services:
+
+
+      American Journal Experts: 10% discount
+
+      Enago: 30% discount (review Enago’s services for authors in
+      Chinese)
+
+
+In the Ethics Statement document under the IEEE Author Ethics
+Guidelines section, the Definition of Authorship url should be changed to
+https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-
+journal-author/publishing-ethics/ethical-
+requirements/#authorship
+[https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-
+journal-author/publishing-ethics/ethical-
+requirements/#authorship]
+
+
+ETHICAL APPROVAL
+
+When public datasets are utilized appropriate citations (or URLs) should
+also be provided for them, while in the case of other than public datasets
+information regarding their ethical approval (e.g. reference number)
+should be mentioned in the manuscript.
+
+
+Smart Proof online web proofing system
+JBHI authors receive their proofs to review in the Smart Proof online web
+proofing system. Here they can work in the HTML to enter comments and
+corrections, similar to how one would use track changes in Word, and
+submit them to production. The PDF is also available for them to review.
+Authors who prefer to provide their comments as annotations to the proof
+PDF or as a list of corrections are also able to do so.
+The user guide can be found here:
+IEEE.org | IEEE Xplore® | IEEE Standards |
+https://smartproof.kwglobal.com/SmartProofV2/help/sjshelpdo
+[https://smartproof.kwglobal.com/SmartProofV2/help/sjshelpd
+IEEE Spectrum | More Sites
+IEEE Author Ethics Guidelines
+Any questions from authors about the peer review process should be
+directed to the Editor in Chief or the Editorial Office. Direct
+communication among the authors and Associate Editors or Guest Editors
+is NOT allowed. For more information please visit the following link:
+
+
+https://journals.ieeeauthorcenter.ieee.org/wp-
+content/uploads/IEEE-Author-Ethics-Guidelines.pdf
+[https://journals.ieeeauthorcenter.ieee.org/wp-
+content/uploads/IEEE-Author-Ethics-Guidelines.pdf]
+
+
+Note: It is not allowed to add new authors in any stage of the revision
+process and during the submission of the final files of accepted papers
+
+
+Note: “It is obligatory for all the authors to use their
+institutional email or IEEE email”.
+

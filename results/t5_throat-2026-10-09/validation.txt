@@ -1,0 +1,9 @@
+validation on 6 instances: 102_left_LAD_mid_20mm_80, 280_left_LAD_prox_20mm_80, 306_left_LAD_prox_20mm_80, 335_left_LAD_prox_10mm_70, 42_right_RCA_prox_20mm_70, 69_right_RCA_prox_10mm_70
+(1) zero-magnitude T5 path, |dFFR| by protocol (max):
+    A_fixed          n= 12  max|dFFR|=0.000e+00  flips=0
+    B_rederived      n= 12  max|dFFR|=0.000e+00  flips=0
+    C_flowmatched    n= 12  max|dFFR|=0.000e+00  flips=0
+    D_perterritory   n= 12  max|dFFR|=0.000e+00  flips=0
+    insertions logged 24, all ds_applied == ds_orig: True
+(2) clean FFR vs frozen ablation-2026-10-07: {'n_clean_rows': 12, 'only_new': 0, 'only_frozen': 286, 'max_abs_diff_clean_ffr': 0.0, 'identical': True, 'n_D_instances': 12, 'max_abs_diff_D_ffr_clean': 0.0}
+(3) FFR strictly decreasing in DS (Protocols A and B, DS change -20..+15 pp): 0 violations in 168 steps over 12 instance-beds

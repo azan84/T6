@@ -6,7 +6,7 @@ import numpy as np, pandas as pd
 ROOT = Path(__file__).resolve().parents[2]; sys.path.insert(0, str(ROOT / "code"))
 from zerod_ffr import Tree, MU, R_FLOOR
 import severity_sweep as ss
-root = Path.home() / "Datasets/imagecas-x/ImageCAS-X_dataset"
+root = Path.home() / "Documents/Datasets/imagecas-x/ImageCAS-X_dataset"
 
 def refine_n(segments, k):
     out = segments

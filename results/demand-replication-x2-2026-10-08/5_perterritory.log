@@ -1,1 +1,41 @@
 K_MURRAY = 1124.0 s^-1 (scale 2.0)
+  10/150  80 rows  71s
+  SKIP 509_left discrete: slot not eligible under this bed
+  SKIP 754_left discrete: slot not eligible under this bed
+  20/150  152 rows  135s
+  30/150  232 rows  192s
+  SKIP 935_left discrete: slot not eligible under this bed
+  SKIP 669_left discrete: slot not eligible under this bed
+  40/150  304 rows  262s
+  SKIP 474_right discrete: slot not eligible under this bed
+  SKIP 928_right discrete: slot not eligible under this bed
+  50/150  376 rows  313s
+  SKIP 869_left discrete: slot not eligible under this bed
+  SKIP 43_left discrete: slot not eligible under this bed
+  60/150  448 rows  369s
+  SKIP 669_left discrete: slot not eligible under this bed
+  SKIP 808_left discrete: slot not eligible under this bed
+  70/150  520 rows  400s
+  SKIP 335_left discrete: slot not eligible under this bed
+  80/150  596 rows  431s
+  SKIP 687_left discrete: slot not eligible under this bed
+  90/150  672 rows  466s
+  100/150  752 rows  494s
+  SKIP 335_left discrete: slot not eligible under this bed
+  110/150  828 rows  528s
+  120/150  908 rows  560s
+  SKIP 825_right discrete: slot not eligible under this bed
+  130/150  984 rows  598s
+  140/150  1064 rows  637s
+  SKIP 847_left discrete: slot not eligible under this bed
+  150/150  1140 rows  663s
+
+wrote results/demand-replication-x2-2026-10-08/ablation-perterritory.csv (1140 rows, 875 solved, 663s)
+discrete T1_missed_branch    n=  60  flips   6 (10.0%)  median |dFFR| 0.0094  median resid 0.0000  pass&wrong 14 (23.3%)  at_bound 4
+discrete T2_truncation       n=  88  flips   3 ( 3.4%)  median |dFFR| 0.0134  median resid 0.0000  pass&wrong 25 (28.4%)  at_bound 0
+discrete T3_stenosis_length  n= 129  flips   0 ( 0.0%)  median |dFFR| 0.0102  median resid 0.0000  pass&wrong 0 (0.0%)  at_bound 0
+discrete T4_taper            n= 129  flips   4 ( 3.1%)  median |dFFR| 0.0332  median resid 0.0000  pass&wrong 42 (32.6%)  at_bound 2
+leaky    T1_missed_branch    n=  69  flips   1 ( 1.4%)  median |dFFR| 0.0045  median resid 0.0000  pass&wrong 1 (1.4%)  at_bound 0
+leaky    T2_truncation       n= 100  flips   4 ( 4.0%)  median |dFFR| 0.0060  median resid 0.0000  pass&wrong 4 (4.0%)  at_bound 0
+leaky    T3_stenosis_length  n= 150  flips   4 ( 2.7%)  median |dFFR| 0.0082  median resid 0.0000  pass&wrong 0 (0.0%)  at_bound 0
+leaky    T4_taper            n= 150  flips  10 ( 6.7%)  median |dFFR| 0.0152  median resid 0.0000  pass&wrong 14 (9.3%)  at_bound 0

@@ -1,4 +1,4 @@
-> ## ⚠ SUPERSEDED as the entry point — read `WORK-ORDER-2026-10-03.md` first (then `WORK-ORDER-2026-09-26.md` and `WORK-ORDER-2026-09-24.md`, which it extends, and `WORK-ORDER-2026-09-19.md` for background).
+> ## ⚠ SUPERSEDED as the entry point — read `WORK-ORDER-2026-10-10.md` first (then `WORK-ORDER-2026-10-03.md`, `WORK-ORDER-2026-09-26.md` and `WORK-ORDER-2026-09-24.md`, which it extends, and `WORK-ORDER-2026-09-19.md` for background).
 > Stage A **has been run** (2026-09-18/19, OpenFOAM ESI v2406): 8 of 8 pass/fail checks pass and the coded
 > resistance-outlet BC is confirmed on real hardware. This file still describes Stage A as if it were unrun, and its
 > `relax` guidance has been superseded by a measured per-case table. It is kept for the geometry, probe positions,

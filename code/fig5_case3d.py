@@ -76,6 +76,14 @@ for x, t in ((0.15, "(a) No lesion"), (0.48, "(b) Lesion"), (0.81, "(c) Lesion +
     ax0.text(x * W, -15, t, ha="center", va="bottom", fontsize=7)
 axt = fig.add_axes((0.555, 0.24, 0.075, 0.62)); axt.imshow(throat); axt.axis("off")
 axt.text(throat.width / 2, -15, "(d) Lesion", ha="center", va="bottom", fontsize=7)
+# zoom indicator: box around the throat in (b) joined to the close-up (d)
+from matplotlib.patches import Rectangle, ConnectionPatch
+bx0, by0, bw, bh = 750, 106, 52, 60          # trees-image pixels around the throat in (b)
+ax0.add_patch(Rectangle((bx0, by0), bw, bh, fill=False, ec="#2b2b2b", lw=0.6))
+axt.add_patch(Rectangle((0, 0), throat.width - 1, throat.height - 1, fill=False, ec="#2b2b2b", lw=0.6))
+for (xa, ya), (xb, yb) in (((bx0 + bw, by0), (0, 0)), ((bx0 + bw, by0 + bh), (0, throat.height - 1))):
+    fig.add_artist(ConnectionPatch((xa, ya), (xb, yb), "data", "data", axesA=ax0, axesB=axt, color="#9a9a95",
+                                   lw=0.4, ls=":"))
 import matplotlib as mpl
 cax = fig.add_axes((0.07, 0.12, 0.5, 0.03))
 cb = fig.colorbar(mpl.cm.ScalarMappable(mpl.colors.Normalize(0.86, 1.0), "turbo_r"), cax=cax, orientation="horizontal")

@@ -63,7 +63,7 @@ for ax, bed in zip(axs, ["discrete", "leaky"]):
         h = topo[(topo.bed == bed) & (topo.protocol == p)]
         ax.scatter(h.outlet_flow_residual, h.dFFR, s=6, marker=MRK[p], facecolor=COL[p], edgecolor="white",
                    linewidth=0.3, alpha=0.85, label=LAB[p])
-    ax.axhline(0, color=GREY, lw=0.4); ax.set_xscale("symlog", linthresh=0.01)
+    ax.axhline(0, color=GREY, lw=0.4); ax.axvline(0.10, color=GREY, lw=0.6, ls="--"); ax.set_xscale("symlog", linthresh=0.01)
     ax.set_xlim(0, 1.0); ax.set_ylim(-0.25, 0.45); ax.set_title(BED[bed], fontsize=7)
     ax.set_xticks([0, 0.01, 0.1, 1]); ax.set_xticklabels(["0", "0.01", "0.1", "1"])
     ax.set_xlabel("Perfusion residual")

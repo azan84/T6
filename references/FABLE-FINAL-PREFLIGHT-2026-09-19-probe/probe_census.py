@@ -20,7 +20,7 @@ from severity_sweep import load, plan, insert, HOSTS, RUNOFF
 from error_types import ERROR_TYPES
 from ablation import node_map, bed_flow, territories, subtree, trunc_for, CALIBRE_ONLY, protocol_c_targets
 
-ROOT = Path.home() / "Datasets/imagecas-x/ImageCAS-X_dataset"
+ROOT = Path.home() / "Documents/Datasets/imagecas-x/ImageCAS-X_dataset"
 coh = pd.read_csv(HERE / "protocol" / "COHORT-FROZEN-2026-09-18.csv").sort_values(["scan", "side"])
 sub = pd.read_csv(HERE / "protocol" / "CFD-SUBSET-FROZEN-2026-09-18.csv")
 in3d = set(zip(sub.scan, sub.side, sub.vessel, sub["loc"], sub.L_mm, sub.ds_pct))

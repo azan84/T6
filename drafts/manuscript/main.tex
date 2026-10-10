@@ -1,283 +1,217 @@
-% Paper 6 (T6) -- IEEE JBHI special issue "Integrating Imaging with Personalized Cardiovascular Medicine"
-% Deadline 2026-10-15. Target: 8 pages (over-length charges start at page 9).
-% Plan and word budgets: BENCHMARK-AND-PLAN-JBHI-2026-10-03.md
-\documentclass[journal]{IEEEtran}
+\documentclass[journal,twoside,web]{ieeecolor}
+\usepackage{generic}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{cite}
 \usepackage{siunitx}
 \usepackage[hidelinks]{hyperref}
+\urlstyle{same}
 
+\renewcommand{\dbltopfraction}{0.9}\renewcommand{\topfraction}{0.9}\renewcommand{\textfraction}{0.07}
 \begin{document}
 \bstctlcite{IEEEexample:BSTcontrol}
 
-\title{Topological Segmentation Error and Boundary-Condition Tuning in Computed Coronary FFR: A Controlled In
-Silico Study}
-% Working title; alternative from STUDY-PLAN-v2 sec. 0:
-% "Matched at the Outlet, Wrong in the Tree: ..."
+\title{Segmentation Error and Boundary-Condition Tuning in Computed Coronary FFR: A Controlled In Silico Study}
 
 \author{Fadillah~Yamin,
         Mohd~Azan~Mohammed~Sapardi,
         Ming~Kwang~Tan,
         Xin~Wang,
-        and~Mohd-Zulhilmi~Paiz~Ismadi%
-\thanks{F. Yamin, X. Wang and M.-Z. P. Ismadi are with the Department of Mechanical Engineering, School of
+        and~\mbox{Mohd-Zulhilmi~Ismadi}\endgraf\vspace{-\baselineskip}%
+\thanks{F. Yamin, X. Wang, and M.-Z. Ismadi are with the Department of Mechanical Engineering, School of
 Engineering, Monash University Malaysia, 47500 Bandar Sunway, Selangor, Malaysia (corresponding author:
-M.-Z. P. Ismadi, e-mail: mohd.zulhilmi@monash.edu).}%
+M.-Z. Ismadi, e-mail: mohd.zulhilmi@monash.edu).}%
 \thanks{M. A. Mohammed Sapardi is with the Department of Mechanical Engineering, Kulliyyah of Engineering,
 International Islamic University Malaysia, 53100 Kuala Lumpur, Malaysia.}%
-\thanks{M. K. Tan is with the Department of Mechanical Engineering, School of Engineering, Monash University
-Malaysia, and the Department of Mechanical Engineering, Ming Chi University of Technology, New Taipei City 243,
-Taiwan.}}
+\thanks{M. K. Tan is with the Department of Mechanical Engineering, Ming Chi University of Technology, New Taipei
+City 243303, Taiwan.}}
 
 \markboth{IEEE Journal of Biomedical and Health Informatics}{Yamin \MakeLowercase{\textit{et al.}}: Segmentation Error and BC Tuning in Coronary FFR}
 
 \maketitle
 
 \begin{abstract}
-Fractional flow reserve, the pressure ratio that decides whether a coronary narrowing is treated, can be computed
-from computed tomography angiography. The computation depends on the segmented artery and on outlet boundary
-conditions derived from it, often tuned to match measured perfusion. Whether a model that matches perfusion can
-still assign the wrong treatment at 0.80 has not been tested. We inserted 150 stenoses into 108 coronary trees,
-applied four segmentation error types (missed side branch, vessel break, longer lesion, narrowed taper), and
-recomputed fractional flow reserve with a reduced-order model under four boundary-condition protocols: fixed,
-re-derived from the corrupted tree, and tuned to the clean tree's territory perfusion with one global or one
-per-territory parameter, in two microvascular bed structures. One case was solved in three dimensions. With fixed
-boundary conditions, the branching (topological) errors changed the decision in 32--33\% of models, against
-6--10\% for vessel-size (caliber) errors of inter-observer magnitude. Re-derived or tuned boundary conditions reduced
-topological decision changes to 5--20\%. Tuning matched perfusion but did not remove the error: after either form
-of tuning, 5--20\% of topological-error models and 4--18\% of caliber-error models passed a perfusion check
-stricter than measurement repeatability while their fractional flow reserve was wrong by more than 0.05, against
-3--4\% for correct anatomy; with re-derived boundary conditions, no caliber-error model did. Per-territory tuning
-corrected the typical missed branch, and in three dimensions it reduced a shift of 0.074 to $-0.0007$, as the
-reduced-order model predicted. Agreement with perfusion after tuning therefore does not show that the computed
-fractional flow reserve is correct; branching, caliber and the perfusion mismatch must be checked before tuning.
+Fractional flow reserve (FFR), which guides coronary revascularization, can be computed from computed tomography
+angiography. The computation depends on the segmented artery and on outlet boundary conditions derived from it,
+often tuned to measured perfusion, as in a digital twin. We tested in silico whether a perfusion-matched model can be
+misclassified at 0.80. We inserted 150 stenoses into 108 coronary trees and applied five segmentation errors (missed branch, vessel break, longer lesion, narrowed taper, half-voxel throat diameter). FFR was recomputed with a reduced-order model in
+discrete and leaky microvascular beds under fixed, re-derived and tuned boundary conditions,
+with one global or per-territory parameter fitted to clean main-branch territory flows. For the error magnitudes studied, in this threshold-stratified cohort with fixed boundary conditions,
+branching (topological) errors changed the decision in 32--33\% of models and the half-voxel throat error in
+30--36\%, against 6--10\% for vessel-size (caliber) errors of inter-observer magnitude away from the throat.
+Re-derived or tuned boundary conditions reduced topological flips to 5--19\% but did not reduce throat flips. After tuning, a perfusion check stricter than measurement repeatability passed models wrong by more than 0.05 in
+19--20\% (discrete) and 5--8\% (leaky) of topological-error cases and 57--81\% of throat-error cases. Other caliber
+errors did so in 4--18\% and correct anatomy in 3--4\%. With finer territories, topological concealment fell to
+2--7\%; throat concealment changed little. A missed branch shared the taper's tube-model Dice score (0.97) yet changed the decision twice as often.
+Neither Dice score nor perfusion match certified the segmented lumen.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Boundary conditions, coronary artery disease, fractional flow reserve, image segmentation, reduced-order modeling,
+Boundary conditions, coronary artery disease, digital twins, fractional flow reserve, image segmentation, reduced-order modeling,
 uncertainty.
 \end{IEEEkeywords}
 
-% ---------------------------------------------------------------------------------------------------------------
 \section{Introduction}
-\IEEEPARstart{F}{ractional} flow reserve (FFR) is the pressure ratio that decides whether a coronary narrowing is treated. It is the blood pressure beyond the narrowing divided by the aortic pressure during maximal flow. A value at or
+\IEEEPARstart{F}{ractional} flow reserve (FFR) is a pressure ratio that guides the treatment of a coronary narrowing. It is the mean blood pressure beyond the narrowing divided by the mean aortic pressure during maximal flow. A value at or
 below 0.80 marks a stenosis for revascularization \cite{tonino2009}. FFR can also be computed without a pressure
 wire. The lumen, the blood-filled channel of the artery, is segmented from coronary computed tomography (CT)
-angiography and converted into a flow model, and the computed FFR has been validated against invasive measurement
-in multicenter trials \cite{taylor2013,norgaard2014}. The calculation exists in three-dimensional (3D),
-reduced-order and machine-learning forms \cite{kim2010,fossan2026,itu2016}.
+angiography and converted into a flow model, and specific implementations of the computed FFR have been validated against invasive measurement
+in a multicenter trial \cite{norgaard2014}. The calculation exists in three-dimensional (3D),
+reduced-order and machine-learning forms \cite{taylor2013,kim2010,fossan2026,itu2016}.
 
-Every such model needs boundary conditions, the pressures, flows or resistances imposed where the model ends to stand in for the vessels the image cannot resolve. The largest part of this unresolved circulation is the
-microvascular bed, the arterioles and capillaries downstream of the segmented arteries, which set how much blood
-each region of heart muscle draws. Its resistance is not measured but derived from the segmented lumen through
-scaling laws that relate vessel size to the flow it carries \cite{murray1926,kim2010}. It is increasingly tuned so that the model reproduces measured perfusion, the blood flow to each region of heart
-muscle, or measured flow splits \cite{menon2024,arminio2026}. The segmentation therefore enters the computed FFR twice, through the resistance of the arteries it describes and through the boundary conditions derived from them.
+Every such model needs boundary conditions, the pressures, flows or resistances imposed where the model ends. They
+stand in mainly for the microvascular bed, the arterioles and capillaries that set perfusion, the blood flow to each region of heart
+muscle. The bed resistance is not measured but derived from the segmented lumen through
+scaling laws that relate vessel size to the flow it carries \cite{murray1926,kim2010}. It is increasingly tuned so that the model reproduces measured perfusion \cite{menon2024} or measured flow splits \cite{arminio2026}. In a coronary digital twin, this tuning personalizes the physiology. The segmentation therefore enters the computed FFR twice, through the arteries and through the boundary conditions derived from them.
 
-Segmentation error has been studied mainly as caliber error. Caliber is the inner diameter of a vessel, so a caliber error is a lumen drawn too wide or too narrow, or a narrowing drawn too long, while the branching is unchanged. Sensitivity analyses perturb the radius at fixed bifurcations and report a continuous change in the computed pressure index \cite{sankaran2015tmi,sankaran2015cmame,fernandez2024,dalmaso2025}. Studies that set geometry against
+Segmentation error has been studied mainly as caliber error. Caliber is the inner diameter of a vessel, so a caliber error is a lumen drawn too wide or too narrow, or a narrowing drawn too long, while the branching is unchanged. Sensitivity analyses perturb the radius at fixed bifurcations and report a continuous change in the computed pressure index \cite{sankaran2015tmi,sankaran2015cmame,fernandez2024,dalmaso2025}; the sensitivity peaks at the minimal lumen, rises with stenosis severity \cite{fernandez2024} and depends on the downstream boundary conditions \cite{sankaran2015tmi}. Studies that set geometry against
 boundary conditions rank the two by their influence on a continuous output \cite{sankaran2016,tanade2022,korte2023}. Topological error, a change in the branching structure itself such as a missed side branch or a vessel that ends too early, has received less attention. In a pulmonary network model, connectivity contributed more to hemodynamic uncertainty than vessel radius and
-length \cite{colebank2019}, and examples from a recent coronary benchmark showed vessel breaks in the output of every evaluated method despite high overlap scores \cite{bransby2026}, and small distal segments remain the hardest to segment
+length \cite{colebank2019}. In a recent coronary benchmark, every evaluated method produced vessel breaks despite high overlap scores \cite{bransby2026}, and small distal segments remain the hardest to segment
 \cite{chen2025}. A missed branch removes part of the microvascular bed from the model and changes both the flow
 through the stenosis and the boundary conditions derived from the tree.
 
-Whether such an error reaches the computed FFR depends on how the boundary conditions are handled. With outlet resistance held fixed, adding a side branch beyond a stenosis lowered FFR by 15.5\% in an idealized model and by 13\% in one of two models built from optical coherence tomography \cite{gamage2022}. When a cohort-wide outlet resistance was recalibrated for a model with side-branch outflow, diagnostic accuracy changed little \cite{gosling2020}. In a clinical cohort, a change of outlet
-model left the area under the receiver operating characteristic curve unchanged at 0.845 while sensitivity moved
-from 58.1\% to 68.6\% \cite{fossan2026}. If the boundary conditions are tuned until the model matches measured perfusion, a topological error may vanish
-from the perfusion check yet remain in the pressure along the vessel. None of these studies compares fixed, re-derived and tuned boundary conditions on the same corrupted anatomy at
-0.80, or tests whether a model can pass a perfusion check and still assign the wrong treatment.
+Whether such an error reaches the computed FFR depends on how the boundary conditions are handled. With outlet resistance held fixed, adding a side branch beyond a stenosis lowered FFR by 15.5\% in an idealized model and by 13\% in one of two models built from optical coherence tomography \cite{gamage2022}. When a cohort-wide outlet resistance was recalibrated for a model with side-branch outflow, diagnostic accuracy changed little \cite{gosling2020}. In a clinical cohort, a change of outlet model moved sensitivity from 58.1\% to 68.6\% at an unchanged area under
+the curve \cite{fossan2026}. If the boundary conditions are tuned until the model matches measured perfusion, a topological error may vanish
+from the perfusion check yet remain in the pressure along the vessel. None of these studies compares fixed, re-derived (derived anew from the segmented tree) and tuned boundary conditions on the same corrupted anatomy at
+0.80, or tests whether a tuned model can pass a perfusion check while its FFR is wrong.
 
-We propose a controlled test for this problem, an ablation in which one segmentation error at a time is introduced
-into an otherwise correct model. The correct (clean) model of each tree serves as the reference, so its FFR is the
-true value and every change in FFR can be traced to the error and to the handling of the boundary conditions. We
-inserted 150 stenoses into 108 real coronary trees from a public CT angiography dataset so that the baseline
-FFR spans the decision threshold, applied two topological and two caliber error types, and recomputed FFR with a
-reduced-order model under fixed, re-derived and tuned boundary conditions in two microvascular bed structures. The approach is new in three respects. First, segmentation error is judged by whether it changes the treatment
-decision at 0.80, not by a continuous sensitivity, and against the variability of repeat invasive FFR. Second, the
-same corrupted anatomy is solved under fixed, re-derived and tuned boundary conditions, with tuning by one global or
-one per-territory parameter, which isolates the effect of tuning, and topological errors are separated from caliber
-errors of measured inter-observer magnitude. Third, the test counts how often a model passes a perfusion check while
-its FFR is materially wrong, a failure of the check that, to our knowledge, has not been quantified, and a 3D
-computational fluid dynamics (CFD) case tests the reduced-order result. The results show what a perfusion check
-misses and which further checks a computed-FFR pipeline needs.
+We propose a controlled test, an ablation that introduces one segmentation error at a time into an otherwise correct
+model, whose FFR is the reference. It judges each error (branching, caliber away from the lesion, stenosis throat) by the decision at 0.80 against the variability of repeat invasive FFR. It solves the same corrupted anatomy under fixed, re-derived and tuned boundary conditions in two microvascular bed structures and counts how often a model passes a perfusion check, at two territory resolutions, while its FFR is materially wrong. It also measures what overlap scores and the pre-tuning mismatch show of these errors, with a 3D computational fluid
+dynamics (CFD) case as a check.
 
-% ---------------------------------------------------------------------------------------------------------------
 \section{Methods}
 \begin{figure*}[!t]\centering
-\includegraphics[width=\textwidth]{figures/fig1_errors.pdf}
-\caption{The four segmentation error types on one cohort tree (left coronary tree of scan 14, front view, line width
-proportional to radius). (a) The tree with an inserted 80\% DS lesion in the proximal LAD (blue) and the measurement
+\includegraphics[width=0.93\textwidth]{figures/fig1_errors.pdf}
+\caption{Four of the five segmentation error types on one cohort tree (left coronary tree of scan 14, front view, line width
+proportional to radius). The fifth (T5) changes only the throat radius of the lesion in (a). (a) The tree with the host LAD in blue, an inserted 80\% DS proximal lesion and the measurement
 point 20~mm beyond it. (b) T1 deletes the largest side branch beyond the lesion (red). (c) T2 ends the host vessel
-25~mm beyond the lesion, and the red part is lost. (d) Radius along the LAD for the caliber errors, T3 lengthening the
-lesion by 2.46~mm and T4 shrinking the radius by 7\% from the lesion onwards. The same instance was solved in 3D.}
+25~mm beyond the distal edge of the lesion; the red part is lost. (d) Radius along the LAD for the caliber errors, T3 lengthening the
+lesion by 2.46~mm and T4 shrinking the radius by 7\% from the lesion onwards. This instance was also solved in 3D without the lesion, with the lesion, and with T1.}
 \label{fig:design}
 \end{figure*}
-In outline, we inserted a stenosis into each real coronary tree, introduced one segmentation error at a time
-(Fig.~\ref{fig:design}), recomputed FFR under three boundary-condition protocols and two bed structures, and
-compared each result with the clean model of the same tree.
-
 \subsection{Data and Cohort}
 ImageCAS-X provides voxel-wise lumen masks, labeled centerlines and surfaces for 800 CT angiography scans of the
-ImageCAS dataset \cite{zeng2023,bransby2026,imagecasx_data}. We used its 160-scan test split, in which a second
-analyst re-annotated each scan. The two annotators agreed to a Dice similarity coefficient (DSC, the overlap of two
+public, anonymized ImageCAS dataset \cite{zeng2023,bransby2026,imagecasx_data}. We used its 160-scan test split, in which a second
+analyst re-annotated each scan. The two annotators agreed with a Dice similarity coefficient (DSC, the overlap of two
 masks) of 92.8\% and a 95th-percentile Hausdorff distance (HD95, the surface distance exceeded by 5\% of boundary
 points) of 2.46~mm \cite{bransby2026}. Each scan gives a left and a right coronary tree. The radius at each centerline point is the Euclidean distance from the point to
 the nearest background voxel of the mask.
 
 The dataset contains few lesions near the decision threshold, so we inserted one stenosis per instance into an
-otherwise unchanged tree. An instance is one lesion in one tree. A host vessel (left anterior descending, LAD; left circumflex, LCx; or right coronary artery, RCA) was eligible
-when image quality was at least adequate (2 on a 0--4 scale), the healthy reference radius $r_\mathrm{fit}$ at the
-lesion center (from a linear taper fit) was at least 1.0~mm, native narrowing was below 40\% diameter stenosis (DS),
-the measurement point 20~mm beyond the lesion lay on a vessel of radius at least 0.75~mm, and the FFR before
-insertion was at least 0.90. The lesion is an axisymmetric cosine narrowing (Supplementary Material),
+otherwise unchanged tree. An instance is one lesion in one tree. Its clean model is the lesioned tree with no segmentation error. A host vessel (left anterior descending, LAD; left circumflex, LCx; or right coronary artery, RCA) was eligible when image quality was at least adequate and native narrowing was below 40\% diameter stenosis (DS). The taper-fit radius $r_\mathrm{fit}$ (a linear fit of radius along the vessel) at the lesion center had to be at least 1.0~mm, and the FFR before insertion at least 0.90 (full criteria in the Supplementary Material). The lesion is an axisymmetric cosine narrowing,
 \begin{equation}
 \begin{aligned}
 r'(s) &= \min\!\left(r,\; (1-w)\,r + w\,r_\mathrm{fit}\,(1-\mathrm{DS})\right),\\
 w &= \tfrac{1}{2}\left[1+\cos\tfrac{2\pi (s-c)}{L}\right]
 \end{aligned}
 \end{equation}
-for $|s-c|<L/2$, where $s$ is arc length, $c$ the lesion center and $L$ its length. The vessel was never widened.
+for $|s-c|<L/2$ ($r'=r$ elsewhere; DS as a fraction), where $s$ is arc length, $c$ the lesion center and $L$ its length. The vessel was never widened.
 Lesions were centered 20 or 45~mm from the vessel origin, were 10 or 20~mm long and had 40, 50, 55, 60, 65, 70, 75
-or 80\% DS. Of the 6\,944 resulting instances (280 host vessels, 140 scans), we drew 25 in each of six 0.05-wide bands of
-baseline FFR from 0.65 to 0.95, at most two per tree, giving 150 instances (50 per host vessel) in 108 trees from 93
-patients.
+or 80\% DS. From the 6\,944 eligible instances (280 host vessels, 140 patients), we drew 25 at random (fixed seed, at most two per tree) in each of six 0.05-wide bands of leaky-bed baseline (clean-model) FFR from 0.65 to 0.95. The 150 instances (50 each in the LAD, LCx and RCA) lie in 108 trees from 93 patients (Supplementary Material).
 
 \subsection{Reduced-Order FFR Model}
 All 150 instances were solved with a reduced-order model, which represents the coronary tree as a network of flow
 resistances instead of computing the full 3D flow field. The model places one node at every centerline point. Each element between consecutive nodes has the Poiseuille
-resistance $8\mu\,\Delta s/(\pi r^4)$ of its actual radius $r$ and length $\Delta s$, with blood viscosity
-$\mu = 0.004$~Pa\,s. Where the narrowing exceeds 30\% DS, an expansion loss $\Delta p = K\,Q|Q|$ is added at the
-throat, with $K = \rho K_t (A_0/A_s - 1)^2 / (2A_0^2)$, $K_t = 1.52$ \cite{young1973}, density
+resistance $8\mu\,\Delta s/(\pi r^4)$ of its actual radius $r$ and length $\Delta s$, so the viscous loss of a lesion grows with its length, with blood viscosity
+$\mu = 0.004$~Pa\,s. Where the narrowing exceeds 30\% DS, an expansion loss $\Delta p = K\,Q|Q|$ is lumped at the
+stenosis, with $K = \rho K_t (A_0/A_s - 1)^2 / (2A_0^2)$, $K_t = 1.52$ \cite{young1973}, density
 $\rho = 1060$~kg\,m$^{-3}$, and $A_0$ and $A_s$ the reference and throat areas. Aortic pressure is 90~mmHg and
-venous pressure 5~mmHg. Because the throat loss depends on flow, the equations are nonlinear and have no analytical solution
-for a real tree. They are solved numerically by under-relaxed fixed-point iteration, each step a sparse linear
-solve for the node pressures, until the relative flow change falls below $10^{-8}$. The mass-conservation error is recorded for every solve. FFR is the computed
+venous pressure 5~mmHg. FFR is the computed
 pressure at the measurement point divided by aortic pressure. The model is steady and represents maximal hyperemia
 (maximal flow) without autoregulation.
 
 The microvascular bed is modeled as conductances (the inverse of resistance) that drain flow from network nodes to
-venous pressure. Each conductance depends on a healthy reference radius $r_\mathrm{ref}$, the taper-fit radius
-$r_\mathrm{fit}$ made non-increasing along each path, and is scaled by one bed constant $C$. Two bed structures were analyzed because they treat a deleted vessel differently. In the leaky
-bed, flow leaves along the vessel wall at every node of the tree truncated at $r_\mathrm{ref} = 0.50$~mm, with
-conductance $(r_\mathrm{ref}^3 - \sum r_{\mathrm{ref},\mathrm{child}}^3)/C$, so that flow follows Murray's cube law
+venous pressure. Each conductance depends on a healthy reference radius $r_\mathrm{ref}$ (the taper-fit radius
+$r_\mathrm{fit}$ made non-increasing along each path) and is scaled by one bed constant $C_\mathrm{b}$. Two bed structures were analyzed because they treat a deleted vessel differently. In the leaky
+bed, flow leaves along the vessel wall at every node of the tree truncated at $r_\mathrm{ref} = 0.50$~mm, near the mask resolution, with
+conductance $(r_\mathrm{ref}^3 - \sum r_{\mathrm{ref},\mathrm{child}}^3)/C_\mathrm{b}$, so that flow follows Murray's cube law
 \cite{murray1926}. This distributed outflow stands for the side branches the image does not resolve, and the
 conductance of a deleted branch reappears as wall outflow at its parent node. In the discrete bed, flow leaves only
-at the outlets of the tree truncated at $r_\mathrm{ref} = 0.60$~mm, with conductance $r_\mathrm{ref}^{2.66}/C$,
-where the exponent approximates 8/3, the inverse of the 3/8 power that relates coronary vessel diameter to the
-myocardial mass it perfuses \cite{choy2008}, so that outlet flow is taken as proportional to perfused mass. The discrete bed is the outlet structure that a 3D model can
-represent. In both structures $C$ was calibrated on the healthy-equivalent network, the tree with its reference
+at the outlets of the tree truncated at $r_\mathrm{ref} = 0.60$~mm, the cut that kept a side branch beyond most lesions, with conductance $r_\mathrm{ref}^{2.66}/C_\mathrm{b}$.
+Outlet flow is then proportional to perfused mass \cite{choy2008}. The discrete bed is the outlet structure that a 3D model can
+represent. In both structures $C_\mathrm{b}$ was calibrated on the healthy-equivalent network, the tree with its reference
 radius and no lesion, so that inflow equals the hyperemic demand $Q = k\,r_\mathrm{in}^3$, where $r_\mathrm{in}$ is
-the inlet radius and the cube law is Murray's \cite{murray1926}. With the model setting $k = 562$~s$^{-1}$, a
-vessel with the normal proximal LAD diameter of 3.7~mm \cite{dodge1992}, carries 214~mL/min,
-within one standard deviation of the hyperemic flow measured in that artery by continuous thermodilution
-($228 \pm 71$ to $293 \pm 102$~mL/min) \cite{fournier2021}. The segmented arteries were narrower than these
-normal values (median inlet radius 1.60~mm), so the cohort's median demand was 2.1~mL/s (126~mL/min) per tree, and
-the full pipeline was repeated with $k$ doubled and tripled (Section~\ref{sec:demand}). Reference radii and $C$ are computed from the original tree, so an inserted lesion changes
+the inlet radius. With $k = 562$~s$^{-1}$, a normal proximal LAD (diameter 3.7~mm \cite{dodge1992}) carries 214~mL/min, within one standard deviation of thermodilution measurements \cite{fournier2021}. The segmented arteries were narrower (median inlet radius 1.60~mm), so the cohort's median demand was 137~mL/min per tree; the pipeline was repeated with $k$ doubled and tripled and scaled by 0.7 and 1.3 (Supplementary Material). Reference radii and $C_\mathrm{b}$ are computed from the original tree, so an inserted lesion changes
 only the epicardial radius. The leaky bed was analyzed on all 150 instances. The discrete bed was analyzed on the
 97 instances whose healthy-equivalent network gave a main-vessel FFR of at least 0.90 and had at least two outlets,
 and baseline FFR bands were derived separately for each bed. Halving the centerline spacing changed FFR by at most
 0.005 in either bed.
 
 \subsection{Segmentation Error Types}
-Four error types were applied to each instance with its lesion in place. Two are
-topological errors, which change which vessels exist. Two are caliber errors, which change the lumen size or lesion
+Five error types were applied to each instance with its lesion in place (Fig.~\ref{fig:design}). Two are
+topological errors, which change which vessels exist. Three are caliber errors, which change the lumen size or lesion
 extent while the branching is unchanged. The missed branch (T1) deletes the largest side branch that leaves the host
-vessel beyond the lesion, together with its subtree. The vessel break (T2) ends the host vessel 25~mm beyond the
+vessel beyond the lesion, together with its subtree, and is possible only where such a branch exists. The vessel break (T2) ends the host vessel 25~mm beyond the
 distal edge of the lesion, so the measurement point survives but the run-off beyond it is lost. The lesion length
-(T3) re-inserts the same stenosis 2.46~mm longer. The taper (T4) multiplies the radius by 0.930 from the proximal
-edge of the lesion onwards and in every descendant vessel. For T3 and T4 the set of modeled nodes is fixed to that
+(T3) re-inserts the same stenosis 2.46~mm longer about the same center. The taper (T4), a uniform narrowing, multiplies the radius by 0.930 from the proximal
+edge of the lesion onwards and in every descendant vessel. The throat error (T5) re-inserts the same lesion with its throat diameter narrowed or widened by half the in-plane voxel size of the scan (median 0.35~mm), each sign a separate model. A secondary magnitude of $\pm 10$ points of DS is reported in the Supplementary Material. For T3, T4 and T5 the set of modeled nodes is fixed to that
 of the clean tree, so a narrowed radius does not remove an outlet.
 
-The caliber magnitudes are the inter-observer statistics of the test split, so each caliber error is as large as
-the disagreement between two annotators. HD95 (2.46~mm) sets T3. The DSC of 92.8\% sets T4 as the radius
-ratio $k$ of two coaxial cylinders, $2k^2/(k^2+1) = 0.928$. Because both annotators edited the same automatically
-generated centerlines, the dataset authors describe the inter-observer DSC as an upper bound on agreement \cite{bransby2026}. T1 and T2 have
-no measured magnitude and are design choices. Nodes of the corrupted tree were matched to the clean tree by
-coordinate, and FFR was read at the same anatomical point.
+The T3 and T4 magnitudes are the inter-observer statistics of the test split, so each is as large as
+the disagreement between two annotators. HD95 (2.46~mm), used as a proxy for the disagreement in lesion extent, sets T3. The DSC of 92.8\% sets T4 as the radius
+ratio $\lambda$ of two coaxial cylinders, $2\lambda^2/(\lambda^2+1) = 0.928$. Both annotators edited the same automatically generated centerlines, so the dataset authors describe the inter-observer DSC as an upper bound on agreement \cite{bransby2026}. The half-voxel
+throat error, below the resolution of the mask, changed the throat radius by a median of 0.088~mm and DS by 7.3 points (4.5--9.8). T1 and T2 have
+no measured magnitude and are design choices, so the topological results are conditional on them. Nodes of the corrupted tree were matched to the clean tree by
+coordinate, and FFR was read at the same point.
 
 \subsection{Boundary-Condition Protocols}
 Each corrupted tree was solved under four protocols. Under Protocol A (fixed), surviving
-nodes keep the bed conductances and $C$ of the clean model, and the bed of deleted vessels is lost. This represents
-the case in which the boundary conditions were obtained correctly despite the segmentation error. Under Protocol B
-(re-derived), the bed rule is applied to the corrupted tree and $C$ is recalibrated to that tree's own hyperemic
+nodes keep the bed conductances and $C_\mathrm{b}$ of the clean model, and the bed of deleted vessels is lost. This represents
+outlet resistances obtained independently of the segmented tree. Under Protocol B
+(re-derived), the bed rule is applied to the corrupted tree and $C_\mathrm{b}$ is recalibrated to that tree's own hyperemic
 demand, as an automated pipeline does with whatever anatomy it receives. Under Protocol C (tuned), one global
-scaling of $C$ (one bed scaling) is fitted so that the corrupted model reproduces the clean model's territory
-flows. A perfusion territory is the subtree below each child of
-the first bifurcation of the clean tree. Its target is the total bed outflow of that subtree in the clean model,
+scaling of the re-derived $C_\mathrm{b}$ is fitted so that the corrupted model reproduces the clean model's territory
+flows, which stand in for an error-free perfusion measurement. A perfusion territory is the subtree below each child of
+the first bifurcation of the clean tree (a median of two and at most three per tree). Its target is the total bed outflow of that subtree in the clean model,
 including the share of any vessel the error deleted, because the heart muscle is perfused whether or not its artery
-was segmented. Each corrupted node belongs to the territory of its clean counterpart. The fit minimized the mean
-squared relative error of the territory flows over a 61-point grid spanning $\pm 1.5$ decades of $C$ about the
-re-derived value, followed by bounded refinement. A fit at the edge of the search range was recorded as a failure.
-One parameter against two or more targets makes the fit over-determined, so this is the least flexible tuning a
-pipeline could use. Under Protocol D (per-territory tuned), the re-derived bed of each territory is scaled by its
-own factor, fitted so that every territory flow equals its clean target. With one parameter per target the fit is
-exactly determined, the most flexible tuning to territory flows. Protocols C and D are defined only when at least two territories retain a vessel. They were undefined for 33 of
-77 (discrete) and 47 of 118 (leaky) missed-branch instances and for 36 of 96 and 49 of 149 vessel breaks, all but
-four in the RCA (a missed branch is possible only where a side branch leaves the host vessel beyond the lesion). Both match
+was segmented. Each corrupted node belongs to the territory of its clean counterpart. The fit searched $\pm 1.5$ decades
+of $C_\mathrm{b}$; a fit at the edge of the range was a failure and was excluded (two half-voxel throat-error models, one per bed).
+Under Protocol D (per-territory tuned), the re-derived bed of each territory is scaled by its own factor, fitted (within $10^{\pm 3}$) so that every territory flow equals its clean target. A fit at this bound keeps a defined residual and is retained. With one parameter per target the fit is exactly determined, the most flexible tuning tested; Protocol C, with one parameter against two or more targets, is the least. Protocols C and D are defined only when at least two territories retain a vessel, which excluded most right coronary
+instances with a topological error (Supplementary Material). Both protocols match
 flow only, because matching both flow and pressure at the outlets of a steady tree would reproduce the clean FFR by
 construction.
 
 For every protocol we computed the perfusion residual, the root mean square of the relative differences between the
-model's territory flows and the clean targets. It is the quantity a perfusion check compares with the measurement.
+model's territory flows and the clean targets. It is the mismatch that a perfusion check reports. Protocols C and D were also repeated with each main-branch territory divided again at its own first bifurcation (a median of four territories in the discrete bed and five in the leaky bed). A territory left without a vessel counted as a 100\% mismatch.
 
-\subsection{Three-Dimensional Case Study}
+\subsection{Three-Dimensional CFD Setup}
 To test whether the findings depend on the simplifications of the reduced-order model, one instance (a 20~mm lesion
-of 80\% DS in the proximal LAD) was also solved with 3D CFD, which computes the full velocity and pressure fields
-from the Navier--Stokes equations. These have no analytical solution for a real artery, so they were solved
-numerically by the finite-volume method. Three lumens were built: clean, with the lesion (baseline), and with the
-lesion and the missed branch (T1). Surfaces were extracted from the mask by marching cubes and Taubin smoothing; the
+of 80\% DS in the proximal LAD) was also solved with 3D CFD. Three lumens were built: without the lesion, with the lesion (baseline), and with the
+lesion and the missed branch (T1). Surfaces were extracted from the mask, the
 lesion was applied by moving surface vertices radially with (1), and the branch was removed by deleting its voxels.
-Meshes of 3.5--3.9 million cells (cfMesh) had 25~\textmu m cells within $\pm 4$~mm of the throat and four boundary
-layers.
-
-Steady laminar Newtonian flow, with the viscosity and density of the reduced-order model, was solved with the
-steady incompressible solver of OpenFOAM (simpleFoam, ESI v2406, SIMPLE pressure--velocity coupling), with a
-bounded second-order upwind scheme for convection and second-order central schemes elsewhere. Each solve ran
-3\,000 iterations; convergence required scaled residuals below $10^{-5}$ and a steady pressure at the measurement
-point. The walls were rigid with no slip, and the inlet carried aortic pressure. Each outlet either set its pressure
-to venous pressure plus the clean tree's resistance times its flow (Protocol A), or received a prescribed clean
-territory flow, shared over the territory's surviving outlets by bed weight (the per-outlet form of Protocol D). FFR
+Meshes of 3.5--3.9 million cells had 25~\textmu m cells within $\pm 4$~mm of the throat (mesh and solver settings in the Supplementary Material).
+Steady laminar Newtonian flow, with the viscosity and density of the reduced-order model, was solved with OpenFOAM
+(simpleFoam) to scaled residuals below $10^{-5}$ and a steady pressure at the measurement
+point. The walls were rigid with no slip, and the inlet carried aortic pressure. Outlets either set pressure to venous pressure plus the clean tree's resistance times their flow (Protocol A), or received prescribed clean territory flows, shared over each territory's surviving outlets by bed weight (the per-outlet limit of Protocol D). FFR
 is the area-averaged pressure on a cross-section at the measurement point divided by aortic pressure. A
 grid-convergence study on an idealized 70\% DS stenosis (throat cells of 50, 25 and 12.5~\textmu m) gave a
-discretization uncertainty in FFR of $5.5\times10^{-4}$. A reduced-order twin of each geometry, rebuilt on the
+discretization uncertainty in FFR of $5.5\times10^{-4}$. A reduced-order counterpart of each geometry, rebuilt on the
 area-equivalent radius of the meshed lumen with the same outlet conditions, separates the effect of model fidelity
 from that of radius definition.
 
 \subsection{Outcomes and Statistical Analysis}
 For each instance, error type, protocol and bed, $\Delta$FFR is the corrupted model's FFR minus that of the
-instance's own clean model in the same bed. A flip is a change of classification at 0.80 between the two, that is,
-a change in the treatment decision. A model passes the perfusion check when its perfusion residual is below 10\%.
-Published repeatability of hyperemic myocardial blood flow (within-subject variation of 10--15\%
-\cite{schindler2023} and a regional repeatability coefficient of 30--37\% \cite{brown2018}) implies a 95\% bound of
-about 20--29\% for one model output against one regional measurement, so the 10\% threshold is strict, and a looser
-one can only increase the number of models that pass. Thresholds of 13\% and 16\% were analyzed as
-sensitivities. An FFR is materially wrong when $|\Delta\mathrm{FFR}| > 0.05$, an error large enough to matter near
-the 0.80 cut.
+instance's own clean model in the same bed. A flip is a change of classification at 0.80 between the two, and hence potentially
+in referral or treatment. A model passes the perfusion check when its perfusion residual is below 10\%.
+Published repeatability of hyperemic myocardial blood flow \cite{schindler2023,brown2018} implies a 95\% bound of
+20--29\% for one model output against one measurement, so the threshold is stricter than measurement repeatability;
+13\% and 16\% were analyzed as sensitivities. An FFR is materially wrong when $|\Delta\mathrm{FFR}| > 0.05$, half the width of the 0.75--0.85 grey zone
+\cite{petraco2013}. Each corrupted tree was also scored by the tube-model DSC and clDice \cite{shit2021}, and the
+pre-tuning perfusion residual was evaluated as a detector against correct anatomy with noisy targets
+(Supplementary Material).
 
-Proportions are reported with Wilson 95\% confidence intervals (CIs). Protocol contrasts of flips (B against A, C
-against A, C against B) are paired within instance and tested with the exact McNemar test, with Holm adjustment
-across the three contrasts of each error type and bed; passes-and-wrong under tuning (C and D) is compared with
-Protocol B by the same test. Topological and caliber errors are compared by a paired sign test on
+Proportions are reported with Wilson 95\% confidence intervals (CIs). Protocol contrasts of flips (B against A, C against A, C against B) are paired within instance and tested with the exact McNemar test, with Holm adjustment across the contrasts of each error type and bed. For the throat error the contrasts are C and D against A. Passes-and-wrong (models passing the check while materially wrong) under tuning (C and D) are compared with Protocol B by the same test. Topological and caliber errors are compared by a paired sign test on
 the per-instance flip proportions of each class, and paired changes in $|\Delta\mathrm{FFR}|$ by the Wilcoxon
-signed-rank test. A Bayesian mixed-effects logistic model of flips with patient and lesion-slot random effects is reported in the
-Supplementary Material. Every analysis was run in both beds, effect sizes are reported per bed, and a finding is
+signed-rank test. Instances are clustered within patients, so the confidence intervals are descriptive. A Bayesian mixed-effects logistic model agreed with the paired tests (Supplementary Material). Every analysis was run in both beds, effect sizes are reported per bed, and a finding is
 claimed only where its direction agrees in both.
 
-Each flip rate is compared with a noise floor, the rate expected from measurement variability alone. For each instance, this is the probability that a repeat invasive FFR, drawn from a normal
-distribution centered on the clean value with the published standard deviation of the difference between repeat measurements, 0.018 \cite{johnson2015}, falls on the other side of 0.80, following the measurement-certainty approach of \cite{petraco2013}. A second floor was simulated on the clean anatomy: 20 draws
-per instance perturbed cardiac output, aortic pressure, blood viscosity, the share of flow to each territory and the
-measured territory flows by their within-subject variability, and the model was tuned to the perturbed flows as in
-Protocol C.
+Each flip rate is compared with a noise floor, the rate expected from measurement variability alone. For each instance, this is the probability that a repeat invasive FFR falls on the other side of 0.80, following the measurement-certainty approach of \cite{petraco2013}. The repeat is normal about the clean value, taken as the first measurement, with the published standard deviation of the test--retest difference, 0.018 \cite{johnson2015}. A second floor was simulated on the clean anatomy with physiological
+noise in demand, pressure, viscosity and the measured territory flows, tuned as in Protocol C (Supplementary Material).
 
-The cohort, design, analysis plan and ablation code were fixed, and the cohort list hashed (SHA-256 b8fe7909\ldots),
-before the ablation was run. The analysis script was written while the ablation ran and before its output was read.
-Protocol D was specified in the analysis plan as a sensitivity but was run after the primary results were read; the
-demand replication was added afterwards. Because the cohort was stratified to span 0.80, its rates are conditional
-on that design and are not clinical prevalences. The analysis pipeline is shown in the Supplementary Material.
+The cohort was stratified to span 0.80, so its rates are conditional on that design and are not clinical prevalences (analysis pipeline in the Supplementary Material).
 
-% ---------------------------------------------------------------------------------------------------------------
 \section{Results}
-% Source: results/ablation-2026-10-07.csv -> code/analyse_ablation.py -> results/analysis-ablation-2026-10-07/;
-% Table I rows from code/table2.py; Figs. 2-4 from code/fig_results.py.
 \subsection{Decision Changes by Error Type and Protocol}
 \begin{table*}[!t]
 \caption{Decision Changes and Passes-and-Wrong by Error Type, Protocol and Bed Structure}
@@ -308,197 +242,158 @@ T4 & A & 97 & 13 (8--22) & 6 (3--13) & 150 & 9 (6--15) & 7 (4--12) \\
  & B & 97 & 8 (4--15) & 0 (0--4) & 150 & 1 (0--4) & 0 (0--2) \\
  & C & 97 & 8 (4--15) & 9 (5--17) & 150 & 5 (3--10) & 24 (18--31) \\
  & D & 97 & 14 (9--23) & 36 (27--46) & 150 & 5 (2--9) & 8 (5--13) \\
+\addlinespace[2pt]
+T5 & A, B & 194 & 30 (24--37) & 29 (23--36) & 300 & 36 (31--42) & 42 (37--48) \\
+ & C & 193 & 38 (31--45) & 57 (50--64) & 299 & 37 (32--43) & 69 (63--74) \\
+ & D & 194 & 40 (33--47) & 80 (74--85) & 300 & 38 (33--44) & 81 (76--85) \\
 \bottomrule
 \end{tabular}
 \\[2pt]
-\parbox{\textwidth}{\footnotesize A flip is a change of classification at FFR 0.80. Passes and wrong means a territory-perfusion residual below 10\% and $|\Delta\mathrm{FFR}| > 0.05$, over models with a defined residual (T2 under B in the discrete
-bed, $n = 60$; T2 under A and B in the leaky bed, $n = 100$). Protocol D matched every territory flow within 1\%
-in all but two models. Wilson 95\% intervals in parentheses. The expected flip
+\parbox{\textwidth}{\footnotesize A flip is a change of classification at FFR 0.80; $n$ is its denominator. Passes and wrong: territory-perfusion residual below 10\% and $|\Delta\mathrm{FFR}| > 0.05$, over models with a
+defined residual. This reduces $n$ for T2 to 60 under B (discrete bed) and to 100 under A and B (leaky bed). T2 was not applicable to one instance per bed; under A it removed every bed node in 36 discrete and 2 leaky instances, whereas under B the new vessel end carries outflow. T5 pools the narrower and the wider half-voxel throat error (two models per instance). Protocols A and B coincide for T5 by construction; one Protocol C fit per bed ended at its search bound and is excluded. Wilson 95\% intervals in parentheses. The expected flip
 rate from repeat invasive measurement is 5.0--6.5\% across cells.}
 \end{table*}
 
-Topological errors changed the decision more often than caliber errors under Protocols A--C in both beds
+Topological errors changed the decision more often than caliber errors away from the throat under Protocols A--C in both beds
 (Table~\ref{tab:results}). With fixed boundary conditions in the discrete bed, 45 of 137 topological-error models
-(33\%, 95\% CI 26--41\%) crossed 0.80, against 20 of 194 caliber-error models (10\%, 7--15\%). In the leaky bed the
+(33\%, 95\% CI 26--41\%) crossed 0.80, against 20 of 194 lesion-length and taper models (10\%, 7--15\%). In the leaky bed the
 proportions were 32\% (26--38\%) and 6\% (4--9\%) (paired sign test, $p \leq 0.002$ in both beds). Under
 Protocols B and C the difference kept its direction. It was significant in the discrete bed
 ($p = 0.013$ and 0.002) but not in the leaky bed ($p = 0.18$ and 0.057). Under Protocol D the two classes
-flipped equally often (8\% and 11\% discrete, 6\% and 4\% leaky). Flips were concentrated in the bands adjacent to 0.80 (Fig.~\ref{fig:band}). All 2\,599 corrupted-model solves
-converged (maximum mass-conservation error $9\times10^{-9}$); in the discrete bed the vessel break removed every
-outlet in 36 instances under Protocol A.
+flipped at similar rates (8\% and 11\% discrete, 6\% and 4\% leaky). With fixed boundary conditions, the half-voxel throat error crossed 0.80 in 30\% (24--37\%) and 36\% (31--42\%) of models. It flipped as often as the topological errors on the same instances (paired sign test, $p = 1.0$ and 0.46) and more often than the other caliber errors ($p < 0.01$ for each sign and bed). Every flip followed the sign of the error, and about half ended beyond the 0.75--0.85 grey zone. Re-derived boundary conditions coincide with fixed ones for this error by construction. Tuning raised its flip rate from 30\% to 38--40\% in the discrete bed (15 and 19 flips created, none reversed; McNemar $p < 0.001$) and from 36\% to 37--38\% in the leaky bed ($p = 0.22$ and 0.06). Flips were concentrated in the bands adjacent to 0.80 (Fig.~\ref{fig:band}). All corrupted-model solves converged (maximum mass-conservation error $9\times10^{-9}$).
 
-The caliber errors rarely changed the decision. At the magnitude of inter-observer disagreement they changed FFR by
-a mean of 0.006--0.037 in absolute value, and their flip rates of 1--14\% were of the order of the 5.0--6.5\%
-expected from repeat invasive measurement. Only the taper exceeded this noise floor with its lower confidence bound,
-under fixed boundary conditions (13\% discrete, 9\% leaky) and under Protocol D in the discrete bed (14\%).
+The caliber errors away from the throat rarely changed the decision. At the magnitude of inter-observer disagreement they changed FFR by
+a mean of 0.006--0.044 in absolute value, and their flip rates (1--14\%) were compared with the 5.0--6.5\% expected from repeat invasive measurement. Only the taper's rates in the discrete bed, 13\% and 14\% under fixed boundary conditions and Protocol D, had lower confidence bounds (8\% and 9\%) above that floor; its leaky-bed rate was 9\% (6--15\%). Against the grey zone of 0.75--0.85 \cite{petraco2013}, no caliber-error flip under fixed boundary conditions
+ended outside the zone, whereas 20\% (discrete) and 23\% (leaky) of topological-error models did (Supplementary Material).
 
-Re-deriving the boundary conditions from the corrupted tree (Protocol B) produced the fewest flips. Against
-Protocol A, it reversed 14 of 21 missed-branch flips in the discrete bed and 15 of 21 in the leaky bed, and created
-none (McNemar, Holm-adjusted $p < 0.001$ for both). It reversed 56 of 63 vessel-break flips in the leaky bed
-($p < 0.001$). In the discrete bed it reversed 22 vessel-break flips but created 12 ($p = 0.24$), because the
-re-derived bed lowered FFR below the clean value (mean $\Delta$FFR $-0.039$). Protocol B models, however, failed
-their own perfusion check most often.
+Re-deriving the boundary conditions (Protocol B) produced the fewest flips among Protocols A--C. Against Protocol A it reversed 14--56
+topological flips per cell and created none (paired McNemar test, Holm-adjusted $p < 0.001$); discrete-bed vessel
+breaks were the exception (22 reversed, 12 created, $p = 0.24$). However, where tuning was defined, only 22\% of re-derived topological-error models in the discrete bed (89\% in the leaky bed) passed the perfusion check.
 
 \begin{figure*}[!t]\centering
-\includegraphics[width=\textwidth]{figures/fig2_flip_by_band.pdf}
-\caption{Flip rate (proportion of models whose classification at FFR 0.80 changed) by baseline FFR band (0.05
-wide, plotted at the band center; bands with fewer than three models omitted), error type, protocol and bed
-structure. The shaded area is the flip rate expected from repeat invasive FFR alone (standard deviation 0.018).}
+\includegraphics[width=0.93\textwidth]{figures/fig2_flip_by_band.pdf}
+\caption{Flip rate (proportion of models whose classification at FFR 0.80 changed) by baseline FFR band, error type,
+protocol (A--C; D in Table~\ref{tab:results}) and bed structure; T5 pools both signs of the half-voxel throat error.
+Bands are 0.05 wide and plotted at their center;
+bands with fewer than three models are omitted. The shaded area is the flip rate expected from repeat invasive FFR alone (standard deviation 0.018).}
 \label{fig:band}
 \end{figure*}
 
 \subsection{Passes-and-Wrong Under Tuned Boundary Conditions}
-Fitting one bed scaling to the clean territory flows (Protocol C) lowered the median perfusion residual of
-topological-error models from 0.19 to 0.14 in the discrete bed and from 0.10 to 0.02 in the leaky bed. Compared with Protocol A, tuning reversed 4 missed-branch flips and created none in each bed ($p = 0.25$), and for
-vessel breaks reversed 32 and created none (leaky, $p < 0.001$) or reversed 22 and created 10 (discrete, $p = 0.15$).
-Relative to Protocol B, Protocol C changed at most two topological-error decisions per cell ($p \geq 0.5$).
-Protocol D matched the territory flows within 1\% in all but two models and corrected most of the topological error:
-the median $|\Delta\mathrm{FFR}|$ of topological-error models fell to 0.005 in both beds, and their flip rate to 8\%
-(discrete) and 6\% (leaky).
+Protocol C (one bed scaling fitted to the clean territory flows) lowered the median perfusion residual of topological-error models on the same instances from 0.22 under Protocol A to 0.14 (discrete) and from 0.11 to 0.02 (leaky). It reversed
+more topological flips than it created relative to Protocol A (significant for leaky vessel breaks, $p < 0.001$) and
+changed at most two topological-error decisions per cell relative to Protocol B ($p \geq 0.5$).
+Protocol D matched the territory flows within 1\% in all but two models (Supplementary Material) and corrected most of the topological error. The median $|\Delta\mathrm{FFR}|$ of topological-error models fell to 0.005 in both beds, and their flip rate to 8\% (discrete) and 6\% (leaky). With fixed boundary conditions the missed branch raised FFR by a median of 0.095 (discrete) and 0.047 (leaky). Protocol C reduced the shift to 0.077 and 0.015 (Wilcoxon signed-rank, $p < 0.001$ in both beds) and Protocol D to 0.000 and 0.004, with 10 of 44 and 3 of 71 instances still above 0.05.
 
-Tuning did not remove the error from every model (Fig.~\ref{fig:absorb}). After Protocol C, 20 of 104 topological-error
-models (19\%, 13--28\%) in the discrete bed and 14 of 171 (8\%, 5--13\%) in the leaky bed passed the perfusion check
-while their FFR was materially wrong (more than 0.05 from the clean value); after Protocol D, 21 of 104 (20\%,
-14--29\%) and 9 of 171 (5\%, 3--10\%) did. Under Protocol B the proportions were 2\% and 6\%. Tuning raised them in
-the discrete bed (McNemar $p < 0.001$ for C and D) but not in the leaky bed ($p \geq 0.12$). Under Protocol A they
-were 12\% and 20\%. Models with
-correct anatomy, tuned to perfusion measured with physiological noise, passed while materially wrong in 3.1\% (2.4--4.0\%) and 3.9\% (3.2--4.6\%) of draws, and their flip rates were 6.2\% and 7.2\%.
-At the looser thresholds of 13\% and 16\%, the proportion under Protocol C rose to 28\% (20--37\%) and 38\%
-(30--48\%) in the discrete bed and was 9\% (6--15\%) at both in the leaky bed.
+Tuning did not remove the error from every model (Fig.~\ref{fig:absorb}). After Protocol C, 20 of 104 topological-error models (19\%, 13--28\%) in the discrete bed and 14 of 171 (8\%, 5--13\%) in the leaky bed passed the perfusion check while their FFR was materially wrong ($|\Delta\mathrm{FFR}| > 0.05$). After Protocol D, 21 of 104 (20\%, 14--29\%) and 9 of 171 (5\%, 3--10\%) did. On the same instances the proportions were 2\% and 6\% under Protocol B and
+13\% and 22\% under Protocol A. Tuning raised these proportions relative to B in the discrete bed (McNemar $p < 0.001$ for C and D)
+but not in the leaky bed ($p \geq 0.12$). Models with
+correct anatomy, tuned to perfusion targets carrying simulated physiological noise (the second floor), passed while materially wrong in 3.1\% (2.4--4.0\%) and 3.9\% (3.2--4.6\%) of draws, and their flip rates were 6.2\% and 7.2\%.
+Looser thresholds of 13\% and 16\% raised the proportions (Supplementary Material).
 
-Tuning also turned caliber errors into passes-and-wrong. With re-derived boundary conditions no caliber-error model
+Tuning also turned caliber errors into passes-and-wrong. With re-derived boundary conditions no lesion-length or taper model
 passed while materially wrong in either bed. After tuning, 5\% (C) and 18\% (D) did so in the discrete bed and 12\%
 and 4\% in the leaky bed (McNemar against B, $p \leq 0.004$ in all four comparisons). Almost all were taper models
-whose FFR tuning lowered: forcing the clean flow through a uniformly narrowed lumen raises its pressure drop
-(Table~\ref{tab:results}).
+in which tuning lowered FFR: forcing the clean flow through a uniformly narrowed lumen raises its pressure drop
+(Table~\ref{tab:results}). The throat error was the least visible to the check. With fixed or re-derived boundary conditions 29\% (discrete) and 42\% (leaky) of half-voxel throat-error models passed while materially wrong, after Protocol C 57\% and 69\%, and after Protocol D 80\% and 81\%, with a median $|\Delta\mathrm{FFR}|$ of 0.11--0.16. Tuning moved FFR further from the clean value because the clean territory flow was forced through a wrong throat.
+With main-branch territories subdivided at their first bifurcation, topological passes-and-wrong fell to 7\% (C) and 3\% (D) in the discrete bed and to 5\% and 2\% in the leaky bed, near the 3--4\% of correct anatomy at main-branch level. Caliber passes-and-wrong away from the throat rose under Protocol D to 23\% and 9\%, almost all taper models;
+throat passes-and-wrong fell by at most 9 points, to 51--60\% (C) and 78--81\% (D), and flip counts changed by at most five per cell (Supplementary Material).
 
 \begin{figure}[!t]\centering
 \includegraphics[width=\columnwidth]{figures/fig3_absorption.pdf}
-\caption{Change in FFR against territory-perfusion residual for missed-branch and vessel-break models. Each point
-is one model. The shaded areas hold models that pass the perfusion check (residual $< 0.10$) while materially wrong ($|\Delta\mathrm{FFR}| > 0.05$). The horizontal axis is linear below 0.01 and logarithmic above.}
+\caption{Change in FFR against territory-perfusion residual for missed-branch and vessel-break models under Protocols A--C (Protocol D residuals lie below 0.01 in all but two models). Each point
+is one model. The shaded areas hold models that pass the perfusion check (residual $< 0.10$) while materially wrong ($|\Delta\mathrm{FFR}| > 0.05$); the dashed line marks the 0.10 threshold. The horizontal axis is linear below 0.01 and logarithmic above.}
 \label{fig:absorb}
 \end{figure}
 
-\subsection{Side-Branch Loss Under Fixed and Tuned Resistance}
-A missed side branch raised the computed FFR, and tuning removed only part of the rise. In the 44 (discrete) and 71
-(leaky) instances in which Protocol C was defined, the missed branch raised FFR by a median of 0.095 and 0.047 with
-fixed boundary conditions. The shift exceeded 13\% of the clean FFR in 45\% and 11\% of these instances. Tuning
-reduced the shift to a median of 0.077 and 0.015 (Wilcoxon signed-rank, $p < 0.001$ in both beds;
-Fig.~\ref{fig:branch}). In the leaky bed the tuned shift was a median 42\% of the fixed shift, and 12 of 71 instances
-remained above 0.05. In the discrete bed it was 84\%, and 33 of 44 remained above 0.05. Protocol D reduced the
-median shift to 0.000 (discrete) and 0.004 (leaky), but 10 of 44 and 3 of 71 instances remained above 0.05.
-
+\subsection{Overlap Scores and the Pre-Tuning Mismatch}
 \begin{figure}[!t]\centering
-\includegraphics[width=\columnwidth]{figures/fig4_branch_loss.pdf}
-\caption{Change in FFR caused by a missed side branch under fixed boundary conditions (Protocol A) and after tuning
-to territory flows (Protocol C), paired by instance. The solid line is the identity and the dashed line marks $\Delta$FFR $= 0.05$.}
-\label{fig:branch}
+\includegraphics[width=\columnwidth]{figures/fig_overlap.pdf}
+\caption{Tube-model Dice score of each corrupted tree, over the whole scan, against its change in FFR with fixed
+boundary conditions (Protocol A). Each point is one model. The dashed line marks the inter-observer Dice score
+(0.928); the shaded band holds changes within $\pm 0.05$.}
+\label{fig:overlap}
 \end{figure}
+In a tube model of each tree, the missed branch and the taper had the same median DSC (0.97 per tree; 0.98 over the whole scan, Fig.~\ref{fig:overlap}). The missed branch changed the decision about twice as often (27\% against 13\% discrete, 18\% against 9\% leaky). A vessel break lowered the DSC to 0.89, and to 0.62 in the right coronary artery; clDice fell only for topological errors. Among the decision-changing topological errors, 91\% (discrete) and 62\% (leaky) kept a whole-scan DSC at or
+above the inter-observer 0.928; within topological errors the AUC of the DSC for a decision change was 0.54 and
+0.70. The perfusion residual before tuning separated topological errors from correct anatomy with noisy targets in
+the discrete bed only (AUC 0.77 against 0.22), flagging 83\% of them and 48\% of correct models at the 10\% check.
 
-\subsection{Three-Dimensional Case Study}
-The 3D case reproduced the reduced-order result. With the clean tree's resistances at the outlets, removal of the
-side branch raised the 3D FFR at the measurement point from 0.870 to 0.944 ($\Delta$FFR $= +0.074$). With the clean
-territory flows prescribed at the outlets (Protocol D), the same error changed FFR by $-0.0007$ (0.892 in both
-geometries), so in this instance per-territory tuning removed the error. The reduced-order twins gave $+0.081$ and
-$-0.0005$ for the same two conditions, and their baseline FFR was within 0.011 of the 3D values
-(Fig.~\ref{fig:case3d}). In the cohort model of the same instance (discrete bed), the error gave $+0.127$ under
-Protocol A and $-0.0007$ under Protocol D, whereas the single scaling of Protocol C left $+0.107$ with a residual of
-0.30, which fails the check.
+\subsection{Robustness to Model Fidelity and Hyperemic Demand}
+The 3D case agreed with the reduced-order result in direction. With the clean tree's resistances at the outlets, removal of the
+side branch raised the 3D FFR at the measurement point from 0.870 to 0.944 ($\Delta$FFR $= +0.074$). With the clean territory flows prescribed at the outlets (the limit of Protocol D), the error changed FFR by $-0.0007$ against the clean geometry under the same flows (0.892 in both). It was $+0.022$ against the clean tree with its resistances (0.870), because sharing territory flow by bed weight moved the baseline. The reduced-order counterparts on the meshed radius gave $+0.081$ and
+$-0.0005$ (Fig.~\ref{fig:case3d}). In the cohort model of this instance the error gave $+0.127$ (A), $+0.107$ (C, failing the check) and $-0.0007$ (D).
 \begin{figure*}[!t]\centering
-\includegraphics[width=\textwidth]{figures/fig5_case3d.pdf}
+\includegraphics[width=0.93\textwidth]{figures/fig5_case3d.pdf}
 \caption{Three-dimensional case study (proximal LAD, 80\% DS). (a)--(c) Wall pressure relative to aortic pressure
-with the clean tree's outlet resistances, without the lesion, with the lesion, and with the lesion and a missed side branch. The lesion lowers the downstream pressure (red); the missed branch raises it again (green), a shift
-that would move a decision near 0.80. (d) Close-up of the lesion. (e), (f) Pressure along the artery with fixed
+with the clean tree's outlet resistances, without the lesion, with the lesion, and with the lesion and a missed side branch. The lesion lowers the downstream pressure (red); the missed branch raises it again (green), by 0.074 at the measurement point. (d) Close-up of the lesion boxed in (b). (e), (f) Pressure along the artery with fixed
 resistances and with prescribed clean territory flows. Markers show 3D cross-section averages and lines the reduced-order models on the meshed radius with the same outlet conditions. The shaded band is the lesion and the dashed line the measurement point.}
 \label{fig:case3d}
-\end{figure*} Two caveats apply. The meshed lumen was wider than the radius used by the reduced-order model (median
-difference 0.14~mm; throat area-equivalent radius 0.276 against 0.231~mm), and on the requested radius the
-reduced-order baseline was 0.761. Halving the cell size in the throat zone to 12.5~\textmu m changed the baseline
-FFR by 0.0019 and 0.0021 in two zone placements, against the error effect of 0.074, and a regenerated mesh at
-25~\textmu m reproduced the baseline value (Supplementary Material).
+\end{figure*} The meshed lumen was wider than the reduced-order radius (throat 0.276 against 0.231~mm; baseline 0.761 on the reduced-order radius). A finer throat zone changed the baseline FFR by at most 0.0021, although the strict residual limit was not met on the finest mesh (Supplementary Material).
 
-% ---------------------------------------------------------------------------------------------------------------
+With the hyperemic demand constant $k$ doubled and tripled, the lesion insertion, cohort selection and all four protocols were repeated. The flip-rate directions held in both beds at twice and in the leaky bed at three times the demand, but the excess of tuned over re-derived passes-and-wrong was not significant in any topological comparison at twice the demand (Supplementary Material). At twice and three times the demand, the half-voxel throat error changed the decision in
+27--29\% of models with fixed boundary conditions and in 31--35\% after tuning; 52--75\% of tuned throat-error models
+passed the perfusion check while materially wrong. It flipped less often than the topological errors in the discrete
+bed at twice the demand (27\% against 50\%, $p = 0.005$) and as often in the leaky bed ($p = 0.12$ and 0.24).
+
 \section{Discussion}
 \subsection{What a Perfusion Check Shows After Tuning}
-We asked whether a coronary flow model tuned to perfusion can still assign the wrong treatment. Three findings
-answer this. First, with fixed boundary conditions the decision risk of segmentation lay mainly in the branching
-structure of the lumen: a topological error changed the decision at 0.80 three to six times as often as a caliber
-error of inter-observer magnitude, whose flip rates were of the order of repeat invasive measurement. This ranking
-holds for the magnitudes studied, a whole branch or vessel segment against inter-observer caliber disagreement.
+With fixed boundary conditions, topological errors (18--43\% per type) and the half-voxel throat error each changed about a third of decisions in this threshold-stratified cohort. Caliber errors of inter-observer magnitude away from the throat changed decisions at rates near repeat invasive measurement, except the taper in the discrete bed (13--14\%). The throat result agrees with sensitivity analyses in which the pressure index responds most to the minimal lumen \cite{sankaran2015tmi,fernandez2024}; the present test adds the decision and the interaction with tuning. These rates hold for the magnitudes studied.
 
-Second, how much of a topological error reaches the decision depends on the boundary conditions. Re-deriving or
-tuning the bed reduced topological flips from 18--43\% to 5--20\%, and the more flexible the tuning, the more of the
-error it removed: per-territory tuning restored the flow that the missing branch had carried through the stenosis,
-in the cohort and in the 3D case.
+Re-deriving or tuning the bed reduced topological flips from 32--33\% to 5--19\% (pooled over error types) and did not reduce throat flips. Per-territory
+tuning restored the flow that the missing branch had carried through the stenosis, in the cohort and in the 3D case, by construction of its targets.
 
-Third, after tuning the perfusion check no longer carried information about the error. A tuned model passes by
-construction, whether its FFR has been corrected or not. In the discrete bed one in five tuned topological-error
-models remained materially wrong under either form of tuning, and in both beds tuning produced passing models with
-caliber errors that re-derived models did not, because restoring the clean flow through a narrowed lumen enlarges
-its pressure drop. The check measured agreement with the fitted targets, not the correctness of the model.
-
-Bed structure set the magnitude. In the leaky bed a deleted branch's conductance reappears as wall outflow at its
-parent node, damping the error before tuning, whereas the discrete bed, which matches 3D outlets, kept 84\% of the
-missed-branch shift after one global scaling. Claims are therefore limited to directions that held in both; the
-excess of passes-and-wrong over re-derived boundary conditions for topological errors held only in the discrete bed.
+After tuning, a passing perfusion check did not show that the FFR was correct. Per-territory tuning passes
+almost every model by design, and in the discrete bed one in five tuned topological-error models passed while
+materially wrong under either form of tuning. After one global scaling, 20 of the 39 passing topological-error models were materially wrong in the discrete bed, against 14 of 154 in the leaky bed. In both beds tuning turned caliber errors into passing models with a wrong FFR, because restoring the clean flow through a narrowed lumen enlarges its pressure drop. For the throat error, which the check did not see even before tuning, it did so in 57--81\% of models. The check measured agreement with the fitted targets, not the correctness of the model. Matching flow alone cannot
+identify a geometric error, because the fitted bed absorbs it; the results give the size of this non-identifiability at the decision level, by error type and check resolution. A check one
+branching level finer removed most topological passes-and-wrong but few throat or taper ones. The leaky
+bed damped topological errors, and their excess of passes-and-wrong over re-derived boundary conditions held only in
+the discrete bed.
 
 \subsection{Relation to Published Studies}
-Published sensitivity analyses of computed pressure indices perturb lumen caliber with the branching structure fixed and report
-continuous sensitivity \cite{sankaran2015tmi,sankaran2015cmame,fernandez2024,dalmaso2025}. Studies that compare geometry with boundary conditions rank their influence on a continuous output
-\cite{sankaran2016,tanade2022,korte2023}. Our results add that the ranking depends on the error type and the
-boundary-condition protocol, and that the decision outcome separates them more clearly.
+Comparisons of geometry with boundary conditions rank the two on a continuous output \cite{sankaran2016,tanade2022,korte2023};
+our results add that the ranking depends on the error type and the protocol. A side-branch effect of 13--15.5\% under
+fixed outlet resistance \cite{gamage2022} and little change in accuracy after recalibration \cite{gosling2020} both
+appear in our cohort, the first with fixed resistance and the second after re-derivation or tuning.
 
-Two earlier findings that appeared to disagree are reproduced here. A side-branch effect of 13--15.5\% under fixed outlet resistance was reported in an idealized model and a model built from optical coherence tomography \cite{gamage2022}, whereas recalibrating a cohort-wide outlet resistance absorbed a large change in side-branch flow with little change in diagnostic accuracy \cite{gosling2020}. Both appear in our cohort, the first with fixed resistance and the second after re-derivation or tuning, so the difference follows
-from the boundary-condition protocol. This is consistent with a clinical cohort in which a change of outlet model left
-the area under the curve unchanged while sensitivity changed \cite{fossan2026}.
-
-Vessel breaks occur in the output of current segmentation methods despite high overlap scores \cite{bransby2026},
-and a missing side branch removes few voxels, so the error types that carried the decision risk here are the ones that the usual overlap metrics do not measure, although topology-aware measures such as clDice
-exist \cite{shit2021}.
+Vessel breaks occur in the output of current segmentation methods despite high overlap scores \cite{bransby2026}.
+In our tube model a missed branch kept the DSC as high as a taper while changing the decision twice as often, and a vessel break lowered the whole-scan DSC below the inter-observer value only in the RCA. The topology-aware clDice \cite{shit2021} separated topological from caliber errors but is blind to the throat error, which changes no centerline, so overlap scores did not rank these errors by decision risk.
 
 \subsection{Implications and Practical Use}
-Perfusion imaging is used to personalize coronary flow models \cite{menon2024}, but agreement with a fitted
-quantity does not by itself make a model credible, which also requires verification, uncertainty quantification and
-applicability \cite{viceconti2025}. A missed branch that survived tuning raised FFR, biasing the decision toward
+Agreement with a fitted quantity does not by itself make a model credible. A coronary digital twin calibrated to perfusion also requires verification,
+uncertainty quantification and applicability \cite{viceconti2025}. A missed branch that survived tuning raised FFR, biasing the decision toward
 deferring treatment, whereas a tuned taper error lowered it, biasing the decision toward treatment.
 
-For a user who computes FFR from an image, the results suggest four steps. First, check that the side branches
-beyond the lesion are present and that no vessel ends early, because overlap scores do not reveal these errors.
-Second, if the boundary conditions are tuned to perfusion, check the lumen caliber as well: diameter errors of
-inter-observer size flipped decisions about as often as repeat invasive measurement without tuning, but produced
-passing models with a wrong FFR after it. Third, record the perfusion mismatch before tuning; in the discrete bed
-only 22\% of re-derived topological-error models passed, although in the leaky bed most did. Fourth, take most care near 0.80,
-where decision changes concentrated. A developer can also apply the same test to a pipeline, introducing the four errors into its own cases
-and comparing the resulting flip and passes-and-wrong rates with Table~\ref{tab:results} and the noise floors. These
-steps follow from the results but are not validated decision rules.
+For a user who computes FFR from an image, the results suggest four considerations. First, check that the side branches beyond the lesion are present and that no vessel ends early.
+Second, check the lumen caliber, above all the throat diameter: a half-voxel throat error flipped 30--36\%, and after tuning both throat and taper errors produced passing models with a wrong FFR. Third, record the perfusion mismatch before tuning: it marked topological errors only in the discrete bed (AUC 0.77), and half of the correct models with noisy targets exceeded 10\%. Fourth, take most care near 0.80. These considerations are not validated decision rules.
 
 \subsection{Limitations}
 The inserted stenoses are idealized, and the reduced-order model is steady, without autoregulation or heart-rate
-effects. The missed-branch and vessel-break magnitudes are design choices, and the caliber magnitudes come from
-inter-observer statistics that likely overstate agreement. Protocols C and D were undefined for most right coronary
-instances with a topological error, so their results for these errors describe the left coronary tree. Hyperemic
-demand followed the segmented inlet radius and was below thermodilution values; at doubled and tripled demand,
-fewer trees met the healthy-network criterion of the discrete bed. The 3D analysis covers one instance, with a
-meshed lumen wider than the reduced-order radius; this offset shifts absolute FFR but not the paired differences on
-which the findings rest. No invasive FFR was available, so the noise floor was modeled from published repeat
-measurements.
+effects. The missed-branch and vessel-break magnitudes are design choices, and the lesion-length and taper magnitudes come from
+inter-observer statistics that likely overstate agreement. The throat magnitudes are half a voxel and $\pm 10$ points of DS \cite{boogers2010,gouya2009}. Clinical computation of FFR from CT screens image quality before analysis \cite{norgaard2014}; the throat rates assume that the error reaches the simulation uncorrected, as a half-voxel error below
+the image resolution can. Protocols C and D were undefined for most right coronary
+instances with a topological error, so their results for these errors describe the left coronary tree. The reference obeys the same bed rule as Protocol B, so re-derivation carries no physiological deviation for tuning to correct. Hyperemic demand followed the segmented inlet radius and was below thermodilution values. The 3D analysis covers one instance, whose meshed lumen was wider than the reduced-order radius; the offset changed the size of the error effect but not its direction or its reduction by prescribed flows. No invasive FFR was available, so the noise floor was modeled from published repeat
+measurements. Errors were applied one at a time in one dataset; caliber errors away from the throat only narrowed or lengthened the lumen; microvascular
+dysfunction, collaterals and links between error and lesion morphology were not modeled. The finer perfusion check counts a territory without a surviving vessel as a 100\% mismatch, which presumes the territory is known to exist. Tuning targets were error-free clean-model flows
+(noise entered only the simulated floor). The rates are conditional on an error being present; how often current
+segmentation methods produce each error at a lesion was not measured. The distance-map radius lies inside the
+meshed lumen (median 0.14~mm in the 3D case), which lowers the modeled demand; the demand replication tests this
+effect.
 
 \section{Conclusion}
-In 150 controlled stenoses in 108 coronary trees, with fixed boundary conditions, topological segmentation errors
-changed the decision at FFR 0.80 three to six times as often as caliber errors of inter-observer magnitude. Tuning the
-boundary conditions to territory perfusion reduced these decision changes, and per-territory tuning removed most of
-the error, as in a three-dimensional case. A tuned model, however, passes the perfusion check whether or not its FFR
-is correct: after tuning, 5--20\% of topological-error and 4--18\% of caliber-error models passed while materially
-wrong. A perfusion match after tuning is therefore not evidence of a correct FFR, and the segmentation must be checked
-before tuning.
+This study proposes a controlled test that introduces one segmentation error at a time into a coronary flow model and judges
+its effect by the treatment decision at FFR 0.80. Applied to 150 inserted stenoses in 108 trees, it showed that a model that matches
+perfusion is not necessarily a correct one. With fixed boundary conditions, topological errors (18--43\% per type) and a half-voxel throat error each changed about a third of decisions in this threshold-stratified cohort, against 2--13\% for caliber errors away from the throat. Re-derived or tuned boundary conditions reduced topological decision changes to 5--19\% without reducing throat decision changes or making the models correct. Up to one in five tuned topological-error models (discrete bed; 5--8\% leaky) and 57--81\% of throat-error models passed a main-branch perfusion check while materially wrong, against 3--4\% for correct anatomy. These proportions hold at the primary demand; one branching level finer, topological passes-and-wrong fell to 2--7\% and throat passes-and-wrong changed little. At the magnitudes tested, errors at the branching near the lesion and at the throat diameter were the most consequential per occurrence, and tube-model overlap scores did not rank them by decision risk.
+For coronary digital twins calibrated to perfusion, agreement with perfusion after tuning is calibration evidence
+rather than validation evidence. The same test, built on public data and open code, can be applied to other segmentation and
+boundary-condition pipelines.
 
 \section*{Data and Code Availability}
-ImageCAS-X is available under CC BY 4.0 (doi:10.5281/zenodo.21887809). The code and the frozen cohort list are
-available from the corresponding author on request.
+The data that support the findings of this study were derived from resources available in the public domain: ImageCAS \cite{zeng2023} and ImageCAS-X \cite{imagecasx_data} (CC BY 4.0). The analysis code is available at \url{https://github.com/zulhilmi-ismadi/ctffr-segmentation-ablation}.
 
 \section*{Acknowledgment}
-This work received no external funding, and the authors declare no conflicts of interest. The study used a public, anonymized dataset and required no ethics
-approval.
+The authors thank the creators of ImageCAS and ImageCAS-X for making their data publicly available and used Grammarly for language editing. The authors declare no competing interests.
 
 \bibliographystyle{IEEEtran}
 \bibliography{refs}

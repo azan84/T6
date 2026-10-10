@@ -1,0 +1,38 @@
+150 instances x 2 beds x 20 draw(s), seed 20260919
+
+  10/150  400 rows  819s
+  20/150  800 rows  1357s
+  SKIP 509_left discrete: slot not eligible under this bed
+  30/150  1180 rows  1668s
+  40/150  1580 rows  2065s
+  SKIP 87_right discrete: fewer than 2 territories — Protocol C not applicable
+  SKIP 112_right discrete: fewer than 2 territories — Protocol C not applicable
+  50/150  1940 rows  2333s
+  SKIP 272_left discrete: slot not eligible under this bed
+  60/150  2320 rows  2641s
+  70/150  2720 rows  2924s
+  80/150  3120 rows  3196s
+  90/150  3520 rows  3518s
+  SKIP 85_right discrete: fewer than 2 territories — Protocol C not applicable
+  SKIP 363_right discrete: fewer than 2 territories — Protocol C not applicable
+  100/150  3880 rows  3660s
+  110/150  4280 rows  3860s
+  120/150  4680 rows  4040s
+  130/150  5080 rows  4208s
+  140/150  5480 rows  4401s
+  SKIP 95_right discrete: fewer than 2 territories — Protocol C not applicable
+  150/150  5860 rows  4551s
+
+wrote results/a7_detector-2026-10-09/negatives_pretune.csv  (5860 rows, 7 skips, 4552s)
+
+NEGATIVE CLASS — the check that matters: are these non-degenerate?
+  residual: median 0.0646  p10 0.0120  p90 0.1491
+  passes the 10% check: 4223/5850 (72%)  <- DETECTOR-SPEC §5 predicts ~77 %
+  |dFFR| median 0.0126  flips 365
+     ^ NOT expected to be ~0, and this is the single most useful number here: the anatomy is
+       CORRECT, so this is the FFR error a perfectly-segmented model still makes when it is tuned
+       to a noisy measurement. It is the irreducible noise floor on dFFR, and it must be reported
+       beside every injected-error effect (STATISTICS-PLAN §6). Compare it with MATERIAL_DFFR =
+       0.05: if the floor approaches the material threshold, the positives are only modestly
+       separated from correct models and H5's ceiling is set by physiology, not by the detector.
+  C_ratio: median 1.0195  IQR [0.9508, 1.0956]  <- S_C's null spread

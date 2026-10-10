@@ -1,0 +1,21 @@
+{
+  "frame": "mm, LPS. The ImageCAS-X NIfTI affine is RAS: negate x and y before applying inv(affine) to reach voxel indices. Verified \u2014 with the flip 42/42 deletion points land inside the lumen, without it 0/42.",
+  "P_aorta_Pa": 11998.98,
+  "P_venous_Pa": 666.61,
+  "P_aorta_kinematic": 11.319792452830189,
+  "P_venous_kinematic": 0.628877358490566,
+  "rho": 1060.0,
+  "mu": 0.004,
+  "nu": 3.7735849056603773e-06,
+  "inlet": {
+    "x": 32.6044921875,
+    "y": -176.9755859375,
+    "z": 86.9499969482422,
+    "r_mm": 1.2599823504161545,
+    "normal": [
+      0.3969231104439298,
+      0.900806775535008,
+      0.17606588978486865
+    ]
+  }
+}

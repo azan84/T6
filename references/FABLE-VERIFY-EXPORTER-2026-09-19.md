@@ -64,7 +64,7 @@ Truncation step, same scoring (1298 true sub-cut voxels): shipped 1787 / FP 510 
 
 **3.6 territories.csv arithmetic** — correct (§1, MUST 8). Also correct that `clean_nolesion`'s `bc_C_flows` are the *lesioned* clean flows (`q0_all` is computed from `r_clean` regardless of etype): Protocol C is not run on that package, but if it ever is, the targets are the lesioned tree's. Say so in `meta`, or write the no-lesion flows there.
 
-**3.7 `data_root` auto-descend** — works: `~/Datasets/imagecas-x` resolves to `ImageCAS-X_dataset`; a directory without `centerlines/` fails with a clear message.
+**3.7 `data_root` auto-descend** — works: `~/Documents/Datasets/imagecas-x` resolves to `ImageCAS-X_dataset`; a directory without `centerlines/` fails with a clear message.
 
 **3.8 Minor.** `--instance` still indexes COHORT-FROZEN (150 rows) — scan 14 is row 50, scan 102 row 0; the `--subset` batch is keyed correctly. README build order (truncate → mask edit → marching cubes → surface rule) composes: on scan 14 the two flood fills together remove 3848 voxels and leave 2 components. `MaximumInscribedSphereRadius` in `centreline.vtp` now equals `r_target_mm` (as-edited) as §11 says.
 

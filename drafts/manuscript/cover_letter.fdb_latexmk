@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1791425939.07636 "cover_letter.tex" "cover_letter.pdf" "cover_letter" 1791425939.35741 0
+["pdflatex"] 1791529036.13467 "cover_letter.tex" "cover_letter.pdf" "cover_letter" 1791529036.51709 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc" 1254269338 3031 6c4d3515bf7115d8518af1c9ab97ca44 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -34,12 +34,13 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd" 1616454256 1882 28c08db1407ebff35a658fd141753d16 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd" 1616454256 1867 996fe743d88a01aca041ed22cc10e1bb ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd" 1616454256 1914 884882d7ebb0fd65cea93fca77ff6f5a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1708706663 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1738730797.0056 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1738730745 8221448 b7e91602dce7e36d5e9b153cc96e366e ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "cover_letter.aux" 1791425939.3376 261 c351e65f20b645f1b7dcb939561233e6 "pdflatex"
-  "cover_letter.tex" 1791425938.70718 4506 d21e9e12b39606588fa8441a26883bbb ""
+  "cover_letter.aux" 1791529036.49251 215 24cefab8a1ef9d0c0f2c8c4856e00935 "pdflatex"
+  "cover_letter.tex" 1791529035.72137 5211 9bd8c6c5e821eefbb643716f938af9c0 ""
   (generated)
   "cover_letter.aux"
   "cover_letter.log"

@@ -1,0 +1,9 @@
+x2 discrete: instances 47; clean FFR median 0.790 (IQR 0.699-0.872); DS median 60%; |dDS| pp median 6.69 (range 4.60-8.73); Protocol A flips against the sign of the error: 0 of 25; median |dFFR| A 0.091
+x2 leaky: instances 150; clean FFR median 0.802 (IQR 0.730-0.881); DS median 55%; |dDS| pp median 7.29 (range 4.60-9.71); Protocol A flips against the sign of the error: 0 of 88; median |dFFR| A 0.083
+x2 status by protocol: {('discrete', 'A_fixed', 'ok'): 270, ('discrete', 'B_rederived', 'ok'): 270, ('discrete', 'C_flowmatched', 'ok'): 257, ('discrete', 'C_flowmatched', 'skipped: fewer than 2 shared territories to match'): 12, ('discrete', 'C_flowmatched', 'failed fit: Protocol C optimum at search bound'): 1, ('discrete', 'D_perterritory', 'ok'): 258, ('discrete', 'D_perterritory', 'skipped: fewer than 2 shared territories to match'): 12, ('leaky', 'A_fixed', 'ok'): 300, ('leaky', 'B_rederived', 'ok'): 300, ('leaky', 'C_flowmatched', 'ok'): 300, ('leaky', 'D_perterritory', 'ok'): 300}
+x2 Protocol D fits at bound: {('discrete', 'T5_vox_narrow'): 17, ('discrete', 'T5_vox_wide'): 0, ('leaky', 'T5_vox_narrow'): 2, ('leaky', 'T5_vox_wide'): 0}
+x2 insertions 1140, clipped 0, realised != applied 0
+x3 leaky: instances 150; clean FFR median 0.800 (IQR 0.727-0.864); DS median 50%; |dDS| pp median 7.34 (range 4.46-9.76); Protocol A flips against the sign of the error: 0 of 86; median |dFFR| A 0.073
+x3 status by protocol: {('leaky', 'A_fixed', 'ok'): 300, ('leaky', 'B_rederived', 'ok'): 300, ('leaky', 'C_flowmatched', 'ok'): 300, ('leaky', 'D_perterritory', 'ok'): 300}
+x3 Protocol D fits at bound: {('leaky', 'T5_vox_narrow'): 0, ('leaky', 'T5_vox_wide'): 0}
+x3 insertions 600, clipped 0, realised != applied 0

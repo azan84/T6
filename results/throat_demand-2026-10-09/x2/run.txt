@@ -1,0 +1,4 @@
+scale 2, beds ['leaky', 'discrete']: rows A-C 1995, D 570, insertions 1140, 739s
+clean FFR vs replication run: {'n_clean_rows': 285, 'only_new': 0, 'only_frozen': 0, 'max_abs_diff_clean_ffr': 0.0, 'n_D_instances': 285, 'max_abs_diff_D_ffr_clean': 0.0, 'identical': True}
+status A-C: {'ok': 1982, 'skipped: fewer than 2 shared territories to match': 12, 'failed fit: Protocol C optimum at search bound': 1}
+status D: {'ok': 558, 'skipped: fewer than 2 shared territories to match': 12}

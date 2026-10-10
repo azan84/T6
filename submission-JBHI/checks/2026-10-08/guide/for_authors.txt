@@ -1,0 +1,108 @@
+IEEE.org | IEEE Xplore® | IEEE Standards |
+
+IEEE Spectrum | More Sites
+
+
+
+For Authors
+
+
+
+Home › For Authors
+
+
+
+
+The official template of papers
+submitted to IEEE JBHI is
+available here
+IEEE Author Digital Tool Box
+Author-created PDF preprints must be Xplore compliant in order to be
+posted. IEEE has released a series of digital tools (including IEEE PDF
+Checker) for authors to check their PDFs for Xplore compliance.
+
+
+See these tools at the Author Digital Tool Box at IEEE.org
+[http://www.ieee.org/publications_standards/publications/auth
+.
+How to Submit a Paper
+Manuscripts can be submitted as regular papers, review papers, or
+communications. To qualify for publication, these must be previously
+unpublished and not be under consideration elsewhere. The manuscript
+will be evaluated under the category it has been submitted (e.g., a regular
+paper will be accepted or rejected, but not moved during the review from
+regular paper to review paper).
+
+
+The Editor-in-Chief and the Associate Editor in charge will perform a
+quick review of the manuscript to propose a change in category and to
+evaluate the manuscript in terms of novelty, quality and appropriateness
+and reject the manuscript if pitfalls exist.
+
+
+Manuscripts will ONLY be accepted in electronic format through a web-
+based system called IEEE Author Portal. Please go to IEEE Author
+Portal [https://ieee.atyponrex.com/journal/jbhi-embs] or to the
+EMBS website [http://ieeeembsportal.wpengine.com/] to find
+instructions on how to create an account and electronically submit your
+manuscript.
+
+
+Do not send original submissions or revisions directly to the Editor-in-
+Chief or Associate Editors. If you are unable to submit your contribution
+electronically, please contact the Editorial Office at jbhi-office@ieee.org
+[javascript:;] .
+
+
+Manuscript/Communication Style
+For purposes of qualifying for peer review and consideration for
+publication, authors must submit a manuscript according to the following
+guidelines:
+
+
+    1. The manuscript should be submitted with single-spaced, double-
+      column format with embedded figures and tables pages (one full
+      blank line between lines of type) using a font size of 11 points or
+      larger, having a margin of at least 1″ on all sides. The manuscript
+      including the figures should be converted to postscript or PDF for
+      upload to IEEE Author Portal.
+
+   2. The abstract must be no more than 250 words for regular papers.
+
+   3. In the manuscript, the figures and tables are allowed to appear in-
+      text. However, please note that after it is accepted, the final version
+      to be published should have the figures and tables in separate
+      documents, one figure per page. A separate list of figure captions
+      should be included, keyed to figure numbers marked on each
+      illustration.
+
+   4. References must appear in a separate reference section at the end of
+      the manuscript with items referred to by numerals in square
+      brackets. References must be complete in the IEEE style as follows:
+      1. Style for papers: Author(s), first initials followed by last name,
+         title, periodical, volume, inclusive page numbers, month, year.
+
+      2. Style for books: Author(s), title, location, publisher, year, chapter,
+         page numbers.
+
+      3. You can find an electronic style file for references in
+         Preparation of Papers for IEEE Transactions and
+         Journals.
+
+
+
+IEEE AUTHOR ETHICS
+GUIDELINES
+Any questions from authors about the peer review process should be
+directed to the Editor in Chief (ontolimatics@gmail.com
+[javascript:;] ) or the Editorial Office (jbhi-office@embs.org
+[javascript:;] ). Direct communication among the authors and Associate
+Editors or Guest Editors is NOT allowed. For more information please
+visit the following link:
+
+
+https://journals.ieeeauthorcenter.ieee.org/wp-
+content/uploads/IEEE-Author-Ethics-Guidelines.pdf
+[https://journals.ieeeauthorcenter.ieee.org/wp-
+content/uploads/IEEE-Author-Ethics-Guidelines.pdf]
+

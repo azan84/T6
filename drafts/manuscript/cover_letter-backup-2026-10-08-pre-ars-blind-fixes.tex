@@ -1,0 +1,57 @@
+\documentclass[10pt]{letter}
+\usepackage[a4paper,margin=1.7cm,top=1.4cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\signature{Mohd-Zulhilmi Paiz Ismadi\\Department of Mechanical Engineering\\School of Engineering, Monash University Malaysia\\47500 Bandar Sunway, Selangor, Malaysia\\mohd.zulhilmi@monash.edu}
+\address{}
+\date{\today}
+\setlength{\longindentation}{0pt}
+\setlength{\indentedwidth}{\textwidth}
+\begin{document}
+\begin{letter}{Guest Editors, Special Issue ``Integrating Imaging with Personalized Cardiovascular Medicine: Current
+Advances and Future Directions''\\IEEE Journal of Biomedical and Health Informatics}
+\opening{Dear Guest Editors,}
+
+We submit the manuscript ``Topological Segmentation Error and Boundary-Condition Tuning in Computed Coronary FFR: A
+Controlled In Silico Study'' for consideration in the special issue. The call identifies uncertainty propagation,
+segmentation errors and robust validation frameworks as central challenges for image-based cardiovascular models. Our
+study addresses all three, for computed fractional flow reserve (FFR).
+
+Computed FFR depends on the segmented coronary lumen twice, through the arteries in the model and through outlet boundary conditions that are derived from those arteries and, increasingly, tuned to match perfusion imaging. We
+inserted 150 controlled stenoses into 108 coronary trees from a public CT angiography dataset, applied four segmentation
+error types and recomputed FFR under three boundary-condition protocols in two microvascular bed structures, with a
+three-dimensional case study of the same mechanism.
+
+\textbf{Innovation.} The study is new in three respects. First, it judges segmentation error by whether it changes
+the treatment decision at FFR 0.80, against the variability of repeat invasive FFR, rather than by a continuous
+sensitivity. Second, it solves the same corrupted anatomy under fixed, re-derived and tuned boundary conditions,
+which isolates the effect of tuning, and it separates topological errors (missing or broken vessels) from caliber
+errors of measured inter-observer size. Third, it quantifies, to our knowledge for the first time, how often a model
+passes a perfusion-based validation check while its FFR is materially wrong, and confirms the mechanism with
+three-dimensional computational fluid dynamics.
+
+\textbf{Main findings.}
+\begin{itemize}
+\item Topological errors (a missed side branch or a vessel break) changed the treatment decision at 0.80 in 32--33\%
+of models with fixed boundary conditions, compared with 6--10\% for caliber errors (a vessel drawn too wide or too narrow) of inter-observer magnitude, which
+were close to the variability of repeat invasive measurement.
+\item The boundary-condition protocol alone changed how often a topological error altered the decision. On identical anatomy, a vessel break changed the decision in 43\% of models with fixed boundary conditions and in 5\% with re-derived ones.
+\item Tuning the boundary conditions to perfusion reduced decision changes but removed the mismatch that marked the error, so that 8--19\% of tuned models with a topological error passed a perfusion check stricter than measurement
+repeatability while their FFR was wrong by more than 0.05, against 3--4\% for models with correct anatomy.
+\end{itemize}
+
+\textbf{Significance.} These results bear directly on how image-based models are validated. Agreement with
+perfusion after tuning does not establish that the computed FFR is correct, and overlap-based segmentation metrics do not capture the error types that
+carry the decision risk. The work combines medical image analysis, physiological modeling and decision-level
+evaluation, which matches the scope of the Journal and of this special issue. The paper also gives practical steps for users
+of computed-FFR pipelines and a test that developers can apply to their own boundary-condition protocol.
+
+The manuscript is original, has not been published, and is not under consideration elsewhere. All authors have read
+and approved the submission. The authors declare no conflicts of interest, and the work received no external funding.
+The study used a public, anonymized dataset (ImageCAS-X, CC BY 4.0). The code and the frozen cohort list are available
+from the corresponding author on request, and can be released in a public repository during review if the editor
+or reviewers request it. Supplementary Material accompanies the manuscript.
+
+\closing{Yours sincerely,}
+\end{letter}
+\end{document}

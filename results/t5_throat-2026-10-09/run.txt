@@ -1,0 +1,4 @@
+rows A-C 3874, D 1192, insertions 2384, 1163s
+clean FFR vs frozen: {'n_clean_rows': 298, 'only_new': 0, 'only_frozen': 0, 'max_abs_diff_clean_ffr': 0.0, 'identical': True, 'n_D_instances': 298, 'max_abs_diff_D_ffr_clean': 0.0}
+status A-C: {'ok': 3843, 'skipped: fewer than 2 shared territories to match': 20, 'failed fit: Protocol C optimum at search bound': 11}
+status D: {'ok': 1172, 'skipped: fewer than 2 shared territories to match': 20}

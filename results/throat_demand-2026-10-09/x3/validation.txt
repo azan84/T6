@@ -1,0 +1,9 @@
+scale 3 (K_MURRAY = 1686.0 s^-1), beds ['leaky'], validation on 6 instances: 112_left_LAD_prox_20mm_65, 280_left_LAD_prox_20mm_65, 112_left_LAD_prox_10mm_55, 280_left_LAD_prox_20mm_50, 95_right_RCA_prox_10mm_55, 175_right_RCA_prox_20mm_55
+(1) zero-magnitude T5 path, |dFFR| by protocol (max):
+    A_fixed          n=  6  max|dFFR|=0.000e+00  flips=0
+    B_rederived      n=  6  max|dFFR|=0.000e+00  flips=0
+    C_flowmatched    n=  6  max|dFFR|=0.000e+00  flips=0
+    D_perterritory   n=  6  max|dFFR|=0.000e+00  flips=0
+    insertions logged 12, all ds_applied == ds_orig: True
+(2) clean FFR vs demand-replication-x3-2026-10-08/ablation.csv and ablation-perterritory.csv: {'n_clean_rows': 6, 'only_new': 0, 'only_frozen': 144, 'max_abs_diff_clean_ffr': 0.0, 'n_D_instances': 6, 'max_abs_diff_D_ffr_clean': 0.0, 'identical': True}
+    7s

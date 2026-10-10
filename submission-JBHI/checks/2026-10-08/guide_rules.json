@@ -1,0 +1,32 @@
+{
+ "journal": "IEEE Journal of Biomedical and Health Informatics",
+ "article_type": "special issue paper (regular-paper limits)",
+ "guide_file": "/Users/mzpi/Library/CloudStorage/GoogleDrive-Mohd.Zulhilmi@monash.edu/My Drive/Research/01 CollabProject-MonashIIUM/Imaging-Medical/Paper6-T6/Prepare and Submit Your Manuscript - Journal of Biomedical and Health Informatics (JBHI).pdf",
+ "guide_retrieved": "2026-10-08",
+ "rules": [
+  {"id": "abstract_max_words", "value": 250, "where": "Title and Abstract",
+   "quote": "For manuscripts, an abstract of not more than 250 words is allowable."},
+  {"id": "reference_style", "value": "numbered", "where": "References",
+   "quote": "References should appear in a separate reference section at the end of this paper with items referred to by numerals in square brackets."},
+  {"id": "page_limit", "value": {"max_pages_incl_supplement": 14, "free_pages": 8}, "where": "PAGE LIMIT / PAGE CHARGES",
+   "quote": "The page limit is 14 pages for regular papers and 16 pages for review papers including supplementary material."},
+  {"id": "abstract_content", "value": "objective, methods, major results, conclusions, one sentence significance", "where": "Title and Abstract",
+   "quote": "The abstract should indicate the objective of the study, methods, major results, conclusions, and one sentence significance to biomedical research."},
+  {"id": "abstract_no_abbreviations", "value": "no abbreviations, footnotes, references or equations", "where": "Title and Abstract",
+   "quote": "The abstract should be without abbreviations, footnotes, references, or mathematical equations."},
+  {"id": "cover_letter_must_state", "value": ["innovation and significance in relation to JBHI scope", "entirely original, not copyrighted, published, submitted or accepted elsewhere"], "where": "Cover Letter",
+   "quote": "Confirm that the manuscript is entirely original, has not been copyrighted, published, submitted, or accepted for publication elsewhere"},
+  {"id": "format", "value": "IEEE single spaced, double column, embedded figures and tables", "where": "Manuscript Style and Length",
+   "quote": "All submissions must be in IEEE single spaced, double column format with embedded figures and tables"},
+  {"id": "public_dataset_source", "value": "cite original source of public data", "where": "Prepare and Submit",
+   "quote": "If the data are derived from a publicly available database, the original source and reference must be provided."},
+  {"id": "author_consent_form", "value": "signed consent form from all authors, uploaded as supporting document", "where": "Author Consent Form",
+   "quote": "The consent form with a hand-written signature must be uploaded as a supporting document along with the manuscript submission."},
+  {"id": "orcid", "value": "ORCID for all authors", "where": "ORCID",
+   "quote": "All IEEE journals require an Open Researcher and Contributor ID (ORCID) for all authors."},
+  {"id": "institutional_email", "value": "institutional or IEEE email for all authors", "where": "end of page",
+   "quote": "It is obligatory for all the authors to use their institutional email or IEEE email"},
+  {"id": "suggested_reviewers", "value": "4, independent, different institution", "where": "Suggested Reviewers",
+   "quote": "Authors are encouraged to suggest 4 potential reviewers although they may not be requested to review the particular submission."}
+ ]
+}

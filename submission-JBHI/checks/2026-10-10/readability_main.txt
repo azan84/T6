@@ -1,0 +1,52 @@
+file: main.tex
+
+  39 paragraphs, 262 sentences
+  sentence words: mean 22.5, median 23.0, p90 34, longest 40
+
+  sentences over the limit: 0
+  dense clause chains: 2
+     - section=Data and Cohort | commas=7
+       Lesions were centered 20 or 45 mm from the vessel origin, were 10 or 20 mm long and had 40, 50, 55, 60, 65, 70
+     - section=Reduced-Order FFR Model | commas=6
+       Where the narrowing exceeds 30 % DS, an expansion loss x is lumped at the stenosis, with x, x [ref], density x
+  long paragraphs: 9
+     - section=Reduced-Order FFR Model | words=343
+       The microvascular bed is modeled as conductances (the inverse of resis
+     - section=Boundary-Condition Protocols | words=330
+       Each corrupted tree was solved under four protocols. Under Protocol A 
+     - section=Three-Dimensional CFD Setup | words=255
+       To test whether the findings depend on the simplifications of the redu
+     - section=Results | words=252
+       Topological errors changed the decision more often than caliber errors
+     - section=Passes-and-Wrong Under Tuned Boundary Conditions | words=233
+       Tuning did not remove the error from every model (Fig. 1). After Proto
+     - section=Passes-and-Wrong Under Tuned Boundary Conditions | words=268
+       Tuning also turned caliber errors into passes-and-wrong. With re-deriv
+     - section=Discussion | words=250
+       After tuning, a passing perfusion check did not show that the FFR was 
+     - section=Limitations | words=307
+       The inserted stenoses are idealized, and the reduced-order model is st
+     ... 1 more (use --json)
+  consecutive paragraphs opening alike: 0
+  paragraphs opening on a pronoun: 1
+     - section=Conclusion
+       This study proposes a controlled test that introduces one segmentation error at 
+  house-style hits: 26
+     - section=Introduction | issue=semicolon
+       Sensitivity analyses perturb the radius at fixed bifurcations and report a continuous change in the computed p
+     - section=Data and Cohort | issue=semicolon
+       A host vessel (left anterior descending, LAD; left circumflex, LCx; or right coronary artery, RCA) was eligibl
+     - section=Data and Cohort | issue=semicolon
+       for x ( x elsewhere; DS as a fraction), where x is arc length, x the lesion center and x its length.
+     - section=Reduced-Order FFR Model | issue=semicolon
+       The segmented arteries were narrower (median inlet radius 1.60 mm), so the cohort's median demand was 137 mL/m
+     - section=Boundary-Condition Protocols | issue=semicolon
+       The fit searched x decades of x; a fit at the edge of the range was a failure and was excluded (two half-voxel
+     - section=Boundary-Condition Protocols | issue=semicolon
+       With one parameter per target the fit is exactly determined, the most flexible tuning tested; Protocol C, with
+     - section=Outcomes and Statistical Analysis | issue=semicolon
+       Published repeatability of hyperemic myocardial blood flow [ref] implies a 95 % bound of 20--29 % for one mode
+     - section=Results | issue=semicolon
+       Tuning raised its reclassification rate from 30 % to 38--40 % in the discrete bed (15 and 19 reclassifications
+     ... 18 more (use --json)
+  mechanical defects: 0

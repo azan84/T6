@@ -1,0 +1,18 @@
+listed 33 | cited 33
+  cited but not listed : none
+  listed but not cited : none
+  first-citation order : yes
+  duplicates           : 0
+  entries missing year or DOI : 31
+     tonino2009: missing DOI
+     taylor2013: missing DOI
+     norgaard2014: missing DOI
+     kim2010: missing DOI
+     fossan2026: missing DOI
+     itu2016: missing DOI
+     murray1926: missing DOI
+     menon2024: missing DOI
+
+  DOI attribution: 2 checked, 1 to inspect
+     imagecasx_data
+       NOT IN CROSSREF: expected for arXiv preprints, reports and datasets, whose DOIs are registered with DataCite. Confirm the DOI resolves in a browser

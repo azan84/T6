@@ -1,0 +1,28 @@
+check-zero: T5 path with dDS = 0 at L2keep, 6 instances x 2 beds (22s); insertions 24, all ds_applied == ds_orig: True
+    A_fixed          n= 12 max|dFFR|=0.000e+00 flips=0 max residual=4.613e-17
+    B_rederived      n= 12 max|dFFR|=0.000e+00 flips=0 max residual=4.613e-17
+    C_flowmatched    n= 12 max|dFFR|=0.000e+00 flips=0 max residual=4.613e-17
+    D_perterritory   n= 12 max|dFFR|=0.000e+00 flips=0 max residual=4.613e-17
+check-a6: frozen T1-T4 at L2keep through t5l2_run on 6 instances x 2 beds (27s): 102_left_LAD_mid_20_80, 280_left_LAD_prox_20_80, 306_left_LAD_prox_20_80, 335_left_LAD_prox_10_70, 42_right_RCA_prox_20_70, 69_right_RCA_prox_10_70
+  A-C (incl. clean rows) vs a6 ablation_L2keep: 144 rows, 0 without a reference row, status differs in 0
+    ffr                    rows differing    0  max|diff| 0
+    dFFR                   rows differing    0  max|diff| 0
+    flip                   rows differing    0  max|diff| 0
+    outlet_flow_residual   rows differing    0  max|diff| 0
+  D vs a6 perterritory_L2keep: 48 rows, 0 without a reference row, status differs in 0
+    ffr                    rows differing    0  max|diff| 0
+    dFFR                   rows differing    0  max|diff| 0
+    flip                   rows differing    0  max|diff| 0
+    outlet_flow_residual   rows differing    0  max|diff| 0
+check-t5: L1drop T5 run through t5l2_run vs results/t5_throat-2026-10-09 (every row)
+  A-C (incl. clean rows) vs ablation_t5: 3874 rows, 0 without a reference row, status differs in 0
+    ffr                    rows differing    0  max|diff| 0
+    dFFR                   rows differing    0  max|diff| 0
+    flip                   rows differing    0  max|diff| 0
+    outlet_flow_residual   rows differing    0  max|diff| 0
+  D vs perterritory_t5: 1192 rows, 0 without a reference row, status differs in 0
+    ffr                    rows differing    0  max|diff| 0
+    dFFR                   rows differing    0  max|diff| 0
+    flip                   rows differing    0  max|diff| 0
+    outlet_flow_residual   rows differing    0  max|diff| 0
+    D fit_at_bound: here 97, frozen T5 97, rows differing 20

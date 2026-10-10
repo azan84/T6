@@ -1,4 +1,4 @@
-# CFD work order — 2026-10-03. Read this before anything else in this folder.
+# CFD work order — 2026-10-03. SUPERSEDED as the entry point by WORK-ORDER-2026-10-10.md (still binding where 10-10 does not change it).
 
 
 **For:** the CFD machine (the one that returned `returns/2026-09-26/` and `STAGE-A-VALIDATION.pdf` built 2026-10-03).

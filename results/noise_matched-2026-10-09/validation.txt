@@ -1,0 +1,9 @@
+validation on 6 instances (bands ['[0.65, 0.7)', '[0.7, 0.75)', '[0.75, 0.8)', '[0.8, 0.85)', '[0.9, 0.95)']): 306_left_LAD_prox_20mm_80, 812_left_LCX_mid_20mm_80, 937_left_LCX_mid_10mm_75, 832_left_LCX_prox_10mm_75, 211_left_LAD_mid_10mm_65, 890_right_RCA_mid_20mm_50
+252 tasks (instance x bed x draw), 7308 rows, 1088s on 5 workers; failures: []
+error types (ok rows): {'T0_identity': 1008, 'T1_missed_branch': 1008, 'T3_stenosis_length': 1008, 'T4_taper': 1008, 'T5_vox_narrow': 1008, 'T5_vox_wide': 1008, 'T2_truncation': 903, 'clean': 252}
+nominal vs frozen (T1-T4 and half-voxel throat, A-D): n=283 unmatched=0 max|FFR diff|=0.000e+00 max|residual diff|=0.000e+00 identical=True
+  by protocol: A_fixed 0.0e+00, B_rederived 0.0e+00, C_flowmatched 0.0e+00, D_perterritory 0.0e+00
+nominal identity: n=48 max|dFFR|=0.00e+00 max residual=2.21e-16
+identity under C vs recorded floor draws: n=240 max|dFFR diff|=1.36e-07 max|residual diff|=3.85e-09 max|C_ratio diff|=6.53e-07
+identity under B vs recorded pre-tuning residual: n=240 max diff=3.81e-09
+status: {'ok': 7203, 'skipped: fewer than 2 shared territories to match': 84, 'skipped: no bed left': 21}

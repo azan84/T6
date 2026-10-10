@@ -27,7 +27,7 @@ def build(segs, name, trunc, discrete):
     return d
 def leaves(d): return np.where(d.active & np.array([len(c) == 0 for c in d.children]))[0]
 def bedflow(d, C, f): return d.w / C * (f * Z.P_AORTA - Z.P_VEN)
-root = next(p.parent for p in (Path.home() / "Datasets/imagecas-x").rglob("centerlines"))
+root = next(p.parent for p in (Path.home() / "Documents/Datasets/imagecas-x").rglob("centerlines"))
 sel = pd.read_csv(CODE.parent / "results/sweep_test_selected.csv"); rows = []
 for (sid, side), g in sel.groupby(["scan", "side"]):
     t0 = SS.load(root, int(sid), side); o = t0.ffr("murray", 1.0); slots, _ = SS.plan(t0, side, t0.last["ffr"].copy())

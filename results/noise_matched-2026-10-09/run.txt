@@ -1,0 +1,8 @@
+rows 148155, instance-bed-draws 5187, nans; failures: []
+error types (ok rows): {'T5_vox_wide': 20747, 'T3_stenosis_length': 20741, 'T0_identity': 20738, 'T4_taper': 20726, 'T5_vox_narrow': 20678, 'T2_truncation': 16212, 'T1_missed_branch': 13020, 'clean': 5187}
+nominal vs frozen (T1-T4 and half-voxel throat, A-D): n=5342 unmatched=8 max|FFR diff|=0.000e+00 max|residual diff|=0.000e+00 identical=True
+  by protocol: A_fixed 0.0e+00, B_rederived 0.0e+00, C_flowmatched 0.0e+00, D_perterritory 0.0e+00
+nominal identity: n=988 max|dFFR|=0.00e+00 max residual=3.16e-16
+identity under C vs recorded floor draws: n=4930 max|dFFR diff|=3.89e-07 max|residual diff|=5.99e-09 max|C_ratio diff|=1.60e-06
+identity under B vs recorded pre-tuning residual: n=4940 max diff=6.64e-09
+status: {'ok': 138049, 'skipped: fewer than 2 shared territories to match': 6930, 'skipped: no deletable downstream branch': 2184, 'skipped: no bed left': 798, 'failed fit: Protocol C optimum at search bound': 110, 'skipped: truncation point falls at the start of its segment': 84}

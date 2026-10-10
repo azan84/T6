@@ -9,9 +9,9 @@ _orig = Tree.__init__
 def _init(self, segments, name=""):
     self._segs = segments; _orig(self, segments, name)
 Tree.__init__ = _init
-root = Path.home() / "Datasets/imagecas-x/ImageCAS-X_dataset"
+root = Path.home() / "Documents/Datasets/imagecas-x/ImageCAS-X_dataset"
 if not (root / "centerlines").exists():
-    root = next(p.parent for p in (Path.home() / "Datasets/imagecas-x").rglob("centerlines"))
+    root = next(p.parent for p in (Path.home() / "Documents/Datasets/imagecas-x").rglob("centerlines"))
 sel = pd.read_csv(CODE.parent / "results/sweep_test_selected.csv")
 rows = []
 for (sid, side), g in sel.groupby(["scan", "side"]):

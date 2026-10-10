@@ -26,18 +26,18 @@ P.~A.~L. Tonino \emph{et~al.}, ``Fractional flow reserve versus angiography for
   guiding percutaneous coronary intervention,'' \emph{N. Engl. J. Med.}, vol.
   360, no.~3, pp. 213--224, 2009.
 
-\bibitem{taylor2013}
-C.~A. Taylor, T.~A. Fonte, and J.~K. Min, ``Computational fluid dynamics
-  applied to cardiac computed tomography for noninvasive quantification of
-  fractional flow reserve: {S}cientific basis,'' \emph{J. Amer. Coll.
-  Cardiol.}, vol.~61, no.~22, pp. 2233--2241, 2013.
-
 \bibitem{norgaard2014}
 B.~L. Nørgaard \emph{et~al.}, ``Diagnostic performance of noninvasive
   fractional flow reserve derived from coronary computed tomography angiography
   in suspected coronary artery disease: {T}he {NXT} trial ({A}nalysis of
   {C}oronary {B}lood {F}low {U}sing {CT} {A}ngiography: {N}ext {S}teps),''
   \emph{J. Amer. Coll. Cardiol.}, vol.~63, no.~12, pp. 1145--1155, 2014.
+
+\bibitem{taylor2013}
+C.~A. Taylor, T.~A. Fonte, and J.~K. Min, ``Computational fluid dynamics
+  applied to cardiac computed tomography for noninvasive quantification of
+  fractional flow reserve: {S}cientific basis,'' \emph{J. Amer. Coll.
+  Cardiol.}, vol.~61, no.~22, pp. 2233--2241, 2013.
 
 \bibitem{kim2010}
 H.~J. Kim, I.~E. Vignon-Clementel, J.~S. Coogan, C.~A. Figueroa, K.~E. Jansen,
@@ -86,8 +86,8 @@ S.~Sankaran, L.~Grady, and C.~A. Taylor, ``Impact of geometric uncertainty on
 D.~Fern{\'a}ndez-Mart{\'i}nez, M.~R. Gonz{\'a}lez-Fern{\'a}ndez, J.~M.
   Nogales-Asensio, and C.~Ferrera, ``Impact of minimal lumen segmentation
   uncertainty on patient-specific coronary simulations: {A} look at
-  {FFR$_{\mathrm{CT}}$},'' \emph{Int. J. Numer. Methods Biomed. Eng.}, vol.~40,
-  no.~6, 2024, art. no. e3822.
+  {FFR\textsubscript{CT}},'' \emph{Int. J. Numer. Methods Biomed. Eng.},
+  vol.~40, no.~6, 2024, art. no. e3822.
 
 \bibitem{dalmaso2025}
 C.~Dalmaso, F.~E. Fossan, A.~T. Bråten, and L.~O. Müller, ``Uncertainty
@@ -181,11 +181,6 @@ L.~A.~E. Brown \emph{et~al.}, ``Fully automated, inline quantification of
   of measurements in healthy subjects,'' \emph{J. Cardiovasc. Magn. Reson.},
   vol.~20, no.~1, 2018, art. no. 48.
 
-\bibitem{johnson2015}
-N.~P. Johnson \emph{et~al.}, ``Repeatability of fractional flow reserve despite
-  variations in systemic and coronary hemodynamics,'' \emph{JACC: Cardiovasc.
-  Interv.}, vol.~8, no.~8, pp. 1018--1027, 2015.
-
 \bibitem{petraco2013}
 R.~Petraco \emph{et~al.}, ``Fractional flow reserve-guided revascularization:
   {P}ractical implications of a diagnostic gray zone and measurement
@@ -197,9 +192,24 @@ S.~Shit \emph{et~al.}, ``cl{D}ice -- {A} novel topology-preserving loss
   function for tubular structure segmentation,'' in \emph{Proc. IEEE/CVF Conf.
   Comput. Vis. Pattern Recognit. (CVPR)}, 2021, pp. 16\,555--16\,564.
 
+\bibitem{johnson2015}
+N.~P. Johnson \emph{et~al.}, ``Repeatability of fractional flow reserve despite
+  variations in systemic and coronary hemodynamics,'' \emph{JACC: Cardiovasc.
+  Interv.}, vol.~8, no.~8, pp. 1018--1027, 2015.
+
 \bibitem{viceconti2025}
 M.~Viceconti \emph{et~al.}, ``Position paper: {E}xtending credibility
   assessment of in silico medicine predictors to machine learning predictors,''
   \emph{IEEE J. Biomed. Health Inform.}, vol.~29, no.~7, pp. 5284--5290, 2025.
+
+\bibitem{boogers2010}
+M.~J. Boogers \emph{et~al.}, ``Automated quantification of stenosis severity on
+  64-slice {CT}: {A} comparison with quantitative coronary angiography,''
+  \emph{JACC Cardiovasc. Imag.}, vol.~3, no.~7, pp. 699--709, 2010.
+
+\bibitem{gouya2009}
+H.~Gouya \emph{et~al.}, ``Coronary artery stenosis in high-risk patients:
+  64-section {CT} and coronary angiography---{P}rospective study and analysis
+  of discordance,'' \emph{Radiology}, vol. 252, no.~2, pp. 377--385, 2009.
 
 \end{thebibliography}

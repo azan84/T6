@@ -1,0 +1,561 @@
+{
+ "generated": "2026-10-10T11:22:30",
+ "tex": "/Users/mzpi/Library/CloudStorage/GoogleDrive-Mohd.Zulhilmi@monash.edu/My Drive/Research/01 CollabProject-MonashIIUM/Imaging-Medical/Paper6-T6/drafts/manuscriptv2/main.tex",
+ "journal": "IEEE Journal of Biomedical and Health Informatics",
+ "length": {
+  "body": 6062,
+  "tables": 417,
+  "captions": 449,
+  "body+tables": 6479,
+  "body+tables+captions": 6928,
+  "abstract": 254,
+  "abstract+body+tables": 6733
+ },
+ "readability": {
+  "long": [],
+  "clauses": [
+   {
+    "section": "Data and Cohort",
+    "commas": 7,
+    "text": "Lesions were centered 20 or 45 mm from the vessel origin, were 10 or 20 mm long and had 40, 50, 55, 60, 65, 70, 75 or 80 % DS."
+   },
+   {
+    "section": "Reduced-Order FFR Model",
+    "commas": 6,
+    "text": "Where the narrowing exceeds 30 % DS, an expansion loss x is lumped at the stenosis, with x, x [ref], density x kg,m x, and x and x the reference and t"
+   }
+  ],
+  "paras": [
+   {
+    "section": "Reduced-Order FFR Model",
+    "words": 343,
+    "opens": "The microvascular bed is modeled as conductances (the inverse of resis"
+   },
+   {
+    "section": "Boundary-Condition Protocols",
+    "words": 330,
+    "opens": "Each corrupted tree was solved under four protocols. Under Protocol A "
+   },
+   {
+    "section": "Three-Dimensional CFD Setup",
+    "words": 255,
+    "opens": "To test whether the findings depend on the simplifications of the redu"
+   },
+   {
+    "section": "Results",
+    "words": 252,
+    "opens": "Topological errors changed the decision more often than caliber errors"
+   },
+   {
+    "section": "Passes-and-Wrong Under Tuned Boundary Conditions",
+    "words": 233,
+    "opens": "Tuning did not remove the error from every model (Fig. 1). After Proto"
+   },
+   {
+    "section": "Passes-and-Wrong Under Tuned Boundary Conditions",
+    "words": 268,
+    "opens": "Tuning also turned caliber errors into passes-and-wrong. With re-deriv"
+   },
+   {
+    "section": "Discussion",
+    "words": 250,
+    "opens": "After tuning, a passing perfusion check did not show that the FFR was "
+   },
+   {
+    "section": "Limitations",
+    "words": 307,
+    "opens": "The inserted stenoses are idealized, and the reduced-order model is st"
+   },
+   {
+    "section": "Conclusion",
+    "words": 255,
+    "opens": "This study proposes a controlled test that introduces one segmentation"
+   }
+  ],
+  "echo": [],
+  "style": [
+   {
+    "section": "Introduction",
+    "issue": "semicolon",
+    "text": "Sensitivity analyses perturb the radius at fixed bifurcations and report a continuous change in the computed pressure in"
+   },
+   {
+    "section": "Data and Cohort",
+    "issue": "semicolon",
+    "text": "A host vessel (left anterior descending, LAD; left circumflex, LCx; or right coronary artery, RCA) was eligible when ima"
+   },
+   {
+    "section": "Data and Cohort",
+    "issue": "semicolon",
+    "text": "for x ( x elsewhere; DS as a fraction), where x is arc length, x the lesion center and x its length."
+   },
+   {
+    "section": "Reduced-Order FFR Model",
+    "issue": "semicolon",
+    "text": "The segmented arteries were narrower (median inlet radius 1.60 mm), so the cohort's median demand was 137 mL/min per tre"
+   },
+   {
+    "section": "Boundary-Condition Protocols",
+    "issue": "semicolon",
+    "text": "The fit searched x decades of x; a fit at the edge of the range was a failure and was excluded (two half-voxel throat-er"
+   },
+   {
+    "section": "Boundary-Condition Protocols",
+    "issue": "semicolon",
+    "text": "With one parameter per target the fit is exactly determined, the most flexible tuning tested; Protocol C, with one param"
+   },
+   {
+    "section": "Outcomes and Statistical Analysis",
+    "issue": "semicolon",
+    "text": "Published repeatability of hyperemic myocardial blood flow [ref] implies a 95 % bound of 20--29 % for one model output a"
+   },
+   {
+    "section": "Results",
+    "issue": "semicolon",
+    "text": "Tuning raised its reclassification rate from 30 % to 38--40 % in the discrete bed (15 and 19 reclassifications created, "
+   },
+   {
+    "section": "Results",
+    "issue": "semicolon",
+    "text": "Only the taper's rates in the discrete bed, 13 % and 14 % under fixed boundary conditions and Protocol D, had lower conf"
+   },
+   {
+    "section": "Results",
+    "issue": "semicolon",
+    "text": "Against Protocol A it reversed 14--56 topological reclassifications per cell and created none (paired McNemar test, Holm"
+   },
+   {
+    "section": "Passes-and-Wrong Under Tuned Boundary Conditions",
+    "issue": "semicolon",
+    "text": "Exact matching to noisy targets under Protocol D left 36 % and 19 % of topological-error models wrong, against 15 % and "
+   },
+   {
+    "section": "Overlap Scores and the Pre-Tuning Mismatch",
+    "issue": "semicolon",
+    "text": "In a tube model of each tree, the missed branch and the taper had the same median DSC (0.97 per tree; 0.98 over the whol"
+   },
+   {
+    "section": "Overlap Scores and the Pre-Tuning Mismatch",
+    "issue": "semicolon",
+    "text": "A vessel break lowered the DSC to 0.89, and to 0.62 in the right coronary artery; clDice fell only for topological error"
+   },
+   {
+    "section": "Overlap Scores and the Pre-Tuning Mismatch",
+    "issue": "semicolon",
+    "text": "Among the decision-changing topological errors, 91 % (discrete) and 62 % (leaky) kept a whole-scan DSC at or above the i"
+   },
+   {
+    "section": "Robustness to Model Fidelity and Hyperemic Demand",
+    "issue": "semicolon",
+    "text": "The meshed lumen was wider than the reduced-order radius (throat 0.276 against 0.231 mm; baseline 0.761 on the reduced-o"
+   },
+   {
+    "section": "Robustness to Model Fidelity and Hyperemic Demand",
+    "issue": "semicolon",
+    "text": "At twice and three times the demand, the half-voxel throat error changed the decision in 27--29 % of models with fixed b"
+   },
+   {
+    "section": "Discussion",
+    "issue": "semicolon",
+    "text": "The throat result agrees with sensitivity analyses in which the pressure index responds most to the minimal lumen [ref];"
+   },
+   {
+    "section": "Discussion",
+    "issue": "semicolon",
+    "text": "Matching flow alone cannot identify a geometric error, because the fitted bed absorbs it; the results give the size of t"
+   },
+   {
+    "section": "Relation to Published Studies",
+    "issue": "semicolon",
+    "text": "Comparisons of geometry with boundary conditions rank the two on a continuous output [ref]; our results add that the ran"
+   },
+   {
+    "section": "Relation to Published Studies",
+    "issue": "semicolon",
+    "text": "A bifurcation-connectedness score is insensitive to caliber-only errors [ref]; the throat error is of this kind."
+   },
+   {
+    "section": "Limitations",
+    "issue": "semicolon",
+    "text": "Clinical computation of FFR from CT screens image quality before analysis [ref]; the throat rates assume that the error "
+   },
+   {
+    "section": "Limitations",
+    "issue": "semicolon",
+    "text": "The 3D analysis covers one instance, whose meshed lumen was wider than the reduced-order radius; the offset changed the "
+   },
+   {
+    "section": "Limitations",
+    "issue": "semicolon",
+    "text": "Errors were applied one at a time in one dataset; caliber errors away from the throat only narrowed or lengthened the lu"
+   },
+   {
+    "section": "Limitations",
+    "issue": "semicolon",
+    "text": "The rates are conditional on an error being present; how often current segmentation methods produce each error at a lesi"
+   },
+   {
+    "section": "Limitations",
+    "issue": "semicolon",
+    "text": "The distance-map radius lies inside the meshed lumen (median 0.14 mm in the 3D case), which lowers the modeled demand; t"
+   },
+   {
+    "section": "Conclusion",
+    "issue": "semicolon",
+    "text": "With error models and correct anatomy tuned to the same noisy perfusion targets, one in five tuned topological-error mod"
+   },
+   {
+    "section": "Conclusion",
+    "issue": "semicolon",
+    "text": "These proportions hold at the primary demand; one branching level finer, topological passes-and-wrong fell to 2--7 % and"
+   }
+  ],
+  "mechanical": [],
+  "dangling": [
+   {
+    "section": "Conclusion",
+    "opens": "This study proposes a controlled test that introduces one segmentation error at "
+   }
+  ],
+  "stats": {
+   "paragraphs": 39,
+   "sentences": 262,
+   "mean_sentence_words": 22.5,
+   "median_sentence_words": 23.0,
+   "p90_sentence_words": 34,
+   "longest_sentence_words": 40
+  }
+ },
+ "venue": {
+  "journal": "IEEE Journal of Biomedical and Health Informatics",
+  "forms_matched": [
+   "IEEE Journal of Biomedical and Health Informatics",
+   "IEEE J. Biomedical Health Inform.",
+   "IEEE J. Biomed. Health Inform."
+  ],
+  "doi_stems": [
+   "10.1109/jbhi."
+  ],
+  "references_total": 0,
+  "journal_references": 0,
+  "share_percent": 0.0,
+  "entries": [],
+  "venue_profile": [],
+  "single_mention_only": [],
+  "orphans": [],
+  "recent_5y": 0,
+  "years": [],
+  "warning": "NO entries matched. Before reading this as absence, check how the list writes the title. Pass --also with the form as written, or --doi-stem, and rerun."
+ },
+ "references": {
+  "listed": 0,
+  "cited": 36,
+  "cited_not_listed": [
+   "tonino2009",
+   "norgaard2014",
+   "taylor2013",
+   "kim2010",
+   "fossan2026",
+   "itu2016",
+   "murray1926",
+   "menon2024",
+   "arminio2026",
+   "sankaran2015tmi",
+   "sankaran2015cmame",
+   "fernandez2024",
+   "dalmaso2025",
+   "sankaran2016",
+   "tanade2022",
+   "korte2023",
+   "colebank2019",
+   "bransby2026",
+   "chen2025",
+   "owusu2026",
+   "gamage2022",
+   "gosling2020",
+   "zeng2023",
+   "imagecasx_data",
+   "young1973",
+   "choy2008",
+   "dodge1992",
+   "fournier2021",
+   "schindler2023",
+   "brown2018",
+   "petraco2013",
+   "shit2021",
+   "johnson2015",
+   "viceconti2025",
+   "boogers2010",
+   "gouya2009"
+  ],
+  "listed_not_cited": [],
+  "order_matches_first_citation": true,
+  "duplicates": [],
+  "shape": [],
+  "doi_checks": []
+ },
+ "benchmark": {
+  "journal": "IEEE Journal of Biomedical and Health Informatics",
+  "sampled": 0,
+  "skipped": [
+   {
+    "file": "A_Novel_3D_Camera-Based_ECG-Imaging_System_for_Electrode_Position_Discovery_and_Heart-Torso_Registration.pdf",
+    "skipped": "first page does not carry the journal's header"
+   },
+   {
+    "file": "Estimation_of_Segmental_Longitudinal_Strain_in_Transesophageal_Echocardiography_by_Deep_Learning.pdf",
+    "skipped": "first page does not carry the journal's header"
+   },
+   {
+    "file": "Generalized_Super-Resolution_4D_Flow_MRI_-_Using_Ensemble_Learning_to_Extend_Across_the_Cardiovascular_System.pdf",
+    "skipped": "first page does not carry the journal's header"
+   },
+   {
+    "file": "Impulse_Data_Models_for_the_Inverse_Problem_of_Electrocardiography.pdf",
+    "skipped": "first page does not carry the journal's header"
+   },
+   {
+    "file": "iPhantom_A_Framework_for_Automated_Creation_of_Individualized_Computational_Phantoms_and_Its_Application_to_CT_Organ_Dosimetry.pdf",
+    "skipped": "first page does not carry the journal's header"
+   }
+  ],
+  "bands": {
+   "pages": null,
+   "abstract_words": null,
+   "top_sections": null,
+   "subsections": null,
+   "figures": null,
+   "tables": null,
+   "references": null,
+   "heading_words": null,
+   "own_journal_share_percent": null
+  },
+  "papers": [],
+  "manuscript": {
+   "file": "main.tex",
+   "pages": 9,
+   "heading_words": 1,
+   "abstract_words": 250,
+   "top_sections": 5,
+   "subsections": 14,
+   "headings": [
+    "Introduction",
+    "Methods",
+    "Results",
+    "Discussion",
+    "Conclusion"
+   ],
+   "figures": 5,
+   "tables": 1,
+   "references": 0,
+   "has_nomenclature": false,
+   "numbered_headings": true,
+   "conclusions_heading": "Conclusion",
+   "equations": 1,
+   "own_journal_refs": 0,
+   "own_journal_share_percent": 0.0
+  },
+  "comparison": []
+ },
+ "guide": {
+  "journal": "IEEE Journal of Biomedical and Health Informatics",
+  "article_type": "special issue paper (regular-paper limits)",
+  "rules": [
+   {
+    "id": "abstract_max_words",
+    "value": 250,
+    "status": "FAIL",
+    "detail": "abstract 254 words, limit 250",
+    "quote_found": true,
+    "where": "Title and Abstract"
+   },
+   {
+    "id": "reference_style",
+    "value": "numbered",
+    "status": "REFUSED",
+    "detail": "quote not found in the guide text; re-copy it verbatim",
+    "quote_found": false,
+    "where": "References"
+   },
+   {
+    "id": "page_limit",
+    "value": {
+     "max_pages_incl_supplement": 14,
+     "free_pages": 8
+    },
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "PAGE LIMIT / PAGE CHARGES"
+   },
+   {
+    "id": "abstract_content",
+    "value": "objective, methods, major results, conclusions, one sentence significance",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "Title and Abstract"
+   },
+   {
+    "id": "abstract_no_abbreviations",
+    "value": "no abbreviations, footnotes, references or equations",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "Title and Abstract"
+   },
+   {
+    "id": "cover_letter_must_state",
+    "value": [
+     "innovation and significance in relation to JBHI scope",
+     "entirely original, not copyrighted, published, submitted or accepted elsewhere"
+    ],
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "Cover Letter"
+   },
+   {
+    "id": "format",
+    "value": "IEEE single spaced, double column, embedded figures and tables",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "Manuscript Style and Length"
+   },
+   {
+    "id": "public_dataset_source",
+    "value": "cite original source of public data",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "Prepare and Submit"
+   },
+   {
+    "id": "author_consent_form",
+    "value": "signed consent form from all authors, uploaded as supporting document",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "Author Consent Form"
+   },
+   {
+    "id": "orcid",
+    "value": "ORCID for all authors",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "ORCID"
+   },
+   {
+    "id": "institutional_email",
+    "value": "institutional or IEEE email for all authors",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "end of page"
+   },
+   {
+    "id": "suggested_reviewers",
+    "value": "4, independent, different institution",
+    "status": "MODEL",
+    "detail": "not machine-checkable; judge in the conformance matrix",
+    "quote_found": true,
+    "where": "Suggested Reviewers"
+   }
+  ],
+  "guide": {
+   "file": "/Users/mzpi/Library/CloudStorage/GoogleDrive-Mohd.Zulhilmi@monash.edu/My Drive/Research/01 CollabProject-MonashIIUM/Imaging-Medical/Paper6-T6/Prepare and Submit Your Manuscript - Journal of Biomedical and Health Informatics (JBHI).pdf",
+   "names_journal": false,
+   "file_age_days": 2,
+   "stale": false
+  },
+  "aims_and_scope": ""
+ },
+ "letter": {
+  "letter": "cover_letter.tex",
+  "checks": [
+   {
+    "area": "journal named exactly",
+    "status": "PASS",
+    "detail": "IEEE Journal of Biomedical and Health Informatics"
+   },
+   {
+    "area": "salutation",
+    "status": "PASS",
+    "detail": "Dear Dr Colombo"
+   },
+   {
+    "area": "article type stated",
+    "status": "FAIL",
+    "detail": "special issue paper (regular-paper limits)"
+   },
+   {
+    "area": "engages aims and scope",
+    "status": "MODEL",
+    "detail": "no guide PDF given: judge fit against the aims and scope by reading"
+   },
+   {
+    "area": "names the journal's papers",
+    "status": "FAIL",
+    "detail": "0 named (none); the manuscript cites 0 from the journal. Name the two to four the manuscript builds on most."
+   },
+   {
+    "area": "named work not in the reference list",
+    "status": "FAIL",
+    "detail": "Viceconti et al. (2025: no reference entry has this first author"
+   },
+   {
+    "area": "named work not in the reference list",
+    "status": "FAIL",
+    "detail": "Chen et al. (2025: no reference entry has this first author"
+   },
+   {
+    "area": "named work not in the reference list",
+    "status": "FAIL",
+    "detail": "Arminio et al. (2026: no reference entry has this first author"
+   },
+   {
+    "area": "placeholders",
+    "status": "PASS",
+    "detail": "none"
+   },
+   {
+    "area": "house style",
+    "status": "ADVISORY",
+    "detail": "em or en dash: Main findings. itemize With fixed boundary conditions, a missed side branch, a vessel break or a half-voxel error in throat diameter each changed the "
+   },
+   {
+    "area": "house style",
+    "status": "ADVISORY",
+    "detail": "em or en dash: With error models and correct anatomy tuned to the same noisy perfusion targets, a check stricter than measurement repeatability passed 19% (discrete "
+   }
+  ],
+  "claims": {
+   "words": null,
+   "abstract_words": null,
+   "references": null,
+   "journal_references": null,
+   "figures": null,
+   "tables": null,
+   "equations": null,
+   "highlights": null
+  },
+  "measured": {
+   "references": 0,
+   "journal_references": 0,
+   "figures": 5,
+   "tables": 1,
+   "equations": 1,
+   "abstract_words": 254,
+   "highlights": null
+  },
+  "named_authors": [],
+  "summary": {
+   "PASS": 3,
+   "FAIL": 5,
+   "ADVISORY": 2,
+   "MODEL": 1
+  }
+ }
+}

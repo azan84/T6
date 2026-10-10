@@ -1,0 +1,172 @@
+clean rows joined: {'both': 298, 'right_only': 2, 'left_only': 0}  max |ffr_clean diff|: 0.0
+corrupted-tree check n_outlets: n=1119 max rel diff 0.00e+00
+corrupted-tree check L_resolved_mm: n=1119 max rel diff 0.00e+00
+corrupted-tree check w_sum: n=1119 max rel diff 0.00e+00
+corrupted-tree check r_ref_root_mm: n=1119 max rel diff 0.00e+00
+status agreement (ok vs not): 1192 / 1192
+
+nesting (network set): by error type and bed
+                               n  unmatched  inactive  n_r_excess  max_r_excess_mm  ds_mm  full_unmatched  b0_corr_max  b0_corr_min  b0_clean
+bed      error_type                                                                                                                          
+discrete T1_missed_branch    109        0.0       0.0           0         0.000000    0.0             0.0          1.0          1.0       1.0
+         T2_truncation       147        0.0       0.0          61         0.041314    0.0             0.0          1.0          1.0       1.0
+         T3_stenosis_length  148        0.0       0.0           0         0.000000    0.0             0.0          1.0          1.0       1.0
+         T4_taper            148        0.0       0.0           3         0.007975    0.0             0.0          1.0          1.0       1.0
+leaky    T1_missed_branch    118        0.0       0.0           0         0.000000    0.0             0.0          1.0          1.0       1.0
+         T2_truncation       149        0.0       0.0          62         0.041314    0.0             0.0          1.0          1.0       1.0
+         T3_stenosis_length  150        0.0       0.0           0         0.000000    0.0             0.0          1.0          1.0       1.0
+         T4_taper            150        0.0       0.0           3         0.007975    0.0             0.0          1.0          1.0       1.0
+
+instances per bed: {'discrete': 97, 'leaky': 150}
+
+=== medians (IQR) by bed and error type; flip/wrong under A ===
+{'bed': 'discrete', 'error_type': 'T1_missed_branch', 'n': 77, 'dsc_tree': '0.975 (0.947--0.984)', 'dsc_scan': '0.985 (0.977--0.991)', 'cldice': '0.940 (0.903--0.963)', 'flow_lost': '27.4 (14.2--43.2)', 'vol_lost': '4.9 (3.2--10.1)', 'full_dsc_tree': '0.969 (0.945--0.977)', 'full_dsc_scan': '0.982 (0.975--0.989)', 'dsc_tree_min': np.float64(0.9090149030057648), 'nA': 77, 'flipA': '27 (19--38)', 'wrongA': '86 (76--92)'}
+{'bed': 'discrete', 'error_type': 'T2_truncation', 'n': 96, 'dsc_tree': '0.893 (0.701--0.937)', 'dsc_scan': '0.935 (0.888--0.960)', 'cldice': '0.847 (0.544--0.907)', 'flow_lost': '30.1 (15.2--100.0)', 'vol_lost': '19.4 (11.8--46.0)', 'full_dsc_tree': '0.892 (0.678--0.938)', 'full_dsc_scan': '0.932 (0.882--0.962)', 'dsc_tree_min': np.float64(0.4579715401715257), 'nA': 60, 'flipA': '40 (29--53)', 'wrongA': '88 (78--94)'}
+{'bed': 'discrete', 'error_type': 'T3_stenosis_length', 'n': 97, 'dsc_tree': '0.996 (0.995--0.997)', 'dsc_scan': '0.998 (0.998--0.998)', 'cldice': '1.000 (1.000--1.000)', 'flow_lost': '0.0 (0.0--0.0)', 'vol_lost': '0.8 (0.5--1.0)', 'full_dsc_tree': '0.996 (0.995--0.998)', 'full_dsc_scan': '0.998 (0.998--0.998)', 'dsc_tree_min': np.float64(0.9914113160290968), 'nA': 97, 'flipA': '7 (4--14)', 'wrongA': '0 (0--4)'}
+{'bed': 'discrete', 'error_type': 'T4_taper', 'n': 97, 'dsc_tree': '0.971 (0.947--0.981)', 'dsc_scan': '0.983 (0.974--0.989)', 'cldice': '1.000 (1.000--1.000)', 'flow_lost': '0.0 (0.0--0.0)', 'vol_lost': '5.7 (3.8--10.1)', 'full_dsc_tree': '0.970 (0.946--0.979)', 'full_dsc_scan': '0.982 (0.975--0.988)', 'dsc_tree_min': np.float64(0.931294463724172), 'nA': 97, 'flipA': '13 (8--22)', 'wrongA': '6 (3--13)'}
+{'bed': 'leaky', 'error_type': 'T1_missed_branch', 'n': 118, 'dsc_tree': '0.969 (0.946--0.980)', 'dsc_scan': '0.983 (0.975--0.990)', 'cldice': '0.930 (0.899--0.957)', 'flow_lost': '9.1 (5.5--17.2)', 'vol_lost': '6.0 (3.9--10.3)', 'full_dsc_tree': '0.969 (0.946--0.978)', 'full_dsc_scan': '0.983 (0.975--0.990)', 'dsc_tree_min': np.float64(0.8617891178912291), 'nA': 118, 'flipA': '18 (12--26)', 'wrongA': '42 (33--51)'}
+{'bed': 'leaky', 'error_type': 'T2_truncation', 'n': 149, 'dsc_tree': '0.895 (0.721--0.936)', 'dsc_scan': '0.934 (0.886--0.962)', 'cldice': '0.855 (0.517--0.899)', 'flow_lost': '13.5 (6.6--55.5)', 'vol_lost': '19.0 (12.1--43.6)', 'full_dsc_tree': '0.893 (0.721--0.936)', 'full_dsc_scan': '0.934 (0.884--0.962)', 'dsc_tree_min': np.float64(0.4388898420097356), 'nA': 147, 'flipA': '43 (35--51)', 'wrongA': '80 (73--86)'}
+{'bed': 'leaky', 'error_type': 'T3_stenosis_length', 'n': 150, 'dsc_tree': '0.997 (0.995--0.998)', 'dsc_scan': '0.998 (0.998--0.999)', 'cldice': '1.000 (1.000--1.000)', 'flow_lost': '0.0 (0.0--0.0)', 'vol_lost': '0.7 (0.5--0.9)', 'full_dsc_tree': '0.997 (0.995--0.998)', 'full_dsc_scan': '0.998 (0.998--0.999)', 'dsc_tree_min': np.float64(0.9922202659302898), 'nA': 150, 'flipA': '2 (1--6)', 'wrongA': '0 (0--2)'}
+{'bed': 'leaky', 'error_type': 'T4_taper', 'n': 150, 'dsc_tree': '0.972 (0.951--0.981)', 'dsc_scan': '0.983 (0.976--0.988)', 'cldice': '1.000 (1.000--1.000)', 'flow_lost': '0.0 (0.0--0.0)', 'vol_lost': '5.4 (3.8--9.3)', 'full_dsc_tree': '0.972 (0.951--0.980)', 'full_dsc_scan': '0.983 (0.976--0.988)', 'dsc_tree_min': np.float64(0.9312358184068912), 'nA': 150, 'flipA': '9 (6--15)', 'wrongA': '7 (4--12)'}
+
+=== by host side (T1, T2) ===
+{'bed': 'discrete', 'error_type': 'T1_missed_branch', 'host': 'RCA', 'n': 36, 'dsc_tree': '0.971 (0.951--0.985)', 'dsc_scan': '0.987 (0.979--0.994)', 'dsc_tree_range': '0.909--0.996', 'dsc_scan_range': '0.943--0.999', 'cldice': '0.920 (0.887--0.951)', 'flow_lost': '44.9 (33.4--50.0)', 'flipA': '31 (18--47)'}
+{'bed': 'discrete', 'error_type': 'T1_missed_branch', 'host': 'left', 'n': 41, 'dsc_tree': '0.977 (0.946--0.983)', 'dsc_scan': '0.984 (0.975--0.991)', 'dsc_tree_range': '0.913--0.994', 'dsc_scan_range': '0.941--0.996', 'cldice': '0.954 (0.927--0.970)', 'flow_lost': '14.5 (12.0--17.3)', 'flipA': '24 (14--39)'}
+{'bed': 'discrete', 'error_type': 'T2_truncation', 'host': 'RCA', 'n': 36, 'dsc_tree': '0.629 (0.551--0.725)', 'dsc_scan': '0.854 (0.818--0.899)', 'dsc_tree_range': '0.458--0.839', 'dsc_scan_range': '0.737--0.950', 'cldice': '0.493 (0.392--0.559)', 'flow_lost': '100.0 (100.0--100.0)', 'flipA': '--'}
+{'bed': 'discrete', 'error_type': 'T2_truncation', 'host': 'left', 'n': 60, 'dsc_tree': '0.915 (0.899--0.956)', 'dsc_scan': '0.953 (0.934--0.971)', 'dsc_tree_range': '0.799--0.998', 'dsc_scan_range': '0.898--0.999', 'cldice': '0.896 (0.856--0.928)', 'flow_lost': '16.9 (13.0--26.0)', 'flipA': '40 (29--53)'}
+{'bed': 'leaky', 'error_type': 'T1_missed_branch', 'host': 'RCA', 'n': 50, 'dsc_tree': '0.964 (0.948--0.976)', 'dsc_scan': '0.986 (0.977--0.990)', 'dsc_tree_range': '0.862--0.994', 'dsc_scan_range': '0.923--0.998', 'cldice': '0.909 (0.872--0.935)', 'flow_lost': '16.0 (10.4--19.4)', 'flipA': '20 (11--33)'}
+{'bed': 'leaky', 'error_type': 'T1_missed_branch', 'host': 'left', 'n': 68, 'dsc_tree': '0.972 (0.945--0.980)', 'dsc_scan': '0.982 (0.973--0.990)', 'dsc_tree_range': '0.892--0.996', 'dsc_scan_range': '0.920--0.997', 'cldice': '0.944 (0.917--0.961)', 'flow_lost': '6.2 (4.0--9.4)', 'flipA': '16 (9--27)'}
+{'bed': 'leaky', 'error_type': 'T2_truncation', 'host': 'RCA', 'n': 50, 'dsc_tree': '0.623 (0.547--0.720)', 'dsc_scan': '0.862 (0.818--0.903)', 'dsc_tree_range': '0.439--0.910', 'dsc_scan_range': '0.740--0.967', 'cldice': '0.452 (0.379--0.517)', 'flow_lost': '65.0 (54.6--74.0)', 'flipA': '50 (36--64)'}
+{'bed': 'leaky', 'error_type': 'T2_truncation', 'host': 'left', 'n': 99, 'dsc_tree': '0.915 (0.895--0.946)', 'dsc_scan': '0.954 (0.933--0.968)', 'dsc_tree_range': '0.768--0.998', 'dsc_scan_range': '0.854--0.999', 'cldice': '0.882 (0.855--0.923)', 'flow_lost': '8.7 (5.9--13.4)', 'flipA': '39 (30--49)'}
+
+=== T4 ===
+discrete scaled clean-volume share 0.427 (0.284--0.753)  dsc_tree 0.971 (0.947--0.981)
+leaky scaled clean-volume share 0.400 (0.283--0.688)  dsc_tree 0.972 (0.951--0.981)
+
+=== paired T1 vs T4 DSC within instance ===
+discrete n=77 median T1-T4 +0.0041 T1<T4 in 29 p=0.0274
+leaky n=118 median T1-T4 +0.0002 T1<T4 in 59 p=0.588
+
+=== AUC (instance bootstrap, seed 20261009, 2000 reps) ===
+     bed      subset outcome        metric   n  events   auc    lo    hi  nboot
+   leaky      pooled  flip_A  net_dsc_tree 565     101 0.789 0.739 0.834   2000
+   leaky      pooled  flip_A  net_dsc_scan 565     101 0.789 0.737 0.836   2000
+   leaky      pooled  flip_A    net_cldice 565     101 0.775 0.715 0.831   2000
+   leaky      pooled  flip_A     flow_lost 565     101 0.764 0.701 0.817   2000
+   leaky      pooled  flip_A full_dsc_scan 565     101 0.788 0.738 0.834   2000
+   leaky      pooled wrong_A  net_dsc_tree 565     177 0.856 0.825 0.887   2000
+   leaky      pooled wrong_A  net_dsc_scan 565     177 0.868 0.837 0.896   2000
+   leaky      pooled wrong_A    net_cldice 565     177 0.893 0.867 0.919   2000
+   leaky      pooled wrong_A     flow_lost 565     177 0.889 0.863 0.915   2000
+   leaky      pooled wrong_A full_dsc_scan 565     177 0.869 0.837 0.899   2000
+   leaky topological  flip_A  net_dsc_tree 265      84 0.702 0.646 0.759   2000
+   leaky topological  flip_A  net_dsc_scan 265      84 0.696 0.634 0.757   2000
+   leaky topological  flip_A    net_cldice 265      84 0.667 0.605 0.730   2000
+   leaky topological  flip_A     flow_lost 265      84 0.632 0.555 0.711   2000
+   leaky topological  flip_A full_dsc_scan 265      84 0.695 0.636 0.753   2000
+   leaky topological wrong_A  net_dsc_tree 265     167 0.759 0.696 0.819   2000
+   leaky topological wrong_A  net_dsc_scan 265     167 0.776 0.717 0.834   2000
+   leaky topological wrong_A    net_cldice 265     167 0.701 0.633 0.766   2000
+   leaky topological wrong_A     flow_lost 265     167 0.682 0.615 0.749   2000
+   leaky topological wrong_A full_dsc_scan 265     167 0.776 0.714 0.837   2000
+   leaky          T1  flip_A  net_dsc_tree 118      21 0.645 0.498 0.784   2000
+   leaky          T1  flip_A  net_dsc_scan 118      21 0.614 0.467 0.752   2000
+   leaky          T1  flip_A    net_cldice 118      21 0.591 0.459 0.719   2000
+   leaky          T1  flip_A     flow_lost 118      21 0.718 0.594 0.835   2000
+   leaky          T1  flip_A full_dsc_scan 118      21 0.611 0.456 0.749   2000
+   leaky          T1 wrong_A  net_dsc_tree 118      49 0.572 0.467 0.678   2000
+   leaky          T1 wrong_A  net_dsc_scan 118      49 0.616 0.501 0.719   2000
+   leaky          T1 wrong_A    net_cldice 118      49 0.499 0.391 0.604   2000
+   leaky          T1 wrong_A     flow_lost 118      49 0.595 0.492 0.701   2000
+   leaky          T1 wrong_A full_dsc_scan 118      49 0.618 0.509 0.718   2000
+   leaky          T2  flip_A  net_dsc_tree 147      63 0.595 0.498 0.684   2000
+   leaky          T2  flip_A  net_dsc_scan 147      63 0.592 0.498 0.688   2000
+   leaky          T2  flip_A    net_cldice 147      63 0.586 0.498 0.675   2000
+   leaky          T2  flip_A     flow_lost 147      63 0.550 0.456 0.647   2000
+   leaky          T2  flip_A full_dsc_scan 147      63 0.592 0.493 0.681   2000
+   leaky          T2 wrong_A  net_dsc_tree 147     118 0.745 0.644 0.841   2000
+   leaky          T2 wrong_A  net_dsc_scan 147     118 0.757 0.653 0.852   2000
+   leaky          T2 wrong_A    net_cldice 147     118 0.714 0.609 0.809   2000
+   leaky          T2 wrong_A     flow_lost 147     118 0.709 0.609 0.804   2000
+   leaky          T2 wrong_A full_dsc_scan 147     118 0.757 0.651 0.849   2000
+discrete      pooled  flip_A  net_dsc_tree 331      65 0.648 0.574 0.724   2000
+discrete      pooled  flip_A  net_dsc_scan 331      65 0.649 0.576 0.718   2000
+discrete      pooled  flip_A    net_cldice 331      65 0.676 0.585 0.768   2000
+discrete      pooled  flip_A     flow_lost 331      65 0.684 0.591 0.779   2000
+discrete      pooled  flip_A full_dsc_scan 331      65 0.661 0.587 0.732   2000
+discrete      pooled wrong_A  net_dsc_tree 329     125 0.752 0.710 0.787   2000
+discrete      pooled wrong_A  net_dsc_scan 329     125 0.755 0.714 0.794   2000
+discrete      pooled wrong_A    net_cldice 329     125 0.932 0.901 0.963   2000
+discrete      pooled wrong_A     flow_lost 329     125 0.936 0.908 0.964   2000
+discrete      pooled wrong_A full_dsc_scan 329     125 0.782 0.743 0.818   2000
+discrete topological  flip_A  net_dsc_tree 137      45 0.541 0.436 0.654   2000
+discrete topological  flip_A  net_dsc_scan 137      45 0.529 0.418 0.635   2000
+discrete topological  flip_A    net_cldice 137      45 0.511 0.401 0.624   2000
+discrete topological  flip_A     flow_lost 137      45 0.546 0.432 0.657   2000
+discrete topological  flip_A full_dsc_scan 137      45 0.529 0.420 0.637   2000
+discrete topological wrong_A  net_dsc_tree 135     119 0.472 0.317 0.626   2000
+discrete topological wrong_A  net_dsc_scan 135     119 0.484 0.350 0.613   2000
+discrete topological wrong_A    net_cldice 135     119 0.442 0.281 0.617   2000
+discrete topological wrong_A     flow_lost 135     119 0.493 0.324 0.643   2000
+discrete topological wrong_A full_dsc_scan 135     119 0.501 0.369 0.632   2000
+discrete          T1  flip_A  net_dsc_tree  77      21 0.392 0.226 0.553   2000
+discrete          T1  flip_A  net_dsc_scan  77      21 0.381 0.232 0.540   2000
+discrete          T1  flip_A    net_cldice  77      21 0.386 0.231 0.552   2000
+discrete          T1  flip_A     flow_lost  77      21 0.565 0.404 0.719   2000
+discrete          T1  flip_A full_dsc_scan  77      21 0.383 0.234 0.536   2000
+discrete          T1 wrong_A  net_dsc_tree  77      66 0.455 0.271 0.641   2000
+discrete          T1 wrong_A  net_dsc_scan  77      66 0.421 0.250 0.603   2000
+discrete          T1 wrong_A    net_cldice  77      66 0.455 0.249 0.645   2000
+discrete          T1 wrong_A     flow_lost  77      66 0.492 0.328 0.657   2000
+discrete          T1 wrong_A full_dsc_scan  77      66 0.459 0.287 0.641   2000
+discrete          T2  flip_A  net_dsc_tree  60      24 0.579 0.428 0.722   2000
+discrete          T2  flip_A  net_dsc_scan  60      24 0.546 0.390 0.694   2000
+discrete          T2  flip_A    net_cldice  60      24 0.533 0.380 0.683   2000
+discrete          T2  flip_A     flow_lost  60      24 0.594 0.450 0.732   2000
+discrete          T2  flip_A full_dsc_scan  60      24 0.542 0.395 0.696   2000
+discrete          T2 wrong_A  net_dsc_tree  58      53 0.389 0.139 0.697   1994
+discrete          T2 wrong_A  net_dsc_scan  58      53 0.475 0.194 0.746   1993
+discrete          T2 wrong_A    net_cldice  58      53 0.357 0.136 0.661   1994
+discrete          T2 wrong_A     flow_lost  58      53 0.577 0.339 0.803   1990
+discrete          T2 wrong_A full_dsc_scan  58      53 0.491 0.232 0.745   1989
+     bed      subset outcome        metric   n  events   auc    lo    hi  nboot
+   leaky      pooled  flip_B  net_dsc_tree 567      17 0.619 0.445 0.761   2000
+   leaky      pooled  flip_B  net_dsc_scan 567      17 0.630 0.448 0.773   2000
+   leaky      pooled  flip_B    net_cldice 567      17 0.637 0.495 0.749   2000
+   leaky      pooled  flip_B     flow_lost 567      17 0.636 0.507 0.751   2000
+   leaky      pooled  flip_B full_dsc_scan 567      17 0.628 0.461 0.771   2000
+   leaky      pooled wrong_B  net_dsc_tree 567      16 0.651 0.518 0.771   2000
+   leaky      pooled wrong_B  net_dsc_scan 567      16 0.673 0.549 0.787   2000
+   leaky      pooled wrong_B    net_cldice 567      16 0.732 0.658 0.812   2000
+   leaky      pooled wrong_B     flow_lost 567      16 0.729 0.661 0.807   2000
+   leaky      pooled wrong_B full_dsc_scan 567      16 0.675 0.540 0.789   2000
+   leaky topological  flip_B  net_dsc_tree 267      13 0.543 0.365 0.684   1999
+   leaky topological  flip_B  net_dsc_scan 267      13 0.564 0.373 0.717   2000
+   leaky topological  flip_B    net_cldice 267      13 0.458 0.284 0.616   2000
+   leaky topological  flip_B     flow_lost 267      13 0.455 0.289 0.635   2000
+   leaky topological  flip_B full_dsc_scan 267      13 0.562 0.364 0.719   2000
+   leaky topological wrong_B  net_dsc_tree 267      16 0.448 0.274 0.608   2000
+   leaky topological wrong_B  net_dsc_scan 267      16 0.485 0.314 0.648   2000
+   leaky topological wrong_B    net_cldice 267      16 0.412 0.238 0.583   2000
+   leaky topological wrong_B     flow_lost 267      16 0.405 0.259 0.568   2000
+   leaky topological wrong_B full_dsc_scan 267      16 0.485 0.307 0.659   2000
+discrete      pooled  flip_B  net_dsc_tree 367      39 0.607 0.530 0.686   2000
+discrete      pooled  flip_B  net_dsc_scan 367      39 0.623 0.545 0.701   2000
+discrete      pooled  flip_B    net_cldice 367      39 0.594 0.522 0.678   2000
+discrete      pooled  flip_B     flow_lost 367      39 0.567 0.503 0.651   2000
+discrete      pooled  flip_B full_dsc_scan 367      39 0.621 0.543 0.700   2000
+discrete      pooled wrong_B  net_dsc_tree 365      71 0.711 0.660 0.763   2000
+discrete      pooled wrong_B  net_dsc_scan 365      71 0.740 0.688 0.792   2000
+discrete      pooled wrong_B    net_cldice 365      71 0.809 0.773 0.846   2000
+discrete      pooled wrong_B     flow_lost 365      71 0.769 0.733 0.809   2000
+discrete      pooled wrong_B full_dsc_scan 365      71 0.759 0.708 0.806   2000
+discrete topological  flip_B  net_dsc_tree 173      24 0.582 0.458 0.696   2000
+discrete topological  flip_B  net_dsc_scan 173      24 0.609 0.485 0.729   2000
+discrete topological  flip_B    net_cldice 173      24 0.549 0.429 0.667   2000
+discrete topological  flip_B     flow_lost 173      24 0.453 0.339 0.569   2000
+discrete topological  flip_B full_dsc_scan 173      24 0.605 0.480 0.725   2000
+discrete topological wrong_B  net_dsc_tree 171      71 0.476 0.393 0.562   2000
+discrete topological wrong_B  net_dsc_scan 171      71 0.520 0.438 0.603   2000
+discrete topological wrong_B    net_cldice 171      71 0.439 0.353 0.534   2000
+discrete topological wrong_B     flow_lost 171      71 0.321 0.238 0.410   2000
+discrete topological wrong_B full_dsc_scan 171      71 0.525 0.443 0.606   2000

@@ -1,0 +1,2 @@
+wrote /Users/mzpi/Library/CloudStorage/GoogleDrive-Mohd.Zulhilmi@monash.edu/My Drive/Research/01 CollabProject-MonashIIUM/Imaging-Medical/Paper6-T6/submission-JBHI/checks/2026-10-08/preflight.md and preflight.json
+  length (body+tables) 5,542 | refs 0 | IEEE Journal of Biomedical and Health Informatics refs 0 (0.0%) | guide {'PASS': 0, 'FAIL': 1, 'REFUSED': 1, 'MODEL': 10} | letter {'PASS': 3, 'FAIL': 2, 'ADVISORY': 3, 'MODEL': 1}

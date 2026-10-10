@@ -1,0 +1,3 @@
+L2keep: rows A-C 3874, D 1192, insertions 2384, 1138s
+status A-C: {'ok': 3847, 'skipped: fewer than 2 shared territories to match': 20, 'failed fit: Protocol C optimum at search bound': 7}
+status D: {'ok': 1172, 'skipped: fewer than 2 shared territories to match': 20}

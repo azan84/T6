@@ -1,0 +1,11 @@
+target journal: IEEE Journal of Biomedical and Health Informatics
+forms matched: IEEE Journal of Biomedical and Health Informatics | IEEE J. Biomedical Health Inform. | IEEE J. Biomed. Health Inform.; DOI stems: 10.1109/jbhi.
+references: 36 | from this journal: 1 (2.8% of the list) | last five years: 1
+
+  [  9] al 2026  (arminio2026, by DOI stem)
+        cited 1x in: Introduction
+
+  cited once only: 1 of 1. A single passing mention is weaker evidence of engagement than a load-bearing use.
+
+  venue profile:
+      36  other or not parsed

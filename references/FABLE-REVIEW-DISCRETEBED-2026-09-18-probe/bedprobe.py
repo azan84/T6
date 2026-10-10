@@ -13,7 +13,7 @@ import zerod_ffr as Z
 from zerod_ffr import Tree, Segment
 import severity_sweep as SS
 HERE = Path(__file__).parent
-DATA = Path.home() / "Datasets/imagecas-x/ImageCAS-X_dataset"
+DATA = Path.home() / "Documents/Datasets/imagecas-x/ImageCAS-X_dataset"
 TRUNCS = (0.5e-3, 0.6e-3, 0.75e-3, 0.9e-3, 1.0e-3)
 SCHEMES = ("share", "leaf3", "leaf266", "apport", "origin", "length")
 

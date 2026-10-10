@@ -1,0 +1,331 @@
+IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS                                                                                                                            1
+
+
+        Supplementary Material for “Topological
+      Segmentation Error and Boundary-Condition
+         Tuning in Computed Coronary FFR: A
+              Controlled In Silico Study”
+ Fadillah Yamin, Mohd Azan Mohammed Sapardi, Ming Kwang Tan, Xin Wang, and Mohd-Zulhilmi Ismadi
+
+
+
+                                                                     S1. A NALYSIS P IPELINE
+   Fig. S1 shows the analysis pipeline. The reduced-order arm runs end to end without manual intervention: every instance,
+error type, protocol and bed is solved in one automated run from the cohort list, and every table and figure is generated from
+its output. The 3D case study is a separate branch. A case package (centerline, outlet boundary conditions and probe positions)
+is exported to the CFD machine, which returns the solved FFR and the as-meshed radius; the radius is used to rebuild the
+reduced-order counterpart.
+   Cohort selection (step 3) shuffles the 6 944 instances with a fixed seed (20260918) and fills the six bands of leaky-bed
+baseline FFR scarcest first, rotating the host vessel type and taking at most two instances per tree and one per host vessel
+and band. Each host vessel keeps only the lesion positions and lengths that meet the eligibility criteria, so it contributes fewer
+than 32 instances when a criterion fails at one position. The reduced-order solve (step 7) starts from Poiseuille flow, averages
+successive flow iterates with a relaxation factor of 0.5, and stops when the largest flow change falls below 10−8 of the largest
+flow or after 200 iterations; a solve that reaches the cap is recorded as not converged, and none did.
+
+  1 Data. ImageCAS-X test         2 Lesion insertion. Eligible        3 Cohort selection. 25 per         4 Bed structures. Leaky (150)     Sensitivity and floors. Steps
+  split: 160 CT angiography       host vessels; cosine stenosis, 2    0.05 band of baseline FFR          and discrete (97); Cb             6–7 rerun with k × 0.7,
+  scans, masks and centerlines;   positions × 2 lengths × 8           (0.65–0.95), at most two per       calibrated on the                 ×1.3; steps 2–7 with k × 2,
+  radius from the distance map.   DS; 6 944 instances.                tree; 150 instances.               healthy-equivalent network to     ×3; noise floors.
+                                                                                                                   3
+                                                                                                         Q = k rin   .
+
+
+
+
+  5 Segmentation errors. T1       6 Boundary conditions. A            7 Reduced-order solve.             8 Statistics. Wilson intervals;   9 Outputs. Table I, Figs. 2, 3,
+  missed branch, T2 vessel        fixed; B re-derived on the          Fixed-point iteration to 10−8 ;    McNemar with Holm                 S3 and Tables S1–S7.
+  break, T3 lesion +2.46 mm,      corrupted tree; C one bed           FFR, ∆FFR, flip and                adjustment; sign and Wilcoxon
+  T4 taper ×0.930; nodes          scaling, D one per territory,       perfusion residual per instance,   tests; Bayesian mixed model;
+  matched by coordinate.          fitted to clean territory flows.    error, protocol and bed.           threshold sensitivity.
+
+
+
+
+  3D-a Case export. One           3D-b Lumen and mesh.                3D-c Solve. OpenFOAM               3D-d Reduced-order
+  instance (proximal LAD,         Marching cubes, Taubin              simpleFoam, steady laminar;        counterpart. Rebuilt on the
+  20 mm, 80% DS): centerline,     smoothing; lesion by vertex         outlets under Protocol A or        as-meshed radius, same outlet
+  outlet conditions, probes.      displacement, T1 by voxel           prescribed flows (D); FFR and      conditions; compared with 3D.
+                                  deletion; cfMesh, 3.5–3.9 M         as-meshed radius returned.
+                                  cells.
+
+Fig. S1. Analysis pipeline. Shaded boxes: reduced-order arm, run for every instance. Dashed boxes: sensitivity and noise-floor analyses (top right)
+and the 3D case study (bottom row), whose steps 3D-b and 3D-c ran on the CFD machine.
+
+  Fig. S2 shows the inserted stenosis on one host vessel. The narrowing follows (1) of the main text: it is set by the taper-fit
+radius rfit , not by the local image radius r, and the lumen is never widened.
+2                                                                                            IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS
+
+
+
+                           throat rfit (c) (1 − DS),
+                                      DS = 40–80%                           taper fit rfit (dashed)
+                  image radius r
+                                                                                                                  FFR measured
+
+
+
+
+         s=0                                                                                                                           s
+
+
+                                                                             inserted lumen r′
+
+
+
+                                                       L = 10 or 20 mm
+
+                   c = 20 or 45 mm from the vessel origin
+
+                                                                                                      20 mm
+
+Fig. S2. Inserted stenosis, drawn at 60% DS with c = 20 mm and L = 20 mm (axial scale compressed). The cosine narrowing is axisymmetric
+about the centerline and scaled from the taper-fit radius rfit ; outside the lesion and wherever the image radius is already smaller, the lumen is
+unchanged. Gray line: image radius before insertion. FFR is read 20 mm beyond the distal edge of the lesion.
+
+
+
+                                                                 S2. E XCLUSIONS
+   Of 6 944 swept instances, 150 were selected and 97 form the discrete arm; 2 802 corrupted models were defined (an applicable
+error type under each of Protocols A–C) and 2 599 solved, all of which converged. The missed branch was applicable to 77
+of 97 (discrete) and 118 of 150 (leaky) instances; the others had no side branch distal to the lesion that could be deleted. The
+vessel break was not applicable to one instance in each bed, in which the 25 mm truncation point fell at the start of a centerline
+segment. Protocols C and D are defined only when at least two perfusion territories retain a vessel, so Protocol D was solved
+on the same instances as Protocol C. A Protocol C fit that ends at a search bound is recorded as a failure; none did in the
+ablation or in the demand runs (Section S5-B), and 10 of 4 940 noise-floor draws did (Section S6). Protocol D scales each
+territory within 10±3 ; the scaling reached 103 in two discrete-bed missed-branch models of one tree, which kept perfusion
+residuals of 0.08 and 0.11 and |∆FFR| < 0.05 and are retained. All 769 Protocol D solves converged. Under Protocol A a
+vessel break can remove every node that carries bed outflow (36 instances in the discrete bed, 2 in the leaky bed). Table S1
+lists every exclusion; all other cells were solved for every applicable instance.
+
+                                                                       TABLE S1
+                                                            C ELLS W ITH E XCLUDED M ODELS
+
+                     Bed           Error     Protocol          Solved    Excluded (reason: count)
+                     Discrete      T1        all             77 of 97    no side branch distal to the lesion: 20
+                     Discrete      T1        C                     44    fewer than two territories with surviving vessels: 33
+                     Discrete      T2        all             96 of 97    truncation point at a segment start: 1
+                     Discrete      T2        A                     60    no node with bed outflow remains: 36
+                     Discrete      T2        C                     60    fewer than two territories with surviving vessels: 36
+                     Leaky         T1        all           118 of 150    no side branch distal to the lesion: 32
+                     Leaky         T1        C                     71    fewer than two territories with surviving vessels: 47
+                     Leaky         T2        all           149 of 150    truncation point at a segment start: 1
+                     Leaky         T2        A                    147    no node with bed outflow remains: 2
+                     Leaky         T2        C                    100    fewer than two territories with surviving vessels: 49
+
+
+
+                                                             S3. S IDE -B RANCH L OSS
+YAMIN et al.: SUPPLEMENTARY MATERIAL, SEGMENTATION ERROR AND BC TUNING IN CORONARY FFR                                                              3
+
+
+
+
+                                                      0.20
+                                                                  Discrete bed (n = 44)
+
+
+
+
+                                   ΔFFR, protocol C
+                                                                  Leaky bed (n = 71)
+                                                      0.15
+
+                                                      0.10
+
+                                                      0.05
+
+                                                      0.00
+                                                             0.000 0.025 0.050 0.075 0.100 0.125 0.150 0.175 0.200
+                                                                                 ΔFFR, protocol A
+
+
+Fig. S3. Change in FFR caused by a missed side branch under fixed boundary conditions (Protocol A) and after tuning to territory flows with one
+global scaling (Protocol C), paired by instance. The solid line is the identity and the dashed line marks ∆FFR = 0.05. Under per-territory tuning
+(Protocol D) the median shift was 0.000 (discrete) and 0.004 (leaky).
+
+
+
+                                                               S4. M IXED -E FFECTS M ODEL OF F LIPS
+
+                                                                 TABLE S2
+                    B AYESIAN M IXED -E FFECTS L OGISTIC M ODEL OF F LIPS : P OSTERIOR M EAN L OG -O DDS (95% I NTERVAL )
+
+                                                      Term                   Discrete bed             Leaky bed
+                                                      Intercept           -2.63 (-2.85, -2.42)    -2.39 (-2.61, -2.18)
+                                                      T2                   0.69 (0.31, 1.07)       1.81 (1.47, 2.15)
+                                                      T3                  -1.92 (-2.40, -1.44)    -2.49 (-3.12, -1.87)
+                                                      T4                  -1.16 (-1.59, -0.73)    -1.00 (-1.45, -0.54)
+                                                      B                   -1.54 (-1.92, -1.17)   -1.76 (-2.27, -1.26)
+                                                      C                   -0.69 (-1.10, -0.28)   -0.99 (-1.42, -0.57)
+                                                      T2 × B               0.06 (-0.55, 0.66)     -1.89 (-2.66, -1.12)
+                                                      T3 × B               1.26 (0.41, 2.10)       1.13 (-0.06, 2.32)
+                                                      T4 × B               0.72 (-0.08, 1.51)     -1.26 (-2.87, 0.35)
+                                                      T2 × C              -0.73 (-1.46, 0.00)     -2.00 (-2.76, -1.24)
+                                                      T3 × C               0.44 (-0.39, 1.28)      0.78 (-0.25, 1.81)
+                                                      T4 × C              -0.10 (-0.89, 0.68)      0.21 (-0.54, 0.96)
+                                                      Severity (% DS)    0.019 (0.016, 0.022)    0.019 (0.016, 0.022)
+                                                      Length (mm)         -0.04 (-0.05, -0.02)    -0.08 (-0.09, -0.06)
+          Reference levels: T1 (missed branch) and Protocol A. Baseline-band terms are omitted from the table. Random intercepts for patient
+          and lesion slot. Fitted by variational inference; intervals are posterior mean ±1.96 posterior standard deviations from the variational
+          approximation.
+
+
+  At the reference levels the model agrees with the paired tests: under fixed boundary conditions a vessel break carries higher
+odds of a flip than a missed branch and the caliber errors lower odds, and for the missed branch Protocols B and C carry
+lower odds than Protocol A, in both beds. In the leaky bed the T2 × B and T2 × C interactions offset the T2 main effect, so
+under re-derived or tuned boundary conditions the two topological errors have similar odds, as in Table I of the main text.
+
+                                                                    S5. S ENSITIVITY A NALYSES
+A. Perfusion-Check Threshold
+  Table S3 repeats the proportion of models that pass the perfusion check while materially wrong at the primary threshold of
+10% and at the 13% and 16% sensitivities, for the topological errors and for all error types.
+4                                                                                          IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS
+
+
+
+
+                                                              TABLE S3
+          P ROPORTION OF M ODELS T HAT PASS THE P ERFUSION C HECK AND A RE M ATERIALLY W RONG , % (W ILSON 95% I NTERVAL ), BY
+                                                    P ERFUSION -C HECK T HRESHOLD
+
+                                Bed         Errors      Protocol       n        10%           13%            16%
+                                Discrete    T1+T2       A            137    12 (8–19)      23 (17–31)     31 (24–40)
+                                Discrete    T1+T2       B            137     1 (0–5)       11 (7–17)      20 (14–27)
+                                Discrete    T1+T2       C            104   19 (13–28)      28 (20–37)     38 (30–48)
+                                Discrete    All         A            331     7 (5–10)       11 (8–15)     15 (11–19)
+                                Discrete    All         B            331     1 (0–2)         5 (3–7)       8 (6–12)
+                                Discrete    All         C            298   10 (7–14)       13 (9–17)      16 (13–21)
+                                Leaky       T1+T2       A            218   20 (15–26)      30 (25–37)     38 (31–44)
+                                Leaky       T1+T2       B            218     5 (3–8)         5 (3–9)        6 (3–9)
+                                Leaky       T1+T2       C            171     8 (5–13)        9 (6–15)       9 (6–15)
+                                Leaky       All         A            518    10 (8–13)      15 (12–18)     18 (15–21)
+                                Leaky       All         B            518     2 (1–4)         2 (1–4)        2 (1–4)
+                                Leaky       All         C            471   11 (8–14)       11 (9–14)       11 (9–14)
+            Materially wrong: |∆FFR| > 0.05. The 13% and 16% thresholds were analyzed as sensitivities. n counts models with a defined
+            perfusion residual: T2 under Protocols A and B in the leaky bed, n = 100; T2 under Protocol B in the discrete bed, n = 60.
+
+
+
+B. Hyperemic Demand
+   The demand constant k was scaled by 0.7 and 1.3 and the full ablation was repeated with the same cohort (Table S4). The
+ordering of topological against caliber errors under fixed boundary conditions, and of Protocols B and C against Protocol A
+for the topological errors, was unchanged at both levels in both beds. The taper, which flipped fewer decisions under Protocol
+C than under Protocol A at the primary demand, flipped one and two more at 1.3 times the demand (7 against 6 of 97; 11
+against 9 of 150). The magnitudes changed with demand, which moves the clean FFR of every instance (leaky-bed median
+0.869, 0.801 and 0.741 at 0.7, 1.0 and 1.3 times the demand) and therefore the number of instances near the threshold, as well
+as the pressure loss across the lesion. The proportion of tuned topological-error models that pass the perfusion check while
+materially wrong fell to 3% in the leaky bed at 0.7 times the demand, comparable with the simulated floor for correct anatomy
+(3.9% at the primary demand); in the discrete bed it remained between 12% and 25%.
+
+                                                                      TABLE S4
+                                                        S ENSITIVITY TO H YPEREMIC D EMAND
+
+    Bed          Demand scale         Flip, % (Protocol A)           Topological flip, %       Passes and wrong, %     Missed-branch ∆FFR
+                                  Topological         Caliber          B              C             (C, topological)      median, A / C
+    Discrete     0.7               32 (25–40)        6 (3–10)      12 (8–18)     18 (12–27)           12 (7–19)           0.070 / 0.057
+                 1.0               33 (26–41)        10 (7–15)     14 (10–20)    19 (13–28)           19 (13–28)          0.095 / 0.077
+                 1.3               40 (32–48)         5 (2–9)      16 (11–22)    19 (13–28)           25 (18–34)          0.106 / 0.091
+    Leaky        0.7               20 (16–26)         6 (4–9)       7 (4–10)      9 (5–14)             3 (1–7)            0.032 / 0.010
+                 1.0               32 (26–38)         6 (4–9)        5 (3–8)      8 (5–13)             8 (5–13)           0.047 / 0.015
+                 1.3               37 (32–43)         4 (2–7)        5 (3–9)      8 (4–13)            12 (8–18)           0.057 / 0.021
+      Demand scale 1.0 is the primary analysis (k = 562 s−1 ). Percentages with Wilson 95% intervals in parentheses. Missed-branch ∆FFR is
+      over the instances in which Protocol C was defined.
+
+
+
+C. Demand Replication With Re-Selected Cohorts
+   Because hyperemic demand follows the segmented inlet radius, the modeled flow was below thermodilution values for normal-
+sized arteries. The whole pipeline (stenosis sweep, stratified selection with the same rule and seed, discrete-arm eligibility,
+Protocols A–D) was therefore repeated with k doubled and tripled, so that the reselected cohorts again span 0.80 at the higher
+flow. At three times the demand only 17 instances met the discrete-bed eligibility criteria, mostly because the healthy-equivalent
+network lost more than 10% of the aortic pressure, so the discrete arm is reported at twice the demand only (Table S5).
+YAMIN et al.: SUPPLEMENTARY MATERIAL, SEGMENTATION ERROR AND BC TUNING IN CORONARY FFR                                                                      5
+
+
+
+
+                                                                 TABLE S5
+                           D EMAND R EPLICATION : F LIP AND PASSES - AND -W RONG R ATES , % (W ILSON 95% I NTERVAL )
+
+                                          Flip, A                 Topological flip        Topological passes and wrong          Caliber passes and wrong
+      Bed        k scale Inst.       Topol.       Caliber          C            D            B        C             D          B         C           D
+      Discrete        1  97 33 (26–41) 10 (7–15) 19 (13–28) 8 (4–14) 1 (0–4) 19 (13–28) 20 (14–29) 0 (0–2)   5 (2–9)  18 (13–24)
+                      2  47 50 (38–62) 1 (0–6) 20 (11–32) 8 (3–18) 5 (2–12) 14 (7–26) 20 (11–32) 0 (0–4)     1 (0–6)  14 (8–22)
+      Leaky           1 150 32 (26–38) 6 (4–9)    8 (5–13) 6 (3–10) 4 (2–7)   8 (5–13)   5 (3–10) 0 (0–1) 12 (9–17)     4 (2–7)
+                      2 150 34 (29–40) 5 (3–8)    7 (4–11)  3 (1–7) 2 (1–4)   5 (3–10)   3 (1–7)   0 (0–1) 13 (10–18)  5 (3–8)
+                      3 150 33 (28–39) 5 (3–8)    6 (4–11) 6 (4–11) 4 (2–7)   7 (4–12)   4 (2–8)   0 (0–2) 12 (9–16)   3 (1–5)
+   Scale 1 is the primary analysis (k = 562 s−1 , primary cohort). Scales 2 and 3 use cohorts reselected at that demand. Passes and wrong: perfusion
+   residual below 10% and |∆FFR| > 0.05; denominators include models without a defined residual, which do not pass.
+
+
+
+D. Grey Zone
+   A change of classification at 0.80 between two values close to the threshold falls inside the diagnostic grey zone of 0.75–0.85.
+Table S6 separates the flips that end beyond this zone, with the corrupted FFR outside 0.75–0.85 on the other side of 0.80
+from the clean FFR. Of the clean models, 30% (discrete) and 33% (leaky) lay inside the zone.
+
+                                                                  TABLE S6
+                        F LIPS AND F LIPS B EYOND THE G REY Z ONE (0.75–0.85), % OF M ODELS (W ILSON 95% I NTERVAL )
+
+                                                                    Topological errors                      Caliber errors
+                               Bed            Protocol       n         Flip          Beyond zone     n       Flip        Beyond zone
+                               Discrete       A             137    33 (26–41)        20 (15–28)    194    10 (7–15)          0 (0–2)
+                                              B             173    14 (10–20)          5 (2–9)     194     8 (5–12)          0 (0–2)
+                                              C             104    19 (13–28)         9 (5–16)     194     8 (5–12)          1 (0–3)
+                                              D             104     8 (4–14)           2 (1–7)     194    11 (7–16)          1 (0–3)
+                               Leaky          A             265    32 (26–38)        23 (18–28)    300      6 (4–9)          0 (0–1)
+                                              B             267      5 (3–8)           0 (0–1)     300      1 (1–3)          0 (0–1)
+                                              C             171     8 (5–13)           1 (0–3)     300      4 (2–7)          1 (0–2)
+                                              D             171     6 (3–10)           0 (0–2)     300      4 (2–6)          0 (0–1)
+
+
+
+
+                                                                       S6. N OISE F LOORS
+   The repeat-measurement floor uses the published standard deviation of the test–retest difference in invasive FFR, 0.018.
+The simulated floor uses the clean anatomy of every instance, with 20 draws per instance. Each draw perturbs cardiac output
+(relative within-subject standard deviation 0.05), mean aortic pressure (0.056), blood viscosity through hematocrit (0.02), the
+share of flow to each territory (0.10) and the measured territory flows (within-subject coefficient of variation 0.083), and the
+model is then tuned to the perturbed flows as in Protocol C. Heart rate is not represented in the steady model. The territory-share
+and measurement terms lie at the low end of published ranges, so the simulated floor may understate physiological variation.
+Table S7 gives the result. The repeat-measurement floor is 5.0–6.5% across cells and the simulated floor 6.2% and 7.2%.
+
+                                                                      TABLE S7
+                                          S IMULATED F LOOR : C ORRECT A NATOMY T UNED TO N OISY P ERFUSION
+
+      Bed          Instances      Draws solved               Flip, %          Median |∆FFR|        95th pct. |∆FFR|          Pass, %    Pass and wrong, %
+      Discrete            97                   1940      6.2 (5.2–7.3)               0.012                0.050                    72      3.1 (2.4–4.0)
+      Leaky              150                   2990      7.2 (6.3–8.2)               0.012                0.053                    72      3.9 (3.2–4.6)
+
+
+
+                                          S7. T HREE -D IMENSIONAL C ASE S TUDY: M ESH C HECKS
+   The mask-to-solution path was scripted with no manual repair, and the lesion-free, baseline and missed-branch solves
+converged. Three acceptance rules were met with deviations. (i) The throat-size gate compared the ratio of the as-built throat
+radius to the undeformed meshed radius with the intended radial scale (within 1%), rather than the absolute throat radius
+with the reduced-order target, because the two pipelines define the radius differently. (ii) A surface self-intersection flag arises
+from the segmentation mask, not from the mesher. (iii) The strict mesh-quality check flags poorly shaped cells (face-tetrahedra
+decompositions) 1.43 mm from the throat center, inside the planned 2 mm exclusion distance; the lesion-free mesh carries a
+similar count, and the standard quality check passes. To test whether these cells affect the result, the baseline was re-meshed
+with a finer throat zone (Table S8). The acceptance criterion, a change smaller than the discretization uncertainty of 5.5 × 10−4 ,
+6                                                                                IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS
+
+
+
+
+was not met: the finer zone raised the measurement-point FFR by 0.0019 and 0.0021, while a regenerated mesh at the production
+resolution reproduced the original value. The second variant missed the strict residual limit at the iteration budget (final velocity
+residual 1.08 × 10−5 against 10−5 ) with its inlet pressure steady to 4 × 10−4 Pa over the last 500 iterations; its value is reported
+as returned. This is a resolution sensitivity of about 0.2% of the FFR, against an error effect of 0.074 in the same case.
+   All 3D-to-0D comparisons use a reduced-order counterpart rebuilt on the meshed radius, which is wider than the reduced-
+order radius (main text, Section III-D).
+
+                                                                 TABLE S8
+T HROAT-Z ONE R ESOLUTION T EST, B ASELINE L UMEN . T HE 8.31 M- CELL MESH DID NOT MEET THE STRICT RESIDUAL LIMIT AT 3 000 ITERATIONS
+                                                               ( SEE TEXT ).
+
+          Mesh                          Cells (M)     FFR      ∆FFR     Outlet flow change, %    Flagged cell to throat, mm
+          Control: 25 µm, regenerated        3.66   0.8698   +0.0000                      0.00                         1.43
+          12.5 µm, ±4 mm                     6.24   0.8716   +0.0019                      0.24                         0.70
+          12.5 µm, interfaces +1 mm          8.31   0.8718   +0.0021                      0.25                         0.70
+

@@ -12,7 +12,7 @@ sys.path.insert(0, "code")
 from zerod_ffr import Tree
 from severity_sweep import load, plan, HOSTS
 from imagecasx_loader import load_tree
-ROOT = Path("/Users/mzpi/Datasets/imagecas-x/ImageCAS-X_dataset")
+ROOT = Path("/Users/mzpi/Documents/Datasets/imagecas-x/ImageCAS-X_dataset")
 coh = pd.read_csv("protocol/COHORT-FROZEN-2026-09-18.csv")
 trees = coh[["scan", "side"]].drop_duplicates().sort_values(["scan", "side"])
 rows = []

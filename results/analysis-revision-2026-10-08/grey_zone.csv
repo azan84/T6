@@ -1,0 +1,17 @@
+bed,cls,protocol,n,flips,within,beyond,flip_ci,beyond_ci,within_share
+discrete,cal,A_fixed,194,20,20,0,10 (7--15),0 (0--2),100.0
+discrete,cal,B_rederived,194,15,15,0,8 (5--12),0 (0--2),100.0
+discrete,cal,C_flowmatched,194,15,14,1,8 (5--12),1 (0--3),93.33333333333333
+discrete,cal,D_perterritory,194,21,20,1,11 (7--16),1 (0--3),95.23809523809524
+discrete,topo,A_fixed,137,45,2,28,33 (26--41),20 (15--28),4.444444444444445
+discrete,topo,B_rederived,173,24,11,8,14 (10--20),5 (2--9),45.833333333333336
+discrete,topo,C_flowmatched,104,20,8,9,19 (13--28),9 (5--16),40.0
+discrete,topo,D_perterritory,104,8,5,2,8 (4--14),2 (1--7),62.5
+leaky,cal,A_fixed,300,17,17,0,6 (4--9),0 (0--1),100.0
+leaky,cal,B_rederived,300,4,4,0,1 (1--3),0 (0--1),100.0
+leaky,cal,C_flowmatched,300,12,10,2,4 (2--7),1 (0--2),83.33333333333333
+leaky,cal,D_perterritory,300,11,11,0,4 (2--6),0 (0--1),100.0
+leaky,topo,A_fixed,265,84,11,61,32 (26--38),23 (18--28),13.095238095238095
+leaky,topo,B_rederived,267,13,9,0,5 (3--8),0 (0--1),69.23076923076923
+leaky,topo,C_flowmatched,171,14,8,1,8 (5--13),1 (0--3),57.142857142857146
+leaky,topo,D_perterritory,171,10,6,0,6 (3--10),0 (0--2),60.0

@@ -1,0 +1,14 @@
+listed 36 | cited 36
+  cited but not listed : none
+  listed but not cited : none
+  first-citation order : yes
+  duplicates           : 0
+  entries missing year or DOI : 34
+     tonino2009: missing DOI
+     norgaard2014: missing DOI
+     taylor2013: missing DOI
+     kim2010: missing DOI
+     fossan2026: missing DOI
+     itu2016: missing DOI
+     murray1926: missing DOI
+     menon2024: missing DOI

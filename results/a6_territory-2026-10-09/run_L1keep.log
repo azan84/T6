@@ -1,0 +1,18 @@
+  20/300 jobs  54s
+  40/300 jobs  103s
+  SKIP job 56: slot not eligible under this bed
+  60/300 jobs  154s
+  80/300 jobs  214s
+  100/300 jobs  252s
+  SKIP job 106: slot not eligible under this bed
+  120/300 jobs  296s
+  140/300 jobs  340s
+  160/300 jobs  381s
+  180/300 jobs  429s
+  200/300 jobs  463s
+  220/300 jobs  509s
+  240/300 jobs  558s
+  260/300 jobs  603s
+  280/300 jobs  650s
+  300/300 jobs  684s
+wrote results/a6_territory-2026-10-09 config L1keep: 3728 A-C rows, 1192 D rows, 684s

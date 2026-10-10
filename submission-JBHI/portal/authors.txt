@@ -1,0 +1,17 @@
+JBHI portal author details: Paper 6 (byline order). Source: Imaging-Medical/AuthorsDetails.docx.
+
+1. Fadillah Yamin (publication name; full name Mohd Fadillah Yamin, for ORCID matching only)
+   Department of Mechanical Engineering, School of Engineering, Monash University Malaysia, 47500 Bandar Sunway, Selangor, Malaysia
+   mohd.yamin@monash.edu | ORCID 0009-0009-9072-0864
+2. Mohd Azan Mohammed Sapardi
+   Department of Mechanical Engineering, Kulliyyah of Engineering, International Islamic University Malaysia, 53100 Kuala Lumpur, Malaysia
+   azan@iium.edu.my | ORCID 0000-0001-5278-014X
+3. Ming Kwang Tan
+   Department of Mechanical Engineering, Ming Chi University of Technology, New Taipei City 243303, Taiwan
+   tanmingkwang@mail.mcut.edu.tw | ORCID 0000-0002-1585-9358
+4. Xin Wang
+   Department of Mechanical Engineering, School of Engineering, Monash University Malaysia, 47500 Bandar Sunway, Selangor, Malaysia
+   Wang.xin@monash.edu | ORCID 0000-0002-5854-5287
+5. Mohd-Zulhilmi Ismadi (corresponding author)
+   Department of Mechanical Engineering, School of Engineering, Monash University Malaysia, 47500 Bandar Sunway, Selangor, Malaysia
+   mohd.zulhilmi@monash.edu | ORCID 0000-0002-7724-114X

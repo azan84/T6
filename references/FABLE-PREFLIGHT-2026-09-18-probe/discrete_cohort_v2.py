@@ -6,7 +6,7 @@ import numpy as np, pandas as pd
 ROOT = Path(__file__).resolve().parents[2]; sys.path.insert(0, str(ROOT / "code"))
 from zerod_ffr import Tree
 import severity_sweep as ss
-root = Path.home() / "Datasets/imagecas-x/ImageCAS-X_dataset"
+root = Path.home() / "Documents/Datasets/imagecas-x/ImageCAS-X_dataset"
 sel = pd.read_csv(ROOT / "results" / "sweep_test_selected.csv")
 rows = []; cache = {}
 for _, r in sel.iterrows():
