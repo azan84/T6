@@ -1,0 +1,65 @@
+All five findings are fixed and tested. No full solve was run, nothing used more than one rank, and I created no `.audited` markers. The only file I wrote outside wo1010/ and audit_tmp is the Task G job file you asked me to edit. Before editing anything I saved the original versions in `wo1010/audit/*.bak_R1`, and copies of the job files as they were are in `audit_tmp/wo1010_A/jobs_before/`.
+
+## What changed
+
+| File | Status |
+|---|---|
+| `wo1010/case_job.sh` | new: copy of lane2/case_job.sh plus prescribed-flow mode |
+| `wo1010/make_job.py` | changed |
+| `wo1010/taskG.py` | changed (solve/acceptance part rewritten, procedure unchanged) |
+| `wo1010/run_geom_mesh.sh` | replaced with `mv` (new inode: 354912 → 356124) |
+| `wo1010_pool/jobs/taskG_14_T1regen.json` | `after` set to the five Task T jobs |
+| `wo1010_pool/jobs/14_T5{n,w}_{resistance,prescribed}.json` | regenerated with the new make_job.py |
+| `wo1010_pool/jobs/14_T5n_12p5_resistance.json` | new (5,403,896 cells, 9.1 GB) |
+
+## 1. case_job.sh (the blocker)
+- **When prescribed mode applies:** only when build_info.json has mode = stage = "prescribed". If only one of them says prescribed, the job is refused. If there is no build_info or it says resistance, the script runs the original code unchanged.
+- **Prescribed validation (replaces the coded-BC requirement):**
+  - every live outlet appears exactly once in 0/U as `flowRateOutletVelocity`, with a constant flow rate equal to its `Q_target_m3s` (relative tolerance 1e-9);
+  - no other patch has a flow rate (closed and lost outlets get none);
+  - each outlet is `zeroGradient` in 0/p;
+  - no coded entry in any file under 0/.
+- **Smoke:** the 2-iteration smoke still runs and must End at Time = 2. Instead of the libres/dynamicCode count, `dynamicCode` must be absent afterwards, since nothing is coded. That is slightly stricter than "may be absent".
+- **Self-test:** the original 18/18 checks are unchanged, and I added 11/11 prescribed-check cases (wrong Q, ramp table, duplicate or missing outlet, flow on an extra patch, coded p, Q ≤ 0, mode conflict). Exit code 0.
+- **Dry run on the audit_tmp copies:**
+  - prescribed copy: `6 live outlets … max rel diff 3.5e-11 … DRY RUN … prescribed-flow BCs OK`, rc 0. lane2's script refuses the same copy with `no 'name res<...>;'`, which is the blocker.
+  - resistance copy: output identical to lane2 (`6 coded BCs OK`), rc 0.
+- **Manual 2-iteration simpleFoam** on a scratch copy with endTime 2: it ended normally at Time = 2 (1:49 min, 4.5 GB peak RAM), with no dynamicCode. Outlet fluxes at iteration 2 equal the targets, e.g. out_600 7.82142686e-08 against 7.8214268596e-08.
+- **Real smoke path through the script:** I put a failing `decomposePar` stub first on PATH. The output was `smoke OK (prescribed flow …)`, then the stub stopped the job, and the controlDict was restored byte-identical (same md5, endTime 3000).
+
+## 2. Task G ordering
+- `after` now lists `14_T5n_resistance, 14_T5n_prescribed, 14_T5w_resistance, 14_T5w_prescribed, 14_T5n_12p5_resistance`.
+- In pool.py a job starts only when every listed job's status file reads `done`, which is written only on rc 0. A failed dependency blocks the job and logs a warning. A misspelled job name would wait silently forever; I checked that all five files exist.
+
+## 3. taskG.py
+- **Acceptance:** a solve counts only if all of these hold:
+  - `post_summary_14_T1regen_G<n>_resistance.json` has verdict CONVERGED, `run_completion.ok` and no `missing_outputs`;
+  - `run_completion_….json` is ok;
+  - the M1_outlets CSV matches the sha256 recorded in the summary.
+- **Failed or interrupted attempts:** the case dir goes to `cases/_failed/<name>_<ts>` and the return dir to `<RET>/_failed/…`, then it is rebuilt and re-solved once. The failures are counted from `_failed`, so the count also holds across restarts. A second failure stops the driver with exit 1.
+- **Other stops:** a case dir still locked by a running case_job stops the driver with nothing moved. The numerical stops are a territory flow ≤ 0, two k values closer than 1e-9 in log before a fit, and an argmin on the [0.05, 20] edge.
+- **Record:** the JSON now holds `rows`, `attempts`, `stop` and `previous_runs`, so restarts keep the history. The CSV columns are unchanged.
+- **Tests:** a mock harness ran 13 scenarios and all behaved as intended. It caught one real bug, now fixed: two failures within the same second collided on the `_failed` name and crashed the driver.
+- `--plan-only` still prints k2 = 0.893139.
+
+**Decision for you:** a solve that completes but is UNCONVERGED is not moved or re-solved. The driver stops with exit 3 and refers to D15, because a re-solve of the same case is deterministic and would only cost another full solve. This differs from a literal reading of "retry once". If you want the literal behaviour, it is a one-line change.
+
+## 4. make_job.py
+- It now refuses (exit 1) when the extensions JSON, `d34.json` or `mesh_gates.json` is missing (the gates.json fallback is gone), and when `cells` is not a positive integer. All of these were tested on a fake tree.
+- The build step is now `[ -f case/build_info.json ] || { [ -e case ] && REFUSED…; build; }`. A half-built case returns rc 1 and never reaches case_job.sh, which I tested.
+- Job files are now written atomically (temp file plus `os.replace`), because the pool is polling that directory.
+
+## 5. run_geom_mesh.sh
+- Admission now takes a flock on `mesh_admit.lock`, waits for resources, and fails closed: if the wait expires it writes `mesh NOT admitted: resource wait expired …` to runs.log and exits 1.
+- The builder runs in the background without the lock's file descriptor. The lock is released once its `cartesianMesh` process has run 120 s, or when the builder exits.
+- I added a `mesh admitted (…, waited N s)` line to runs.log.
+- With stubs, I tested three cases: the second worker was admitted only after the first one's cartesianMesh had run; the wait expired with exit 1 and no mesh; the builder exiting early released the lock and its rc was logged.
+
+## Other problems I noticed
+1. **139_T1 geometry was rejected (exit 3)** by the builder's 1% relative-throat gate (`REJECTED: relative as-built throat differs from radial_scale by more than 1 %`), yet it was meshed (mesh and d34 rc 0). For Task M the work order says to flag it, solve it and return it, so continuing is correct, but runs.log only shows `rc=3`. It needs a prominent flag in the return.
+2. **The two mesh workers running now** (138_T5n, 138_T5w) started on the old script, so they use the old unlocked check. Serialised admission applies from the next queue item.
+3. **The D14 job needs 9.1 GB.** With the pool's current budget of 15.3 GB (reserve 8), it cannot run next to another 6.4–6.8 GB job, so it will run alone.
+4. **If any Task T job fails, Task G stays blocked** until someone resets it by hand. That is as intended.
+5. **Still open from the audit, outside this part:** the D15 pimpleFoam fallback (finding 4) and the return finalisation with NOTE/INDEX/MANIFEST and the baseline comparisons (finding 5).
+6. **Minor:** if case_job refuses for lack of disk (rc 5), taskG stops without moving anything. On the next restart that untouched case would be counted as one failed attempt.
+7. About 1.9 GB of test copies are in `audit_tmp/wo1010_A/` (14_T5n_* and the smoke copy). Delete them when you no longer need them.

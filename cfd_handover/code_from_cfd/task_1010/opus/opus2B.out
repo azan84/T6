@@ -1,0 +1,53 @@
+I've written both scripts in `wo1010/` and tested them in `audit_tmp/wo1010_B/`. Nothing was written to `/mnt/e`, no full solve ran, the largest run was mpirun with 4 ranks, and no pool jobs or `.audited` markers were created. The biggest finding is cost: one full D15 fallback solve is far more expensive than expected (risk 1).
+
+## 1. `pimple_fallback.py` (D15)
+Commands: `check <settle.csv> <steady_case>`, `build <steady> <out> --settle <csv>`, `run <case> [nproc≤16]`, `analyse <case> <out_dir> [--steady-results M1_results.csv]`. The README is in the docstring.
+
+**Design**
+- **Trigger:** a solve counts as SETTLED only if `iter_permanently_settled` is filled, `iterations_run` = 3000 and `b1_label` is B1. Anything else means the fallback is needed. `build` refuses a settled solve unless given `--force-untriggered TEXT`, which is recorded and writes a NOT_FOR_PRODUCTION file.
+- **Case build:**
+  - The mesh is hard-linked, but `boundary` is copied so nothing can rewrite the steady mesh through the link.
+  - U, p and phi are copied from the last steady time.
+  - Inlet totalPressure is unchanged.
+  - **Resistance:** every outlet gets the explicit-lag BC p = (Pv + R·Q)/ρ with no relaxation. R comes from build_info and is cross-checked against the steady code.
+  - **Prescribed:** the same flowRateOutletVelocity, rewritten as a constant so an iteration ramp can't carry into physical time.
+  - BCs are swapped with OpenFOAM's `changeDictionary` and then checked by a binary-aware reader.
+  - pimpleFoam with a backward time scheme, linearUpwind, maxCo 0.8 and PISO mode (1 outer corrector, 2 pressure corrections, chosen for cost). The steady `functions` block is copied verbatim.
+- **Window:** τ_jet = L/U_t, where L is the throat-to-measurement distance and U_t the steady area-mean throat velocity. T = 6·τ_jet: the first half washes out the steady start, and the average is taken over the second half (about 30 shear-layer periods). The window is fixed at build time and never extended. If the measurement FFR drifts by more than U3D between the last two quarters, the row gets the flag `WINDOW_DRIFT_GT_U3D`.
+- **analyse output:** time averages weighted by step length, the min/max band and the drift of measurement FFR, throat FFR, outlet flows and throat Re. The flags column starts with `PIMPLE_FALLBACK`. It writes `pimple_result/outlets/history/summary` and `M1_results_pimple_<L>_<M>.csv`, and never overwrites a differing file.
+
+**Tests**
+- `check` returns SETTLED (exit 3) on the real 139 settle file and NOT_SETTLED (exit 0) on a copy with the permanent-settle field blanked.
+- A plain `build` of 139 is refused; the forced build runs in about 20 s and leaves the steady case untouched.
+- 4-rank smoke run: the coded BCs compiled and pimpleFoam ran 10 steps at dt = 3.94e-6 s with Co ≤ 0.80, ending normally. The BC arithmetic checks: (666.61 + 3.352e10 × 2.441e-7)/1060 = 8.348, against 8.3481 at the outlet. Mass imbalance was 2e-6 %.
+- `analyse` on that history gave status `SMOKE_ONLY_NOT_A_RESULT`, throat Re 236.25 (production probe value 236.3), and identical files on a re-run.
+- Prescribed path: the BC rewrite on a copy of `14_T5n_prescribed` replaced the ramp with a constant. Two pimpleFoam steps gave outlet fluxes exactly on target.
+
+## 2. `finalise_task.py <Task>`
+- **summary_<Task>.csv:** one row per solve and reference pair. It holds FFR at the measurement probe actually used (relocated or not), at the package probe and at the throat probe, each Delta taken on the same probe id, Delta/U3D, Re, cells, settle label, gate and flag columns, host, OpenFOAM version, template commit/hash, and the PIMPLE columns when present.
+- **References follow your mapping.** Prescribed rows for 138/473/69/139/306 state that no prescribed-flow baseline exists. D14 is compared with both A1 and the production narrow solve. Task G adds the `taskG_iterations` table to the NOTE.
+- **Other outputs:**
+  - `code_provenance_<Task>.csv`
+  - a dated NOTE.md paragraph, appended only
+  - `INDEX.csv` in the 10-03 format
+  - `MANIFEST.sha256`, written by `make_manifest.sh` itself; an older, different manifest is kept as `MANIFEST_superseded_<date>.sha256`
+- Changed files get a `_<date>` suffix and identical re-runs write nothing.
+
+**Tests** (fake TaskM/T/G/N folders built from real 09-26, TaskA and P5 returns):
+- Solves copied from a baseline give Delta = 0 against it.
+- The D14 pair reproduces the 10-03 A1 result exactly: +0.00189 (3.4 × U3D), throat +0.00099, outlet flows within 0.24 %.
+- 473 is reported as `p011_reloc` with the package-probe value alongside.
+- An identical re-run left every file unchanged.
+- A re-issued settle file produced `summary_TaskM_2026-10-11.csv`, `INDEX_2026-10-11.csv`, a second NOTE paragraph and a superseded manifest.
+- `verify_manifest.sh` passes on all folders (84/44/8/61 entries, then 88 after the re-issue).
+
+## Open risks
+1. **Fallback cost.** The 139 window (101.6 ms) needs about 25,800 steps. At the measured 23 s/step on 4 busy ranks that is about 166 h. At 16 ranks I'd guess 30–40 h, but that is not measured. Either way one fallback costs more than the whole Task T budget. Reducing to 4·τ_jet would cut cost by a third, but that's the analysis side's call. Running `analyse` on a short run prints the projected step count and hours.
+2. The window does not resolve the slow recirculation time (120–195 ms); that is covered only by the drift flag. The first steps jump to −0.004 away from steady, which is why half the window is washout.
+3. PIMPLE FFR comes from the monitors, while production FFR comes from the reconstructed probes. `Delta_FFR_measurement_pimple` corrects for this through the steady monitor value.
+4. Production CSVs are CRLF (Python's csv default), so plain `sha256sum -c` fails on them. `verify_manifest.sh` passes and MANIFEST.README lists the affected files. The 10-03 §0 request for plain `shasum -c` to pass is therefore not met; the real fix is in the `pf/` writers, which I didn't touch.
+5. **Host:** M1_results has no host column. finalise reads the host from the `log.simpleFoam` header, so the case directory must still exist, otherwise it says "not recorded". §6 wants host in every result row; that should be added upstream.
+6. **No git repository holds the template.** The commit field says so, and the content hash is taken at finalisation time, not at solve time. `--template-commit` overrides it.
+7. A full prescribed `build` has not been tested end to end, because no finished prescribed steady case with the D8 monitors exists yet.
+8. `run` is not wired into the pool or `case_job.sh`, so it bypasses the pre-run audit flow.
+9. `audit_tmp/wo1010_B` is 2.4 GB. `139_pimple` hard-links the production 139 mesh; deleting it is safe, but don't run mesh-writing tools inside it.

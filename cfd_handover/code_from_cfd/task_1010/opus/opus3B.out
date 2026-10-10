@@ -1,0 +1,79 @@
+I've built the D15 pool wrapper and rewritten the fallback around the pre-declared window rule, but **the projected cost for scan 14 T5 narrow is 7–15 days of solving at 16 ranks per fallback, and up to 31 days at the 2× cap.** That makes the rule as specified impractical for the narrow-throat case and needs a decision before any fallback job is audited.
+
+I ran no full solves and nothing above 4 ranks, didn't touch the pool or `/mnt/e`, created no real pool jobs and no `.audited` markers. Tests are in `audit_tmp/wo1010_3B/` (3.0 GB; the backed-up original is `wo1010/audit/pimple_fallback.py.bak_R2`).
+
+## Files
+- **`wo1010/pimple_fallback.py`** (heavily rewritten; ~570 changed lines against the backup). The docstring states the full rule.
+  - `check` is unchanged, including its exit codes (0 = not settled, 3 = settled, 2 = no decision). `issue()` and `csv_text()` are unchanged.
+  - The old `run` command is removed (Sol finding 4); runs only go through the wrapper.
+  - New commands: `resume-point`, `window`, `make-job`. `analyse` now writes `pimple_result_<label>_<mode>.json` and exits 0 for COMPLETE, 6 for INCOMPLETE.
+- **`wo1010/fallback_job.sh`** (new). It follows the pattern of `case_job.sh`:
+  1. Locks the case, checks free disk, finds the steady solve's settle CSV.
+  2. Builds the transient case; the build refuses unless the trigger is NOT_SETTLED.
+  3. Refuses a stale or inconsistent case.
+  4. Runs `decomposePar`, then loops: resume point → `mpirun pimpleFoam` → completion test → window decision.
+  5. Analyses into the return folder; purges processor dirs and writes `fallback_done.json` only on COMPLETE.
+  - Exit codes: 0 complete, 1 failed but resumable, 2 usage, 3 locked, 5 disk, 6 finished INCOMPLETE.
+
+## Window rule (finding 3)
+- **Jet time:** τ_jet = L / U_throat, as before.
+- **Slow time:** τ_slow = V_post / Q_post.
+  - V_post is the lumen volume from the throat probe to the measurement probe. It is integrated along the package centreline using the lesioned radius, then scaled by the as-meshed area factor of the measurement plane.
+  - Q_post is the smaller of the steady throat and measurement flows.
+  - For P5 139 this gives 179 ms, close to the older L/U_measurement estimate of 170 ms.
+- **Declared window:** T_decl = max(6 τ_jet, 1.5 τ_slow). The average is taken over the second half of the run.
+- **Acceptance:** COMPLETE only if the 3rd- and 4th-quarter means differ by less than 0.00055 for measurement FFR and by less than 0.5 % for every outlet flow.
+- **Extension:** otherwise the run is extended by 25 % of T_decl at a time, up to 2 × T_decl. If it is still not stationary at the cap, the result is INCOMPLETE with flag `WINDOW_NOT_STATIONARY`.
+- Every decision is stored in `window_state.json` and is never re-taken.
+- COMPLETE also requires a NOT_SETTLED trigger, a production build (no test overrides) and all outlets monitored.
+
+## FFR at every probe
+Each probe gets a pressure and flux monitor on its own lumen section, chosen as follows:
+- **Bounded box:** the same `probe_sections.py` sizing and mesh check the steady builder uses. This passes for 27 of 29 probes on 14_T1regen, 28 of 31 on 14_T5n and 14_T5w, and all 32 on P5 139.
+- **Section surface (where the box fails):** the production section (the connected cut nearest the probe) is written as a triangulated surface and sampled cell by cell. This covers out_826, out_868 and p010.
+  - I first tried restricting the plane to a cell zone. In parallel that silently cut whole sub-meshes (10.7 mm² instead of 4.34 mm²). The cause is that OpenFOAM v2406 treats an empty zone selection on a processor as "cut everything", so I replaced it.
+- **Missing:** p000 on all scan-14 geometries. Its plane cuts the merged left-main bifurcation, and no single-lumen section exists there. The production value at p000 comes from a section that the production code's crop sphere cuts short; I do not reproduce that.
+  - **Task G will therefore get 28 of 29 probes.** p000 is listed with its reason in `FFR_probes_missing` (steady FFR there is about 0.998).
+
+## Tests (all passed unless stated)
+- **Refusals:**
+  - `check` exit codes are unchanged.
+  - A settled steady case is refused with no case created.
+  - Test hooks without the force flag, a second invocation (lock), a test-built case run in production mode, wrong rank count, a different steady case, a stale time dir and the disk gate are all refused.
+- **4-rank resume smoke on P5 139:** forced trigger and an 8e-5 s window override, both marked NOT_FOR_PRODUCTION.
+  - Interrupting with SIGTERM stopped mpirun and all ranks.
+  - The restart continued from the last written time. A planted partial time dir was moved aside and the log rotated.
+  - A hand-set extension made the real solver continue from 8e-5 to 1e-4 s.
+  - Old checkpoints are now pruned on resume (processor dir 802 → 391 MB).
+- **Monitor accuracy:** box monitors match the steady production probes. On 4 ranks the section-surface monitor matches the box monitor (ΔFFR 2e-9, area to 1e-6).
+- **Window logic (synthetic):** four cases pass — extend to cap then INCOMPLETE, extend then stationary, outlet-only drift, stationary at once. Repeat calls are idempotent.
+- **COMPLETE path:** run on a test case I hand-edited to production-ready. Analyse said COMPLETE, processor dirs were purged (1.52 GB), `fallback_done.json` was written, and a rerun did nothing. With the trigger check added afterwards, the same case now reports INCOMPLETE `TRIGGER_NOT_MET`.
+
+## Job JSON
+`pimple_fallback.py make-job <steady_case> <Task> <name> [--priority 1]` writes `wo1010_pool/jobs/<name>.json` atomically:
+```json
+{"name": "<name>", "ranks": 16, "ram_gb": <1.7*cells/1e6 + 1.5>, "disk_gb": <max(6, ceil(1.5*cells/1e6))>, "priority": 1,
+ "cmd": "DISK_NEED_GB=<disk> bash .../wo1010/fallback_job.sh <steady_case> <Task> <name> 16", "after": []}
+```
+For 139 that is 8.5 GB RAM and 7 GB disk. It refuses unless the steady return holds exactly one settle CSV that says NOT_SETTLED, and won't overwrite a different existing job file. It passes `pool.py`'s validity rules.
+
+## Projected cost at 16 ranks
+Measured: 11.3 s/step at 4 ranks (4.14M cells, all probe monitors) and a Courant-limited dt of 3.94e-6 s. The 16-rank figure assumes 85–100 % scaling efficiency, based on steady runs scaling linearly from 8 to 16 ranks; I couldn't measure it under the 4-rank cap.
+
+| Case | Binding term | Steps | Time to T_decl | Time to 2× cap |
+|---|---|---|---|---|
+| P5 139 / 139_T1 | 1.5 τ_slow = 268 ms | 68k | 54–63 h | 105–126 h |
+| 14 T5 narrow (r 0.151 mm) | 1.5 τ_slow = 44 τ_jet | 253k–470k | 170–370 h (7–15 days) | 14–31 days |
+
+The 14 T5 narrow range depends on whether the jet's limiting cell is about 26 µm or 14 µm. The slow term scales with 1/(throat area), which is what makes narrow throats so expensive. Options are a cheaper slow-time definition or capping by budget.
+
+## Residual risks
+- **Interface note for part A:** the part A session ended before my final note arrived. The points it still needs are:
+  - the COMPLETE conditions above;
+  - exit code 6 for INCOMPLETE;
+  - `FFR_probes_missing`, including p000;
+  - re-issued results get dated file names, so take the one with status COMPLETE.
+- **Untested end to end:** a real production run, and the prescribed-mode fallback (no finished prescribed steady case yet). The 16-rank speed is extrapolated, not measured.
+- **Restart behaviour:** only `U_0` and `phi_0` are written at checkpoints, so the first step after a restart may lose one old-time level of the second-order scheme. It recomputes at most T_decl/64 of simulated time.
+- **Monitor drift:** the section-surface monitor samples whichever cell contains each triangle's centre. Analyse rejects any probe whose sampled area drifts more than 1 % from the checked section.
+- **Leftover test data:** `audit_tmp/wo1010_3B` holds 3.0 GB, including the kept processor dirs of the first smoke case; it is safe to delete.

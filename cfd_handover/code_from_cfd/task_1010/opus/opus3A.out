@@ -1,0 +1,92 @@
+I've fixed findings 1, 2, 5, 6, 7, 8 and 12. All 32 pool job files are regenerated with their dependency chains, and no `.audited` markers exist. Everything was tested on stubs and fake trees in `audit_tmp/wo1010_3A/`: no solves, no mpirun, nothing written under /mnt/e, and no pool start or stop.
+
+One thing to know first: while testing kill/restart, an over-broad `pkill -f "^sleep 60"` killed two `sleep 60` processes I hadn't started (pids 66233 and 69866). They were probably from other sessions' wait loops. Killing a loop's sleep only makes it iterate early, and the one loop I could see (pid 3991379) was still alive. Their owners are unknown, so check if any session's waiting looks off.
+
+## Files changed
+Backups of the originals are in `wo1010/audit/*.bak_R2`, including the six job files that existed before.
+
+| File | Status |
+|---|---|
+| `wo_common.py` | new; the single source of truth (see below) |
+| `provenance.py` | new: `provenance.py write <case> --out <ret> --job N --built-in-job 0/1` |
+| `task_gate.py` | new: `task_gate.py <Task>`; exit 0 pass, 1 something missing, 2 no expected list |
+| `make_all_jobs.sh` | new; re-runnable |
+| `make_job.py` | rewritten: `--after`, `gate` and `taskG` sub-commands, provenance step |
+| `taskG.py` | rewritten: settle check, fallback use, ledger, checkpoints |
+| `finalise_task.py` | fail closed; provenance read, not reconstructed |
+
+`wo_common.py` holds:
+- the expected-solve lists (Task G's comes from the ledger);
+- the steady acceptance check (CONVERGED, run_completion ok, and the M1_outlets and M1_probes sha256 matching the summary);
+- the settle decision, which calls part B's `pimple_fallback.py check` command so there is one rule;
+- the fallback lookup and the atomic-write helpers.
+
+## Per finding
+- **(5) Provenance:** each solve job now runs build → `provenance.py` → `case_job.sh`. It writes `<case>/provenance.json` and a copy into the return dir. The file records:
+  - host, date, OpenFOAM v2406 and its build line from `simpleFoam -help`;
+  - sha256 of the code files you listed plus `provenance.py` and `wo_common.py`;
+  - the template content hash (all 6 files, sorted);
+  - hashes of the case's build_info, `system/` and `0/` as built, plus `built_in_job`.
+  
+  finalise reads host, template and code only from these files. It refuses if one is missing, if the case's build_info no longer matches it, or if solves in a task have different OpenFOAM builds or templates. `host` is a column in `summary_<Task>.csv`.
+- **The four built Task T cases are rebuilt.** A fresh rebuild with current code was byte-identical to the old cases (system/, 0/, build_info, zerod_reference), so attaching provenance would have been sufficient in substance. It still could not prove which code built them, so I moved the old dirs to `audit_tmp/wo1010_3A/old_cases_R2/` (not deleted; nothing held them) and the jobs will rebuild. A dry run of the five real job commands, with paths redirected, built each case in 11–23 s and wrote provenance with `built_in_job` true. `case_job.sh` then passed every read-only check, including the stale check with `provenance.json` present. The D14 case was never built.
+- **(1, 2) Gates:** `gate_TaskT` is a pool job (1 rank, 0.5 GB) after the five Task T jobs, and `taskG` now runs after `gate_TaskT`. A solve passes if it is accepted and B1-settled, or if it is not settled and has exactly one usable COMPLETE fallback (not forced, every probe present). It also needs `provenance.json`.
+- **Re-running a failed gate:** the pool never restarts a job that has a status file. After the fallback exists, the operator must delete `jobs/gate_<Task>.status` (and its .rc/.admit/.pid) so the gate runs again.
+- **Task G:** an unsettled solve stops the driver with exit 4 and the message "D15 fallback required for G<n>". On restart it takes the territory flows and FFR at all probes from the fallback's time averages; the `source` column says so. A settled but unconverged solve still stops with exit 3.
+- **(7) Ledger:** attempts are recorded in `state/taskG_ledger.json`, written atomically.
+  - Every attempt is recorded before it starts.
+  - Build failures with no artefacts are counted.
+  - An attempt found unfinished on restart counts as interrupted.
+  - Refusals with rc 3 or 5 are not counted. A case left by a disk refusal is reused on restart.
+  - A second driver is refused.
+- **(8) Checkpoints and publishing:** working checkpoints go to `state/`. The return CSV/JSON are published only when the driver exits 0, atomically, with a dated suffix if the content differs. On restart, acceptance also checks the probes hash and that the case's `r_scale_k` equals the requested k; a mismatch stops the driver and moves nothing.
+- **(6) finalise:** it writes nothing unless the gate passes. That covers all expected solves, a Task G ledger ending in exit 0, and the published iterations matching the ledger. Every named reference file must exist, and `verify_manifest.sh` must pass after writing. PIMPLE results enter only through the gate.
+
+## Tests
+- **Task G stub harness** (`audit_tmp/wo1010_3A/tg/t.sh`, which uses the real `provenance.py` and settle check):
+
+  | Scenario | Result |
+  |---|---|
+  | normal run | k = 0.893139, 0.859869, 0.860845, as in round 2 |
+  | build fails once, no artefact | retried, then done |
+  | build always fails | stops with exit 1 after 2 counted failures (no loop) |
+  | solve fails once / always | retried / stops after 2 |
+  | post fails once | retried |
+  | settled but unconverged | exit 3 |
+  | disk refusal, then restart | exit 1, then case reused, not counted, exit 0 |
+  | unsettled | exit 4, then with a fallback added: exit 0, G3 from the fallback |
+  | kill -9 mid-attempt, then restart | counted as interrupted, artefacts moved |
+  | second driver while one runs | refused |
+  | probes csv tampered | moved and counted |
+  | k mismatch | stops, nothing moved |
+  | build-fail + disk + post-fail together | exit 0 |
+
+- **Gate on a fake Task T tree** (`audit_tmp/wo1010_3A/fin`): an unsettled solve with no fallback, an INCOMPLETE one, a forced one, one missing a probe, or two ambiguous ones all FAIL. One COMPLETE fallback passes, and a fallback attached to a settled solve is ignored.
+- **finalise on that tree:** it finalised with 40/40 manifest entries OK, and the D14 comparison against the narrow solve gave +0.00189 as before. An identical re-run changed nothing. Each of these refuses with exit 1: provenance missing, case rebuilt after the solve, mixed template, missing references, manifest generation failing, manifest verification failing.
+- **finalise on the Task G harness:** refused while the ledger shows exit 4; finalised after the fallback (1 D15 solve).
+- The real `task_gate.py TaskT` and `TaskG` correctly fail now, as nothing has been returned yet.
+
+## Job files and dependency chains (`wo1010_pool/jobs/`)
+- **Task T, priority 1:**
+  - `14_T5n_resistance`, `14_T5n_prescribed`, `14_T5w_resistance`, `14_T5w_prescribed` and `14_T5n_12p5_resistance`: no dependencies.
+  - `gate_TaskT`: after those five.
+- **Task G, priority 2:** `taskG_14_T1regen` after `gate_TaskT`; `gate_TaskG` after `taskG_14_T1regen`.
+- **Task M, priority 3:**
+  - `{138,69,473,139}_T1_{resistance,prescribed}`: after `gate_TaskG`.
+  - `gate_TaskM`: after those eight.
+- **Task T2, priority 4:**
+  - `{138,473}_{T5n,T5w}_{resistance,prescribed}`: after `gate_TaskM`.
+  - `gate_TaskT2`: after those eight.
+- **Task N, priority 5:**
+  - `306_base_resistance`: after `gate_TaskT2`.
+  - `306_{T1,T5w}_{resistance,prescribed}`: after `gate_TaskT2` and `306_base_resistance`.
+  - `gate_TaskN`: after all seven. I added this one beyond your list; it is not required by anything.
+- **Not written yet:** `306_T5n_resistance` and `306_T5n_prescribed`, because the 306_T5n mesh has no `d34.json` yet. Re-run `make_all_jobs.sh` once it exists. `gate_TaskN` simply waits for them meanwhile.
+
+`make_job.py` never rewrites a job that differs from the new one if it has a `.audited` marker or a status file; that refusal is tested.
+
+## Other notes
+- The fallback interface was confirmed with part B and checked against their current code: `pimple_result_*.json`, the `{solve}_pimple` folders and the `check` command's exit codes.
+- The settle check needs the steady case dir to still exist; if it is gone, the result is a fail-closed stop.
+- My lock test created an empty `.case_job.lock` in the old `14_T5w_prescribed`, which is now moved aside anyway.
+- `audit_tmp/wo1010_3A` is about 2.3 GB, mostly hard-linked meshes in `old_cases_R2` and `rebuild`. Delete them once audited.

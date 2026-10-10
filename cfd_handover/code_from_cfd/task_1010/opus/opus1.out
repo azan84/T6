@@ -1,0 +1,36 @@
+I've fixed all three bugs, tested the new script on 14_T5w, and swapped it in with `mv` (inode 353054 → 354912, still `-rwxr-xr-x`). The old version is saved as `opus/run_geom_mesh.sh.old`. Nothing under ../p5, ../pf, /mnt/e or the pool was changed, and no solver or mesher was run.
+
+**The two workers running right now are still on the old script.** The 14_T5n and 14_T1regen runs will therefore hit the old d34 bug and won't get a d34.json or an extensions json. Every later queue line, including 14_T5n_12p5, will use the new script. When those two finish, re-run `./run_geom_mesh.sh <pkg> 14_T5n` and `... 14_T1regen`. The script now skips an existing mesh, so this only writes the extensions json and runs patch-types and d34.
+
+## Diff (old → new)
+1. **Radius file (bug 1):** the script now works out `kind` the same way the geometry builder does (`meta.json` error_type, otherwise from the package name, otherwise `clean_nolesion`). It then uses `$G/surface_radius_${scan}_${kind}.csv`, and if that file is missing it logs `NO <file> (d34 not run)` and exits 1. I checked the 306 baseline package → `baseline` and the 138 T1 package → `T1_missed_branch`.
+2. **Extensions json (bug 2):** right after the geometry stage (whether it was just built or already existed), the script writes `out/<label>_extensions.json` from `gates.json` `extensions.per_patch`. It exits 1 if any outlet in `outlets.csv` is missing, if there are extra patches, or if there isn't exactly one inlet entry. Output goes to `logs/extensions_<label>.log`.
+3. **Exit codes (bug 3):** the exit code of the mesh, patch-types and d34 steps is now saved in a variable straight after each command. The script ends with `exit $rcd`, so a failed d34 gives a non-zero exit, and a failed extensions or patch-types step exits 1.
+4. **Existing-mesh guard:** if `mesh/<label>/mesh_gates.json` exists, the resource wait and mesh build are skipped (logged as "mesh exists, not rebuilt") and patch-types and d34 still run. Re-running `fix_patch_types.py` on an already-fixed boundary is harmless: it rewrites the same content.
+
+## Test on 14_T5w (exit 0)
+```
+14_T5w extensions rc=0
+14_T5w mesh exists (mesh_gates.json), not rebuilt
+14_T5w patchtypes rc=0
+14_T5w d34 rc=0 total 1 s
+14 D4 FAIL D3 FAIL | checks < 2 mm: ['lowQualityTetFaces'] | min throat/measurement centre mm: 1.907 2.547
+```
+- **`mesh/14_T5w/d34.json` looks sensible.** Throat is node 73 with r 0.371 mm, measurement is node 175 with r 1.038 mm, both matching `meta.json`. The strict checkMesh log is complete. There were 1047 lowQualityTetFaces, the nearest 1.91 mm from the throat, so **D4 fails** (the limit is 2 mm). The raw marching-cubes surface self-intersects, so **D3 also fails**, with 4 clusters.
+- **`out/14_T5w_extensions.json` has all 6 outlets** from `outlets.csv` (out_160, 425, 600, 639, 742, 868). Inlet is 13.011 mm. Each outlet length equals 3 × 2 × r_mm exactly.
+
+## Other suspicious things (reported only, not changed)
+1. **The old runs.log line `14_T5w d34 rc=0` was false.** d34 actually crashed with FileNotFoundError on `surface_radius_14_baseline.csv`. I left that line in place; the new lines are appended after it.
+2. **A missing d34.json can silently pull in the wrong case's results.** If `D34_JSON` doesn't exist, `pf/post_helpers.py find_d34` falls back to `p5/mesh/<scan>/d34.json`. That file exists for 138, 139, 473 and 69, so a WO1010 case on one of those scans with no d34.json of its own would quietly get the P5 baseline mesh's D3/D4 verdict. The old wrapper produced no d34.json for any non-baseline package, so any result posted before this fix should be checked.
+3. **14_T5w went ahead even though its geometry failed a decisive gate.** The geometry status says `decisive gates FAILED: surfaceCheck_not_self_intersecting`, but the builder returned rc=0 and wrote `case.stl`. The wrapper only checks that `case.stl` exists, so the case was meshed anyway. There's also a `sc_poscontrol_bad.stl` in `out/14_T5w`. Together with the D3/D4 FAIL, this case probably needs a decision before it gets a solve job.
+4. **queue.sh ignores exit codes.** Failures only show up in runs.log. The 14_T5n_12p5 variant only runs if `out/14_T5n/case.stl` exists, and is skipped silently otherwise.
+5. **make_job.py**
+   - **Fallback file won't work:** without `<label>_extensions.json` it falls back to `out/<label>/gates.json`. `extension_lengths()` would reject that file because it has no top-level `extension_lengths_mm`. That fails loudly rather than silently, but the fallback is never usable.
+   - **No d34 check:** it requires the mesh to exist but never checks for d34.json, which is how item 2 can happen.
+   - **Crash when cell count is missing:** `cells` can be None, and then the `ram` calculation crashes.
+   - **Stale case dirs:** `[ -d case ] ||` skips the build when a half-built case directory is left over from a failed build.
+6. **taskG.py**
+   - **Same stale-dir issue:** `os.path.isdir(case)` has the same problem with a half-built case directory.
+   - **Outlet IDs may not line up:** k1 comes from the 2026-09-26 return, but the outlet-to-territory mapping comes from the regenerated `m1/pkg` package. If outlet IDs differ between the two, `Qterr` raises KeyError.
+   - **Unguarded division:** `kmin` divides by `log k2 − log k1`, which would be zero if k2 came out as exactly 1.
+   - **Geometry not ready:** it depends on 14_T1regen, which is still being built with the old script, so it won't have the extensions json or d34.json until the re-run above.

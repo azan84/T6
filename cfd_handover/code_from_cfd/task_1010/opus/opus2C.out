@@ -1,0 +1,59 @@
+I added FFR at all probes to every row of `taskG_iterations.csv`/`.json` in `wo1010/taskG.py`. Plan-only mode and three mock-harness runs behave as intended. The procedure, acceptance logic and stops are unchanged, and I didn't touch `pimple_fallback.py` or `finalise_task.py`.
+
+## What changed
+- **k1 row:** FFR values come from `returns/2026-09-26/M1_probes_T1_missed_branch_resistance.csv`, through a new constant `K1PROBES`.
+- **k2 and later rows:** FFR values come from `<out>/M1_probes_14_T1regen_G<n>_resistance.csv`, the file `post_case_generic.sh` writes into each solve's return dir.
+- **Values:** each probe gets a column `FFR_<probe_id>`, filled from the probes csv's `p_over_Paorta` column (the FFR column in `pf/m1_probes.py`). If a probe's section isn't valid, `m1_probes.py` writes no FFR value and the cell is left blank.
+- **Columns:** the 29 k1 probes (inlet, p000–p022, out_383/558/597/700/826) go in k1 file order, after `T_terr*` and before `k_next`. A `measurement_relocated` row gets its own column (e.g. `FFR_p010_reloc`) after the k1 columns; it's blank in rows that don't have one.
+- **Fails loudly (exit 1 through the existing `stop()`, recorded in the json):**
+  - a probes csv is missing;
+  - a file has a duplicate `probe_id`;
+  - the probe set, ignoring `measurement_relocated` rows, differs from the k1 set. The message lists missing and extra ids, or says only the order differs.
+- **Edge case:** the probes check runs after a solve is accepted. If it fails, re-running the driver accepts the same solve again (no re-solve) and stops at the same point.
+
+## Diff
+```diff
+@@ docstring
++FFR at all probes per row (WO Task G "FFR at all probes"): FFR_<probe_id> = p_over_Paorta of the probes csv (pf/m1_probes.py; blank when the section is not valid), k1 from returns/2026-09-26/M1_probes_T1_missed_branch_resistance.csv,
++k_n from <out>/M1_probes_<LABEL>_G<n>_resistance.csv; the probe set must equal the k1 set (stop exit 1 otherwise), except a 'measurement_relocated' row, which gets its own column.
+@@
++K1PROBES = "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/returns/2026-09-26/M1_probes_T1_missed_branch_resistance.csv"
+-rows, attempts = [], []
++rows, attempts, probes = [], [], []       # probes: the k1 probe ids (file order), the FFR columns of every row
+@@ def record
+-    cols = [...] + [f"T_terr{t}_mls" for t in terr] + ["k_next", "dlogk", "stop"]
++    cols = [...] + [f"T_terr{t}_mls" for t in terr] + [f"FFR_{p}" for p in probes]
++    cols += sorted({c for r in rows for c in r if c.startswith("FFR_") and c not in cols}) + ["k_next", "dlogk", "stop"]      # + measurement_relocated column(s)
+@@
++def FFR(probes_csv):     # -> {FFR_<probe_id>: p_over_Paorta ("" when the section is not valid)}; the non-relocated probe set must equal the k1 set
++    if not os.path.isfile(probes_csv): stop(f"{probes_csv} missing (FFR at all probes)")
++    rs = list(csv.DictReader(open(probes_csv))); ids = [r["probe_id"] for r in rs if r["kind"] != "measurement_relocated"]
++    if len(set(r["probe_id"] for r in rs)) != len(rs): stop(f"duplicate probe_id in {probes_csv}")
++    if not probes: probes.extend(ids)
++    elif ids != probes: stop(f"probe set of {probes_csv} differs from the k1 set: missing [...], extra [...]" + ("" if set(ids) != set(probes) else " (order differs)"))
++    return {f"FFR_{r['probe_id']}": (float(r["p_over_Paorta"]) if r.get("p_over_Paorta", "") != "" else "") for r in rs}
+@@
+-def row(n, k, q, src): return dict(..., **{f"T_terr{t}_mls": terr[t] for t in terr})
+-q1 = ...; rows.append(row(1, 1.0, q1, "returned 2026-09-26 solve (k1 = 1, not re-solved)"))
++def row(n, k, q, src, ffr): return dict(..., **{f"T_terr{t}_mls": terr[t] for t in terr}, **ffr)
++q1 = ...; rows.append(row(1, 1.0, q1, "returned 2026-09-26 solve (k1 = 1, not re-solved)", FFR(K1PROBES)))
+-print(f"k1 = 1: ...; k2 = {k2:.6f}")
++print(f"k1 = 1: ...; k2 = {k2:.6f}; FFR {...}")
+@@ main loop
+-    csvp, out = solve(k, n); q = Qterr(csvp); pts.append((k, q)); rows.append(row(n, k, q, out))
++    csvp, out = solve(k, n); q = Qterr(csvp); pts.append((k, q)); rows.append(row(n, k, q, out, FFR(f"{out}/M1_probes_{LABEL}_G{n}_resistance.csv")))
+```
+For the full unabridged diff, run `diff -u /home/azan/paper6_t6_work/audit_tmp/taskG.py.orig_C wo1010/taskG.py` (that file is the pre-edit backup).
+
+## Tests
+**`python3 taskG.py --plan-only`** (real paths, no solves): k2 = 0.893139 as before, and the k1 row now carries all 29 FFR values, e.g. `FFR_inlet` 0.99883, `FFR_p004` (throat) 0.96060, `FFR_p010` (measurement) 0.94362, `FFR_out_826` 0.95585.
+
+**Mock harness:** part A's stub harness was usable, but its stub post wrote no probes csv. I left it untouched and made a copy in `audit_tmp/wo1010_C/`. The copy's stub post also writes a probes csv: the k1 file with FFR scaled by k^0.01. It has two extra failure modes: `TG_FAIL=relocN` adds a relocated row to solve G<N>, and `TG_FAIL=dropN` drops probe p005 from it. The driver copy differs from the real `taskG.py` only in the path lines. To re-run, use `bash audit_tmp/wo1010_C/t.sh "<TG_FAIL>"`.
+
+| TG_FAIL | exit | result |
+|---|---|---|
+| (none) | 0 | 4 rows (k1–k4), 41 columns, 29 FFR values per row; k = 1, 0.893139, 0.859869, 0.860845 converged, the same as part A's run |
+| `reloc3` | 0 | 42 columns; `FFR_p010_reloc` sits after `FFR_out_826` and is filled only in row 3 (the stub value is blank) |
+| `drop3` | 1 | `TASK G STOPPED (exit 1): probe set of .../M1_probes_14_T1regen_G3_resistance.csv differs from the k1 set: missing ['p005'], extra []`; csv/json keep the k1 and k2 rows and the stop is recorded |
+
+The case with an actual relocated FFR value was only tested with a blank value, since the stub doesn't produce one.

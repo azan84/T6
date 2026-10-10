@@ -1,0 +1,43 @@
+{
+ "provenance_version": 1,
+ "case": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/cases/14_T5n_12p5_resistance",
+ "case_name": "14_T5n_12p5_resistance",
+ "job": "14_T5n_12p5_resistance",
+ "host": "Azan",
+ "user": "azan",
+ "date": "2026-10-10T20:50:02+08:00",
+ "built_in_job": true,
+ "openfoam": {
+  "WM_PROJECT_VERSION": "v2406",
+  "WM_PROJECT_DIR": "/usr/lib/openfoam/openfoam2406",
+  "using": "OpenFOAM-2406 (2406) - visit www.openfoam.com",
+  "build": "_1653fa08-20260127 (patch=260127)"
+ },
+ "code": {
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/pf/build_m1_case.py": "d1d40dbc8e14e757c60f6b52c3fb71f09853ccc84e01501c4091dd60cd8c2a4d",
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/pf/pf_common.py": "475d627e386a65e81c819eb74df8ce76572d85e763c8aec15de28a1b9210aa3b",
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/case_job.sh": "b0d46e8de9bf45a17b0b8aea3579abfe6958ea608d2df37e7b06729aeb2a3ee0",
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/post_case_generic.sh": "5bb91e2fb585038f61f1b188e6d22cff55808d1d8bc909b3b531b6b70858ac6b",
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/make_job.py": "fe78d1e17ee18be402998f23ba613aa5eb7662b117fe9e98163e56947c7b1b53",
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py": "44b4c5c701347cc2cfafc694c17724528f8e468231621a28b7a2509354183a3e",
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/provenance.py": "253fdc72a31601dfbb2b1809da8db75ffd662b624f72d7d242a94432ce9487ca",
+  "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/wo_common.py": "377b008aeee978e93e10417e6b01c0192e54fc550a4f2bb5fd387bad431f44c3"
+ },
+ "template": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/code_from_cfd/stageA/caseTemplate_real_lumen_steady",
+ "template_sha256": "7052192e6d617215380fa85ce2f02ea611eea52b796aadd72f6970e767245373",
+ "template_files": 6,
+ "template_commit": "none: no git repository holds the production template (content hash template_sha256 instead)",
+ "build_info_sha256": "b629d1f3fc1237a17158c383534a07b539456a4235295f950045178497f43478",
+ "case_system_sha256": "a00831e31cfc0ddb10eec6481414413f530affc64763ba071530fce501511b9a",
+ "case_system_files": 4,
+ "case_0_sha256": "d32e8797a1bd8a981464578ed2b484f841c49dce353253c65e49756a37200199",
+ "case_0_files": 2,
+ "case_built_at": "2026-10-10T20:50:01+08:00",
+ "build_log": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/logs/build_14_T5n_12p5_resistance.log",
+ "build_log_sha256": "d1c419e473443b07a64366ad4133bcb295e4623d064f18c49fc72049e8f1eafc",
+ "r_scale_k": 1.0,
+ "mode": "resistance",
+ "stage": "resistance",
+ "package": "/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/14_left_LAD_prox_20mm_80ds__T5_vox_narrow__real",
+ "mesh_source_dir": "/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/mesh/14_T5n_12p5"
+}

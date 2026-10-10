@@ -1,0 +1,15 @@
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/14_left_LAD_prox_20mm_80ds__T5_vox_narrow__real|14_T5n||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/14_left_LAD_prox_20mm_80ds__T5_vox_wide__real|14_T5w||
+/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/m1/pkg/14_left_LAD_prox_20mm_80ds__T1_missed_branch__real|14_T1regen||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/138_left_LAD_prox_20mm_70ds__T1_missed_branch__real|138_T1||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/69_left_LCX_prox_20mm_65ds__T1_missed_branch__real|69_T1||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/473_left_LCX_prox_20mm_60ds__T1_missed_branch__real|473_T1||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/139_right_RCA_prox_10mm_70ds__T1_missed_branch__real|139_T1||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/138_left_LAD_prox_20mm_70ds__T5_vox_narrow__real|138_T5n||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/138_left_LAD_prox_20mm_70ds__T5_vox_wide__real|138_T5w||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/473_left_LCX_prox_20mm_60ds__T5_vox_narrow__real|473_T5n||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/473_left_LCX_prox_20mm_60ds__T5_vox_wide__real|473_T5w||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/306_left_LAD_prox_20mm_80ds__baseline__real|306_base||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/306_left_LAD_prox_20mm_80ds__T1_missed_branch__real|306_T1||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/306_left_LAD_prox_20mm_80ds__T5_vox_narrow__real|306_T5n||
+/mnt/e/Paper6-T6/Paper6-T6/cfd_handover/packages/WO1010/306_left_LAD_prox_20mm_80ds__T5_vox_wide__real|306_T5w||

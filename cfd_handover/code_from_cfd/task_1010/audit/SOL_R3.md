@@ -1,0 +1,43 @@
+Model: GPT-5 Codex.
+
+I accept the coordinator decision. It cleanly isolates the expensive, unaudited fallback path: steady jobs remain independent, every `NOT_SETTLED` result fails closed, and no fallback can run without a separate audit and `.audited` marker.
+
+1. **MAJOR — Sol-R2 finding 1 is only partially resolved for an actual scan-14 fallback.** Task G now correctly checks B1 settlement, exits 4 when fallback is required, and can consume fallback flows/FFRs ([taskG.py:147](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:147), [taskG.py:152](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:152)). However, scan-14 probe `p000` is explicitly unrepresentable and omitted ([pimple_fallback.py:56](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/pimple_fallback.py:56)), while fallback acceptance rejects any missing probe ([wo_common.py:134](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/wo_common.py:134)) and Task G requires exactly the complete k₁ probe set ([taskG.py:100](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:100)). Therefore, an actual scan-14 Task-G fallback cannot currently resume the fit. Before auditing such a fallback, either produce a validated transient `p000` value or obtain a formal analysis-side waiver and encode that exception consistently. This does not affect settled Task-G runs.
+
+2. **MINOR — Sol-R2 finding 2 is resolved.** `gate_TaskT` depends on all five Task-T solves, and Task G depends only on that gate ([make_all_jobs.sh:31](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/make_all_jobs.sh:31), [taskG_14_T1regen.json:8](/home/azan/paper6_t6_work/wo1010_pool/jobs/taskG_14_T1regen.json:8)). The gate accepts only B1-settled steady results or a usable complete fallback with provenance ([wo_common.py:160](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/wo_common.py:160)).
+
+3. **MINOR — Sol-R2 finding 3 is resolved.** The declared window is `max(6 τjet, 1.5 τslow)`, with second-half averaging, Q3/Q4 stationarity, 25% extensions, and a hard 2× cap ([pimple_fallback.py:62](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/pimple_fallback.py:62), [pimple_fallback.py:560](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/pimple_fallback.py:560)). Failure at the cap becomes `INCOMPLETE`.
+
+4. **MINOR — Sol-R2 finding 4 is resolved, subject to the coordinator policy.** The fallback now has locking, disk admission, trigger verification, stale-state refusal, resumable processor-time handling, stationarity decisions, and purge only after `COMPLETE` ([fallback_job.sh:66](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/fallback_job.sh:66), [fallback_job.sh:88](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/fallback_job.sh:88), [fallback_job.sh:146](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/fallback_job.sh:146), [fallback_job.sh:173](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/fallback_job.sh:173)). No fallback job currently exists or is automatically generated.
+
+5. **MINOR — Sol-R2 finding 5 is resolved.** Provenance is captured immediately before solving and records host, OpenFOAM build, code hashes, template content hash, and as-built case hashes ([provenance.py:37](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/provenance.py:37), [make_job.py:53](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/make_job.py:53)). The old Task-T cases were moved aside, so all five will be rebuilt inside their jobs.
+
+6. **MAJOR — Sol-R2 finding 6 is mostly resolved, but fallback finalisation has a new interface mismatch.** Finalisation now calls the fail-closed task gate, checks expected solves and provenance, requires references, and verifies the manifest ([finalise_task.py:173](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/finalise_task.py:173), [finalise_task.py:205](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/finalise_task.py:205), [finalise_task.py:274](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/finalise_task.py:274)). But it reads fallback min/max and steady-monitor correction fields from the machine-interface JSON ([finalise_task.py:198](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/finalise_task.py:198)), while that JSON does not include those fields ([pimple_fallback.py:770](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/pimple_fallback.py:770)). Consequently, fallback bands and `Delta_pimple` would silently be blank. Add the corresponding `res` fields to `pj`, or make finalisation read the detailed fallback CSV/summary, before any fallback is audited.
+
+7. **MINOR — Sol-R2 finding 7 is resolved.** The durable ledger records attempts before execution, counts artifact-free build failures, preserves interrupted attempts, and keeps lock/disk refusals non-counted across restart ([taskG.py:136](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:136), [taskG.py:167](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:167), [taskG.py:181](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:181)).
+
+8. **MINOR — Sol-R2 finding 8 is resolved.** Working checkpoints are atomic and outside the return tree; final publications use dated re-issue semantics ([taskG.py:62](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:62), [taskG.py:66](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:66)). Restart acceptance checks both returned outlet/probe hashes and the case’s requested `r_scale_k` ([wo_common.py:101](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/wo_common.py:101), [taskG.py:147](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/taskG.py:147)).
+
+9. **MINOR — Sol-R2 finding 9 remains correctly handled.** Geometry and mesh failures are retained as flags rather than silently admitted as passes. The 138 meshes fail standard `checkMesh`, and the relevant 306/473 relative-throat failures remain in their geometry records. This is consistent with the explicit solve-and-return-flagged instruction; 69 passes D3/D4.
+
+10. **MINOR — Sol-R2 finding 10 remains resolved.** The diff from the audited lane-2 wrapper adds only prescribed-mode detection/checking and prescribed smoke handling. The resistance coded-BC validation and subsequent solve/reconstruct/post/purge path are unchanged ([case_job.sh:231](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/case_job.sh:231), [case_job.sh:242](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/case_job.sh:242), [case_job.sh:263](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/case_job.sh:263)).
+
+11. **MINOR — Sol-R2 finding 11 remains resolved.** All 16 meshes and 29 steady-solve job definitions are present; k₁ reuse remains supported by identical STL hash and cell count; D14 is present; `--r-scale` remains resistance-only; and Task G plan-only returns `k₂ = 0.893139`.
+
+12. **MINOR — Sol-R2 finding 12 is resolved.** The inspected 34-job graph is complete and acyclic:
+
+   `TaskT → gate_TaskT → taskG → gate_TaskG → TaskM → gate_TaskM → TaskT2 → gate_TaskT2 → 306 baseline → remaining TaskN → gate_TaskN`
+
+   All dependency names resolve to existing job files ([make_all_jobs.sh:31](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/make_all_jobs.sh:31), [make_all_jobs.sh:43](/home/azan/paper6_t6_work/scratchpad/item3_M1_pilot/wo1010/make_all_jobs.sh:43)).
+
+Checks completed: shell syntax passed; Python AST parsing passed for all seven new/changed Python files; Task G `--plan-only` passed; all reference comparison files exist; all 34 job JSON files parse and have valid dependencies. The self-test could not be rerun because the provided filesystem is read-only even under `audit_tmp`.
+
+### Verdicts
+
+- **Task T — READY.** The five solve jobs and `gate_TaskT` may receive `.audited` markers now.
+- **Task G — READY WITH CONDITIONS.** Its driver and gate may receive markers now. If any G iteration exits 4, stop and report it; do not audit a fallback until findings 1 and 6 are resolved.
+- **Task M — READY WITH CONDITIONS.** Markers may be created now; the dependency chain prevents premature execution. Return the 138 and other known gate deviations flagged.
+- **Task T2 — READY WITH CONDITIONS.** Markers may be created now; retain all 138/473 deviations in the returned rows.
+- **Task N — READY WITH CONDITIONS.** Markers may be created now; the 306 baseline dependency is correctly enforced and the relative-throat failures must be returned flagged.
+
+No fallback-job `.audited` marker is cleared by this audit.
